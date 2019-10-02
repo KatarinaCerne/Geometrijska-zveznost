@@ -6,15 +6,14 @@
 
 % NASLEDNJE UKAZE USTREZNO POPRAVI
 \newcommand{\program}{Matematika} % ime studijskega programa
-\newcommand{\imeavtorja}{Marija Novak} % ime avtorja
-\newcommand{\imementorja}{prof.~dr.~Janez Novak} % akademski naziv in ime mentorja, uporabi poln naziv, prof.~dr.~, doc.~dr., ali izr.~prof.~dr.
+\newcommand{\imeavtorja}{Katarina Černe} % ime avtorja
+\newcommand{\imementorja}{prof.~dr.~} % akademski naziv in ime mentorja, uporabi poln naziv, prof.~dr.~, doc.~dr., ali izr.~prof.~dr.
 \newcommand{\imesomentorja}{} % akademski naziv in ime somentorja, če ga imate
 \newcommand{\naslovdela}{Naslov vašega dela}
-\newcommand{\letnica}{2017} % letnica magistriranja
-\newcommand{\opis}{Delo obravnava integracijo po ω-kompleksih, njene lastnosti in posplošitve
-na Levy-jeve topološke prostore.}  % Opis dela v eni povedi. Ne sme vsebovati matematičnih simbolov v $ $.
-\newcommand{\kljucnebesede}{integracija\sep kompleks} % ključne besede, ločene z \sep, da se PDF metapodatki prav procesirajo
-\newcommand{\keywords}{integration\sep complex} % ključne besede v angleščini
+\newcommand{\letnica}{2020} % letnica magistriranja
+\newcommand{\opis}{}  % Opis dela v eni povedi. Ne sme vsebovati matematičnih simbolov v $ $.
+\newcommand{\kljucnebesede}{\sep } % ključne besede, ločene z \sep, da se PDF metapodatki prav procesirajo
+\newcommand{\keywords}{\sep } % ključne besede v angleščini
 \newcommand{\organization}{Univerza v Ljubljani, Fakulteta za matematiko in fiziko} % fakulteta
 \newcommand{\literatura}{literatura}  % pot do datoteke z literaturo (brez .bib končnice)
 \newcommand{\sep}{, }  % separator med ključnimi besedami v besedilu
@@ -78,6 +77,14 @@ na Levy-jeve topološke prostore.}  % Opis dela v eni povedi. Ne sme vsebovati m
 
 % DRUGI TVOJI PAKETI:
 % tukaj
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{eurosym}
+\usepackage{hyperref}
+\usepackage{subfigure}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
 
 \setlength{\overfullrule}{50pt} % označi predlogo vrstico
 \pagestyle{plain}               % samo številka strani na dnu, nobene glave / noge
@@ -103,6 +110,8 @@ na Levy-jeve topološke prostore.}  % Opis dela v eni povedi. Ne sme vsebovati m
 \newcommand{\Z}{\mathbb Z}
 \renewcommand{\C}{\mathbb C}
 \newcommand{\Q}{\mathbb Q}
+
+\newcommand{\todo}[1]{{\color{red}{#1}}}
 
 % \DeclareMathOperator{\tr}{tr}  % morda potrebuješ operator za sled ali kaj drugega?
 
@@ -296,62 +305,210 @@ the content and not the structure of your work.
 \pagenumbering{arabic}  % in z arabskimi številkami
 
 \section{Uvod}
-Napišite kratek zgodovinski in matematični uvod.  Pojasnite motivacijo za problem, kje
-nastopa, kje vse je bil obravnavan. Na koncu opišite tudi organizacijo dela -- kaj je v kakšnem
-razdelku.
 
-\section{Integrali po \texorpdfstring{$\omega$}{ω}-kompleksih}
-\subsection{Definicija}
+
+\section{Geometrijska zveznost} %odloči se še za naslove
+
 \begin{definicija}
-  Neskončno zaporedje kompleksnih števil, označeno z $\omega = (\omega_1, \omega_2, \ldots)$,
-  se imenuje \emph{$\omega$-kompleks}.\footnote{To ime je izmišljeno.}
-
-  Črni blok zgoraj je tam namenoma. Označuje, da \LaTeX{} ni znal vrstice prelomiti pravilno
-  in vas na to opozarja. Preoblikujte stavek ali mu pomagajte deliti problematično besedo z
-  ukazom \verb|\hyphenation{an-ti-ko-mu-ta-ti-ven}| v preambuli.
+  Ploskev pripada razredu $G^n$ oziroma je geometrijsko zvezna z redom $n$, če v okolici vsake njene točke obstaja lokalna regularna parametrizacija razreda $C^n$.
 \end{definicija}
-\begin{trditev}[Znano ime ali avtor]
-  \label{trd:obstoj-omega}
-  Obstaja vsaj en $\omega$-kompleks.
-\end{trditev}
-\begin{proof}
-  Naštejmo nekaj primerov:
-  \begin{align}
-    \omega &= (0, 0, 0, \dots), \label{eq:zero-kompleks} \\
-    \omega &= (1, i, -1, -i, 1, \ldots), \nonumber \\
-    \omega &= (0, 1, 2, 3, \ldots). \nonumber \qedhere  % postavi QED na zadnjo vrstico enačbe
-  \end{align}
-\end{proof}
 
-\section{Tehnični napotki za pisanje}
+\todo{definicija regularne ploskve}
+\todo{razloži lokalnost?}
 
-\subsection{Sklicevanje in citiranje}
-Za sklice uporabljamo \verb|\ref|, za sklice na enačbe \verb|\eqref|, za citate \verb|\cite|. Pri
-sklicevanju in citiranju sklicano številko povežemo s prejšnjo besedo z nedeljivim presledkom
-$\sim$, kot npr.\ \verb|iz trditve~\ref{trd:obstoj-omega} vidimo|.
+\begin{definicija}
+  Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. %povej da na C je y=v
+  Pravimo, da se $R$ in $S$ stikata z $G^n$-zveznostjo vzdolž krivulje $C$, če za vsako točko $b_0=C(y_0)$ obstaja lokalno regularna $C^n$ reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, da je $f(x_0,y)=(u_0,y)$ za vsak $y \in I_0$ in da velja
+  $$\frac{\partial^{m+k}}{\partial x^m \partial y^k}R\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{m+k}}{\partial x^m \partial y^k}(S\circ f)\Bigr|_{\substack{(x_0,y)}} \textrm{ za } m+k=1,\ldots,n$$
+  za $y\in I_0$, kjer je $I_0$ neka okolica $y_0$. %bolj natančno, kaj je ta okolica
+\end{definicija}
+\todo{napiši R:omega1 pod r2 v r3, S:omega2pod r2 v r3 (wut?)}
+\todo{povej, da so odvodi vzdolž y=v enaki (dodati sliko?), zato je dovolj, da gledamo samo odvode vzdolž x in u}
 
-\begin{primer}
-  Zaporedje~\eqref{eq:zero-kompleks} iz dokaza trditve~\ref{trd:obstoj-omega} na
-  strani~\pageref{trd:obstoj-omega} lahko najdemo tudi v Spletni enciklopediji zaporedij~\cite{oeis}.
-  Citiramo lahko tudi bolj natančno~\cite[trditev 2.1, str.\ 23]{lebedev2009introduction}.
-\end{primer}
+Oglejmo si pogoje za različne stopnje geometrijske zveznosti, ki nam jih ta definicija da. \todo{to še ni dokončno. zelo grdo}
 
-\subsection{Okrajšave}
-Pri uporabi okrajšav \LaTeX{} za piko vstavi predolg presledek, kot npr. tukaj. Zato se za vsako
-piko, ki ni konec stavka doda presledek običajne širine z ukazom \verb*|\ |, kot npr.\ tukaj.
-Primerjaj z okrajšavo zgoraj za razliko.
+$G^0$: $R=S \circ f$ vzdolž $C$ \\
+$G^1$: $R_x = S_u u_x + S_v v_x$ vzdolž $C$ ter pogoj za $G^0$\\
+$G^2$: $R_xx = S_{uu} u_x^2 + 2S_{uv}u_x v_x + S_{vv} v_x^2 + S_u u_{xx} + S_v v_{xx}$ vzdolž $C$ ter pogoja za $G^0$ in $G^1$.\\
+\vdots
 
-\subsection{Vstavljanje slik}
-Sliko vstavimo v plavajočem okolju \texttt{figure}. Plavajoča okolja \emph{plavajo} po tekstu, in
-jih lahko postavimo na vrh strani z opcijskim parametrom `\texttt{t}', na lokacijo, kjer je v kodi s
-`\texttt{h}', in če to ne deluje, potem pa lahko rečete \LaTeX u, da ga \emph{res} želite tukaj,
-kjer ste napisali, s `\texttt{h!}'. Lepo je da so vstavljene slike vektorske (recimo \texttt{.pdf}
-ali \texttt{.eps} ali \texttt{.svg}) ali pa \texttt{.png} visoke resolucije (več kot
-\unit[300]{dpi}).  Pod vsako sliko je napis in na vsako sliko se skličemo v besedilu. Primer
-vektorske slike je na sliki~\ref{fig:sample}. Vektorsko sliko prepoznate tako, da močno
-zoomate v sliko, in še vedno ostane gladka. Več informacij je na voljo na
-\url{https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}. Če so slike bitne, kot na
-primer slika~\ref{fig:image}, poskrbite, da so v dovolj visoki resoluciji.
+Splošneje.\todo{grdo} Za geometrijsko zveznost stopnje $n$ \todo{(ali se tako reče?)}, kjer je $n\in \N_0$ velja naslednje:
+$$\frac{\partial^j R}{\partial x^j}\Bigr|_{\substack{C}}= \sum_{k=1}^j\sum_{h=0}^k A_{jkh}\frac{\partial^k S}{\partial u^h \partial v^{k-h}}\Bigr|_{\substack{C}}$$
+za vsak $j=0,1,\ldots,n$.
+Tu z $A_{jkh}$ označujemo koeficient
+$$A_{jkh}={k \choose h}\sum_{\substack{m_1+\cdots +m_k =j \\ m_1, \ldots, m_k >0}}
+\frac{j!}{k!m_1!\cdots m_k!} u_{x^{m_1}} \cdots u_{x^{m_h}} v_{x^{m_{h+1}}} \cdots v_{x^{m_k}}\Bigr|_{\substack{C}}$$
+\todo{ali je treba to grozo dokazati?}
+
+
+\todo{zdaj si pogledamo ekvivalentno/alternativno definicijo G zveznosti}
+\todo{definirajmo reparametrizacijo}
+
+Naj bodo $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ funkcije razreda $C^n$ ene spremenljivke. Definirajmo:\\
+$$u(x,y) =  u_0 + \sum_{i=0}^n \frac{1}{i!}\alpha_i(y)(x-x_0)^i$$
+$$v(x,y) = y + \sum_{i=0}^n \frac{1}{i!}\beta_i(y)(x-x_0)^i$$
+
+\todo{ali moram povsod pisati, kam te funkcije slikajo? recimo paramterizacije in alfa, beta itd.}
+
+Opazimo:
+\begin{flalign*}
+  \frac{\partial^i u}{\partial x^i}(x_0,y)&=\alpha_i(y)&\\
+  \frac{\partial^i v}{\partial x^i}(x_0,y)&=\beta_i(y)\textrm{ za }i=1, \ldots, k.
+\end{flalign*}
+
+Regularnost reparametrizacije:
+\begin{flalign*}
+  &\frac{\partial f}{\partial x}\times \frac{\partial f}{\partial y} \neq 0&\\
+  &\frac{\partial f}{\partial x}(x_0,y)=(\frac{\partial u}{\partial x}(x_0,y),\frac{\partial v}{\partial x}(x_0,y))=(\alpha_1(y),\beta_1(y))\\
+  &\frac{\partial f}{\partial y}(x_0,y)=(\frac{\partial u}{\partial y}(x_0,y),\frac{\partial v}{\partial y}(x_0,y))=(0,1)\\
+  &\Longrightarrow \alpha_1(y) \neq 0 \textrm{ vzdolž C}
+\end{flalign*}
+
+Z uvedbo funkcij $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ pridemo do nekoliko drugačne definicije
+geometrijske zveznosti. 
+
+\begin{definicija}
+  Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. 
+  Pravimo, da se $R$ in $S$ stikata z $G^n$-zveznostjo vzdolž krivulje $C$, če za vsako točko $b_0=C(y_0)$ obstajajo take funkcije razreda $C^n$ ene spremenljivke $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ , da $\alpha_1(y)\neq0$ in velja
+  $$\frac{\partial^j R}{\partial x^j}\Bigr|_{\substack{C}}= \sum_{k=1}^j\sum_{h=0}^k A_{jkh}\frac{\partial^k S}{\partial u^h \partial v^{k-h}}\Bigr|_{\substack{C}}$$
+  $$A_{jkh}={k \choose h}\sum_{\substack{m_1+\cdots +m_k =j \\ m_1, \ldots, m_k >0}}
+  \frac{j!}{k!m_1!\cdots m_k!} \alpha_1 \cdots \alpha_{m_h} \beta_{m_{h+1}} \cdots \beta_{m_k}\Bigr|_{\substack{C}}$$
+\end{definicija}
+\todo{povej, da to velja za vsak j=1,...,n;}
+\todo{popravi za vrednosti funkcij (wut?);}
+\todo{$\alpha_j$, $\beta_j$ stične funkcije;}
+\todo{$\alpha_1(y)\neq 0$ in potrebno izbrati pravi predznak $\alpha_1$ - to še ugotovi in razloži}
+
+\begin{izrek} \todo{?? ta izrek samo pove, da so definicije enakovredne. dokaz? je v bistvu celo poglavje}
+  Naj bosta $R(u_r,v_r)$ in $S(u_s,v_s)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(v)=R(u_{r0},v)=S(u_{s0},v)$. Ploskvi $R$ in $S$ sta $G^n$-zvezni vzdolž skupnega roba natanko tedaj ko obstajajo funkcije $p_i(v)$, $q_i(v)$, $i=1,\ldots, n$, da velja
+  \begin{align*}
+  \frac{\partial^k S}{\partial u_s^k}\Bigr|_{\substack{C}}=& \sum_{i=1}^k\sum_{|\mathbf{m_i}|=k} A_{\mathbf{m_i}}^k \sum_{h=0}^i {i \choose h} p_{m_1}(v) \cdots p_{m_h}(v) q_{m_{h+1}}(v) \cdots q_{m_i} \\
+  &\cdot\frac{\partial^i R}{\partial u_r^h \partial v_r^{i-h}},
+  \end{align*}
+  kjer $k=1,\ldots,n$ ter\\
+  $\mathbf{m_i} = (m1,m2,\ldots,m_i)$, $|\mathbf{m_i}|=m_1+m_2+\cdots+m_i$ in $A_{\mathbf{m_i}}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
+\end{izrek}
+
+\begin{lema}\todo{?? ali je dokaz tega potreben?}
+  Naj bo $f(u,v)$ funkcija razreda $C^n$ in $u(t)$ in $v(t)$ reparametrizaciji razreda $C^n$. Potem
+  \begin{align*}
+  \frac{d^k f}{dt^k}=& \sum_{i=1}^k\sum_{|\mathbf{m_i}|=k} A_{\mathbf{m_i}}^k \sum_{h=0}^i {i \choose h} u^{(m_1)}\cdots u^{(m_h)}(v) v^{(m_{h+1})}\cdots v^{(m_i)} \\
+  &\cdot\frac{\partial^i f}{\partial u_r^h \partial v_r^{i-h}},
+  \end{align*}
+  kjer $k=1,\ldots,n$ ter\\
+  $\mathbf{m_i} = (m1,m2,\ldots,m_i)$, $|\mathbf{m_i}|=m_1+m_2+\cdots+m_i$ in $A_{\mathbf{m_i}}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
+\end{lema}
+
+\section{$G^1$ zveznost}
+
+\todo{nekaj v stilu, da se bomo natančneje ukvarjali z G1 zveznostjo.}
+
+\todo{nekaj v stilu: imamo ploskvi R, S, ki ustrezata definiciji. zanju veljajo naslednji pogoji:}
+\begin{flalign*}
+  &R(x_0,y)=S(u_0,y)&\\ \todo{povej da Ry = Sy vzdolž C!, zato nam ni treba tega pogoja posebej poudarjati}
+  &R_x(x_0,y)=u_x(x_0,y)S_u(u_0,y)+v_x(x_0,y)S_v(u_0,y)\\ \todo{oziroma kot smo prej dobili...obstajata alfa1 in beta1, kjer alfa1 ni 0 in ustreznega predznaka}
+  &R_x(x_0,y)=\alpha_1(y) S_u(u_0,y)+\beta_1(y)S_v(u_0,y)\\ 
+  \todo{kako to geometrijsko interpretiramo: vidimo, da so Rx, Su, Sv linearno odvisni v vsaki točki y tj. v vsaki točki del iste tangentne ravnine;}
+  \todo{na mestu najbrž kakšna slika}
+\end{flalign*}
+\todo{vidimo, da se na skupnem robu ujemata enotski normali;}
+\todo{slika?;}
+\todo{G1 zveznosti rečemo tudi zveznost tangentnih ravnin oz zveznost enotskih normal}
+
+\begin{flalign*}
+  %&R(x_0,y)=S(u_0,y)&\\ %povej da Ry = Sy vzdolž C!
+  %&R_x(x_0,y)=u_x(y)S_u(u_0,y)+v_x(y)S_v(u_0,y)\\ %oziroma kot smo prej dobili...obstajata alfa1 in beta1, kjer alfa1 ni 0 in ustreznega predznaka
+  &R_x(x_0,y)=\alpha_1(y) S_u(u_0,y)+\beta_1(y)S_v(u_0,y)\\ %kako to geometrijsko interpretiramo: vidimo, da so Rx, Su, Sv linearno odvisni v vsaki točki y tj. v vsaki točki del iste tangentne ravnine
+  %če enačbo vektorsko pomnožimo z Ry(x0,y)
+  &R_x(x_0,y) \times R_y(x_0,y) = \alpha_1(y) S_u(u_0,y) \times S_v(u_0,y)\\
+  &\frac{R_x(x_0,y) \times R_y(x_0,y)}{||R_x(x_0,y) \times R_y(x_0,y)||}=\frac{S_u(u_0,y) \times S_v(u_0,y)}{||S_u(u_0,y) \times S_v(u_0,y)||}
+\end{flalign*}
+%vidimo, da se na skupnem robu ujemata enotski normali
+%G1 zveznosti rečemo tudi zveznost tangentnih ravnin oz zveznost enotskih normal
+
+\begin{flalign*}
+  &R_x(x_0,y)=\alpha_1(y) S_u(u_0,y)+\beta_1(y)S_v(u_0,y)&\\
+  &ekvivalentno: \det(R_x(x_0,y), S_u(u_0,y), S_v(u_0,y))=0\\
+  &\Longrightarrow \exists\textrm{ funkcije }\lambda, \mu, \gamma:\\
+  &\lambda(y)R_x(x_0,y)=\mu(y)S_u(u_0,y)+\gamma(y)S_v(u_0,y)
+\end{flalign*}
+%povej: če sta R, S polinomski, lahko tudi lambda, mi, gama izberemo polinomske
+  
+
+
+
+\todo{pogledamo si poseben primer polinomskih param ploskev, ki so tudi uporabne v praksi}
+\section{Bézierjeve ploskve}
+
+$i$-ti Bernsteinov bazni polinom
+$$B_i^n(t)={n \choose i}t^i (1-t)^{n-i}\textrm{, } t\in[0,1]$$
+Lastnosti:
+\begin{itemize}
+\item $B_i^n(0) =\delta_{i,0}$
+\item $B_i^n(1)=\delta_{i,n}$
+%tvorijo bazo prostora polinomov Pn
+\end{itemize}
+
+\begin{definicija}
+  Naj bodo dane točke $\mathbf{b}_{i,j}\in \R^d$, $i=0,1,\ldots,m$, $j=0,1,\ldots,n$. Bézierjeva ploskev iz tenzorskega produkta je parametrično podana ploskev
+  $$\mathbf{b}^{m,n} : [0,1]\times[0,1] \rightarrow \R^d$$
+  s predpisom
+  $$\mathbf{b}^{m,n}(u,v)=\sum_{i=0}^m \sum_{j=0}^n \mathbf{b_{i,j}} B_i^m(u) B_j^n(v).$$
+  Točke $\mathbf{b}_{i,j}$ imenujemo kontrolne točke, poligon, ki jih povezuje, pa kontrolni poligon.
+\end{definicija}
+Velja: $\mathbf{b^{m,n}}(0,0)=\mathbf{b}_{0,0}$, $\mathbf{b^{m,n}}(1,0)=\mathbf{b}_{m,0}$, $\mathbf{b^{m,n}}(0,1)=\mathbf{b}_{0,n}$, $\mathbf{b^{m,n}}(1,1)=\mathbf{b}_{m,n}$
+%interpolacija robnih točk
+%vstavi sliko
+
+Odvod Bézierjeve ploskve iz tenzorskega produkta:\\
+$$\frac{\partial^{r+s}}{\partial u^r \partial v^s}\mathbf{b}^{m,n}(u,v)=\frac{m!}{(m-r)!}\frac{n!}{(n-s)!}\sum_{i=0}^{m-r} \sum_{j=0}^{n-s} \Delta^{r,s}\mathbf{b}_{i,j}B_i^{m-r}(u)B_j^{n-s}(v),$$
+kjer $\Delta^{1,0} \mathbf{b}_{i,j} = \mathbf{b}_{i+1,j}-\mathbf{b}_{i,j}$,\\
+$\Delta^{0,1} \mathbf{b}_{i,j} = \mathbf{b}_{i,j+1}-\mathbf{b}_{i,j}$,\\
+$\Delta^{r,0} \mathbf{b}_{i,j} = \Delta^{r-1,0} \mathbf{b}_{i+1,j}-\Delta^{r-1,0} \mathbf{b}_{i,j}$,\\
+$\Delta^{0,s} \mathbf{b}_{i,j} = \Delta^{0,s-1} \mathbf{b}_{i,j+1}-\Delta^{0,s-1} \mathbf{b}_{i,j}$.
+%lahko poveš, da so to v bistvu vektorji
+%posebej lahko napišeš (ali dodaš) odvode 1. stopnje
+%dodaj pogoje gladkosti za C1 ?
+%dodaj trikotne krpe
+
+\section{Primeri konstrukcij $G^1$ ploskev}
+\begin{frame}
+Dve bikubični Bézierjevi ploskvi iz tenzorskega produkta:
+$$R(u,v)=\sum_{i=0}^3 \sum_{j=0}^3 \mathbf{P}_{i,j}B_i^3(u) B_j^3(v)$$ in
+$$S(u,v)=\sum_{i=0}^3 \sum_{j=0}^3 \mathbf{Q}_{i,j}B_i^3(u) B_j^3(v),$$
+ki se stikata v $C(v)=R(0,v)=S(0,v)$.
+\end{frame}
+%vstavi sliko
+
+%\section{Tehnični napotki za pisanje}
+%
+%\subsection{Sklicevanje in citiranje}
+%Za sklice uporabljamo \verb|\ref|, za sklice na enačbe \verb|\eqref|, za citate \verb|\cite|. Pri
+%sklicevanju in citiranju sklicano številko povežemo s prejšnjo besedo z nedeljivim presledkom
+%$\sim$, kot npr.\ \verb|iz trditve~\ref{trd:obstoj-omega} vidimo|.
+%
+%\begin{primer}
+%  Zaporedje~\eqref{eq:zero-kompleks} iz dokaza trditve~\ref{trd:obstoj-omega} na
+%  strani~\pageref{trd:obstoj-omega} lahko najdemo tudi v Spletni enciklopediji zaporedij~\cite{oeis}.
+%  Citiramo lahko tudi bolj natančno~\cite[trditev 2.1, str.\ 23]{lebedev2009introduction}.
+%\end{primer}
+%
+%\subsection{Okrajšave}
+%Pri uporabi okrajšav \LaTeX{} za piko vstavi predolg presledek, kot npr. tukaj. Zato se za vsako
+%piko, ki ni konec stavka doda presledek običajne širine z ukazom \verb*|\ |, kot npr.\ tukaj.
+%Primerjaj z okrajšavo zgoraj za razliko.
+%
+%\subsection{Vstavljanje slik}
+%Sliko vstavimo v plavajočem okolju \texttt{figure}. Plavajoča okolja \emph{plavajo} po tekstu, in
+%jih lahko postavimo na vrh strani z opcijskim parametrom `\texttt{t}', na lokacijo, kjer je v kodi s
+%`\texttt{h}', in če to ne deluje, potem pa lahko rečete \LaTeX u, da ga \emph{res} želite tukaj,
+%kjer ste napisali, s `\texttt{h!}'. Lepo je da so vstavljene slike vektorske (recimo \texttt{.pdf}
+%ali \texttt{.eps} ali \texttt{.svg}) ali pa \texttt{.png} visoke resolucije (več kot
+%\unit[300]{dpi}).  Pod vsako sliko je napis in na vsako sliko se skličemo v besedilu. Primer
+%vektorske slike je na sliki~\ref{fig:sample}. Vektorsko sliko prepoznate tako, da močno
+%zoomate v sliko, in še vedno ostane gladka. Več informacij je na voljo na
+%\url{https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}. Če so slike bitne, kot na
+%primer slika~\ref{fig:image}, poskrbite, da so v dovolj visoki resoluciji.
 
 %\begin{figure}[h]
 %  \centering
@@ -371,18 +528,18 @@ primer slika~\ref{fig:image}, poskrbite, da so v dovolj visoki resoluciji.
 %  \label{fig:image}
 %\end{figure}
 
-\subsection{Kako narediti stvarno kazalo}
-Dodate ukaze \verb|\index{polje}| na besede, kjer je pojavijo, kot tukaj\index{tukaj}.
-Več o stvarnih kazalih je na voljo na \url{https://en.wikibooks.org/wiki/LaTeX/Indexing}.
-
-\subsection{Navajanje literature}
-Članke citiramo z uporabo \verb|\cite{label}|, \verb|\cite[text]{label}| ali pa več naenkrat s
-\verb|\cite\{label1, label2}|. Tudi tukaj predhodno besedo in citat povežemo z nedeljivim presledkom
-$\sim$. Na primer~\cite{chen2006meshless,liu2001point}, ali pa \cite{kibriya2007empirical}, ali pa
-\cite[str.\ 12]{trobec2015parallel}, \cite[enačba (2.3)]{pereira2016convergence}.
-Vnosi iz \verb|.bib| datoteke, ki niso citirani, se ne prikažejo v seznamu literature, zato jih
-tukaj citiram.~\cite{vene2000categorical}, \cite{gregoric2017stopniceni}, \cite{slak2015induktivni},
-\cite{nsphere}, \cite{kearsley1975linearly}, \cite{STtemplate}, \cite{NunbergerTand}.
+%\subsection{Kako narediti stvarno kazalo}
+%Dodate ukaze \verb|\index{polje}| na besede, kjer je pojavijo, kot tukaj\index{tukaj}.
+%Več o stvarnih kazalih je na voljo na \url{https://en.wikibooks.org/wiki/LaTeX/Indexing}.
+%
+%\subsection{Navajanje literature}
+%Članke citiramo z uporabo \verb|\cite{label}|, \verb|\cite[text]{label}| ali pa več naenkrat s
+%\verb|\cite\{label1, label2}|. Tudi tukaj predhodno besedo in citat povežemo z nedeljivim presledkom
+%$\sim$. Na primer~\cite{chen2006meshless,liu2001point}, ali pa \cite{kibriya2007empirical}, ali pa
+%\cite[str.\ 12]{trobec2015parallel}, \cite[enačba (2.3)]{pereira2016convergence}.
+%Vnosi iz \verb|.bib| datoteke, ki niso citirani, se ne prikažejo v seznamu literature, zato jih
+%tukaj citiram.~\cite{vene2000categorical}, \cite{gregoric2017stopniceni}, \cite{slak2015induktivni},
+%\cite{nsphere}, \cite{kearsley1975linearly}, \cite{STtemplate}, \cite{NunbergerTand}.
 
 % Literatura:
 % Primer navajanja na http://www.fmf.uni-lj.si/storage/24240/LiteraturaM.pdf,

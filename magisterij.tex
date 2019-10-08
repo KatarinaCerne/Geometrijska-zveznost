@@ -316,20 +316,37 @@ the content and not the structure of your work.
 \todo{definicija regularne ploskve}
 \todo{razloži lokalnost?}
 
+%Naj bosta $R: \Omega_1 \subseteq \R^2 \rightarrow \R^3$ in 
+%$S: \Omega_2 \subseteq \R^2 \rightarrow \R^3$ regularni parametrizaciji
+
 \begin{definicija}
   Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. %povej da na C je y=v
   Pravimo, da se $R$ in $S$ stikata z $G^n$-zveznostjo vzdolž krivulje $C$, če za vsako točko $b_0=C(y_0)$ obstaja lokalno regularna $C^n$ reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, da je $f(x_0,y)=(u_0,y)$ za vsak $y \in I_0$ in da velja
-  $$\frac{\partial^{m+k}}{\partial x^m \partial y^k}R\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{m+k}}{\partial x^m \partial y^k}(S\circ f)\Bigr|_{\substack{(x_0,y)}} \textrm{ za } m+k=1,\ldots,n$$
-  za $y\in I_0$, kjer je $I_0$ neka okolica $y_0$. %bolj natančno, kaj je ta okolica
+  $$\frac{\partial^{m+k}}{\partial x^m \partial y^k}R\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{m+k}}{\partial x^m \partial y^k}(S\circ f)\Bigr|_{\substack{(x_0,y)}} \textrm{ za } m+k=1,\ldots,n,$$
+  kjer je $I_0$ neka okolica $y_0$. %bolj natančno, kaj je ta okolica
 \end{definicija}
-\todo{napiši R:omega1 pod r2 v r3, S:omega2pod r2 v r3 (wut?)}
-\todo{povej, da so odvodi vzdolž y=v enaki (dodati sliko?), zato je dovolj, da gledamo samo odvode vzdolž x in u}
+
+Zaradi stikanja ploskev v krivulji $C$ so delni odvodi parametrizacij 
+po spremenljivki $y$ enaki, zato je dovolj, da pri obravnavi 
+geometrijske zveznosti dveh ploskev opazujemo le delne odvode po 
+spremenljivki $x$.
+\todo{dodati sliko?}
+Te delne odvode imenujemo \todo{??crossboundary derivatives}.
 
 Oglejmo si pogoje za različne stopnje geometrijske zveznosti, ki nam jih ta definicija da. \todo{to še ni dokončno. zelo grdo}
 
-$G^0$: $R=S \circ f$ vzdolž $C$ \\
-$G^1$: $R_x = S_u u_x + S_v v_x$ vzdolž $C$ ter pogoj za $G^0$\\
-$G^2$: $R_xx = S_{uu} u_x^2 + 2S_{uv}u_x v_x + S_{vv} v_x^2 + S_u u_{xx} + S_v v_{xx}$ vzdolž $C$ ter pogoja za $G^0$ in $G^1$.\\
+Če so parametrizaciji $R$ in $S$, krivulja $C$ in reparametrizacijska 
+funkcija $f$ kot v definiciji \todo{sklic}, 
+je za geometrijsko zveznost razreda $G^0$ med njima dovolj pogoj 
+$R=S \circ f$ vzdolž $C$. 
+Da imamo na stiku geometrijsko zveznost stopnje $G^1$, more poleg 
+pogoja za $G^0$ veljati še $R_x = S_u u_x + S_v v_x$ vzdolž $C$, 
+za $G^2$ more poleg pogojev za $G^0$ in $G^1$ veljati še 
+$G^2$: $R_xx = S_{uu} u_x^2 + 2S_{uv}u_x v_x + S_{vv} v_x^2 + S_u u_{xx} + S_v v_{xx}$ vzdolž $C$ ter pogoja za $G^0$ in $G^1$ 
+in tako dalje.
+%$G^0$: $R=S \circ f$ vzdolž $C$ \\
+%$G^1$: $R_x = S_u u_x + S_v v_x$ vzdolž $C$ ter pogoj za $G^0$\\
+%$G^2$: $R_xx = S_{uu} u_x^2 + 2S_{uv}u_x v_x + S_{vv} v_x^2 + S_u u_{xx} + S_v v_{xx}$ vzdolž $C$ ter pogoja za $G^0$ in $G^1$.\\
 \vdots
 
 Splošneje.\todo{grdo} Za geometrijsko zveznost stopnje $n$ \todo{(ali se tako reče?)}, kjer je $n\in \N_0$ velja naslednje:

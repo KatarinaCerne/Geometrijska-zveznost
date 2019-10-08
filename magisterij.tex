@@ -327,51 +327,49 @@ the content and not the structure of your work.
 \end{definicija}
 
 Zaradi stikanja ploskev v krivulji $C$ so delni odvodi parametrizacij 
-po spremenljivki $y$ enaki, zato je dovolj, da pri obravnavi 
+po spremenljivki $y$ vzdolž krivulje $C$ enaki, zato je dovolj, da pri obravnavi 
 geometrijske zveznosti dveh ploskev opazujemo le delne odvode po 
 spremenljivki $x$.
 \todo{dodati sliko?}
 Te delne odvode imenujemo \todo{??crossboundary derivatives}.
 
 Oglejmo si pogoje za različne stopnje geometrijske zveznosti, ki nam jih ta definicija da. \todo{to še ni dokončno. zelo grdo}
-
 Če so parametrizaciji $R$ in $S$, krivulja $C$ in reparametrizacijska 
 funkcija $f$ kot v definiciji \todo{sklic}, 
 je za geometrijsko zveznost razreda $G^0$ med njima dovolj pogoj 
 $R=S \circ f$ vzdolž $C$. 
-Da imamo na stiku geometrijsko zveznost stopnje $G^1$, more poleg 
+Da imamo na stiku geometrijsko zveznost stopnje $G^1$, mora poleg 
 pogoja za $G^0$ veljati še $R_x = S_u u_x + S_v v_x$ vzdolž $C$, 
-za $G^2$ more poleg pogojev za $G^0$ in $G^1$ veljati še 
-$G^2$: $R_xx = S_{uu} u_x^2 + 2S_{uv}u_x v_x + S_{vv} v_x^2 + S_u u_{xx} + S_v v_{xx}$ vzdolž $C$ ter pogoja za $G^0$ in $G^1$ 
+za $G^2$ mora poleg pogojev za $G^0$ in $G^1$ veljati še 
+$G^2$: $R_xx = S_{uu} u_x^2 + 2S_{uv}u_x v_x + S_{vv} v_x^2 + S_u u_{xx} + S_v v_{xx}$ vzdolž $C$
 in tako dalje.
 %$G^0$: $R=S \circ f$ vzdolž $C$ \\
 %$G^1$: $R_x = S_u u_x + S_v v_x$ vzdolž $C$ ter pogoj za $G^0$\\
 %$G^2$: $R_xx = S_{uu} u_x^2 + 2S_{uv}u_x v_x + S_{vv} v_x^2 + S_u u_{xx} + S_v v_{xx}$ vzdolž $C$ ter pogoja za $G^0$ in $G^1$.\\
 \vdots
 
-Splošneje.\todo{grdo} Za geometrijsko zveznost stopnje $n$ \todo{(ali se tako reče?)}, kjer je $n\in \N_0$ velja naslednje:
+Splošneje,\todo{grdo} za geometrijsko zveznost stopnje $n$ \todo{(ali se tako reče?)}, kjer je $n\in \N_0$ velja naslednje:
 $$\frac{\partial^j R}{\partial x^j}\Bigr|_{\substack{C}}= \sum_{k=1}^j\sum_{h=0}^k A_{jkh}\frac{\partial^k S}{\partial u^h \partial v^{k-h}}\Bigr|_{\substack{C}}$$
 za vsak $j=0,1,\ldots,n$.
 Tu z $A_{jkh}$ označujemo koeficient
 $$A_{jkh}={k \choose h}\sum_{\substack{m_1+\cdots +m_k =j \\ m_1, \ldots, m_k >0}}
-\frac{j!}{k!m_1!\cdots m_k!} u_{x^{m_1}} \cdots u_{x^{m_h}} v_{x^{m_{h+1}}} \cdots v_{x^{m_k}}\Bigr|_{\substack{C}}$$
+\frac{j!}{k!m_1!\cdots m_k!} u_{x^{m_1}} \cdots u_{x^{m_h}} v_{x^{m_{h+1}}} \cdots v_{x^{m_k}}\Bigr|_{\substack{C}}.$$
+Z $u_x^{m_i}$ je označen $m_i$-ti delni odvod funkcije $u$ po $x$.
 \todo{ali je treba to grozo dokazati?}
 
+\todo{zdaj si pogledamo ekvivalentno/alternativno definicijo G zveznosti?}
 
-\todo{zdaj si pogledamo ekvivalentno/alternativno definicijo G zveznosti}
-\todo{definirajmo reparametrizacijo}
-
-Naj bodo $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ funkcije razreda $C^n$ ene spremenljivke. Definirajmo:\\
+Naj bodo $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ funkcije 
+razreda $C^n$ ene spremenljivke. Definirajmo:\\
 $$u(x,y) =  u_0 + \sum_{i=0}^n \frac{1}{i!}\alpha_i(y)(x-x_0)^i$$
 $$v(x,y) = y + \sum_{i=0}^n \frac{1}{i!}\beta_i(y)(x-x_0)^i$$
 
 \todo{ali moram povsod pisati, kam te funkcije slikajo? recimo paramterizacije in alfa, beta itd.}
 
-Opazimo:
-\begin{flalign*}
-  \frac{\partial^i u}{\partial x^i}(x_0,y)&=\alpha_i(y)&\\
-  \frac{\partial^i v}{\partial x^i}(x_0,y)&=\beta_i(y)\textrm{ za }i=1, \ldots, k.
-\end{flalign*}
+Opazimo, da za $i=1, \ldots, k$ velja
+$$\frac{\partial^i u}{\partial x^i}(x_0,y)=\alpha_i(y),$$
+$$\frac{\partial^i v}{\partial x^i}(x_0,y)=\beta_i(y).$$
+%\end{flalign*}
 
 Regularnost reparametrizacije:
 \begin{flalign*}

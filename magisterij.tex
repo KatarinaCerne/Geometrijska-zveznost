@@ -112,6 +112,7 @@
 \newcommand{\Q}{\mathbb Q}
 
 \newcommand{\todo}[1]{{\color{red}{#1}}}
+\newcommand{\nevem}[1]{{\color{blue}{#1}}}
 
 % \DeclareMathOperator{\tr}{tr}  % morda potrebuješ operator za sled ali kaj drugega?
 
@@ -316,8 +317,8 @@ the content and not the structure of your work.
 \todo{definicija regularne ploskve}
 \todo{razloži lokalnost?}
 
-%Naj bosta $R: \Omega_1 \subseteq \R^2 \rightarrow \R^3$ in 
-%$S: \Omega_2 \subseteq \R^2 \rightarrow \R^3$ regularni parametrizaciji
+\nevem{Naj bosta $R: \Omega_1 \subseteq \R^2 \rightarrow \R^3$ in 
+$S: \Omega_2 \subseteq \R^2 \rightarrow \R^3$ regularni parametrizaciji}
 
 \begin{definicija}
   Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. %povej da na C je y=v
@@ -343,10 +344,6 @@ pogoja za $G^0$ veljati še $R_x = S_u u_x + S_v v_x$ vzdolž $C$,
 za $G^2$ mora poleg pogojev za $G^0$ in $G^1$ veljati še 
 $G^2$: $R_xx = S_{uu} u_x^2 + 2S_{uv}u_x v_x + S_{vv} v_x^2 + S_u u_{xx} + S_v v_{xx}$ vzdolž $C$
 in tako dalje.
-%$G^0$: $R=S \circ f$ vzdolž $C$ \\
-%$G^1$: $R_x = S_u u_x + S_v v_x$ vzdolž $C$ ter pogoj za $G^0$\\
-%$G^2$: $R_xx = S_{uu} u_x^2 + 2S_{uv}u_x v_x + S_{vv} v_x^2 + S_u u_{xx} + S_v v_{xx}$ vzdolž $C$ ter pogoja za $G^0$ in $G^1$.\\
-\vdots
 
 Splošneje,\todo{grdo} za geometrijsko zveznost stopnje $n$ \todo{(ali se tako reče?)}, kjer je $n\in \N_0$ velja naslednje:
 $$\frac{\partial^j R}{\partial x^j}\Bigr|_{\substack{C}}= \sum_{k=1}^j\sum_{h=0}^k A_{jkh}\frac{\partial^k S}{\partial u^h \partial v^{k-h}}\Bigr|_{\substack{C}}$$
@@ -357,7 +354,11 @@ $$A_{jkh}={k \choose h}\sum_{\substack{m_1+\cdots +m_k =j \\ m_1, \ldots, m_k >0
 Z $u_x^{m_i}$ je označen $m_i$-ti delni odvod funkcije $u$ po $x$.
 \todo{ali je treba to grozo dokazati?}
 
-\todo{zdaj si pogledamo ekvivalentno/alternativno definicijo G zveznosti?}
+\todo{zdaj si pogledamo ekvivalentno/alternativno definicijo G zveznosti? s pomočjo junction functions?}
+\nevem{Z uvedbo funkcij $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ pridemo do nekoliko drugačne definicije
+geometrijske zveznosti.}
+\todo{funkcije $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ imenujemo
+junction/connection functions}
 
 Naj bodo $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ funkcije 
 razreda $C^n$ ene spremenljivke. Definirajmo:\\
@@ -371,6 +372,31 @@ $$\frac{\partial^i u}{\partial x^i}(x_0,y)=\alpha_i(y),$$
 $$\frac{\partial^i v}{\partial x^i}(x_0,y)=\beta_i(y).$$
 %\end{flalign*}
 
+\todo{povezava med tema dvema deloma? npr. junction functions lahko izberem skoraj
+povsem poljubno. zanje veljata le dva pogoja. Prvi pogoj sledi iz zahteve po regularnosti
+reparametrizacijske funkcije f}
+
+\todo{def. regularnosti?}
+\todo{kaj je lokalna regularnost?}
+
+Reparametrizacijska funkcija je regularna vzdolž $C$, če sta oba njena parcialna odvoda prvega 
+reda linearno neodvisna, torej če velja $\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) \neq 0$.
+
+Razpišimo oba odvoda reparametrizacijske funkcije $f(x,y)=(u(x,y),v(x,y))$ vzdolž krivulje $C$ 
+in ju skušajmo zapisati s pomočjo \todo{junction functions}. Za odvod po spremenljivki $x$ velja:
+
+$$\frac{\partial f}{\partial x}(x_0,y)=(\frac{\partial u}{\partial x}(x_0,y),\frac{\partial v}{\partial x}(x_0,y))=(\alpha_1(y),\beta_1(y)),$$
+pri čemer smo uporabili opazko \todo{sklic}.
+Če razpišemo odvod po spremenljivki $y$, pa dobimo:
+
+$$\frac{\partial f}{\partial y}(x_0,y)=(\frac{\partial u}{\partial y}(x_0,y),\frac{\partial v}{\partial y}(x_0,y))=(0,1).$$
+
+Vektorski produkt $\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y)$
+je torej enak 
+
+$$\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) = $$
+
+
 Regularnost reparametrizacije:
 \begin{flalign*}
   &\frac{\partial f}{\partial x}\times \frac{\partial f}{\partial y} \neq 0&\\
@@ -379,8 +405,7 @@ Regularnost reparametrizacije:
   &\Longrightarrow \alpha_1(y) \neq 0 \textrm{ vzdolž C}
 \end{flalign*}
 
-Z uvedbo funkcij $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ pridemo do nekoliko drugačne definicije
-geometrijske zveznosti. 
+
 
 \begin{definicija}
   Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. 

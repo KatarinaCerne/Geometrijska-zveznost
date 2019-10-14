@@ -372,18 +372,18 @@ $$\frac{\partial^i u}{\partial x^i}(x_0,y)=\alpha_i(y),$$
 $$\frac{\partial^i v}{\partial x^i}(x_0,y)=\beta_i(y).$$
 %\end{flalign*}
 
-\todo{povezava med tema dvema deloma? npr. junction functions lahko izberem skoraj
-povsem poljubno. zanje veljata le dva pogoja. Prvi pogoj sledi iz zahteve po regularnosti
-reparametrizacijske funkcije f}
+Stične funkcije lahko izberemo skoraj povsem poljubno. Upoštevati moramo le dva pogoja, 
+ki omejujeta izbiro funkcije $\alpha_1$. Prvi pogoj sledi iz zahteve po regularnosti 
+reparametrizacijske funkcije $f$.
 
 \todo{def. regularnosti?}
 \todo{kaj je lokalna regularnost?}
 
-Reparametrizacijska funkcija je regularna vzdolž $C$, če sta oba njena parcialna odvoda prvega 
+Reparametrizacijska funkcija $f$ je regularna vzdolž $C$, če sta oba njena parcialna odvoda prvega 
 reda linearno neodvisna, torej če velja $\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) \neq 0$.
 
 Razpišimo oba odvoda reparametrizacijske funkcije $f(x,y)=(u(x,y),v(x,y))$ vzdolž krivulje $C$ 
-in ju skušajmo zapisati s pomočjo \todo{junction functions}. Za odvod po spremenljivki $x$ velja:
+in ju skušajmo zapisati s pomočjo stičnih funkcij. Za odvod po spremenljivki $x$ velja:
 
 $$\frac{\partial f}{\partial x}(x_0,y)=(\frac{\partial u}{\partial x}(x_0,y),\frac{\partial v}{\partial x}(x_0,y))=(\alpha_1(y),\beta_1(y)),$$
 pri čemer smo uporabili opazko \todo{sklic}.
@@ -394,30 +394,36 @@ $$\frac{\partial f}{\partial y}(x_0,y)=(\frac{\partial u}{\partial y}(x_0,y),\fr
 Vektorski produkt $\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y)$
 je torej enak 
 
-$$\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) = $$
+$$\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) = 
+(\alpha_1(y),\beta_1(y))\times (0,1) = \alpha_1(y)$$
 
+Sledi, da je reparametrizacija regularna, natanko tedaj \todo{?}, ko za pripradajočo stično \todo{junction?} 
+funkcijo $\alpha_1$ velja $\alpha_1(y)\neq 0$ vzdolž stične krivulje $C$. 
+\todo{ali je potrben podatek "vzdolž krivulje C"?}
+\todo{to moraš nekako motivirati: zakaj si to sploh pogledamo? zato, ker to predstavlja 
+pogoj za $\alpha_1$?}
 
-Regularnost reparametrizacije:
-\begin{flalign*}
-  &\frac{\partial f}{\partial x}\times \frac{\partial f}{\partial y} \neq 0&\\
-  &\frac{\partial f}{\partial x}(x_0,y)=(\frac{\partial u}{\partial x}(x_0,y),\frac{\partial v}{\partial x}(x_0,y))=(\alpha_1(y),\beta_1(y))\\
-  &\frac{\partial f}{\partial y}(x_0,y)=(\frac{\partial u}{\partial y}(x_0,y),\frac{\partial v}{\partial y}(x_0,y))=(0,1)\\
-  &\Longrightarrow \alpha_1(y) \neq 0 \textrm{ vzdolž C}
-\end{flalign*}
+Drugo, na kar moramo paziti pri izbiri funkcije $\alpha_1$ pa je njen predznak. 
+Pri izbiri napačnega predznaka namreč lahko pride do stika v obliki "špice". 
+\todo{tega ne razumem čisto. tu bi bil potreben kakšen primer.}
 
-
+Vpeljava stičnih funkcij nas pripelje do nekoliko drugačne definicije geometrijske 
+zveznosti.
 
 \begin{definicija}
-  Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. 
-  Pravimo, da se $R$ in $S$ stikata z $G^n$-zveznostjo vzdolž krivulje $C$, če za vsako točko $b_0=C(y_0)$ obstajajo take funkcije razreda $C^n$ ene spremenljivke $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ , da $\alpha_1(y)\neq0$ in velja
+  Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, 
+  ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. 
+  Pravimo, da se $R$ in $S$ stikata z $G^n$-zveznostjo vzdolž krivulje $C$, 
+  če za vsako točko $b_0=C(y_0)$ obstajajo take funkcije razreda $C^n$ ene 
+  spremenljivke $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$, 
+  da $\alpha_1(y)\neq0$, pri čemer mora imeti $\alpha_1$ ustrezen predznak \todo{??}, 
+  in da velja
   $$\frac{\partial^j R}{\partial x^j}\Bigr|_{\substack{C}}= \sum_{k=1}^j\sum_{h=0}^k A_{jkh}\frac{\partial^k S}{\partial u^h \partial v^{k-h}}\Bigr|_{\substack{C}}$$
+  za vsak $j=0,1,\ldots,n$.
+  Tu z $A_{jkh}$ označujemo koeficient
   $$A_{jkh}={k \choose h}\sum_{\substack{m_1+\cdots +m_k =j \\ m_1, \ldots, m_k >0}}
   \frac{j!}{k!m_1!\cdots m_k!} \alpha_1 \cdots \alpha_{m_h} \beta_{m_{h+1}} \cdots \beta_{m_k}\Bigr|_{\substack{C}}$$
 \end{definicija}
-\todo{povej, da to velja za vsak j=1,...,n;}
-\todo{popravi za vrednosti funkcij (wut?);}
-\todo{$\alpha_j$, $\beta_j$ stične funkcije;}
-\todo{$\alpha_1(y)\neq 0$ in potrebno izbrati pravi predznak $\alpha_1$ - to še ugotovi in razloži}
 
 \begin{izrek} \todo{?? ta izrek samo pove, da so definicije enakovredne. dokaz? je v bistvu celo poglavje}
   Naj bosta $R(u_r,v_r)$ in $S(u_s,v_s)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(v)=R(u_{r0},v)=S(u_{s0},v)$. Ploskvi $R$ in $S$ sta $G^n$-zvezni vzdolž skupnega roba natanko tedaj ko obstajajo funkcije $p_i(v)$, $q_i(v)$, $i=1,\ldots, n$, da velja
@@ -442,8 +448,10 @@ Regularnost reparametrizacije:
 \section{$G^1$ zveznost}
 
 \todo{nekaj v stilu, da se bomo natančneje ukvarjali z G1 zveznostjo.}
+\todo{lahko povem, da je to zveznost tangentnih ravnin oz. zveznost enotskih normal in da si 
+bomo ogledali, kako do tega pridemo.}
 
-\todo{nekaj v stilu: imamo ploskvi R, S, ki ustrezata definiciji. zanju veljajo naslednji pogoji:}
+Imejmo ploskvi $R$ in $S$, ki se stikata z geometrijsko zveznostjo $G^1$.
 \begin{flalign*}
   &R(x_0,y)=S(u_0,y)&\\ \todo{povej da Ry = Sy vzdolž C!, zato nam ni treba tega pogoja posebej poudarjati}
   &R_x(x_0,y)=u_x(x_0,y)S_u(u_0,y)+v_x(x_0,y)S_v(u_0,y)\\ \todo{oziroma kot smo prej dobili...obstajata alfa1 in beta1, kjer alfa1 ni 0 in ustreznega predznaka}

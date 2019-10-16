@@ -331,6 +331,7 @@ Zaradi stikanja ploskev v krivulji $C$ so delni odvodi parametrizacij
 po spremenljivki $y$ vzdolž krivulje $C$ enaki, zato je dovolj, da pri obravnavi 
 geometrijske zveznosti dveh ploskev opazujemo le delne odvode po 
 spremenljivki $x$.
+\todo{ali je to dovolj razloženo? razloži kot v poglavju G1?}
 \todo{dodati sliko?}
 Te delne odvode imenujemo \todo{??crossboundary derivatives}.
 
@@ -339,6 +340,7 @@ Oglejmo si pogoje za različne stopnje geometrijske zveznosti, ki nam jih ta def
 funkcija $f$ kot v definiciji \todo{sklic}, 
 je za geometrijsko zveznost razreda $G^0$ med njima dovolj pogoj 
 $R=S \circ f$ vzdolž $C$. 
+\todo{oziroma kar R=S vzdolž C??}
 Da imamo na stiku geometrijsko zveznost stopnje $G^1$, mora poleg 
 pogoja za $G^0$ veljati še $R_x = S_u u_x + S_v v_x$ vzdolž $C$, 
 za $G^2$ mora poleg pogojev za $G^0$ in $G^1$ veljati še 
@@ -353,6 +355,21 @@ $$A_{jkh}={k \choose h}\sum_{\substack{m_1+\cdots +m_k =j \\ m_1, \ldots, m_k >0
 \frac{j!}{k!m_1!\cdots m_k!} u_{x^{m_1}} \cdots u_{x^{m_h}} v_{x^{m_{h+1}}} \cdots v_{x^{m_k}}\Bigr|_{\substack{C}}.$$
 Z $u_x^{m_i}$ je označen $m_i$-ti delni odvod funkcije $u$ po $x$.
 \todo{ali je treba to grozo dokazati?}
+
+-----------------------------------------------------------------------------
+
+\todo{kaj je s to lemo?}
+\begin{lema}\todo{?? ali je dokaz tega potreben?}
+  Naj bo $f(u,v)$ funkcija razreda $C^n$ in $u(t)$ in $v(t)$ reparametrizaciji razreda $C^n$. Potem
+  \begin{align*}
+  \frac{d^k f}{dt^k}=& \sum_{i=1}^k\sum_{|\mathbf{m_i}|=k} A_{\mathbf{m_i}}^k \sum_{h=0}^i {i \choose h} u^{(m_1)}\cdots u^{(m_h)}(v) v^{(m_{h+1})}\cdots v^{(m_i)} \\
+  &\cdot\frac{\partial^i f}{\partial u_r^h \partial v_r^{i-h}},
+  \end{align*}
+  kjer $k=1,\ldots,n$ ter\\
+  $\mathbf{m_i} = (m1,m2,\ldots,m_i)$, $|\mathbf{m_i}|=m_1+m_2+\cdots+m_i$ in $A_{\mathbf{m_i}}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
+\end{lema}
+
+------------------------------------------------------------------
 
 \todo{zdaj si pogledamo ekvivalentno/alternativno definicijo G zveznosti? s pomočjo junction functions?}
 \nevem{Z uvedbo funkcij $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ pridemo do nekoliko drugačne definicije
@@ -425,7 +442,10 @@ zveznosti.
   \frac{j!}{k!m_1!\cdots m_k!} \alpha_1 \cdots \alpha_{m_h} \beta_{m_{h+1}} \cdots \beta_{m_k}\Bigr|_{\substack{C}}$$
 \end{definicija}
 
-\begin{izrek} \todo{?? ta izrek samo pove, da so definicije enakovredne. dokaz? je v bistvu celo poglavje}
+-----------------------------------------------------
+
+\todo{kaj je s tem izrekom?}
+\begin{izrek}
   Naj bosta $R(u_r,v_r)$ in $S(u_s,v_s)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(v)=R(u_{r0},v)=S(u_{s0},v)$. Ploskvi $R$ in $S$ sta $G^n$-zvezni vzdolž skupnega roba natanko tedaj ko obstajajo funkcije $p_i(v)$, $q_i(v)$, $i=1,\ldots, n$, da velja
   \begin{align*}
   \frac{\partial^k S}{\partial u_s^k}\Bigr|_{\substack{C}}=& \sum_{i=1}^k\sum_{|\mathbf{m_i}|=k} A_{\mathbf{m_i}}^k \sum_{h=0}^i {i \choose h} p_{m_1}(v) \cdots p_{m_h}(v) q_{m_{h+1}}(v) \cdots q_{m_i} \\
@@ -435,15 +455,7 @@ zveznosti.
   $\mathbf{m_i} = (m1,m2,\ldots,m_i)$, $|\mathbf{m_i}|=m_1+m_2+\cdots+m_i$ in $A_{\mathbf{m_i}}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
 \end{izrek}
 
-\begin{lema}\todo{?? ali je dokaz tega potreben?}
-  Naj bo $f(u,v)$ funkcija razreda $C^n$ in $u(t)$ in $v(t)$ reparametrizaciji razreda $C^n$. Potem
-  \begin{align*}
-  \frac{d^k f}{dt^k}=& \sum_{i=1}^k\sum_{|\mathbf{m_i}|=k} A_{\mathbf{m_i}}^k \sum_{h=0}^i {i \choose h} u^{(m_1)}\cdots u^{(m_h)}(v) v^{(m_{h+1})}\cdots v^{(m_i)} \\
-  &\cdot\frac{\partial^i f}{\partial u_r^h \partial v_r^{i-h}},
-  \end{align*}
-  kjer $k=1,\ldots,n$ ter\\
-  $\mathbf{m_i} = (m1,m2,\ldots,m_i)$, $|\mathbf{m_i}|=m_1+m_2+\cdots+m_i$ in $A_{\mathbf{m_i}}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
-\end{lema}
+-----------------------------------------------------------------
 
 \section{$G^1$ zveznost}
 
@@ -451,14 +463,23 @@ zveznosti.
 \todo{lahko povem, da je to zveznost tangentnih ravnin oz. zveznost enotskih normal in da si 
 bomo ogledali, kako do tega pridemo.}
 
-Imejmo ploskvi $R$ in $S$, ki se stikata z geometrijsko zveznostjo $G^1$.
-\begin{flalign*}
-  &R(x_0,y)=S(u_0,y)&\\ \todo{povej da Ry = Sy vzdolž C!, zato nam ni treba tega pogoja posebej poudarjati}
-  &R_x(x_0,y)=u_x(x_0,y)S_u(u_0,y)+v_x(x_0,y)S_v(u_0,y)\\ \todo{oziroma kot smo prej dobili...obstajata alfa1 in beta1, kjer alfa1 ni 0 in ustreznega predznaka}
-  &R_x(x_0,y)=\alpha_1(y) S_u(u_0,y)+\beta_1(y)S_v(u_0,y)\\ 
-  \todo{kako to geometrijsko interpretiramo: vidimo, da so Rx, Su, Sv linearno odvisni v vsaki točki y tj. v vsaki točki del iste tangentne ravnine;}
-  \todo{na mestu najbrž kakšna slika}
-\end{flalign*}
+Imejmo ploskvi $R(x,y)$ in $S(u,v)$, ki se v krivulji $C(y) = R(x_0,y) = S(u_0,y)$ 
+stikata z geometrijsko zveznostjo $G^1$.  
+Sledi, da je $R_y(x_0,y) = S_y(x_0,y)$. Kot smo že videli \todo{ugh} v poglavju \todo{sklic}, 
+nam je zato potrebno opazovati zgolj odvode v smeri $x$.
+
+Ker je stik obeh ploskev v $C$ $G^1$-zvezen, po definiciji \todo{sklic} obstajata 
+funkciji $\alpha_1$ in $\beta_1$, kjer je $\alpha_1 \neq 0$ in ima ustrezen predznak, da velja:
+
+$$R_x(x_0,y)=\alpha_1(y) S_u(u_0,y)+\beta_1(y)S_v(u_0,y)$$
+
+\todo{kako to geometrijsko interpretiramo: vidimo, da so Rx, Su, Sv linearno odvisni v vsaki točki y tj. v vsaki točki del iste tangentne ravnine;}
+
+\nevem{v predstavitvi sem šla tako: $R(x_0,y)=S(u_0,y)$,  
+  $R_x(x_0,y)=u_x(x_0,y)S_u(u_0,y)+v_x(x_0,y)S_v(u_0,y)$,  
+  $R_x(x_0,y)=\alpha_1(y) S_u(u_0,y)+\beta_1(y)S_v(u_0,y)$}  
+\todo{na mestu najbrž kakšna slika}
+
 \todo{vidimo, da se na skupnem robu ujemata enotski normali;}
 \todo{slika?;}
 \todo{G1 zveznosti rečemo tudi zveznost tangentnih ravnin oz zveznost enotskih normal}

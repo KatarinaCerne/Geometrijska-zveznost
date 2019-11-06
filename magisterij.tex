@@ -331,11 +331,12 @@ Zaradi stikanja ploskev v krivulji $C$ so delni odvodi parametrizacij
 po spremenljivki $y$ vzdolž krivulje $C$ enaki, zato je dovolj, da pri obravnavi 
 geometrijske zveznosti dveh ploskev opazujemo le delne odvode po 
 spremenljivki $x$.
-\todo{ali je to dovolj razloženo? razloži kot v poglavju G1?}
+\todo{ali je to dovolj razloženo? najbrž moram dodati y=v??!! (glej vir, dokaz izreka1)}
 \todo{dodati sliko?}
 Te delne odvode imenujemo \todo{??crossboundary derivatives}.
 
 Oglejmo si pogoje za različne stopnje geometrijske zveznosti, ki nam jih ta definicija da. \todo{to še ni dokončno. zelo grdo}
+\todo{ali naj to naredim kot primer?}
 Če so parametrizaciji $R$ in $S$, krivulja $C$ in reparametrizacijska 
 funkcija $f$ kot v definiciji \todo{sklic}, 
 je za geometrijsko zveznost razreda $G^0$ med njima dovolj pogoj 
@@ -368,6 +369,9 @@ Z $u_x^{m_i}$ je označen $m_i$-ti delni odvod funkcije $u$ po $x$.
   kjer $k=1,\ldots,n$ ter\\
   $\mathbf{m_i} = (m1,m2,\ldots,m_i)$, $|\mathbf{m_i}|=m_1+m_2+\cdots+m_i$ in $A_{\mathbf{m_i}}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
 \end{lema}
+
+\todo{preoblikuj to lemo, da bo koeficient A kot zgoraj. }
+\todo{dokaz najdeš nekje k piše v viru}
 
 ------------------------------------------------------------------
 
@@ -441,6 +445,7 @@ zveznosti.
   $$A_{jkh}={k \choose h}\sum_{\substack{m_1+\cdots +m_k =j \\ m_1, \ldots, m_k >0}}
   \frac{j!}{k!m_1!\cdots m_k!} \alpha_1 \cdots \alpha_{m_h} \beta_{m_{h+1}} \cdots \beta_{m_k}\Bigr|_{\substack{C}}$$
 \end{definicija}
+\todo{popravi A, indekse pri alfah in betah}
 
 -----------------------------------------------------
 
@@ -455,6 +460,9 @@ zveznosti.
   $\mathbf{m_i} = (m1,m2,\ldots,m_i)$, $|\mathbf{m_i}|=m_1+m_2+\cdots+m_i$ in $A_{\mathbf{m_i}}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
 \end{izrek}
 
+\todo{ta izrek je ubistvu isto kot ekvivalentna definicija. 
+ali je bolje, da ekvivalentno definicijo zapišem kot izrek? 
+pomembno!!: kaj so potrebni in kaj zadostni pogoji? kaj sledi iz česa?}
 -----------------------------------------------------------------
 
 \section{$G^1$ zveznost}
@@ -511,7 +519,7 @@ izberemo polinome, \todo{izberemo? ali niso točno določeni?} kar nam zelo olaj
 konstrukcijo geometrijsko zveznih ploskev. 
 
 \todo{najbrž lahko poveš, da se bomo v naslednjih poglavjih ukvarjali z izbiro 
-teh polinomskih krivulj}
+teh polinomov}
 
 \todo{mogoče moraš tu napisati, kako se pride do teh polinomov: tiste prve komponente. 
 ampak tega ne razumem.}
@@ -549,6 +557,8 @@ $\Delta^{0,s} \mathbf{b}_{i,j} = \Delta^{0,s-1} \mathbf{b}_{i,j+1}-\Delta^{0,s-1
 %posebej lahko napišeš (ali dodaš) odvode 1. stopnje
 %dodaj pogoje gladkosti za C1 ?
 %dodaj trikotne krpe
+
+\section{$G^n$-zveznost med dvema Bézierjevima ploskvama}
 
 \section{Primeri konstrukcij $G^1$ ploskev}
 \begin{frame}

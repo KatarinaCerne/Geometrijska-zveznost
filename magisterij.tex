@@ -558,7 +558,128 @@ $\Delta^{0,s} \mathbf{b}_{i,j} = \Delta^{0,s-1} \mathbf{b}_{i,j+1}-\Delta^{0,s-1
 %dodaj pogoje gladkosti za C1 ?
 %dodaj trikotne krpe
 
-\section{$G^n$-zveznost med dvema Bézierjevima ploskvama}
+\section{$G^n$-zveznost med dvema Bézierjevima\\ ploskvama}
+
+\todo{Nekaj v smislu, da sedaj prevedemo že dobljene splošne pogoje na pogoje za 
+bezierove ploskve oz. kako ti pogoji izgledajo za te ploskve.}
+
+\todo{izkaže se, da za funkcije alfa in beta v splošni definiciji lahko vzamemo polinome, 
+ker gre pri bezierovih ploskvah tudi za polinomske parametrične ploskve.}
+
+Imejmo \todo{polinomski?} Bézierjevi ploskvi $\textbf{R}$ in $\textbf{S}$, podani na 
+naslednji način: 
+$$\textbf{R}(x,y)=\sum_{i=0}^{m_r}\sum_{j=0}^{n_r}\textbf{P}_{ij}B_i^{m_r}B_j^{n_r}$$
+$$\textbf{S}(u,v)=\sum_{i=0}^{m_s}\sum_{j=0}^{n_s}\textbf{Q}_{ij}B_i^{m_s}B_j^{n_s},$$
+kjer so $\{\textbf{P}_{i,j}, i=1,\ldots, m_r, j=1, \ldots, n_r\}$ in 
+$\{\textbf{Q}_{i,j}, i=1, \ldots, m_s, j=1, \ldots, n_s\}$ kontrolne točke ploskev 
+$\textbf{R}$ in $\textbf{S}$, $x, y, u$ in $v$ pa parametri na intervalu $[0,1]$. \todo{grdo}
+
+Ploskvi $\textbf{R}$ in $\textbf{S}$ se stikata v skupni \todo{robni?} krivulji
+$\textbf{C}(v)=\textbf{R}(0,v)=\textbf{S}(0,v)$
+\todo{pojasni, zakaj lahko to predpostavimo. zakaj?? ker lahko parametriziramo? poglej.} 
+\todo{pojasni še, kako je s tem, da sta ploskvi prav obrnjeni, da ni špice} 
+Robno krivuljo $\textbf{C}$ zapišemo kot Bézierjevo krivuljo na naslednji način:
+$$\textbf{C}=\sum_{i=0}^{n_c}\textbf{Z}_i B_i^{n_c},$$
+kjer so $\{\textbf{Z}_i, i=1,\ldots n_c\}$ njene kontrolne točke. Stopnja $n_c$ krivulje 
+$\textbf{C}$ ni nujno enaka stopnjama $n_r$ ali $n_s$, velja pa, da je $n_c \leq \min(n_r,n_s)$. 
+\todo{ali moram povedati, zakaj? ker ne vem}
+
+Naj bosta ploskvi $\textbf{R}$ in $\textbf{S}$ regularni vzdolž krivulje $\textbf{C}$
+\todo{da zadostimo pogoju iz 
+definicije geometrijske zveznosti}, torej naj bodo normale na ploskvi vzdolž krivulje 
+$\textbf{C}$ neničelne:
+$$N_r=\bigg(\frac{\partial \textbf{R}}{\partial x}\times \frac{\partial \textbf{R}}{\partial y}\bigg)\bigg|_{\textbf{C}}\neq 0$$
+$$N_s=\bigg(\frac{\partial \textbf{S}}{\partial u}\times \frac{\partial \textbf{S}}{\partial v}\bigg)\bigg|_{\textbf{C}}\neq 0$$
+\todo{Nr(y)?}
+
+O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek: 
+\todo{ekvivalenten izreku iz prejšnjega poglavja}
+
+\begin{izrek}
+  Naj bosta $\textbf{R}$ in $\textbf{S}$ zgoraj definirani \todo{to ok?} Bézierovi 
+  ploskvi, ki se stikata v robni krivulji $\textbf{C}$ (kot zgoraj). Stik ploskev je 
+  $G^n$-zvezen natanko tedaj, ko obstajajo polinomi \todo{vir:polinomske funkcije} 
+  $D(y)$, $E_i(y)$ in $F_i(y)$, da 
+  velja:
+  \begin{align*}
+    D^{2k-1}(y)\frac{\partial^k\textbf{S}}{\partial u^k}\bigg|_{\textbf{C}} = &
+  \sum_{i=0}^k \sum_{|m_i|=k} A_{m_i}^k \sum_{h=0}^i {i\choose h} D^{i-1}(y)E_{m_1}(v)
+  \cdots E_{m_h}(y) \\
+  &\cdot F_{m_{h+1}}(y)\cdots F_{m_i}(y) \frac{\partial^i \textbf{R}}{\partial x^h \partial y^{i-h}},
+  \end{align*}
+  kjer je $i=1, \ldots n$ \todo{vir: k ??} in $k=1, \ldots n$. Z $A_{m_i}^k$ zopet označujemo 
+  $A_{\mathbf{m_i}}^k = \frac{k!}{i!m_1!\cdots m_i!}$ in $|\mathbf{m_i}|=m_1+m_2+\cdots+m_i$.
+  Velja še $D(y)E_1(y)\neq 0$ za $y\in [0,1]$, za stopnje polinomov pa velja:\\
+  $st(D)\leq n_r + n_c -1,$\\
+  $st(E_i)\leq (2i-2)n_r + in_s +in_c -2i +1$ in\\
+  $st(F_i)\leq (2i-1)n_r +in_s + (i-1)n_c -2i +1.$
+\end{izrek}
+
+\begin{proof}
+  Najprej predpostavljajmo, da obstajajo polinomi $D$, $E_i$ in $F_i$, $i=1, \ldots n$, 
+  ki ustrezajo enačbi \todo{sklic} in ostalim pogojem v izreku. Pokazati hočemo, da 
+  od tod sledi geometrijska zveznost ploskev $\textbf{R}$ in $\textbf{S}$. V ta namen 
+  bomo uporabili izrek \todo{sklic izrek z alfami in betami}. 
+  
+  Preoblikujmo enačbo 
+  \begin{align*}
+    D^{2k-1}(y)\frac{\partial^k\textbf{S}}{\partial u^k}\bigg|_{\textbf{C}} = &
+    \sum_{i=0}^k \sum_{|m_i|=k} A_{m_i}^k \sum_{h=0}^i {i\choose h} D^{i-1}(y)E_{m_1}(v)
+    \cdots E_{m_h}(y) \\
+    &\cdot F_{m_{h+1}}(y)\cdots F_{m_i}(y) \frac{\partial^i \textbf{R}}{\partial x^h \partial y^{i-h}}.
+  \end{align*}
+  Če celotno enačbo delimo z $D^{2k-1}$ (predpostavka, da $D(y)E_1(y)\neq 0$ na $[0,1]$, zagotavlja neničelnost polinoma $D$ na $[0,1]$), 
+  dobimo 
+  \begin{align*}
+    \frac{\partial^k\textbf{S}}{\partial u^k}\bigg|_{\textbf{C}} = &
+    \sum_{i=0}^k \sum_{|m_i|=k} A_{m_i}^k \sum_{h=0}^i {i\choose h} D^{i-2k}(y)E_{m_1}(v)
+    \cdots E_{m_h}(y) \\
+    &\cdot F_{m_{h+1}}(y)\cdots F_{m_i}(y) \frac{\partial^i \textbf{R}}{\partial x^h \partial y^{i-h}}.
+  \end{align*}
+  Funkcijo $D^{2k-i}$ lahko zapišemo kot produkt \\
+  $D^{2k-i}(y)=D^{2m_1-1}(y)D^{2m_2-1}(y)\cdots D^{2m_h-1}(y) D^{2m_{h+1}}(y)\cdots D^{2m_i-1}(y)$.
+  
+  \todo{saj je |mi|=k}
+
+  Dobljeno vstavimo v enačbo \todo{sklic}:
+  \begin{align*}
+    \frac{\partial^k\textbf{S}}{\partial u^k}\bigg|_{\textbf{C}} = &
+    \sum_{i=0}^k \sum_{|m_i|=k} A_{m_i}^k \sum_{h=0}^i {i\choose h} \frac{E_{m_1}(v)}{D^{2m_1-1}(y)}
+    \cdots \frac{E_{m_h}(y)}{D^{2m_h-1}(y)} \\
+    &\cdot \frac{F_{m_{h+1}}(y)}{D^{2m_{h+1}-1}(y)}\cdots \frac{F_{m_i}(y)}{D^{2m_i-1}(y)} \frac{\partial^i \textbf{R}}{\partial x^h \partial y^{i-h}}.
+  \end{align*}
+
+  Definirajmo
+  $$\alpha_i(y)=\frac{E_i(y)}{D^{2i-1}(y)}\textrm{ in }\beta_i(y) = \frac{F_i(y)}{D^{2i-1}(y)},$$
+  kjer je $i=1, \ldots, n$. Če to vstavimo v zgornjo enačbo \todo{sklic? to je zelo grdo}, 
+  dobimo enačbo kot v izreku \todo{sklic}. Iz izreka \todo{sklic} torej sledi, da se 
+  ploskvi $\textbf{R}$ in $\textbf{S}$ stikata z geometrijsko zveznostjo $G^n$. S tem smo 
+  dokazali \todo{eno smer ekvivalence ? kako se to lepo reče}
+
+  Sedaj dokažimo še \todo{drugo smer ekvivalence v izreku}. Predpostavimo, da se ploskvi 
+  $\textbf{R}$ in $\textbf{S}$, definirani kot zgoraj \todo{sklic} stikata v robni krivulji 
+  $\textbf{C}$ z geometrijsko zveznostjo $G^n$. Pokazati hočemo, da od tod sledi obstoj 
+  polinomov $D$, $E_i$ in $F_i$ z lastnostmi kot v izreku.
+  Dokaza se lotimo z indukcijo po $n$. \todo{vir:k}
+
+  Naj bo najprej $n=1$. Ker je slik ploskev $\textbf{R}$ in $\textbf{S}$ $G^1$-zvezen, 
+  po izreku \todo{sklic} obstajata funkciji $\alpha_1(y)$ in $\beta_1(y)$, ki zadoščata 
+  enačbi 
+  $$\frac{\partial \textbf{S}}{\partial u}\bigg|_{\textbf{C}}(y) = 
+  \alpha_1(y)\frac{\partial \textbf{R}}{\partial x}\bigg|_{textbf{C}} + 
+  \beta_1(y) \frac{\partial \textbf{R}}{\partial y}\bigg|_{\textbf{C}}.$$
+
+  Dobljeno enačbo \todo{sklic?} z desne vektorsko množimo z $\frac{\partial \textbf{R}}{\partial y}$. 
+  Dobimo:
+  $$\frac{\partial \textbf{S}}{\partial u} \times \frac{\partial \textbf{R}}{\partial y}\bigg|_{\textbf{C}}(y) = 
+  \frac{\partial \textbf{S}}{\partial u} \times \frac{\partial \textbf{S}}{\partial v}\bigg|_{\textbf{C}}(y) = 
+  \alpha_1(y)\frac{\partial \textbf{R}}{\partial x}\times \frac{\partial \textbf{R}}{\partial y}\bigg|_{textbf{C}}.$$
+  V poglavju \todo{sklic} smo namreč že videli, da je 
+  $\frac{\partial \textbf{R}}{\partial y}\bigg|_{\textbf{C}}=\frac{\partial \textbf{S}}{\partial v}\bigg|_{\textbf{C}}=\textbf{C'}$.
+\end{proof}
+
+
+
 
 \section{Primeri konstrukcij $G^1$ ploskev}
 \begin{frame}

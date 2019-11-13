@@ -706,23 +706,46 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   $st(\ddd{W})\leq n_r + n_s$.
 
   Videli smo že \todo{sklic}, da sta zaradi predpostavke o regularnosti ploskev 
-  $\ddd{R}$ in $\ddd{S}$ funkciji $\ddd{N}_r(y)$ in $\ddd{N}_s(y)$ neničelni. 
-  Ker je $\ddd{N}_r(y)$ neničelna, mora biti vsaj ena izmed njenih koordinat 
+  $\ddd{R}$ in $\ddd{S}$ funkciji $\ddd{N}_r(y)$ in $\ddd{N}_s(y)$ neničelni \todo{vektorski funkciji}. 
+  \todo{ oziroma za vsak v na [0,1] sta to vektorja, različna od 0}
+  Ker je $\ddd{N}_r(y)$ neničelna, mora biti vsaj ena izmed njenih koordinatnih funkcij  
   neničeln polinom. Brez škode za splošnost predpostavimo, da je neničelna $x$-koordinata, 
   torej polinom $N_{rx}$. 
+  %\nevem{za vsak v na [0,1] mora biti vsaj ena od treh 
+  %koordinatnih funkcij različna od 0. bšs je to N_rx}
   Če enačbe iz \todo{sklic} razpišemo po koordinatah, za $x$-koordinato dobimo 
   $$N_{sx}(y)=\alpha_1(y)N_{rx}(y)$$
   in $$W_x(y)=\beta_1(y)N_{rx}(y),$$
   kjer je $N_{sx}$ $x$-koordinata funkcije $\ddd{N}_s$, $W_x$ pa $x$-koordinata 
   funkcije $\ddd{W}$.
 
-  Sedaj zapišimo polinom $N_{rx}$ kot produkt dveh polinomov: 
-  $N_{rx}(y)=U(y)D(y)$, kjer $U(y)$ vsebuje vse linearne delitelje polinoma 
-  $N_{rx}$, $D(y)$ pa je neničeln polinom na intervalu $[0,1]$. Torej lahko pišemo 
-  $$N_{sx}(y)=U(y)E_1(y)$$
-  in $$W_x(y)=U(y)F_1,$$
-  kjer je $E_1(y)=D(y)\alpha_1(y)$ in $F_1(y)=D(y)\beta_1(y)$.
-  
+  Iz zgornjih enačb lahko vidimo, da so vse realne ničle polinoma $N_{rx}(y)$ na intervalu $[0,1]$ 
+  tudi ničle polinomov $N_{sx}(y)$ in $W_x(y)$, torej da polinom $U(y)$, ki je zgrajen 
+  kot produkt vseh linearnih faktorjev v polinomskem razcepu polinoma $N_{rx}(y)$, deli 
+  polinoma $N_{sx}(y)$ in $W_x(y)$. Da to res drži, lahko vidimo na naslednji način.
+  Zapišimo $N_{rx}(y) = U(y)D(y)$, kjer je $U(y)$ produkt vseh linearnih faktorjev, 
+  $D(y)$ pa produkt vseh nelinearnih faktorjev v polinomskem razcepu polinoma $N_{rx}(y)$. 
+  Predpostavimo, da $U(y)$ ne deli polinoma $N_{sx}(y)$. Ker je $N_{sx}(y)=\alpha_1(y)U(y)D(y)$, 
+  je to mogoče le, če je $\alpha_1(y)$ racionalna funkcija, katere imenovalec deli polinom $U(y)$. 
+  Funkcija $\alpha_1(y)$ ima torej na intervalu $[0,1]$ pol. Ker velja $\ddd{N}_s(y)=\alpha_1(y)\ddd{N}_r(y)$
+  in so vse koordinatne funkcije \todo{funkcij} $\ddd{N}_s(y)$ in $\ddd{N}_r(y)$ polinomi, 
+  mora veljati, da imenovalec funkcije $\alpha_1(y)$ deli $N_{rx}(y)$, $N_{ry}(y)$ in 
+  $N_{rz}(y)$. Funkcija $\alpha_1(y)$ ima pol, označimo ga z $y_0$. Sledi, da je $y_0$ 
+  ničla polinomov $N_{rx}(y)$, $N_{ry}(y)$ in $N_{rz}(y)$, in zato je $\ddd{N}_r(y_0)=0$, 
+  kar pa je v nasprotju s predpostavko o regularnosti ploskve $\ddd{R}$. Torej mora polinom 
+  $U(y)$ deliti polinom $N_{sx}(y)$. Z enakimi sklepi trditev pokažemo še za polinom $W_x(y)$.
+
+  Polinom $N_{rx}$ sedaj znova zapišimo kot produkt $N_{rx}(y) = U(y)D(y)$, kjer sta 
+  polinoma $U(y)$ in $D(y)$ definirana kot zgoraj. Torej velja 
+  $$N_{sx}(y)=U(y)\alpha_1(y)D(y)$$ in $$W_x(y)=U(y)\beta_1(y)D(y).$$
+  Naj bo $E_1(y)=\alpha_1(y)D(y)$ in $F_1(y)=\beta_1(y)D(y)$. Pokazati moramo, da sta 
+  dobljeni funkciji $E_1$ in $F_1$ polinoma. Ker sta funkciji $N_{sx}(y)$ in $W_x(y)$ 
+  polinoma, morata imenovalca funkcij $\alpha_1$ in $\beta_1$ deliti ali polinom $U$ ali 
+  polinom $D$. Videli smo že, da $\alpha_1$ in $\beta_1$ nimata polov na intervalu 
+  $[0,1]$, torej njuna imenovalca ne delita polinoma $U$. Sledi, da morata njuna imenovalca 
+  deliti polinom $D$, s čimer smo pokazali, da sta $E_1$ in $F_1$ res polinoma.
+
+
 
 \end{proof}
 

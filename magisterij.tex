@@ -114,6 +114,8 @@
 \newcommand{\todo}[1]{{\color{red}{#1}}}
 \newcommand{\nevem}[1]{{\color{blue}{#1}}}
 
+\newcommand{\ddd}[1]{\textbf{#1}}
+
 % \DeclareMathOperator{\tr}{tr}  % morda potrebuješ operator za sled ali kaj drugega?
 
 % bold matematika znotraj \textbf{ }, tudi v naslovih, kot \omega spodaj
@@ -676,6 +678,52 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   \alpha_1(y)\frac{\partial \textbf{R}}{\partial x}\times \frac{\partial \textbf{R}}{\partial y}\bigg|_{textbf{C}}.$$
   V poglavju \todo{sklic} smo namreč že videli, da je 
   $\frac{\partial \textbf{R}}{\partial y}\bigg|_{\textbf{C}}=\frac{\partial \textbf{S}}{\partial v}\bigg|_{\textbf{C}}=\textbf{C'}$.
+
+  Enačbo \todo{sklic} sedaj z desne vektorsko množimo še z $\frac{\partial \ddd{R}}{\partial x}$ 
+  in dobimo:
+  $$\frac{\partial \ddd{S}}{\partial u}|_{\ddd{C}}(y)\times 
+  \frac{\partial \ddd{R}}{\partial x}(y) = \beta_1(y) \frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}
+  \times \frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}$$
+
+  Z $\ddd{W}(s)$ označimo vektor \todo{vektorsko funkcijo?} 
+  $\ddd{W}(y)=\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}\times \frac{\partial \ddd{S}}{\partial u}|_{\ddd{C}}$, 
+  %z $\ddd{N}_r$ in $\ddd{N}_s$ pa normalo na ploskev $\ddd{R}$ oziroma $\ddd{S}$ v neki točki 
+  %na mejni \todo{?} ploskvi $\ddd{C}$, torej 
+  %$\ddd{N}_r = \bigg(\frac{\partial \ddd{R}}{\partial x} \times \frac{\partial \ddd{R}}{\partial y}\bigg)\bigg|_{\ddd{C}}$ 
+  %in $\ddd{N}_s = \bigg(\frac{\partial \ddd{S}}{\partial u} \times \frac{\partial \ddd{S}}{\partial v}\bigg)\bigg|_{\ddd{C}}$.
+
+  Prej dobljene enačbe \todo{sklic} torej zapišemo na naslednji način: 
+  $$\ddd{N}_s(y)=\alpha_1(y)\ddd{N}_r(y)$$
+  in $$\ddd{W}(y)=\beta_1(y)\ddd{N}_r(y).$$
+
+  Stopnja $\frac{\partial\ddd{R}}{\partial y}|_{\ddd{C}}$ je največ $n_c-1$, 
+  saj je $\frac{\partial\ddd{R}}{\partial y}|_{\ddd{C}}=\ddd{C}'$. Enako velja za 
+  $\frac{\partial \ddd{S}}{\partial v}|_{\ddd{C}}$. Stopnja $\frac{\partial\ddd{R}}{\partial x}|_{\ddd{C}}$ 
+  je manjša ali enaka $n_r$, stopnja $\frac{\partial\ddd{S}}{\partial u}|_{\ddd{C}}$ 
+  pa manjša ali enaka $n_s$. \todo{razloži?}
+  Od tod in iz enačb \todo{sklic} sledi
+  $st(\ddd{N}_r)\leq n_r + n_s -1$, $st(\ddd{N}_s)\leq n_s + n_c -1$ in 
+  $st(\ddd{W})\leq n_r + n_s$.
+
+  Videli smo že \todo{sklic}, da sta zaradi predpostavke o regularnosti ploskev 
+  $\ddd{R}$ in $\ddd{S}$ funkciji $\ddd{N}_r(y)$ in $\ddd{N}_s(y)$ neničelni. 
+  Ker je $\ddd{N}_r(y)$ neničelna, mora biti vsaj ena izmed njenih koordinat 
+  neničeln polinom. Brez škode za splošnost predpostavimo, da je neničelna $x$-koordinata, 
+  torej polinom $N_{rx}$. 
+  Če enačbe iz \todo{sklic} razpišemo po koordinatah, za $x$-koordinato dobimo 
+  $$N_{sx}(y)=\alpha_1(y)N_{rx}(y)$$
+  in $$W_x(y)=\beta_1(y)N_{rx}(y),$$
+  kjer je $N_{sx}$ $x$-koordinata funkcije $\ddd{N}_s$, $W_x$ pa $x$-koordinata 
+  funkcije $\ddd{W}$.
+
+  Sedaj zapišimo polinom $N_{rx}$ kot produkt dveh polinomov: 
+  $N_{rx}(y)=U(y)D(y)$, kjer $U(y)$ vsebuje vse linearne delitelje polinoma 
+  $N_{rx}$, $D(y)$ pa je neničeln polinom na intervalu $[0,1]$. Torej lahko pišemo 
+  $$N_{sx}(y)=U(y)E_1(y)$$
+  in $$W_x(y)=U(y)F_1,$$
+  kjer je $E_1(y)=D(y)\alpha_1(y)$ in $F_1(y)=D(y)\beta_1(y)$.
+  
+
 \end{proof}
 
 

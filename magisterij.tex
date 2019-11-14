@@ -809,7 +809,7 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   $D^{-2m_1+1}(y) D^{-2m_2+1}(y) \cdots D^{-2m_i+1}(y)=D^{-2(m+1)}(y)D^i(y)$.
 
   Sedaj definirajmo \todo{krivuljo? vektorsko polinomsko funkcijo?} $\ddd{S}_{m+1}$:
-  \begin{align*}\ddd{S}_{m+1}=&D^{2m}(v)\frac{\partial^m \ddd{S}}{\partial u^m}|_{\ddd{C}} - 
+  \begin{align*}\ddd{S}_{m+1}=&D^{2m}(v)\frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}|_{\ddd{C}} - 
   \sum_{i=2}^{m+1} \sum_{|\ddd{m}_1|=m+1} A_{m_i}^{m+1} \sum_{h=0}^i {i \choose h}
   D^{i-1}(y)E_{m_1}(y)\cdots E_{m_h}(y) \\ &\cdot F_{m_{h+1}}(y)\ldots F_{m_i}(y)
   \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}}
@@ -819,8 +819,73 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   D^{2m}(y)\beta_{m+1}(y)\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}.$$
 
   Na dobljeni enačbi sedaj uporabimo podoben postopek, kot smo ga uporabili pri dokazu 
-  za $k=1$. 
+  za $k=1$. Enačbo z leve vektorsko množimo z $\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}$ 
+  in dobimo 
+  $$\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} \times \ddd{S}_{m+1} = 
+  D^{2m}\beta_{m+1} \frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} \times \frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}.$$
+  Če pa enačbo \todo{sklic} z desne pomnožimo z $\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}$, 
+  dobimo 
+  $$\ddd{S}_{m+1}\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} = 
+  D^{2m}\alpha_{m+1} \frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} \times \frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}.$$
+  Označimo $\ddd{W}_1 = \ddd{S}_{m+1}\times\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}$ in 
+  $\ddd{W}_2 = \frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}\times \ddd{S}_{m+1}$ ter kakor prej 
+  $N_r = \frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} \times \frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}$. 
+  Kot v primeru za $k=1$ spet lahko predpostavimo, da je polinom $N_{rx}(y)$ neničeln in 
+  ga zapišemo kot $N_{rx}(y)=U(y)D(y)$. Velja 
+  $W_{1x} = D^{2m+1}(y)U(y)\alpha_{m+1}(y)$ in $W_{2x} = D^{2m+1}(y)U(y)\beta_{m+1}(y)$ 
+  in enaki argumenti kot v primeru za $k=1$ nas pripeljejo do razulatata, da sta 
+  $E_{m+1}(y) = D^{2m+1}(y)\alpha_{m+1}(y)$ in \\$F_{m+1}(y) = D^{2m+1}(y)\beta_{m+1}(y)$ 
+  res polinoma. 
 
+  Pokazati moramo še, da je $st(E_{m+1})\leq 2mn_r + (m+1)n_s+(m+1)n_c-2m-1$ in 
+  $st(F_{m+1})\leq (2m+1)n_r + (m+1)n_s+mn_c-2m$. Tega se lotimo tako, da si najprej 
+  ogledamo stopnjo $\ddd{S}_{m+1}$. Spomnimo se:
+  \begin{align*}\ddd{S}_{m+1}=&D^{2m}(v)\frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}|_{\ddd{C}} - 
+    \sum_{i=2}^{m+1} \sum_{|\ddd{m}_1|=m+1} A_{m_i}^{m+1} \sum_{h=0}^i {i \choose h}
+    D^{i-1}(y)E_{m_1}(y)\cdots E_{m_h}(y) \\ &\cdot F_{m_{h+1}}(y)\ldots F_{m_i}(y)
+    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}}
+  \end{align*}
+  Očitno je
+  \begin{align*} 
+    st(D^{2m}(y)\frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}})&\leq 
+    2m(n_r+n_c-1)+n_s \\
+    &\leq 2mn_r + (m+1)n_s + mn_c -2m, 
+  \end{align*}
+  kjer v prvi neenakosti uporabimo dejstvo, da je $st(D(y))\leq n_r + n_c-1$ in 
+  $st(\frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}})\leq n_s$, v drugi neenakosti pa, 
+  da je $n_c\leq n_s$.
+
+  Oglejmo si še, kakšna je \\
+  $st(D^{i-1}(y)E_{m_1}(y)\cdots E_{m_h}(y)F_{m_{h+1}}(y)\ldots F_{m_i}(y)
+  \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})$.
+  Najprej si jo oglejmo za $h=0$:
+  \begin{align*}
+    &st(D^{i-2}(y)F_{m_1}(y)\cdots F_{m_i}(y)\frac{\partial^i \ddd{R}}{\partial y^i}|_{\ddd{C}})\leq\\
+    &\leq(i-2) st(D(y)) + \sum_{j=1}^i st(F_{m_j}(y)) + st(\frac{\partial^i \ddd{R}}{\partial y^i}|_{\ddd{C}}) 
+  \end{align*}
+  Vemo, da je $st(D(y))\leq n_r+n_c-1$ in $st(\frac{\partial^i \ddd{R}}{\partial y^i}|_{\ddd{C}})\leq n_c-i$, 
+  po indukcijski predpostavki pa velja še 
+  $st(E_i(y)\leq (2i-2)n_r+in_s+in_c-2i+1)$ in $st(F_i(y)\leq (2i-1)n_r+in_s+(i-1)n_c-2i+2)$, 
+  kjer je $i=1, \ldots, m$. 
+  Torej je 
+  \begin{align*}
+    &st(D^{i-2}(y)F_{m_1}(y)\cdots F_{m_i}(y)\frac{\partial^i \ddd{R}}{\partial y^i}|_{\ddd{C}})\leq\\
+    &(i-2)(n_r+n_c-1)+\\
+    &+\sum_{j=1}^i((2m_j-1)n_r+m_jn_s+(m_j-1)n_c-2m_j+2) + (n_c -i)= \\
+    &= (i-2)(n_r + n_c -1) + 2(m+1)n_r - in_r + (m+1)n_s + (m+1)n_c -in_c -\\
+    &- 2(m+1) +2i + n_c -i = \\
+    &= 2mn_r + (m+1)n_s + mn_c -2m -in_r \leq \\
+    &\leq 2mn_r +(m+1)n_s + mn_c -2m.
+  \end{align*}
+  Tu smo uporabili, da je $\sum_{j=1}^{i}m_j = m+1$.
+
+  Sedaj obravnavajmo še primer, ko je $h>1$.
+  \begin{align*}
+    &st(D^{i-2}(y)E_{m_1}(y)\cdots E_{m_h}(y)F_{m_{h+1}}(y)\cdots F_{m_i}(y)
+    \frac{\partial^i\ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})\leq \\
+    &\leq (i-2)st(D(y)) + \sum_{j=1}^h st(E_{m_j}) + \sum_{j=h+1}^i st(F_{m_j}) + \\
+    &+ st(\frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})
+  \end{align*}
 \end{proof}
 
 

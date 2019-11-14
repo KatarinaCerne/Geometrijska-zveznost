@@ -516,6 +516,9 @@ $\mu$ in $\gamma$, da velja: \todo{ali moram to kaj bolj natančno utemeljiti?}
 \todo{treba motivirati, zakaj to gledamo}
 $$\lambda(y)R_x(x_0,y)=\mu(y)S_u(u_0,y)+\gamma(y)S_v(u_0,y).$$
 
+\todo{tole tukaj je najbrž en bullshit --------------------------------------- 
+to poglavje bo najbrž treba prestaviti, ali pa spremeniti v podpoglavje}
+
 Če predpostavimo, da sta ploskvi $R$ in $S$ polinomski, lahko tudi za $\lambda$, $\mu$ in $\gamma$ 
 izberemo polinome, \todo{izberemo? ali niso točno določeni?} kar nam zelo olajša 
 konstrukcijo geometrijsko zveznih ploskev. 
@@ -662,9 +665,10 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   $\textbf{R}$ in $\textbf{S}$, definirani kot zgoraj \todo{sklic} stikata v robni krivulji 
   $\textbf{C}$ z geometrijsko zveznostjo $G^n$. Pokazati hočemo, da od tod sledi obstoj 
   polinomov $D$, $E_i$ in $F_i$ z lastnostmi kot v izreku.
-  Dokaza se lotimo z indukcijo po $n$. \todo{vir:k}
+  Dokaza se lotimo z indukcijo po $k$. \todo{vir:k}
 
-  Naj bo najprej $n=1$. Ker je slik ploskev $\textbf{R}$ in $\textbf{S}$ $G^1$-zvezen, 
+  Naj bo najprej $k=1$. Ker je slik ploskev $\textbf{R}$ in $\textbf{S}$ $G^n$-zvezen, 
+  torej vsaj $G^1$-zvezen,
   po izreku \todo{sklic} obstajata funkciji $\alpha_1(y)$ in $\beta_1(y)$, ki zadoščata 
   enačbi 
   $$\frac{\partial \textbf{S}}{\partial u}\bigg|_{\textbf{C}}(y) = 
@@ -735,6 +739,11 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   kar pa je v nasprotju s predpostavko o regularnosti ploskve $\ddd{R}$. Torej mora polinom 
   $U(y)$ deliti polinom $N_{sx}(y)$. Z enakimi sklepi trditev pokažemo še za polinom $W_x(y)$.
 
+
+  \todo{vprašanje: ali U vsebuje vse linearne faktorje ali samo tiste, ki imajo zvezo 
+  z ničlami na [0,1]???}
+
+
   Polinom $N_{rx}$ sedaj znova zapišimo kot produkt $N_{rx}(y) = U(y)D(y)$, kjer sta 
   polinoma $U(y)$ in $D(y)$ definirana kot zgoraj. Torej velja 
   $$N_{sx}(y)=U(y)\alpha_1(y)D(y)$$ in $$W_x(y)=U(y)\beta_1(y)D(y).$$
@@ -745,7 +754,72 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   $[0,1]$, torej njuna imenovalca ne delita polinoma $U$. Sledi, da morata njuna imenovalca 
   deliti polinom $D$, s čimer smo pokazali, da sta $E_1$ in $F_1$ res polinoma.
 
+  Videli želimo še, da je $D(y)E_1(y)\neq 0$ na intervalu $[0,1]$. Polinom $D(y)$ po definiciji 
+  vsebuje vse nelinearne faktorje v polinomskem razcepu polinoma $N_{rx}(y)$, torej 
+  na intervalu $[0,1]$ nima ničel. Polinom $E_1(y)$ je enak $E_1(y)=\alpha_1(y)D(y)$. 
+  Ker je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^n$-zvezen, funkcija $\alpha_1(y)$ na 
+  intervalu $[0,1]$ ni enaka nič (glej \todo{sklic}), zato tudi $E_1(y)$ na tem intervalu 
+  nima ničel. 
 
+  Oglejmo si še stopnje polinomov $D(y)$, $E_1(y)$ in $F_1(y)$. 
+  Očitno velja:
+  $$st(D(y))\leq st(N_{rx}(y))\leq st(\ddd{N}_r(v))\leq n_r+n_c-1$$
+  $$st(E_1(y))\leq st(N_{sx}(y))\leq st(\ddd{N}_s(v))\leq n_s+n_c-1$$
+  $$st(F_1(y))\leq st(W_x(y))\leq st(\ddd{W}(v))\leq n_r+n_s,$$
+  s čimer dokažemo izrek za $k=1$.
+
+  Lotimo se še dokaza za $k>1$. Prepodstavimo, da izrek velja za vse $k\leq m$, kjer je $m\in \N$, $m<n$. 
+  Torej obstajajo polinomi $D(y)$, $E_1(y), \ldots, E_m(y)$, $F_1(y), \ldots, F_m(y)$ 
+  z ustreznimi stopnjami, da velja enačba \todo{sklic} za $k=1,2,\ldots,m$.
+  
+  Izhajamo iz predpostavke, da je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^n$-zvezen. 
+  Iz izreka \todo{sklic} sledi, da obstajajo funkcije 
+  $\alpha_1, \ldots, \alpha_{m+1}$ in $\beta_1 \ldots, \beta_{m+1}$, da velja
+  \begin{align*}
+    \frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}\Bigr|_{\substack{\ddd{C}}}&= 
+    \sum_{i=1}^{m+1}\sum_{|\ddd{m}_i|=m+1}A_{m_i}^{m+1}
+    \sum_{h=0}^i {i \choose h}\alpha_{m_1}\cdots \alpha_{m_h}\beta_{m_{h+1}}\beta_{m_i} 
+    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\Bigr|_{\substack{C}}\\
+    & = \alpha_{m+1} \frac{\partial \ddd{R}}{\partial u}|_{\ddd{C}} + 
+    \beta_{m+1} \frac{\partial \ddd{R}}{\partial v}|_{\ddd{C}} + \\
+    & + \sum_{i=2}^{m+1} \sum_{|\ddd{m}_i|}A_{m_i}^{m+1} \sum_{h=0}^i {i \choose h}
+    \alpha_{m_1} \cdots \alpha_{m_h} \beta_{m_{h+1}} \cdots \beta_{m_i}
+    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\Bigr|_{\substack{C}}
+  \end{align*}
+
+  Po indukcijski predpostavki je $\alpha_i(y) = \frac{E_i(y)}{D^{2i-1}(y)}$ in 
+  $\beta_i(y)=\frac{F_i(y)}{D^{2i-1}(y)}$ za $i=1, \ldots, m$. Uporabimo to v zgornji 
+  enačbi in dobimo:
+  \begin{align*}
+    \frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}\Bigr|_{\substack{\ddd{C}}}&= 
+    \alpha_{m+1} \frac{\partial \ddd{R}}{\partial u}|_{\ddd{C}} + 
+    \beta_{m+1} \frac{\partial \ddd{R}}{\partial v}|_{\ddd{C}} + \\
+    &+ \sum_{i=2}^{m+1} \sum_{|\ddd{m}_i|}A_{m_i}^{m+1} \sum_{h=0}^i {i \choose h}
+    \frac{E_{m_1}(y)}{D^{2m_1-1}(y)} \cdots \frac{E_{m_h}(y)}{D^{2m_h-1}(y)}\\ 
+    &\cdot \frac{F_{m_{h+1}}(y)}{D^{2m_{h+1}-1}(y)} \cdots \frac{F_{m_i}(y)}{D^{2m_i-1}(y)}
+    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\Bigr|_{\substack{C}} = \\
+    &= \alpha_{m+1} \frac{\partial \ddd{R}}{\partial u}|_{\ddd{C}} + 
+    \beta_{m+1} \frac{\partial \ddd{R}}{\partial v}|_{\ddd{C}} + \\
+    &+ \sum_{i=2}^{m+1} \sum_{|\ddd{m}_i|}A_{m_i}^{m+1} \sum_{h=0}^i {i \choose h}
+    D^{i-2}(y)D^{-2m}E_{m_1}(y) \cdots E_{m_h}(y) \\
+    & \cdot F_{m_{h+1}}(y) \cdots F_{m_i}(y)
+    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\Bigr|_{\substack{C}},
+  \end{align*}
+  saj je $|\ddd{m}_i|=m_1+m_2+\cdots + m_i = m+1$ in zato je \\
+  $D^{-2m_1+1}(y) D^{-2m_2+1}(y) \cdots D^{-2m_i+1}(y)=D^{-2(m+1)}(y)D^i(y)$.
+
+  Sedaj definirajmo \todo{krivuljo? vektorsko polinomsko funkcijo?} $\ddd{S}_{m+1}$:
+  \begin{align*}\ddd{S}_{m+1}=&D^{2m}(v)\frac{\partial^m \ddd{S}}{\partial u^m}|_{\ddd{C}} - 
+  \sum_{i=2}^{m+1} \sum_{|\ddd{m}_1|=m+1} A_{m_i}^{m+1} \sum_{h=0}^i {i \choose h}
+  D^{i-1}(y)E_{m_1}(y)\cdots E_{m_h}(y) \\ &\cdot F_{m_{h+1}}(y)\ldots F_{m_i}(y)
+  \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}}
+  \end{align*}
+  Če enačbo \todo{sklic} pomnožimo z $D^{2m}(y)$ in jo nekoliko preoblikujemo, dobimo: 
+  $$\ddd{S}_{m+1}(y)=D^{2m}\alpha_{m+1}(y)\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} + 
+  D^{2m}(y)\beta_{m+1}(y)\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}.$$
+
+  Na dobljeni enačbi sedaj uporabimo podoben postopek, kot smo ga uporabili pri dokazu 
+  za $k=1$. 
 
 \end{proof}
 

@@ -886,6 +886,49 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
     &\leq (i-2)st(D(y)) + \sum_{j=1}^h st(E_{m_j}) + \sum_{j=h+1}^i st(F_{m_j}) + \\
     &+ st(\frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})
   \end{align*}
+  Zopet uporabimo indukcijsko predpostavko za stopnje polinomov $E_i(y)$ in $F_i(y)$, 
+  kjer je $i=1,\ldots, m$ ter dejstvo, da je 
+  $st(\frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})=n_r-i+h$ in 
+  dobimo
+  \begin{align*}
+    &st(D^{i-2}(y)E_{m_1}(y)\cdots E_{m_h}(y)F_{m_{h+1}}(y)\cdots F_{m_i}(y)
+    \frac{\partial^i\ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})\leq \\
+    &\leq (i-2)(n_r+n_c-1)+2n_r\sum_{j=1}^h m_j - 2n_rh + n_s\sum_{j=1}^hm_j +
+    + n_c\sum_{j=1}^hm_j-\\ &- 2\sum_{j=1}^hm_j + h + 2n_r\sum_{j=h+1}^im_j - (i-h)n_r
+    + n_s\sum_{j=h+1}^im_j + n_c\sum_{j=h+1}^i - (i-h)n_c-\\ &
+    - 2\sum_{j=h+1}^i + 2(i-h) +n_r-i+h=\\
+    &=(i-2)(n_r+n_c-1)+2n_r(m+1)+n_s(m+1)+n_c(m+1)-2(m+1)-\\
+    &-2n_rh+h-(i-h)n_r-(i-h)n_c+2(i-h)+n_r-i-h
+  \end{align*}
+  V zadnji enakosti smo uprabili, da je $\sum_{j=1}^im_j=m+1$. Nadaljujmo za računom:
+  \begin{align*}
+    &st(D^{i-2}(y)E_{m_1}(y)\cdots E_{m_h}(y)F_{m_{h+1}}(y)\cdots F_{m_i}(y)
+    \frac{\partial^i\ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})\leq \\
+    &\leq(i-2)(n_r+n_c-1)+2n_r(m+1)+n_s(m+1)+n_c(m+1)-2(m+1)-\\
+    &-2n_rh+h-(i-h)n_r-(i-h)n_c+2(i-h)+n_r-i-h \leq \\
+    &\leq 2mn_r+(m+1)n_s+mn_c-2m-n_rh+n_ch-n_c+n_r = \\
+    &=2mn_r + (m+1)n_s + mn_c-2m+(h-1)(n_c-n_r)\leq \\
+    &\leq 2mn_r + (m+1)n_s +mn_c-2m.
+  \end{align*}
+  V zadnji neenakosti smo uporabili, da je $n_c\leq n_r$, torej je $n_c-n_r\leq 0$.
+  S tem smo torej pokazali, da je $st(\ddd{S}_{m+1})\leq 2mn_r + (m+1)n_s+(m+1)n_c-2m$.
+
+  Iz enačbe \todo{sklic} je razvidno naslednje:
+  \begin{align*}
+    &st(E_{m+1})\leq st(W_{1x})\leq st(\ddd{W}_1)\leq st(\ddd{S}_{m+1})+
+    st(\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}) \leq \\
+    &\leq (2mn_r+(m+1)n_s+mn_c-2m)+(n_c-1)=\\
+    &=2mn_r + (m+1)n_s + (m+1)n_c -2m -1.
+  \end{align*}
+
+  Podobno dobimo oceno za stopnjo polinoma $F_{m+1}$:
+  \begin{align*}
+    &st(F_{m+1})\leq st(W_{2x})\leq st(\ddd{W}_2)\leq st(\ddd{S}_{m+1})+
+    st(\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}) \leq \\
+    &\leq (2mn_r+(m+1)n_s+mn_c-2m)+n_r=\\
+    &=(2m+1)n_r + (m+1)n_s + mn_c -2m.
+  \end{align*}
+  S tem smo dokazali izrek še za $k>1$.
 \end{proof}
 
 

@@ -1030,17 +1030,76 @@ in
 $$\beta_1(v) = b_0(1-v) + b_1v.$$
 \todo{kompatibilnostni pogoji izginejo lol lol}
 Vstavimo dobljena polinoma $\alpha_1$ in $\beta_1$ v enačbo \todo{sklic} in dobimo:
-%\begin{align*}
-%  &\sum_{j=0}^3\ddd{q}_jB_j^3(v) = a_0\sum_{j=0}^3\ddd{p}_jB_j^3(v) + 
-%  (b_0(1-v)+b_1v)\sum_{j=0}^2\ddd{z}_jB_j^2(v)=\\
-%  &=a_0\sum_{j=0}^3\ddd{p}_jB_j^3(v) + \sum_{j=0}^2\ddd{z}_jb_0{2 \choose j}v^j(1-v)^{3-j} + 
-%  \sum_{j=0}^2\ddd{z}_jb_1{2 \choose j}v^{j+1}(1-v)^{2-j}=\\
-%  &=\sum_{j=0}^3a_0\ddd{p}_jB_j^3(v) + \sum_{j=0}^3\ddd{z}_jb_0{2 \choose j}v^j(1-v)^{3-j} + 
-%  \sum_{j=1}^3b_1\ddd{z}_{j-1}{2 \choose j-1}v^j(1-v)^{3-j}=\\
-%  &=\sum_{j=0}^3a_0\ddd{p}_jB_j^3(v) + \sum_{j=0}^3b_0\ddd{s}_j\frac{3-j}
-%\end{align*}
+\begin{align*}
+  &\sum_{j=0}^3\ddd{q}_jB_j^3(v) = a_0\sum_{j=0}^3\ddd{p}_jB_j^3(v) + 
+  (b_0(1-v)+b_1v)\sum_{j=0}^2\ddd{z}_jB_j^2(v)=\\
+  &=a_0\sum_{j=0}^3\ddd{p}_jB_j^3(v) + \sum_{j=0}^2\ddd{z}_jb_0{2 \choose j}v^j(1-v)^{3-j} + 
+  \sum_{j=0}^2\ddd{z}_jb_1{2 \choose j}v^{j+1}(1-v)^{2-j}=\\
+  &=\sum_{j=0}^3a_0\ddd{p}_jB_j^3(v) + \sum_{j=0}^3\ddd{z}_jb_0{2 \choose j}v^j(1-v)^{3-j} + 
+  \sum_{j=1}^3b_1\ddd{z}_{j-1}{2 \choose j-1}v^j(1-v)^{3-j}=\\
+  &=\sum_{j=0}^3a_0\ddd{p}_jB_j^3(v) + \sum_{j=0}^3b_0\ddd{s}_j\frac{3-j}{3}{3 \choose j}v^j(1-v)^{3-j} + 
+  \sum_{j=1}^3b_1\ddd{z}_{j-1}\frac{j}{3}{3 \choose j}v^3(1-v)^{3-j}=\\
+  &=\sum_{j=0}^3a_0\ddd{p}_jB_j^3(v) + \sum_{j=0}^3b_0\ddd{z}_j\frac{3-j}{3}B_j^3(v) + 
+  \sum_{j=0}^3b_1\ddd{z}_{j-1}\frac{j}{3}B_j^3(v)
+\end{align*}
+\todo{V zadnji vrstici zgornjega izračuna smo uporabili, da je v vsoti $\sum_{j=0}^3b_1\ddd{z}_{j-1}\frac{j}{3}B_j^3(v)$ 
+člen pri $j=0$ enak 0.}
+
+\todo{ali moram to bolje razložiti}Od tod dobimo pogoje za kontrolna vektorja $\ddd{q}_1$ in $\ddd{q}_2$:
+$$\ddd{q}_1=a_0\ddd{p}_1+\frac{1}{3}b_1\ddd{z}_0+\frac{2}{3}b_0\ddd{z}_1$$
+in
+$$\ddd{q}_2=a_0\ddd{p}_2+\frac{2}{3}b_1\ddd{z}_1+\frac{1}{3}b_0\ddd{z}_2.$$
+
+\todo{SITUACIJA 2}
+
+V tem primeru pa predpostavimo, da je krivulja $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$ 
+stopnje 2, torej jo določajo kontrolni vektorji $\ddd{p}_0$, $\ddd{p}_m$ in $\ddd{p}_3$. 
+\todo{vektorja p0 in p3 sta že določena zaradi določenosti robnih krivulj}
+
+\todo{kompatibilnostni pogoji haha} 
+
+\todo{ne vem, kako naj to. tega ne razumem AAAA zakaj je linearna kombinacija in kako 
+je to enako ne razumem}
+
+$$\frac{1}{3}\frac{\partial \ddd{R}}{\partial u}|_{u=0} = 
+\sum_{i=0}^3\ddd{p}_iB_i^3(v)=(1-v)^3\ddd{p}_0 + 2(1-v)v\ddd{p}_m + v^2\ddd{p}_3$$
+
+$$\ddd{p}_1=a\ddd{p}_m+b\ddd{p}_0$$
+$$\ddd{p}_2= c\ddd{p}_m+d\ddd{p}_3$$
+Vstavimo
+\begin{align*}
+  &\ddd{p}_0(1-v)^3+2a\ddd{p}_m(1-v)^2v+3b\ddd{p}_0(1-v)^2v+3c\ddd{p}_m(1-v)v^2+
+  3d\ddd{p}_3(1-v)v^2+v^3\ddd{p}_3=\\
+  &=\ddd{p}_0(1-v)^2(1-v+3bv)+\ddd{p}_m(1-v)v(3a(1-v)+3cv)+\ddd{p}_3v^2(3d(1-v)+v)
+\end{align*}
+
+$3b-1=0$, $3a=2$, $3c-3a=0$, $3d=1$ Sledi $b=\frac{1}{3}$, $a=\frac{2}{3}$, 
+$c=\frac{2}{3}$, $d=\frac{1}{3}$.
+
+$$\ddd{p}_1=\frac{2}{3}\ddd{p}_m+\frac{1}{3}\ddd{p}_0$$
+$$\ddd{p}_2=\frac{2}{3}\ddd{p}_m+\frac{1}{3}\ddd{p}_3$$
+
+Iz geometrijske zveznosti
+$$\sum_{j=0}^3\ddd{q}_jB_j^3(v)=\alpha_1(v)\sum_{j=0}^2\tilde{\ddd{p}}_jB_j^2(v)+
+\beta_1(v)\sum_{j=0}^2\ddd{s}_jB_j^2(v)$$
+kjer $\tilde{\ddd{p}}_0=\ddd{p}_0$, $\tilde{\ddd{p}}_1=\ddd{p}_m$ in $\tilde{\ddd{p}}_2=\ddd{p}_3$
+
+$$\alpha_1(v)=a_0(1-v)+a_1v$$
+$$\beta_1(v)=b_0(1-v)+b_1v$$
+
+Vstavimo.
+\begin{align*}
+  &\sum_{j=0}^3\ddd{q}_jB_j^3(v)=...\\
+  &=\sum_{j=0}^3(a_1\tilde{\ddd{p}}_{j-1}\frac{j}{3}+a_0\tilde{\ddd{p}}_j\frac{3-j}{3}+
+  b_1\ddd{z}_{j-1}\frac{j}{3}+b_0\ddd{z}_j\frac{3-j}{3})B_j^3(v)
+\end{align*}
+
+sledi 
+$$\ddd{q}_1=\frac{1}{3}(a_1\ddd{p}_0+2a_0\ddd{p}_m+b_1\ddd{z}_0+2b_0\ddd{z}_1)$$
+$$\ddd{q}_2=\frac{1}{3}(a_0\ddd{p}_3+2a_1\ddd{p}_m+2b_1\ddd{z}_1+b_0\ddd{z}_2)$$
+
 Seveda pa to nista edini možni situaciji.
-%vstavi sliko
+
 
 %\section{Tehnični napotki za pisanje}
 %

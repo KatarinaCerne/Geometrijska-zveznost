@@ -935,12 +935,111 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
 
 
 \section{Primeri konstrukcij $G^1$ ploskev}
-\begin{frame}
-Dve bikubični Bézierjevi ploskvi iz tenzorskega produkta:
-$$R(u,v)=\sum_{i=0}^3 \sum_{j=0}^3 \mathbf{P}_{i,j}B_i^3(u) B_j^3(v)$$ in
-$$S(u,v)=\sum_{i=0}^3 \sum_{j=0}^3 \mathbf{Q}_{i,j}B_i^3(u) B_j^3(v),$$
-ki se stikata v $C(v)=R(0,v)=S(0,v)$.
-\end{frame}
+\todo{nek uvod}
+
+\todo{PRIMER 1}
+
+Imejmo dve bikubični Bézierjevi ploskvi iz tenzorskega produkta:
+$$\ddd{R}(u,v)=\sum_{i=0}^3 \sum_{j=0}^3 \mathbf{P}_{i,j}B_i^3(u) B_j^3(v)$$ in
+$$\ddd{S}(u,v)=\sum_{i=0}^3 \sum_{j=0}^3 \mathbf{Q}_{i,j}B_i^3(u) B_j^3(v),$$
+ki se stikata v $\ddd{C}(v)=\ddd{R}(0,v)=\ddd{S}(0,v)$, torej naj velja
+$$\ddd{C}(v)=\sum_{i=0}^3 \ddd{Z}_i B_i^3(v),$$
+kjer so $\ddd{Z}_i = \ddd{P}_{0,i} = \ddd{Q}_{0,i}$ kontrolne točke krivulje $\ddd{C}$. 
+Robne krivulje ploskev $\ddd{R}$ in $\ddd{S}$ naj bodo že določene. Zanima nas, kako 
+lahko v tem primeru določimo notranje točke ploskev $\ddd{R}$ in $\ddd{S}$, torej kako 
+lahko določimo kontrolne točke $\ddd{P}_{1,1}$, $\ddd{P}_{1,2}$, $\ddd{Q}_{1,1}$ in $\ddd{Q}_{1,2}$., 
+da bo stik ploskev $G^1$-zvezen. 
+\todo{ali tukaj dam razlago s ploščinami trikotnikov? ker ne znam razložiti, zakaj morata biti enaki}
+
+Izrek \todo{sklic} pravi, da je stik obeh ploskev $G^1$-zvezen, natanko tedaj ko obstajata funkciji 
+$\alpha_1(v)$ in $\beta_1(v)$, \todo{pogoj regularnosti? lastnosti teh funkcij?} da velja 
+$$\frac{\partial \ddd{S}}{\partial u}|_{u=0} = \alpha_1(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0} + 
+\beta_1(v)\frac{\partial \ddd{R}}{\partial v}|_{u=0}.$$
+
+Razpišimo: \todo{tu se nekako sklicuješ na formulo za odvod in evalvacijo v 0}
+$$\frac{\partial \ddd{S}}{\partial u}|_{u=0}=3\sum_{i=0}^2\sum_{j=0}^3
+(\ddd{P}_{i+1,j}-\ddd{P}_{i,j})B_i^2(u)B_j^3(v)|_{u=0}=
+3\sum_{j=0}^3(\ddd{P}_{1,j}-\ddd{P}_{0,j})B_j^3(v),$$
+$$\frac{\partial \ddd{R}}{\partial u}|_{u=0}=3\sum_{i=0}^2\sum_{j=0}^3
+(\ddd{Q}_{i+1,j}-\ddd{Q}_{i,j})B_i^2(u)B_j^3(v)|_{u=0}=
+3\sum_{j=0}^3(\ddd{Q}_{1,j}-\ddd{Q}_{0,j})B_j^3(v),$$
+in 
+$$\frac{\partial \ddd{R}}{\partial v}|_{u=0}=3\sum_{i=0}^2\sum_{j=0}^3
+(\ddd{Q}_{i+1,j}-\ddd{Q}_{i,j})B_i^2(u)B_j^3(v)|_{u=0}=
+3\sum_{j=0}^3(\ddd{Q}_{1,j}-\ddd{Q}_{0,j})B_j^3(v).$$
+
+Po enačbi \todo{sklic} mora veljati 
+$$\sum_{j=0}^3(\ddd{P}_{1,j}-\ddd{P}_{0,j})B_j^3(v) = \sum_{j=0}^3(\ddd{Q}_{1,j}-\ddd{Q}_{0,j})B_j^3(v) + 
+\sum_{j=0}^3(\ddd{Q}_{1,j}-\ddd{Q}_{0,j})B_j^3(v).$$
+Da dobimo še nekaj dodatnih pogojev za kontrolne točke ploskev $\ddd{R}$ in $\ddd{S}$, 
+evalvirajmo zgornjo enačbo \todo{sklic} v vrednostih paramatera $v=0$ in $v=1$ \todo{grdo}.
+\todo{ spet se lahko skliciješ na tisto lastnost al neki}
+Pri vrednosti $v=0$ dobimo:
+$$(\ddd{Q}_{1,j}-\ddd{Q}_{0,j}) = a_0(\ddd{P}_{1,0}-\ddd{P}_{0,0})+b_0(\ddd{P}_{0,1}-\ddd{P}_{0,0}),$$
+oziroma:
+$$\ddd{q}_0 = a_0 \ddd{p}_0 + b_0 \ddd{z}_0.$$
+Tu smo z $a_0$ označili vrednost $\alpha_1(0)$, z $b_0$ vrednost $\beta_1(0)$, z oznakami 
+$\ddd{p}_j$ in $\ddd{q}_j$ vektorje $\ddd{P}_{1,j}-\ddd{P}_{0,j}$, z oznakami $\ddd{z}_j$ pa 
+vektorje $\ddd{Z}_{j+1}-\ddd{Z}_j = \ddd{P}_{0,j+1}-\ddd{P}_{0,j}$. \todo{(kjer i=1,...,3)}
+Pri vrednosti $v=1$ pa dobimo:
+$$\ddd{Q}_{1,3}= a_1(\ddd{P}_{1,3}-\ddd{P}_{0,3})+b_1(\ddd{P}_{0,3}-\ddd{P}_{0,2}),$$
+oziroma:
+$$\ddd{q}_3 = a_1 \ddd{p}_3 + b_1 \ddd{z}_2.$$
+Tu smo z $a_1$ označili vrednost $\alpha_1(1)$ in z $b_1$ vrednost $\beta_1(1)$.
+
+\todo{kompatibilnostni pogoji omgomgomg}
+
+
+Pogoji in omejitve, ki jih imamo do sedaj, še ne določajo enolično notranjih kontrolnih 
+točk plosev $\ddd{R}$ in $\ddd{S}$. \todo{tu lahko primerjava z običajno zveznostjo, kjer 
+je vse že natančno določeno ?} 
+
+Podati moramo še nekaj pogojev, ki bodo določali obliko 
+ploskve $\ddd{R}$, ter podatek o stopnji \todo{cross-derivative} krivulje \todo{?} 
+$\frac{\partial \ddd{R}}{\partial u}|_{u=0}$ \todo{GROZNO. povej zakaj samo stopnjo tega}, 
+od tod pa bomo lahko s pomočjo pogojev za geometrijsko zveznost enolično 
+izrazili preostanek kontrolnih točk. Glede na stopnjo krivulje $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$
+si oglejmo dve različni situaciji. \todo{zakaj stopnja ne more biti npr 1? povej!}
+
+\todo{SITUACIJA 1}
+
+V prvem primeru predpostavimo, da je krivulja $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$ 
+stopnje 3. Krivuljo $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$ torej določajo štirje 
+kontrolni vektorji: $\ddd{p}_0$, $\ddd{p}_1$, $\ddd{p}_2$ in $\ddd{p}_3$. 
+Vektorja $\ddd{p}_0$ in $\ddd{p}_3$ sta že določena, vektorja  
+$\ddd{p}_1=\ddd{P}_{1,1}-\ddd{P}_{0,1}$ in $\ddd{p}_2=\ddd{P}_{1,2}-\ddd{P}_{0,2}$. 
+pa naj bosta prosta. Torej sta točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ prosta parametra.
+\todo{ali to prav razumem?}
+
+Ko izberemo kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$, lahko s pomočjo pogojev 
+za $G^1$ zveznost izrazimo še točki $\ddd{Q}_{1,1}$ in $\ddd{Q}_{1,2}$. 
+Zapišimo znova enačbo \todo{sklic}:
+$$\sum_{j=0}^3 \ddd{q}_j B_j^3(v) = \alpha_1(v) \sum_{j=0}^3 \ddd{p}_j B_j^3(v) + 
+\beta_1(v) \sum_{j=0}^2 \ddd{z}_j B_j^2(v).$$
+
+Zaradi enostavnosti naj bosta \todo{koeficientni} funkciji $\alpha_1$ in $\beta_1$ polinoma. 
+\todo{lahko bi bili tudi racionalni funkciji, v tem primeru bi dobili še veliko več 
+situacij (3. primer?) (ne bi pa mogli biti nič drugega zaradi izreka?)}
+Opazimo, da imamo v zgornji enačbi na levi strani Bézierjevo krivuljo stopnje 3, torej 
+mora tudi vsota na desni strani predstavljati kubično Bézierjevo krivuljo. Polinom $\alpha_1$ 
+je zato lahko le konstanten, stopnja polinoma $\beta_1$ pa mora biti 1.
+Ker mora veljati še $\alpha_1(0)=a_0$, $\alpha_1(1)=a_1$, $\beta_1(0)=b_0$ in 
+$\beta_1(1)=b_1$, mora veljati: 
+$$\alpha_1(v)= a_0 = a_1.$$
+in 
+$$\beta_1(v) = b_0(1-v) + b_1v.$$
+\todo{kompatibilnostni pogoji izginejo lol lol}
+Vstavimo dobljena polinoma $\alpha_1$ in $\beta_1$ v enačbo \todo{sklic} in dobimo:
+%\begin{align*}
+%  &\sum_{j=0}^3\ddd{q}_jB_j^3(v) = a_0\sum_{j=0}^3\ddd{p}_jB_j^3(v) + 
+%  (b_0(1-v)+b_1v)\sum_{j=0}^2\ddd{z}_jB_j^2(v)=\\
+%  &=a_0\sum_{j=0}^3\ddd{p}_jB_j^3(v) + \sum_{j=0}^2\ddd{z}_jb_0{2 \choose j}v^j(1-v)^{3-j} + 
+%  \sum_{j=0}^2\ddd{z}_jb_1{2 \choose j}v^{j+1}(1-v)^{2-j}=\\
+%  &=\sum_{j=0}^3a_0\ddd{p}_jB_j^3(v) + \sum_{j=0}^3\ddd{z}_jb_0{2 \choose j}v^j(1-v)^{3-j} + 
+%  \sum_{j=1}^3b_1\ddd{z}_{j-1}{2 \choose j-1}v^j(1-v)^{3-j}=\\
+%  &=\sum_{j=0}^3a_0\ddd{p}_jB_j^3(v) + \sum_{j=0}^3b_0\ddd{s}_j\frac{3-j}
+%\end{align*}
+Seveda pa to nista edini možni situaciji.
 %vstavi sliko
 
 %\section{Tehnični napotki za pisanje}

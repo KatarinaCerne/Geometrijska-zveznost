@@ -954,7 +954,14 @@ da bo stik ploskev $G^1$-zvezen.
 Izrek \todo{sklic} pravi, da je stik obeh ploskev $G^1$-zvezen, natanko tedaj ko obstajata funkciji 
 $\alpha_1(v)$ in $\beta_1(v)$, \todo{pogoj regularnosti? lastnosti teh funkcij?} da velja 
 $$\frac{\partial \ddd{S}}{\partial u}|_{u=0} = \alpha_1(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0} + 
-\beta_1(v)\frac{\partial \ddd{R}}{\partial v}|_{u=0}.$$
+\beta_1(v)\frac{\partial \ddd{R}}{\partial v}|_{u=0},$$
+oziroma (po izreku \todo{sklic}) natanko tedaj ko obstajajo polinomi $D(v)$, $E_1(v)$ 
+in $F_1(v)$, kjer sta polinoma $D$ in $E_1$ stopnje največ 5, polinom $F_1$ pa stopnje 
+največ 6, da velja
+$$D(v)\frac{\partial \ddd{S}}{\partial u}|_{u=0} = E_1(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0} + 
+F_1(v)\frac{\partial \ddd{R}}{\partial v}|_{u=0}.$$
+\todo{ker gre za bezierove ploskve, sta alfa1 in beta1 racionalni funkciji. 
+kako naj to razložim zakaj?}
 
 Razpišimo: \todo{tu se nekako sklicuješ na formulo za odvod in evalvacijo v 0}
 $$\frac{\partial \ddd{S}}{\partial u}|_{u=0}=3\sum_{i=0}^2\sum_{j=0}^3
@@ -1062,41 +1069,60 @@ stopnje 2, torej jo določajo kontrolni vektorji $\ddd{p}_0$, $\ddd{p}_m$ in $\d
 je to enako ne razumem}
 
 $$\frac{1}{3}\frac{\partial \ddd{R}}{\partial u}|_{u=0} = 
-\sum_{i=0}^3\ddd{p}_iB_i^3(v)=(1-v)^3\ddd{p}_0 + 2(1-v)v\ddd{p}_m + v^2\ddd{p}_3$$
+\sum_{i=0}^3\ddd{p}_iB_i^3(v)=(1-v)^2\ddd{p}_0 + 2(1-v)v\ddd{p}_m + v^2\ddd{p}_3$$
+\todo{zakaj se p1 in p2 zapisujeta kot lin. kombinaciji p0, pm, p3?}
 
+\nevem{Vektorji $\ddd{p}_0$, $\ddd{p}_m$ in $\ddd{p}_1$ so del iste ravnine. Enako velja za vektorje 
+$\ddd{p}_2$, $\ddd{p}_m$ in $\ddd{p}_3$, zato lahko vektorja $p_1$ in $p_2$ zapišemo 
+na naslednji način:}
 $$\ddd{p}_1=a\ddd{p}_m+b\ddd{p}_0$$
 $$\ddd{p}_2= c\ddd{p}_m+d\ddd{p}_3$$
-Vstavimo
+Dobljeno vstavimo v izraz $\sum_{i=0}^3\ddd{p}_iB_i^3(v)$.
 \begin{align*}
-  &\ddd{p}_0(1-v)^3+2a\ddd{p}_m(1-v)^2v+3b\ddd{p}_0(1-v)^2v+3c\ddd{p}_m(1-v)v^2+
-  3d\ddd{p}_3(1-v)v^2+v^3\ddd{p}_3=\\
-  &=\ddd{p}_0(1-v)^2(1-v+3bv)+\ddd{p}_m(1-v)v(3a(1-v)+3cv)+\ddd{p}_3v^2(3d(1-v)+v)
+  \sum_{i=0}^3\ddd{p}_iB_i^3(v)&=\ddd{p}_0(1-v)^3+2a\ddd{p}_m(1-v)^2v+3b\ddd{p}_0(1-v)^2v+
+  3c\ddd{p}_m(1-v)v^2+\\ &+3d\ddd{p}_3(1-v)v^2+v^3\ddd{p}_3=\\
+  &=\ddd{p}_0(1-v)^2(1-v+3bv)+\ddd{p}_m(1-v)v(3a(1-v)+3cv)+\\ &+\ddd{p}_3v^2(3d(1-v)+v)
 \end{align*}
+Sedaj to vstavimo v enačbo \todo{sklic} in enačbimo koeficiente\todo{?} pred 
+vektorji $\ddd{p}_0$, $\ddd{p}_m$ in $\ddd{p}_3$, 
+da dobimo enačbe za izračun vrednosti 
+$a$, $b$, $c$ in $d$: 
+$3b-1=0$, $3a=2$, $3c-3a=0$, $3d=1.$ 
 
-$3b-1=0$, $3a=2$, $3c-3a=0$, $3d=1$ Sledi $b=\frac{1}{3}$, $a=\frac{2}{3}$, 
-$c=\frac{2}{3}$, $d=\frac{1}{3}$.
-
+Od tod sledi $b=\frac{1}{3}$, $a=\frac{2}{3}$, $c=\frac{2}{3}$ in $d=\frac{1}{3}$. 
+Dobili smo, da se $\ddd{p}_1$ in $\ddd{p}_2$ izražata na naslednji način:
 $$\ddd{p}_1=\frac{2}{3}\ddd{p}_m+\frac{1}{3}\ddd{p}_0$$
-$$\ddd{p}_2=\frac{2}{3}\ddd{p}_m+\frac{1}{3}\ddd{p}_3$$
+$$\ddd{p}_2=\frac{2}{3}\ddd{p}_m+\frac{1}{3}\ddd{p}_3.$$
 
-Iz geometrijske zveznosti
+Kot v \todo{situaciji 1} ponovno zapišimo enačbo \todo{sklic}, ki velja zaradi $G^1$ 
+zveznosti ploskev $\ddd{R}$ in $\ddd{S}$.
 $$\sum_{j=0}^3\ddd{q}_jB_j^3(v)=\alpha_1(v)\sum_{j=0}^2\tilde{\ddd{p}}_jB_j^2(v)+
 \beta_1(v)\sum_{j=0}^2\ddd{s}_jB_j^2(v)$$
-kjer $\tilde{\ddd{p}}_0=\ddd{p}_0$, $\tilde{\ddd{p}}_1=\ddd{p}_m$ in $\tilde{\ddd{p}}_2=\ddd{p}_3$
+kjer smo označili $\tilde{\ddd{p}}_0=\ddd{p}_0$, $\tilde{\ddd{p}}_1=\ddd{p}_m$ in $\tilde{\ddd{p}}_2=\ddd{p}_3$
 
+Ponovno zaradi enostavnosti predpostavimo, da sta funkciji $\alpha_1(y)$ in $\beta_1(y)$ 
+polinoma. Ponovno opazimo, da imamo na levi strani enačbe Bézierjevo krivulo stopnje 3, 
+torej mora tudi desna stran predstavljati krivuljo stopnje 3. Polinoma $\alpha_1(y)$ in 
+$\beta_1(y)$ morata biti zato linerana:
 $$\alpha_1(v)=a_0(1-v)+a_1v$$
 $$\beta_1(v)=b_0(1-v)+b_1v$$
 
-Vstavimo.
+Vstavimo polinoma v enačbo \todo{sklic} in na podoben način kot v \todo{situaciji 1} dobimo:
 \begin{align*}
-  &\sum_{j=0}^3\ddd{q}_jB_j^3(v)=...\\
+  &\sum_{j=0}^3\ddd{q}_jB_j^3(v)=(a_0(1-v)+a_1v)\sum_{j=0}^2\tilde{\ddd{p}}_jB_j^2(v)
+  + (b_0(1-v)+b_1v)\sum_{j=0}^2\ddd{s}_jB_j^2(v) =\\
+  &=a_0\sum_{j=0}^2\tilde{\ddd{p}}_j{2 \choose j}v^j(1-v)^{3-j} + 
+  a_1\sum_{j=0}^2\tilde{\ddd{p}}_j{2 \choose j}v^{j+1}(1-v)^{2-j} +\\ 
+  &+b_0\sum_{j=0}^2\tilde{\ddd{z}}_j{2 \choose j}v^j(1-v)^{3-j} + 
+  b_1\sum_{j=0}^2\tilde{\ddd{z}}_j{2 \choose j}v^{j+1}(1-v)^{2-j}=\\
   &=\sum_{j=0}^3(a_1\tilde{\ddd{p}}_{j-1}\frac{j}{3}+a_0\tilde{\ddd{p}}_j\frac{3-j}{3}+
   b_1\ddd{z}_{j-1}\frac{j}{3}+b_0\ddd{z}_j\frac{3-j}{3})B_j^3(v)
 \end{align*}
+\todo{tu sem kar spustila vse korake, ker so isti}
 
-sledi 
+Od tod sledijo pogoji za vektorja $\ddd{q}_1$ in $\ddd{q}_2$. 
 $$\ddd{q}_1=\frac{1}{3}(a_1\ddd{p}_0+2a_0\ddd{p}_m+b_1\ddd{z}_0+2b_0\ddd{z}_1)$$
-$$\ddd{q}_2=\frac{1}{3}(a_0\ddd{p}_3+2a_1\ddd{p}_m+2b_1\ddd{z}_1+b_0\ddd{z}_2)$$
+$$\ddd{q}_2=\frac{1}{3}(a_0\ddd{p}_3+2a_1\ddd{p}_m+2b_1\ddd{z}_1+b_0\ddd{z}_2).$$
 
 Seveda pa to nista edini možni situaciji.
 

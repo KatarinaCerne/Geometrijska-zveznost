@@ -349,35 +349,61 @@ iz definicije (kako?)}
 \nevem{Naj bosta $R: \Omega_1 \subseteq \R^2 \rightarrow \R^3$ in 
 $S: \Omega_2 \subseteq \R^2 \rightarrow \R^3$ regularni parametrizaciji}
 
-\begin{definicija}
+V nadaljevanju se bomo ukvarjali s ploskvami, ki so same po sebi že geometrijsko zvezne, 
+zanimalo nas bo le, kakšni pogoji morajo veljati, da je tudi stik dveh takih  
+ploskev geometrijsko zvezen, torej da je celotna ploskev, ki jo dobimo, ko zlepimo dve ploskvi, 
+geometrijsko zvezna. 
+
+\begin{definicija}\label{def2}
   Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. %povej da na C je y=v
-  Pravimo, da se $R$ in $S$ stikata z $G^n$-zveznostjo vzdolž krivulje $C$, če za vsako točko $b_0=C(y_0)$ obstaja lokalno regularna $C^n$ reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, da je $f(x_0,y)=(u_0,y)$ za vsak $y \in I_0$ in da velja
+  Pravimo, da se $R$ in $S$ \emph{stikata z $G^n$-zveznostjo vzdolž krivulje $C$}, če za vsako točko $b_0=C(y_0)$ obstaja lokalno regularna $C^n$ reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, da je $f(x_0,y)=(u_0,y)$ za vsak $y \in I_0$ in da velja
   $$\frac{\partial^{m+k}}{\partial x^m \partial y^k}R\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{m+k}}{\partial x^m \partial y^k}(S\circ f)\Bigr|_{\substack{(x_0,y)}} \textrm{ za } m+k=1,\ldots,n,$$
   kjer je $I_0$ neka okolica $y_0$. %bolj natančno, kaj je ta okolica
 \end{definicija}
 
-Zaradi stikanja ploskev v krivulji $C$ so delni odvodi parametrizacij 
+\todo{razloži, kaj je regularna reparametrizacijska funkcija? ali je dovolj, da je 
+bila prej razložena regularnost?}
+
+Zaradi stikanja ploskev v krivulji $C$ oziroma, ker vzdolž krivulje $C$ velja $y=v$, 
+so delni odvodi parametrizacij 
 po spremenljivki $y$ vzdolž krivulje $C$ enaki, zato je dovolj, da pri obravnavi 
 geometrijske zveznosti dveh ploskev opazujemo le delne odvode po 
 spremenljivki $x$.
-\todo{ali je to dovolj razloženo? najbrž moram dodati y=v??!! (glej vir, dokaz izreka1)}
 \todo{dodati sliko?}
-Te delne odvode imenujemo \todo{??crossboundary derivatives}.
+Te delne odvode imenujemo \todo{crossboundary derivatives}.
 
-Oglejmo si pogoje za različne stopnje geometrijske zveznosti, ki nam jih ta definicija da. \todo{to še ni dokončno. zelo grdo}
-\todo{ali naj to naredim kot primer?}
-Če so parametrizaciji $R$ in $S$, krivulja $C$ in reparametrizacijska 
-funkcija $f$ kot v definiciji \todo{sklic}, 
-je za geometrijsko zveznost razreda $G^0$ med njima dovolj pogoj 
-$R=S \circ f$ vzdolž $C$. 
-\todo{oziroma kar R=S vzdolž C??}
+Oglejmo si, kakšni pogoji morajo veljati v primeru, ko želimo, da je stik med dvema 
+ploskvama $G^2$ zvezen.
+\begin{primer}
+Naj bodo parametrizaciji ploskev $R$ in $S$, krivulja $C$ in reparametrizacijska 
+funkcija $f$ kot v definiciji \ref{def2}.
+Da bo stik teh dveh ploskev $G^2$ zvezen, mora po definiciji \ref{def2} in ugotovitvi, 
+da je dovolj obravnavati le odvode po spremenljivki $y$, veljati
+$$\frac{\partial^{k}}{\partial x^k}R\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{k}}{\partial x^k}(S\circ f)\Bigr|_{\substack{(x_0,y)}} \textrm{ za } k=0,1,2.$$
+za vsak $y$ v neki okolici točke\todo{?} $y_0$. 
+Da dosežemo zgolj geometrijsko zveznost razreda $G^0$, je dovolj, da med 
+ploskvama $R$ in $S$ velja pogoj 
+$$R(x_0,y)=(S \circ f)(x_0,y)\textrm{, oziroma }R(x_0,y)=S(u(x_0,y),v(x_0,y)).$$ 
 Da imamo na stiku geometrijsko zveznost stopnje $G^1$, mora poleg 
-pogoja za $G^0$ veljati še $R_x = S_u u_x + S_v v_x$ vzdolž $C$, 
-za $G^2$ mora poleg pogojev za $G^0$ in $G^1$ veljati še 
-$G^2$: $R_xx = S_{uu} u_x^2 + 2S_{uv}u_x v_x + S_{vv} v_x^2 + S_u u_{xx} + S_v v_{xx}$ vzdolž $C$
-in tako dalje.
+pogoja za $G^0$ veljati še 
+$$\frac{\partial R}{\partial x}\Bigr|_{\substack{(x_0,y)}}=\frac{\partial}{\partial x}(S\circ f)\Bigr|_{\substack{(x_0,y)}}$$
+Če ustrezno razpišemo parcialni odvod funkcije $S \circ f$, se ta pogoj prepiše v
+$$\frac{\partial R}{\partial x}\Bigr|_{\substack{(x_0,y)}}=
+\frac{\partial S}{\partial u}\frac{\partial u}{\partial x}\Bigr|_{\substack{(x_0,y)}}+
+\frac{\partial S}{\partial v}\frac{\partial v}{\partial x}\Bigr|_{\substack{(x_0,y)}}.$$
+Za $G^2$ mora poleg pogojev za $G^0$ in $G^1$ veljati še
+\begin{align*} 
+\frac{\partial^2 R}{\partial x^2}\bigg|_{\substack{(x_0,y)}} &=
+\frac{\partial^2 S}{\partial u^2}\bigg(\frac{\partial u}{\partial x}\bigg)^2\bigg|_{\substack{(x_0,y)}} + 
+2\frac{\partial^2 S}{\partial u \partial v}\frac{\partial u}{\partial x}\frac{\partial v}{\partial x}\bigg|_{\substack{(x_0,y)}} + 
+\frac{\partial^2 S}{\partial v^2}\bigg(\frac{\partial v}{\partial x}\bigg)^2\bigg|_{\substack{(x_0,y)}} + \\
+&+\frac{\partial S}{\partial u}\frac{\partial^2 u}{\partial x^2}\bigg|_{\substack{(x_0,y)}} +
+\frac{\partial S}{\partial v}\frac{\partial^2 v}{\partial x^2}\bigg|_{\substack{(x_0,y)}}
+\end{align*}
+%$G^2$: $R_xx = S_{uu} u_x^2 + 2S_{uv}u_x v_x + S_{vv} v_x^2 + S_u u_{xx} + S_v v_{xx}$ vzdolž $C$
+\end{primer}
 
-Splošneje,\todo{grdo} za geometrijsko zveznost stopnje $n$ \todo{(ali se tako reče?)}, kjer je $n\in \N_0$ velja naslednje:
+V splošnem za geometrijsko zveznost stopnje $n$, kjer je $n\in \N_0$ velja naslednje:
 $$\frac{\partial^j R}{\partial x^j}\Bigr|_{\substack{C}}= \sum_{k=1}^j\sum_{h=0}^k A_{jkh}\frac{\partial^k S}{\partial u^h \partial v^{k-h}}\Bigr|_{\substack{C}}$$
 za vsak $j=0,1,\ldots,n$.
 Tu z $A_{jkh}$ označujemo koeficient

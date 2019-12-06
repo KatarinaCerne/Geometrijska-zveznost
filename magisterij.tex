@@ -355,7 +355,7 @@ ploskev geometrijsko zvezen, torej da je celotna ploskev, ki jo dobimo, ko zlepi
 geometrijsko zvezna. 
 
 \begin{definicija}\label{def2}
-  Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. %povej da na C je y=v
+  Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. 
   Pravimo, da se $R$ in $S$ \emph{stikata z $G^n$-zveznostjo vzdolž krivulje $C$}, če za vsako točko $b_0=C(y_0)$ obstaja lokalno regularna $C^n$ reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, da je $f(x_0,y)=(u_0,y)$ za vsak $y \in I_0$ in da velja
   $$\frac{\partial^{m+k}}{\partial x^m \partial y^k}R\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{m+k}}{\partial x^m \partial y^k}(S\circ f)\Bigr|_{\substack{(x_0,y)}} \textrm{ za } m+k=1,\ldots,n,$$
   kjer je $I_0$ neka okolica $y_0$. %bolj natančno, kaj je ta okolica
@@ -404,40 +404,64 @@ Za $G^2$ mora poleg pogojev za $G^0$ in $G^1$ veljati še
 \end{primer}
 
 V splošnem za geometrijsko zveznost stopnje $n$, kjer je $n\in \N_0$ velja naslednje:
-$$\frac{\partial^j R}{\partial x^j}\Bigr|_{\substack{C}}= \sum_{k=1}^j\sum_{h=0}^k A_{jkh}\frac{\partial^k S}{\partial u^h \partial v^{k-h}}\Bigr|_{\substack{C}}$$
-za vsak $j=0,1,\ldots,n$.
-Tu z $A_{jkh}$ označujemo koeficient
-$$A_{jkh}={k \choose h}\sum_{\substack{m_1+\cdots +m_k =j \\ m_1, \ldots, m_k >0}}
-\frac{j!}{k!m_1!\cdots m_k!} u_{x^{m_1}} \cdots u_{x^{m_h}} v_{x^{m_{h+1}}} \cdots v_{x^{m_k}}\Bigr|_{\substack{C}}.$$
-Z $u_x^{m_i}$ je označen $m_i$-ti delni odvod funkcije $u$ po $x$.
-\todo{ali je treba to grozo dokazati?}
+\begin{equation*}\label{eq1}
+\frac{\partial^k R}{\partial x^k}\bigg|_{\substack{C}}=\sum_{i=1}^k \sum_{|m_i|=k}A_{m_i}^k
+\sum_{h=0}^i{i \choose h}u_{x^{m_1}}\cdots u_{x^{m_h}}v_{x^{m_{h+1}}}\cdots v_{x^{m_h}}
+\frac{\partial^i S}{\partial u^h \partial v^{i-h}}\bigg|_{\substack{C}}
+\end{equation*}
+za vsak $k=0,1,\ldots,n$. Tu z $A_{m_i}^k$ iznačujemo koeficient
+$$A_{m_i}^k = \frac{k!}{i!m_1!\cdots m_i!}.$$
+Z $u_x^{m_i}$ je označen $m_i$-ti delni odvod funkcije $u$ po $x$, z oznako $|m_i|$ pa 
+označimo vsoto $|m_i|=m_1+m_2+\cdots + m_i$, kjer velja $m_j>0$ za vsak $j=1,\ldots, i$.
+\todo{dokaz z indukcijo?}
 
------------------------------------------------------------------------------
+%$$\frac{\partial^j R}{\partial x^j}\Bigr|_{\substack{C}}= \sum_{k=1}^j\sum_{h=0}^k A_{jkh}\frac{\partial^k S}{\partial u^h \partial v^{k-h}}\Bigr|_{\substack{C}}$$
+%za vsak $j=0,1,\ldots,n$.
+%Tu z $A_{jkh}$ označujemo koeficient
+%$$A_{jkh}={k \choose h}\sum_{\substack{m_1+\cdots +m_k =j \\ m_1, \ldots, m_k >0}}
+%\frac{j!}{k!m_1!\cdots m_k!} u_{x^{m_1}} \cdots u_{x^{m_h}} v_{x^{m_{h+1}}} \cdots v_{x^{m_k}}\Bigr|_{\substack{C}}.$$
 
-\todo{kaj je s to lemo?}
-\begin{lema}\todo{?? ali je dokaz tega potreben?}
-  Naj bo $f(u,v)$ funkcija razreda $C^n$ in $u(t)$ in $v(t)$ reparametrizaciji razreda $C^n$. Potem
-  \begin{align*}
-  \frac{d^k f}{dt^k}=& \sum_{i=1}^k\sum_{|\mathbf{m_i}|=k} A_{\mathbf{m_i}}^k \sum_{h=0}^i {i \choose h} u^{(m_1)}\cdots u^{(m_h)}(v) v^{(m_{h+1})}\cdots v^{(m_i)} \\
-  &\cdot\frac{\partial^i f}{\partial u_r^h \partial v_r^{i-h}},
-  \end{align*}
-  kjer $k=1,\ldots,n$ ter\\
-  $\mathbf{m_i} = (m1,m2,\ldots,m_i)$, $|\mathbf{m_i}|=m_1+m_2+\cdots+m_i$ in $A_{\mathbf{m_i}}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
-\end{lema}
+%\todo{kaj je s to lemo?}
+%\begin{lema}\todo{?? ali je dokaz tega potreben?}
+%  Naj bo $f(u,v)$ funkcija razreda $C^n$ in $u(t)$ in $v(t)$ reparametrizaciji razreda $C^n$. Potem
+%  \begin{align*}
+%  \frac{d^k f}{dt^k}=& \sum_{i=1}^k\sum_{|\mathbf{m_i}|=k} A_{\mathbf{m_i}}^k \sum_{h=0}^i {i \choose h} u^{(m_1)}\cdots u^{(m_h)}(v) v^{(m_{h+1})}\cdots v^{(m_i)} \\
+%  &\cdot\frac{\partial^i f}{\partial u_r^h \partial v_r^{i-h}},
+%  \end{align*}
+%  kjer $k=1,\ldots,n$ ter\\
+%  $\mathbf{m_i} = (m1,m2,\ldots,m_i)$, $|\mathbf{m_i}|=m_1+m_2+\cdots+m_i$ in $A_{\mathbf{m_i}}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
+%\end{lema}
+%\todo{preoblikuj to lemo, da bo koeficient A kot zgoraj. }
+%\todo{dokaz najdeš nekje k piše v viru}
 
-\todo{preoblikuj to lemo, da bo koeficient A kot zgoraj. }
-\todo{dokaz najdeš nekje k piše v viru}
+Taka definicija geometrijske zveznosti med dvema ploskvama sama po sebi pri konstrukciji geometrijsko 
+zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši naslednji izrek.
 
-------------------------------------------------------------------
+\begin{izrek}
+  Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. 
+  Ploskvi $R$ in $S$ sta vzdolž skupnega roba $G^n$-zvezni natanko tedaj ko obstajajo 
+  $C^n$ funkcije $\alpha_1(y), \ldots, \alpha_n(y)$ in $\beta_1(y) \ldots, \beta_n(y)$, 
+  da velja 
+  $$\frac{\partial^k R}{\partial x^k}\bigg|_{\substack{C}}=\sum_{i=1}^k \sum_{|m_i|=k}A_{m_i}^k
+  \sum_{h=0}^i{i \choose h}\alpha_{m_1}\cdots \alpha_{m_h}\beta_{m_{h+1}}\cdots \beta_{m_h}
+  \frac{\partial^i S}{\partial u^h \partial v^{i-h}}\bigg|_{\substack{C}},$$ 
+  kjer je $A_{m_i}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
+\end{izrek}
 
-\todo{zdaj si pogledamo ekvivalentno/alternativno definicijo G zveznosti? s pomočjo junction functions?}
-\nevem{Z uvedbo funkcij $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ pridemo do nekoliko drugačne definicije
-geometrijske zveznosti.}
-\todo{funkcije $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ imenujemo
-junction/connection functions}
+\begin{opomba}
+  Funkcije $\alpha_1(y), \ldots, \alpha_n(y)$ in $\beta_1(y) \ldots, \beta_n(y)$ 
+  imenujemo \emph{stične funkcije} \todo{junction/connection functions}
+\end{opomba}
 
-Naj bodo $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ funkcije 
-razreda $C^n$ ene spremenljivke. Definirajmo:\\
+\begin{proof}
+  V eno smer je dokaz očiten. Če predpostavimo, da sta ploskvi $R$ in $S$ na stiku $G^n$-zvezni, 
+  izrek sledi neposredno iz definicije \ref{def2} in enačbe \ref{eq1}, če definiramo 
+  $\alpha_i(y)=u_{x^i}(y)$ in $\beta_i(y)=v_{x^i}(y)$ za $i=1,\ldots,n$. 
+
+\end{proof}
+
+%Naj bodo $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ funkcije 
+%razreda $C^n$ ene spremenljivke. Definirajmo:\\
 $$u(x,y) =  u_0 + \sum_{i=0}^n \frac{1}{i!}\alpha_i(y)(x-x_0)^i$$
 $$v(x,y) = y + \sum_{i=0}^n \frac{1}{i!}\beta_i(y)(x-x_0)^i$$
 

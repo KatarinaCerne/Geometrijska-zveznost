@@ -357,7 +357,9 @@ geometrijsko zvezna.
 \begin{definicija}\label{def2}
   Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. 
   Pravimo, da se $R$ in $S$ \emph{stikata z $G^n$-zveznostjo vzdolž krivulje $C$}, če za vsako točko $b_0=C(y_0)$ obstaja lokalno regularna $C^n$ reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, da je $f(x_0,y)=(u_0,y)$ za vsak $y \in I_0$ in da velja
-  $$\frac{\partial^{m+k}}{\partial x^m \partial y^k}R\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{m+k}}{\partial x^m \partial y^k}(S\circ f)\Bigr|_{\substack{(x_0,y)}} \textrm{ za } m+k=1,\ldots,n,$$
+  \begin{equation}\label{eq0}
+  \frac{\partial^{m+k}}{\partial x^m \partial y^k}R\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{m+k}}{\partial x^m \partial y^k}(S\circ f)\Bigr|_{\substack{(x_0,y)}} \textrm{ za } m+k=1,\ldots,n,
+  \end{equation}
   kjer je $I_0$ neka okolica $y_0$. %bolj natančno, kaj je ta okolica
 \end{definicija}
 
@@ -404,11 +406,11 @@ Za $G^2$ mora poleg pogojev za $G^0$ in $G^1$ veljati še
 \end{primer}
 
 V splošnem za geometrijsko zveznost stopnje $n$, kjer je $n\in \N_0$ velja naslednje:
-\begin{equation*}\label{eq1}
+\begin{equation}\label{eq1}
 \frac{\partial^k R}{\partial x^k}\bigg|_{\substack{C}}=\sum_{i=1}^k \sum_{|m_i|=k}A_{m_i}^k
 \sum_{h=0}^i{i \choose h}u_{x^{m_1}}\cdots u_{x^{m_h}}v_{x^{m_{h+1}}}\cdots v_{x^{m_h}}
 \frac{\partial^i S}{\partial u^h \partial v^{i-h}}\bigg|_{\substack{C}}
-\end{equation*}
+\end{equation}
 za vsak $k=0,1,\ldots,n$. Tu z $A_{m_i}^k$ iznačujemo koeficient
 $$A_{m_i}^k = \frac{k!}{i!m_1!\cdots m_i!}.$$
 Z $u_x^{m_i}$ je označen $m_i$-ti delni odvod funkcije $u$ po $x$, z oznako $|m_i|$ pa 
@@ -442,10 +444,13 @@ zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši nasle
   Ploskvi $R$ in $S$ sta vzdolž skupnega roba $G^n$-zvezni natanko tedaj ko obstajajo 
   $C^n$ funkcije $\alpha_1(y), \ldots, \alpha_n(y)$ in $\beta_1(y) \ldots, \beta_n(y)$, 
   da velja 
-  $$\frac{\partial^k R}{\partial x^k}\bigg|_{\substack{C}}=\sum_{i=1}^k \sum_{|m_i|=k}A_{m_i}^k
+  \begin{equation}\label{eq2}
+  \frac{\partial^k R}{\partial x^k}\bigg|_{\substack{C}}=\sum_{i=1}^k \sum_{|m_i|=k}A_{m_i}^k
   \sum_{h=0}^i{i \choose h}\alpha_{m_1}\cdots \alpha_{m_h}\beta_{m_{h+1}}\cdots \beta_{m_h}
-  \frac{\partial^i S}{\partial u^h \partial v^{i-h}}\bigg|_{\substack{C}},$$ 
+  \frac{\partial^i S}{\partial u^h \partial v^{i-h}}\bigg|_{\substack{C}},
+  \end{equation} 
   kjer je $A_{m_i}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
+  Veljati mora tudi, da je $\alpha_1(y)\neq 0$ \todo{in predznak}
 \end{izrek}
 
 \begin{opomba}
@@ -454,95 +459,108 @@ zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši nasle
 \end{opomba}
 
 \begin{proof}
-  V eno smer je dokaz očiten. Če predpostavimo, da sta ploskvi $R$ in $S$ na stiku $G^n$-zvezni, 
-  izrek sledi neposredno iz definicije \ref{def2} in enačbe \ref{eq1}, če definiramo 
-  $\alpha_i(y)=u_{x^i}(y)$ in $\beta_i(y)=v_{x^i}(y)$ za $i=1,\ldots,n$. 
+  \todo{kaj je z lokalnostjo in b0???}
+  Najprej prodpostavimo, da obstajajo $C^n$ funkcije $\alpha_1(y), \ldots, \alpha_n(y)$ 
+  in $\beta_1(y) \ldots, \beta_n(y)$, za katere velja enakost \ref{eq2} v izreku, in 
+  da je $\alpha_1(y)\neq 0$. 
+  Dokazati želimo, da od tod 
+  sledi $G^n$-zveznost stika ploskev $R(x,y)$ in $S(u,v)$. 
 
+  Definirajmo reparametrizacijsko funkcijo $f(x,y)=(u(x,y),v(x,y))$ na naslednji način: 
+  $$u(x,y) =  u_0 + \sum_{i=0}^n \frac{1}{i!}\alpha_i(y)(x-x_0)^i,$$
+  $$v(x,y) = y + \sum_{i=0}^n \frac{1}{i!}\beta_i(y)(x-x_0)^i.$$
+  
+  Ker so po predpostavki funkcije $\alpha_i$ in $\beta_i$, $i=1,\ldots,n$ razreda $C^n$, 
+  tudi funkcija $f$ pripada temu razredu. 
+  
+  Opazimo še, da za $i=1, \ldots, k$ velja
+  $$\frac{\partial^i u}{\partial x^i}(x_0,y)=\alpha_i(y),$$
+  $$\frac{\partial^i v}{\partial x^i}(x_0,y)=\beta_i(y).$$
+  Če dobljeno vstavimo v enačbo \ref{eq2}, dobimo ravno enačbo \ref{eq1}, od koder zaradi 
+  ujemanja ploskev $R$ in $S$ v krivulji $C$ sledi tudi enakost \ref{eq0}. Pokazati moramo 
+  le še, da je $f$ lokalno regularna.
+  
+  Vemo, da je reparametrizacijska funkcija $f$ regularna vzdolž $C$, če sta oba njena parcialna odvoda prvega 
+  reda linearno neodvisna, torej če velja 
+  $$\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) \neq 0.$$
+
+  Razpišimo oba odvoda reparametrizacijske funkcije $f(x,y)=(u(x,y),v(x,y))$ vzdolž krivulje $C$ 
+  in ju skušajmo zapisati s pomočjo stičnih funkcij. Za odvod po spremenljivki $x$ velja:
+  $$\frac{\partial f}{\partial x}(x_0,y)=(\frac{\partial u}{\partial x}(x_0,y),\frac{\partial v}{\partial x}(x_0,y))=(\alpha_1(y),\beta_1(y)).$$
+
+  Če razpišemo odvod po spremenljivki $y$, pa dobimo:
+  $$\frac{\partial f}{\partial y}(x_0,y)=(\frac{\partial u}{\partial y}(x_0,y),\frac{\partial v}{\partial y}(x_0,y))=(0,1).$$
+
+  Vektorski produkt $\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y)$
+  je torej enak 
+  $$\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) = 
+  (\alpha_1(y),\beta_1(y))\times (0,1) = \alpha_1(y)$$
+
+  Vektorski produkt obeh parcialnih odvodov prvega reda je torej različen od $0$ 
+  natanko tedaj, ko je $\alpha_1(y)\neq 0$, kar pa velja po začetni predpostavki.
+  Sledi, da je reparametrizacijska funkcija $f$  regularna. 
+
+  Pokazali smo torej, da obstaja lokalno regularna reparametrizacijska funkcija $f$, ki 
+  ustreza pogojem iz definicije \ref{def2}, od koder sledi, da se ploskvi $R$ in $S$ stikata 
+  z $G^n$-zveznostjo.
+
+  Dokažimo izrek še v drugo smer.
+  Če predpostavimo, da sta ploskvi $R$ in $S$ na stiku $G^n$-zvezni, 
+  obstoj funkcij $\alpha_1(y), \ldots, \alpha_n(y)$ in $\beta_1(y) \ldots, \beta_n(y)$
+  in enačba \ref{eq2} sledjo neposredno iz definicije \ref{def2} in enačbe \ref{eq1}, 
+  če definiramo $\alpha_i(y)=u_{x^i}(y)$ in $\beta_i(y)=v_{x^i}(y)$ za $i=1,\ldots,n$. 
+  \todo{ali so take funkcije Cn??}
+
+  Ker je stik ploskev $R$ in $S$ $G^n$-zvezen, do definiciji \ref{def2} obstaja 
+  lokalno regularna reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, ki ustreza 
+  pogojem iz definicije \ref{def2}. Videli smo že, da je funkcija $f$ regularna 
+  natanko tedaj, ko je $u_x(x_0,y)=\alpha_1(y)\neq 0$. 
+  Torej smo okazali še neničelnost funkcije $\alpha_1$, s čimer je dokaz končan. 
 \end{proof}
 
-%Naj bodo $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$ funkcije 
-%razreda $C^n$ ene spremenljivke. Definirajmo:\\
-$$u(x,y) =  u_0 + \sum_{i=0}^n \frac{1}{i!}\alpha_i(y)(x-x_0)^i$$
-$$v(x,y) = y + \sum_{i=0}^n \frac{1}{i!}\beta_i(y)(x-x_0)^i$$
+%Stične funkcije lahko izberemo skoraj povsem poljubno. Upoštevati moramo le dva pogoja, 
+%ki omejujeta izbiro funkcije $\alpha_1$. Prvi pogoj sledi iz zahteve po regularnosti 
+%reparametrizacijske funkcije $f$.
+%Reparametrizacijska funkcija $f$ je regularna vzdolž $C$, če sta oba njena parcialna odvoda prvega 
+%reda linearno neodvisna, torej če velja $\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) \neq 0$.
+%Razpišimo oba odvoda reparametrizacijske funkcije $f(x,y)=(u(x,y),v(x,y))$ vzdolž krivulje $C$ 
+%in ju skušajmo zapisati s pomočjo stičnih funkcij. Za odvod po spremenljivki $x$ velja:
+%$$\frac{\partial f}{\partial x}(x_0,y)=(\frac{\partial u}{\partial x}(x_0,y),\frac{\partial v}{\partial x}(x_0,y))=(\alpha_1(y),\beta_1(y)),$$
+%pri čemer smo uporabili opazko \todo{sklic}.
+%Če razpišemo odvod po spremenljivki $y$, pa dobimo:
+%$$\frac{\partial f}{\partial y}(x_0,y)=(\frac{\partial u}{\partial y}(x_0,y),\frac{\partial v}{\partial y}(x_0,y))=(0,1).$$
+%Vektorski produkt $\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y)$
+%je torej enak 
+%$$\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) = 
+%(\alpha_1(y),\beta_1(y))\times (0,1) = \alpha_1(y)$$
+%Sledi, da je reparametrizacija regularna, natanko tedaj \todo{?}, ko za pripradajočo stično \todo{junction?} 
+%funkcijo $\alpha_1$ velja $\alpha_1(y)\neq 0$ vzdolž stične krivulje $C$. 
+%\todo{ali je potrben podatek "vzdolž krivulje C"?}
+%\todo{to moraš nekako motivirati: zakaj si to sploh pogledamo? zato, ker to predstavlja 
+%pogoj za $\alpha_1$?}
 
-\todo{ali moram povsod pisati, kam te funkcije slikajo? recimo paramterizacije in alfa, beta itd.}
+\todo{Drugo, na kar moramo paziti pri izbiri funkcije $\alpha_1$ pa je njen predznak. 
+Pri izbiri napačnega predznaka namreč lahko pride do stika v obliki "špice".} 
 
-Opazimo, da za $i=1, \ldots, k$ velja
-$$\frac{\partial^i u}{\partial x^i}(x_0,y)=\alpha_i(y),$$
-$$\frac{\partial^i v}{\partial x^i}(x_0,y)=\beta_i(y).$$
-%\end{flalign*}
+%Vpeljava stičnih funkcij nas pripelje do nekoliko drugačne definicije geometrijske 
+%zveznosti.
+%\begin{definicija}
+%  Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, 
+%  ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. 
+%  Pravimo, da se $R$ in $S$ stikata z $G^n$-zveznostjo vzdolž krivulje $C$, 
+%  če za vsako točko $b_0=C(y_0)$ obstajajo take funkcije razreda $C^n$ ene 
+%  spremenljivke $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$, 
+%  da $\alpha_1(y)\neq0$, pri čemer mora imeti $\alpha_1$ ustrezen predznak \todo{??}, 
+%  in da velja
+%  $$\frac{\partial^j R}{\partial x^j}\Bigr|_{\substack{C}}= \sum_{k=1}^j\sum_{h=0}^k A_{jkh}\frac{\partial^k S}{\partial u^h \partial v^{k-h}}\Bigr|_{\substack{C}}$$
+%  za vsak $j=0,1,\ldots,n$.
+%  Tu z $A_{jkh}$ označujemo koeficient
+%  $$A_{jkh}={k \choose h}\sum_{\substack{m_1+\cdots +m_k =j \\ m_1, \ldots, m_k >0}}
+%  \frac{j!}{k!m_1!\cdots m_k!} \alpha_1 \cdots \alpha_{m_h} \beta_{m_{h+1}} \cdots \beta_{m_k}\Bigr|_{\substack{C}}$$
+%\end{definicija}
+%\todo{popravi A, indekse pri alfah in betah}
 
-Stične funkcije lahko izberemo skoraj povsem poljubno. Upoštevati moramo le dva pogoja, 
-ki omejujeta izbiro funkcije $\alpha_1$. Prvi pogoj sledi iz zahteve po regularnosti 
-reparametrizacijske funkcije $f$.
-
-\todo{def. regularnosti?}
-\todo{kaj je lokalna regularnost?}
-
-Reparametrizacijska funkcija $f$ je regularna vzdolž $C$, če sta oba njena parcialna odvoda prvega 
-reda linearno neodvisna, torej če velja $\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) \neq 0$.
-
-Razpišimo oba odvoda reparametrizacijske funkcije $f(x,y)=(u(x,y),v(x,y))$ vzdolž krivulje $C$ 
-in ju skušajmo zapisati s pomočjo stičnih funkcij. Za odvod po spremenljivki $x$ velja:
-
-$$\frac{\partial f}{\partial x}(x_0,y)=(\frac{\partial u}{\partial x}(x_0,y),\frac{\partial v}{\partial x}(x_0,y))=(\alpha_1(y),\beta_1(y)),$$
-pri čemer smo uporabili opazko \todo{sklic}.
-Če razpišemo odvod po spremenljivki $y$, pa dobimo:
-
-$$\frac{\partial f}{\partial y}(x_0,y)=(\frac{\partial u}{\partial y}(x_0,y),\frac{\partial v}{\partial y}(x_0,y))=(0,1).$$
-
-Vektorski produkt $\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y)$
-je torej enak 
-
-$$\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) = 
-(\alpha_1(y),\beta_1(y))\times (0,1) = \alpha_1(y)$$
-
-Sledi, da je reparametrizacija regularna, natanko tedaj \todo{?}, ko za pripradajočo stično \todo{junction?} 
-funkcijo $\alpha_1$ velja $\alpha_1(y)\neq 0$ vzdolž stične krivulje $C$. 
-\todo{ali je potrben podatek "vzdolž krivulje C"?}
-\todo{to moraš nekako motivirati: zakaj si to sploh pogledamo? zato, ker to predstavlja 
-pogoj za $\alpha_1$?}
-
-Drugo, na kar moramo paziti pri izbiri funkcije $\alpha_1$ pa je njen predznak. 
-Pri izbiri napačnega predznaka namreč lahko pride do stika v obliki "špice". 
-\todo{tega ne razumem čisto. tu bi bil potreben kakšen primer.}
-
-Vpeljava stičnih funkcij nas pripelje do nekoliko drugačne definicije geometrijske 
-zveznosti.
-
-\begin{definicija}
-  Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, 
-  ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. 
-  Pravimo, da se $R$ in $S$ stikata z $G^n$-zveznostjo vzdolž krivulje $C$, 
-  če za vsako točko $b_0=C(y_0)$ obstajajo take funkcije razreda $C^n$ ene 
-  spremenljivke $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$, 
-  da $\alpha_1(y)\neq0$, pri čemer mora imeti $\alpha_1$ ustrezen predznak \todo{??}, 
-  in da velja
-  $$\frac{\partial^j R}{\partial x^j}\Bigr|_{\substack{C}}= \sum_{k=1}^j\sum_{h=0}^k A_{jkh}\frac{\partial^k S}{\partial u^h \partial v^{k-h}}\Bigr|_{\substack{C}}$$
-  za vsak $j=0,1,\ldots,n$.
-  Tu z $A_{jkh}$ označujemo koeficient
-  $$A_{jkh}={k \choose h}\sum_{\substack{m_1+\cdots +m_k =j \\ m_1, \ldots, m_k >0}}
-  \frac{j!}{k!m_1!\cdots m_k!} \alpha_1 \cdots \alpha_{m_h} \beta_{m_{h+1}} \cdots \beta_{m_k}\Bigr|_{\substack{C}}$$
-\end{definicija}
-\todo{popravi A, indekse pri alfah in betah}
-
------------------------------------------------------
-
-\todo{kaj je s tem izrekom?}
-\begin{izrek}
-  Naj bosta $R(u_r,v_r)$ in $S(u_s,v_s)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(v)=R(u_{r0},v)=S(u_{s0},v)$. Ploskvi $R$ in $S$ sta $G^n$-zvezni vzdolž skupnega roba natanko tedaj ko obstajajo funkcije $p_i(v)$, $q_i(v)$, $i=1,\ldots, n$, da velja
-  \begin{align*}
-  \frac{\partial^k S}{\partial u_s^k}\Bigr|_{\substack{C}}=& \sum_{i=1}^k\sum_{|\mathbf{m_i}|=k} A_{\mathbf{m_i}}^k \sum_{h=0}^i {i \choose h} p_{m_1}(v) \cdots p_{m_h}(v) q_{m_{h+1}}(v) \cdots q_{m_i} \\
-  &\cdot\frac{\partial^i R}{\partial u_r^h \partial v_r^{i-h}},
-  \end{align*}
-  kjer $k=1,\ldots,n$ ter\\
-  $\mathbf{m_i} = (m1,m2,\ldots,m_i)$, $|\mathbf{m_i}|=m_1+m_2+\cdots+m_i$ in $A_{\mathbf{m_i}}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
-\end{izrek}
-
-\todo{ta izrek je ubistvu isto kot ekvivalentna definicija. 
-ali je bolje, da ekvivalentno definicijo zapišem kot izrek? 
-pomembno!!: kaj so potrebni in kaj zadostni pogoji? kaj sledi iz česa?}
------------------------------------------------------------------
+\todo{nekaj za zaključek poglavja in napeljavo na novo poglavje}
 
 \section{$G^1$ zveznost}
 

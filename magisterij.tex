@@ -329,7 +329,7 @@ geometrijsko zvezne ploskve tudi c zvezne (primer v farin, ne razumem)}
 
 \todo{s čim se to delo ukvarja in kaj bo v kakšnem poglavju}
 
-\section{Geometrijska zveznost} %odloči se še za naslove
+\section{Geometrijska zveznost}\label{geom.zv.}
 
 \todo{nek uvodni tekst?}
 Najprej si oglejmo povsem splošno definicijo geometriske zveznosti neke ploskve.
@@ -439,7 +439,7 @@ označimo vsoto $|m_i|=m_1+m_2+\cdots + m_i$, kjer velja $m_j>0$ za vsak $j=1,\l
 Taka definicija geometrijske zveznosti med dvema ploskvama sama po sebi pri konstrukciji geometrijsko 
 zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši naslednji izrek.
 
-\begin{izrek}
+\begin{izrek}\label{izrek1}
   Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. 
   Ploskvi $R$ in $S$ sta vzdolž skupnega roba $G^n$-zvezni natanko tedaj ko obstajajo 
   $C^n$ funkcije $\alpha_1(y), \ldots, \alpha_n(y)$ in $\beta_1(y) \ldots, \beta_n(y)$, 
@@ -570,53 +570,49 @@ bomo ogledali, kako do tega pridemo.}
 
 Imejmo ploskvi $R(x,y)$ in $S(u,v)$, ki se v krivulji $C(y) = R(x_0,y) = S(u_0,y)$ 
 stikata z geometrijsko zveznostjo $G^1$.  
-Sledi, da je $R_y(x_0,y) = S_y(x_0,y) = S_v(x_0,y)$. Kot smo že videli \todo{ugh} v poglavju \todo{sklic}, 
+Sledi, da je $R_y(x_0,y) = S_y(x_0,y) = S_v(x_0,y)$. Kot smo že videli v poglavju \ref{geom.zv.}, 
 nam je zato potrebno opazovati zgolj odvode v smeri $x$.
 
-Ker je stik obeh ploskev v $C$ $G^1$-zvezen, po definiciji \todo{sklic} obstajata 
+Ker je stik obeh ploskev v $C$ $G^1$-zvezen, po izreku \ref{izrek1} obstajata 
 funkciji $\alpha_1$ in $\beta_1$, kjer je $\alpha_1(y) \neq 0$ za vsak $y$ 
 in ima ustrezen predznak, da velja:
 
-$$R_x(x_0,y)=\alpha_1(y) S_u(u_0,y)+\beta_1(y)S_v(u_0,y).$$
+\begin{equation}\label{eq3}
+R_x(x_0,y)=\alpha_1(y) S_u(u_0,y)+\beta_1(y)S_v(u_0,y).
+\end{equation}
 
 Zgornja enačba nam pove, da so parcialni odvodi $R_x(x_0,y)$, $S_u(u_0,y)$ in 
 $S_v(u_0,y)$ v vsaki točki $y$ linearno neodvisni. Torej so v vsaki točki $y$ del 
 iste tangentne ravnine na krivuljo $C$. Zato torej $G^1$-zveznost imenujemo tudi 
-zveznost tangentnih ravnin.
+\emph{zveznost tangentnih ravnin}.
 
-\nevem{v predstavitvi sem šla tako: $R(x_0,y)=S(u_0,y)$,  
-  $R_x(x_0,y)=u_x(x_0,y)S_u(u_0,y)+v_x(x_0,y)S_v(u_0,y)$,  
-  $R_x(x_0,y)=\alpha_1(y) S_u(u_0,y)+\beta_1(y)S_v(u_0,y)$}  
-\todo{na mestu najbrž kakšna slika}
+%\nevem{v predstavitvi sem šla tako: $R(x_0,y)=S(u_0,y)$,  
+%  $R_x(x_0,y)=u_x(x_0,y)S_u(u_0,y)+v_x(x_0,y)S_v(u_0,y)$,  
+%  $R_x(x_0,y)=\alpha_1(y) S_u(u_0,y)+\beta_1(y)S_v(u_0,y)$}  
+\todo{slika}
 
-Oglejmo si še, od kod pride poimenovanje ''zveznost enotskih normal''. 
-Znova opazujemo enačbo 
-$$R_x(x_0,y)=\alpha_1(y) S_u(u_0,y)+\beta_1(y)S_v(u_0,y).$$
-\todo{ali je bolje, da se tu samo skličem?}
+Oglejmo si še, od kod pride poimenovanje \emph{zveznost enotskih normal}. 
+Znova opazujemo enačbo \ref{eq3}. 
 Enačbo sedaj z obeh strani vektorsko pomnožimo z $R_y(x_0,y)$:
 $$R_x(x_0,y)\times R_y(x_0,y)=\alpha_1(y) S_u(u_0,y)\times R_y(x_0,y)+\beta_1(y)S_v(u_0,y)\times R_y(x_0,y).$$
 Upoštevamo lahko, da je $R_y(x_0,y)=S_v(u_0,y)$. Dobimo:
 $$R_x(x_0,y) \times R_y(x_0,y) = \alpha_1(y) S_u(u_0,y) \times S_v(u_0,y).$$
 Od tod vidimo, da sta normali na ploskvi $R$ in $S$ na njunu stični 
-krivulji vzporedni. \todo{grdo} Na skupnem robu imata torej obe ploskvi enaki 
+krivulji $C$ vzporedni. Na skupnem robu imata torej obe ploskvi enaki 
 enotski normali:
 $$\frac{R_x(x_0,y) \times R_y(x_0,y)}{||R_x(x_0,y) \times R_y(x_0,y)||}=\frac{S_u(u_0,y) \times S_v(u_0,y)}{||S_u(u_0,y) \times S_v(u_0,y)||}.$$
 
-\todo{tukaj pride nek vezni tekst? ali pa je to ok?}
 Ker parcialni odvodi $R_x(x_0,y)$, $S_u(u_0,y)$ in $S_v(u_0,y)$ ležijo na isti 
-tangentni ravnini, velja tudi: \todo{zelo grdo}
+tangentni ravnini, velja tudi:
 $$\det(R_x(x_0,y), S_u(u_0,y), S_v(u_0,y))=0.$$
-Torej obstajajo funkcije \todo{povedati kakšne, iz kje kam?} $\lambda$, 
-$\mu$ in $\gamma$, da velja: \todo{ali moram to kaj bolj natančno utemeljiti?}
-\todo{treba motivirati, zakaj to gledamo}
-$$\lambda(y)R_x(x_0,y)=\mu(y)S_u(u_0,y)+\gamma(y)S_v(u_0,y).$$
 
-\todo{tole tukaj je najbrž en bullshit --------------------------------------- 
-to poglavje bo najbrž treba prestaviti, ali pa spremeniti v podpoglavje}
+\nevem{Torej obstajajo funkcije (povedati kakšne, iz kje kam?) $\lambda$, 
+$\mu$ in $\gamma$, da velja:
+$$\lambda(y)R_x(x_0,y)=\mu(y)S_u(u_0,y)+\gamma(y)S_v(u_0,y).$$}
 
-Če predpostavimo, da sta ploskvi $R$ in $S$ polinomski, lahko tudi za $\lambda$, $\mu$ in $\gamma$ 
-izberemo polinome, \todo{izberemo? ali niso točno določeni?} kar nam zelo olajša 
-konstrukcijo geometrijsko zveznih ploskev. 
+\nevem{Če predpostavimo, da sta ploskvi $R$ in $S$ polinomski, lahko tudi za $\lambda$, $\mu$ in $\gamma$ 
+izberemo polinome, kar nam zelo olajša 
+konstrukcijo geometrijsko zveznih ploskev.} 
 
 \todo{najbrž lahko poveš, da se bomo v naslednjih poglavjih ukvarjali z izbiro 
 teh polinomov}

@@ -659,18 +659,21 @@ $\Delta^{0,s} \mathbf{b}_{i,j} = \Delta^{0,s-1} \mathbf{b}_{i,j+1}-\Delta^{0,s-1
 \todo{Nekaj v smislu, da sedaj prevedemo že dobljene splošne pogoje na pogoje za 
 bezierove ploskve oz. kako ti pogoji izgledajo za te ploskve.}
 
-\todo{izkaže se, da za funkcije alfa in beta v splošni definiciji lahko vzamemo polinome, 
-ker gre pri bezierovih ploskvah tudi za polinomske parametrične ploskve.}
+\todo{ker so bezierov ploskve polinomske, so funkcije alfa in beta iz splošne definicije 
+racionalne. dokazali bomo izrek, ki pravi, da lahko za stične funkcije vzamemo tudi 
+polinome, kar nam zelo koristi pri konkretnih konstrukcijah in iskanju pogojev 
+za kontrolne točke}
 
-Imejmo \todo{polinomski?} Bézierjevi ploskvi $\textbf{R}$ in $\textbf{S}$, podani na 
+Imejmo dve polinomski Bézierjevi ploskvi $\textbf{R}$ in $\textbf{S}$, podani na 
 naslednji način: 
 $$\textbf{R}(x,y)=\sum_{i=0}^{m_r}\sum_{j=0}^{n_r}\textbf{P}_{ij}B_i^{m_r}B_j^{n_r}$$
 $$\textbf{S}(u,v)=\sum_{i=0}^{m_s}\sum_{j=0}^{n_s}\textbf{Q}_{ij}B_i^{m_s}B_j^{n_s},$$
 kjer so $\{\textbf{P}_{i,j}, i=1,\ldots, m_r, j=1, \ldots, n_r\}$ in 
 $\{\textbf{Q}_{i,j}, i=1, \ldots, m_s, j=1, \ldots, n_s\}$ kontrolne točke ploskev 
-$\textbf{R}$ in $\textbf{S}$, $x, y, u$ in $v$ pa parametri na intervalu $[0,1]$. \todo{grdo}
+$\textbf{R}$ in $\textbf{S}$, $x, y, u$ in $v$ pa parametri z vrednostmi 
+na intervalu $[0,1]$.
 
-Ploskvi $\textbf{R}$ in $\textbf{S}$ se stikata v skupni \todo{robni?} krivulji
+Ploskvi $\textbf{R}$ in $\textbf{S}$ naj se stikata v skupni robni krivulji
 $\textbf{C}(v)=\textbf{R}(0,v)=\textbf{S}(0,v)$
 \todo{pojasni, zakaj lahko to predpostavimo. zakaj?? ker lahko parametriziramo? poglej.} 
 \todo{pojasni še, kako je s tem, da sta ploskvi prav obrnjeni, da ni špice} 
@@ -680,30 +683,28 @@ kjer so $\{\textbf{Z}_i, i=1,\ldots n_c\}$ njene kontrolne točke. Stopnja $n_c$
 $\textbf{C}$ ni nujno enaka stopnjama $n_r$ ali $n_s$, velja pa, da je $n_c \leq \min(n_r,n_s)$. 
 \todo{ali moram povedati, zakaj? ker ne vem}
 
-Naj bosta ploskvi $\textbf{R}$ in $\textbf{S}$ regularni vzdolž krivulje $\textbf{C}$
-\todo{da zadostimo pogoju iz 
-definicije geometrijske zveznosti}, torej naj bodo normale na ploskvi vzdolž krivulje 
-$\textbf{C}$ neničelne:
+Naj bosta ploskvi $\textbf{R}$ in $\textbf{S}$ regularni vzdolž krivulje $\textbf{C}$, 
+torej naj bodo normale na ploskvi vzdolž krivulje $\textbf{C}$ neničelne:
 $$N_r=\bigg(\frac{\partial \textbf{R}}{\partial x}\times \frac{\partial \textbf{R}}{\partial y}\bigg)\bigg|_{\textbf{C}}\neq 0$$
 $$N_s=\bigg(\frac{\partial \textbf{S}}{\partial u}\times \frac{\partial \textbf{S}}{\partial v}\bigg)\bigg|_{\textbf{C}}\neq 0$$
 \todo{Nr(y)?}
 
 O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek: 
-\todo{ekvivalenten izreku iz prejšnjega poglavja}
 
 \begin{izrek}
   Naj bosta $\textbf{R}$ in $\textbf{S}$ zgoraj definirani \todo{to ok?} Bézierovi 
   ploskvi, ki se stikata v robni krivulji $\textbf{C}$ (kot zgoraj). Stik ploskev je 
-  $G^n$-zvezen natanko tedaj, ko obstajajo polinomi \todo{vir:polinomske funkcije} 
-  $D(y)$, $E_i(y)$ in $F_i(y)$, da 
+  $G^n$-zvezen natanko tedaj, ko obstajajo polinomi $D(y)$, $E_i(y)$ in $F_i(y)$, da 
   velja:
-  \begin{align*}
-    D^{2k-1}(y)\frac{\partial^k\textbf{S}}{\partial u^k}\bigg|_{\textbf{C}} = &
-  \sum_{i=0}^k \sum_{|m_i|=k} A_{m_i}^k \sum_{h=0}^i {i\choose h} D^{i-1}(y)E_{m_1}(v)
-  \cdots E_{m_h}(y) \\
-  &\cdot F_{m_{h+1}}(y)\cdots F_{m_i}(y) \frac{\partial^i \textbf{R}}{\partial x^h \partial y^{i-h}},
-  \end{align*}
-  kjer je $i=1, \ldots n$ \todo{vir: k ??} in $k=1, \ldots n$. Z $A_{m_i}^k$ zopet označujemo 
+  \begin{equation}\label{eq4}
+    \begin{split}
+      D^{2k-1}(y)\frac{\partial^k\textbf{S}}{\partial u^k}\bigg|_{\textbf{C}} = &
+      \sum_{i=0}^k \sum_{|m_i|=k} A_{m_i}^k \sum_{h=0}^i {i\choose h} D^{i-1}(y)E_{m_1}(v)
+      \cdots E_{m_h}(y) \\
+      &\cdot F_{m_{h+1}}(y)\cdots F_{m_i}(y) \frac{\partial^i \textbf{R}}{\partial x^h \partial y^{i-h}},
+    \end{split}  
+  \end{equation}
+  kjer je $i=1, \ldots n$ in $k=1, \ldots n$. Z $A_{m_i}^k$ zopet označujemo 
   $A_{\mathbf{m_i}}^k = \frac{k!}{i!m_1!\cdots m_i!}$ in $|\mathbf{m_i}|=m_1+m_2+\cdots+m_i$.
   Velja še $D(y)E_1(y)\neq 0$ za $y\in [0,1]$, za stopnje polinomov pa velja:\\
   $st(D)\leq n_r + n_c -1,$\\
@@ -713,9 +714,9 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
 
 \begin{proof}
   Najprej predpostavljajmo, da obstajajo polinomi $D$, $E_i$ in $F_i$, $i=1, \ldots n$, 
-  ki ustrezajo enačbi \todo{sklic} in ostalim pogojem v izreku. Pokazati hočemo, da 
+  ki ustrezajo enačbi \ref{eq4} in ostalim pogojem v izreku. Pokazati hočemo, da 
   od tod sledi geometrijska zveznost ploskev $\textbf{R}$ in $\textbf{S}$. V ta namen 
-  bomo uporabili izrek \todo{sklic izrek z alfami in betami}. 
+  bomo uporabili izrek \ref{izrek1}. 
   
   Preoblikujmo enačbo 
   \begin{align*}
@@ -726,89 +727,105 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   \end{align*}
   Če celotno enačbo delimo z $D^{2k-1}$ (predpostavka, da $D(y)E_1(y)\neq 0$ na $[0,1]$, zagotavlja neničelnost polinoma $D$ na $[0,1]$), 
   dobimo 
-  \begin{align*}
+  \begin{equation}\label{eq5}
+    \begin{split}
     \frac{\partial^k\textbf{S}}{\partial u^k}\bigg|_{\textbf{C}} = &
     \sum_{i=0}^k \sum_{|m_i|=k} A_{m_i}^k \sum_{h=0}^i {i\choose h} D^{i-2k}(y)E_{m_1}(v)
     \cdots E_{m_h}(y) \\
     &\cdot F_{m_{h+1}}(y)\cdots F_{m_i}(y) \frac{\partial^i \textbf{R}}{\partial x^h \partial y^{i-h}}.
-  \end{align*}
+    \end{split}
+  \end{equation}
   Funkcijo $D^{2k-i}$ lahko zapišemo kot produkt \\
-  $D^{2k-i}(y)=D^{2m_1-1}(y)D^{2m_2-1}(y)\cdots D^{2m_h-1}(y) D^{2m_{h+1}}(y)\cdots D^{2m_i-1}(y)$.
-  
-  \todo{saj je |mi|=k}
+  $D^{2k-i}(y)=D^{2m_1-1}(y)D^{2m_2-1}(y)\cdots D^{2m_h-1}(y) D^{2m_{h+1}}(y)\cdots D^{2m_i-1}(y)$,
+  saj je $|m_i|=k$.
 
-  Dobljeno vstavimo v enačbo \todo{sklic}:
-  \begin{align*}
+  Dobljeno vstavimo v enačbo \ref{eq5}:
+  \begin{equation}\label{eq6}
+    \begin{split}
     \frac{\partial^k\textbf{S}}{\partial u^k}\bigg|_{\textbf{C}} = &
     \sum_{i=0}^k \sum_{|m_i|=k} A_{m_i}^k \sum_{h=0}^i {i\choose h} \frac{E_{m_1}(v)}{D^{2m_1-1}(y)}
     \cdots \frac{E_{m_h}(y)}{D^{2m_h-1}(y)} \\
     &\cdot \frac{F_{m_{h+1}}(y)}{D^{2m_{h+1}-1}(y)}\cdots \frac{F_{m_i}(y)}{D^{2m_i-1}(y)} \frac{\partial^i \textbf{R}}{\partial x^h \partial y^{i-h}}.
-  \end{align*}
+    \end{split}
+  \end{equation}
 
   Definirajmo
   $$\alpha_i(y)=\frac{E_i(y)}{D^{2i-1}(y)}\textrm{ in }\beta_i(y) = \frac{F_i(y)}{D^{2i-1}(y)},$$
-  kjer je $i=1, \ldots, n$. Če to vstavimo v zgornjo enačbo \todo{sklic? to je zelo grdo}, 
-  dobimo enačbo kot v izreku \todo{sklic}. Iz izreka \todo{sklic} torej sledi, da se 
+  kjer je $i=1, \ldots, n$. Potem enačba \ref{eq6} dobi enako obliko kot  
+  enačba \ref{eq2} v izreku \ref{izrek1}. Iz izreka \ref{izrek1} torej sledi, da se 
   ploskvi $\textbf{R}$ in $\textbf{S}$ stikata z geometrijsko zveznostjo $G^n$. S tem smo 
   dokazali \todo{eno smer ekvivalence ? kako se to lepo reče}
 
   Sedaj dokažimo še \todo{drugo smer ekvivalence v izreku}. Predpostavimo, da se ploskvi 
-  $\textbf{R}$ in $\textbf{S}$, definirani kot zgoraj \todo{sklic} stikata v robni krivulji 
+  $\textbf{R}$ in $\textbf{S}$, definirani kot zgoraj \todo{ok?}, stikata v robni krivulji 
   $\textbf{C}$ z geometrijsko zveznostjo $G^n$. Pokazati hočemo, da od tod sledi obstoj 
   polinomov $D$, $E_i$ in $F_i$ z lastnostmi kot v izreku.
-  Dokaza se lotimo z indukcijo po $k$. \todo{vir:k}
+  Dokaza se lotimo z indukcijo po $k$.
 
   Naj bo najprej $k=1$. Ker je slik ploskev $\textbf{R}$ in $\textbf{S}$ $G^n$-zvezen, 
   torej vsaj $G^1$-zvezen,
-  po izreku \todo{sklic} obstajata funkciji $\alpha_1(y)$ in $\beta_1(y)$, ki zadoščata 
-  enačbi 
-  $$\frac{\partial \textbf{S}}{\partial u}\bigg|_{\textbf{C}}(y) = 
-  \alpha_1(y)\frac{\partial \textbf{R}}{\partial x}\bigg|_{textbf{C}} + 
-  \beta_1(y) \frac{\partial \textbf{R}}{\partial y}\bigg|_{\textbf{C}}.$$
+  po izreku \ref{izrek1} obstajata $C^n$ funkciji $\alpha_1(y)$ in $\beta_1(y)$, ki zadoščata 
+  enačbi
+  \begin{equation}\label{eq7}
+  \frac{\partial \textbf{S}}{\partial u}\bigg|_{\textbf{C}}(y) = 
+  \alpha_1(y)\frac{\partial \textbf{R}}{\partial x}\bigg|_{\textbf{C}}(y) + 
+  \beta_1(y) \frac{\partial \textbf{R}}{\partial y}\bigg|_{\textbf{C}}(y).
+  \end{equation}
 
-  Dobljeno enačbo \todo{sklic?} z desne vektorsko množimo z $\frac{\partial \textbf{R}}{\partial y}$. 
+  Dobljeno enačbo z desne vektorsko množimo z $\frac{\partial \textbf{R}}{\partial y}$. 
   Dobimo:
-  $$\frac{\partial \textbf{S}}{\partial u} \times \frac{\partial \textbf{R}}{\partial y}\bigg|_{\textbf{C}}(y) = 
+  \begin{equation}\label{eq8}
+  \frac{\partial \textbf{S}}{\partial u} \times \frac{\partial \textbf{R}}{\partial y}\bigg|_{\textbf{C}}(y) = 
   \frac{\partial \textbf{S}}{\partial u} \times \frac{\partial \textbf{S}}{\partial v}\bigg|_{\textbf{C}}(y) = 
-  \alpha_1(y)\frac{\partial \textbf{R}}{\partial x}\times \frac{\partial \textbf{R}}{\partial y}\bigg|_{textbf{C}}.$$
-  V poglavju \todo{sklic} smo namreč že videli, da je 
-  $\frac{\partial \textbf{R}}{\partial y}\bigg|_{\textbf{C}}=\frac{\partial \textbf{S}}{\partial v}\bigg|_{\textbf{C}}=\textbf{C'}$.
+  \alpha_1(y)\frac{\partial \textbf{R}}{\partial x}\times \frac{\partial \textbf{R}}{\partial y}\bigg|_{\textbf{C}}(y).
+  \end{equation}
+  V poglavju \ref{geom.zv.} smo namreč že videli, da je 
+  $\frac{\partial \textbf{R}}{\partial y}\big|_{\textbf{C}}=\frac{\partial \textbf{S}}{\partial v}\big|_{\textbf{C}}=\textbf{C'}$.
 
-  Enačbo \todo{sklic} sedaj z desne vektorsko množimo še z $\frac{\partial \ddd{R}}{\partial x}$ 
+  Enačbo \ref{eq7} sedaj z desne vektorsko množimo še z $\frac{\partial \ddd{R}}{\partial x}$ 
   in dobimo:
-  $$\frac{\partial \ddd{S}}{\partial u}|_{\ddd{C}}(y)\times 
-  \frac{\partial \ddd{R}}{\partial x}(y) = \beta_1(y) \frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}
-  \times \frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}$$
+  \begin{equation}\label{eq9}
+  \frac{\partial \ddd{S}}{\partial u}\bigg|_{\ddd{C}}(y)\times 
+  \frac{\partial \ddd{R}}{\partial x}\bigg|_{\ddd{C}}(y) = 
+  \beta_1(y) \frac{\partial \ddd{R}}{\partial y}\bigg|_{\ddd{C}}
+  \times \frac{\partial \ddd{R}}{\partial x}\bigg|_{\ddd{C}}
+  \end{equation}
 
-  Z $\ddd{W}(s)$ označimo vektor \todo{vektorsko funkcijo?} 
+  Z $\ddd{W}(y)$ označimo vektorsko funkcijo
   $\ddd{W}(y)=\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}\times \frac{\partial \ddd{S}}{\partial u}|_{\ddd{C}}$, 
-  %z $\ddd{N}_r$ in $\ddd{N}_s$ pa normalo na ploskev $\ddd{R}$ oziroma $\ddd{S}$ v neki točki 
-  %na mejni \todo{?} ploskvi $\ddd{C}$, torej 
-  %$\ddd{N}_r = \bigg(\frac{\partial \ddd{R}}{\partial x} \times \frac{\partial \ddd{R}}{\partial y}\bigg)\bigg|_{\ddd{C}}$ 
-  %in $\ddd{N}_s = \bigg(\frac{\partial \ddd{S}}{\partial u} \times \frac{\partial \ddd{S}}{\partial v}\bigg)\bigg|_{\ddd{C}}$.
+  z $\ddd{N}_r$ in $\ddd{N}_s$ pa normalo na ploskev $\ddd{R}$ oziroma $\ddd{S}$ v neki točki 
+  na mejni \todo{?} krivulji $\ddd{C}$.
+  %, torej 
+  %$\ddd{N}_r = \big(\frac{\partial \ddd{R}}{\partial x} \times \frac{\partial \ddd{R}}{\partial y}\big)\big|_{\ddd{C}}$ 
+  %in $\ddd{N}_s = \big(\frac{\partial \ddd{S}}{\partial u} \times \frac{\partial \ddd{S}}{\partial v}\big)\big|_{\ddd{C}}$.
 
-  Prej dobljene enačbe \todo{sklic} torej zapišemo na naslednji način: 
-  $$\ddd{N}_s(y)=\alpha_1(y)\ddd{N}_r(y)$$
-  in $$\ddd{W}(y)=\beta_1(y)\ddd{N}_r(y).$$
+  Prej dobljeni enačbi \ref{eq8} in \ref{eq9} torej zapišemo na naslednji način:
+  \begin{equation}\label{eq10} 
+  \ddd{N}_s(y)=\alpha_1(y)\ddd{N}_r(y)
+  \end{equation}
+  in
+  \begin{equation}\label{eq11} 
+  \ddd{W}(y)=\beta_1(y)\ddd{N}_r(y).
+  \end{equation}
 
   Stopnja $\frac{\partial\ddd{R}}{\partial y}|_{\ddd{C}}$ je največ $n_c-1$, 
   saj je $\frac{\partial\ddd{R}}{\partial y}|_{\ddd{C}}=\ddd{C}'$. Enako velja za 
   $\frac{\partial \ddd{S}}{\partial v}|_{\ddd{C}}$. Stopnja $\frac{\partial\ddd{R}}{\partial x}|_{\ddd{C}}$ 
   je manjša ali enaka $n_r$, stopnja $\frac{\partial\ddd{S}}{\partial u}|_{\ddd{C}}$ 
   pa manjša ali enaka $n_s$. \todo{razloži?}
-  Od tod in iz enačb \todo{sklic} sledi
+  Od tod in iz definicij funkcij $\ddd{N}_r$, $\ddd{N}_s$ in $\ddd{W}$ sledi
   $st(\ddd{N}_r)\leq n_r + n_s -1$, $st(\ddd{N}_s)\leq n_s + n_c -1$ in 
   $st(\ddd{W})\leq n_r + n_s$.
 
-  Videli smo že \todo{sklic}, da sta zaradi predpostavke o regularnosti ploskev 
-  $\ddd{R}$ in $\ddd{S}$ funkciji $\ddd{N}_r(y)$ in $\ddd{N}_s(y)$ neničelni \todo{vektorski funkciji}. 
-  \todo{ oziroma za vsak v na [0,1] sta to vektorja, različna od 0}
+  Videli smo že, da sta zaradi predpostavke o regularnosti ploskev 
+  $\ddd{R}$ in $\ddd{S}$ funkciji $\ddd{N}_r(y)$ in $\ddd{N}_s(y)$ za vsak $y\in[0,1]$
+  različni od $0$.
   Ker je $\ddd{N}_r(y)$ neničelna, mora biti vsaj ena izmed njenih koordinatnih funkcij  
   neničeln polinom. Brez škode za splošnost predpostavimo, da je neničelna $x$-koordinata, 
-  torej polinom $N_{rx}$. 
+  torej polinom $N_{rx}(y)$. 
   %\nevem{za vsak v na [0,1] mora biti vsaj ena od treh 
   %koordinatnih funkcij različna od 0. bšs je to N_rx}
-  Če enačbe iz \todo{sklic} razpišemo po koordinatah, za $x$-koordinato dobimo 
+  Če enačbi iz \ref{eq10} in \ref{eq11} razpišemo po koordinatah, za $x$-koordinato dobimo 
   $$N_{sx}(y)=\alpha_1(y)N_{rx}(y)$$
   in $$W_x(y)=\beta_1(y)N_{rx}(y),$$
   kjer je $N_{sx}$ $x$-koordinata funkcije $\ddd{N}_s$, $W_x$ pa $x$-koordinata 
@@ -823,7 +840,7 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   Predpostavimo, da $U(y)$ ne deli polinoma $N_{sx}(y)$. Ker je $N_{sx}(y)=\alpha_1(y)U(y)D(y)$, 
   je to mogoče le, če je $\alpha_1(y)$ racionalna funkcija, katere imenovalec deli polinom $U(y)$. 
   Funkcija $\alpha_1(y)$ ima torej na intervalu $[0,1]$ pol. Ker velja $\ddd{N}_s(y)=\alpha_1(y)\ddd{N}_r(y)$
-  in so vse koordinatne funkcije \todo{funkcij} $\ddd{N}_s(y)$ in $\ddd{N}_r(y)$ polinomi, 
+  in so vse koordinatne funkcije funkcij $\ddd{N}_s(y)$ in $\ddd{N}_r(y)$ polinomi, 
   mora veljati, da imenovalec funkcije $\alpha_1(y)$ deli $N_{rx}(y)$, $N_{ry}(y)$ in 
   $N_{rz}(y)$. Funkcija $\alpha_1(y)$ ima pol, označimo ga z $y_0$. Sledi, da je $y_0$ 
   ničla polinomov $N_{rx}(y)$, $N_{ry}(y)$ in $N_{rz}(y)$, in zato je $\ddd{N}_r(y_0)=0$, 
@@ -845,11 +862,12 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   $[0,1]$, torej njuna imenovalca ne delita polinoma $U$. Sledi, da morata njuna imenovalca 
   deliti polinom $D$, s čimer smo pokazali, da sta $E_1$ in $F_1$ res polinoma.
 
-  Videli želimo še, da je $D(y)E_1(y)\neq 0$ na intervalu $[0,1]$. Polinom $D(y)$ po definiciji 
+  Videti želimo še, da je $D(y)E_1(y)\neq 0$ na intervalu $[0,1]$. Polinom $D(y)$ po definiciji 
   vsebuje vse nelinearne faktorje v polinomskem razcepu polinoma $N_{rx}(y)$, torej 
   na intervalu $[0,1]$ nima ničel. Polinom $E_1(y)$ je enak $E_1(y)=\alpha_1(y)D(y)$. 
-  Ker je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^n$-zvezen, funkcija $\alpha_1(y)$ na 
-  intervalu $[0,1]$ ni enaka nič (glej \todo{sklic}), zato tudi $E_1(y)$ na tem intervalu 
+  Ker je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^n$-zvezen, funkcija $\alpha_1(y)$ 
+  po izreku \ref{izrek1} na 
+  intervalu $[0,1]$ ni enaka nič, zato tudi $E_1(y)$ na tem intervalu 
   nima ničel. 
 
   Oglejmo si še stopnje polinomov $D(y)$, $E_1(y)$ in $F_1(y)$. 
@@ -861,10 +879,10 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
 
   Lotimo se še dokaza za $k>1$. Prepodstavimo, da izrek velja za vse $k\leq m$, kjer je $m\in \N$, $m<n$. 
   Torej obstajajo polinomi $D(y)$, $E_1(y), \ldots, E_m(y)$, $F_1(y), \ldots, F_m(y)$ 
-  z ustreznimi stopnjami, da velja enačba \todo{sklic} za $k=1,2,\ldots,m$.
+  z ustreznimi stopnjami, da velja enačba \ref{eq4} za $k=1,2,\ldots,m$.
   
   Izhajamo iz predpostavke, da je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^n$-zvezen. 
-  Iz izreka \todo{sklic} sledi, da obstajajo funkcije 
+  Iz izreka \ref{izrek1} sledi, da obstajajo funkcije 
   $\alpha_1, \ldots, \alpha_{m+1}$ in $\beta_1 \ldots, \beta_{m+1}$, da velja
   \begin{align*}
     \frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}\Bigr|_{\substack{\ddd{C}}}&= 
@@ -879,9 +897,11 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   \end{align*}
 
   Po indukcijski predpostavki je $\alpha_i(y) = \frac{E_i(y)}{D^{2i-1}(y)}$ in 
-  $\beta_i(y)=\frac{F_i(y)}{D^{2i-1}(y)}$ za $i=1, \ldots, m$. Uporabimo to v zgornji 
+  $\beta_i(y)=\frac{F_i(y)}{D^{2i-1}(y)}$ za $i=1, \ldots, m$. \todo{ta i.p. pride od nikoder?}
+  Uporabimo to v zgornji 
   enačbi in dobimo:
-  \begin{align*}
+  \begin{equation}\label{eq12}
+    \begin{split}
     \frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}\Bigr|_{\substack{\ddd{C}}}&= 
     \alpha_{m+1} \frac{\partial \ddd{R}}{\partial u}|_{\ddd{C}} + 
     \beta_{m+1} \frac{\partial \ddd{R}}{\partial v}|_{\ddd{C}} + \\
@@ -895,28 +915,31 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
     D^{i-2}(y)D^{-2m}E_{m_1}(y) \cdots E_{m_h}(y) \\
     & \cdot F_{m_{h+1}}(y) \cdots F_{m_i}(y)
     \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\Bigr|_{\substack{C}},
-  \end{align*}
+    \end{split}
+  \end{equation}
   saj je $|\ddd{m}_i|=m_1+m_2+\cdots + m_i = m+1$ in zato je \\
   $D^{-2m_1+1}(y) D^{-2m_2+1}(y) \cdots D^{-2m_i+1}(y)=D^{-2(m+1)}(y)D^i(y)$.
 
   Sedaj definirajmo \todo{krivuljo? vektorsko polinomsko funkcijo?} $\ddd{S}_{m+1}$:
-  \begin{align*}\ddd{S}_{m+1}=&D^{2m}(v)\frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}|_{\ddd{C}} - 
+  \begin{align*}\ddd{S}_{m+1}(y)=&D^{2m}(y)\frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}|_{\ddd{C}} - 
   \sum_{i=2}^{m+1} \sum_{|\ddd{m}_1|=m+1} A_{m_i}^{m+1} \sum_{h=0}^i {i \choose h}
   D^{i-1}(y)E_{m_1}(y)\cdots E_{m_h}(y) \\ &\cdot F_{m_{h+1}}(y)\ldots F_{m_i}(y)
   \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}}
   \end{align*}
-  Če enačbo \todo{sklic} pomnožimo z $D^{2m}(y)$ in jo nekoliko preoblikujemo, dobimo: 
-  $$\ddd{S}_{m+1}(y)=D^{2m}\alpha_{m+1}(y)\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} + 
-  D^{2m}(y)\beta_{m+1}(y)\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}.$$
+  Če enačbo \ref{eq12} pomnožimo z $D^{2m}(y)$ in jo nekoliko preoblikujemo, dobimo:
+  \begin{equation}\label{eq13} 
+  \ddd{S}_{m+1}(y)=D^{2m}\alpha_{m+1}(y)\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} + 
+  D^{2m}(y)\beta_{m+1}(y)\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}.
+  \end{equation}
 
   Na dobljeni enačbi sedaj uporabimo podoben postopek, kot smo ga uporabili pri dokazu 
-  za $k=1$. Enačbo z leve vektorsko množimo z $\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}$ 
+  za $k=1$. Enačbo \ref{eq13} z leve vektorsko množimo z $\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}$ 
   in dobimo 
   $$\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} \times \ddd{S}_{m+1} = 
   D^{2m}\beta_{m+1} \frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} \times \frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}.$$
-  Če pa enačbo \todo{sklic} z desne pomnožimo z $\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}$, 
+  Če pa enačbo \ref{eq13} z desne pomnožimo z $\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}$, 
   dobimo 
-  $$\ddd{S}_{m+1}\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} = 
+  $$\ddd{S}_{m+1}\times\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} = 
   D^{2m}\alpha_{m+1} \frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} \times \frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}.$$
   Označimo $\ddd{W}_1 = \ddd{S}_{m+1}\times\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}$ in 
   $\ddd{W}_2 = \frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}\times \ddd{S}_{m+1}$ ter kakor prej 
@@ -978,8 +1001,8 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
     &+ st(\frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})
   \end{align*}
   Zopet uporabimo indukcijsko predpostavko za stopnje polinomov $E_i(y)$ in $F_i(y)$, 
-  kjer je $i=1,\ldots, m$ ter dejstvo, da je 
-  $st(\frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})=n_r-i+h$ in 
+  kjer je $i=1,\ldots, m$, ter dejstvo, da je 
+  $st(\frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})=n_r-i+h$, in 
   dobimo
   \begin{align*}
     &st(D^{i-2}(y)E_{m_1}(y)\cdots E_{m_h}(y)F_{m_{h+1}}(y)\cdots F_{m_i}(y)
@@ -989,7 +1012,7 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
     + n_s\sum_{j=h+1}^im_j + n_c\sum_{j=h+1}^i - (i-h)n_c-\\ &
     - 2\sum_{j=h+1}^i + 2(i-h) +n_r-i+h=\\
     &=(i-2)(n_r+n_c-1)+2n_r(m+1)+n_s(m+1)+n_c(m+1)-2(m+1)-\\
-    &-2n_rh+h-(i-h)n_r-(i-h)n_c+2(i-h)+n_r-i-h
+    &-2n_rh+h-(i-h)n_r-(i-h)n_c+2(i-h)+n_r-i-h.
   \end{align*}
   V zadnji enakosti smo uprabili, da je $\sum_{j=1}^im_j=m+1$. Nadaljujmo za računom:
   \begin{align*}

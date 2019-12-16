@@ -1045,8 +1045,104 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   S tem smo dokazali izrek še za $k>1$.
 \end{proof}
 
+\subsection{Kompatibilnostni pogoji}
 
+enačba \ref{eq13}
 
+vstavimo $\alpha_{m+1}(y)=\frac{E_{m+1}(y)}{D^{2m+1}(y)}$ in 
+$\beta_{m+1}(y)=\frac{F_{m+1}(y)}{D^{2m+1}(y)}$
+
+ker je bil $m$ v dokazu izreka poljuben, lahko zamenjamo $m+1$ s $k$, kjer je 
+$k=1,\ldots,n$
+
+$$D(y)\ddd{S}_{k}(y)=E_{k}(y)\frac{\partial\ddd{R}}{\partial x}|_{\ddd{C}}+
+F_{k}(y)\frac{\partial \ddd{R}}{\partial y}|_{C}$$
+
+ta enačba je ekvivalentna enačbi v izreku
+
+rabili jo bomo za preučevanje pogojev, ki omejujejo izbiro koeficientnih funkcij
+
+ker ??, koeficientne funkcije ne morejo biti povsem poljubne, 
+zadoščati morajo nekaterim pogojem - kompatibilnostni pogoji 
+
+\todo{v praksi: nizke stopnje koeficientnih polinomov - kompatibilnostni pogoji 
+izginejo - to daj na konec, povezava s primerom}
+
+\todo{kompatibilnostni pogoji določijo nekatere kontrolne točke pri konstrukciji}
+
+zaradi lažje notacije označimo 
+$\ddd{A}(y)=\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}(y)$, 
+$\ddd{B}(y)=\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}(y)$, 
+$\ddd{W}(y)=\ddd{S}_k(y)$, $E(y)=E_k(y)$, $F(y)=F_k(y)$
+
+$$D(y)\ddd{W}(y)=E(y)\ddd{A}(y)+
+F(y)\ddd{B}(y)$$
+
+$st(D)+st(\ddd{W})=st(E)+st(\ddd{A})=st(F)+st(\ddd{B})=n$
+
+$st(\ddd{W})=n_w$, $st(\ddd{A})=n_a$, $st(\ddd{B})=n_b$
+
+potem $st(D)=n_d=n-n_w$, $st(E)=n_e=n-n_a$, $st(F)=n_f=n-n_b$
+
+\todo{nekako povej, da imajo W, A, B kontrolne vektorje}
+
+$\{\ddd{w}_i; i=0,1,\ldots,n_w\}$, $\{\ddd{a}_i; i=0,1,\ldots,n_a\}$, 
+$\{\ddd{b}_i; i=0,1,\ldots, n_b\}$ 
+kontrolni vektorji od $\ddd{W}$, $\ddd{A}$ in $\ddd{B}$. 
+če so $D$, $E$ in $F$ polinomi v Bernsteinovi bazi, naj bodo 
+$\{d_i, i=0,1,\ldots, n_d\}$, $\{e_i; i=0,1,\ldots, n_e\}$ in 
+$\{f_i; i=0,1,\ldots, n_f\}$ 
+kontrolni koeficienti teh polinomov.
+
+označimo 
+$\ddd{D}_i = [\underbrace{0,0,\ldots,0}_i,d_0,n_dd_0,\ldots {n_d \choose j}d_j,
+\ldots, n_dd_{n_d-1},d_{n_d},\underbrace{0,0,\ldots,0}_{n_w-i}]^T$
+
+$\ddd{E}_i = [\underbrace{0,0,\ldots,0}_i,e_0,n_ee_0,\ldots {n_e \choose j}e_j,
+\ldots, n_ee_{n_e-1},e_{n_e},\underbrace{0,0,\ldots,0}_{n_a-i}]^T$
+
+$\ddd{F}_i = [\underbrace{0,0,\ldots,0}_i,f_0,n_ff_0,\ldots {n_f \choose j}f_j,
+\ldots, n_ff_{n_f-1},f_{n_f},\underbrace{0,0,\ldots,0}_{n_b-i}]^T$
+
+$\overline{\ddd{W}}=[\ddd{w}_0,n_w\ddd{w}_1,\ldots,{n_w \choose i}\ddd{w}_i,
+\ldots, n_w\ddd{w}_{n_w-1},\ddd{w}_{n_w}]^T$
+
+$\overline{\ddd{A}}=[\ddd{a}_0,n_a\ddd{a}_1,\ldots,{n_a \choose i}\ddd{a}_i,
+\ldots, n_a\ddd{a}_{n_a-1},\ddd{a}_{n_a}]^T$
+
+$\overline{\ddd{B}}=[\ddd{b}_0,n_w\ddd{b}_1,\ldots,{n_b \choose i}\ddd{b}_i,
+\ldots, n_b\ddd{b}_{n_b-1},\ddd{b}_{n_b}]^T$
+
+sestavimo matrike
+$M_d = [\ddd{D}_0, \ddd{D}_1, \ldots, \ddd{D}_{n_w}]$
+
+$M_e = [\ddd{E}_0, \ddd{E}_1, \ldots, \ddd{E}_{n_a}]$
+
+$M_f = [\ddd{F}_0, \ddd{F}_1, \ldots, \ddd{F}_{n_b}]$
+
+dimenzij $(n+1)\times (n_w+1)$, $(n+1)\times(n_a+1)$, $(n+1)\times(n_b+1)$
+
+\begin{align*}
+  M_d=
+\begin{bmatrix}
+  M_d^1\\
+  M_d^2
+\end{bmatrix} 
+\end{align*}, 
+\begin{align*}
+  M_e&=
+\begin{bmatrix}
+  M_e^1\\
+  M_e^2
+\end{bmatrix} 
+\end{align*}, 
+\begin{align*}
+  M_f&=
+\begin{bmatrix}
+  M_f^1\\
+  M_f^2
+\end{bmatrix} 
+\end{align*}, 
 
 \section{Primeri konstrukcij $G^1$ ploskev}
 \todo{nek uvod}
@@ -1085,15 +1181,17 @@ $$\frac{\partial \ddd{R}}{\partial u}|_{u=0}=3\sum_{i=0}^2\sum_{j=0}^3
 (\ddd{Q}_{i+1,j}-\ddd{Q}_{i,j})B_i^2(u)B_j^3(v)|_{u=0}=
 3\sum_{j=0}^3(\ddd{Q}_{1,j}-\ddd{Q}_{0,j})B_j^3(v),$$
 in 
-$$\frac{\partial \ddd{R}}{\partial v}|_{u=0}=3\sum_{i=0}^2\sum_{j=0}^3
-(\ddd{Q}_{i+1,j}-\ddd{Q}_{i,j})B_i^2(u)B_j^3(v)|_{u=0}=
-3\sum_{j=0}^2(\ddd{Q}_{1,j}-\ddd{Q}_{0,j})B_j^2(v).$$
+$$\frac{\partial \ddd{R}}{\partial v}|_{u=0}=3\sum_{i=0}^3\sum_{j=0}^2
+(\ddd{Q}_{i,j+1}-\ddd{Q}_{i,j})B_i^2(u)B_j^3(v)|_{u=0}=
+3\sum_{j=0}^2(\ddd{Q}_{0,j}-\ddd{Q}_{0,j+1})B_j^2(v).$$
 
 Po enačbi \todo{sklic} mora veljati 
-$$\sum_{j=0}^3(\ddd{P}_{1,j}-\ddd{P}_{0,j})B_j^3(v) = \sum_{j=0}^3(\ddd{Q}_{1,j}-\ddd{Q}_{0,j})B_j^3(v) + 
-\sum_{j=0}^3(\ddd{Q}_{1,j}-\ddd{Q}_{0,j})B_j^3(v).$$
+$$D(v)\sum_{j=0}^3(\ddd{P}_{1,j}-\ddd{P}_{0,j})B_j^3(v) = E_1(v)\sum_{j=0}^3(\ddd{Q}_{1,j}-\ddd{Q}_{0,j})B_j^3(v) + 
+F_1(v)\sum_{j=0}^2(\ddd{Q}_{0,j}-\ddd{Q}_{0,j+1})B_j^2(v).$$
 Da dobimo še nekaj dodatnih pogojev za kontrolne točke ploskev $\ddd{R}$ in $\ddd{S}$, 
-evalvirajmo zgornjo enačbo \todo{sklic} v vrednostih paramatera $v=0$ in $v=1$ \todo{grdo}.
+evalvirajmo zgornjo enačbo \todo{sklic} v vrednostih paramatera $v=0$ in $v=1$ 
+\todo{grdo}.
+\nevem{kako nam ti pogoji določajo robne vektorje}
 \todo{ spet se lahko skliciješ na tisto lastnost}
 Pri vrednosti $v=0$ dobimo:
 $$(\ddd{Q}_{1,j}-\ddd{Q}_{0,j}) = a_0(\ddd{P}_{1,0}-\ddd{P}_{0,0})+b_0(\ddd{P}_{0,1}-\ddd{P}_{0,0}),$$
@@ -1113,11 +1211,13 @@ Tu smo z $a_1$ označili vrednost $\alpha_1(1)$ in z $b_1$ vrednost $\beta_1(1)$
 
 Pogoji in omejitve, ki jih imamo do sedaj, še ne določajo enolično notranjih kontrolnih 
 točk plosev $\ddd{R}$ in $\ddd{S}$. \todo{tu lahko primerjava z običajno zveznostjo, kjer 
-je vse že natančno določeno ?} 
+je vse že natančno določeno ?} \nevem{kontrolne točke nikoli ne bodo enolično določene,
+kar hočemo narediti je samo videti, kakšna razmerja veljajo, kaj je določeno, kaj je prosto,
+kaj je odvisno od česa. po drugi strani pa je pri C zveznosti vse do konca določeno?}
 
 Podati moramo še nekaj pogojev, ki bodo določali obliko 
 ploskve $\ddd{R}$, ter podatek o stopnji \todo{cross-derivative} krivulje \todo{?} 
-$\frac{\partial \ddd{R}}{\partial u}|_{u=0}$ \todo{GROZNO. povej zakaj samo stopnjo tega}, 
+$\frac{\partial \ddd{R}}{\partial u}|_{u=0}$ \nevem{kaj je s stopnjo tega?}, 
 od tod pa bomo lahko s pomočjo pogojev za geometrijsko zveznost enolično 
 izrazili preostanek kontrolnih točk. Glede na stopnjo krivulje $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$
 si oglejmo dve različni situaciji. \todo{zakaj stopnja ne more biti npr 1? povej!}
@@ -1130,7 +1230,7 @@ kontrolni vektorji: $\ddd{p}_0$, $\ddd{p}_1$, $\ddd{p}_2$ in $\ddd{p}_3$.
 Vektorja $\ddd{p}_0$ in $\ddd{p}_3$ sta že določena, vektorja  
 $\ddd{p}_1=\ddd{P}_{1,1}-\ddd{P}_{0,1}$ in $\ddd{p}_2=\ddd{P}_{1,2}-\ddd{P}_{0,2}$. 
 pa naj bosta prosta. Torej sta točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ prosta parametra.
-\todo{ali to prav razumem?}
+\todo{ali to prav razumem?}\nevem{NE}
 
 Ko izberemo kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$, lahko s pomočjo pogojev 
 za $G^1$ zveznost izrazimo še točki $\ddd{Q}_{1,1}$ in $\ddd{Q}_{1,2}$. 
@@ -1138,7 +1238,7 @@ Zapišimo znova enačbo \todo{sklic}:
 $$\sum_{j=0}^3 \ddd{q}_j B_j^3(v) = \alpha_1(v) \sum_{j=0}^3 \ddd{p}_j B_j^3(v) + 
 \beta_1(v) \sum_{j=0}^2 \ddd{z}_j B_j^2(v).$$
 
-Zaradi enostavnosti naj bosta \todo{koeficientni} funkciji $\alpha_1$ in $\beta_1$ polinoma. 
+Zaradi enostavnosti \nevem{NE} naj bosta \todo{koeficientni} funkciji $\alpha_1$ in $\beta_1$ polinoma. 
 \todo{lahko bi bili tudi racionalni funkciji, v tem primeru bi dobili še veliko več 
 situacij (3. primer?) (ne bi pa mogli biti nič drugega zaradi izreka?)}
 Opazimo, da imamo v zgornji enačbi na levi strani Bézierjevo krivuljo stopnje 3, torej 

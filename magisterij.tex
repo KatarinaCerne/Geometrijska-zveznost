@@ -691,7 +691,7 @@ $$N_s=\bigg(\frac{\partial \textbf{S}}{\partial u}\times \frac{\partial \textbf{
 
 O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek: 
 
-\begin{izrek}
+\begin{izrek}\label{izrek2}
   Naj bosta $\textbf{R}$ in $\textbf{S}$ zgoraj definirani \todo{to ok?} Bézierovi 
   ploskvi, ki se stikata v robni krivulji $\textbf{C}$ (kot zgoraj). Stik ploskev je 
   $G^n$-zvezen natanko tedaj, ko obstajajo polinomi $D(y)$, $E_i(y)$ in $F_i(y)$, da 
@@ -1045,153 +1045,215 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   S tem smo dokazali izrek še za $k>1$.
 \end{proof}
 
-\subsection{Kompatibilnostni pogoji}
+%\subsection{Kompatibilnostni pogoji}
+%
+%enačba \ref{eq13}
+%
+%vstavimo $\alpha_{m+1}(y)=\frac{E_{m+1}(y)}{D^{2m+1}(y)}$ in 
+%$\beta_{m+1}(y)=\frac{F_{m+1}(y)}{D^{2m+1}(y)}$
+%
+%ker je bil $m$ v dokazu izreka poljuben, lahko zamenjamo $m+1$ s $k$, kjer je 
+%$k=1,\ldots,n$
+%
+%$$D(y)\ddd{S}_{k}(y)=E_{k}(y)\frac{\partial\ddd{R}}{\partial x}|_{\ddd{C}}+
+%F_{k}(y)\frac{\partial \ddd{R}}{\partial y}|_{C}$$
+%
+%ta enačba je ekvivalentna enačbi v izreku
+%
+%rabili jo bomo za preučevanje pogojev, ki omejujejo izbiro koeficientnih funkcij
+%
+%ker ??, koeficientne funkcije ne morejo biti povsem poljubne, 
+%zadoščati morajo nekaterim pogojem - kompatibilnostni pogoji 
+%
+%\todo{v praksi: nizke stopnje koeficientnih polinomov - kompatibilnostni pogoji 
+%izginejo - to daj na konec, povezava s primerom}
+%
+%\todo{kompatibilnostni pogoji določijo nekatere kontrolne točke pri konstrukciji}
+%
+%zaradi lažje notacije označimo 
+%$\ddd{A}(y)=\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}(y)$, 
+%$\ddd{B}(y)=\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}(y)$, 
+%$\ddd{W}(y)=\ddd{S}_k(y)$, $E(y)=E_k(y)$, $F(y)=F_k(y)$
+%
+%$$D(y)\ddd{W}(y)=E(y)\ddd{A}(y)+
+%F(y)\ddd{B}(y)$$
+%
+%$st(D)+st(\ddd{W})=st(E)+st(\ddd{A})=st(F)+st(\ddd{B})=n$
+%
+%$st(\ddd{W})=n_w$, $st(\ddd{A})=n_a$, $st(\ddd{B})=n_b$
+%
+%potem $st(D)=n_d=n-n_w$, $st(E)=n_e=n-n_a$, $st(F)=n_f=n-n_b$
+%
+%\todo{nekako povej, da imajo W, A, B kontrolne vektorje}
+%
+%$\{\ddd{w}_i; i=0,1,\ldots,n_w\}$, $\{\ddd{a}_i; i=0,1,\ldots,n_a\}$, 
+%$\{\ddd{b}_i; i=0,1,\ldots, n_b\}$ 
+%kontrolni vektorji od $\ddd{W}$, $\ddd{A}$ in $\ddd{B}$. 
+%če so $D$, $E$ in $F$ polinomi v Bernsteinovi bazi, naj bodo 
+%$\{d_i, i=0,1,\ldots, n_d\}$, $\{e_i; i=0,1,\ldots, n_e\}$ in 
+%$\{f_i; i=0,1,\ldots, n_f\}$ 
+%kontrolni koeficienti teh polinomov.
+%
+%označimo 
+%$\ddd{D}_i = [\underbrace{0,0,\ldots,0}_i,d_0,n_dd_0,\ldots {n_d \choose j}d_j,
+%\ldots, n_dd_{n_d-1},d_{n_d},\underbrace{0,0,\ldots,0}_{n_w-i}]^T$
+%
+%$\ddd{E}_i = [\underbrace{0,0,\ldots,0}_i,e_0,n_ee_0,\ldots {n_e \choose j}e_j,
+%\ldots, n_ee_{n_e-1},e_{n_e},\underbrace{0,0,\ldots,0}_{n_a-i}]^T$
+%
+%$\ddd{F}_i = [\underbrace{0,0,\ldots,0}_i,f_0,n_ff_0,\ldots {n_f \choose j}f_j,
+%\ldots, n_ff_{n_f-1},f_{n_f},\underbrace{0,0,\ldots,0}_{n_b-i}]^T$
+%
+%$\overline{\ddd{W}}=[\ddd{w}_0,n_w\ddd{w}_1,\ldots,{n_w \choose i}\ddd{w}_i,
+%\ldots, n_w\ddd{w}_{n_w-1},\ddd{w}_{n_w}]^T$
+%
+%$\overline{\ddd{A}}=[\ddd{a}_0,n_a\ddd{a}_1,\ldots,{n_a \choose i}\ddd{a}_i,
+%\ldots, n_a\ddd{a}_{n_a-1},\ddd{a}_{n_a}]^T$
+%
+%$\overline{\ddd{B}}=[\ddd{b}_0,n_w\ddd{b}_1,\ldots,{n_b \choose i}\ddd{b}_i,
+%\ldots, n_b\ddd{b}_{n_b-1},\ddd{b}_{n_b}]^T$
+%
+%sestavimo matrike
+%$M_d = [\ddd{D}_0, \ddd{D}_1, \ldots, \ddd{D}_{n_w}]$
+%
+%$M_e = [\ddd{E}_0, \ddd{E}_1, \ldots, \ddd{E}_{n_a}]$
+%
+%$M_f = [\ddd{F}_0, \ddd{F}_1, \ldots, \ddd{F}_{n_b}]$
+%
+%dimenzij $(n+1)\times (n_w+1)$, $(n+1)\times(n_a+1)$, $(n+1)\times(n_b+1)$
+%
+%\begin{align*}
+%  M_d=
+%\begin{bmatrix}
+%  M_d^1\\
+%  M_d^2
+%\end{bmatrix} 
+%\end{align*}, 
+%\begin{align*}
+%  M_e&=
+%\begin{bmatrix}
+%  M_e^1\\
+%  M_e^2
+%\end{bmatrix} 
+%\end{align*}, 
+%\begin{align*}
+%  M_f&=
+%\begin{bmatrix}
+%  M_f^1\\
+%  M_f^2
+%\end{bmatrix} 
+%\end{align*}, 
+%
+%$M_d^1$, $M_e^1$ in $M_f^1$ so dimenzij $(n_w+1)\times(n_w+1)$, $(n_a+1)\times(n_a+1)$ 
+%in $(n_b+1)\times (n_b+1)$. 
+%
+%$M_d^2$, $M_e^2$ in $M_f^2$ so dimenzij $n_d\times(n_w+1)$, $n_e\times(n_a+1)$ 
+%in $n_f \times (n_b+1)$
+%
+%$M_d^1\overline{\ddd{W}}=M_e^1\overline{\ddd{A}}+M_f^1\overline{\ddd{B}}$
+%
+%$M_d^2\overline{\ddd{W}}=M_e^2\overline{\ddd{A}}+M_f^2\overline{\ddd{B}}$
+%
+%$M_d^1$ je obrnljiva
+%\todo{blabla}
+%
+%$\overline{\ddd{W}}=(M_d^1)^{-1}M_e^1\overline{\ddd{A}}+(M_d^1)^{-1}M_f^1\overline{\ddd{B}}$
+%
+%$(M_e^2-M_d^2(M_d^1)^{-1}M_e^1)\overline{\ddd{A}} + 
+%(M_f^2-M_d^2(M_d^1)^{-1}M_f^1)\overline{\ddd{B}} = 0$
 
-enačba \ref{eq13}
+\section{Primeri konstrukcij geometrijsko zveznih ploskev}
 
-vstavimo $\alpha_{m+1}(y)=\frac{E_{m+1}(y)}{D^{2m+1}(y)}$ in 
-$\beta_{m+1}(y)=\frac{F_{m+1}(y)}{D^{2m+1}(y)}$
-
-ker je bil $m$ v dokazu izreka poljuben, lahko zamenjamo $m+1$ s $k$, kjer je 
-$k=1,\ldots,n$
-
-$$D(y)\ddd{S}_{k}(y)=E_{k}(y)\frac{\partial\ddd{R}}{\partial x}|_{\ddd{C}}+
-F_{k}(y)\frac{\partial \ddd{R}}{\partial y}|_{C}$$
-
-ta enačba je ekvivalentna enačbi v izreku
-
-rabili jo bomo za preučevanje pogojev, ki omejujejo izbiro koeficientnih funkcij
-
-ker ??, koeficientne funkcije ne morejo biti povsem poljubne, 
-zadoščati morajo nekaterim pogojem - kompatibilnostni pogoji 
-
-\todo{v praksi: nizke stopnje koeficientnih polinomov - kompatibilnostni pogoji 
-izginejo - to daj na konec, povezava s primerom}
-
-\todo{kompatibilnostni pogoji določijo nekatere kontrolne točke pri konstrukciji}
-
-zaradi lažje notacije označimo 
-$\ddd{A}(y)=\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}(y)$, 
-$\ddd{B}(y)=\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}(y)$, 
-$\ddd{W}(y)=\ddd{S}_k(y)$, $E(y)=E_k(y)$, $F(y)=F_k(y)$
-
-$$D(y)\ddd{W}(y)=E(y)\ddd{A}(y)+
-F(y)\ddd{B}(y)$$
-
-$st(D)+st(\ddd{W})=st(E)+st(\ddd{A})=st(F)+st(\ddd{B})=n$
-
-$st(\ddd{W})=n_w$, $st(\ddd{A})=n_a$, $st(\ddd{B})=n_b$
-
-potem $st(D)=n_d=n-n_w$, $st(E)=n_e=n-n_a$, $st(F)=n_f=n-n_b$
-
-\todo{nekako povej, da imajo W, A, B kontrolne vektorje}
-
-$\{\ddd{w}_i; i=0,1,\ldots,n_w\}$, $\{\ddd{a}_i; i=0,1,\ldots,n_a\}$, 
-$\{\ddd{b}_i; i=0,1,\ldots, n_b\}$ 
-kontrolni vektorji od $\ddd{W}$, $\ddd{A}$ in $\ddd{B}$. 
-če so $D$, $E$ in $F$ polinomi v Bernsteinovi bazi, naj bodo 
-$\{d_i, i=0,1,\ldots, n_d\}$, $\{e_i; i=0,1,\ldots, n_e\}$ in 
-$\{f_i; i=0,1,\ldots, n_f\}$ 
-kontrolni koeficienti teh polinomov.
-
-označimo 
-$\ddd{D}_i = [\underbrace{0,0,\ldots,0}_i,d_0,n_dd_0,\ldots {n_d \choose j}d_j,
-\ldots, n_dd_{n_d-1},d_{n_d},\underbrace{0,0,\ldots,0}_{n_w-i}]^T$
-
-$\ddd{E}_i = [\underbrace{0,0,\ldots,0}_i,e_0,n_ee_0,\ldots {n_e \choose j}e_j,
-\ldots, n_ee_{n_e-1},e_{n_e},\underbrace{0,0,\ldots,0}_{n_a-i}]^T$
-
-$\ddd{F}_i = [\underbrace{0,0,\ldots,0}_i,f_0,n_ff_0,\ldots {n_f \choose j}f_j,
-\ldots, n_ff_{n_f-1},f_{n_f},\underbrace{0,0,\ldots,0}_{n_b-i}]^T$
-
-$\overline{\ddd{W}}=[\ddd{w}_0,n_w\ddd{w}_1,\ldots,{n_w \choose i}\ddd{w}_i,
-\ldots, n_w\ddd{w}_{n_w-1},\ddd{w}_{n_w}]^T$
-
-$\overline{\ddd{A}}=[\ddd{a}_0,n_a\ddd{a}_1,\ldots,{n_a \choose i}\ddd{a}_i,
-\ldots, n_a\ddd{a}_{n_a-1},\ddd{a}_{n_a}]^T$
-
-$\overline{\ddd{B}}=[\ddd{b}_0,n_w\ddd{b}_1,\ldots,{n_b \choose i}\ddd{b}_i,
-\ldots, n_b\ddd{b}_{n_b-1},\ddd{b}_{n_b}]^T$
-
-sestavimo matrike
-$M_d = [\ddd{D}_0, \ddd{D}_1, \ldots, \ddd{D}_{n_w}]$
-
-$M_e = [\ddd{E}_0, \ddd{E}_1, \ldots, \ddd{E}_{n_a}]$
-
-$M_f = [\ddd{F}_0, \ddd{F}_1, \ldots, \ddd{F}_{n_b}]$
-
-dimenzij $(n+1)\times (n_w+1)$, $(n+1)\times(n_a+1)$, $(n+1)\times(n_b+1)$
-
-\begin{align*}
-  M_d=
-\begin{bmatrix}
-  M_d^1\\
-  M_d^2
-\end{bmatrix} 
-\end{align*}, 
-\begin{align*}
-  M_e&=
-\begin{bmatrix}
-  M_e^1\\
-  M_e^2
-\end{bmatrix} 
-\end{align*}, 
-\begin{align*}
-  M_f&=
-\begin{bmatrix}
-  M_f^1\\
-  M_f^2
-\end{bmatrix} 
-\end{align*}, 
-
-$M_d^1$, $M_e^1$ in $M_f^1$ so dimenzij $(n_w+1)\times(n_w+1)$, $(n_a+1)\times(n_a+1)$ 
-in $(n_b+1)\times (n_b+1)$. 
-
-$M_d^2$, $M_e^2$ in $M_f^2$ so dimenzij $n_d\times(n_w+1)$, $n_e\times(n_a+1)$ 
-in $n_f \times (n_b+1)$
-
-$M_d^1\overline{\ddd{W}}=M_e^1\overline{\ddd{A}}+M_f^1\overline{\ddd{B}}$
-
-$M_d^2\overline{\ddd{W}}=M_e^2\overline{\ddd{A}}+M_f^2\overline{\ddd{B}}$
-
-$M_d^1$ je obrnljiva
-\todo{blabla}
-
-$\overline{\ddd{W}}=(M_d^1)^{-1}M_e^1\overline{\ddd{A}}+(M_d^1)^{-1}M_f^1\overline{\ddd{B}}$
-
-$(M_e^2-M_d^2(M_d^1)^{-1}M_e^1)\overline{\ddd{A}} + 
-(M_f^2-M_d^2(M_d^1)^{-1}M_f^1)\overline{\ddd{B}} = 0$
-
-\section{Primeri konstrukcij $G^1$ ploskev}
 \todo{nek uvod}
 
-\todo{PRIMER 1}
+\subsection{Konstrukcija $G^1$-zveznih Bézierjevih ploskev iz tenzorskega produkta}
+
+V tem podpoglavju si bomo ogledali, kako na različne načine konstruirati ploskvi, ki 
+sta na stiku $G^1$-zvezni, torej kakšne pogoje prinesejo različni načini konstrukcije 
+za njune kontrolne točke oziroma kontrolne vektorje. Pri tem bomo predpostavljali, 
+da so robovi obeh ploskev vnaprej določeni. Pogoje, ki jih prinese zahteva $G^1$-zveznosti 
+bomo primerjali z $C^1$-zveznostjo. 
 
 Imejmo dve bikubični Bézierjevi ploskvi iz tenzorskega produkta:
 $$\ddd{R}(u,v)=\sum_{i=0}^3 \sum_{j=0}^3 \mathbf{P}_{i,j}B_i^3(u) B_j^3(v)$$ in
 $$\ddd{S}(u,v)=\sum_{i=0}^3 \sum_{j=0}^3 \mathbf{Q}_{i,j}B_i^3(u) B_j^3(v),$$
-ki se stikata v $\ddd{C}(v)=\ddd{R}(0,v)=\ddd{S}(0,v)$, torej naj velja
-$$\ddd{C}(v)=\sum_{i=0}^3 \ddd{Z}_i B_i^3(v),$$
-kjer so $\ddd{Z}_i = \ddd{P}_{0,i} = \ddd{Q}_{0,i}$ kontrolne točke krivulje $\ddd{C}$. 
-Robne krivulje ploskev $\ddd{R}$ in $\ddd{S}$ naj bodo že določene. Zanima nas, kako 
-lahko v tem primeru določimo notranje točke ploskev $\ddd{R}$ in $\ddd{S}$, torej kako 
-lahko določimo kontrolne točke $\ddd{P}_{1,1}$, $\ddd{P}_{1,2}$, $\ddd{Q}_{1,1}$ in $\ddd{Q}_{1,2}$., 
-da bo stik ploskev $G^1$-zvezen. 
-\todo{ali tukaj dam razlago s ploščinami trikotnikov? ker ne znam razložiti, zakaj morata biti enaki}
+kjer velja $u,v\in[0,1]$.
 
-Izrek \todo{sklic} pravi, da je stik obeh ploskev $G^1$-zvezen, natanko tedaj ko obstajata funkciji 
+Ploskvi $\ddd{R}$ in $\ddd{S}$ se stikata v $\ddd{C}(v)=\ddd{R}(0,v)=\ddd{S}(0,v)$, torej naj velja
+$$\ddd{C}(v)=\sum_{i=0}^{n_c} \ddd{Z}_i B_i^{n_c}(v),$$
+kjer so $\ddd{Z}_i = \ddd{P}_{0,i} = \ddd{Q}_{0,i}$ kontrolne točke krivulje $\ddd{C}$. 
+Stopnja $n_c$ krivulje $\ddd{C}$ ni nujno enaka $3$, veljati pa mora $n_c\leq 3$. 
+Obravnavali bomo primere, v katerih je $n_c=3$ in primer, kjer je $n_c=2$.
+Predpostavili bomo, da so robne krivulje ploskev $\ddd{R}$ in $\ddd{S}$ 
+že določene na tak način, da bomo imeli na robu zahtevano zveznost. 
+Zanimalo nas bo,  
+kakšne zveze v teh primerih veljajo za notranje kontrolne točke, torej za 
+$\ddd{P}_{1,1}$, $\ddd{P}_{1,2}$, $\ddd{Q}_{1,1}$ in $\ddd{Q}_{1,2}$., 
+da bo stik ploskev $G^1$-zvezen. 
+\todo{razlaga s ploščinami trikotnikov?} 
+V nadaljevanju bomo uporabljali še naslednje oznake za kontrolne vektorje obeh 
+ploskev in robne krivulje:
+$\ddd{p}_{i,j}=\ddd{P}_{i+1,j}-\ddd{P}_{i,j}$, 
+$\ddd{q}_{i,j}=\ddd{Q}_{i+1,j}-\ddd{Q}_{i,j}$ in 
+$\ddd{z}_i=\ddd{Z}_{i+1}-\ddd{Z}_i$.
+
+Najprej si oglejmo, kakšne pogoje in omejitve nam da zahteva $C^1$ zveznosti 
+na stiku teh dveh ploskev.
+
+\begin{primer}\label{primer1}
+  Domena ploskev $\ddd{R}$ in $\ddd{S}$ je kvadrat $[0,1]\times[0,1]$. Da lahko 
+  obravnavamo $C^1$-zveznost stika ploskev, moramo najprej reparametrizirati 
+  ploskev $\ddd{R}$ tako, da bo njena domena $[-1,0]\times[0,1]$ in bosta obe domeni 
+  skupaj po stiku tvorili pravokotnik $[-1,1]\times[0,1]$. Da to dosežemo, 
+  moramo ploskev $\ddd{R}$ zapisati na naslednji način:
+  $$\ddd{R}(u,v) = \sum_{i=0}^3 \sum_{j=0}^3 \mathbf{P}_{i,j}B_i^3(-u) B_j^3(v),$$
+  kjer je $u\in[-1,0]$ in $v\in[0,1]$.
+
+  Da je stik ploskev $\ddd{R}$ in $\ddd{S}$ $C^1$-zvezen, se morata krivulji 
+  ujemati v kontrolnih točkah, ki določajo stično krivuljo: 
+  $\ddd{P}_{0,j}=\ddd{Q}_{0,j}$ za $j=0,\ldots,3$, s čimer dosežemo $C^0$-zveznost. 
+  Poleg tega pa se morata ujemati še odvoda obeh ploskev v $u$-smeri v robnih 
+  točkah: 
+  $\frac{\partial}{\partial u}\ddd{R}(u,v)|_{u=0}=\frac{\partial}{\partial u}\ddd{S}(u,v)|_{u=0}$.
+  Če razpišemo oba parcialna odvoda, dobimo naslednje pogoje:
+  $$-(\ddd{P}_{1,j}-\ddd{P}_{0,j})=\ddd{Q}_{1,j}-\ddd{Q}_{0,j}$$
+  oziroma 
+  $$\ddd{q}_{0,j}=-\ddd{p}_{0,j}$$
+  za $j=0,\ldots,3$.
+
+  Vidimo torej, da morata biti za dosego $C^1$-zveznosti zlepka ploskev vektorja 
+  $\ddd{p}_{0,j}$ in $\ddd{q}_{0,j}$ kolinearna za vsak $j=0,\ldots,3$, poleg tega 
+  pa morata biti njuni dolžini v razmerju, ki ga določata parametrizaciji obeh 
+  ploskev. Kar se tiče oblike ploskve, ki jo na ta način lahko konstruiramo kot 
+  zlepek ploskev $\ddd{R}$ in $\ddd{S}$, torej nimamo ravno veliko izbire. 
+  Nekoliko več svobode imamo le pri izbiri notranjih kontrolnih točk. 
+  Kontrolni točki $\ddd{Q}_{1,1}$ in $\ddd{Q}_{1,2}$ sta točno določeni 
+  z izbiro kontrolnih točk $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$, medtem ko sta 
+  $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ prosti. Ker zahtevamo zgolj zveznost stopnje 
+  1, so proste tudi kontrolne točke $\ddd{Q}_{2,1}$, $\ddd{Q}_{2,2}$, 
+  $\ddd{P}_{2,1}$ in $\ddd{P}_{2,2}$.
+
+\end{primer}
+
+Sedaj si oglejmo nekaj primerov konstrukcij $G^1$-zveznih ploskev in jih primerjajmo 
+z rezultatom, dobljenim v primeru \ref{primer1}. 
+Izrek \ref{izrek1} pravi, da je stik obeh ploskev $G^1$-zvezen, natanko tedaj ko obstajata funkciji 
 $\alpha_1(v)$ in $\beta_1(v)$, \todo{pogoj regularnosti? lastnosti teh funkcij?} da velja 
 $$\frac{\partial \ddd{S}}{\partial u}|_{u=0} = \alpha_1(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0} + 
 \beta_1(v)\frac{\partial \ddd{R}}{\partial v}|_{u=0},$$
-oziroma (po izreku \todo{sklic}) natanko tedaj ko obstajajo polinomi $D(v)$, $E_1(v)$ 
+kjer je $\alpha_1(v)\neq 0$ na intervalu $[0,1]$ in ima ustrezen predznak.
+V našem primeru gre za polinomske ploskve, zato lahko uporabimo izrek \ref{izrek2},
+ki pove, da to velja natanko tedaj, 
+ko obstajajo polinomi $D(v)$, $E_1(v)$ 
 in $F_1(v)$, kjer sta polinoma $D$ in $E_1$ stopnje največ 5, polinom $F_1$ pa stopnje 
 največ 6, da velja
-$$D(v)\frac{\partial \ddd{S}}{\partial u}|_{u=0} = E_1(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0} + 
-F_1(v)\frac{\partial \ddd{R}}{\partial v}|_{u=0}.$$
-\todo{ker gre za bezierove ploskve, sta alfa1 in beta1 racionalni funkciji. 
-kako naj to razložim zakaj?}
+\begin{align}\label{eq14}
+D(v)\frac{\partial \ddd{S}}{\partial u}|_{u=0} = E_1(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0} + 
+F_1(v)\frac{\partial \ddd{R}}{\partial v}|_{u=0}.
+\end{align}
 
-Razpišimo: \todo{tu se nekako sklicuješ na formulo za odvod in evalvacijo v 0}
+Razpišimo prve odvode parametrizacij ploskev $\ddd{R}$ in $\ddd{S}$: 
+\todo{tu se nekako sklicuješ na formulo za odvod in evalvacijo v 0}
 $$\frac{\partial \ddd{S}}{\partial u}|_{u=0}=3\sum_{i=0}^2\sum_{j=0}^3
 (\ddd{P}_{i+1,j}-\ddd{P}_{i,j})B_i^2(u)B_j^3(v)|_{u=0}=
 3\sum_{j=0}^3(\ddd{P}_{1,j}-\ddd{P}_{0,j})B_j^3(v),$$
@@ -1203,65 +1265,68 @@ $$\frac{\partial \ddd{R}}{\partial v}|_{u=0}=3\sum_{i=0}^3\sum_{j=0}^2
 (\ddd{Q}_{i,j+1}-\ddd{Q}_{i,j})B_i^2(u)B_j^3(v)|_{u=0}=
 3\sum_{j=0}^2(\ddd{Q}_{0,j}-\ddd{Q}_{0,j+1})B_j^2(v).$$
 
-Po enačbi \todo{sklic} mora veljati 
-$$D(v)\sum_{j=0}^3(\ddd{P}_{1,j}-\ddd{P}_{0,j})B_j^3(v) = E_1(v)\sum_{j=0}^3(\ddd{Q}_{1,j}-\ddd{Q}_{0,j})B_j^3(v) + 
-F_1(v)\sum_{j=0}^2(\ddd{Q}_{0,j}-\ddd{Q}_{0,j+1})B_j^2(v).$$
-Da dobimo še nekaj dodatnih pogojev za kontrolne točke ploskev $\ddd{R}$ in $\ddd{S}$, 
-evalvirajmo zgornjo enačbo \todo{sklic} v vrednostih paramatera $v=0$ in $v=1$ 
-\todo{grdo}.
-\nevem{kako nam ti pogoji določajo robne vektorje}
-\todo{ spet se lahko skliciješ na tisto lastnost}
+Dobljeno vstavimo v enačbo \ref{eq14}. Vidimo, da mora veljati:
+\begin{equation}\label{eq15}
+  \begin{split} 
+&D(v)\sum_{j=0}^3(\ddd{P}_{1,j}-\ddd{P}_{0,j})B_j^3(v) = \\
+&=E_1(v)\sum_{j=0}^3(\ddd{Q}_{1,j}-\ddd{Q}_{0,j})B_j^3(v) + 
+F_1(v)\sum_{j=0}^2(\ddd{Q}_{0,j}-\ddd{Q}_{0,j+1})B_j^2(v).
+  \end{split}
+\end{equation}
+
+Najprej si oglejmo, kakšni pogoji v primeru $G^1$ zveznosti veljajo za robne 
+kontrolne točke ploskev $\ddd{R}$ in $\ddd{S}$. V enačbo \ref{eq15} vstavimo 
+vrednosti $v=0$ in $v=1$.
+
 Pri vrednosti $v=0$ dobimo:
-$$(\ddd{Q}_{1,j}-\ddd{Q}_{0,j}) = a_0(\ddd{P}_{1,0}-\ddd{P}_{0,0})+b_0(\ddd{P}_{0,1}-\ddd{P}_{0,0}),$$
+$$(\ddd{Q}_{1,0}-\ddd{Q}_{0,0}) = a_0(\ddd{P}_{1,0}-\ddd{P}_{0,0})+b_0(\ddd{P}_{0,1}-\ddd{P}_{0,0}),$$
 oziroma:
-$$\ddd{q}_0 = a_0 \ddd{p}_0 + b_0 \ddd{z}_0.$$
-Tu smo z $a_0$ označili vrednost $\alpha_1(0)$, z $b_0$ vrednost $\beta_1(0)$, z oznakami 
-$\ddd{p}_j$ in $\ddd{q}_j$ vektorje $\ddd{P}_{1,j}-\ddd{P}_{0,j}$, z oznakami $\ddd{z}_j$ pa 
-vektorje $\ddd{Z}_{j+1}-\ddd{Z}_j = \ddd{P}_{0,j+1}-\ddd{P}_{0,j}$. \todo{(kjer i=1,...,3)}
+$$\ddd{q}_{0,0} = a_0 \ddd{p}_{0,0} + b_0 \ddd{z}_0.$$  
+Tu smo z $a_0$ označili vrednost $\alpha_1(0)$, z $b_0$ pa vrednost $\beta_1(0)$.
 Pri vrednosti $v=1$ pa dobimo:
 $$\ddd{Q}_{1,3}= a_1(\ddd{P}_{1,3}-\ddd{P}_{0,3})+b_1(\ddd{P}_{0,3}-\ddd{P}_{0,2}),$$
 oziroma:
-$$\ddd{q}_3 = a_1 \ddd{p}_3 + b_1 \ddd{z}_2.$$
+$$\ddd{q}_{0,3} = a_1 \ddd{p}_{0,3} + b_1 \ddd{z}_2.$$
 Tu smo z $a_1$ označili vrednost $\alpha_1(1)$ in z $b_1$ vrednost $\beta_1(1)$.
 
-\todo{kompatibilnostni pogoji}
+Pogoji, ki veljajo za robne kontrolne točke so enaki neglede na način konstrukcije 
+$G^1$-zveznega zlepka ploskev. Pogoji, ki veljajo za notranje kontrolne točke, 
+število svobodnih parametrov, ki določajo obliko dobljene ploskve, in število 
+prostih kontrolnih točk pa so odvisni od izbire načina konstrukcije, natančneje, 
+od izbire stopnje koeficientnih polinomskih funkcij in stopnje odvodov parametrizacij 
+ploskev $\ddd{R}$ in $\ddd{S}$.
 
+Izbira stopenj koeficientnih funkcij ni povsem poljubna, temveč je odvisna od 
+stopnje geometrijske zveznosti, ki jo zahtevamo, pa tudi od
+stopenj odvodov $\frac{\partial \ddd{S}}{\partial u}|_{u=0}$, 
+$\frac{\partial \ddd{R}}{\partial u}|_{u=0}$ in $\frac{\partial \ddd{R}}{\partial v}|_{u=0}$ 
+oziroma $\ddd{C}'(v)$. 
 
-Pogoji in omejitve, ki jih imamo do sedaj, še ne določajo enolično notranjih kontrolnih 
-točk plosev $\ddd{R}$ in $\ddd{S}$. \todo{tu lahko primerjava z običajno zveznostjo, kjer 
-je vse že natančno določeno ?} \nevem{kontrolne točke nikoli ne bodo enolično določene,
-kar hočemo narediti je samo videti, kakšna razmerja veljajo, kaj je določeno, kaj je prosto,
-kaj je odvisno od česa. po drugi strani pa je pri C zveznosti vse do konca določeno?}
+V praksi se običajno uporabljajo koeficientne funkcije čim nižje stopnje, saj s 
+tem dobimo manj pogojev za kontrolne točke. V primeru, da sta funkciji $D(v)$ in 
+$E(v)$ konstantni, funkcija $F(v)$ pa kvečjemu linearna, dobimo pogoje le za dve 
+notranji kontrolni točki, vse ostale pa so proste, podobno kot v primeru 
+$C^1$-zveznosti (primer \ref{primer1}). Če za koeficientne funkcije izberemo polinome 
+višjih stopenj, se lahko zgodi, da dobimo pogoje za tri ali štiri kontrolne točke. 
 
-Podati moramo še nekaj pogojev, ki bodo določali obliko 
-ploskve $\ddd{R}$, ter podatek o stopnji \todo{cross-derivative} krivulje \todo{?} 
-$\frac{\partial \ddd{R}}{\partial u}|_{u=0}$ \nevem{kaj je s stopnjo tega?}, 
-od tod pa bomo lahko s pomočjo pogojev za geometrijsko zveznost enolično 
-izrazili preostanek kontrolnih točk. Glede na stopnjo krivulje $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$
-si oglejmo dve različni situaciji. \todo{zakaj stopnja ne more biti npr 1? povej!}
+Najprej si oglejmo situacijo, v kateri za koeficientne funkcije izberemo polinome 
+minimalne stopnje.
 
-\todo{SITUACIJA 1}
+\begin{primer}\label{primer2}
+  Da zagotovimo $G^1$-zveznost na stiku ploskev $\ddd{R}$ in $\ddd{S}$, mora 
+  poleg pogoja, da se ploskvi stikata v robni krivulji, veljati enakost \ref{eq15}, 
+  oziroma 
+  $$D(v)\sum_{j=0}^3 \ddd{q}_j B_j^3(v) = E_1(v) \sum_{j=0}^3 \ddd{p}_j B_j^3(v) + 
+  F_1(v) \sum_{j=0}^2 \ddd{z}_j B_j^2(v).$$
 
-V prvem primeru predpostavimo, da je krivulja $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$ 
-stopnje 3. Krivuljo $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$ torej določajo štirje 
-kontrolni vektorji: $\ddd{p}_0$, $\ddd{p}_1$, $\ddd{p}_2$ in $\ddd{p}_3$. 
-Vektorja $\ddd{p}_0$ in $\ddd{p}_3$ sta že določena, vektorja  
-$\ddd{p}_1=\ddd{P}_{1,1}-\ddd{P}_{0,1}$ in $\ddd{p}_2=\ddd{P}_{1,2}-\ddd{P}_{0,2}$. 
-pa naj bosta prosta. Torej sta točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ prosta parametra.
-\todo{ali to prav razumem?}\nevem{NE}
+  Ker je stopnja krivulj $\frac{\partial \ddd{S}}{\partial u}|_{u=0}$ in 
+  $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$ enaka 3, stopnja krivulje 
+  $\frac{\partial \ddd{R}}{\partial v}|_{u=0}$ pa 2 in če njihovih stopenj 
+  ne nižamo oziroma višamo, bodo stopnje polinomov $D(v)$, $E_1(v)$ in $F_1(v)$ 
+  minimalne, če bosta $D(v)$ in $E_1(v)$ konstantna polinoma, $F_1(v)$ pa linearen. 
+  V tem primeru namreč obe strani enačbe predstavljata Bézierjevo krivuljo stopnje 3.
 
-Ko izberemo kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$, lahko s pomočjo pogojev 
-za $G^1$ zveznost izrazimo še točki $\ddd{Q}_{1,1}$ in $\ddd{Q}_{1,2}$. 
-Zapišimo znova enačbo \todo{sklic}:
-$$\sum_{j=0}^3 \ddd{q}_j B_j^3(v) = \alpha_1(v) \sum_{j=0}^3 \ddd{p}_j B_j^3(v) + 
-\beta_1(v) \sum_{j=0}^2 \ddd{z}_j B_j^2(v).$$
-
-Zaradi enostavnosti \nevem{NE} naj bosta \todo{koeficientni} funkciji $\alpha_1$ in $\beta_1$ polinoma. 
-\todo{lahko bi bili tudi racionalni funkciji, v tem primeru bi dobili še veliko več 
-situacij (3. primer?) (ne bi pa mogli biti nič drugega zaradi izreka?)}
-Opazimo, da imamo v zgornji enačbi na levi strani Bézierjevo krivuljo stopnje 3, torej 
-mora tudi vsota na desni strani predstavljati kubično Bézierjevo krivuljo. Polinom $\alpha_1$ 
-je zato lahko le konstanten, stopnja polinoma $\beta_1$ pa mora biti 1.
+  
 Ker mora veljati še $\alpha_1(0)=a_0$, $\alpha_1(1)=a_1$, $\beta_1(0)=b_0$ in 
 $\beta_1(1)=b_1$, mora veljati: 
 $$\alpha_1(v)= a_0 = a_1.$$
@@ -1288,6 +1353,9 @@ Vstavimo dobljena polinoma $\alpha_1$ in $\beta_1$ v enačbo \todo{sklic} in dob
 $$\ddd{q}_1=a_0\ddd{p}_1+\frac{1}{3}b_1\ddd{z}_0+\frac{2}{3}b_0\ddd{z}_1$$
 in
 $$\ddd{q}_2=a_0\ddd{p}_2+\frac{2}{3}b_1\ddd{z}_1+\frac{1}{3}b_0\ddd{z}_2.$$
+
+\end{primer}
+
 
 \todo{SITUACIJA 2}
 

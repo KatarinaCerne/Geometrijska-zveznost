@@ -1246,7 +1246,7 @@ V našem primeru gre za polinomske ploskve, zato lahko uporabimo izrek \ref{izre
 ki pove, da to velja natanko tedaj, 
 ko obstajajo polinomi $D(v)$, $E_1(v)$ 
 in $F_1(v)$, kjer sta polinoma $D$ in $E_1$ stopnje največ 5, polinom $F_1$ pa stopnje 
-največ 6, da velja
+največ 6, da velja $D(v)E_1(v)\neq 0$ na $[0,1]$ ter
 \begin{align}\label{eq14}
 D(v)\frac{\partial \ddd{S}}{\partial u}|_{u=0} = E_1(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0} + 
 F_1(v)\frac{\partial \ddd{R}}{\partial v}|_{u=0}.
@@ -1279,15 +1279,17 @@ kontrolne točke ploskev $\ddd{R}$ in $\ddd{S}$. V enačbo \ref{eq15} vstavimo
 vrednosti $v=0$ in $v=1$.
 
 Pri vrednosti $v=0$ dobimo:
-$$(\ddd{Q}_{1,0}-\ddd{Q}_{0,0}) = a_0(\ddd{P}_{1,0}-\ddd{P}_{0,0})+b_0(\ddd{P}_{0,1}-\ddd{P}_{0,0}),$$
+$$d_0(\ddd{Q}_{1,0}-\ddd{Q}_{0,0}) = e_0(\ddd{P}_{1,0}-\ddd{P}_{0,0})+f_0(\ddd{P}_{0,1}-\ddd{P}_{0,0}),$$
 oziroma:
-$$\ddd{q}_{0,0} = a_0 \ddd{p}_{0,0} + b_0 \ddd{z}_0.$$  
-Tu smo z $a_0$ označili vrednost $\alpha_1(0)$, z $b_0$ pa vrednost $\beta_1(0)$.
+$$d_0\ddd{q}_{0,0} = e_0 \ddd{p}_{0,0} + f_0 \ddd{z}_0.$$  
+Tu smo z $d_0$ označili vrednost $D(0)$, z $e_0$ vrednost $E_1(0)$, z $f_0$ 
+pa vrednost $F_1(0)$.
 Pri vrednosti $v=1$ pa dobimo:
-$$\ddd{Q}_{1,3}= a_1(\ddd{P}_{1,3}-\ddd{P}_{0,3})+b_1(\ddd{P}_{0,3}-\ddd{P}_{0,2}),$$
+$$d_1\ddd{Q}_{1,3}= e_1(\ddd{P}_{1,3}-\ddd{P}_{0,3})+f_1(\ddd{P}_{0,3}-\ddd{P}_{0,2}),$$
 oziroma:
-$$\ddd{q}_{0,3} = a_1 \ddd{p}_{0,3} + b_1 \ddd{z}_2.$$
-Tu smo z $a_1$ označili vrednost $\alpha_1(1)$ in z $b_1$ vrednost $\beta_1(1)$.
+$$d_1\ddd{q}_{0,3} = e_1 \ddd{p}_{0,3} + f_1 \ddd{z}_2.$$
+Tu smo z $d_1$ označili vrednost $D(1)$, z $e_1$ vrednost $E_1(1)$ in z 
+$f_1$ vrednost $F_1(1)$.
 
 Pogoji, ki veljajo za robne kontrolne točke so enaki neglede na način konstrukcije 
 $G^1$-zveznega zlepka ploskev. Pogoji, ki veljajo za notranje kontrolne točke, 
@@ -1315,9 +1317,11 @@ minimalne stopnje.
 \begin{primer}\label{primer2}
   Da zagotovimo $G^1$-zveznost na stiku ploskev $\ddd{R}$ in $\ddd{S}$, mora 
   poleg pogoja, da se ploskvi stikata v robni krivulji, veljati enakost \ref{eq15}, 
-  oziroma 
-  $$D(v)\sum_{j=0}^3 \ddd{q}_j B_j^3(v) = E_1(v) \sum_{j=0}^3 \ddd{p}_j B_j^3(v) + 
-  F_1(v) \sum_{j=0}^2 \ddd{z}_j B_j^2(v).$$
+  oziroma
+  \begin{align}\label{eq16} 
+    D(v)\sum_{j=0}^3 \ddd{q}_j B_j^3(v) = E_1(v) \sum_{j=0}^3 \ddd{p}_j B_j^3(v) + 
+    F_1(v) \sum_{j=0}^2 \ddd{z}_j B_j^2(v).
+  \end{align}
 
   Ker je stopnja krivulj $\frac{\partial \ddd{S}}{\partial u}|_{u=0}$ in 
   $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$ enaka 3, stopnja krivulje 
@@ -1326,90 +1330,99 @@ minimalne stopnje.
   minimalne, če bosta $D(v)$ in $E_1(v)$ konstantna polinoma, $F_1(v)$ pa linearen. 
   V tem primeru namreč obe strani enačbe predstavljata Bézierjevo krivuljo stopnje 3.
 
-  
-Ker mora veljati še $\alpha_1(0)=a_0$, $\alpha_1(1)=a_1$, $\beta_1(0)=b_0$ in 
-$\beta_1(1)=b_1$, mora veljati: 
-$$\alpha_1(v)= a_0 = a_1.$$
-in 
-$$\beta_1(v) = b_0(1-v) + b_1v.$$
-\todo{kompatibilnostni pogoji izginejo ? ?}
-Vstavimo dobljena polinoma $\alpha_1$ in $\beta_1$ v enačbo \todo{sklic} in dobimo:
+  Brez škode za splošnost lahko izberemo, da je $D(v)\equiv 1$. Potem je 
+  $E_1(v)\equiv e_0 = e_1$. Ker predpostavimo, da je $F_1(v)$ linearen in da 
+  velja $F_1(0)=f_0$ ter $F_1(1)=f_1$, mora za $F_1$ veljati
+  $$F_1(v) = f_0(1-v) + f_1v.$$
+
+Vstavimo polinome $D$, $E_1$ in $F_1$ v enačbo \ref{eq16} in dobimo:
 \begin{align*}
-  &\sum_{j=0}^3\ddd{q}_jB_j^3(v) = a_0\sum_{j=0}^3\ddd{p}_jB_j^3(v) + 
-  (b_0(1-v)+b_1v)\sum_{j=0}^2\ddd{z}_jB_j^2(v)=\\
-  &=a_0\sum_{j=0}^3\ddd{p}_jB_j^3(v) + \sum_{j=0}^2\ddd{z}_jb_0{2 \choose j}v^j(1-v)^{3-j} + 
-  \sum_{j=0}^2\ddd{z}_jb_1{2 \choose j}v^{j+1}(1-v)^{2-j}=\\
-  &=\sum_{j=0}^3a_0\ddd{p}_jB_j^3(v) + \sum_{j=0}^3\ddd{z}_jb_0{2 \choose j}v^j(1-v)^{3-j} + 
-  \sum_{j=1}^3b_1\ddd{z}_{j-1}{2 \choose j-1}v^j(1-v)^{3-j}=\\
-  &=\sum_{j=0}^3a_0\ddd{p}_jB_j^3(v) + \sum_{j=0}^3b_0\ddd{s}_j\frac{3-j}{3}{3 \choose j}v^j(1-v)^{3-j} + 
-  \sum_{j=1}^3b_1\ddd{z}_{j-1}\frac{j}{3}{3 \choose j}v^3(1-v)^{3-j}=\\
-  &=\sum_{j=0}^3a_0\ddd{p}_jB_j^3(v) + \sum_{j=0}^3b_0\ddd{z}_j\frac{3-j}{3}B_j^3(v) + 
-  \sum_{j=0}^3b_1\ddd{z}_{j-1}\frac{j}{3}B_j^3(v)
+  &\sum_{j=0}^3\ddd{q}_jB_j^3(v) = e_0\sum_{j=0}^3\ddd{p}_jB_j^3(v) + 
+  (f_0(1-v)+f_1v)\sum_{j=0}^2\ddd{z}_jB_j^2(v)=\\
+  &=e_0\sum_{j=0}^3\ddd{p}_jB_j^3(v) + \sum_{j=0}^2\ddd{z}_jf_0{2 \choose j}v^j(1-v)^{3-j} + 
+  \sum_{j=0}^2\ddd{z}_jf_1{2 \choose j}v^{j+1}(1-v)^{2-j}=\\
+  &=\sum_{j=0}^3e_0\ddd{p}_jB_j^3(v) + \sum_{j=0}^3\ddd{z}_jf_0{2 \choose j}v^j(1-v)^{3-j} + 
+  \sum_{j=1}^3f_1\ddd{z}_{j-1}{2 \choose j-1}v^j(1-v)^{3-j}=\\
+  &=\sum_{j=0}^3e_0\ddd{p}_jB_j^3(v) + \sum_{j=0}^3f_0\ddd{z}_j\frac{3-j}{3}{3 \choose j}v^j(1-v)^{3-j} + 
+  \sum_{j=1}^3f_1\ddd{z}_{j-1}\frac{j}{3}{3 \choose j}v^3(1-v)^{3-j}=\\
+  &=\sum_{j=0}^3e_0\ddd{p}_jB_j^3(v) + \sum_{j=0}^3f_0\ddd{z}_j\frac{3-j}{3}B_j^3(v) + 
+  \sum_{j=0}^3f_1\ddd{z}_{j-1}\frac{j}{3}B_j^3(v)
 \end{align*}
-\todo{V zadnji vrstici zgornjega izračuna smo uporabili, da je v vsoti $\sum_{j=0}^3b_1\ddd{z}_{j-1}\frac{j}{3}B_j^3(v)$ 
-člen pri $j=0$ enak 0.}
+V tretji vrstici zgornjega računa smo uporabili dejstvo, da je v vsoti\\ 
+$\sum_{j=0}^3\ddd{z}_jf_0{2 \choose j}v^j(1-v)^{3-j}$ člen pri $j=3$ enak 0 
+in je zato \\$\sum_{j=0}^2\ddd{z}_jf_0{2 \choose j}v^j(1-v)^{3-j}=\sum_{j=0}^3\ddd{z}_jf_0{2 \choose j}v^j(1-v)^{3-j}$.
+Podobno smo v zadnji vrstici upoštevali, da je v vsoti $\sum_{j=0}^3b_1\ddd{z}_{j-1}\frac{j}{3}B_j^3(v)$ 
+člen pri $j=0$ enak 0 in je zato 
+$\sum_{j=1}^3f_1\ddd{z}_{j-1}\frac{j}{3}{3 \choose j}v^3(1-v)^{3-j}=\sum_{j=0}^3b_1\ddd{z}_{j-1}\frac{j}{3}B_j^3(v)$.
 
-\todo{ali moram to bolje razložiti}Od tod dobimo pogoje za kontrolna vektorja $\ddd{q}_1$ in $\ddd{q}_2$:
-$$\ddd{q}_1=a_0\ddd{p}_1+\frac{1}{3}b_1\ddd{z}_0+\frac{2}{3}b_0\ddd{z}_1$$
+Od tod dobimo pogoje za kontrolna vektorja $\ddd{q}_1$ in $\ddd{q}_2$:
+$$\ddd{q}_{1,1}=e_0\ddd{p}_{1,1}+\frac{1}{3}f_1\ddd{z}_0+\frac{2}{3}f_0\ddd{z}_1$$
 in
-$$\ddd{q}_2=a_0\ddd{p}_2+\frac{2}{3}b_1\ddd{z}_1+\frac{1}{3}b_0\ddd{z}_2.$$
+$$\ddd{q}_{1,2}=e_0\ddd{p}_{1,2}+\frac{2}{3}f_1\ddd{z}_1+\frac{1}{3}f_0\ddd{z}_2.$$
 
+Najprej opazimo, da za razliko od primera \ref{primer1}, tu ni več potrebe po 
+kolinearnosti vektorjev $\ddd{q}_{1,1}$ in $\ddd{p}_{1,1}$ oziroma 
+vektorjev $\ddd{q}_{1,2}$ in $\ddd{p}_{1,2}$, zahtevamo le še koplanarnost. 
+Parametri $e_0$, $f_0$ in $f_1$ 
+so prosti. Edina omejitev, ki velja v tem primeru, je, da mora biti $e_0<0$,
+saj bi imel v nasprotnem primeru stik ploskev obliko špice. Če izberemo 
+$e_0=-1$, $f_0=0$ in $f_1=0$, dobimo enak rezultat kot v primeru \ref{primer1}, 
+v katerem smo iskali pogoje za $C^1$-zveznost. Z drugačno izbiro parametrov pa 
+lahko dosežemo poljuben kot med vektorjema $q_{1,1}$ in $p_{1,1}$, biti morata samo 
+del iste ravnine.  
+Vidimo torej, da je zahteva $G^1$-zveznosti kar se tiče oblike dobljenega zlepka 
+ploskev veliko manj omejujoča kot zahteva $C^1$-zveznosti.
+
+V danem primeru, kjer so stopnje koeficientnih polinomov minimalne, je tudi število 
+prostih kontrolnih točk enako kakor v primeru $C^1$-zveznosti. Kontrolni točki 
+$\ddd{Q}_{1,1}$ in $\ddd{Q}_{1,2}$ sta točno določeni z izbiro točk $\ddd{P}_{1,1}$ 
+in $\ddd{P}_{1,2}$, z robnimi kontrolnimi točkami ter izbiro parametrov $e_0$, 
+$f_0$ in $f_1$, kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ pa sta 
+prosti. Enako velja za vse ostale notranje kontrolne točke. 
 \end{primer}
 
+\begin{primer}\label{primer3}
+  Oglejmo si še nekoliko drugačen primer konstrukcije $G^1$-zveznih zlepkov dveh ploskev. 
+  Stopnja polinoma $D(v)$ naj bo znova 0, stopnja $F_1(v)$ pa 1. Ker pa želimo 
+  več parametrov, ki bodo določali obliko dobljene ploskve, naj bo polinom $E_1(v)$ 
+  stopnje 1. Da bomo v tem primeru na obeh straneh enačbe \ref{eq15} dobili 
+  Bézierjevo krivuljo stopnje 3, moramo znižati stopnjo krivulje 
+  $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$. 
+  Videli bomo, da v tem primeru sicer dobimo drugačne 
+  možnosti, kar se tiče oblike, kakor v primeru \ref{primer2} \todo{več možnosti?}, 
+  vendar se pri tem pojavi dodatna omejitev za notranje kontrolne točke.
 
-\todo{SITUACIJA 2}
-
-V tem primeru pa predpostavimo, da je krivulja $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$ 
-stopnje 2, torej jo določajo kontrolni vektorji $\ddd{p}_0$, $\ddd{p}_m$ in $\ddd{p}_3$. 
-\todo{vektorja p0 in p3 sta že določena zaradi določenosti robnih krivulj}
-
-\todo{kompatibilnostni pogoji} 
-
-\todo{ne vem, kako naj to. tega ne razumem zakaj je linearna kombinacija in kako 
-je to enako ne razumem}
+  Naj krivuljo $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$ 
+  določajo kontrolni vektorji $\ddd{p}_0$, $\ddd{p}_m$ in $\ddd{p}_3$:
 
 $$\frac{1}{3}\frac{\partial \ddd{R}}{\partial u}|_{u=0} = 
-\sum_{i=0}^3\ddd{p}_iB_i^3(v)=(1-v)^2\ddd{p}_0 + 2(1-v)v\ddd{p}_m + v^2\ddd{p}_3$$
-\todo{zakaj se p1 in p2 zapisujeta kot lin. kombinaciji p0, pm, p3?}
+\sum_{i=0}^3\ddd{p}_{1,i}B_i^3(v)=(1-v)^2\ddd{p}_{1,0} + 2(1-v)v\ddd{p}_m + v^2\ddd{p}_{1,3}$$
 
-\nevem{Vektorji $\ddd{p}_0$, $\ddd{p}_m$ in $\ddd{p}_1$ so del iste ravnine. Enako velja za vektorje 
-$\ddd{p}_2$, $\ddd{p}_m$ in $\ddd{p}_3$, zato lahko vektorja $p_1$ in $p_2$ zapišemo 
-na naslednji način:}
-$$\ddd{p}_1=a\ddd{p}_m+b\ddd{p}_0$$
-$$\ddd{p}_2= c\ddd{p}_m+d\ddd{p}_3$$
-Dobljeno vstavimo v izraz $\sum_{i=0}^3\ddd{p}_iB_i^3(v)$.
+Po formulah za višanje stopnje krivulje velja
+$$\ddd{p}_{1,1}=\frac{2}{3}\ddd{p}_m+\frac{1}{3}\ddd{p}_{1,0}$$
+$$\ddd{p}_{1,2}=\frac{2}{3}\ddd{p}_m+\frac{1}{3}\ddd{p}_{1,3},$$
+oziroma
+\begin{align}\label{eq17}
+\ddd{p}_m=\frac{3}{2}\ddd{p}_{1,1}-\frac{1}{2}\ddd{p}_{1,0}=
+\frac{3}{2}\ddd{p}_{1,2}-\frac{1}{2}\ddd{p}_{1,3}.
+\end{align}
+
+Enačba \ref{eq15} se torej v tem primeru preoblikuje tako:
+\begin{align}\label{eq16}
+D(v)\sum_{j=0}^3\ddd{q}_{1,j}B_j^3(v)=E_1(v)\sum_{j=0}^2\tilde{\ddd{p}}_jB_j^2(v)+
+F_1(v)\sum_{j=0}^2\ddd{s}_jB_j^2(v),
+\end{align}
+kjer smo označili $\tilde{\ddd{p}}_0=\ddd{p}_{1,0}$, $\tilde{\ddd{p}}_1=\ddd{p}_m$ in $\tilde{\ddd{p}}_2=\ddd{p}_{1,3}$.
+
+Polinom $D(v)$ naj bo konstanten, znova lahko predpostavimo $D(v)\equiv 1$. Polinoma 
+$E_1(v)$ in $F_1(v)$ naj bosta linearna, zanju naj velja še $E_1(0)=e_0$, 
+$E_1(1)=e_1$, $F_1(0)=f_0$, $F_1(1)=f_1$. Torej mora veljati:
+$$E_1(v)=e_0(1-v)+e_1v$$
+$$F_1(v)=f_0(1-v)+f_1v.$$
+
+Vstavimo polinoma v enačbo \ref{eq16} in na podoben način kot v primeru \ref{primer2} dobimo:
 \begin{align*}
-  \sum_{i=0}^3\ddd{p}_iB_i^3(v)&=\ddd{p}_0(1-v)^3+2a\ddd{p}_m(1-v)^2v+3b\ddd{p}_0(1-v)^2v+
-  3c\ddd{p}_m(1-v)v^2+\\ &+3d\ddd{p}_3(1-v)v^2+v^3\ddd{p}_3=\\
-  &=\ddd{p}_0(1-v)^2(1-v+3bv)+\ddd{p}_m(1-v)v(3a(1-v)+3cv)+\\ &+\ddd{p}_3v^2(3d(1-v)+v)
-\end{align*}
-Sedaj to vstavimo v enačbo \todo{sklic} in enačbimo koeficiente\todo{?} pred 
-vektorji $\ddd{p}_0$, $\ddd{p}_m$ in $\ddd{p}_3$, 
-da dobimo enačbe za izračun vrednosti 
-$a$, $b$, $c$ in $d$: 
-$3b-1=0$, $3a=2$, $3c-3a=0$, $3d=1.$ 
-
-Od tod sledi $b=\frac{1}{3}$, $a=\frac{2}{3}$, $c=\frac{2}{3}$ in $d=\frac{1}{3}$. 
-Dobili smo, da se $\ddd{p}_1$ in $\ddd{p}_2$ izražata na naslednji način:
-$$\ddd{p}_1=\frac{2}{3}\ddd{p}_m+\frac{1}{3}\ddd{p}_0$$
-$$\ddd{p}_2=\frac{2}{3}\ddd{p}_m+\frac{1}{3}\ddd{p}_3.$$
-
-Kot v \todo{situaciji 1} ponovno zapišimo enačbo \todo{sklic}, ki velja zaradi $G^1$ 
-zveznosti ploskev $\ddd{R}$ in $\ddd{S}$.
-$$\sum_{j=0}^3\ddd{q}_jB_j^3(v)=\alpha_1(v)\sum_{j=0}^2\tilde{\ddd{p}}_jB_j^2(v)+
-\beta_1(v)\sum_{j=0}^2\ddd{s}_jB_j^2(v)$$
-kjer smo označili $\tilde{\ddd{p}}_0=\ddd{p}_0$, $\tilde{\ddd{p}}_1=\ddd{p}_m$ in $\tilde{\ddd{p}}_2=\ddd{p}_3$
-
-Ponovno zaradi enostavnosti predpostavimo, da sta funkciji $\alpha_1(y)$ in $\beta_1(y)$ 
-polinoma. Ponovno opazimo, da imamo na levi strani enačbe Bézierjevo krivulo stopnje 3, 
-torej mora tudi desna stran predstavljati krivuljo stopnje 3. Polinoma $\alpha_1(y)$ in 
-$\beta_1(y)$ morata biti zato linerana:
-$$\alpha_1(v)=a_0(1-v)+a_1v$$
-$$\beta_1(v)=b_0(1-v)+b_1v$$
-
-Vstavimo polinoma v enačbo \todo{sklic} in na podoben način kot v \todo{situaciji 1} dobimo:
-\begin{align*}
-  &\sum_{j=0}^3\ddd{q}_jB_j^3(v)=(a_0(1-v)+a_1v)\sum_{j=0}^2\tilde{\ddd{p}}_jB_j^2(v)
+  &\sum_{j=0}^3\ddd{q}_{1,j}B_j^3(v)=(a_0(1-v)+a_1v)\sum_{j=0}^2\tilde{\ddd{p}}_jB_j^2(v)
   + (b_0(1-v)+b_1v)\sum_{j=0}^2\ddd{s}_jB_j^2(v) =\\
   &=a_0\sum_{j=0}^2\tilde{\ddd{p}}_j{2 \choose j}v^j(1-v)^{3-j} + 
   a_1\sum_{j=0}^2\tilde{\ddd{p}}_j{2 \choose j}v^{j+1}(1-v)^{2-j} +\\ 
@@ -1418,13 +1431,28 @@ Vstavimo polinoma v enačbo \todo{sklic} in na podoben način kot v \todo{situac
   &=\sum_{j=0}^3(a_1\tilde{\ddd{p}}_{j-1}\frac{j}{3}+a_0\tilde{\ddd{p}}_j\frac{3-j}{3}+
   b_1\ddd{z}_{j-1}\frac{j}{3}+b_0\ddd{z}_j\frac{3-j}{3})B_j^3(v)
 \end{align*}
-\todo{tu sem kar spustila vse korake, ker so isti}
 
-Od tod sledijo pogoji za vektorja $\ddd{q}_1$ in $\ddd{q}_2$. 
-$$\ddd{q}_1=\frac{1}{3}(a_1\ddd{p}_0+2a_0\ddd{p}_m+b_1\ddd{z}_0+2b_0\ddd{z}_1)$$
-$$\ddd{q}_2=\frac{1}{3}(a_0\ddd{p}_3+2a_1\ddd{p}_m+2b_1\ddd{z}_1+b_0\ddd{z}_2).$$
+Od tod sledijo pogoji za vektorja $\ddd{q}_{1,1}$ in $\ddd{q}_{1,2}$. 
+$$\ddd{q}_{1,1}=\frac{1}{3}(e_1\ddd{p}_{1,0}+2e_0\ddd{p}_m+f_1\ddd{z}_0+2f_0\ddd{z}_1)$$
+$$\ddd{q}_{1,2}=\frac{1}{3}(e_0\ddd{p}_{1,3}+2e_1\ddd{p}_m+2f_1\ddd{z}_1+f_0\ddd{z}_2).$$
 
-Seveda pa to nista edini možni situaciji.
+Če še izrazimo vektor $\ddd{p}_m$ z vektorjema $\ddd{p}_{1,0}$ in $\ddd{p}_{1,1}$ 
+oziroma vektorjema $\ddd{p}_{1,2}$ in $\ddd{p}_{1,3}$, dobimo naslednji enačbi:
+
+$$\ddd{q}_{1,1}=e_0\ddd{p}_{1,1}+\frac{1}{3}(e_1-e_0)\ddd{p}_{1,0}+\frac{1}{3}f_1\ddd{z}_0+\frac{2}{3}f_0\ddd{z}_1$$
+$$\ddd{q}_{1,2}=e_1\ddd{p}_{1,2}+\frac{1}{3}(e_0-e_1)\ddd{p}_{1,3}+\frac{2}{3}f_1\ddd{z}_1+\frac{1}{3}f_0\ddd{z}_2.$$
+
+Vidimo, da za razliko od primera \ref{primer2}, kjer smo imeli zgolj 3 parametre 
+za določanje oblike, tu dobimo 4 parametre: $e_0$, $e_1$, $f_0$ in $f_1$. S tem 
+dobimo nove možnosti za obliko dobljene ploskve. 
+Hkrati pa izgubimo nekaj svobode, kar se tiče izbire kontrolnih točk. Kontrolne točke 
+Kontrolni točki $\ddd{Q}_{1,1}$ in $\ddd{Q}_{1,2}$ sta kot v primeru \ref{primer2} 
+določeni s točkama $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ ter robnimi kontrolnimi 
+točkami, kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ pa nista več obe 
+prosti. Prosta je le še ena izmed njiju, druga pa je določena z enačbo \ref{eq17}.
+\end{primer}
+
+
 
 
 %\section{Tehnični napotki za pisanje}

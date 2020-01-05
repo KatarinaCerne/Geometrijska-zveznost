@@ -654,7 +654,7 @@ $\Delta^{0,s} \mathbf{b}_{i,j} = \Delta^{0,s-1} \mathbf{b}_{i,j+1}-\Delta^{0,s-1
 %dodaj pogoje gladkosti za C1 ?
 %dodaj trikotne krpe
 
-\section{$G^n$-zveznost med dvema Bézierjevima\\ ploskvama}
+\section{$G^n$-zveznost med dvema Bézierjevima\\ ploskvama iz tenzorskega produkta}
 
 \todo{Nekaj v smislu, da sedaj prevedemo že dobljene splošne pogoje na pogoje za 
 bezierove ploskve oz. kako ti pogoji izgledajo za te ploskve.}
@@ -1162,7 +1162,7 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
 %$(M_e^2-M_d^2(M_d^1)^{-1}M_e^1)\overline{\ddd{A}} + 
 %(M_f^2-M_d^2(M_d^1)^{-1}M_f^1)\overline{\ddd{B}} = 0$
 
-\section{Primeri konstrukcij geometrijsko zveznih ploskev}
+\section{Primeri konstrukcij geometrijsko zveznih ploskev iz tenzorskega produkta}
 
 \todo{nek uvod}
 
@@ -1182,8 +1182,7 @@ kjer velja $u,v\in[0,1]$.
 Ploskvi $\ddd{R}$ in $\ddd{S}$ se stikata v $\ddd{C}(v)=\ddd{R}(0,v)=\ddd{S}(0,v)$, torej naj velja
 $$\ddd{C}(v)=\sum_{i=0}^{n_c} \ddd{Z}_i B_i^{n_c}(v),$$
 kjer so $\ddd{Z}_i = \ddd{P}_{0,i} = \ddd{Q}_{0,i}$ kontrolne točke krivulje $\ddd{C}$. 
-Stopnja $n_c$ krivulje $\ddd{C}$ ni nujno enaka $3$, veljati pa mora $n_c\leq 3$. 
-Obravnavali bomo primere, v katerih je $n_c=3$ in primer, kjer je $n_c=2$.
+Stopnja $n_c$ krivulje $\ddd{C}$ ni nujno enaka $3$, veljati pa mora $n_c\leq 3$.\todo{?}
 Predpostavili bomo, da so robne krivulje ploskev $\ddd{R}$ in $\ddd{S}$ 
 že določene na tak način, da bomo imeli na robu zahtevano zveznost. 
 Zanimalo nas bo,  
@@ -1281,13 +1280,17 @@ vrednosti $v=0$ in $v=1$.
 Pri vrednosti $v=0$ dobimo:
 $$d_0(\ddd{Q}_{1,0}-\ddd{Q}_{0,0}) = e_0(\ddd{P}_{1,0}-\ddd{P}_{0,0})+f_0(\ddd{P}_{0,1}-\ddd{P}_{0,0}),$$
 oziroma:
-$$d_0\ddd{q}_{0,0} = e_0 \ddd{p}_{0,0} + f_0 \ddd{z}_0.$$  
+\begin{align}\label{eq18}
+d_0\ddd{q}_{0,0} = e_0 \ddd{p}_{0,0} + f_0 \ddd{z}_0.
+\end{align}  
 Tu smo z $d_0$ označili vrednost $D(0)$, z $e_0$ vrednost $E_1(0)$, z $f_0$ 
 pa vrednost $F_1(0)$.
 Pri vrednosti $v=1$ pa dobimo:
 $$d_1\ddd{Q}_{1,3}= e_1(\ddd{P}_{1,3}-\ddd{P}_{0,3})+f_1(\ddd{P}_{0,3}-\ddd{P}_{0,2}),$$
 oziroma:
-$$d_1\ddd{q}_{0,3} = e_1 \ddd{p}_{0,3} + f_1 \ddd{z}_2.$$
+\begin{align}\label{eq19}
+d_1\ddd{q}_{0,3} = e_1 \ddd{p}_{0,3} + f_1 \ddd{z}_2.
+\end{align}
 Tu smo z $d_1$ označili vrednost $D(1)$, z $e_1$ vrednost $E_1(1)$ in z 
 $f_1$ vrednost $F_1(1)$.
 
@@ -1363,15 +1366,18 @@ $$\ddd{q}_{1,2}=e_0\ddd{p}_{1,2}+\frac{2}{3}f_1\ddd{z}_1+\frac{1}{3}f_0\ddd{z}_2
 Najprej opazimo, da za razliko od primera \ref{primer1}, tu ni več potrebe po 
 kolinearnosti vektorjev $\ddd{q}_{1,1}$ in $\ddd{p}_{1,1}$ oziroma 
 vektorjev $\ddd{q}_{1,2}$ in $\ddd{p}_{1,2}$, zahtevamo le še koplanarnost. 
-Parametri $e_0$, $f_0$ in $f_1$ 
-so prosti. Edina omejitev, ki velja v tem primeru, je, da mora biti $e_0<0$,
-saj bi imel v nasprotnem primeru stik ploskev obliko špice. Če izberemo 
+Ena izmed omejitev, ki veljajo za parametre $e_0$, $f_0$ in $f_1$, je, da 
+mora biti $e_0<0$,
+saj bi imel v nasprotnem primeru stik ploskev obliko špice. 
+Dva izmed teh parametrov sta določena z enačbama \ref{eq18} in \ref{eq19}, 
+eden pa je prost, z njim lahko spreminjamo obliko končne ploskve.
+\todo{proste robne točke?}Če izberemo 
 $e_0=-1$, $f_0=0$ in $f_1=0$, dobimo enak rezultat kot v primeru \ref{primer1}, 
 v katerem smo iskali pogoje za $C^1$-zveznost. Z drugačno izbiro parametrov pa 
 lahko dosežemo poljuben kot med vektorjema $q_{1,1}$ in $p_{1,1}$, biti morata samo 
-del iste ravnine.  
+del iste ravnine. \todo{proste robne točke?}  
 Vidimo torej, da je zahteva $G^1$-zveznosti kar se tiče oblike dobljenega zlepka 
-ploskev veliko manj omejujoča kot zahteva $C^1$-zveznosti.
+ploskev prinese veliko več možnosti kot zahteva $C^1$-zveznosti.
 
 V danem primeru, kjer so stopnje koeficientnih polinomov minimalne, je tudi število 
 prostih kontrolnih točk enako kakor v primeru $C^1$-zveznosti. Kontrolni točki 
@@ -1443,14 +1449,97 @@ $$\ddd{q}_{1,1}=e_0\ddd{p}_{1,1}+\frac{1}{3}(e_1-e_0)\ddd{p}_{1,0}+\frac{1}{3}f_
 $$\ddd{q}_{1,2}=e_1\ddd{p}_{1,2}+\frac{1}{3}(e_0-e_1)\ddd{p}_{1,3}+\frac{2}{3}f_1\ddd{z}_1+\frac{1}{3}f_0\ddd{z}_2.$$
 
 Vidimo, da za razliko od primera \ref{primer2}, kjer smo imeli zgolj 3 parametre 
-za določanje oblike, tu dobimo 4 parametre: $e_0$, $e_1$, $f_0$ in $f_1$. S tem 
-dobimo nove možnosti za obliko dobljene ploskve. 
-Hkrati pa izgubimo nekaj svobode, kar se tiče izbire kontrolnih točk. Kontrolne točke 
+za določanje oblike in od teh le enega prostega, tu dobimo 4 parametre: $e_0$, $e_1$, $f_0$ in $f_1$. 
+Dva izmed njih sta določena z enačbama \ref{eq18} in \ref{eq19}, druga dva pa sta prosta. 
+S tem dobimo nove možnosti za obliko dobljene ploskve.
+
+Da se izognemo možnosti, kjer ima dobljeni zlepek obliko špice, mora veljati 
+omejitev $E_1(v)<0$ za $v\in [0,1]$, s čimer dobimo nekaj omejitev za izbiro 
+parametrov $e_0$ in $e_1$. Polinom $E_1(v)$ zapišimo kot $E_1(v)=(e_1-e_0)v+e_0$. 
+Na intervalu $[0,1]$ bo $E_1(v)<0$, če bo njegov maksimum na tem intervalu manjši od 0.  
+Obravnavajmo dve možnosti. Prva možnost je, da je $e_1-e_0<0$ oziroma $e_1<e_0$. 
+V tem primeru je $E_1(v)$ padajoča funkcija, zato ima na $[0,1]$ maksimum v $v=0$. 
+Torej bo v tem primeru $E_1(v)<0$, če bo $E_1(0)=e_0<0$. 
+Druga možnost je, da je $e_1-e_0>0$. V tem primeru je $E_1(v)$ naraščajoča funkcija 
+in ima maksimum v $v=1$. Torej bo v tem primeru $E_1(v)<0$, če bo $E_1(1)=e_1<0$. 
+Omejitev za parametra $e_0$ in $e_1$ je torej, da sta oba negativna. 
+
+V trenutnem primeru imamo nekoliko manj svobode, kar se tiče izbire kontrolnih točk, 
+kot v primerih \ref{primer1} in \ref{primer2}.  
 Kontrolni točki $\ddd{Q}_{1,1}$ in $\ddd{Q}_{1,2}$ sta kot v primeru \ref{primer2} 
 določeni s točkama $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ ter robnimi kontrolnimi 
 točkami, kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ pa nista več obe 
 prosti. Prosta je le še ena izmed njiju, druga pa je določena z enačbo \ref{eq17}.
+\todo{to pomeni, da v splošnem ne moremo konstruirati ploskve S poljubne stopnje, 
+če je R podana, saj dobimo pogoje za kontrolne točke R}
 \end{primer}
+
+\todo{primer s stopnjo 3 in 2? ali pa samo omeni, da je v tem primeru 
+veliko več parametrov, ampak da so vse kontrolne točke odvisne od robnih,
+polinomi višje stopnje se v bistvu ne splačajo? uporabni so samo, kadar 
+imamo stik ploskev različnih stopenj}
+
+\todo{lahko narediš primer s stopnjami 3 in 2 in vidimo, da kontrolne točke 
+niso proste in je zato v splošnem nemogoče konstruirati bezierjevo ploskev 
+vnaprej določene stopnje, ki je g zvezna z neko vnaprej določeno bez ploskvijo, 
+ali kaj?}
+
+\todo{primer trikotna}
+
+\todo{primer c2 in g2}
+
+\section{Konctrukcija $G^1$-zveznih trikotnih Bézierjevih ploskev}
+
+\subsection{Trikotne Bézierove ploskve}
+
+\todo{povej, kje je možno najti dokaze trditev v tem podpoglavju}
+
+Trikotne Bézierove ploskve so tip Bézierovih ploskev s parametrizacijo, definirano 
+nad trikotno domeno. Ko imamo opravka s trikotnimi domenami, uporaba običajnega 
+kartezičnega koordinatnega sistema ni najbolj praktična, zato bomo 
+točke znotraj takih domen raje zapisovali z baricentričnimi koordinatami.
+
+Naj bo $T$ trikotnik z oglišči $\ddd{p}_1=(x_1,y_1)$, $\ddd{p}_2=(x_2,y_2)$ 
+in $\ddd{p}_3=(x_3,y_3)$, oziroma $T=<\ddd{p}_1,\ddd{p}_2,\ddd{p}_3>$. Velja, 
+da je vsako točko $\ddd{p}=(x,y)$ mogoče enolično zapisati kot 
+$\ddd{p}=u\ddd{p}_1+v\ddd{p}_2+w\ddd{p}_3$, kjer je $u+v+w=1$. Trojico
+$\ddd{u}=(u,v,w)$ imenujemo \emph{baricentrične koordinate} točke $\ddd{p}$ glede 
+na trikotnik $T$. Krajše to zapišemo kot $\ddd{u}=Bar(\ddd{p},T)$.
+
+Trikotne Bezierove ploskve definiramo na naslednji način. 
+\begin{definicija}
+  \emph{Trikotna Bézierov ploskev stopnje n} je podana s parametrizacijo
+  $$\ddd{R}_n(\ddd{p})=\sum_{i+j+k=n}\ddd{b}_{i,j,k}B_{i,j,k}^n(\ddd{u}),$$
+  kjer so $\ddd{b}_{i,j,k}$, $i+j+k=n$, kontrolne točke te ploskve in 
+  $\ddd{u}=Bar(\ddd{p};T)$. Trikotnik $T$ je domena te parametrizacije. Z 
+  $B_{i,j,k}^n$ označujemo Bernsteinove bazne polinome v dveh spremenljivkah, 
+  ki so definirani na naslednji način:
+  $$B_{i,j,k}^n(\ddd{u})=\frac{n!}{i!j!k!}u^iv^jw^k,$$
+  kjer velja $i+j+k=n$ ter $i\geq0$, $j\geq0$ in $k\geq0$.
+\end{definicija}
+
+Koordinate poljubne točke na trikotni Bézierovi ploskvi lahko izračunamo s pomočjo 
+de Casteljaujevega algoritma.
+
+\todo{decasteljaujev algoritem? ali samo sklic na vir?}
+
+V nadaljevanju si bomo ogledali še definicijo smernega odvoda trikotne Bézierove 
+ploskve in pogoje za $C^n$-zveznost med dvema trikotnima Bézierovima ploskvama, 
+v ta namen pa moramo najprej definirati pojem trikotniškega razcveta. 
+\begin{definicija}
+  izberemo točke $\ddd{p}_1, \ldots, \ddd{p}_n$ z baricentričnimi koordinatami 
+  $\ddd{u}_i=Bar(\ddd{p}_i;T)$, $i=1,\ldots,n$. Če v de Casteljaujevem algoritmu 
+  na $i$-tem koraku namesto z baricentričnimi koordinatami $\ddd{u}$ računamo 
+  z $\ddd{u}_i$, kot rezultat algoritma dobimo polinom več spremenljivk, ki ga 
+  imenujemo \emph{trikotniški razcvet} in ga označujemo z 
+  $\ddd{b}[\ddd{u}_1,\ldots,\ddd{u}_n;T]$ oziroma $\ddd{b}[\ddd{p}_1,\ldots,\ddd{p}_n]$. 
+\end{definicija}
+
+\todo{lastnosti trikotniškega razcveta?}
+
+
+
+\subsection{Primeri konstrukcije $G^1$-zveznih trikotnih Bézierovih ploskev}
 
 
 

@@ -114,7 +114,7 @@
 \newcommand{\todo}[1]{{\color{red}{#1}}}
 \newcommand{\nevem}[1]{{\color{blue}{#1}}}
 
-\newcommand{\ddd}[1]{\textbf{#1}}
+\newcommand{\ddd}[1]{\mathbf{#1}}
 
 % \DeclareMathOperator{\tr}{tr}  % morda potrebuješ operator za sled ali kaj drugega?
 
@@ -582,7 +582,7 @@ R_x(x_0,y)=\alpha_1(y) S_u(u_0,y)+\beta_1(y)S_v(u_0,y).
 \end{equation}
 
 Zgornja enačba nam pove, da so parcialni odvodi $R_x(x_0,y)$, $S_u(u_0,y)$ in 
-$S_v(u_0,y)$ v vsaki točki $y$ linearno neodvisni. Torej so v vsaki točki $y$ del 
+$S_v(u_0,y)$ v vsaki točki $y$ linearno odvisni. Torej so v vsaki točki $y$ del 
 iste tangentne ravnine na krivuljo $C$. Zato torej $G^1$-zveznost imenujemo tudi 
 \emph{zveznost tangentnih ravnin}.
 
@@ -1488,14 +1488,14 @@ ali kaj?}
 
 \todo{primer c2 in g2}
 
-\section{Konctrukcija $G^1$-zveznih trikotnih Bézierjevih ploskev}
+\section{Konsrtrukcija $G^1$-zveznih trikotnih Bézierjevih ploskev}
 
-\subsection{Trikotne Bézierove ploskve}
+\subsection{Trikotne Bézierove ploskve}\label{trikotne1}
 
 \todo{povej, kje je možno najti dokaze trditev v tem podpoglavju}
 
 Trikotne Bézierove ploskve so tip Bézierovih ploskev s parametrizacijo, definirano 
-nad trikotno domeno. Ko imamo opravka s trikotnimi domenami, uporaba običajnega 
+nad domeno, sestavljeno iz trikotnikov. Ko imamo opravka s trikotnimi domenami, uporaba običajnega 
 kartezičnega koordinatnega sistema ni najbolj praktična, zato bomo 
 točke znotraj takih domen raje zapisovali z baricentričnimi koordinatami.
 
@@ -1508,7 +1508,7 @@ na trikotnik $T$. Krajše to zapišemo kot $\ddd{u}=Bar(\ddd{p},T)$.
 
 Trikotne Bezierove ploskve definiramo na naslednji način. 
 \begin{definicija}
-  \emph{Trikotna Bézierov ploskev stopnje n} je podana s parametrizacijo
+  \emph{Trikotna Bézierova ploskev stopnje n} je podana s parametrizacijo
   $$\ddd{R}_n(\ddd{p})=\sum_{i+j+k=n}\ddd{b}_{i,j,k}B_{i,j,k}^n(\ddd{u}),$$
   kjer so $\ddd{b}_{i,j,k}$, $i+j+k=n$, kontrolne točke te ploskve in 
   $\ddd{u}=Bar(\ddd{p};T)$. Trikotnik $T$ je domena te parametrizacije. Z 
@@ -1535,14 +1535,292 @@ v ta namen pa moramo najprej definirati pojem trikotniškega razcveta.
   $\ddd{b}[\ddd{u}_1,\ldots,\ddd{u}_n;T]$ oziroma $\ddd{b}[\ddd{p}_1,\ldots,\ddd{p}_n]$. 
 \end{definicija}
 
-\todo{lastnosti trikotniškega razcveta?}
+Kontrolne točke neke ploskve nad trikotnikom $T$ lahko izrazimo s trikotniškim 
+razcvetom na naslednji način: 
+$\ddd{b}_{i,j,k}=\ddd{b}[\ddd{e}_1^{<i>},\ddd{e}_2^{<j>},\ddd{e}_3^{<k>}]$.
+
+S pomočjo trikotniškega razcveta lahko izrazimo kontrolne točke ploskve glede na 
+različne trikotnike v domeni. Imejmo trikotnika $T_1=<\ddd{p}_1,\ddd{p}_2,\ddd{p}_3>$ in 
+$T_2 = <\ddd{r}_1,\ddd{r}_2,\ddd{r}_3>$. 
+Naj bodo $\ddd{b}_{i,j,k}$, $i+j+k=n$ kontrolne točke ploskve $\ddd{P}$ glede 
+na trikotnik $T_1$ in naj bo $\ddd{s}_1=Bar(r_1;T_1)$, $\ddd{s}_2=Bar(r_2;T_1)$ ter 
+$\ddd{s}_3=Bar(r_3;T_1)$. Potem se kontrolne točke ploskve $\ddd{P}$ glede na 
+trikotnik $T_2$ izražajo na naslednji način: 
+$c_{i,j,k} = \ddd{b}[\ddd{s}_1^{<i>},\ddd{s}_2^{<j>},\ddd{s}_3^{<k>}]$, $i+j+k=n$. 
+Tu s $\ddd{s}_1^{<i>}$ označujemo $i$-kratno ponovitev $\ddd{s}_1$.
+
+Če imamo domeno, sestavljeno iz dveh trikotnikov, ki se na enem robu stikata, 
+torej če imamo trikotnika $T_1=<\ddd{p}_1,\ddd{p}_2,\ddd{p}_3>$ in 
+$T_2 = <\ddd{p}_2,\ddd{p}_3,\ddd{p}_4>$, ter ploskev, podano s kontrolnimi točkami 
+glede na trikotnik $T_1$: $b_{i,j,k},$ $i+j+k=n$,   
+lahko kontrolne točke ploskve  
+glede na trikotnik $T_2$ zapišemo tako: 
+$\ddd{c}_{i,j,k}=\ddd{b}[\ddd{e}_1^{<i>},\ddd{e}_2^{<j>},\mathbf{\alpha}^{<k>};T]$. 
+Tu je $\mathbf{\alpha}=Bar(\ddd{p}_4;T_1)$, $\ddd{e}_1=(1,0,0)$ in $\ddd{e}_2=(0,1,0)$. 
+%Ta ugotovitev bo uporabna pri iskanju pogojev za $C^1$-zveznost na stiku dveh 
+%trikotnih ploskev. 
+
+Oglejmo si še formulo za smerni odvod parametrizacije trikotne Bézierove ploskve. 
+Imejmo ploskev $\ddd{P}(\ddd{p})=\sum_{i+j+k}\ddd{b}_{i,j,k}B_{i,j,k}^n(\ddd{u})$ 
+nad trikotnikom $T$, kjer je $\ddd{u}=Bar(\ddd{p};T)$.  
+Recimo, da odvajamo v smeri vektorja $\ddd{d}\in \R^3$. Naj bo $\ddd{d} = \ddd{a}-\ddd{b}$ ter 
+$\ddd{\alpha}=Bar(\ddd{a};T)$ in $\ddd{\beta}=Bar(\ddd{b};T)$. Potem so 
+baricentrične koordinate vektorja $\ddd{d}$ enake 
+$\ddd{\mu}=(\mu_1,\mu_2,\mu_3)=\ddd{\beta}-\ddd{\alpha}$. Velja $\mu_1+\mu_2+\mu_3=0$. 
+Odvod parametrizacije $\ddd{P}$ v smeri vektorja $\ddd{p}$ izračunamo na naslednji način:
+\begin{align*}
+D_{\ddd{p}}\ddd{P}(\ddd{p})&=n\sum_{i+j+k=n-1}(\mu_1\ddd{b}_{i+1,j,k}+
+\mu_2\ddd{b}_{i,j+1,k}+\mu_3\ddd{b}_{i,j,k+1})B_{i,j,k}^{n-1}(\ddd{u})\\
+&=n\ddd{b}[\mu,\ddd{u}^{<n-1>};T].
+\end{align*}
+
+Pokazati je mogoče tudi, da za smerni odvod trikotne ploskve velja:
+$$D_{\ddd{p}}\ddd{P}(\ddd{p})=n(\mu_1\ddd{b}_{1,0,0}^{n-1}(\ddd{u})+
+\mu_2\ddd{b}_{0,1,0}^{n-1}(\ddd{u})+\mu_3\ddd{b}_{0,0,1}^{n-1}(\ddd{u})),$$
+kjer so $\ddd{b}_{1,0,0}^{n-1}(\ddd{u})$, $\ddd{b}_{0,1,0}^{n-1}(\ddd{u})$ in 
+$\ddd{b}_{0,0,1}^{n-1}(\ddd{u})$ točke, dobljene po $n-1$ korakih de Casteljaujevega 
+algoritma, ki razpenjajo tangentno ravnino na točko $\ddd{P}(\ddd{p})$. 
+Ta ugotovitev bo pomembna pri konstrukciji $G^1$-zveznih trikotnih ploskev. 
+
+\subsection{Konstrukcija $C^1$-zveznih trikotnih Bézierovih ploskev}
+
+Imejmo dve trikotni Bézierovi ploskvi $\ddd{R}$ in $\ddd{S}$ stopnje $n$ nad 
+trikotnima domenama $T_1=<\ddd{p_1},\ddd{p_2},\ddd{p}_3>$ in $T_2=<\ddd{p}_4,\ddd{p}_2,\ddd{p}_3>$:
+$$\ddd{R}(\ddd{p})=\sum_{i+j+k=n}\ddd{r}_{i,j,k}B_{i,j,k}^n(\ddd{u});
+\textrm{ }\ddd{u}=Bar(\ddd{p};T_1),$$
+$$\ddd{S}(\ddd{p})=\sum_{i+j+k=n}\ddd{s}_{i,j,k}B_{i,j,k}^n(\ddd{v});
+\textrm{ }\ddd{v}=Bar(\ddd{p};T_2).$$
+Zapišimo točki $\ddd{u}$ in $\ddd{v}$ kot $\ddd{u}=(u_1,u_2,u_3)$ in $\ddd{v}=(v_1,v_2,v_3)$. 
+Ploskvi se stikata na robu nad daljico $\bar{\ddd{p}_2\ddd{p}_3}$, oziroma na 
+robu, določenem z $u_1=v_1=0$.  
+Torej velja 
+$\ddd{r}_{0,j,k}=\ddd{s}_{0,j,k}$ za $j\geq 0$, $k\geq 0$, $j+k=0$. 
+
+Da bo stik ploskev $\ddd{R}$ in $\ddd{S}$ $C^1$-zvezen, se morata v $u_1=0$ 
+oziroma $v_1=0$ ujemati odvoda parametrizacij ploskev v katerikoli smeri. 
+Opazujmo odvoda ploskev v smeri $\ddd{d}=\ddd{p_4}-\ddd{p}_2$. 
+Naj bodo $\ddd{\mu}=(\mu_1,\mu_2,\mu_3)=Bar(\ddd{d};T_1)=\ddd{\alpha}-\ddd{e}_2$ baricentrične 
+koordinate vektorja $\ddd{d}$ glede na trikotnik $T_1$, kjer je $\ddd{\alpha}=
+Bar(\ddd{p}_4;T_1)$, in 
+$\ddd{\eta}=(\eta_1,\eta_2,\eta_3)=Bar(\ddd{d};T_2)=\ddd{e}_1-\ddd{e}_2$ baricentrične 
+koordinate vektorja $\ddd{d}$ glede na trikotnik $T_2$. Veljati mora:
+\begin{align*}
+&\sum_{i+j+k=n-1}(\mu_1\ddd{r}_{i+1,j,k}+
+\mu_2\ddd{r}_{i,j+1,k}+\mu_3\ddd{r}_{i,j,k+1})B_{i,j,k}^{n-1}(\ddd{u})|_{u_1=0}=\\
+&\sum_{i+j+k=n-1}(\eta_1\ddd{s}_{i+1,j,k}+
+\eta_2\ddd{s}_{i,j+1,k}+\eta_3\ddd{s}_{i,j,k+1})B_{i,j,k}^{n-1}(\ddd{v})|_{v_1=0}
+\end{align*}
+oziroma
+\begin{align}\label{eq20}
+\mu_1\ddd{r}_{1,j,k}+\mu_2\ddd{r}_{0,j+1,k}+\mu_3\ddd{r}_{0,j,k+1}=
+\eta_1\ddd{s}_{1,j,k}+\eta_2\ddd{s}_{0,j+1,k}+\eta_3\ddd{s}_{0,j,k+1}
+\end{align}
+za $j+k=n-1$.
+Točki $\ddd{u}$ in $\ddd{v}$ se namreč na stiku obeh ploskev ujemata. Če izrazimo 
+baricentrične koordinate vektorjev s pomočjo baricentričnih koordinat točk, 
+torej če pišemo $\ddd{\mu}=(\alpha_1,\alpha_2-1,\alpha_3)$ in $\ddd{\eta}=(1,-1,0)$ 
+ter dobljeno vstavimo v enačbo \ref{eq20}, ob tem pa upoštevamo še, da se 
+kontrolne točke obeh ploskev na skupnem robu ujemajo, dobimo
+\begin{align}\label{eq21}
+  \ddd{s}_{1,j,k} = \alpha_1\ddd{r}_{1,j,k}+\alpha_2\ddd{r}_{0,j+1,k}+\alpha_3\ddd{r}_{0,j,k+1}
+\end{align}
+za $j+k=n-1$. 
+Enačba \ref{eq21} predstavlja pogoj, ki mora veljati za kontrolne točke obeh 
+ploskev, da se stikata s $C^1$-zveznostjo. Do enakega rezultata bi na podoben 
+način prišli, če bi namesto vektorja $\ddd{d}$ uporabili vektor $\ddd{p}_4-\ddd{p}_3$ 
+katerikoli linearno kombinacijo obeh vektorjev.
+
+%Alternativni način za izpeljavo pogojev \ref{eq21}
+Dobljeni rezultat sedaj uporabimo na primeru stika dveh ploskev stopnje 3.
+
+\begin{primer}
+  Imejmo dve trikotni Bézierovi ploskvi $\ddd{R}$ in $\ddd{S}$ stopnje 3 nad 
+trikotnima domenama $T_1=<\ddd{p_1},\ddd{p_2},\ddd{p}_3>$ in $T_2=<\ddd{p}_4,\ddd{p}_2,\ddd{p}_3>$:
+$$\ddd{R}(\ddd{p})=\sum_{i+j+k=3}\ddd{r}_{i,j,k}B_{i,j,k}^3(\ddd{u});
+\textrm{ }\ddd{u}=Bar(\ddd{p};T_1),$$
+$$\ddd{S}(\ddd{p})=\sum_{i+j+k=3}\ddd{s}_{i,j,k}B_{i,j,k}^3(\ddd{v});
+\textrm{ }\ddd{v}=Bar(\ddd{p};T_2).$$
+Naj bo $\ddd{u}=(u_1,u_2,u_3)$ in $\ddd{v}=(v_1,v_2,v_3)$ ter 
+$\ddd{\alpha}=(\alpha_1,\alpha_2,\alpha_3)=Bar(\ddd{p}_4;T_1)$.
+Ploskvi se kakor prej stikata v $u_1=v_1=0$, torej za kontrolne točke na skupnem 
+robu velja $\ddd{s}_{0,0,2}=\ddd{r}_{0,0,2}$, $\ddd{s}_{0,1,1}=\ddd{r}_{0,1,1}$ in 
+$\ddd{s}_{0,2,0}=\ddd{r}_{0,2,0}$. 
+
+Da bo stik obeh ploskev še $C^1$ zvezen mora po enačbi \ref{eq21} veljati:
+\begin{align*}
+&\ddd{s}_{1,0,2}= \alpha_1\ddd{r}_{1,0,2}+\alpha_2\ddd{r}_{0,1,2}+\alpha_3\ddd{r}_{0,0,3}\\
+&\ddd{s}_{1,1,1}= \alpha_1\ddd{r}_{1,1,1}+\alpha_2\ddd{r}_{0,2,1}+\alpha_3\ddd{r}_{0,1,2}\\
+&\ddd{s}_{1,2,0}= \alpha_1\ddd{r}_{0,1,2}+\alpha_2\ddd{r}_{0,3,0}+\alpha_3\ddd{r}_{0,2,1}
+\end{align*}
+\todo{primerjava kontrolnih točk, katere so določene s katerimi?}
+
+Opazimo lahko, da morata biti točki $\ddd{s}_{1,j,k}$ in $\ddd{r}_{1,j,k}$, kjer 
+je $j+k=2$ in $j\geq 0$, $k\geq 0$, kolinearni. Še več, trikotnika 
+$<\ddd{r}_{1,0,2},\ddd{r}_{0,1,2},\ddd{r}_{0,0,3}>$ in 
+$\ddd{s}_{0,1,2},\ddd{s}_{0,0,3},\ddd{s}_{1,0,2}>$ morata biti afini sliki 
+domenskih trikotnikov $T_1$ in $T_2$. Enako mora veljati tudi za trikotnika 
+$<\ddd{r}_{1,1,1},\ddd{r}_{0,2,1},\ddd{r}_{0,1,2}>$ in 
+$<\ddd{s}_{0,2,1},\ddd{s}_{0,1,2},\ddd{s}_{1,1,1}>$ ter trikotnika 
+$<\ddd{r}_{1,2,0},\ddd{r}_{0,3,0},\ddd{r}_{0,2,1}>$ in 
+$<\ddd{s}_{0,3,0},\ddd{s}_{0,2,1},\ddd{s}_{1,2,0}>$. 
+
+Izbira kontrolnih točk $C^1$-zveznih ploskev je torej v veliki meri odvisna od 
+domenskih trikotnikov. Predpostavljajmo, da bi imeli že vnaprej določene robne 
+točke ploskev $\ddd{R}$ in $\ddd{S}$, tako da bi bili robovi dobljenega zlepka 
+$C^1$-zvezni. Če bi veljalo 
+$$\ddd{s}_{1,0,2}= \alpha_1\ddd{r}_{1,0,2}+\alpha_2\ddd{r}_{0,1,2}+\alpha_3\ddd{r}_{0,0,3}$$
+in
+$$\ddd{s}_{1,2,0}= \beta_1\ddd{r}_{0,1,2}+\beta_2\ddd{r}_{0,3,0}+\beta_3\ddd{r}_{0,2,1},$$
+kjer je $(\alpha_1,\alpha_2,\alpha_3)\neq(\beta_1,\beta_2,\beta_3)$, bi 
+bilo nemogoče določiti točki $\ddd{r}_{1,1,1}$ in $\ddd{s}_{1,1,1}$, da bi 
+bil dobljeni zlepek $C^1$-zvezen, saj para trikotnikov 
+$<\ddd{r}_{1,0,2},\ddd{r}_{0,1,2},\ddd{r}_{0,0,3}>$ in 
+$\ddd{s}_{0,1,2},\ddd{s}_{0,0,3},\ddd{s}_{1,0,2}>$ ter 
+$<\ddd{r}_{1,2,0},\ddd{r}_{0,3,0},\ddd{r}_{0,2,1}>$ in 
+$<\ddd{s}_{0,3,0},\ddd{s}_{0,2,1},\ddd{s}_{1,2,0}>$ 
+v tem primeru nista afini sliki istega para domenskih trikotnikov. 
+\end{primer}
+
+V zgornjem primeru smo videli, da je pogoj $C^1$-zveznosti za trikotne Bézierove 
+ploskve dokaj strog in tesno povezan z izbiro domene. Geometrijska zveznost pa 
+nam da milejše pogoje, saj nimamo več odvisnosti od domene. Če bi v zgornjem 
+primeru zahtevali le $G^1$-zveznost, bi bilo mogoče določiti točki 
+$\ddd{r}_{1,1,1}$ in $\ddd{s}_{1,1,1}$. 
+
+Oglejmo si še en zelo enostaven primer ploskev, ki na stiku zaradi izbire domene ne moreta 
+biti $C^1$-zvezni, lahko pa sta $G^1$-zvezni. 
+
+\begin{primer}
+Imejmo dve trikotni Bézierovi ploskvi prve stopnje
+$$\ddd{R}(\ddd{p})=\ddd{r}_{1,0,0}u+\ddd{r}_{0,1,0}v+\ddd{r}_{0,0,1}w; 
+\textrm{ }(u,v,w)=Bar(\ddd{p};T_1)$$
+in
+$$\ddd{S}(\ddd{p})=\ddd{s}_{1,0,0}\tilde{u}+\ddd{s}_{0,1,0}\tilde{v}+
+\ddd{s}_{0,0,1}\tilde{w}; \textrm{ }(\tilde{u},\tilde{v},\tilde{w})=Bar(\ddd{p};T_2).$$
+Naj velja $\ddd{r}_{1,0,0}=(0,1,0)$, $\ddd{r}_{0,1,0}=\ddd{s}_{0,1,0}=(0,0,0)$, 
+$\ddd{r}_{0,0,1}=\ddd{s}_{0,0,1}=(1,1,0)$ in $\ddd{s}_{0,0,1}=(1,0,0)$. Ploskvi 
+$\ddd{R}$ in $\ddd{S}$ sta torej dva pravokotna trikotnika v ravnini $z=0$, ki 
+skupaj tvorita kvadrat. 
+
+Trikotnika $T_1$ in $T_2$ definirajmo kot $T_1=<(0,1),(0,0),(1,0)>$ in 
+$T_2=<(0,1),(0,0),(1,0)>$. 
+
+Očitno je, da je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^1$-zvezen, saj imata 
+ploskvi vzdolž stične krivulje isto konstatno tangentno ravnino. 
+Vendar pa stik teh dveh ploskev ni $C^1$-zvezen. 
+Naj bo $\ddd{\alpha}=Bar(\ddd{s}_{1,0,0};T_1)$. Torej je 
+$\ddd{\alpha}=(-1,2,0)$. Da bi bil stik ploskev $C^1$-zvezen, bi moralo biti 
+zadoščeno enačbi \ref{eq21}, torej bi moralo veljati 
+$$\ddd{s}_{1,0,0}=-\ddd{r}_{1,0,0}+2\ddd{r}_{0,1,0},$$
+kar pa v našem primeru ne drži.
+\end{primer}
 
 
+\subsection{Konstrukcija $G^1$-zveznih trikotnih Bézierovih ploskev}
 
-\subsection{Primeri konstrukcije $G^1$-zveznih trikotnih Bézierovih ploskev}
+Tako kot v primeru Bézierovih ploskev iz tenzorskega produkta, obstaja več 
+načinov konstrukcije $G^1$-zveznih trikotnih Bézierovih ploskev, odvisno 
+od izbire stičnih funkcij. V tem podpoglavju si bomo ogledali enega izmed 
+načinov konstrukcije dveh trikotnih Bézierovih ploskev, ki sta na skupnem robu 
+zvezni, vendar pa se tega ne bomo lotili prek osnovne definicije geometrijske 
+zveznosti oziroma izreka \ref{izrek1}, temveč prek geometrijske definicije.
 
+Imejmo ploskvi $\ddd{R}$ in $\ddd{S}$ stopnje $n$ nad 
+trikotnima domenama $T_1=<\ddd{p_1},\ddd{p_2},\ddd{p}_3>$ in $T_2=<\ddd{p}_4,\ddd{p}_2,\ddd{p}_3>$:
+$$\ddd{R}(\ddd{p})=\sum_{i+j+k=n}\ddd{r}_{i,j,k}B_{i,j,k}^n(\ddd{u});
+\textrm{ }\ddd{u}=Bar(\ddd{p};T_1),$$
+$$\ddd{S}(\ddd{p})=\sum_{i+j+k=n}\ddd{s}_{i,j,k}B_{i,j,k}^n(\ddd{\tilde{u}});
+\textrm{ }\ddd{\tilde{u}}=Bar(\ddd{p};T_2).$$
+Naj bo $\ddd{u}=(u,v,w)$ in $\ddd{\tilde{u}}=(\tilde{u},\tilde{v},\tilde{w})$. 
+Ploskvi se stikata na robu nad daljico $\bar{\ddd{p}_2\ddd{p}_3}$, oziroma na 
+robu, določenem z $u=\tilde{u}=0$.  
+Torej velja 
+$\ddd{r}_{0,j,k}=\ddd{s}_{0,j,k}$ za $j\geq 0$, $k\geq 0$, $j+k=0$. 
+Stično krivuljo lahko zapišemo kot $C(v)=\sum_{j=0}^n\ddd{r}_{0,j,n-j}B_j^n(v)$, 
+kjer je $v\in[0,1]$. 
 
+Naj bo $\ddd{C}(v)$ točka na stični krivulji pri parametru $v$. 
+V poglavju \ref{trikotne1} smo 
+videli, da je mogoče tangentno ravnino na Bézierovo ploskev v neki točki 
+izraziti s pomočjo točk, ki jih dobimo v predzadnjem koraku de Casteljaujevega 
+algoritma. Tangentno ravnino na ploskev $\ddd{R}$ v točki $\ddd{C}(v)$ razpenjajo 
+točke $\ddd{r}_{1,0,0}^{n-1}(v)$, $\ddd{r}_{0,1,0}^{n-1}(v)$ in $\ddd{r}_{0,0,1}^{n-1}(v)$, 
+Tangentno ravnino na ploskev $\ddd{S}$ v točki $\ddd{C}(v)$ pa razpenjajo točke 
+$\ddd{s}_{1,0,0}^{n-1}(v)$, $\ddd{s}_{0,1,0}^{n-1}(v)$ in $\ddd{s}_{0,0,1}^{n-1}(v)$. 
+Da bo zlepek obeh ploskev $G^1$-zvezen, morata biti obe tangentni ravnini 
+del ene ravnine. To pomeni, da se morata premici 
+$\bar{\ddd{r}_{0,1,0}^{n-1}(v)\ddd{r}_{0,0,1}^{n-1}(v)}$ in 
+$\bar{\ddd{r}_{1,0,0}^{n-1}(v)\ddd{s}_{1,0,0}^{n-1}(v)}$ sekati za vsako 
+vrednost parametra $v\in[0,1]$. Torej morata obstajati funkciji 
+$\lambda(v)$ in $\mu(v)$, za kateri velja 
+\begin{align}\label{eq22}
+  (1-\lambda(v))\ddd{s}_{1,0,0}^{n-1}(v)+\lambda(v)\ddd{r}_{1,0,0}^{n-1}=
+  (1-\mu(v))\ddd{r}_{0,0,1}^{n-1}+\mu(v)\ddd{r}_{0,1,0}^{n-1}
+\end{align}
+S tem smo med drugim zagotovili tudi, da se točki $\ddd{s}_{1,0,0}^{n-1}(v)$ 
+in $\ddd{r}_{1,0,0}^{n-1}(v)$ za vsako vrednost $v\in[0,1]$ nahajata na 
+različnih straneh robne krivulje. Dobljeni zlepek tako ne bo imel oblike špice. 
+Veljati mora še, da sta funkciji $\lambda(v)$ in $\mu(v)$ na intervalu $[0,1]$ 
+različni od 0 in 1, da tangentne ravnine na $\ddd{C}(v)$ niso izrojene. 
+\todo{poveži s pogojem iz def, da mora biti funkcija različna od 0}
 
+Zgornja enačba predstavlja pogoj, ki zagotavlja $G^1$-zveznost zlepka ploskev. 
+\todo{ni pa to potreben pogoj?} 
+
+Iz de Casteljaujevega algoritma sledi, da lahko točke, ki razpenjajo tangenti 
+ravnini zapišemo na naslednji način
+\begin{align*}
+&\ddd{r}_{1,0,0}^{n-1}(v)=\sum_{i=0}^{n-1}\ddd{r}_{1,i,n-i-1}B_i^{n-1}(v)\\
+&\ddd{r}_{0,1,0}^{n-1}(v)=\sum_{i=0}^{n-1}\ddd{r}_{0,i+1,n-i-1}B_i^{n-1}(v)\\
+&\ddd{r}_{0,0,1}^{n-1}(v)=\sum_{i=0}^{n-1}\ddd{r}_{0,i,n-i}B_i^{n-1}(v)\\
+&\ddd{s}_{1,0,0}^{n-1}(v)=\sum_{i=0}^{n-1}\ddd{s}_{1,i,n-i-1}B_i^{n-1}(v).
+\end{align*}
+Zaradi ujemanja kontrolnih točk na skupnem robu, je 
+$\ddd{s}_{1,0,0}^{n-1}(v)=\ddd{r}_{1,0,0}^{n-1}(v)$ in \\
+$\ddd{s}_{0,1,0}^{n-1}(v)=\ddd{r}_{0,1,0}^{n-1}(v)$. 
+
+%Za boljšo preglednost vpeljimo oznake $\ddd{a}_i=\ddd{s}_{1,i,n-i-1}$, 
+%$\ddd{b}_i=\ddd{r}_{0,i,n-i}$ in $\ddd{c}_i=\ddd{r}_{1,i,n-i-1}$. 
+
+Najprej si oglejmo, kakšne pogoje nam da enačba \ref{eq22} za robne kontrolne točke. 
+Vstavimo v enačbo \ref{eq22} vrednosti $v=0$ in $v=1$. 
+Pri vrednosti $v=0$ dobimo: 
+$$(1-\lambda_0)\ddd{s}_{1,0,n-1}+\lambda_0\ddd{r}_{1,0,n-1}=
+(1-\mu_0)\ddd{r}_{0,0,n}+\mu_0\ddd{r}_{0,1,n-1},$$
+kjer smo vpeljali oznaki $\lambda_0=\lambda(0)$ in $\mu_0=\mu(0)$. 
+Pri vprednosti $v=1$ pa dobimo:
+$$(1-\lambda_1)\ddd{s}_{1,n-1,0}+\lambda_1\ddd{r}_{1,n-1,0}=
+(1-\mu_1)\ddd{r}_{0,n-1,1}+\mu_1\ddd{r}_{0,n,0},$$
+kjer smo vpeljali še oznaki $\lambda_1=\lambda(1)$ in $\mu_1=\mu(1)$. 
+Vrednosti $\lambda_0$ in $\mu_0$ opisujeta obliko prvega para trikotnikov 
+v kontrolni mreži ob skupnem robu, vrednosti $\lambda_1$ in $\mu_1$ pa zadnji 
+par trikotnikov. Vidimo, da oblika obeh parov ni več nujno enaka, torej para 
+trikotnikov nista več nujno afini sliki istega para domenskih trikotnikov. 
+Že tu vidimo, da so pogoji, ki jih zahteva $G^1$-zveznost, milejši od zahteve 
+$C^1$-zveznosti. Posledično je, kot smo videli že v primeru ploskev iz tenzorskega 
+produkta, mogoča konstrukcija ploskev veliko več različnih oblik. 
+
+Sedaj za funkciji $\lambda(v)$ in $\mu(v)$ izberimo polinoma prve stopnje
+(možna bi bila tudi drugačna izbira funkcij, ki bi seveda privedla do 
+drugačnih rezultatov)
+$$\lambda(v)=(1-v)\lambda_0+v\lambda_1$$
+in 
+$$\mu(v)=(1-v)\mu_0+v\mu_1.$$
+
+Da si olajšajmo nadaljnje delo, najprej nekoliko preoblikujmo izraza 
+$1-\lambda(v)$ in $1-\mu(v)$. 
+
+\begin{align*}
+1-\lambda(v)&=1-\lambda_0(1-v)-\lambda_1v=1-\lambda_0+\lambda_0v-\lambda_1v=\\
+&=(1-\lambda_0)(1-v)+(1-\lambda_1)v
+\end{align*}
+Na enak način dobimo 
+$$1-\mu(v)=(1-\mu_0)(1-v)+(1-\mu_1)v$$
+
+Polinoma vstavimo v enačbo \ref{eq22}. 
+\begin{align*}
+x
+\end{align*}
 
 %\section{Tehnični napotki za pisanje}
 %

@@ -1633,8 +1633,8 @@ katerikoli linearno kombinacijo obeh vektorjev.
 %Alternativni način za izpeljavo pogojev \ref{eq21}
 Dobljeni rezultat sedaj uporabimo na primeru stika dveh ploskev stopnje 3.
 
-\begin{primer}
-  Imejmo dve trikotni Bézierovi ploskvi $\ddd{R}$ in $\ddd{S}$ stopnje 3 nad 
+\begin{primer}\label{primerT1}
+Imejmo dve trikotni Bézierovi ploskvi $\ddd{R}$ in $\ddd{S}$ stopnje 3 nad 
 trikotnima domenama $T_1=<\ddd{p_1},\ddd{p_2},\ddd{p}_3>$ in $T_2=<\ddd{p}_4,\ddd{p}_2,\ddd{p}_3>$:
 $$\ddd{R}(\ddd{p})=\sum_{i+j+k=3}\ddd{r}_{i,j,k}B_{i,j,k}^3(\ddd{u});
 \textrm{ }\ddd{u}=Bar(\ddd{p};T_1),$$
@@ -1663,22 +1663,30 @@ $<\ddd{r}_{1,1,1},\ddd{r}_{0,2,1},\ddd{r}_{0,1,2}>$ in
 $<\ddd{s}_{0,2,1},\ddd{s}_{0,1,2},\ddd{s}_{1,1,1}>$ ter trikotnika 
 $<\ddd{r}_{1,2,0},\ddd{r}_{0,3,0},\ddd{r}_{0,2,1}>$ in 
 $<\ddd{s}_{0,3,0},\ddd{s}_{0,2,1},\ddd{s}_{1,2,0}>$. 
+\end{primer}
 
 Izbira kontrolnih točk $C^1$-zveznih ploskev je torej v veliki meri odvisna od 
-domenskih trikotnikov. Predpostavljajmo, da bi imeli že vnaprej določene robne 
-točke ploskev $\ddd{R}$ in $\ddd{S}$, tako da bi bili robovi dobljenega zlepka 
-$C^1$-zvezni. Če bi veljalo 
+domenskih trikotnikov, kar nas precej omejuje pri konstrukciji. 
+Oglejmo si primer, kjer imamo podane robne točke dveh ploskev, ni pa 
+možno najti notranjih kontrolnih točk, da bi bil stik ploskev $C^1$-zvezen. 
+
+\begin{primer}\label{primerT2}
+Imejmo trikotni ploskvi $\ddd{R}$ in $\ddd{S}$ kot v primeru \ref{primerT2}. 
+Predpostavljajmo, da imamo že vnaprej določene njune robne 
+točke, tako da so robovi dobljenega zlepka 
+$C^1$-zvezni. \todo{dodaj: kaj mora veljati, da so robovi c1?}
+Naj velja
 $$\ddd{s}_{1,0,2}= \alpha_1\ddd{r}_{1,0,2}+\alpha_2\ddd{r}_{0,1,2}+\alpha_3\ddd{r}_{0,0,3}$$
 in
 $$\ddd{s}_{1,2,0}= \beta_1\ddd{r}_{0,1,2}+\beta_2\ddd{r}_{0,3,0}+\beta_3\ddd{r}_{0,2,1},$$
-kjer je $(\alpha_1,\alpha_2,\alpha_3)\neq(\beta_1,\beta_2,\beta_3)$, bi 
-bilo nemogoče določiti točki $\ddd{r}_{1,1,1}$ in $\ddd{s}_{1,1,1}$, da bi 
+kjer je $(\alpha_1,\alpha_2,\alpha_3)\neq(\beta_1,\beta_2,\beta_3)$.  
+V tem primeru je nemogoče določiti točki $\ddd{r}_{1,1,1}$ in $\ddd{s}_{1,1,1}$, da bi 
 bil dobljeni zlepek $C^1$-zvezen, saj para trikotnikov 
 $<\ddd{r}_{1,0,2},\ddd{r}_{0,1,2},\ddd{r}_{0,0,3}>$ in 
 $\ddd{s}_{0,1,2},\ddd{s}_{0,0,3},\ddd{s}_{1,0,2}>$ ter 
 $<\ddd{r}_{1,2,0},\ddd{r}_{0,3,0},\ddd{r}_{0,2,1}>$ in 
 $<\ddd{s}_{0,3,0},\ddd{s}_{0,2,1},\ddd{s}_{1,2,0}>$ 
-v tem primeru nista afini sliki istega para domenskih trikotnikov. 
+nista afini sliki istega para domenskih trikotnikov. 
 \end{primer}
 
 V zgornjem primeru smo videli, da je pogoj $C^1$-zveznosti za trikotne Bézierove 
@@ -1690,7 +1698,7 @@ $\ddd{r}_{1,1,1}$ in $\ddd{s}_{1,1,1}$.
 Oglejmo si še en zelo enostaven primer ploskev, ki na stiku zaradi izbire domene ne moreta 
 biti $C^1$-zvezni, lahko pa sta $G^1$-zvezni. 
 
-\begin{primer}
+\begin{primer}\label{primerT3}
 Imejmo dve trikotni Bézierovi ploskvi prve stopnje
 $$\ddd{R}(\ddd{p})=\ddd{r}_{1,0,0}u+\ddd{r}_{0,1,0}v+\ddd{r}_{0,0,1}w; 
 \textrm{ }(u,v,w)=Bar(\ddd{p};T_1)$$
@@ -1801,8 +1809,8 @@ $C^1$-zveznosti. Posledično je, kot smo videli že v primeru ploskev iz tenzors
 produkta, mogoča konstrukcija ploskev veliko več različnih oblik. 
 
 Sedaj za funkciji $\lambda(v)$ in $\mu(v)$ izberimo polinoma prve stopnje
-(možna bi bila tudi drugačna izbira funkcij, ki bi seveda privedla do 
-drugačnih rezultatov)
+%(možna bi bila tudi drugačna izbira funkcij, ki bi seveda privedla do 
+%drugačnih rezultatov)
 $$\lambda(v)=(1-v)\lambda_0+v\lambda_1$$
 in 
 $$\mu(v)=(1-v)\mu_0+v\mu_1.$$
@@ -1817,10 +1825,130 @@ $1-\lambda(v)$ in $1-\mu(v)$.
 Na enak način dobimo 
 $$1-\mu(v)=(1-\mu_0)(1-v)+(1-\mu_1)v$$
 
-Polinoma vstavimo v enačbo \ref{eq22}. 
+Polinoma vstavimo v enačbo \ref{eq22}. Najprej si oglejmo izraz \\
+$(1-\lambda(v))\sum_{i=0}^{n-1}\ddd{s}_{1,i,n-i-1}B_i^{n-1}$:
 \begin{align*}
-x
+  &(1-\lambda(v))\sum_{i=0}^{n-1}\ddd{s}_{1,i,n-i-1}B_i^{n-1}=\\
+  &=(1-\lambda_0)(1-v)\sum_{i=0}^{n-1}\ddd{s}_{1,i,n-i-1}B_i^{n-1}+
+  (1-\lambda_1)v\sum_{i=0}^{n-1}\ddd{s}_{1,i,n-i-1}B_i^{n-1}=\\
+  &=(1-\lambda_0)\sum_{i=0}^{n-1}\ddd{s}_{1,i,n-i-1}\frac{(n-1)!}{i!(n-i-1)!}v^i(1-v)^{n-i}+\\
+  &+(1-\lambda_1)\sum_{i=0}^{n-1}\ddd{s}_{1,i,n-i-1}\frac{(n-1)!}{i!(n-i-1)!}v^{i+1}(1-v)^{n-i-1}=\\
+  &=(1-\lambda_0)\sum_{i=0}^{n-1}\ddd{s}_{1,i,n-i-1}\frac{n-i}{n}B_i^n(v)+
+  (1-\lambda_1)\sum_{i=0}^{n-1}\ddd{s}_{1,i-1,n-i}\frac{i}{n}B_i^n(v)=\\
+  &=(1-\lambda_0)\sum_{i=0}^{n}\ddd{s}_{1,i,n-i-1}\frac{n-i}{n}B_i^n(v)+
+  (1-\lambda_1)\sum_{i=0}^{n-1}\ddd{s}_{1,i-1,n-i}\frac{i}{n}B_i^n(v).
 \end{align*}
+\todo{ali naj raje to nekje izpeljem posebej in se potem samo sklicujem?}
+
+Na enak način dobimo še 
+\begin{align*}
+&\lambda(v)\sum_{i=0}^{n-1}\ddd{r}_{1,i,n-i-1}B_i^{n-1}=
+\lambda_0\sum_{i=0}^{n}\ddd{r}_{1,i,n-i-1}\frac{n-i}{n}B_i^n(v)+
+\lambda_1\sum_{i=0}^{n-1}\ddd{r}_{1,i-1,n-i}\frac{i}{n}B_i^n(v),\\
+&(1-\mu(v))\sum_{i=0}^{n-1}\ddd{r}_{0,i,n-i}B_i^{n-1}=
+(1-\mu_0)\sum_{i=0}^{n}\ddd{r}_{0,i,n-i}\frac{n-i}{n}B_i^n(v)+\\
+&+(1-\mu_1)\sum_{i=0}^{n-1}\ddd{r}_{0,i-1,n-i+1}\frac{i}{n}B_i^n(v)\textrm{ in }\\
+&\mu(v)\sum_{i=0}^{n-1}\ddd{r}_{0,i+1,n-i-1}B_i^{n-1}=
+\mu_0\sum_{i=0}^{n}\ddd{r}_{0,i+1,n-i-1}\frac{n-i}{n}B_i^n(v)+
+\mu_1\sum_{i=0}^{n-1}\ddd{r}_{0,i,n-i}\frac{i}{n}B_i^n(v).
+\end{align*}
+
+Dobljeno vstavimo v enačbo \ref{eq22} in primerjajmo člene ob baznih polinomih 
+$B_i^n(v)$ za vsak $i=0,\ldots,n$. 
+Dobimo, da mora za vsak $i=0,\ldots,n$ veljati enakost 
+\begin{equation}\label{eq23}
+  \begin{split}
+&(1-\lambda_0)\ddd{s}_{1,i,n-i-1}\frac{n-i}{n}+
+(1-\lambda_1)\ddd{s}_{1,i-1,n-i}\frac{i}{n}+
+\lambda_0\ddd{r}_{1,i,n-i-1}\frac{n-i}{n}+
+\lambda_1\ddd{r}_{1,i-1,n-i}\frac{i}{n}=\\
+&=(1-\mu_0)\ddd{r}_{0,i,n-i}\frac{n-i}{n}
++(1-\mu_1)\ddd{r}_{0,i-1,n-i+1}\frac{i}{n}+
+\mu_0\ddd{r}_{0,i+1,n-i-1}\frac{n-i}{n}+
+\mu_1\ddd{r}_{0,i,n-i}\frac{i}{n}.
+  \end{split}
+\end{equation}
+
+Pogoji, ki jih dobimo z enačbo \ref{eq23} za kontrolne točke ploskev $\ddd{R}$ 
+in $\ddd{S}$ zagotavljajo, da sta ploskvi na stiku $G^1$-zvezni. Seveda pa so to 
+le zadostni pogoji, ne pa nujno potrebni. Z drugačno izbiro funkcij $\lambda(v)$ 
+in $\mu(v)$ bi lahko prišli do drugačnih pogojev, ki bi imeli za rezultat 
+$G^1$-ploskve drugačnih oblik.
+
+Sedaj si natančneje oglejmo, kakšne pogoje za kontrolne točke bi dobili v tem 
+primeru za ploskvi stopnje 3. 
+
+\begin{primer}\label{primerT4}
+  Imejmo ploskvi $\ddd{R}$ in $\ddd{S}$ stopnje 3 nad 
+  trikotnima domenama $T_1=<\ddd{p_1},\ddd{p_2},\ddd{p}_3>$ in $T_2=<\ddd{p}_4,\ddd{p}_2,\ddd{p}_3>$:
+  $$\ddd{R}(\ddd{p})=\sum_{i+j+k=3}\ddd{r}_{i,j,k}B_{i,j,k}^n(\ddd{u});
+  \textrm{ }\ddd{u}=Bar(\ddd{p};T_1),$$
+  $$\ddd{S}(\ddd{p})=\sum_{i+j+k=3}\ddd{s}_{i,j,k}B_{i,j,k}^n(\ddd{\tilde{u}});
+  \textrm{ }\ddd{\tilde{u}}=Bar(\ddd{p};T_2),$$
+  kjer je $\ddd{u}=(u,v,w)$ in $\ddd{\tilde{u}}=(\tilde{u},\tilde{v},\tilde{w})$. 
+  Ploskvi se ponovno stikata na robu nad daljico $\bar{\ddd{p}_2\ddd{p}_3}$, oziroma na 
+  robu, določenem z $u=\tilde{u}=0$. 
+  
+  Zlepek obeh ploskev bo $G^1$-zvezen, če bodo za njune kontrolne točke veljale 
+  naslednje enačbe.
+
+  \begin{align}\label{eq24}  
+  (1-\lambda_0)\ddd{s}_{1,0,2}+\lambda_0\ddd{r}_{1,0,2}=(1-\mu_0)\ddd{r}_{0,0,3}+
+  \mu_0\ddd{r}_{0,1,2},
+  \end{align}
+
+  \begin{align}\label{eq25}
+  (1-\lambda_1)\ddd{s}_{1,2,0}+\lambda_1\ddd{r}_{1,2,0}=(1-\mu_1)\ddd{r}_{0,2,1}+
+  \mu_1\ddd{r}_{0,3,0}.
+  \end{align}
+
+  Zgornji enačbi določata razmerje med robnimi kontrolnimi točkami. Iz enačbe 
+  \ref{eq23} pa sledita še pogoja 
+
+  \begin{equation}\label{eq26}
+    \begin{split}
+  &(1-\lambda_0)\frac{2}{3}\ddd{s}_{1,1,1}+(1-\lambda_1)\frac{1}{3}\ddd{s}_{1,0,2}+
+  \lambda_0\frac{2}{3}\ddd{r}_{1,1,1}+\lambda_1\frac{1}{3}\ddd{r}_{1,0,2}=\\
+  &(1-\mu_0)\frac{2}{3}\ddd{r}_{0,1,2}+(1-\mu_1)\frac{1}{3}\ddd{r}_{0,0,3}+
+  \mu_0\frac{2}{3}\ddd{r}_{0,2,1}+\mu_1\frac{1}{3}\ddd{r}_{0,1,2}
+    \end{split}
+  \end{equation}
+  in 
+  \begin{equation}\label{eq27}
+    \begin{split}
+  &(1-\lambda_0)\frac{1}{3}\ddd{s}_{1,2,0}+(1-\lambda_1)\frac{2}{3}\ddd{s}_{1,1,1}+
+  \lambda_0\frac{1}{3}\ddd{r}_{1,2,0}+\lambda_1\frac{2}{3}\ddd{r}_{1,1,1}=\\
+  &(1-\mu_0)\frac{1}{3}\ddd{r}_{0,2,1}+(1-\mu_1)\frac{2}{3}\ddd{r}_{0,1,2}+
+  \mu_0\frac{1}{3}\ddd{r}_{0,3,0}+\mu_1\frac{2}{3}\ddd{r}_{0,2,1}.
+    \end{split}
+  \end{equation}
+
+  V primeru, da imamo vnaprej podane robne kontrolne točke ploskev $\ddd{R}$ 
+  in $\ddd{S}$, določiti pa moramo notranji kontrolni točki $\ddd{r}_{1,1,1}$ 
+  in $\ddd{s}_{1,1,1}$, nam enačbi \ref{eq24} in \ref{eq25} določata dva izmed 
+  parametrov $\lambda_0$, $\lambda_1$, $\mu_0$ in $\mu_1$, druga dva pa sta prosta. 
+  Po izbiri prostih parametrov, sta v primeru, da je $\lambda_0\neq \lambda_1$, 
+  kontrolni točki $\ddd{s}_{1,1,1}$ in $\ddd{r}_{1,1,1}$ natančno določeni z 
+  enačbama \ref{eq26} in \ref{eq27}. 
+  \todo{bolj natančna razlaga z determinanto sistema?}
+
+  Dobljeni rezultat primerjamo z rezultatom primera \ref{primerT2}. V primeru 
+  $C^1$-zveznosti je ena izmed točk $\ddd{r}_{1,1,1}$ in $\ddd{s}_{1,1,1}$ 
+  sicer prosta, druga pa določena z njo, vendar nimamo nobenih prostih parametrov, 
+  ki bi dodatno vplivali na obliko zlepka.
+
+  %Oglejmo si še, kako je s kontrolnimi točkami v primeru, da imamo v celoti 
+  %določeno ploskev $\ddd{R}$, določili pa bi radi kontrolne točke ploskve 
+  %$\ddd{S}$, da bo zlepek $G^1$-zvezen. Točke $\ddd{s}_{0,j,k}$, $j+k=3$, so 
+  %zaradi stikanja ploskev točno določene s kontrolnimi točkami ploskve $\ddd{R}$. 
+  %Ker zahtevamo zgolj zveznost stopnje 1, so točke $\ddd{s}_{2,1,0}$, $\ddd{s}_{2,0,1}$ 
+  %in $\ddd{s}_{3,0,0}$ proste. 
+
+\todo{dodati še primer, ko je r določena, s pa ne? kako je v tem 
+primeru s konsistentnostjo sistema?}
+\end{primer}
+
+\todo{primer od prej, ki ni šel s c1 samo da ga zdaj rešimo z g1?}
 
 %\section{Tehnični napotki za pisanje}
 %

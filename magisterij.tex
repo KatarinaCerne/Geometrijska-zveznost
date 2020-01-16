@@ -606,55 +606,149 @@ Ker parcialni odvodi $R_x(x_0,y)$, $S_u(u_0,y)$ in $S_v(u_0,y)$ ležijo na isti
 tangentni ravnini, velja tudi:
 $$\det(R_x(x_0,y), S_u(u_0,y), S_v(u_0,y))=0.$$
 
-\nevem{Torej obstajajo funkcije (povedati kakšne, iz kje kam?) $\lambda$, 
+\todo{Torej obstajajo funkcije (povedati kakšne, iz kje kam?) $\lambda$, 
 $\mu$ in $\gamma$, da velja:
 $$\lambda(y)R_x(x_0,y)=\mu(y)S_u(u_0,y)+\gamma(y)S_v(u_0,y).$$}
 
-\nevem{Če predpostavimo, da sta ploskvi $R$ in $S$ polinomski, lahko tudi za $\lambda$, $\mu$ in $\gamma$ 
+\todo{Če predpostavimo, da sta ploskvi $R$ in $S$ polinomski, lahko tudi za $\lambda$, $\mu$ in $\gamma$ 
 izberemo polinome, kar nam zelo olajša 
 konstrukcijo geometrijsko zveznih ploskev.} 
 
-\todo{najbrž lahko poveš, da se bomo v naslednjih poglavjih ukvarjali z izbiro 
-teh polinomov}
+V nadaljevanju tega dela se bomo ukvarjali z vrsto parametričnih ploskev, 
+imenovano Bézierove ploskve, in s pogoji, ki morajo veljati zanje, da je stik 
+med njimi geometrijsko zvezen. 
 
-\todo{mogoče moraš tu napisati, kako se pride do teh polinomov: tiste prve komponente. 
-ampak tega ne razumem.}
+\section{Konstrukcija geometrijsko zveznih Bezierovih ploskev 
+iz tenzorskega produkta}
 
-\section{Bézierjeve ploskve}
-\todo{pogledamo si poseben primer polinomskih param ploskev, ki so tudi uporabne v praksi}
+\subsection{Bézierjeve ploskve iz tenzorskega produkta}
 
-$i$-ti Bernsteinov bazni polinom
-$$B_i^n(t)={n \choose i}t^i (1-t)^{n-i}\textrm{, } t\in[0,1]$$
-Lastnosti:
-\begin{itemize}
-\item $B_i^n(0) =\delta_{i,0}$
-\item $B_i^n(1)=\delta_{i,n}$
-%tvorijo bazo prostora polinomov Pn
-\end{itemize}
+\todo{povej, v katerem viru so dokazi itd.}
+
+Bézierove krivulje in ploskve podajamo s pomočjo Bernsteinovih polinomov, $i$-ti 
+Bernseinov polinom je definiran kot  
+
+$$B_i^n(t)={n \choose i}t^i (1-t)^{n-i}\textrm{, } t\in[0,1].$$
+
+Bernsteinovi polinomi sestavljajo bazo prostora polinomov \\
+$\mathbb{P}_n=Lin\{1,t,t^2,\ldots,t^n\}$. 
+Bazo prostora polinomov dveh spremenljivk 
+$\mathbb{P}_m \otimes \mathbb{P}_n = Lin\{u^iv^j, i=0,\ldots,m, j=0,\ldots,n\}$, 
+torej tenzorskega produkta prostorov $\mathbb{P}_m$ in $\mathbb{P}_n$ pa sestavljajo 
+produkti po dveh Bernsteinovih plinomov, kjer prvi pripada $\mathbb{P}_m$ in 
+drugi $\mathbb{P}_n$, oziroma tenzorski produkti dveh Bernsteinovih polinomov. 
+
+O ploskvah iz tenzorskega produkta govorimo, kadar je njihova parametrizacija 
+podana v bazi iz tenzorskih produktov. Bezierove ploskve iz tenzorskega 
+produkta so definirane na naslednji način.
 
 \begin{definicija}
-  Naj bodo dane točke $\mathbf{b}_{i,j}\in \R^d$, $i=0,1,\ldots,m$, $j=0,1,\ldots,n$. Bézierjeva ploskev iz tenzorskega produkta je parametrično podana ploskev
-  $$\mathbf{b}^{m,n} : [0,1]\times[0,1] \rightarrow \R^d$$
+  Naj bodo dane točke $\mathbf{b}_{i,j}\in \R^d$, $i=0,1,\ldots,m$, $j=0,1,\ldots,n$. 
+  \emph{Bézierjeva ploskev iz tenzorskega produkta} je parametrično podana ploskev
+  $$\mathbf{B}_{m,n} : [0,1]\times[0,1] \rightarrow \R^d$$
   s predpisom
-  $$\mathbf{b}^{m,n}(u,v)=\sum_{i=0}^m \sum_{j=0}^n \mathbf{b_{i,j}} B_i^m(u) B_j^n(v).$$
-  Točke $\mathbf{b}_{i,j}$ imenujemo kontrolne točke, poligon, ki jih povezuje, pa kontrolni poligon.
+  $$\mathbf{B}_{m,n}(u,v)=\sum_{i=0}^m \sum_{j=0}^n \mathbf{b_{i,j}} B_i^m(u) B_j^n(v).$$
+  Točke $\mathbf{b}_{i,j}$ imenujemo \emph{kontrolne točke}, poligon, ki jih povezuje, 
+  pa \emph{kontrolni poligon} ploskve $\ddd{b}^{m,n}$. 
 \end{definicija}
-Velja: $\mathbf{b^{m,n}}(0,0)=\mathbf{b}_{0,0}$, $\mathbf{b^{m,n}}(1,0)=\mathbf{b}_{m,0}$, $\mathbf{b^{m,n}}(0,1)=\mathbf{b}_{0,n}$, $\mathbf{b^{m,n}}(1,1)=\mathbf{b}_{m,n}$
-%interpolacija robnih točk
-%vstavi sliko
 
-Odvod Bézierjeve ploskve iz tenzorskega produkta:\\
-$$\frac{\partial^{r+s}}{\partial u^r \partial v^s}\mathbf{b}^{m,n}(u,v)=\frac{m!}{(m-r)!}\frac{n!}{(n-s)!}\sum_{i=0}^{m-r} \sum_{j=0}^{n-s} \Delta^{r,s}\mathbf{b}_{i,j}B_i^{m-r}(u)B_j^{n-s}(v),$$
-kjer $\Delta^{1,0} \mathbf{b}_{i,j} = \mathbf{b}_{i+1,j}-\mathbf{b}_{i,j}$,\\
+\todo{slika?}
+
+Opazimo lahko, da za Bézierovo ploskev iz tenzorskega produkta velja naslednje: 
+$\mathbf{B_{m,n}}(0,0)=\mathbf{b}_{0,0}$, $\mathbf{B_{m,n}}(1,0)=\mathbf{b}_{m,0}$, 
+$\mathbf{B_{m,n}}(0,1)=\mathbf{b}_{0,n}$ in $\mathbf{B_{m,n}}(1,1)=\mathbf{b}_{m,n}$. 
+Parametrizacija torej interpolira vogalne kontrolne točke. 
+
+\todo{ali rabim decasteljaujev algoritem?}
+
+Prerez ploskve pri neki vrednosti $u=u_0$ ali $v=v_0$ je Bézierova krivulja. 
+Njihove parametrizacije so podane v bazi Bernsteinovih polinomov, definirane 
+pa so na naslednji način.
+
+\begin{definicija}
+Naj bodo dane točke $\ddd{b}_i\in \R^d, i=0,1,\ldots,n$. \emph{Bézierova krivulja} 
+je parametrično podana krivulja 
+$$\ddd{B}_n:[0,1] \rightarrow \R^d$$
+s predpisom
+$$\ddd{B}_n(t)=\sum_{i=0}^n \ddd{b}_i B_i^n(t).$$
+Točke $\ddd{b}_i$ imenujemo \emph{kontrolne točke krivulje}.
+\end{definicija}
+Tudi za Bézierove krivulje velja, da interpolirajo prvo in zadnjo kontrolno točko. 
+
+V nadaljevanju, ko bomo preučevali geometrijsko zveznost Bézierovih ploskev 
+iz tenzorskega produkta, bomo imeli opravka predvsem z odvodi Bézierovih krivulj 
+in ploskev. 
+Imejmo Bézierovo krivuljo $\ddd{B}_n(t)=\sum_{i=0}^n\ddd{b}_iB_i^n(t)$ in naj 
+bo $r\in \N$, $r\leq n$. Potem se $n$-ti odvod te krivulje izračuna 
+kot 
+$$\frac{d^r}{dt^r}\ddd{B}_n(t)=\frac{n!}{(n-r)!}\sum_{i=0}^{n-r}\Delta^r\ddd{b}_iB_i^{n-r}(t).$$ 
+Z $\Delta$ označujemo operator, ki deluje na kontrolnih točkah in se izraža 
+rekurzivno: \\
+$\Delta^0\ddd{b}_i=\ddd{b}_i$,\\
+$\Delta^1\ddd{b}_i=\ddd{b}_{i+1}-\ddd{b}_i$,\\
+$\Delta^k\ddd{b}_i=\Delta(\Delta^{k-1}\ddd{b}_i)$, kjer je $k\in\N$, $k>1$.\\
+
+Odvod Bézierjeve ploskve iz tenzorskega produkta \\
+$\ddd{B}_{m,n}(u,v)=\sum_{i=0}^m\sum_{j=0}^n\ddd{b}_{i,j}B_i^m(u)B_j^n(v)$ se izraža na podoben način:\\
+\begin{align}\label{eq28}
+\frac{\partial^{r+s}}{\partial u^r \partial v^s}\mathbf{b}^{m,n}(u,v)=\frac{m!}{(m-r)!}\frac{n!}{(n-s)!}\sum_{i=0}^{m-r} \sum_{j=0}^{n-s} \Delta^{r,s}\mathbf{b}_{i,j}B_i^{m-r}(u)B_j^{n-s}(v),
+\end{align}
+Tu z $\Delta$ ponovno označujemo rekurzivno definirani operator na kontrolnih točkah:
+$\Delta^{1,0} \mathbf{b}_{i,j} = \mathbf{b}_{i+1,j}-\mathbf{b}_{i,j}$,\\
 $\Delta^{0,1} \mathbf{b}_{i,j} = \mathbf{b}_{i,j+1}-\mathbf{b}_{i,j}$,\\
 $\Delta^{r,0} \mathbf{b}_{i,j} = \Delta^{r-1,0} \mathbf{b}_{i+1,j}-\Delta^{r-1,0} \mathbf{b}_{i,j}$,\\
 $\Delta^{0,s} \mathbf{b}_{i,j} = \Delta^{0,s-1} \mathbf{b}_{i,j+1}-\Delta^{0,s-1} \mathbf{b}_{i,j}$.
 %lahko poveš, da so to v bistvu vektorji
 %posebej lahko napišeš (ali dodaš) odvode 1. stopnje
 %dodaj pogoje gladkosti za C1 ?
-%dodaj trikotne krpe
 
-\section{$G^n$-zveznost med dvema Bézierjevima\\ ploskvama iz tenzorskega produkta}
+\subsection{$C^n$-zveznost med dvema Bézierovima ploskvama 
+iz tenzorskega produkta}
+
+Najprej si oglejmo, kakšni pogoji morajo veljati za dve Bézierovi ploskvi, da 
+je njun stik $C^n$-zvezen. Dobljeni rezultat bomo v nadaljevanju primerjali s 
+pogoji za $G^n$-zveznost. 
+
+Imejmo Bézierovi ploskvi 
+$$\ddd{R}(u,v)=\sum_{i=0}^m\sum_{j=0}^n\ddd{r}_{i,j}B_i^m(\frac{u-u_1}{u_0-u_1})B_j^n(\frac{v-v_0}{v_1-v_0})\textrm{, }
+u\in[u_0,u_1]\textrm{, }v\in[v_0,v_1]$$
+in 
+$$\ddd{S}(u,v)=\sum_{i=0}^m\sum_{j=0}^n\ddd{s}_{i,j}B_i^m(\frac{u-u_1}{u_2-u_1})B_j^n(\frac{v-v_0}{v_1-v_0})\textrm{, }
+u\in[u_1,u_2]\textrm{, }v\in[v_0,v_1].$$
+
+Ploskvi naj se stikata v krivulji  $\ddd{C}(v)=\ddd{R}(u_1,v)=\ddd{S}(u_1,v)$, 
+torej naj velja $\ddd{r}_{0,j}=\ddd{s}_{0,j}$ za 
+$j=0,\ldots,n$. S tem dosežemo $C^1$-zveznost. Da se bosta ploskvi stikali s 
+$C^r$-zveznostjo, se morajo ujemati njuni odvodi vzdolž krivulje $\ddd{C}$ 
+do odvoda stopnje $r$. Zaradi stikanja v krivulji $\ddd{C}$ je dovolj obravnavati le 
+odvode po spremenljivki $u$. Veljati mora:
+$$\frac{\partial^k}{\partial u}\ddd{R}(u,v)|_{u=u_0}=\frac{\partial^k}{\partial u}\ddd{S}(u,v)|_{u=u_0},
+\textrm{ }k=1,\ldots,r.$$
+Uporabimo enačbo \ref{eq28} za odvod Bézierove ploskve iz tenzorskega produkta: 
+\begin{align*}
+\frac{n!}{(n-k)!}&\frac{1}{(u_0-u_1)^k}\sum_{i=0}^{m-k}\sum_{j=0}^n\Delta^{k,0}
+\ddd{r}_{i,j}B_i^{m-k}(\frac{u-u_1}{u_0-u_1})B_i^n(\frac{v-v_0}{v_1-v_0})|_{u=u_1}=\\
+&=\frac{n!}{(n-k)!}\frac{1}{(u_2-u_1)^k}\sum_{i=0}^{m-k}\sum_{j=0}^n\Delta^{k,0}
+\ddd{s}_{i,j}B_i^{m-k}(\frac{u-u_1}{u_2-u_1})B_i^n(\frac{v-v_0}{v_1-v_0})|_{u=u_1},\\
+k=1,\ldots,r
+\end{align*}
+Sledi
+\begin{align*}
+&\frac{1}{(u_0-u_1)^k}\sum_{j=0}^n\Delta^{k,0}
+\ddd{r}_{0,j}B_i^n(\frac{v-v_0}{v_1-v_0})=
+\frac{1}{(u_2-u_1)^k}\sum_{j=0}^n\Delta^{k,0}
+\ddd{s}_{0,j}B_i^n(\frac{v-v_0}{v_1-v_0}),\\
+&k=1,\ldots,r.
+\end{align*}
+Za vsak $j=1,\ldots,n$ primerjajmo koeficiente pred baznim polinomom $B_j^n(\frac{v-v_0}{v_1-v_0})$ 
+in dobimo pogoje, ki morajo veljati med kontrolnimi točkami dveh ploskev, da sta na 
+stiku $C^r$-zvezni:
+\begin{align}\label{eq29}
+  \frac{1}{(u_0-u_1)^k}\Delta^{k,0}\ddd{r}_{0,j}=\frac{1}{(u_2-u_1)^k}\sum_{j=0}^n\Delta^{k,0}
+  \ddd{s}_{0,j},\textrm{ }k=1,\ldots,r.
+\end{align}
+
+\subsection{$G^n$-zveznost med dvema Bézierovima\\ ploskvama iz tenzorskega produkta}
 
 \todo{Nekaj v smislu, da sedaj prevedemo že dobljene splošne pogoje na pogoje za 
 bezierove ploskve oz. kako ti pogoji izgledajo za te ploskve.}

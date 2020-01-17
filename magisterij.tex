@@ -136,31 +136,31 @@
 
 \begin{document}
 
-\pagenumbering{roman} % začnemo z rimskimi številkami
-\thispagestyle{empty} % ampak na prvi strani ni številke
+%\pagenumbering{roman} % začnemo z rimskimi številkami
+%\thispagestyle{empty} % ampak na prvi strani ni številke
 
-\noindent{\large
-UNIVERZA V LJUBLJANI\\[1mm]
-FAKULTETA ZA MATEMATIKO IN FIZIKO\\[5mm]
-\program\ -- 2.~stopnja}
+%\noindent{\large
+%UNIVERZA V LJUBLJANI\\[1mm]
+%FAKULTETA ZA MATEMATIKO IN FIZIKO\\[5mm]
+%\program\ -- 2.~stopnja}
 % ustrezno dopolni za IŠRM
-\vfill
+%\vfill
 
-\begin{center}
-  \large
-  \imeavtorja\\[3mm]
-  \Large
-  \textbf{\MakeUppercase{\naslovdela}}\\[10mm]
-  \large
-  Magistrsko delo \\[1cm]
-  Mentor: \imementorja \\[2mm] % ustrezno popravi spol
+%\begin{center}
+%  \large
+%  \imeavtorja\\[3mm]
+%  \Large
+%  \textbf{\MakeUppercase{\naslovdela}}\\[10mm]
+%  \large
+%  Magistrsko delo \\[1cm]
+%  Mentor: \imementorja \\[2mm] % ustrezno popravi spol
 %   Somentor: \imesomentorja   % dodaj, če potrebno
-\end{center}
-\vfill
+%\end{center}
+%\vfill
 
-\noindent{\large Ljubljana, \letnica}
+%\noindent{\large Ljubljana, \letnica}
 
-\cleardoublepage
+%\cleardoublepage
 
 %% IZJAVA O AVTORSTVU
 %\pdfbookmark[1]{Izjava o avtorstvu}{izjava} % bookmark v PDF, \pdfbookmark[nivo]{text}{label}
@@ -235,13 +235,13 @@ FAKULTETA ZA MATEMATIKO IN FIZIKO\\[5mm]
 %% END IZJAVA O AVTORSTVU
 
 % zahvala
-\pdfbookmark[1]{Zahvala}{zahvala} %
-\section*{Zahvala}
-Neobvezno.
-Zahvaljujem se \dots
+%\pdfbookmark[1]{Zahvala}{zahvala} %
+%\section*{Zahvala}
+%Neobvezno.
+%Zahvaljujem se \dots
 % end zahvala -- izbriši vse med zahvala in end zahvala, če je ne rabiš
 
-\cleardoublepage
+%\cleardoublepage
 
 \pdfbookmark[1]{\contentsname}{kazalo-vsebine}
 \tableofcontents
@@ -254,55 +254,55 @@ Zahvaljujem se \dots
 
 \cleardoublepage
 
-\section*{Program dela}
-\addcontentsline{toc}{section}{Program dela} % dodajmo v kazalo
-Mentor naj napiše program dela skupaj z osnovno literaturo. Na literaturo se
-lahko sklicuje kot~\cite{lebedev2009introduction}, \cite{gurtin1982introduction},
-\cite{zienkiewicz2000finite}, \cite{STtemplate}.
+%\section*{Program dela}
+%\addcontentsline{toc}{section}{Program dela} % dodajmo v kazalo
+%Mentor naj napiše program dela skupaj z osnovno literaturo. Na literaturo se
+%lahko sklicuje kot~\cite{lebedev2009introduction}, \cite{gurtin1982introduction},
+%\cite{zienkiewicz2000finite}, \cite{STtemplate}.
 
-\section*{Osnovna literatura}
-Literatura mora biti tukaj posebej samostojno navedena (po pomembnosti) in ne
-le citirana. V tem razdelku literature ne oštevilčimo po svoje, ampak uporabljamo
-okolje itemize in ukaz plancite, saj je celotna literatura oštevilčena na koncu.
-\begin{itemize}
-  \plancite{lebedev2009introduction}
-  \plancite{gurtin1982introduction}
-  \plancite{zienkiewicz2000finite}
-  \plancite{STtemplate}
-\end{itemize}
+%\section*{Osnovna literatura}
+%Literatura mora biti tukaj posebej samostojno navedena (po pomembnosti) in ne
+%le citirana. V tem razdelku literature ne oštevilčimo po svoje, ampak uporabljamo
+%okolje itemize in ukaz plancite, saj je celotna literatura oštevilčena na koncu.
+%\begin{itemize}
+%  \plancite{lebedev2009introduction}
+%  \plancite{gurtin1982introduction}
+%  \plancite{zienkiewicz2000finite}
+%  \plancite{STtemplate}
+%\end{itemize}
 
-\vspace{2cm}
-\hspace*{\fill} Podpis mentorja: \phantom{prostor za podpis}
+%\vspace{2cm}
+%\hspace*{\fill} Podpis mentorja: \phantom{prostor za podpis}
 
 % \vspace{2cm}
 % \hspace*{\fill} Podpis somentorja: \phantom{prostor za podpis}
 
-\cleardoublepage
-\pdfbookmark[1]{Povzetek}{abstract}
+%\cleardoublepage
+%\pdfbookmark[1]{Povzetek}{abstract}
 
-\begin{center}
-\textbf{\naslovdela} \\[3mm]
-\textsc{Povzetek} \\[2mm]
-\end{center}
-Tukaj napišemo povzetek vsebine. Sem sodi razlaga vsebine in ne opis tega, kako je delo
-organizirano.
+%\begin{center}
+%\textbf{\naslovdela} \\[3mm]
+%\textsc{Povzetek} \\[2mm]
+%\end{center}
+%Tukaj napišemo povzetek vsebine. Sem sodi razlaga vsebine in ne opis tega, kako je delo
+%organizirano.
 
-\vfill
-\begin{center}
-\textbf{English translation of the title} \\[3mm] % prevod slovenskega naslova dela
-\textsc{Abstract}\\[2mm]
-\end{center}
+%\vfill
+%\begin{center}
+%\textbf{English translation of the title} \\[3mm] % prevod slovenskega naslova dela
+%\textsc{Abstract}\\[2mm]
+%\end{center}
 
-An abstract of the work is written here. This includes a short description of
-the content and not the structure of your work.
+%An abstract of the work is written here. This includes a short description of
+%the content and not the structure of your work.
 
-\vfill\noindent
-\textbf{Math.~Subj.~Class.~(2010):} oznake kot 74B05, 65N99, na voljo so na naslovu
-\url{http://www.ams.org/msc/msc2010.html?t=65Mxx} \\[1mm]
-\textbf{Ključne besede:} \kljucnebesede \\[1mm]
-\textbf{Keywords:} \keywords
+%\vfill\noindent
+%\textbf{Math.~Subj.~Class.~(2010):} oznake kot 74B05, 65N99, na voljo so na naslovu
+%\url{http://www.ams.org/msc/msc2010.html?t=65Mxx} \\[1mm]
+%\textbf{Ključne besede:} \kljucnebesede \\[1mm]
+%\textbf{Keywords:} \keywords
 
-\cleardoublepage
+%\cleardoublepage
 
 \setcounter{page}{1}    % od sedaj naprej začni zopet z 1
 \pagenumbering{arabic}  % in z arabskimi številkami
@@ -316,7 +316,7 @@ dveh takih ploskev videti gladek, ploskvi morata biti zato prek skupne meje zvez
 predstaviš običajno zveznost, poveš, zakaj ni ustrezna}
 
 \todo{lahko najprej poveš, kaj je c zveznost, potem pa navedeš primer, kjer c zveznost 
-ne pride v poštev (farin? skopirana knjiga?)}
+ne pride v poštev}
 
 \todo{geometrijska zveznost je zelo uporabna v praksi, ker lahko modeliramo različne situacije, 
 kjer c zveznost odpove (npr. zvezda, suitcase corner, house corner)}
@@ -325,13 +325,14 @@ kjer c zveznost odpove (npr. zvezda, suitcase corner, house corner)}
 
 \todo{geometrijska zveznost je posplošitev c zveznosti. torej vse nedegenerirane 
 (kaj to pomeni?) ploskve, ki so c zvezne, so tudi geometrisko zvezne, niso pa vse 
-geometrijsko zvezne ploskve tudi c zvezne (primer v farin, ne razumem)}
+geometrijsko zvezne ploskve tudi c zvezne}
 
 \todo{s čim se to delo ukvarja in kaj bo v kakšnem poglavju}
 
 \section{Geometrijska zveznost}\label{geom.zv.}
 
 \todo{nek uvodni tekst?}
+
 Najprej si oglejmo povsem splošno definicijo geometriske zveznosti neke ploskve.
 
 \begin{definicija}
@@ -346,8 +347,8 @@ iz definicije (kako?)}
 
 \todo{razloži lokalnost?}
 
-\nevem{Naj bosta $R: \Omega_1 \subseteq \R^2 \rightarrow \R^3$ in 
-$S: \Omega_2 \subseteq \R^2 \rightarrow \R^3$ regularni parametrizaciji}
+%\nevem{Naj bosta $R: \Omega_1 \subseteq \R^2 \rightarrow \R^3$ in 
+%$S: \Omega_2 \subseteq \R^2 \rightarrow \R^3$ regularni parametrizaciji}
 
 V nadaljevanju se bomo ukvarjali s ploskvami, ki so same po sebi že geometrijsko zvezne, 
 zanimalo nas bo le, kakšni pogoji morajo veljati, da je tudi stik dveh takih  
@@ -355,10 +356,12 @@ ploskev geometrijsko zvezen, torej da je celotna ploskev, ki jo dobimo, ko zlepi
 geometrijsko zvezna. 
 
 \begin{definicija}\label{def2}
-  Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. 
-  Pravimo, da se $R$ in $S$ \emph{stikata z $G^n$-zveznostjo vzdolž krivulje $C$}, če za vsako točko $b_0=C(y_0)$ obstaja lokalno regularna $C^n$ reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, da je $f(x_0,y)=(u_0,y)$ za vsak $y \in I_0$ in da velja
+  Naj bosta $\ddd{R}(x,y)$ in $\ddd{S}(u,v)$ regularni $C^n$ parametrizaciji dveh 
+  ploskev, ki se stikata v krivulji $\ddd{C}(y)=\ddd{R}(x_0,y)=\ddd{S}(u_0,y)$. 
+  Pravimo, da se $\ddd{R}$ in $\ddd{S}$ \emph{stikata z $G^n$-zveznostjo vzdolž 
+  krivulje $\ddd{C}$}, če za vsako točko $b_0=\ddd{C}(y_0)$ obstaja lokalno regularna $C^n$ reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, da je $f(x_0,y)=(u_0,y)$ za vsak $y \in I_0$ in da velja
   \begin{equation}\label{eq0}
-  \frac{\partial^{m+k}}{\partial x^m \partial y^k}R\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{m+k}}{\partial x^m \partial y^k}(S\circ f)\Bigr|_{\substack{(x_0,y)}} \textrm{ za } m+k=1,\ldots,n,
+  \frac{\partial^{m+k}}{\partial x^m \partial y^k}\ddd{R}\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{m+k}}{\partial x^m \partial y^k}(\ddd{S}\circ f)\Bigr|_{\substack{(x_0,y)}} \textrm{ za } m+k=1,\ldots,n,
   \end{equation}
   kjer je $I_0$ neka okolica $y_0$. %bolj natančno, kaj je ta okolica
 \end{definicija}
@@ -366,9 +369,9 @@ geometrijsko zvezna.
 \todo{razloži, kaj je regularna reparametrizacijska funkcija? ali je dovolj, da je 
 bila prej razložena regularnost?}
 
-Zaradi stikanja ploskev v krivulji $C$ oziroma, ker vzdolž krivulje $C$ velja $y=v$, 
+Zaradi stikanja ploskev v krivulji $\ddd{C}$ oziroma, ker vzdolž krivulje $\ddd{C}$ velja $y=v$, 
 so delni odvodi parametrizacij 
-po spremenljivki $y$ vzdolž krivulje $C$ enaki, zato je dovolj, da pri obravnavi 
+po spremenljivki $y$ vzdolž krivulje $\ddd{C}$ enaki, zato je dovolj, da pri obravnavi 
 geometrijske zveznosti dveh ploskev opazujemo le delne odvode po 
 spremenljivki $x$.
 \todo{dodati sliko?}
@@ -377,45 +380,48 @@ Te delne odvode imenujemo \todo{crossboundary derivatives}.
 Oglejmo si, kakšni pogoji morajo veljati v primeru, ko želimo, da je stik med dvema 
 ploskvama $G^2$ zvezen.
 \begin{primer}
-Naj bodo parametrizaciji ploskev $R$ in $S$, krivulja $C$ in reparametrizacijska 
+Naj bodo parametrizaciji ploskev $\ddd{R}$ in $\ddd{S}$, krivulja $\ddd{C}$ in 
+reparametrizacijska 
 funkcija $f$ kot v definiciji \ref{def2}.
 Da bo stik teh dveh ploskev $G^2$ zvezen, mora po definiciji \ref{def2} in ugotovitvi, 
 da je dovolj obravnavati le odvode po spremenljivki $y$, veljati
-$$\frac{\partial^{k}}{\partial x^k}R\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{k}}{\partial x^k}(S\circ f)\Bigr|_{\substack{(x_0,y)}} \textrm{ za } k=0,1,2.$$
+$$\frac{\partial^{k}}{\partial x^k}\ddd{R}\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{k}}{\partial x^k}(\ddd{S}\circ f)\Bigr|_{\substack{(x_0,y)}} \textrm{ za } k=0,1,2.$$
 za vsak $y$ v neki okolici točke\todo{?} $y_0$. 
 Da dosežemo zgolj geometrijsko zveznost razreda $G^0$, je dovolj, da med 
-ploskvama $R$ in $S$ velja pogoj 
-$$R(x_0,y)=(S \circ f)(x_0,y)\textrm{, oziroma }R(x_0,y)=S(u(x_0,y),v(x_0,y)).$$ 
+ploskvama $\ddd{R}$ in $\ddd{S}$ velja pogoj 
+$$\ddd{R}(x_0,y)=(\ddd{S} \circ f)(x_0,y)\textrm{, oziroma }\ddd{R}(x_0,y)=\ddd{S}(u(x_0,y),v(x_0,y)).$$ 
 Da imamo na stiku geometrijsko zveznost stopnje $G^1$, mora poleg 
 pogoja za $G^0$ veljati še 
-$$\frac{\partial R}{\partial x}\Bigr|_{\substack{(x_0,y)}}=\frac{\partial}{\partial x}(S\circ f)\Bigr|_{\substack{(x_0,y)}}$$
-Če ustrezno razpišemo parcialni odvod funkcije $S \circ f$, se ta pogoj prepiše v
-$$\frac{\partial R}{\partial x}\Bigr|_{\substack{(x_0,y)}}=
-\frac{\partial S}{\partial u}\frac{\partial u}{\partial x}\Bigr|_{\substack{(x_0,y)}}+
-\frac{\partial S}{\partial v}\frac{\partial v}{\partial x}\Bigr|_{\substack{(x_0,y)}}.$$
+$$\frac{\partial \ddd{R}}{\partial x}\Bigr|_{\substack{(x_0,y)}}=\frac{\partial}{\partial x}(\ddd{S}\circ f)\Bigr|_{\substack{(x_0,y)}}$$
+Če ustrezno razpišemo parcialni odvod funkcije $\ddd{S} \circ f$, se ta pogoj prepiše v
+$$\frac{\partial \ddd{R}}{\partial x}\Bigr|_{\substack{(x_0,y)}}=
+\frac{\partial \ddd{S}}{\partial u}\frac{\partial u}{\partial x}\Bigr|_{\substack{(x_0,y)}}+
+\frac{\partial \ddd{S}}{\partial v}\frac{\partial v}{\partial x}\Bigr|_{\substack{(x_0,y)}}.$$
 Za $G^2$ mora poleg pogojev za $G^0$ in $G^1$ veljati še
 \begin{align*} 
-\frac{\partial^2 R}{\partial x^2}\bigg|_{\substack{(x_0,y)}} &=
-\frac{\partial^2 S}{\partial u^2}\bigg(\frac{\partial u}{\partial x}\bigg)^2\bigg|_{\substack{(x_0,y)}} + 
-2\frac{\partial^2 S}{\partial u \partial v}\frac{\partial u}{\partial x}\frac{\partial v}{\partial x}\bigg|_{\substack{(x_0,y)}} + 
-\frac{\partial^2 S}{\partial v^2}\bigg(\frac{\partial v}{\partial x}\bigg)^2\bigg|_{\substack{(x_0,y)}} + \\
-&+\frac{\partial S}{\partial u}\frac{\partial^2 u}{\partial x^2}\bigg|_{\substack{(x_0,y)}} +
-\frac{\partial S}{\partial v}\frac{\partial^2 v}{\partial x^2}\bigg|_{\substack{(x_0,y)}}
+\frac{\partial^2 \ddd{R}}{\partial x^2}\bigg|_{\substack{(x_0,y)}} &=
+\frac{\partial^2 \ddd{S}}{\partial u^2}\bigg(\frac{\partial u}{\partial x}\bigg)^2\bigg|_{\substack{(x_0,y)}} + 
+2\frac{\partial^2 \ddd{S}}{\partial u \partial v}\frac{\partial u}{\partial x}\frac{\partial v}{\partial x}\bigg|_{\substack{(x_0,y)}} + 
+\frac{\partial^2 \ddd{S}}{\partial v^2}\bigg(\frac{\partial v}{\partial x}\bigg)^2\bigg|_{\substack{(x_0,y)}} + \\
+&+\frac{\partial \ddd{S}}{\partial u}\frac{\partial^2 u}{\partial x^2}\bigg|_{\substack{(x_0,y)}} +
+\frac{\partial \ddd{S}}{\partial v}\frac{\partial^2 v}{\partial x^2}\bigg|_{\substack{(x_0,y)}}
 \end{align*}
 %$G^2$: $R_xx = S_{uu} u_x^2 + 2S_{uv}u_x v_x + S_{vv} v_x^2 + S_u u_{xx} + S_v v_{xx}$ vzdolž $C$
 \end{primer}
 
 V splošnem za geometrijsko zveznost stopnje $n$, kjer je $n\in \N_0$ velja naslednje:
 \begin{equation}\label{eq1}
-\frac{\partial^k R}{\partial x^k}\bigg|_{\substack{C}}=\sum_{i=1}^k \sum_{|m_i|=k}A_{m_i}^k
+\frac{\partial^k \ddd{R}}{\partial x^k}\bigg|_{\substack{C}}=\sum_{i=1}^k \sum_{|m_i|=k}A_{m_i}^k
 \sum_{h=0}^i{i \choose h}u_{x^{m_1}}\cdots u_{x^{m_h}}v_{x^{m_{h+1}}}\cdots v_{x^{m_h}}
-\frac{\partial^i S}{\partial u^h \partial v^{i-h}}\bigg|_{\substack{C}}
+\frac{\partial^i \ddd{S}}{\partial u^h \partial v^{i-h}}\bigg|_{\substack{C}}
 \end{equation}
 za vsak $k=0,1,\ldots,n$. Tu z $A_{m_i}^k$ iznačujemo koeficient
 $$A_{m_i}^k = \frac{k!}{i!m_1!\cdots m_i!}.$$
 Z $u_x^{m_i}$ je označen $m_i$-ti delni odvod funkcije $u$ po $x$, z oznako $|m_i|$ pa 
 označimo vsoto $|m_i|=m_1+m_2+\cdots + m_i$, kjer velja $m_j>0$ za vsak $j=1,\ldots, i$.
+
 \todo{dokaz z indukcijo?}
+
 
 %$$\frac{\partial^j R}{\partial x^j}\Bigr|_{\substack{C}}= \sum_{k=1}^j\sum_{h=0}^k A_{jkh}\frac{\partial^k S}{\partial u^h \partial v^{k-h}}\Bigr|_{\substack{C}}$$
 %za vsak $j=0,1,\ldots,n$.
@@ -440,14 +446,16 @@ Taka definicija geometrijske zveznosti med dvema ploskvama sama po sebi pri kons
 zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši naslednji izrek.
 
 \begin{izrek}\label{izrek1}
-  Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. 
-  Ploskvi $R$ in $S$ sta vzdolž skupnega roba $G^n$-zvezni natanko tedaj ko obstajajo 
+  Naj bosta $\ddd{R}(x,y)$ in $\ddd{S}(u,v)$ regularni $C^n$ parametrizaciji dveh 
+  ploskev, ki se stikata v krivulji $\ddd{C}(y)=\ddd{R}(x_0,y)=\ddd{S}(u_0,y)$. 
+  Ploskvi $\ddd{R}$ in $\ddd{S}$ sta vzdolž skupnega roba $G^n$-zvezni natanko 
+  tedaj ko obstajajo 
   $C^n$ funkcije $\alpha_1(y), \ldots, \alpha_n(y)$ in $\beta_1(y) \ldots, \beta_n(y)$, 
   da velja 
   \begin{equation}\label{eq2}
-  \frac{\partial^k R}{\partial x^k}\bigg|_{\substack{C}}=\sum_{i=1}^k \sum_{|m_i|=k}A_{m_i}^k
+  \frac{\partial^k \ddd{R}}{\partial x^k}\bigg|_{\substack{\ddd{C}}}=\sum_{i=1}^k \sum_{|m_i|=k}A_{m_i}^k
   \sum_{h=0}^i{i \choose h}\alpha_{m_1}\cdots \alpha_{m_h}\beta_{m_{h+1}}\cdots \beta_{m_h}
-  \frac{\partial^i S}{\partial u^h \partial v^{i-h}}\bigg|_{\substack{C}},
+  \frac{\partial^i \ddd{S}}{\partial u^h \partial v^{i-h}}\bigg|_{\substack{\ddd{C}}},
   \end{equation} 
   kjer je $A_{m_i}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
   Veljati mora tudi, da je $\alpha_1(y)\neq 0$ \todo{in predznak}
@@ -459,12 +467,12 @@ zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši nasle
 \end{opomba}
 
 \begin{proof}
-  \todo{kaj je z lokalnostjo in b0???}
+  \todo{kaj je z lokalnostjo in b0?}
   Najprej prodpostavimo, da obstajajo $C^n$ funkcije $\alpha_1(y), \ldots, \alpha_n(y)$ 
   in $\beta_1(y) \ldots, \beta_n(y)$, za katere velja enakost \ref{eq2} v izreku, in 
   da je $\alpha_1(y)\neq 0$. 
   Dokazati želimo, da od tod 
-  sledi $G^n$-zveznost stika ploskev $R(x,y)$ in $S(u,v)$. 
+  sledi $G^n$-zveznost stika ploskev $\ddd{R}(x,y)$ in $\ddd{S}(u,v)$. 
 
   Definirajmo reparametrizacijsko funkcijo $f(x,y)=(u(x,y),v(x,y))$ na naslednji način: 
   $$u(x,y) =  u_0 + \sum_{i=0}^n \frac{1}{i!}\alpha_i(y)(x-x_0)^i,$$
@@ -477,14 +485,14 @@ zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši nasle
   $$\frac{\partial^i u}{\partial x^i}(x_0,y)=\alpha_i(y),$$
   $$\frac{\partial^i v}{\partial x^i}(x_0,y)=\beta_i(y).$$
   Če dobljeno vstavimo v enačbo \ref{eq2}, dobimo ravno enačbo \ref{eq1}, od koder zaradi 
-  ujemanja ploskev $R$ in $S$ v krivulji $C$ sledi tudi enakost \ref{eq0}. Pokazati moramo 
+  ujemanja ploskev $\ddd{R}$ in $\ddd{S}$ v krivulji $\ddd{C}$ sledi tudi enakost \ref{eq0}. Pokazati moramo 
   le še, da je $f$ lokalno regularna.
   
-  Vemo, da je reparametrizacijska funkcija $f$ regularna vzdolž $C$, če sta oba njena parcialna odvoda prvega 
+  Vemo, da je reparametrizacijska funkcija $f$ regularna vzdolž $\ddd{C}$, če sta oba njena parcialna odvoda prvega 
   reda linearno neodvisna, torej če velja 
   $$\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) \neq 0.$$
 
-  Razpišimo oba odvoda reparametrizacijske funkcije $f(x,y)=(u(x,y),v(x,y))$ vzdolž krivulje $C$ 
+  Razpišimo oba odvoda reparametrizacijske funkcije $f(x,y)=(u(x,y),v(x,y))$ vzdolž krivulje $\ddd{C}$ 
   in ju skušajmo zapisati s pomočjo stičnih funkcij. Za odvod po spremenljivki $x$ velja:
   $$\frac{\partial f}{\partial x}(x_0,y)=(\frac{\partial u}{\partial x}(x_0,y),\frac{\partial v}{\partial x}(x_0,y))=(\alpha_1(y),\beta_1(y)).$$
 
@@ -501,7 +509,7 @@ zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši nasle
   Sledi, da je reparametrizacijska funkcija $f$  regularna. 
 
   Pokazali smo torej, da obstaja lokalno regularna reparametrizacijska funkcija $f$, ki 
-  ustreza pogojem iz definicije \ref{def2}, od koder sledi, da se ploskvi $R$ in $S$ stikata 
+  ustreza pogojem iz definicije \ref{def2}, od koder sledi, da se ploskvi $\ddd{R}$ in $\ddd{S}$ stikata 
   z $G^n$-zveznostjo.
 
   Dokažimo izrek še v drugo smer.
@@ -509,9 +517,9 @@ zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši nasle
   obstoj funkcij $\alpha_1(y), \ldots, \alpha_n(y)$ in $\beta_1(y) \ldots, \beta_n(y)$
   in enačba \ref{eq2} sledjo neposredno iz definicije \ref{def2} in enačbe \ref{eq1}, 
   če definiramo $\alpha_i(y)=u_{x^i}(y)$ in $\beta_i(y)=v_{x^i}(y)$ za $i=1,\ldots,n$. 
-  \todo{ali so take funkcije Cn??}
+  \todo{ali so take funkcije $C^n$?}
 
-  Ker je stik ploskev $R$ in $S$ $G^n$-zvezen, do definiciji \ref{def2} obstaja 
+  Ker je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^n$-zvezen, do definiciji \ref{def2} obstaja 
   lokalno regularna reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, ki ustreza 
   pogojem iz definicije \ref{def2}. Videli smo že, da je funkcija $f$ regularna 
   natanko tedaj, ko je $u_x(x_0,y)=\alpha_1(y)\neq 0$. 
@@ -562,28 +570,33 @@ Pri izbiri napačnega predznaka namreč lahko pride do stika v obliki "špice".}
 
 \todo{nekaj za zaključek poglavja in napeljavo na novo poglavje}
 
-\section{$G^1$ zveznost}
+\subsection{Geometrijska interpretacija $G^1$-zveznosti}
+\todo{ali naredim še za $G^2$ zveznost}
 
-\todo{nekaj v stilu, da se bomo natančneje ukvarjali z G1 zveznostjo.}
-\todo{lahko povem, da je to zveznost tangentnih ravnin oz. zveznost enotskih normal in da si 
-bomo ogledali, kako do tega pridemo.}
+V nadaljevanju se bomo nekoliko natančneje ukvarjali z $G^1$-zveznostjo med ploskvami. 
+V tem podpoglavju si oglejmo geometrijsko interpretacijo $G^1$-zveznosti, ki bo 
+kasneje služila tudi v praktičnih primerih.
 
-Imejmo ploskvi $R(x,y)$ in $S(u,v)$, ki se v krivulji $C(y) = R(x_0,y) = S(u_0,y)$ 
+Imejmo regularni $C^1$ parametrizaciji ploskev $\ddd{R}(x,y)$ in $\ddd{S}(u,v)$, ki 
+se v krivulji $\ddd{C}(y) = \ddd{R}(x_0,y) = \ddd{S}(u_0,y)$ 
 stikata z geometrijsko zveznostjo $G^1$.  
-Sledi, da je $R_y(x_0,y) = S_y(x_0,y) = S_v(x_0,y)$. Kot smo že videli v poglavju \ref{geom.zv.}, 
+Sledi, da je $\ddd{R}_y(x_0,y) = \ddd{S}_y(x_0,y) = \ddd{S}_v(x_0,y)$. Kot smo že videli v poglavju \ref{geom.zv.}, 
 nam je zato potrebno opazovati zgolj odvode v smeri $x$.
 
-Ker je stik obeh ploskev v $C$ $G^1$-zvezen, po izreku \ref{izrek1} obstajata 
+Ker je stik obeh ploskev v $\ddd{C}$ $G^1$-zvezen, po izreku \ref{izrek1} obstajata 
 funkciji $\alpha_1$ in $\beta_1$, kjer je $\alpha_1(y) \neq 0$ za vsak $y$ 
 in ima ustrezen predznak, da velja:
 
 \begin{equation}\label{eq3}
-R_x(x_0,y)=\alpha_1(y) S_u(u_0,y)+\beta_1(y)S_v(u_0,y).
+\ddd{R}_x(x_0,y)=\alpha_1(y) \ddd{S}_u(u_0,y)+\beta_1(y)\ddd{S}_v(u_0,y).
 \end{equation}
 
-Zgornja enačba nam pove, da so parcialni odvodi $R_x(x_0,y)$, $S_u(u_0,y)$ in 
-$S_v(u_0,y)$ v vsaki točki $y$ linearno odvisni. Torej so v vsaki točki $y$ del 
-iste tangentne ravnine na krivuljo $C$. Zato torej $G^1$-zveznost imenujemo tudi 
+Zgornja enačba nam pove, da so parcialni odvodi $\ddd{R}_x(x_0,y)$, $\ddd{S}_u(u_0,y)$ in 
+$\ddd{S}_v(u_0,y)$ v vsaki točki $y$ linearno odvisni. Torej so v vsaki točki $y$ del 
+iste tangentne ravnine na krivuljo $\ddd{C}$. Tangentna ravnina na ploskev $\ddd{R}$ 
+se na krivulji $\ddd{C}$ ujema s tangentno ravnino na ploskev $\ddd{S}$, kar pomeni, 
+da se tangentna ravnina zvezno spreminja vzdolž zlepka obeh ploskev. 
+Zato torej $G^1$-zveznost imenujemo tudi 
 \emph{zveznost tangentnih ravnin}.
 
 %\nevem{v predstavitvi sem šla tako: $R(x_0,y)=S(u_0,y)$,  
@@ -591,20 +604,29 @@ iste tangentne ravnine na krivuljo $C$. Zato torej $G^1$-zveznost imenujemo tudi
 %  $R_x(x_0,y)=\alpha_1(y) S_u(u_0,y)+\beta_1(y)S_v(u_0,y)$}  
 \todo{slika}
 
-Oglejmo si še, od kod pride poimenovanje \emph{zveznost enotskih normal}. 
+Še eno ime za $G^1$-zveznost je \emph{zveznost enotskih normal}.
+Oglejmo si, od kod pride to poimenovanje. 
 Znova opazujemo enačbo \ref{eq3}. 
-Enačbo sedaj z obeh strani vektorsko pomnožimo z $R_y(x_0,y)$:
-$$R_x(x_0,y)\times R_y(x_0,y)=\alpha_1(y) S_u(u_0,y)\times R_y(x_0,y)+\beta_1(y)S_v(u_0,y)\times R_y(x_0,y).$$
-Upoštevamo lahko, da je $R_y(x_0,y)=S_v(u_0,y)$. Dobimo:
-$$R_x(x_0,y) \times R_y(x_0,y) = \alpha_1(y) S_u(u_0,y) \times S_v(u_0,y).$$
-Od tod vidimo, da sta normali na ploskvi $R$ in $S$ na njunu stični 
-krivulji $C$ vzporedni. Na skupnem robu imata torej obe ploskvi enaki 
+Enačbo sedaj z obeh strani vektorsko pomnožimo z $\ddd{R}_y(x_0,y)$:
+$$\ddd{R}_x(x_0,y)\times \ddd{R}_y(x_0,y)=\alpha_1(y) \ddd{S}_u(u_0,y)\times \ddd{R}_y(x_0,y)+\beta_1(y)\ddd{S}_v(u_0,y)\times \ddd{R}_y(x_0,y).$$
+Upoštevamo lahko, da je $\ddd{R}_y(x_0,y)=\ddd{S}_v(u_0,y)$. Dobimo:
+\begin{equation}\label{eq30}
+\ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y) = \alpha_1(y) \ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y).
+\end{equation}
+Vektorski produkt $\ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y)$ predstavlja normalo na 
+ploskev $\ddd{R}$ v točki $(x_0,y)$ na krivulji $\ddd{C}$, 
+$\ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y)$ pa normalo na ploskev $\ddd{S}$ na 
+krivulji $\ddd{C}$. 
+Enačba \ref{eq30} pove, da sta normali na ploskvi $\ddd{R}$ in $\ddd{S}$ na njunu stični 
+krivulji $\ddd{C}$ vzporedni. Na skupnem robu imata torej obe ploskvi enaki 
 enotski normali:
-$$\frac{R_x(x_0,y) \times R_y(x_0,y)}{||R_x(x_0,y) \times R_y(x_0,y)||}=\frac{S_u(u_0,y) \times S_v(u_0,y)}{||S_u(u_0,y) \times S_v(u_0,y)||}.$$
+$$\frac{\ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y)}{||\ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y)||}=\frac{\ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y)}{||\ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y)||}.$$
+Enotska normala se zato zvezno spreminja vzdolž zlepka obeh ploskev, od koder poimenovanje 
+\emph{zveznost enotskih normal}. 
 
-Ker parcialni odvodi $R_x(x_0,y)$, $S_u(u_0,y)$ in $S_v(u_0,y)$ ležijo na isti 
+Ker parcialni odvodi $\ddd{R}_x(x_0,y)$, $\ddd{S}_u(u_0,y)$ in $\ddd{S}_v(u_0,y)$ ležijo na isti 
 tangentni ravnini, velja tudi:
-$$\det(R_x(x_0,y), S_u(u_0,y), S_v(u_0,y))=0.$$
+$$\det(\ddd{R}_x(x_0,y), \ddd{S}_u(u_0,y), \ddd{S}_v(u_0,y))=0.$$
 
 \todo{Torej obstajajo funkcije (povedati kakšne, iz kje kam?) $\lambda$, 
 $\mu$ in $\gamma$, da velja:
@@ -634,7 +656,7 @@ Bernsteinovi polinomi sestavljajo bazo prostora polinomov \\
 $\mathbb{P}_n=Lin\{1,t,t^2,\ldots,t^n\}$. 
 Bazo prostora polinomov dveh spremenljivk 
 $\mathbb{P}_m \otimes \mathbb{P}_n = Lin\{u^iv^j, i=0,\ldots,m, j=0,\ldots,n\}$, 
-torej tenzorskega produkta prostorov $\mathbb{P}_m$ in $\mathbb{P}_n$ pa sestavljajo 
+torej tenzorskega produkta prostorov $\mathbb{P}_m$ in $\mathbb{P}_n$, pa sestavljajo 
 produkti po dveh Bernsteinovih plinomov, kjer prvi pripada $\mathbb{P}_m$ in 
 drugi $\mathbb{P}_n$, oziroma tenzorski produkti dveh Bernsteinovih polinomov. 
 
@@ -649,7 +671,7 @@ produkta so definirane na naslednji način.
   s predpisom
   $$\mathbf{B}_{m,n}(u,v)=\sum_{i=0}^m \sum_{j=0}^n \mathbf{b_{i,j}} B_i^m(u) B_j^n(v).$$
   Točke $\mathbf{b}_{i,j}$ imenujemo \emph{kontrolne točke}, poligon, ki jih povezuje, 
-  pa \emph{kontrolni poligon} ploskve $\ddd{b}^{m,n}$. 
+  pa \emph{kontrolni poligon} ploskve $\ddd{B}_{m,n}$. 
 \end{definicija}
 
 \todo{slika?}

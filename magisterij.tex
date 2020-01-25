@@ -329,6 +329,9 @@ geometrijsko zvezne ploskve tudi c zvezne}
 
 \todo{s čim se to delo ukvarja in kaj bo v kakšnem poglavju}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Geometrijska zveznost}\label{geom.zv.}
 
 \todo{nek uvodni tekst?}
@@ -422,26 +425,6 @@ označimo vsoto $|m_i|=m_1+m_2+\cdots + m_i$, kjer velja $m_j>0$ za vsak $j=1,\l
 
 \todo{dokaz z indukcijo?}
 
-
-%$$\frac{\partial^j R}{\partial x^j}\Bigr|_{\substack{C}}= \sum_{k=1}^j\sum_{h=0}^k A_{jkh}\frac{\partial^k S}{\partial u^h \partial v^{k-h}}\Bigr|_{\substack{C}}$$
-%za vsak $j=0,1,\ldots,n$.
-%Tu z $A_{jkh}$ označujemo koeficient
-%$$A_{jkh}={k \choose h}\sum_{\substack{m_1+\cdots +m_k =j \\ m_1, \ldots, m_k >0}}
-%\frac{j!}{k!m_1!\cdots m_k!} u_{x^{m_1}} \cdots u_{x^{m_h}} v_{x^{m_{h+1}}} \cdots v_{x^{m_k}}\Bigr|_{\substack{C}}.$$
-
-%\todo{kaj je s to lemo?}
-%\begin{lema}\todo{?? ali je dokaz tega potreben?}
-%  Naj bo $f(u,v)$ funkcija razreda $C^n$ in $u(t)$ in $v(t)$ reparametrizaciji razreda $C^n$. Potem
-%  \begin{align*}
-%  \frac{d^k f}{dt^k}=& \sum_{i=1}^k\sum_{|\mathbf{m_i}|=k} A_{\mathbf{m_i}}^k \sum_{h=0}^i {i \choose h} u^{(m_1)}\cdots u^{(m_h)}(v) v^{(m_{h+1})}\cdots v^{(m_i)} \\
-%  &\cdot\frac{\partial^i f}{\partial u_r^h \partial v_r^{i-h}},
-%  \end{align*}
-%  kjer $k=1,\ldots,n$ ter\\
-%  $\mathbf{m_i} = (m1,m2,\ldots,m_i)$, $|\mathbf{m_i}|=m_1+m_2+\cdots+m_i$ in $A_{\mathbf{m_i}}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
-%\end{lema}
-%\todo{preoblikuj to lemo, da bo koeficient A kot zgoraj. }
-%\todo{dokaz najdeš nekje k piše v viru}
-
 Taka definicija geometrijske zveznosti med dvema ploskvama sama po sebi pri konstrukciji geometrijsko 
 zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši naslednji izrek.
 
@@ -457,6 +440,7 @@ zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši nasle
   \sum_{h=0}^i{i \choose h}\alpha_{m_1}\cdots \alpha_{m_h}\beta_{m_{h+1}}\cdots \beta_{m_h}
   \frac{\partial^i \ddd{S}}{\partial u^h \partial v^{i-h}}\bigg|_{\substack{\ddd{C}}},
   \end{equation} 
+  za $k=1,\ldots,n$, 
   kjer je $A_{m_i}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
   Veljati mora tudi, da je $\alpha_1(y)\neq 0$ \todo{in predznak}
 \end{izrek}
@@ -570,6 +554,8 @@ Pri izbiri napačnega predznaka namreč lahko pride do stika v obliki "špice".}
 
 \todo{nekaj za zaključek poglavja in napeljavo na novo poglavje}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+
 \subsection{Geometrijska interpretacija $G^1$-zveznosti}
 \todo{ali naredim še za $G^2$ zveznost}
 
@@ -639,6 +625,9 @@ konstrukcijo geometrijsko zveznih ploskev.}
 V nadaljevanju tega dela se bomo ukvarjali z vrsto parametričnih ploskev, 
 imenovano Bézierove ploskve, in s pogoji, ki morajo veljati zanje, da je stik 
 med njimi geometrijsko zvezen. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Konstrukcija geometrijsko zveznih Bezierovih ploskev 
 iz tenzorskega produkta}
@@ -724,6 +713,8 @@ $\Delta^{0,s} \mathbf{b}_{i,j} = \Delta^{0,s-1} \mathbf{b}_{i,j+1}-\Delta^{0,s-1
 %posebej lahko napišeš (ali dodaš) odvode 1. stopnje
 %dodaj pogoje gladkosti za C1 ?
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{$C^n$-zveznost med dvema Bézierovima ploskvama 
 iz tenzorskega produkta}\label{cn.zv.}
 
@@ -769,6 +760,8 @@ stiku $C^r$-zvezni:
   \frac{1}{(u_0-u_1)^k}\Delta^{k,0}\ddd{r}_{0,j}=\frac{1}{(u_2-u_1)^k}\sum_{j=0}^n\Delta^{k,0}
   \ddd{s}_{0,j},\textrm{ }k=1,\ldots,r.
 \end{align}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
 \subsection{$G^n$-zveznost med dvema Bézierovima\\ ploskvama iz tenzorskega produkta}
 
@@ -824,7 +817,7 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   Velja še $D(y)E_1(y)\neq 0$ za $y\in [0,1]$, za stopnje polinomov pa velja:\\
   $st(D)\leq n_r + n_c -1,$\\
   $st(E_i)\leq (2i-2)n_r + in_s +in_c -2i +1$ in\\
-  $st(F_i)\leq (2i-1)n_r +in_s + (i-1)n_c -2i +1.$
+  $st(F_i)\leq (2i-1)n_r +in_s + (i-1)n_c -2i +2.$
 \end{izrek}
 
 \begin{proof}
@@ -1168,6 +1161,9 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   S tem smo dokazali izrek še za $k>1$.
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %\subsection{Kompatibilnostni pogoji}
 %
 %enačba \ref{eq13}
@@ -1290,6 +1286,7 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
 \todo{nek uvod, navezava na prejšnje poglavje}
 
 \subsection{Konstrukcija $G^1$-zveznih Bézierjevih ploskev iz tenzorskega produkta}
+\label{g1primeri}
 
 V tem podpoglavju si bomo ogledali, kako na različne načine konstruirati ploskvi, ki 
 sta na stiku $G^1$-zvezni, torej kakšne pogoje prinesejo različni načini konstrukcije 
@@ -1365,8 +1362,10 @@ z rezultatom, dobljenim v primeru \ref{primer1}.
 Izrek \ref{izrek1} pravi, da je stik obeh ploskev $G^1$-zvezen, natanko tedaj ko 
 obstajata $C^1$ funkciji 
 $\alpha_1(v)$ in $\beta_1(v)$, da velja 
-$$\frac{\partial \ddd{S}}{\partial u}|_{u=0} = \alpha_1(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0} + 
-\beta_1(v)\frac{\partial \ddd{R}}{\partial v}|_{u=0},$$
+\begin{align}\label{eq33}
+\frac{\partial \ddd{S}}{\partial u}|_{u=0} = \alpha_1(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0} + 
+\beta_1(v)\frac{\partial \ddd{R}}{\partial v}|_{u=0},
+\end{align}
 kjer je $\alpha_1(v)\neq 0$ na intervalu $[0,1]$ in ima ustrezen predznak.
 V našem primeru gre za polinomske ploskve, zato lahko uporabimo izrek \ref{izrek2},
 ki pove, da to velja natanko tedaj, 
@@ -1495,8 +1494,9 @@ vektorjev $\ddd{q}_{1,2}$ in $\ddd{p}_{1,2}$, zahtevamo le še koplanarnost.
 Ena izmed omejitev, ki veljajo za parametre $e_0$, $f_0$ in $f_1$, je, da 
 mora biti $e_0<0$,
 saj bi imel v nasprotnem primeru stik ploskev obliko špice. 
-Dva izmed teh parametrov sta določena z enačbama \ref{eq18} in \ref{eq19}, 
-eden pa je prost, z njim lahko spreminjamo obliko končne ploskve.
+Parametri so določena z enačbama \ref{eq18} in \ref{eq19}. 
+\todo{kako se jih izračuna- normala?} 
+%eden pa je prost, z njim lahko spreminjamo obliko končne ploskve.
 \todo{?}Če imamo  
 $e_0=-1$, $f_0=0$ in $f_1=0$, dobimo enak rezultat kot v primeru \ref{primer1}, 
 v katerem smo iskali pogoje za $C^1$-zveznost. Z drugačno izbiro parametrov pa 
@@ -1515,8 +1515,8 @@ prosti. Enako velja za vse ostale notranje kontrolne točke.
 
 \begin{primer}\label{primer3}
   Oglejmo si še nekoliko drugačen primer konstrukcije $G^1$-zveznih zlepkov dveh ploskev. 
-  Stopnja polinoma $D(v)$ naj bo znova 0, stopnja $F_1(v)$ pa 1. Ker pa želimo 
-  več parametrov, ki bodo določali obliko dobljene ploskve, naj bo polinom $E_1(v)$ 
+  Stopnja polinoma $D(v)$ naj bo znova 0, stopnja $F_1(v)$ pa 1, med tem ko naj bo 
+  polinom $E_1(v)$ 
   stopnje 1. Da bomo v tem primeru na obeh straneh enačbe \ref{eq15} dobili 
   Bézierjevo krivuljo stopnje 3, moramo znižati stopnjo krivulje 
   $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$. 
@@ -1574,10 +1574,11 @@ oziroma vektorjema $\ddd{p}_{1,2}$ in $\ddd{p}_{1,3}$, dobimo naslednji enačbi:
 $$\ddd{q}_{1,1}=e_0\ddd{p}_{1,1}+\frac{1}{3}(e_1-e_0)\ddd{p}_{1,0}+\frac{1}{3}f_1\ddd{z}_0+\frac{2}{3}f_0\ddd{z}_1$$
 $$\ddd{q}_{1,2}=e_1\ddd{p}_{1,2}+\frac{1}{3}(e_0-e_1)\ddd{p}_{1,3}+\frac{2}{3}f_1\ddd{z}_1+\frac{1}{3}f_0\ddd{z}_2.$$
 
-Vidimo, da za razliko od primera \ref{primer2}, kjer smo imeli zgolj 3 parametre 
-za določanje oblike in od teh le enega prostega, tu dobimo 4 parametre: $e_0$, $e_1$, $f_0$ in $f_1$. 
-Dva izmed njih sta določena z enačbama \ref{eq18} in \ref{eq19}, druga dva pa sta prosta. 
-S tem dobimo nove možnosti za obliko dobljene ploskve.
+%Vidimo, da za razliko od primera \ref{primer2}, kjer smo imeli zgolj 3 parametre 
+%za določanje oblike in od teh le enega prostega, tu dobimo 4 parametre: $e_0$, $e_1$, $f_0$ in $f_1$. 
+%Dva izmed njih sta določena z enačbama \ref{eq18} in \ref{eq19}, druga dva pa sta prosta. 
+%S tem dobimo nove možnosti za obliko dobljene ploskve.
+\todo{parametri e1, e2, f1, f2 določeni iz enačb za robne kontrolne točke?}
 
 Da se izognemo možnosti, kjer ima dobljeni zlepek obliko špice, mora veljati 
 omejitev $E_1(v)<0$ za $v\in [0,1]$, s čimer dobimo nekaj omejitev za izbiro 
@@ -1610,9 +1611,74 @@ niso proste in je zato v splošnem nemogoče konstruirati bezierjevo ploskev
 vnaprej določene stopnje, ki je g zvezna z neko vnaprej določeno bez ploskvijo, 
 ali kaj?}
 
-\todo{primer trikotna}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\todo{primer c2 in g2}
+\subsection{Konstrukcija $G^2$-zveznih Bézierovih ploskev iz tenzorskega produkta}
+\todo{tudi $C^2$?}
+
+V tem podpoglavju si oglejmo še primer konstrukcije dveh ploskev, ki sta na 
+skupnem robu $G^2$-zvezni. \todo{še kaj?} 
+
+Naj bosta $\ddd{R}$ in $\ddd{S}$ bikvintični Bézierovi ploskvi iz tenzorskega produkta: 
+
+$$\ddd{R}(u,v)=\sum_{i=0}^5\sum_{j=0}^5\ddd{P}_{i,j}B_i^5(u)B_j^5(v)$$
+in 
+$$\ddd{S}(u,v)=\sum_{i=0}^5\sum_{j=0}^5\ddd{Q}_{i,j}B_i^5(u)B_j^5(v),$$
+kjer je $u,v\in[0,1]$. Stikata naj se v krivulji $\ddd{C}(v)=\ddd{R}(0,v)=
+\ddd{S}(0,v)$ s kontrolnimi točkami $\{\ddd{Z}_i; i=0,\ldots,5\}$, kjer je 
+$\ddd{Z}_i=\ddd{P}_{0,i}=\ddd{Q}_{0,i}$. Tako kot v podpoglavju \ref{g1primeri} predpostavljajmo, da imamo 
+že vnaprej določene robne krivulje obeh ploskev, znova nas zanima, kakšne pogoje 
+prinese zahteva $G^2$-zveznosti za notranje kontrolne točke. Ker gre sedaj za zveznost 
+stopnje 2, bomo poleg kontrolnih točk $\ddd{P}_{1,i}$ in $\ddd{Q}_{i,1}$, $i=1,2$, 
+opazovali tudi kontrolne točke $\ddd{P}_{2,i}$ in $\ddd{Q}_{2,i}$, $i=1,2$. 
+\nevem{prestavi na kasneje?}Poleg 
+oznak za kontrolne vektorje $\ddd{p}_{1,j}$, $\ddd{q}_{1,j}$ in $\ddd{z}_{i}$, 
+kjer je $j=0,\ldots,5$ in $i=0,\ldots,4$, že predstavljenih v podpoglavju \ref{g1primeri}, 
+vpeljimo še oznake za kontrolne vektorje, ki nastopajo v drugih odvodih obeh ploskev. 
+Naj bo 
+\begin{align*}
+&\ddd{p}_{2,j}=\ddd{P}_{2,j}-2\ddd{P}_{1,j}+\ddd{P}_{0,j},\\
+&\ddd{q}_{2,j}=\ddd{Q}_{2,j}-2\ddd{Q}_{1,j}+\ddd{Q}_{0,j}\textrm{ za }j=0,\ldots,5,\\
+&\ddd{s}_k=\ddd{Z}_{k+2}-2\ddd{P}_{k+1}+\ddd{P}_{k}\textrm{ za }k=0,\ldots,3\\
+&\textrm{ter}\\
+&\ddd{v}_j=\ddd{P}_{1,j+1}-\ddd{P}_{0,j+1}-\ddd{P}_{1,j}+\ddd{P}_{0,j}\textrm{ za }j=0,\ldots,4.
+\end{align*}
+\nevem{prestavi na kasneje?}
+
+Po izreku \ref{izrek1} bosta ploskvi $\ddd{R}$ in $\ddd{S}$ $G^2$-zvezni na skupnem 
+robu, natanko tedaj, ko bodo obstajale 
+$C^2$-funkcije $\alpha_1(v)$, $\beta_1(v)$, $\alpha_2(v)$ in $\beta_2(v)$, 
+kjer je $\alpha_1(v)\neq 0$ in ustreznega predznaka na intervalu $[0,1]$, da bo 
+veljala enakost \ref{eq33} ter 
+\begin{equation}\label{eq34}
+  \begin{split}
+\frac{\partial^2\ddd{S}}{\partial u^2}|_{u=0}(v)=&\alpha_2(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0}(v)
++\beta_2(v)\frac{\partial\ddd{R}}{\partial v}|_{u=0}(v)+\alpha_1^2(v)\frac{\partial^2\ddd{R}}{\partial u^2}|_{u=0}(v)+\\
+&+2\alpha_1(v)\beta_1(v)\frac{\partial^2\ddd{R}}{\partial u \partial v}|_{u=0}(v)+\beta_1^2(v)
+\frac{\partial^2\ddd{R}}{\partial v^2}|_{u=0}(v).
+  \end{split}
+\end{equation}
+Ker gre znova za Bézierove ploskve iz tenzorskega produkta, lahko uporabimo 
+izrek \ref{izrek2}, po katerem sta ploskvi $G^2$-zvezni na skupnem robu natanko tedaj, 
+ko obstajajo polinomi $D(v)$, $E_1(v)$, $F_1(v)$, $E_2(v)$ in $E_2(v)$, kjer je 
+$D(v)E_1(v)\neq 0$ in polinom $E_1(v)$ ustreznega predznaka na intervalu $[0,1]$, da 
+velja enakost \ref{eq14} ter 
+\begin{equation}\label{eq35}
+  \begin{split}
+D^3(v)\frac{\partial^2\ddd{S}}{\partial u^2}|_{u=0}(v)=&E_2(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0}(v)
++F_2(v)\frac{\partial\ddd{R}}{\partial v}|_{u=0}(v)+D(v)E_1^2(v)\frac{\partial^2\ddd{R}}{\partial u^2}|_{u=0}(v)+\\
+&+2D(v)E_1(v)F_1(v)\frac{\partial^2\ddd{R}}{\partial u \partial v}|_{u=0}(v)+D(v)F_1^2(v)
+\frac{\partial^2\ddd{R}}{\partial v^2}|_{u=0}(v).
+  \end{split}
+\end{equation}
+Pri tem mora za stopnje polinomov veljati naslednje: $st(D)\leq 9$, $st(E_1)\leq 9$, 
+$st(F_1)\leq 10$, $st(E_2)\leq 27$ in $st(F_2)\leq 28$. 
+
+Sklicujmo se na enakost \ref{eq28} in dobimo naslednje rezultate za parcialne odvode 
+parametrizacij ploskev $\ddd{R}$ in $\ddd{S}$ v $u=0$:  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Konsrtrukcija $G^1$-zveznih trikotnih Bézierjevih ploskev}
 
@@ -1707,6 +1773,8 @@ kjer so $\ddd{b}_{1,0,0}^{n-1}(\ddd{u})$, $\ddd{b}_{0,1,0}^{n-1}(\ddd{u})$ in
 $\ddd{b}_{0,0,1}^{n-1}(\ddd{u})$ točke, dobljene po $n-1$ korakih de Casteljaujevega 
 algoritma, ki razpenjajo tangentno ravnino na točko $\ddd{P}(\ddd{p})$. 
 Ta ugotovitev bo pomembna pri konstrukciji $G^1$-zveznih trikotnih ploskev. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
 \subsection{Konstrukcija $C^1$-zveznih trikotnih Bézierovih ploskev}
 
@@ -1849,6 +1917,7 @@ $$\ddd{s}_{1,0,0}=-\ddd{r}_{1,0,0}+2\ddd{r}_{0,1,0},$$
 kar pa v našem primeru ne drži.
 \end{primer}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Konstrukcija $G^1$-zveznih trikotnih Bézierovih ploskev}
 
@@ -2049,19 +2118,20 @@ primeru za ploskvi stopnje 3.
     \end{split}
   \end{equation}
 
-  V primeru, da imamo vnaprej podane robne kontrolne točke ploskev $\ddd{R}$ 
-  in $\ddd{S}$, določiti pa moramo notranji kontrolni točki $\ddd{r}_{1,1,1}$ 
-  in $\ddd{s}_{1,1,1}$, nam enačbi \ref{eq24} in \ref{eq25} določata dva izmed 
-  parametrov $\lambda_0$, $\lambda_1$, $\mu_0$ in $\mu_1$, druga dva pa sta prosta. 
-  Po izbiri prostih parametrov, sta v primeru, da je $\lambda_0\neq \lambda_1$, 
-  kontrolni točki $\ddd{s}_{1,1,1}$ in $\ddd{r}_{1,1,1}$ natančno določeni z 
-  enačbama \ref{eq26} in \ref{eq27}. 
-  \todo{bolj natančna razlaga z determinanto sistema?}
-
-  Dobljeni rezultat primerjamo z rezultatom primera \ref{primerT2}. V primeru 
-  $C^1$-zveznosti je ena izmed točk $\ddd{r}_{1,1,1}$ in $\ddd{s}_{1,1,1}$ 
-  sicer prosta, druga pa določena z njo, vendar nimamo nobenih prostih parametrov, 
-  ki bi dodatno vplivali na obliko zlepka.
+  \todo{primerjava prostih in določenih kontrolnih točk}
+  %V primeru, da imamo vnaprej podane robne kontrolne točke ploskev $\ddd{R}$ 
+  %in $\ddd{S}$, določiti pa moramo notranji kontrolni točki $\ddd{r}_{1,1,1}$ 
+  %in $\ddd{s}_{1,1,1}$, nam enačbi \ref{eq24} in \ref{eq25} določata dva izmed 
+  %parametrov $\lambda_0$, $\lambda_1$, $\mu_0$ in $\mu_1$, druga dva pa sta prosta. 
+  %Po izbiri prostih parametrov, sta v primeru, da je $\lambda_0\neq \lambda_1$, 
+  %kontrolni točki $\ddd{s}_{1,1,1}$ in $\ddd{r}_{1,1,1}$ natančno določeni z 
+  %enačbama \ref{eq26} in \ref{eq27}. 
+  %\todo{bolj natančna razlaga z determinanto sistema?}
+%
+  %Dobljeni rezultat primerjamo z rezultatom primera \ref{primerT2}. V primeru 
+  %$C^1$-zveznosti je ena izmed točk $\ddd{r}_{1,1,1}$ in $\ddd{s}_{1,1,1}$ 
+  %sicer prosta, druga pa določena z njo, vendar nimamo nobenih prostih parametrov, 
+  %ki bi dodatno vplivali na obliko zlepka.
 
   %Oglejmo si še, kako je s kontrolnimi točkami v primeru, da imamo v celoti 
   %določeno ploskev $\ddd{R}$, določili pa bi radi kontrolne točke ploskve 
@@ -2075,6 +2145,29 @@ primeru s konsistentnostjo sistema?}
 \end{primer}
 
 \todo{primer od prej, ki ni šel s c1 samo da ga zdaj rešimo z g1?}
+
+%-------------------------------------------------------------------------------
+%
+%\section{4 ploskve}
+%
+%ko imamo enkrat pogoje med dvema ploskvama, problem med večimi ploskvami okrog 
+%skupnega vozlišča, problem zapolnjevanja poligonskih lukenj
+%
+%problem okrog vozlišča je odvisen od števila ploskev, sodo/liho število ploskev 
+%(kaj je če je liho in kaj če sodo?) (dokaz tega?)
+%
+%4 ploskve, po 2 imata skupno robno krivuljo, dotikajo se v skupnem vozlišču V, 
+%dodatni kompatibilnostni pogoji v vozlišču V
+%
+%ploskve $\ddd{R}^{(1)}$, $\ddd{R}^{(2)}$, $\ddd{R}^{(3)}$, $\ddd{R}^{(4)}$, 
+%$\ddd{C}^{(1)}=\ddd{R}^{(1)}(1,v)=\ddd{R}^{(2)}(0,v)$, 
+%$\ddd{C}^{(2)}=\ddd{R}^{(2)}(u,1)=\ddd{R}^{(3)}(u,0)$
+%$\ddd{C}^{(3)}=\ddd{R}^{(3)}(1,v)=\ddd{R}^{(2)}(0,v)$
+%
+%iz izreka 1
+
+
+
 
 %\section{Tehnični napotki za pisanje}
 %

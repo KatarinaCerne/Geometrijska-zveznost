@@ -1639,7 +1639,7 @@ Naj bo
 \begin{align*}
 &\ddd{p}_{2,j}=\ddd{P}_{2,j}-2\ddd{P}_{1,j}+\ddd{P}_{0,j},\\
 &\ddd{q}_{2,j}=\ddd{Q}_{2,j}-2\ddd{Q}_{1,j}+\ddd{Q}_{0,j}\textrm{ za }j=0,\ldots,5,\\
-&\ddd{s}_k=\ddd{Z}_{k+2}-2\ddd{P}_{k+1}+\ddd{P}_{k}\textrm{ za }k=0,\ldots,3\\
+&\ddd{s}_k=\ddd{P}_{k+2}-2\ddd{P}_{k+1}+\ddd{P}_{k}\textrm{ za }k=0,\ldots,3\\
 &\textrm{ter}\\
 &\ddd{v}_j=\ddd{P}_{1,j+1}-\ddd{P}_{0,j+1}-\ddd{P}_{1,j}+\ddd{P}_{0,j}\textrm{ za }j=0,\ldots,4.
 \end{align*}
@@ -1674,8 +1674,132 @@ D^3(v)\frac{\partial^2\ddd{S}}{\partial u^2}|_{u=0}(v)=&E_2(v)\frac{\partial \dd
 Pri tem mora za stopnje polinomov veljati naslednje: $st(D)\leq 9$, $st(E_1)\leq 9$, 
 $st(F_1)\leq 10$, $st(E_2)\leq 27$ in $st(F_2)\leq 28$. 
 
+Zaradi enostavnosti naj bo stopnja polinoma $D(v)$ enaka 0. Torej lahko brez škode za 
+splošnost predpostavimo, da je $D(v)\equiv 1$. Stopnje preostalih polinomov bomo 
+izbrali v nadaljevanju.
+
 Sklicujmo se na enakost \ref{eq28} in dobimo naslednje rezultate za parcialne odvode 
-parametrizacij ploskev $\ddd{R}$ in $\ddd{S}$ v $u=0$:  
+parametrizacij ploskev $\ddd{R}$ in $\ddd{S}$ v $u=0$: 
+
+\begin{align*}
+&\frac{\partial \ddd{R}}{\partial u}|_{u=0}=5\sum_{j=0}^5\ddd{p}_{1,j}B_j^5(v)&&
+\frac{\partial \ddd{R}}{\partial v}|_{u=0}=5\sum_{j=0}^4\ddd{z}_jB_j^4(v)\\
+&\frac{\partial^2\ddd{S}}{\partial u^2}|_{u=0}=5\cdot 4\sum_{j=0}^5\ddd{q}_{2,j}B_j^5(v)&&
+\frac{\partial^2\ddd{R}}{\partial u^2}|_{u=0}=5\cdot 4\sum_{j=0}^5\ddd{p}_{2,j}B_j^5(v)\\
+&\frac{\partial^2\ddd{R}}{\partial v^2}|_{u=0}=5\cdot 4\sum_{j=0}^3\ddd{s}_jB_j^3(v)&&
+\frac{\partial^2\ddd{R}}{\partial u \partial v}|_{u=0}=5\cdot 5\sum_{j=0}^4\ddd{v}_jB_j^4(v).
+\end{align*}
+
+Dobljene izraze za odvode vstavimo v enačbi \ref{eq14} in \ref{eq35}. Oglejmo si, kakšne 
+pogoje nam ti dve enačbi data pri vrednostih $v=0$ in $v=1$, torej kakšni pogoji 
+morajo veljati na robovih obeh ploskev, da bo njun stik $G^2$-zvezen. 
+Pri vrednosti $v=0$ dobimo
+\begin{align}\label{eq36} 
+\ddd{q}_{1,0}=e_{10}\ddd{p}_{1,0}+f_{10}\ddd{z}_0
+\end{align}
+in 
+\begin{align}\label{eq37}
+\ddd{q}_{2,0}=\frac{1}{4}e_{20}\ddd{p}_{1,0}+\frac{1}{4}f_{20}\ddd{z}_0+e_{10}^2
+\ddd{p}_{2,0}+\frac{5}{2}e_{10}f_{10}\ddd{v}_0+f_{10}^2\ddd{s}_0.
+\end{align}
+Tu smo vpeljali oznake $e_{10}=E_1(0)$, $f_{10}=F_1(0)$, $e_{20}=E_2(0)$ in $f_{20}=F_2(0)$. 
+Pri vrednosti $v=1$ pa dobimo 
+\begin{align}\label{eq38} 
+  \ddd{q}_{1,5}=e_{11}\ddd{p}_{1,5}+f_{11}\ddd{z}_4
+\end{align}
+in 
+\begin{align}\label{eq39}
+  \ddd{q}_{2,5}=\frac{1}{4}e_{21}\ddd{p}_{1,5}+\frac{1}{4}f_{21}\ddd{z}_4+e_{11}^2
+  \ddd{p}_{2,5}+\frac{5}{2}e_{11}f_{11}\ddd{v}_4+f_{11}^2\ddd{s}_3,
+\end{align}
+kjer smo vpeljali oznake $e_{11}=E_1(1)$, $f_{11}=F_1(1)$, $e_{21}=E_2(1)$ in $f_{21}=F_2(1)$. 
+
+Ker smo predpostavili, da imamo vnaprej določene robove obeh ploskev, so vsi kontrolni 
+vektorji, ki nastopajo v zgornjih enačbah, razen vektorjev $\ddd{v}_0$ in $\ddd{v}_4$ 
+znani. Enačbi \ref{eq36} in \ref{eq38} enolično določata vrednosti parametrov 
+$e_{10}$, $f_{10}$, $e_{11}$ in $f_{11}$. \todo{glej primer g1} 
+
+------------------------------------------
+
+\begin{align*}
+  &E_1(v)=p_{10}(1-v)^2+2p_{1m}v(1-v)+p_{11}v^2\\
+  &F_1(v)=q_{10}(1-v)+q_{11}v\\
+  &E_2(v)=p_{20}(1-v)^2+2p_{1m}v(1-v)+p_{21}v^2\\
+  &F_2(v)=q_{20}(1-v)+q_{21}v\\
+\end{align*}
+
+\begin{align*}
+  \frac{1}{5}\frac{\partial \ddd{R}}{\partial u}|_{u=0}=\sum_{i=0}^5\ddd{p}_{1,i}B_i^5(v)=
+  \sum_{i=0}^3\ddd{\tilde{p}}_iB_i^3(v)
+\end{align*}
+$\ddd{\tilde{p}}_0=\ddd{p}_{1,0}$, $\ddd{\tilde{p}_3}=\ddd{p}_{1,5}$
+
+\begin{align*}
+\frac{1}{20}\frac{\partial^2 \ddd{R}}{\partial u^2}|_{u=0}=\sum_{i=0}^5\ddd{p}_{2,i}
+=(1-v)\ddd{p}_{2,0}+v\ddd{p}_{2,5}
+\end{align*}
+
+\begin{align}\label{eq40}
+&\ddd{p}_{1,1}=\frac{1}{5}(3\ddd{\tilde{p}}_1+2\ddd{p}_{1,0})&&
+\ddd{p}_{1,4}=\frac{1}{5}(3\ddd{\tilde{p}}_2+2\ddd{p}_1,5)
+\end{align}
+\begin{align}\label{eq41}
+&\ddd{p}_{1,2}=\frac{1}{10}(6\ddd{\tilde{p}}_1+3\ddd{\tilde{p}}_2+\ddd{p}_{1,0})&&
+\ddd{p}_{1,3}=\frac{1}{10}(3\ddd{\tilde{p}}_1+6\ddd{\tilde{p}}_2+\ddd{p}_{1,5})
+\end{align}
+
+\begin{align}
+&\ddd{p}_{2,1}=\frac{1}{5}(4\ddd{p}_{2,0}+\ddd{p}_{2,5})&&
+\ddd{p}_{2,2}=\frac{1}{10}(6\ddd{p}_{2,0}+4\ddd{p}_{2,5})\\
+&\ddd{p}_{2,3}=\frac{1}{10}(4\ddd{p}_{2,0}+6\ddd{p}_{2,5})&&
+\ddd{p}_{2,4}=\frac{1}{5}(\ddd{p}_{2,0}+4\ddd{p}_{2,5})
+\end{align}
+
+$\ddd{\tilde{p}}_1=\ddd{p}_{1,0}+\frac{5}{3}\ddd{v}_0$ 
+$\ddd{\tilde{p}}_2=\ddd{p}_{1,5}-\frac{5}{3}\ddd{v}_4$
+
+\begin{align*}
+&\ddd{q}_{1,1}=\frac{1}{5}(3p_{10}\ddd{\tilde{p}}_1+2p_{1m}\ddd{p}_{1,0}+
+q_{11}\ddd{z}_0+4q_{10}\ddd{z}_1)\\
+&\ddd{q}_{1,2}=\frac{1}{10}(6p_{1m}\ddd{\tilde{p}}_1+3p_{10}\ddd{\tilde{p}}_2+
+p_{11}\ddd{p}_{1,0}+4q_{11}\ddd{z}_1+6q_{10}\ddd{z}_2)\\
+&\ddd{q}_{1,3}=\frac{1}{10}(3p_{11}\ddd{\tilde{p}}_1+6p_{1m}\ddd{\tilde{p}}_2+
+p_{10}\ddd{p}_{1,5}+6q_{11}\ddd{z}_2+4q_{10}\ddd{z}_3)\\
+&\ddd{q}_{1,4}=\frac{1}{5}(3p_{11}\ddd{\tilde{p}}_2+2p_{1m}\ddd{p}_{1,5}+
+4q_{11}\ddd{z}_3+q_{10}\ddd{z}_4)
+\end{align*}
+
+\begin{align*}
+5\ddd{q}_{2,1}=&4p_{10}p_{1m}\ddd{p}_{2,0}+p_{10}^2\ddd{p}_{2,5}+p_{10}q_{10}(\ddd{\tilde{p}}_2-\ddd{\tilde{p}}_1)
++(2p_{1m}q_{10}+p_{10}q_{11})\ddd{v}_0+3q_{10}^2\ddd{s}_1+\\
+&+2q_{10}q_{11}\ddd{s}_0+\frac{1}{4}(3p_{20}\ddd{\tilde{p}}_1+2p_{2m}\ddd{p}_{1,0}
++q_{21}\ddd{z}_0+4q_{20}\ddd{z}_1)
+\end{align*}
+
+\begin{align*}
+10\ddd{q}_{2,2}=&(2p_{10}p_{11}+4p_{1m}^2)\ddd{p}_{2,0}+4p_{10}p_{1m}\ddd{p}_{2,5}+
++(p_{10}q_{11}+2p_{1m}q_{10})(\ddd{\tilde{p}}_2-\ddd{\tilde{p}}_1)+\\
+&+(2p_{1m}q_{11}+p_{11}q_{10})\ddd{v}_0+p_{10}q_{10}\ddd{v}_4+3q_{10}^2\ddd{s}_2+
+6q_{10}q_{11}\ddd{s}_1+q_{11}^2\ddd{s}_0+\\
+&+\frac{1}{4}(6p_{2m}\ddd{\tilde{p}}_1+3p_{20}\ddd{\tilde{p}}_2+p_{21}\ddd{p}_{1,0}+
+4q_{21}\ddd{z}_1+6q_{20}\ddd{z}_2)
+\end{align*}
+
+\begin{align*}
+  10\ddd{q}_{2,3}=&(2p_{10}p_{11}+4p_{1m}^2)\ddd{p}_{2,5}+4p_{10}p_{1m}\ddd{p}_{2,0}+
+  +(p_{11}q_{10}+2p_{1m}q_{11})(\ddd{\tilde{p}}_2-\ddd{\tilde{p}}_1)+\\
+  &+(2p_{1m}q_{10}+p_{10}q_{11})\ddd{v}_4+p_{11}q_{11}\ddd{v}_0+3q_{11}^2\ddd{s}_1+
+  6q_{10}q_{11}\ddd{s}_2+q_{10}^2\ddd{s}_3+\\
+  &+\frac{1}{4}(6p_{2m}\ddd{\tilde{p}}_2+3p_{21}\ddd{\tilde{p}}_1+p_{20}\ddd{p}_{1,5}+
+  4q_{21}\ddd{z}_3+6q_{21}\ddd{z}_2)
+  \end{align*}
+
+\begin{align*}
+  5\ddd{q}_{2,4}=&4p_{10}p_{1m}\ddd{p}_{2,5}+p_{11}^2\ddd{p}_{2,5}+p_{11}q_{11}(\ddd{\tilde{p}}_2-\ddd{\tilde{p}}_1)
+  +(2p_{1m}q_{11}+p_{11}q_{10})\ddd{v}_4+3q_{11}^2\ddd{s}_2+\\
+  &+2q_{10}q_{11}\ddd{s}_3+\frac{1}{4}(3p_{21}\ddd{\tilde{p}}_2+2p_{2m}\ddd{p}_{1,5}
+  +q_{21}\ddd{z}_3+4q_{20}\ddd{z}_4)
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

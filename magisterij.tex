@@ -686,6 +686,16 @@ Točke $\ddd{b}_i$ imenujemo \emph{kontrolne točke krivulje}.
 \end{definicija}
 Tudi za Bézierove krivulje velja, da interpolirajo prvo in zadnjo kontrolno točko. 
 
+V nekaterih primerih v nadaljevanju bo, da dosežemo ujemanje stopenj Bézierjevih 
+krivulj v enačbah, potrebno zvišati oziroma znižati stopnjo Bézierjeve krivulje, 
+torej opisati oziroma aproksimirati dano krivuljo s krivuljo višje oziroma nižje 
+stopnje. Naj bodo $\ddd{b}_0,\ddd{b}_1,\ldots,\ddd{b}_n$ kontrolne točke Bézierjeve 
+krivulje stopnje $n$. To krivuljo lahko opišemo s krivuljo stopnje $n+k$, kjer je 
+$k\in \N$, njene kontrolne točke pa se izražajo na naslednji način:
+\begin{align}\label{eq42}
+\ddd{b}_i^{(k)}=\sum_{j=0}^n\ddd{b}_j{n \choose j}\frac{{k \choose i-j}}{{n+k \choose i}}.
+\end{align}
+
 V nadaljevanju, ko bomo preučevali geometrijsko zveznost Bézierovih ploskev 
 iz tenzorskega produkta, bomo imeli opravka predvsem z odvodi Bézierovih krivulj 
 in ploskev. 
@@ -1631,7 +1641,7 @@ $\ddd{Z}_i=\ddd{P}_{0,i}=\ddd{Q}_{0,i}$. Tako kot v podpoglavju \ref{g1primeri} 
 prinese zahteva $G^2$-zveznosti za notranje kontrolne točke. Ker gre sedaj za zveznost 
 stopnje 2, bomo poleg kontrolnih točk $\ddd{P}_{1,i}$ in $\ddd{Q}_{i,1}$, $i=1,2$, 
 opazovali tudi kontrolne točke $\ddd{P}_{2,i}$ in $\ddd{Q}_{2,i}$, $i=1,2$. 
-\nevem{prestavi na kasneje?}Poleg 
+Poleg 
 oznak za kontrolne vektorje $\ddd{p}_{1,j}$, $\ddd{q}_{1,j}$ in $\ddd{z}_{i}$, 
 kjer je $j=0,\ldots,5$ in $i=0,\ldots,4$, že predstavljenih v podpoglavju \ref{g1primeri}, 
 vpeljimo še oznake za kontrolne vektorje, ki nastopajo v drugih odvodih obeh ploskev. 
@@ -1643,7 +1653,6 @@ Naj bo
 &\textrm{ter}\\
 &\ddd{v}_j=\ddd{P}_{1,j+1}-\ddd{P}_{0,j+1}-\ddd{P}_{1,j}+\ddd{P}_{0,j}\textrm{ za }j=0,\ldots,4.
 \end{align*}
-\nevem{prestavi na kasneje?}
 
 Po izreku \ref{izrek1} bosta ploskvi $\ddd{R}$ in $\ddd{S}$ $G^2$-zvezni na skupnem 
 robu, natanko tedaj, ko bodo obstajale 
@@ -1714,31 +1723,77 @@ in
 \end{align}
 kjer smo vpeljali oznake $e_{11}=E_1(1)$, $f_{11}=F_1(1)$, $e_{21}=E_2(1)$ in $f_{21}=F_2(1)$. 
 
-Ker smo predpostavili, da imamo vnaprej določene robove obeh ploskev, so vsi kontrolni 
-vektorji, ki nastopajo v zgornjih enačbah, razen vektorjev $\ddd{v}_0$ in $\ddd{v}_4$ 
-znani. Enačbi \ref{eq36} in \ref{eq38} enolično določata vrednosti parametrov 
-$e_{10}$, $f_{10}$, $e_{11}$ in $f_{11}$. \todo{glej primer g1} 
+Po izreku \ref{izrek2} mora za polinom $E_1(v)$ veljati, da je za $v\in [0,1]$ različen 
+od 0, da zagotovimo, da ploskvi ne bosta imeli stika v obliki špice, pa mora veljati 
+še $E_1(v)<0$ na intervalu $[0,1]$. Sledi, da mora veljati $e_{10}<0$ in $e_{11}<0$. 
 
-------------------------------------------
+Ker smo predpostavili, da imamo vnaprej določene robove obeh ploskev, so vsi kontrolni 
+vektorji, ki nastopajo v zgornjih enačbah(\ref{eq36}-\ref{eq39}), razen vektorjev $\ddd{v}_0$ in $\ddd{v}_4$ 
+znani. Enačbi \ref{eq36} in \ref{eq38} enolično določata vrednosti parametrov 
+$e_{10}$, $f_{10}$, $e_{11}$ in $f_{11}$. \todo{glej primer g1} Proste parametre oziroma 
+kontrolne točke nam bosta prinesli le enačbi \ref{eq37} in \ref{eq39}. 
+
+Najprej si oglejmo enačbo \ref{eq37} in obravnavajmo dva primera. V prvem primeru 
+naj bodo robovi krivulj izbrani na tak način, da 
+je koeficient pred vektorjem $\ddd{v}_0$ enak 0, torej da je $f_{10}=0$,
+v drugem primeru pa je različen od 0. 
+Z $\ddd{n}_1$ bomo označili enotsko normalo na ploskev v točki $\ddd{P}_{0,0}$. 
+Če je $f_{10}=0$, izgubimo člen, ki vsebuje $\ddd{v}_0$. To 
+pomeni, da so vsi vektorji, ki nastopajo v enačbi, že določeni. V enačbi se nam pojavita 
+le dva še neznana parametra $e_{20}$ in $f_{20}$, ki ju lahko določimo iz enačbe. 
+\todo{glej primer g1} \todo{skalarni produkt z normalo?} V tem primeru nam enačba 
+\ref{eq27} ne da nobenih prostih parametrov ali kontrolnih točk. Če pa je $f_{10}\neq 0$, 
+imamo na voljo dva različna scenarija. Prva možnost je, da projekcijo vektorja 
+$\ddd{v}_0$ na normalo $\ddd{n}_1$ ter parametra $e_{20}$ in $f_{20}$ določimo iz 
+enačbe \ref{eq37}, projekcija vektorja $\ddd{v}_0$ na tangentno ravnino na ploskev v 
+točki $\ddd{P}_{0,0}$ pa je prosta. 
+Druga možnost pa je, da sta parametra $e_{20}$ in $f_{20}$ prosta, vektor $\ddd{v}_0$ 
+pa je določen z enačbo \ref{eq37}. 
+
+Na enak način lahko analiziramo enačbo \ref{eq39}. V prvem primeru, kjer je $f_{11}=0$, 
+člen, ki vsebuje vektor $\ddd{v}_4$, izgine, parametra $e_{21}$ in $f_{21}$ pa sta 
+določena z enačbo \ref{eq39}. Če je $f_{11}\neq 0$ pa znova dobimo dve situaciji. Lahko 
+določimo projekcijo vektorja $\ddd{v}_4$ na normalo $\ddd{n}_2$ na ploskev v točki 
+$\ddd{P}_{0,5}$ ter parametra $e_{21}$ in $f_{2,1}$ iz enačbe \ref{eq39}, projekcija 
+vektorja $\ddd{v}_4$ na tangentno ravnino na ploskev v točki $\ddd{P}_{0,5}$ pa je 
+prosta, ali pa sta prosta parametra $e_{21}$ in $f_{21}$, vektor $\ddd{v}_4$ pa je 
+določen z enačbo \ref{eq39}. 
+
+Sedaj moramo izbrati polinome $E_1$, $E_2$, $F_1$ in $F_2$. Izbira njihovih stopenj je 
+v primeru $G^2$-zveznosti nekoliko težja kot v primeru $G^1$-zveznosti, saj so 
+odvisni od stopenj Bézierjevih krivulj tako v enačbi \ref{eq14} kot v enačbi \ref{eq35}. 
+Če bi želeli minimalne stopnje koeficientnih polinomov, bi lahko za $E_1(v)$ in 
+$E_2(v)$ izbrali konstanti, polinoma $F_1$ in $F_2$ pa bi izbrali linearna. V tem primeru 
+bi za prvih nekaj kontrolnih točk ploskve $\ddd{S}$ dobili enake pogoje, kot v 
+primeru \ref{primer2}, kontrolne točke ploskve $\ddd{R}$ pa bi bile proste. V nadaljevanju 
+pa si bomo raje ogledali, kako poteka konstrukcija, če sta polinoma $E_1(v)$ in 
+$E_2(v)$ stopnje 2, polinoma $F_1(v)$ in $F_2(v)$ pa linearna. Naj torej velja: 
 
 \begin{align*}
-  &E_1(v)=p_{10}(1-v)^2+2p_{1m}v(1-v)+p_{11}v^2\\
-  &F_1(v)=q_{10}(1-v)+q_{11}v\\
-  &E_2(v)=p_{20}(1-v)^2+2p_{1m}v(1-v)+p_{21}v^2\\
-  &F_2(v)=q_{20}(1-v)+q_{21}v\\
+  &E_1(v)=e_{10}(1-v)^2+2e_{1m}v(1-v)+e_{11}v^2\\
+  &F_1(v)=f_{10}(1-v)+f_{11}v\\
+  &E_2(v)=e_{20}(1-v)^2+2e_{1m}v(1-v)+e_{21}v^2\\
+  &F_2(v)=f_{20}(1-v)+f_{21}v.\\
 \end{align*}
+
+Da se bodo pri taki izbiri koeficientnih polinomov stopnje Bézierjevih krivulj v 
+enačbah \ref{eq14} in \ref{eq35} ujemale, moramo znižati stopnji parcialnih odvodov 
+$\frac{\partial \ddd{R}}{\partial u}$ in $\frac{\partial^2 \ddd{R}}{\partial u^2}$, 
+stopnja krivulje $\frac{\partial \ddd{R}}{\partial u}$ naj bo 3, stopnja krivulje 
+$\frac{\partial^2 \ddd{R}}{\partial u^2}$ pa naj bo 1. 
 
 \begin{align*}
   \frac{1}{5}\frac{\partial \ddd{R}}{\partial u}|_{u=0}=\sum_{i=0}^5\ddd{p}_{1,i}B_i^5(v)=
-  \sum_{i=0}^3\ddd{\tilde{p}}_iB_i^3(v)
+  \sum_{i=0}^3\ddd{\tilde{p}}_iB_i^3(v),
 \end{align*}
-$\ddd{\tilde{p}}_0=\ddd{p}_{1,0}$, $\ddd{\tilde{p}_3}=\ddd{p}_{1,5}$
-
 \begin{align*}
 \frac{1}{20}\frac{\partial^2 \ddd{R}}{\partial u^2}|_{u=0}=\sum_{i=0}^5\ddd{p}_{2,i}
-=(1-v)\ddd{p}_{2,0}+v\ddd{p}_{2,5}
+=(1-v)\ddd{p}_{2,0}+v\ddd{p}_{2,5}.
 \end{align*}
 
+Kontrolne vektorje $\ddd{p}_{1,i}$, $i=0,\ldots,5$ lahko izrazimo z vektorji 
+$\ddd{\tilde{p}}_i$ s pomočjo enačb za višanje stopnje Bézierjeve krivulje \todo{sklic} 
+na naslednji način:
 \begin{align}\label{eq40}
 &\ddd{p}_{1,1}=\frac{1}{5}(3\ddd{\tilde{p}}_1+2\ddd{p}_{1,0})&&
 \ddd{p}_{1,4}=\frac{1}{5}(3\ddd{\tilde{p}}_2+2\ddd{p}_1,5)
@@ -1747,42 +1802,60 @@ $\ddd{\tilde{p}}_0=\ddd{p}_{1,0}$, $\ddd{\tilde{p}_3}=\ddd{p}_{1,5}$
 &\ddd{p}_{1,2}=\frac{1}{10}(6\ddd{\tilde{p}}_1+3\ddd{\tilde{p}}_2+\ddd{p}_{1,0})&&
 \ddd{p}_{1,3}=\frac{1}{10}(3\ddd{\tilde{p}}_1+6\ddd{\tilde{p}}_2+\ddd{p}_{1,5})
 \end{align}
+Seveda velja $\ddd{\tilde{p}}_0=\ddd{p}_{1,0}$, $\ddd{\tilde{p}_3}=\ddd{p}_{1,5}$. 
+Iz enačb \ref{eq40} lahko izrazimo še vektorja $\ddd{\tilde{p}}_1$ in $\ddd{\tilde{p}}_2$ kot 
+$$\ddd{\tilde{p}}_1=\ddd{p}_{1,0}+\frac{5}{3}\ddd{v}_0$$
+in 
+$$\ddd{\tilde{p}}_2=\ddd{p}_{1,5}-\frac{5}{3}\ddd{v}_4.$$
+Tu smo uporabili dejstvo, da je $\ddd{v}_0=\ddd{p}_{1,1}-\ddd{p}_{10}$ in 
+$\ddd{v}_4=\ddd{p}_{1,5}-\ddd{p}_{1,4}$. 
 
+Enako lahko s pomočjo enačb za višanje stopnje \todo{sklic} izrazimo kontrolne vektorje 
+$\ddd{p}_{2,i}$, $i=0,\ldots,5$ izrazimo z vektorjema $\ddd{p}_{2,0}$ in $\ddd{p}_{2,5}$. 
 \begin{align}
 &\ddd{p}_{2,1}=\frac{1}{5}(4\ddd{p}_{2,0}+\ddd{p}_{2,5})&&
 \ddd{p}_{2,2}=\frac{1}{10}(6\ddd{p}_{2,0}+4\ddd{p}_{2,5})\\
 &\ddd{p}_{2,3}=\frac{1}{10}(4\ddd{p}_{2,0}+6\ddd{p}_{2,5})&&
-\ddd{p}_{2,4}=\frac{1}{5}(\ddd{p}_{2,0}+4\ddd{p}_{2,5})
+\ddd{p}_{2,4}=\frac{1}{5}(\ddd{p}_{2,0}+4\ddd{p}_{2,5}).
 \end{align}
+S temi enačbami so torej natančno določeni kontrolni vektorji $\ddd{p}_{i,j}$, 
+$i=1,2$, $j=0,\ldots,5$ ploskve $\ddd{R}$, torej tudi njene kontrolne točke 
+$\ddd{P}_{i,j}$, $i=0,1,2$, $j=0,\ldots,5$. Ostale notranje kontrolne točke so proste 
+saj zahtevamo le geometrijsko zveznost stopnje 2. 
 
-$\ddd{\tilde{p}}_1=\ddd{p}_{1,0}+\frac{5}{3}\ddd{v}_0$ 
-$\ddd{\tilde{p}}_2=\ddd{p}_{1,5}-\frac{5}{3}\ddd{v}_4$
+Za določitev pogojev, ki morajo veljati za kontrolne vektorje ploskve $\ddd{S}$ moramo 
+uporabiti enačbi \ref{eq14} in \ref{eq35}, ki predstavljata pogoja za $G^1$ in $G^2$-zveznost. 
+Ko v enačbo \ref{eq14} vstavimo polinoma $E_1(v)$ in $F_1(v)$, preoblikujemo dobljeno 
+enačbo, da na obeh straneh dobimo Bézierovo krivuljo stopnje 5 ter primerjamo koeficiente 
+pred baznimi polinomi, dobimo:
 
 \begin{align*}
-&\ddd{q}_{1,1}=\frac{1}{5}(3p_{10}\ddd{\tilde{p}}_1+2p_{1m}\ddd{p}_{1,0}+
-q_{11}\ddd{z}_0+4q_{10}\ddd{z}_1)\\
-&\ddd{q}_{1,2}=\frac{1}{10}(6p_{1m}\ddd{\tilde{p}}_1+3p_{10}\ddd{\tilde{p}}_2+
-p_{11}\ddd{p}_{1,0}+4q_{11}\ddd{z}_1+6q_{10}\ddd{z}_2)\\
-&\ddd{q}_{1,3}=\frac{1}{10}(3p_{11}\ddd{\tilde{p}}_1+6p_{1m}\ddd{\tilde{p}}_2+
-p_{10}\ddd{p}_{1,5}+6q_{11}\ddd{z}_2+4q_{10}\ddd{z}_3)\\
-&\ddd{q}_{1,4}=\frac{1}{5}(3p_{11}\ddd{\tilde{p}}_2+2p_{1m}\ddd{p}_{1,5}+
-4q_{11}\ddd{z}_3+q_{10}\ddd{z}_4)
+&\ddd{q}_{1,1}=\frac{1}{5}(3e_{10}\ddd{\tilde{p}}_1+2e_{1m}\ddd{p}_{1,0}+
+f_{11}\ddd{z}_0+4f_{10}\ddd{z}_1)\\
+&\ddd{q}_{1,2}=\frac{1}{10}(6e_{1m}\ddd{\tilde{p}}_1+3e_{10}\ddd{\tilde{p}}_2+
+e_{11}\ddd{p}_{1,0}+4f_{11}\ddd{z}_1+6f_{10}\ddd{z}_2)\\
+&\ddd{q}_{1,3}=\frac{1}{10}(3e_{11}\ddd{\tilde{p}}_1+6e_{1m}\ddd{\tilde{p}}_2+
+e_{10}\ddd{p}_{1,5}+6f_{11}\ddd{z}_2+4f_{10}\ddd{z}_3)\\
+&\ddd{q}_{1,4}=\frac{1}{5}(3e_{11}\ddd{\tilde{p}}_2+2e_{1m}\ddd{p}_{1,5}+
+4f_{11}\ddd{z}_3+f_{10}\ddd{z}_4).
+\end{align*}
+
+Ko enak postopek ponovimo še z enačbo \ref{eq35}, pa dobimo:
+
+\begin{align*}
+5\ddd{q}_{2,1}=&4e_{10}e_{1m}\ddd{p}_{2,0}+e_{10}^2\ddd{p}_{2,5}+e_{10}f_{10}(\ddd{\tilde{p}}_2-\ddd{\tilde{p}}_1)
++(2e_{1m}f_{10}+e_{10}f_{11})\ddd{v}_0+3f_{10}^2\ddd{s}_1+\\
+&+2f_{10}f_{11}\ddd{s}_0+\frac{1}{4}(3e_{20}\ddd{\tilde{p}}_1+2e_{2m}\ddd{p}_{1,0}
++f_{21}\ddd{z}_0+4f_{20}\ddd{z}_1)
 \end{align*}
 
 \begin{align*}
-5\ddd{q}_{2,1}=&4p_{10}p_{1m}\ddd{p}_{2,0}+p_{10}^2\ddd{p}_{2,5}+p_{10}q_{10}(\ddd{\tilde{p}}_2-\ddd{\tilde{p}}_1)
-+(2p_{1m}q_{10}+p_{10}q_{11})\ddd{v}_0+3q_{10}^2\ddd{s}_1+\\
-&+2q_{10}q_{11}\ddd{s}_0+\frac{1}{4}(3p_{20}\ddd{\tilde{p}}_1+2p_{2m}\ddd{p}_{1,0}
-+q_{21}\ddd{z}_0+4q_{20}\ddd{z}_1)
-\end{align*}
-
-\begin{align*}
-10\ddd{q}_{2,2}=&(2p_{10}p_{11}+4p_{1m}^2)\ddd{p}_{2,0}+4p_{10}p_{1m}\ddd{p}_{2,5}+
-+(p_{10}q_{11}+2p_{1m}q_{10})(\ddd{\tilde{p}}_2-\ddd{\tilde{p}}_1)+\\
-&+(2p_{1m}q_{11}+p_{11}q_{10})\ddd{v}_0+p_{10}q_{10}\ddd{v}_4+3q_{10}^2\ddd{s}_2+
-6q_{10}q_{11}\ddd{s}_1+q_{11}^2\ddd{s}_0+\\
-&+\frac{1}{4}(6p_{2m}\ddd{\tilde{p}}_1+3p_{20}\ddd{\tilde{p}}_2+p_{21}\ddd{p}_{1,0}+
-4q_{21}\ddd{z}_1+6q_{20}\ddd{z}_2)
+10\ddd{q}_{2,2}=&(2e_{10}e_{11}+4e_{1m}^2)\ddd{p}_{2,0}+4e_{10}e_{1m}\ddd{p}_{2,5}+
++(e_{10}f_{11}+2e_{1m}f_{10})(\ddd{\tilde{p}}_2-\ddd{\tilde{p}}_1)+\\
+&+(2e_{1m}f_{11}+e_{11}f_{10})\ddd{v}_0+e_{10}f_{10}\ddd{v}_4+3f_{10}^2\ddd{s}_2+
+6f_{10}f_{11}\ddd{s}_1+f_{11}^2\ddd{s}_0+\\
+&+\frac{1}{4}(6e_{2m}\ddd{\tilde{p}}_1+3e_{20}\ddd{\tilde{p}}_2+e_{21}\ddd{p}_{1,0}+
+4f_{21}\ddd{z}_1+6f_{20}\ddd{z}_2)
 \end{align*}
 
 \begin{align*}
@@ -1798,8 +1871,14 @@ p_{10}\ddd{p}_{1,5}+6q_{11}\ddd{z}_2+4q_{10}\ddd{z}_3)\\
   5\ddd{q}_{2,4}=&4p_{10}p_{1m}\ddd{p}_{2,5}+p_{11}^2\ddd{p}_{2,5}+p_{11}q_{11}(\ddd{\tilde{p}}_2-\ddd{\tilde{p}}_1)
   +(2p_{1m}q_{11}+p_{11}q_{10})\ddd{v}_4+3q_{11}^2\ddd{s}_2+\\
   &+2q_{10}q_{11}\ddd{s}_3+\frac{1}{4}(3p_{21}\ddd{\tilde{p}}_2+2p_{2m}\ddd{p}_{1,5}
-  +q_{21}\ddd{z}_3+4q_{20}\ddd{z}_4)
+  +q_{21}\ddd{z}_3+4q_{20}\ddd{z}_4).
 \end{align*}
+
+Parametra $p_{1m}$ in $p_{2m}$ sta prosta. Po izbiri parametrov so točno določeni še 
+kontrolni vektorji $\ddd{q}_{i,j}$, $i=1,2$, $j=0,\ldots,5$ ploskve $\ddd{S}$, 
+oziroma kontrolne točke $\ddd{Q}_{i,j}$, $i=0,1,2$, $j=0,\ldots,5$. 
+
+\todo{drugi možen pristop? če nista prosta p1m in p2m ampak projekcija enega od vektorjev?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

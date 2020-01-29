@@ -1504,14 +1504,33 @@ vektorjev $\ddd{q}_{1,2}$ in $\ddd{p}_{1,2}$, zahtevamo le še koplanarnost.
 Ena izmed omejitev, ki veljajo za parametre $e_0$, $f_0$ in $f_1$, je, da 
 mora biti $e_0<0$,
 saj bi imel v nasprotnem primeru stik ploskev obliko špice. 
-Parametri so določena z enačbama \ref{eq18} in \ref{eq19}. 
-\todo{kako se jih izračuna- normala?} 
-%eden pa je prost, z njim lahko spreminjamo obliko končne ploskve.
-\todo{?}Če imamo  
-$e_0=-1$, $f_0=0$ in $f_1=0$, dobimo enak rezultat kot v primeru \ref{primer1}, 
-v katerem smo iskali pogoje za $C^1$-zveznost. Z drugačno izbiro parametrov pa 
+Parametri so določena z enačbama \ref{eq18} in \ref{eq19} na naslednji način. 
+Zapišimo enačbo \ref{eq18} kot 
+\begin{align*}
+\ddd{q}_{0,0}=e_1\ddd{p}_{0,0}+f_1\ddd{z}_0+g\ddd{n},
+\end{align*}
+kjer $\ddd{n}$ označuje normalo na ravnino, ki jo določajo vektorji $\ddd{q}_{0,0}$, 
+$\ddd{p}_{0,0}$ in $\ddd{z}_0$, v točki $(0,0)$. Matrika $[\ddd{p}_{0,0},\ddd{z}_0,\ddd{n}]$ 
+je nesingularna, saj sta vektorja $\ddd{p}_{0,0}$ in $\ddd{z}_0$ nekolinearna in pravokotna 
+na $\ddd{n}$, zato je mogoče na enoličen način izraziti neznanke $e_1$, $f_1$ in $g$. 
+ker je vektor $\ddd{q}_{0,0}$ del iste ravnine kot $\ddd{p}_{0,0}$ in $\ddd{z}_0$, 
+mora biti $g=0$, vrednosti $e_0$ in $f_0$ pa izračunamo s pomočjo Cramerjevih formul: 
+\begin{align*}
+e_0=\frac{det[\ddd{q}_{0,0},\ddd{z}_0,\ddd{n}]}{det[\ddd{p}_{0,0},\ddd{z}_0,\ddd{n}]}&&
+f_0=\frac{det[\ddd{p}_{0,0},\ddd{q}_{0,0},\ddd{n}]}{det[\ddd{p}_{0,0},\ddd{z}_0,\ddd{n}]}
+\end{align*}
+Na enak način iz enačbe \ref{eq19} dobimo še parametra $e_1$ in $f_1$
+\begin{align*}
+  e_1=\frac{det[\ddd{q}_{0,3},\ddd{z}_2,\ddd{n}]}{det[\ddd{p}_{0,3},\ddd{z}_2,\ddd{n}]}&&
+  f_1=\frac{det[\ddd{p}_{0,3},\ddd{q}_{0,3},\ddd{n}]}{det[\ddd{p}_{0,3},\ddd{z}_2,\ddd{n}]}
+\end{align*}
+
+Če bi imeli robove ploskev izbrane na tak način, da bi veljalo 
+$e_0=-1$, $f_0=0$ in $f_1=0$, bi dobili enak rezultat kot v primeru \ref{primer1}, 
+v katerem smo iskali pogoje za $C^1$-zveznost. Z drugačno izbiro robnih krivulj in 
+posledično drugačnimi vrednostmi parametrov pa 
 lahko dosežemo poljuben kot med vektorjema $q_{1,1}$ in $p_{1,1}$, biti morata samo 
-del iste ravnine. \todo{?}  
+del iste ravnine.  
 Vidimo torej, da je zahteva $G^1$-zveznosti kar se tiče oblike dobljenega zlepka 
 ploskev prinese veliko več možnosti kot zahteva $C^1$-zveznosti.
 

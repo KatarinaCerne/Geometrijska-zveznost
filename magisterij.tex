@@ -336,7 +336,7 @@ geometrijsko zvezne ploskve tudi c zvezne}
 
 \todo{nek uvodni tekst?}
 
-Najprej si oglejmo povsem splošno definicijo geometriske zveznosti neke ploskve.
+Najprej si oglejmo povsem splošno definicijo geometrijske zveznosti neke ploskve.
 
 \begin{definicija}
   Ploskev pripada razredu $G^n$ oziroma je \emph{geometrijsko zvezna z redom $n$}, če v okolici vsake njene točke obstaja lokalna regularna parametrizacija razreda $C^n$.
@@ -350,9 +350,6 @@ iz definicije (kako?)}
 
 \todo{razloži lokalnost?}
 
-%\nevem{Naj bosta $R: \Omega_1 \subseteq \R^2 \rightarrow \R^3$ in 
-%$S: \Omega_2 \subseteq \R^2 \rightarrow \R^3$ regularni parametrizaciji}
-
 V nadaljevanju se bomo ukvarjali s ploskvami, ki so same po sebi že geometrijsko zvezne, 
 zanimalo nas bo le, kakšni pogoji morajo veljati, da je tudi stik dveh takih  
 ploskev geometrijsko zvezen, torej da je celotna ploskev, ki jo dobimo, ko zlepimo dve ploskvi, 
@@ -362,9 +359,9 @@ geometrijsko zvezna.
   Naj bosta $\ddd{R}(x,y)$ in $\ddd{S}(u,v)$ regularni $C^n$ parametrizaciji dveh 
   ploskev, ki se stikata v krivulji $\ddd{C}(y)=\ddd{R}(x_0,y)=\ddd{S}(u_0,y)$. 
   Pravimo, da se $\ddd{R}$ in $\ddd{S}$ \emph{stikata z $G^n$-zveznostjo vzdolž 
-  krivulje $\ddd{C}$}, če za vsako točko $b_0=\ddd{C}(y_0)$ obstaja lokalno regularna $C^n$ reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, da je $f(x_0,y)=(u_0,y)$ za vsak $y \in I_0$ in da velja
+  krivulje $\ddd{C}$}, če za vsako točko $b_0=\ddd{C}(y_0)$ obstaja lokalna regularna $C^n$ reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, da je $f(x_0,y)=(u_0,y)$ za vsak $y \in I_0$ in da velja
   \begin{equation}\label{eq0}
-  \frac{\partial^{m+k}}{\partial x^m \partial y^k}\ddd{R}\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{m+k}}{\partial x^m \partial y^k}(\ddd{S}\circ f)\Bigr|_{\substack{(x_0,y)}} \textrm{ za } m+k=1,\ldots,n,
+  \frac{\partial^{m+k}}{\partial x^m \partial y^k}\ddd{R}\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{m+k}}{\partial x^m \partial y^k}(\ddd{S}\circ f)\Bigr|_{\substack{(x_0,y)}}\quad \textrm{za } m+k=1,\ldots,n,
   \end{equation}
   kjer je $I_0$ neka okolica $y_0$. %bolj natančno, kaj je ta okolica
 \end{definicija}
@@ -373,29 +370,29 @@ geometrijsko zvezna.
 bila prej razložena regularnost?}
 
 Zaradi stikanja ploskev v krivulji $\ddd{C}$ oziroma, ker vzdolž krivulje $\ddd{C}$ velja $y=v$, 
-so delni odvodi parametrizacij 
+so parcialni odvodi parametrizacij 
 po spremenljivki $y$ vzdolž krivulje $\ddd{C}$ enaki, zato je dovolj, da pri obravnavi 
-geometrijske zveznosti dveh ploskev opazujemo le delne odvode po 
+geometrijske zveznosti dveh ploskev opazujemo le parcialne odvode po 
 spremenljivki $x$.
 \todo{dodati sliko?}
-Te delne odvode imenujemo \todo{crossboundary derivatives}.
+Te parcialne odvode imenujemo \todo{crossboundary derivatives}.
 
 Oglejmo si, kakšni pogoji morajo veljati v primeru, ko želimo, da je stik med dvema 
 ploskvama $G^2$ zvezen.
 \begin{primer}
-Naj bodo parametrizaciji ploskev $\ddd{R}$ in $\ddd{S}$, krivulja $\ddd{C}$ in 
+Naj bodo dane parametrizaciji ploskev $\ddd{R}$ in $\ddd{S}$, krivulja $\ddd{C}$ in 
 reparametrizacijska 
 funkcija $f$ kot v definiciji \ref{def2}.
 Da bo stik teh dveh ploskev $G^2$ zvezen, mora po definiciji \ref{def2} in ugotovitvi, 
-da je dovolj obravnavati le odvode po spremenljivki $y$, veljati
-$$\frac{\partial^{k}}{\partial x^k}\ddd{R}\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{k}}{\partial x^k}(\ddd{S}\circ f)\Bigr|_{\substack{(x_0,y)}} \textrm{ za } k=0,1,2.$$
-za vsak $y$ v neki okolici točke\todo{?} $y_0$. 
+da je dovolj obravnavati le odvode po spremenljivki $x$, veljati
+$$\frac{\partial^{k}}{\partial x^k}\ddd{R}\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{k}}{\partial x^k}(\ddd{S}\circ f)\Bigr|_{\substack{(x_0,y)}}\quad \textrm{za } k=0,1,2,$$
+za vsak $y$ v neki okolici točke $y_0$. 
 Da dosežemo zgolj geometrijsko zveznost razreda $G^0$, je dovolj, da med 
 ploskvama $\ddd{R}$ in $\ddd{S}$ velja pogoj 
 $$\ddd{R}(x_0,y)=(\ddd{S} \circ f)(x_0,y)\textrm{, oziroma }\ddd{R}(x_0,y)=\ddd{S}(u(x_0,y),v(x_0,y)).$$ 
 Da imamo na stiku geometrijsko zveznost stopnje $G^1$, mora poleg 
 pogoja za $G^0$ veljati še 
-$$\frac{\partial \ddd{R}}{\partial x}\Bigr|_{\substack{(x_0,y)}}=\frac{\partial}{\partial x}(\ddd{S}\circ f)\Bigr|_{\substack{(x_0,y)}}$$
+$$\frac{\partial \ddd{R}}{\partial x}\Bigr|_{\substack{(x_0,y)}}=\frac{\partial}{\partial x}(\ddd{S}\circ f)\Bigr|_{\substack{(x_0,y)}}.$$
 Če ustrezno razpišemo parcialni odvod funkcije $\ddd{S} \circ f$, se ta pogoj prepiše v
 $$\frac{\partial \ddd{R}}{\partial x}\Bigr|_{\substack{(x_0,y)}}=
 \frac{\partial \ddd{S}}{\partial u}\frac{\partial u}{\partial x}\Bigr|_{\substack{(x_0,y)}}+
@@ -407,15 +404,17 @@ Za $G^2$ mora poleg pogojev za $G^0$ in $G^1$ veljati še
 2\frac{\partial^2 \ddd{S}}{\partial u \partial v}\frac{\partial u}{\partial x}\frac{\partial v}{\partial x}\bigg|_{\substack{(x_0,y)}} + 
 \frac{\partial^2 \ddd{S}}{\partial v^2}\bigg(\frac{\partial v}{\partial x}\bigg)^2\bigg|_{\substack{(x_0,y)}} + \\
 &+\frac{\partial \ddd{S}}{\partial u}\frac{\partial^2 u}{\partial x^2}\bigg|_{\substack{(x_0,y)}} +
-\frac{\partial \ddd{S}}{\partial v}\frac{\partial^2 v}{\partial x^2}\bigg|_{\substack{(x_0,y)}}
+\frac{\partial \ddd{S}}{\partial v}\frac{\partial^2 v}{\partial x^2}\bigg|_{\substack{(x_0,y)}}.
 \end{align*}
-%$G^2$: $R_xx = S_{uu} u_x^2 + 2S_{uv}u_x v_x + S_{vv} v_x^2 + S_u u_{xx} + S_v v_{xx}$ vzdolž $C$
 \end{primer}
 
-V splošnem za geometrijsko zveznost stopnje $n$, kjer je $n\in \N_0$ velja naslednje:
+V splošnem se pogoj za geometrijsko zveznost stopnje $n$, kjer je $n\in \N_0$, zapiše kot:
 \begin{equation}\label{eq1}
-\frac{\partial^k \ddd{R}}{\partial x^k}\bigg|_{\substack{C}}=\sum_{i=1}^k \sum_{|m_i|=k}A_{m_i}^k
-\sum_{h=0}^i{i \choose h}u_{x^{m_1}}\cdots u_{x^{m_h}}v_{x^{m_{h+1}}}\cdots v_{x^{m_h}}
+\frac{\partial^k \ddd{R}}{\partial x^k}\bigg|_{\substack{C}}=
+\sum_{i=1}^k \sum_{|m_i|=k}A_{m_i}^k
+\sum_{h=0}^i{i \choose h}\frac{\partial^{m_1}u}{\partial x^{m_1}}\cdots 
+\frac{\partial^{m_h}u}{\partial x^{m_h}}
+\frac{\partial^{m_{h+1}}v}{\partial x^{m_{h+1}}}\cdots \frac{\partial^{m_i}v}{\partial x^{m_i}}
 \frac{\partial^i \ddd{S}}{\partial u^h \partial v^{i-h}}\bigg|_{\substack{C}}
 \end{equation}
 za vsak $k=0,1,\ldots,n$. Tu z $A_{m_i}^k$ iznačujemo koeficient
@@ -432,12 +431,12 @@ zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši nasle
   Naj bosta $\ddd{R}(x,y)$ in $\ddd{S}(u,v)$ regularni $C^n$ parametrizaciji dveh 
   ploskev, ki se stikata v krivulji $\ddd{C}(y)=\ddd{R}(x_0,y)=\ddd{S}(u_0,y)$. 
   Ploskvi $\ddd{R}$ in $\ddd{S}$ sta vzdolž skupnega roba $G^n$-zvezni natanko 
-  tedaj ko obstajajo 
+  tedaj, ko obstajajo 
   $C^n$ funkcije $\alpha_1(y), \ldots, \alpha_n(y)$ in $\beta_1(y) \ldots, \beta_n(y)$, 
   da velja 
   \begin{equation}\label{eq2}
   \frac{\partial^k \ddd{R}}{\partial x^k}\bigg|_{\substack{\ddd{C}}}=\sum_{i=1}^k \sum_{|m_i|=k}A_{m_i}^k
-  \sum_{h=0}^i{i \choose h}\alpha_{m_1}\cdots \alpha_{m_h}\beta_{m_{h+1}}\cdots \beta_{m_h}
+  \sum_{h=0}^i{i \choose h}\alpha_{m_1}\cdots \alpha_{m_h}\beta_{m_{h+1}}\cdots \beta_{m_i}
   \frac{\partial^i \ddd{S}}{\partial u^h \partial v^{i-h}}\bigg|_{\substack{\ddd{C}}},
   \end{equation} 
   za $k=1,\ldots,n$, 
@@ -453,7 +452,7 @@ zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši nasle
 \begin{proof}
   \todo{kaj je z lokalnostjo in b0?}
   Najprej prodpostavimo, da obstajajo $C^n$ funkcije $\alpha_1(y), \ldots, \alpha_n(y)$ 
-  in $\beta_1(y) \ldots, \beta_n(y)$, za katere velja enakost \ref{eq2} v izreku, in 
+  in $\beta_1(y) \ldots, \beta_n(y)$, za katere velja enakost \eqref{eq2} v izreku, in 
   da je $\alpha_1(y)\neq 0$. 
   Dokazati želimo, da od tod 
   sledi $G^n$-zveznost stika ploskev $\ddd{R}(x,y)$ in $\ddd{S}(u,v)$. 
@@ -464,12 +463,13 @@ zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši nasle
   
   Ker so po predpostavki funkcije $\alpha_i$ in $\beta_i$, $i=1,\ldots,n$ razreda $C^n$, 
   tudi funkcija $f$ pripada temu razredu. 
-  
   Opazimo še, da za $i=1, \ldots, k$ velja
-  $$\frac{\partial^i u}{\partial x^i}(x_0,y)=\alpha_i(y),$$
-  $$\frac{\partial^i v}{\partial x^i}(x_0,y)=\beta_i(y).$$
-  Če dobljeno vstavimo v enačbo \ref{eq2}, dobimo ravno enačbo \ref{eq1}, od koder zaradi 
-  ujemanja ploskev $\ddd{R}$ in $\ddd{S}$ v krivulji $\ddd{C}$ sledi tudi enakost \ref{eq0}. Pokazati moramo 
+  \begin{align*}
+  \frac{\partial^i u}{\partial x^i}(x_0,y)=\alpha_i(y),&&
+  \frac{\partial^i v}{\partial x^i}(x_0,y)=\beta_i(y).
+  \end{align*}
+  Če dobljeno vstavimo v enačbo \eqref{eq2}, dobimo ravno enačbo \eqref{eq1}, od koder zaradi 
+  ujemanja ploskev $\ddd{R}$ in $\ddd{S}$ v krivulji $\ddd{C}$ sledi tudi enakost \eqref{eq0}. Pokazati moramo 
   le še, da je $f$ lokalno regularna.
   
   Vemo, da je reparametrizacijska funkcija $f$ regularna vzdolž $\ddd{C}$, če sta oba njena parcialna odvoda prvega 
@@ -477,17 +477,15 @@ zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši nasle
   $$\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) \neq 0.$$
 
   Razpišimo oba odvoda reparametrizacijske funkcije $f(x,y)=(u(x,y),v(x,y))$ vzdolž krivulje $\ddd{C}$ 
-  in ju skušajmo zapisati s pomočjo stičnih funkcij. Za odvod po spremenljivki $x$ velja:
-  $$\frac{\partial f}{\partial x}(x_0,y)=(\frac{\partial u}{\partial x}(x_0,y),\frac{\partial v}{\partial x}(x_0,y))=(\alpha_1(y),\beta_1(y)).$$
-
-  Če razpišemo odvod po spremenljivki $y$, pa dobimo:
-  $$\frac{\partial f}{\partial y}(x_0,y)=(\frac{\partial u}{\partial y}(x_0,y),\frac{\partial v}{\partial y}(x_0,y))=(0,1).$$
+  in ju skušajmo zapisati s pomočjo stičnih funkcij. Za odvod po spremenljivki $x$ velja
+  $$\frac{\partial f}{\partial x}(x_0,y)=\left(\frac{\partial u}{\partial x}(x_0,y),\frac{\partial v}{\partial x}(x_0,y)\right)=(\alpha_1(y),\beta_1(y)).$$
+  Če razpišemo odvod po spremenljivki $y$, pa dobimo
+  $$\frac{\partial f}{\partial y}(x_0,y)=\left(\frac{\partial u}{\partial y}(x_0,y),\frac{\partial v}{\partial y}(x_0,y)\right)=(0,1).$$
 
   Vektorski produkt $\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y)$
   je torej enak 
   $$\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) = 
-  (\alpha_1(y),\beta_1(y))\times (0,1) = \alpha_1(y)$$
-
+  (\alpha_1(y),\beta_1(y))\times (0,1) = \alpha_1(y).$$
   Vektorski produkt obeh parcialnih odvodov prvega reda je torej različen od $0$ 
   natanko tedaj, ko je $\alpha_1(y)\neq 0$, kar pa velja po začetni predpostavki.
   Sledi, da je reparametrizacijska funkcija $f$  regularna. 
@@ -496,61 +494,22 @@ zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši nasle
   ustreza pogojem iz definicije \ref{def2}, od koder sledi, da se ploskvi $\ddd{R}$ in $\ddd{S}$ stikata 
   z $G^n$-zveznostjo.
 
-  Dokažimo izrek še v drugo smer.
+  Dokažimo izrek še v drugo smer. 
   Če predpostavimo, da sta ploskvi $R$ in $S$ na stiku $G^n$-zvezni, 
   obstoj funkcij $\alpha_1(y), \ldots, \alpha_n(y)$ in $\beta_1(y) \ldots, \beta_n(y)$
-  in enačba \ref{eq2} sledjo neposredno iz definicije \ref{def2} in enačbe \ref{eq1}, 
-  če definiramo $\alpha_i(y)=u_{x^i}(y)$ in $\beta_i(y)=v_{x^i}(y)$ za $i=1,\ldots,n$. 
-  \todo{ali so take funkcije $C^n$?}
-
-  Ker je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^n$-zvezen, do definiciji \ref{def2} obstaja 
+  in enačba \eqref{eq2} sledjo neposredno iz definicije \ref{def2} in enačbe \eqref{eq1}, 
+  če definiramo $\alpha_i(y)=\frac{\partial^iu}{\partial{x^i}}(x_0,y)$ in 
+  $\beta_i(y)=\frac{\partial^iv}{\partial {x^i}}(x_0,y)$ za $i=1,\ldots,n$. 
+  
+  Ker je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^n$-zvezen, po definiciji \ref{def2} obstaja 
   lokalno regularna reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, ki ustreza 
   pogojem iz definicije \ref{def2}. Videli smo že, da je funkcija $f$ regularna 
-  natanko tedaj, ko je $u_x(x_0,y)=\alpha_1(y)\neq 0$. 
+  natanko tedaj, ko je $\frac{\partial u}{\partial x}(x_0,y)=\alpha_1(y)\neq 0$. 
   Torej smo okazali še neničelnost funkcije $\alpha_1$, s čimer je dokaz končan. 
 \end{proof}
 
-%Stične funkcije lahko izberemo skoraj povsem poljubno. Upoštevati moramo le dva pogoja, 
-%ki omejujeta izbiro funkcije $\alpha_1$. Prvi pogoj sledi iz zahteve po regularnosti 
-%reparametrizacijske funkcije $f$.
-%Reparametrizacijska funkcija $f$ je regularna vzdolž $C$, če sta oba njena parcialna odvoda prvega 
-%reda linearno neodvisna, torej če velja $\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) \neq 0$.
-%Razpišimo oba odvoda reparametrizacijske funkcije $f(x,y)=(u(x,y),v(x,y))$ vzdolž krivulje $C$ 
-%in ju skušajmo zapisati s pomočjo stičnih funkcij. Za odvod po spremenljivki $x$ velja:
-%$$\frac{\partial f}{\partial x}(x_0,y)=(\frac{\partial u}{\partial x}(x_0,y),\frac{\partial v}{\partial x}(x_0,y))=(\alpha_1(y),\beta_1(y)),$$
-%pri čemer smo uporabili opazko \todo{sklic}.
-%Če razpišemo odvod po spremenljivki $y$, pa dobimo:
-%$$\frac{\partial f}{\partial y}(x_0,y)=(\frac{\partial u}{\partial y}(x_0,y),\frac{\partial v}{\partial y}(x_0,y))=(0,1).$$
-%Vektorski produkt $\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y)$
-%je torej enak 
-%$$\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) = 
-%(\alpha_1(y),\beta_1(y))\times (0,1) = \alpha_1(y)$$
-%Sledi, da je reparametrizacija regularna, natanko tedaj \todo{?}, ko za pripradajočo stično \todo{junction?} 
-%funkcijo $\alpha_1$ velja $\alpha_1(y)\neq 0$ vzdolž stične krivulje $C$. 
-%\todo{ali je potrben podatek "vzdolž krivulje C"?}
-%\todo{to moraš nekako motivirati: zakaj si to sploh pogledamo? zato, ker to predstavlja 
-%pogoj za $\alpha_1$?}
-
 \todo{Drugo, na kar moramo paziti pri izbiri funkcije $\alpha_1$ pa je njen predznak. 
 Pri izbiri napačnega predznaka namreč lahko pride do stika v obliki "špice".} 
-
-%Vpeljava stičnih funkcij nas pripelje do nekoliko drugačne definicije geometrijske 
-%zveznosti.
-%\begin{definicija}
-%  Naj bosta $R(x,y)$ in $S(u,v)$ regularni $C^n$ parametrizaciji dveh ploskev, 
-%  ki se stikata v krivulji $C(y)=R(x_0,y)=S(u_0,y)$. 
-%  Pravimo, da se $R$ in $S$ stikata z $G^n$-zveznostjo vzdolž krivulje $C$, 
-%  če za vsako točko $b_0=C(y_0)$ obstajajo take funkcije razreda $C^n$ ene 
-%  spremenljivke $\alpha_1, \ldots, \alpha_n$ in $\beta_1 \ldots, \beta_n$, 
-%  da $\alpha_1(y)\neq0$, pri čemer mora imeti $\alpha_1$ ustrezen predznak \todo{??}, 
-%  in da velja
-%  $$\frac{\partial^j R}{\partial x^j}\Bigr|_{\substack{C}}= \sum_{k=1}^j\sum_{h=0}^k A_{jkh}\frac{\partial^k S}{\partial u^h \partial v^{k-h}}\Bigr|_{\substack{C}}$$
-%  za vsak $j=0,1,\ldots,n$.
-%  Tu z $A_{jkh}$ označujemo koeficient
-%  $$A_{jkh}={k \choose h}\sum_{\substack{m_1+\cdots +m_k =j \\ m_1, \ldots, m_k >0}}
-%  \frac{j!}{k!m_1!\cdots m_k!} \alpha_1 \cdots \alpha_{m_h} \beta_{m_{h+1}} \cdots \beta_{m_k}\Bigr|_{\substack{C}}$$
-%\end{definicija}
-%\todo{popravi A, indekse pri alfah in betah}
 
 \todo{nekaj za zaključek poglavja in napeljavo na novo poglavje}
 
@@ -577,25 +536,22 @@ in ima ustrezen predznak, da velja:
 \ddd{R}_x(x_0,y)=\alpha_1(y) \ddd{S}_u(u_0,y)+\beta_1(y)\ddd{S}_v(u_0,y).
 \end{equation}
 
-Zgornja enačba nam pove, da so parcialni odvodi $\ddd{R}_x(x_0,y)$, $\ddd{S}_u(u_0,y)$ in 
-$\ddd{S}_v(u_0,y)$ v vsaki točki $y$ linearno odvisni. Torej so v vsaki točki $y$ del 
-iste tangentne ravnine na krivuljo $\ddd{C}$. Tangentna ravnina na ploskev $\ddd{R}$ 
+Zgornja enačba nam pove, da parcialni odvodi $\ddd{R}_x(x_0,y)$, $\ddd{S}_u(u_0,y)$ in 
+$\ddd{S}_v(u_0,y)$ v vsaki točki $y$ ležijo 
+v isti tangentni ravnini na krivuljo $\ddd{C}$. Tangentna ravnina na ploskev $\ddd{R}$ 
 se na krivulji $\ddd{C}$ ujema s tangentno ravnino na ploskev $\ddd{S}$, kar pomeni, 
 da se tangentna ravnina zvezno spreminja vzdolž zlepka obeh ploskev. 
 Zato torej $G^1$-zveznost imenujemo tudi 
 \emph{zveznost tangentnih ravnin}.
 
-%\nevem{v predstavitvi sem šla tako: $R(x_0,y)=S(u_0,y)$,  
-%  $R_x(x_0,y)=u_x(x_0,y)S_u(u_0,y)+v_x(x_0,y)S_v(u_0,y)$,  
-%  $R_x(x_0,y)=\alpha_1(y) S_u(u_0,y)+\beta_1(y)S_v(u_0,y)$}  
 \todo{slika}
 
 Še eno ime za $G^1$-zveznost je \emph{zveznost enotskih normal}.
 Oglejmo si, od kod pride to poimenovanje. 
-Znova opazujemo enačbo \ref{eq3}. 
+Znova opazujemo enačbo \eqref{eq3}. 
 Enačbo sedaj z obeh strani vektorsko pomnožimo z $\ddd{R}_y(x_0,y)$:
 $$\ddd{R}_x(x_0,y)\times \ddd{R}_y(x_0,y)=\alpha_1(y) \ddd{S}_u(u_0,y)\times \ddd{R}_y(x_0,y)+\beta_1(y)\ddd{S}_v(u_0,y)\times \ddd{R}_y(x_0,y).$$
-Upoštevamo lahko, da je $\ddd{R}_y(x_0,y)=\ddd{S}_v(u_0,y)$. Dobimo:
+Upoštevamo, da je $\ddd{R}_y(x_0,y)=\ddd{S}_v(u_0,y)$ in dobimo:
 \begin{equation}\label{eq30}
 \ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y) = \alpha_1(y) \ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y).
 \end{equation}
@@ -603,50 +559,51 @@ Vektorski produkt $\ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y)$ predstavlja normalo
 ploskev $\ddd{R}$ v točki $(x_0,y)$ na krivulji $\ddd{C}$, 
 $\ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y)$ pa normalo na ploskev $\ddd{S}$ na 
 krivulji $\ddd{C}$. 
-Enačba \ref{eq30} pove, da sta normali na ploskvi $\ddd{R}$ in $\ddd{S}$ na njunu stični 
+Enačba \eqref{eq30} pove, da sta normali na ploskvi $\ddd{R}$ in $\ddd{S}$ na njunu skupni  
 krivulji $\ddd{C}$ vzporedni. Na skupnem robu imata torej obe ploskvi enaki 
 enotski normali:
 $$\frac{\ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y)}{||\ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y)||}=\frac{\ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y)}{||\ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y)||}.$$
 Enotska normala se zato zvezno spreminja vzdolž zlepka obeh ploskev, od koder poimenovanje 
 \emph{zveznost enotskih normal}. 
 
-Ker parcialni odvodi $\ddd{R}_x(x_0,y)$, $\ddd{S}_u(u_0,y)$ in $\ddd{S}_v(u_0,y)$ ležijo na isti 
-tangentni ravnini, velja tudi:
+Pogoj, da parcialni odvodi $\ddd{R}_x(x_0,y)$, $\ddd{S}_u(u_0,y)$ in $\ddd{S}_v(u_0,y)$ ležijo na isti 
+tangentni ravnini, je možno izraziti tudi na naslednja dva načina. 
+Zgornji parcialni odvodi so del iste tangentne ravnine natanko tedaj ko velja
 $$\det(\ddd{R}_x(x_0,y), \ddd{S}_u(u_0,y), \ddd{S}_v(u_0,y))=0.$$
 
-\todo{Torej obstajajo funkcije (povedati kakšne, iz kje kam?) $\lambda$, 
-$\mu$ in $\gamma$, da velja:
-$$\lambda(y)R_x(x_0,y)=\mu(y)S_u(u_0,y)+\gamma(y)S_v(u_0,y).$$}
+Ta pogoj pa je ekvivalenten pogoju, da obstajajo skalarne funkcije $\lambda$, 
+$\mu$ in $\gamma$, da velja
+$$\lambda(y)\ddd{R}_x(x_0,y)=\mu(y)\ddd{S}_u(u_0,y)+\gamma(y)\ddd{S}_v(u_0,y).$$
 
-\todo{Če predpostavimo, da sta ploskvi $R$ in $S$ polinomski, lahko tudi za $\lambda$, $\mu$ in $\gamma$ 
-izberemo polinome, kar nam zelo olajša 
-konstrukcijo geometrijsko zveznih ploskev.} 
+Če predpostavimo, da sta ploskvi $\ddd{R}$ in $\ddd{S}$ polinomski, lahko tudi za $\lambda$, $\mu$ in $\gamma$ 
+izberemo polinome ali racionalne funkcije, kar nam zelo olajša 
+konstrukcijo geometrijsko zveznih ploskev.
 
 V nadaljevanju tega dela se bomo ukvarjali z vrsto parametričnih ploskev, 
-imenovano Bézierove ploskve, in s pogoji, ki morajo veljati zanje, da je stik 
+imenovano Bézierjeve ploskve, in s pogoji, ki morajo veljati zanje, da je stik 
 med njimi geometrijsko zvezen. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Konstrukcija geometrijsko zveznih Bezierovih ploskev 
+\section{Konstrukcija geometrijsko zveznih Bezierjevih ploskev 
 iz tenzorskega produkta}
 
 \subsection{Bézierjeve ploskve iz tenzorskega produkta}
 
 \todo{povej, v katerem viru so dokazi itd.}
 
-Bézierove krivulje in ploskve podajamo s pomočjo Bernsteinovih polinomov, $i$-ti 
+Bézierjeve krivulje in ploskve podajamo s pomočjo Bernsteinovih baznih polinomov, $i$-ti 
 Bernseinov polinom je definiran kot  
 
 $$B_i^n(t)={n \choose i}t^i (1-t)^{n-i}\textrm{, } t\in[0,1].$$
 
-Bernsteinovi polinomi sestavljajo bazo prostora polinomov \\
-$\mathbb{P}_n=Lin\{1,t,t^2,\ldots,t^n\}$. 
+Bernsteinovi bazni polinomi sestavljajo bazo prostora polinomov
+$\mathbb{P}_n=\mbox{Lin}\{1,t,\\t^2,\ldots,t^n\}$. 
 Bazo prostora polinomov dveh spremenljivk 
-$\mathbb{P}_m \otimes \mathbb{P}_n = Lin\{u^iv^j, i=0,\ldots,m, j=0,\ldots,n\}$, 
+$\mathbb{P}_m \otimes \mathbb{P}_n = \mbox{Lin}\{u^iv^j,\\i=0,\ldots,m, j=0,\ldots,n\}$, 
 torej tenzorskega produkta prostorov $\mathbb{P}_m$ in $\mathbb{P}_n$, pa sestavljajo 
-produkti po dveh Bernsteinovih plinomov, kjer prvi pripada $\mathbb{P}_m$ in 
+produkti po dveh Bernsteinovih polinomov, kjer prvi pripada $\mathbb{P}_m$ in 
 drugi $\mathbb{P}_n$, oziroma tenzorski produkti dveh Bernsteinovih polinomov. 
 
 O ploskvah iz tenzorskega produkta govorimo, kadar je njihova parametrizacija 
@@ -659,8 +616,8 @@ produkta so definirane na naslednji način.
   $$\mathbf{B}_{m,n} : [0,1]\times[0,1] \rightarrow \R^d$$
   s predpisom
   $$\mathbf{B}_{m,n}(u,v)=\sum_{i=0}^m \sum_{j=0}^n \mathbf{b_{i,j}} B_i^m(u) B_j^n(v).$$
-  Točke $\mathbf{b}_{i,j}$ imenujemo \emph{kontrolne točke}, poligon, ki jih povezuje, 
-  pa \emph{kontrolni poligon} ploskve $\ddd{B}_{m,n}$. 
+  Točke $\mathbf{b}_{i,j}$ imenujemo \emph{kontrolne točke}, mrežo, ki jih povezuje, 
+  pa \emph{kontrolna mreža} ploskve $\ddd{B}_{m,n}$. 
 \end{definicija}
 
 \todo{slika?}
@@ -684,7 +641,7 @@ s predpisom
 $$\ddd{B}_n(t)=\sum_{i=0}^n \ddd{b}_i B_i^n(t).$$
 Točke $\ddd{b}_i$ imenujemo \emph{kontrolne točke krivulje}.
 \end{definicija}
-Tudi za Bézierove krivulje velja, da interpolirajo prvo in zadnjo kontrolno točko. 
+Tudi za Bézierjeve krivulje velja, da interpolirajo prvo in zadnjo kontrolno točko. 
 
 V nekaterih primerih v nadaljevanju bo, da dosežemo ujemanje stopenj Bézierjevih 
 krivulj v enačbah, potrebno zvišati oziroma znižati stopnjo Bézierjeve krivulje, 
@@ -725,42 +682,42 @@ $\Delta^{0,s} \mathbf{b}_{i,j} = \Delta^{0,s-1} \mathbf{b}_{i,j+1}-\Delta^{0,s-1
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{$C^n$-zveznost med dvema Bézierovima ploskvama 
+\subsection{$C^n$-zveznost med dvema Bézierjevima ploskvama 
 iz tenzorskega produkta}\label{cn.zv.}
 
-Najprej si oglejmo, kakšni pogoji morajo veljati za dve Bézierovi ploskvi, da 
+Najprej si oglejmo, kakšni pogoji morajo veljati za dve Bézierjevi ploskvi, da 
 je njun stik $C^n$-zvezen. Dobljeni rezultat bomo v nadaljevanju primerjali s 
 pogoji za $G^n$-zveznost. 
 
-Imejmo Bézierovi ploskvi 
-$$\ddd{R}(u,v)=\sum_{i=0}^m\sum_{j=0}^n\ddd{r}_{i,j}B_i^m(\frac{u-u_1}{u_0-u_1})B_j^n(\frac{v-v_0}{v_1-v_0})\textrm{, }
-u\in[u_0,u_1]\textrm{, }v\in[v_0,v_1]$$
+Imejmo dve Bézierjevi ploskvi 
+$$\ddd{R}(u,v)=\sum_{i=0}^m\sum_{j=0}^n\ddd{r}_{i,j}B_i^m\left(\frac{u-u_1}{u_0-u_1}\right)B_j^n\left(\frac{v-v_0}{v_1-v_0}\right)\textrm{, }\quad
+u\in[u_0,u_1]\textrm{, }v\in[v_0,v_1],$$
 in 
-$$\ddd{S}(u,v)=\sum_{i=0}^m\sum_{j=0}^n\ddd{s}_{i,j}B_i^m(\frac{u-u_1}{u_2-u_1})B_j^n(\frac{v-v_0}{v_1-v_0})\textrm{, }
+$$\ddd{S}(u,v)=\sum_{i=0}^m\sum_{j=0}^n\ddd{s}_{i,j}B_i^m\left(\frac{u-u_1}{u_2-u_1}\right)B_j^n\left(\frac{v-v_0}{v_1-v_0}\right)\textrm{, }\quad
 u\in[u_1,u_2]\textrm{, }v\in[v_0,v_1].$$
 
 Ploskvi naj se stikata v krivulji  $\ddd{C}(v)=\ddd{R}(u_1,v)=\ddd{S}(u_1,v)$, 
 torej naj velja $\ddd{r}_{0,j}=\ddd{s}_{0,j}$ za 
-$j=0,\ldots,n$. S tem dosežemo $C^1$-zveznost. Da se bosta ploskvi stikali s 
-$C^r$-zveznostjo, se morajo ujemati njuni odvodi vzdolž krivulje $\ddd{C}$ 
+$j=0,\ldots,n$. S tem dosežemo $C^0$-zveznost. Da se bosta ploskvi stikali s 
+$C^r$-zveznostjo, se morajo ujemati njuni odvodi pri $u=u_1$. \todo{!?!?} 
 do odvoda stopnje $r$. Zaradi stikanja v krivulji $\ddd{C}$ je dovolj obravnavati le 
-odvode po spremenljivki $u$. Veljati mora:
-$$\frac{\partial^k}{\partial u}\ddd{R}(u,v)|_{u=u_0}=\frac{\partial^k}{\partial u}\ddd{S}(u,v)|_{u=u_0},
+odvode po spremenljivki $u$. Veljati mora
+$$\frac{\partial^k}{\partial u^k}\ddd{R}(u,v)|_{u=u_0}=\frac{\partial^k}{\partial u^k}\ddd{S}(u,v)|_{u=u_0},
 \textrm{ }k=1,\ldots,r.$$
-Uporabimo enačbo \ref{eq28} za odvod Bézierove ploskve iz tenzorskega produkta: 
+Uporabimo formulo \eqref{eq28} za odvod Bézierjeve ploskve iz tenzorskega produkta: 
 \begin{align*}
 \frac{n!}{(n-k)!}&\frac{1}{(u_0-u_1)^k}\sum_{i=0}^{m-k}\sum_{j=0}^n\Delta^{k,0}
-\ddd{r}_{i,j}B_i^{m-k}(\frac{u-u_1}{u_0-u_1})B_i^n(\frac{v-v_0}{v_1-v_0})|_{u=u_1}=\\
+\ddd{r}_{i,j}B_i^{m-k}\left(\frac{u-u_1}{u_0-u_1}\right)B_i^n\left(\frac{v-v_0}{v_1-v_0}\right)|_{u=u_1}=\\
 &=\frac{n!}{(n-k)!}\frac{1}{(u_2-u_1)^k}\sum_{i=0}^{m-k}\sum_{j=0}^n\Delta^{k,0}
-\ddd{s}_{i,j}B_i^{m-k}(\frac{u-u_1}{u_2-u_1})B_i^n(\frac{v-v_0}{v_1-v_0})|_{u=u_1},\\
-k=1,\ldots,r
-\end{align*}
+\ddd{s}_{i,j}B_i^{m-k}\left(\frac{u-u_1}{u_2-u_1}\right)B_i^n\left(\frac{v-v_0}{v_1-v_0}\right)|_{u=u_1},\\
+k=1,&\ldots,r.
+\end{align*}\todo{zamiki}
 Sledi
 \begin{align*}
 &\frac{1}{(u_0-u_1)^k}\sum_{j=0}^n\Delta^{k,0}
-\ddd{r}_{0,j}B_i^n(\frac{v-v_0}{v_1-v_0})=
+\ddd{r}_{0,j}B_i^n\left(\frac{v-v_0}{v_1-v_0}\right)=
 \frac{1}{(u_2-u_1)^k}\sum_{j=0}^n\Delta^{k,0}
-\ddd{s}_{0,j}B_i^n(\frac{v-v_0}{v_1-v_0}),\\
+\ddd{s}_{0,j}B_i^n\left(\frac{v-v_0}{v_1-v_0}\right),\\
 &k=1,\ldots,r.
 \end{align*}
 Za vsak $j=1,\ldots,n$ primerjajmo koeficiente pred baznim polinomom $B_j^n(\frac{v-v_0}{v_1-v_0})$ 
@@ -777,9 +734,9 @@ stiku $C^r$-zvezni:
 
 V tem podpoglavju si bomo ogledali, kako se splošni pogoji za geometrijsko 
 zveznost med dvema ploskvama, ki smo jih izpeljali v poglavju \ref{geom.zv.}, 
-odražajo na Bézierovih ploskvah iz tenzorskega produkta. 
+odražajo na Bézierjevih ploskvah iz tenzorskega produkta. 
 
-Ker so Bézierove ploskve polinomske, se lahko pri izbiri stičnih funkcij 
+Ker so Bézierjeve ploskve polinomske, se lahko pri izbiri stičnih funkcij 
 omejimo na racionalne funkcije, kar močno olajša konstrukcijo v praktičnih primerih. 
 O tem bo govoril izrek, predstavljen v tem podpoglavju.
 
@@ -800,81 +757,77 @@ Robno krivuljo $\textbf{C}$ zapišemo kot Bézierjevo krivuljo na naslednji nač
 $$\textbf{C}=\sum_{i=0}^{n_c}\textbf{z}_i B_i^{n_c},$$
 kjer so $\{\textbf{z}_i, i=1,\ldots n_c\}$ njene kontrolne točke. Stopnja $n_c$ krivulje 
 $\textbf{C}$ ni nujno enaka stopnjama $n_r$ ali $n_s$, velja pa, da je $n_c \leq \min(n_r,n_s)$. 
-\todo{zakaj?}
 
 Naj bosta ploskvi $\textbf{R}$ in $\textbf{S}$ regularni vzdolž krivulje $\textbf{C}$, 
 torej naj bodo normale na ploskvi vzdolž krivulje $\textbf{C}$ neničelne:
-$$N_r(y)=\bigg(\frac{\partial \textbf{R}}{\partial x}\times \frac{\partial \textbf{R}}{\partial y}\bigg)\bigg|_{\textbf{C}}\neq 0$$
-$$N_s(y)=\bigg(\frac{\partial \textbf{S}}{\partial u}\times \frac{\partial \textbf{S}}{\partial v}\bigg)\bigg|_{\textbf{C}}\neq 0$$
+$$N_R=\bigg(\frac{\partial \textbf{R}}{\partial x}\times \frac{\partial \textbf{R}}{\partial y}\bigg)\bigg|_{\textbf{C}}\neq 0$$
+$$N_S=\bigg(\frac{\partial \textbf{S}}{\partial u}\times \frac{\partial \textbf{S}}{\partial v}\bigg)\bigg|_{\textbf{C}}\neq 0$$
 
-O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek: 
+O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek. 
 
 \begin{izrek}\label{izrek2}
-  Naj bosta $\textbf{R}$ in $\textbf{S}$ zgoraj definirani Bézierovi 
-  ploskvi, ki se stikata v robni krivulji $\textbf{C}$ (kot zgoraj). Stik ploskev je 
+  Naj bosta $\textbf{R}$ in $\textbf{S}$ zgoraj definirani Bézierjevi 
+  ploskvi, ki se stikata v robni krivulji $\textbf{C}$. Stik ploskev je 
   $G^n$-zvezen natanko tedaj, ko obstajajo polinomi $D(y)$, $E_i(y)$ in $F_i(y)$, da 
-  velja:
+  velja
   \begin{equation}\label{eq4}
     \begin{split}
-      D^{2k-1}(y)\frac{\partial^k\textbf{S}}{\partial u^k}\bigg|_{\textbf{C}} = &
-      \sum_{i=0}^k \sum_{|m_i|=k} A_{m_i}^k \sum_{h=0}^i {i\choose h} D^{i-1}(y)E_{m_1}(v)
+      D^{2k-1}(y)\frac{\partial^k\textbf{S}}{\partial u^k}(0,y) = &
+      \sum_{i=0}^k \sum_{|\ddd{m_i}|=k} A_{\ddd{m_i}}^k \sum_{h=0}^i {i\choose h} D^{i-1}(y)E_{m_1}(v)
       \cdots E_{m_h}(y) \\
-      &\cdot F_{m_{h+1}}(y)\cdots F_{m_i}(y) \frac{\partial^i \textbf{R}}{\partial x^h \partial y^{i-h}},
+      &\cdot F_{m_{h+1}}(y)\cdots F_{m_i}(y) \frac{\partial^i \textbf{R}}{\partial x^h \partial y^{i-h}}(0,y),
     \end{split}  
   \end{equation}
   kjer je $i=1, \ldots n$ in $k=1, \ldots n$. Z $A_{m_i}^k$ zopet označujemo 
   $A_{\mathbf{m_i}}^k = \frac{k!}{i!m_1!\cdots m_i!}$ in $|\mathbf{m_i}|=m_1+m_2+\cdots+m_i$.
-  Velja še $D(y)E_1(y)\neq 0$ za $y\in [0,1]$, za stopnje polinomov pa velja:\\
-  $st(D)\leq n_r + n_c -1,$\\
-  $st(E_i)\leq (2i-2)n_r + in_s +in_c -2i +1$ in\\
-  $st(F_i)\leq (2i-1)n_r +in_s + (i-1)n_c -2i +2.$
+  Velja še $D(y)E_1(y)\neq 0$ za $y\in [0,1]$, za stopnje polinomov pa velja\\
+  \begin{align*}
+  \mbox{deg}(D)&\leq n_r + n_c -1,\\
+  \mbox{deg}(E_i)&\leq (2i-2)n_r + in_s +in_c -2i +1,\\
+  \mbox{deg}(F_i)&\leq (2i-1)n_r +in_s + (i-1)n_c -2i +2.
+  \end{align*}
 \end{izrek}
 
 \begin{proof}
-  Najprej predpostavljajmo, da obstajajo polinomi $D$, $E_i$ in $F_i$, $i=1, \ldots n$, 
-  ki ustrezajo enačbi \ref{eq4} in ostalim pogojem v izreku. Pokazati hočemo, da 
+  Najprej predpostavimo, da obstajajo polinomi $D$, $E_i$ in $F_i$, $i=1, \ldots n$, 
+  ki ustrezajo enačbi \eqref{eq4} in ostalim pogojem v izreku. Pokazati hočemo, da 
   od tod sledi geometrijska zveznost ploskev $\textbf{R}$ in $\textbf{S}$. V ta namen 
   bomo uporabili izrek \ref{izrek1}. 
   
-  Preoblikujmo enačbo 
-  \begin{align*}
-    D^{2k-1}(y)\frac{\partial^k\textbf{S}}{\partial u^k}\bigg|_{\textbf{C}}(y) = &
-    \sum_{i=0}^k \sum_{|m_i|=k} A_{m_i}^k \sum_{h=0}^i {i\choose h} D^{i-1}(y)E_{m_1}(v)
-    \cdots E_{m_h}(y) \\
-    &\cdot F_{m_{h+1}}(y)\cdots F_{m_i}(y) \frac{\partial^i \textbf{R}}{\partial x^h \partial y^{i-h}}(y).
-  \end{align*}
-  Če celotno enačbo delimo z $D^{2k-1}$ (predpostavka, da $D(y)E_1(y)\neq 0$ na $[0,1]$, zagotavlja neničelnost polinoma $D$ na $[0,1]$), 
-  dobimo 
+  Preoblikujmo enačbo \eqref{eq4}. 
+  Predpostavka, da je $D(y)E_1(y)\neq 0$ na $[0,1]$, zagotavlja neničelnost polinoma 
+  $D$ na $[0,1]$, zato lahko celotno enačbo \eqref{eq4} delimo z $D^{2k-1}(y)$ in dobimo 
   \begin{equation}\label{eq5}
     \begin{split}
-    \frac{\partial^k\textbf{S}}{\partial u^k}\bigg|_{\textbf{C}}(y) = &
-    \sum_{i=0}^k \sum_{|m_i|=k} A_{m_i}^k \sum_{h=0}^i {i\choose h} D^{i-2k}(y)E_{m_1}(v)
+    \frac{\partial^k\textbf{S}}{\partial u^k}(0,y) = &
+    \sum_{i=0}^k \sum_{|\ddd{m_i}|=k} A_{\ddd{m_i}}^k \sum_{h=0}^i {i\choose h} D^{i-2k}(y)E_{m_1}(v)
     \cdots E_{m_h}(y) \\
-    &\cdot F_{m_{h+1}}(y)\cdots F_{m_i}(y) \frac{\partial^i \textbf{R}}{\partial x^h \partial y^{i-h}}(y).
+    &\cdot F_{m_{h+1}}(y)\cdots F_{m_i}(y) \frac{\partial^i \textbf{R}}{\partial x^h \partial y^{i-h}}(0,y).
     \end{split}
   \end{equation}
   Funkcijo $D^{2k-i}$ lahko zapišemo kot produkt \\
   $D^{2k-i}(y)=D^{2m_1-1}(y)D^{2m_2-1}(y)\cdots D^{2m_h-1}(y) D^{2m_{h+1}}(y)\cdots D^{2m_i-1}(y)$,
-  saj je $|m_i|=k$.
-
-  Dobljeno vstavimo v enačbo \ref{eq5}:
+  saj je $|\ddd{m_i}|=k$.
+  Dobljeno vstavimo v enačbo \eqref{eq5}:
   \begin{equation}\label{eq6}
     \begin{split}
-    \frac{\partial^k\textbf{S}}{\partial u^k}\bigg|_{\textbf{C}}(y) = &
+    \frac{\partial^k\textbf{S}}{\partial u^k}(0,y) = &
     \sum_{i=0}^k \sum_{|m_i|=k} A_{m_i}^k \sum_{h=0}^i {i\choose h} \frac{E_{m_1}(v)}{D^{2m_1-1}(y)}
     \cdots \frac{E_{m_h}(y)}{D^{2m_h-1}(y)} \\
-    &\cdot \frac{F_{m_{h+1}}(y)}{D^{2m_{h+1}-1}(y)}\cdots \frac{F_{m_i}(y)}{D^{2m_i-1}(y)} \frac{\partial^i \textbf{R}}{\partial x^h \partial y^{i-h}}(y).
+    &\cdot \frac{F_{m_{h+1}}(y)}{D^{2m_{h+1}-1}(y)}\cdots \frac{F_{m_i}(y)}{D^{2m_i-1}(y)} \frac{\partial^i \textbf{R}}{\partial x^h \partial y^{i-h}}(0,y).
     \end{split}
   \end{equation}
 
   Definirajmo
-  $$\alpha_i(y)=\frac{E_i(y)}{D^{2i-1}(y)}\textrm{ in }\beta_i(y) = \frac{F_i(y)}{D^{2i-1}(y)},$$
-  kjer je $i=1, \ldots, n$. Potem enačba \ref{eq6} dobi enako obliko kot  
-  enačba \ref{eq2} v izreku \ref{izrek1}. Iz izreka \ref{izrek1} torej sledi, da se 
+  $$\alpha_i(y)=\frac{E_i(y)}{D^{2i-1}(y)}\textrm{ in }
+  \beta_i(y) = \frac{F_i(y)}{D^{2i-1}(y)},\quad i=1, \ldots, n.$$
+  Potem enačba \eqref{eq6} dobi enako obliko kot  
+  enačba \eqref{eq2} v izreku \ref{izrek1}. Iz izreka \ref{izrek1} torej sledi, da se 
   ploskvi $\textbf{R}$ in $\textbf{S}$ stikata z geometrijsko zveznostjo $G^n$. S tem smo 
-  dokazali \todo{eno smer ekvivalence}
+  dokazali, da je pogoj \eqref{eq4} zadosten za $G^n$-zveznost \todo{stika??zlepka} ploskev 
+  $\ddd{R}$ in $\ddd{S}$. 
 
-  Sedaj dokažimo še \todo{drugo smer ekvivalence v izreku}. Predpostavimo, da se ploskvi 
+  Sedaj dokažimo še, da je pogoj \eqref{eq4} tudi potreben. Predpostavimo, da se ploskvi 
   $\textbf{R}$ in $\textbf{S}$, definirani kot zgoraj, stikata v robni krivulji 
   $\textbf{C}$ z geometrijsko zveznostjo $G^n$. Pokazati hočemo, da od tod sledi obstoj 
   polinomov $D$, $E_i$ in $F_i$ z lastnostmi kot v izreku.
@@ -885,89 +838,84 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   po izreku \ref{izrek1} obstajata $C^n$ funkciji $\alpha_1(y)$ in $\beta_1(y)$, ki zadoščata 
   enačbi
   \begin{equation}\label{eq7}
-  \frac{\partial \textbf{S}}{\partial u}\bigg|_{\textbf{C}}(y) = 
-  \alpha_1(y)\frac{\partial \textbf{R}}{\partial x}\bigg|_{\textbf{C}}(y) + 
-  \beta_1(y) \frac{\partial \textbf{R}}{\partial y}\bigg|_{\textbf{C}}(y).
+  \frac{\partial \textbf{S}}{\partial u}(0,y) = 
+  \alpha_1(y)\frac{\partial \textbf{R}}{\partial x}(0,y) + 
+  \beta_1(y) \frac{\partial \textbf{R}}{\partial y}(0,y).
   \end{equation}
-
-  Dobljeno enačbo z desne vektorsko množimo z $\frac{\partial \textbf{R}}{\partial y}$. 
-  Dobimo:
+  Dobljeno enačbo z desne vektorsko pomnožimo z $\frac{\partial \textbf{R}}{\partial y}$. 
+  in dobimo:
   \begin{equation}\label{eq8}
-  \frac{\partial \textbf{S}}{\partial u} \times \frac{\partial \textbf{R}}{\partial y}\bigg|_{\textbf{C}}(y) = 
-  \frac{\partial \textbf{S}}{\partial u} \times \frac{\partial \textbf{S}}{\partial v}\bigg|_{\textbf{C}}(y) = 
-  \alpha_1(y)\frac{\partial \textbf{R}}{\partial x}\times \frac{\partial \textbf{R}}{\partial y}\bigg|_{\textbf{C}}(y).
+  \frac{\partial \textbf{S}}{\partial u}(0,y) \times \frac{\partial \textbf{R}}{\partial y}(0,y) = 
+  \frac{\partial \textbf{S}}{\partial u}(0,y) \times \frac{\partial \textbf{S}}{\partial v}(0,y) = 
+  \alpha_1(y)\frac{\partial \textbf{R}}{\partial x}(0,y)\times \frac{\partial \textbf{R}}{\partial y}(0,y).
   \end{equation}
   V poglavju \ref{geom.zv.} smo namreč že videli, da je 
-  $\frac{\partial \textbf{R}}{\partial y}\big|_{\textbf{C}}=\frac{\partial \textbf{S}}{\partial v}\big|_{\textbf{C}}=\textbf{C'}$.
+  $\frac{\partial \textbf{R}}{\partial y}(0,y)=
+  \frac{\partial \textbf{S}}{\partial v}(0,y)=\textbf{C}^\prime(y)$.
 
-  Enačbo \ref{eq7} sedaj z desne vektorsko množimo še z $\frac{\partial \ddd{R}}{\partial x}$ 
-  in dobimo:
+  Enačbo \eqref{eq7} sedaj z desne vektorsko množimo še z $\frac{\partial \ddd{R}}{\partial x}$ 
+  in dobimo
   \begin{equation}\label{eq9}
-  \frac{\partial \ddd{S}}{\partial u}\bigg|_{\ddd{C}}(y)\times 
-  \frac{\partial \ddd{R}}{\partial x}\bigg|_{\ddd{C}}(y) = 
-  \beta_1(y) \frac{\partial \ddd{R}}{\partial y}\bigg|_{\ddd{C}}
-  \times \frac{\partial \ddd{R}}{\partial x}\bigg|_{\ddd{C}}
+  \frac{\partial \ddd{S}}{\partial u}(0,y)\times 
+  \frac{\partial \ddd{R}}{\partial x}(0,y) = 
+  \beta_1(y)\frac{\partial \ddd{R}}{\partial y}(0,y)
+  \times \frac{\partial \ddd{R}}{\partial x}(0,y).
   \end{equation}
 
   Z $\ddd{W}(y)$ označimo vektorsko funkcijo
-  $\ddd{W}(y)=\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}\times \frac{\partial \ddd{S}}{\partial u}|_{\ddd{C}}$, 
-  z $\ddd{N}_r$ in $\ddd{N}_s$ pa normalo na ploskev $\ddd{R}$ oziroma $\ddd{S}$ v neki točki 
+  $\ddd{W}(y)=\frac{\partial \ddd{R}}{\partial x}(0,y)\times \frac{\partial \ddd{S}}{\partial u}(0,y)$, 
+  z $\ddd{N}_R$ in $\ddd{N}_S$ pa normalo na ploskev $\ddd{R}$ oziroma $\ddd{S}$ v neki točki 
   na mejni krivulji $\ddd{C}$.
   %, torej 
   %$\ddd{N}_r = \big(\frac{\partial \ddd{R}}{\partial x} \times \frac{\partial \ddd{R}}{\partial y}\big)\big|_{\ddd{C}}$ 
   %in $\ddd{N}_s = \big(\frac{\partial \ddd{S}}{\partial u} \times \frac{\partial \ddd{S}}{\partial v}\big)\big|_{\ddd{C}}$.
 
-  Prej dobljeni enačbi \ref{eq8} in \ref{eq9} torej zapišemo na naslednji način:
-  \begin{equation}\label{eq10} 
-  \ddd{N}_s(y)=\alpha_1(y)\ddd{N}_r(y)
-  \end{equation}
-  in
-  \begin{equation}\label{eq11} 
-  \ddd{W}(y)=\beta_1(y)\ddd{N}_r(y).
-  \end{equation}
+  Prej dobljeni enačbi \eqref{eq8} in \eqref{eq9} torej zapišemo na naslednji način:
+  \begin{align}\label{eq10} 
+  \ddd{N}_S(y)=\alpha_1(y)\ddd{N}_R(y),&&\ddd{W}(y)=\beta_1(y)\ddd{N}_R(y).
+  \end{align}
 
-  Stopnja $\frac{\partial\ddd{R}}{\partial y}|_{\ddd{C}}$ je največ $n_c-1$, 
+  \todo{|C??}Stopnja $\frac{\partial\ddd{R}}{\partial y}|_{\ddd{C}}$ je največ $n_c-1$, 
   saj je $\frac{\partial\ddd{R}}{\partial y}|_{\ddd{C}}=\ddd{C}'$. Enako velja za 
   $\frac{\partial \ddd{S}}{\partial v}|_{\ddd{C}}$. Stopnja $\frac{\partial\ddd{R}}{\partial x}|_{\ddd{C}}$ 
   je manjša ali enaka $n_r$, stopnja $\frac{\partial\ddd{S}}{\partial u}|_{\ddd{C}}$ 
-  pa manjša ali enaka $n_s$. \todo{dodatno razloži?}
-  Od tod in iz definicij funkcij $\ddd{N}_r$, $\ddd{N}_s$ in $\ddd{W}$ sledi
-  $st(\ddd{N}_r)\leq n_r + n_s -1$, $st(\ddd{N}_s)\leq n_s + n_c -1$ in 
-  $st(\ddd{W})\leq n_r + n_s$.
+  pa manjša ali enaka $n_s$. 
+  Od tod in iz definicij funkcij $\ddd{N}_R$, $\ddd{N}_S$ in $\ddd{W}$ sledi
+  $\mbox{deg}(\ddd{N}_R)\leq n_r + n_s -1$, $\mbox{deg}(\ddd{N}_S)\leq n_s + n_c -1$ in 
+  $\mbox{deg}(\ddd{W})\leq n_r + n_s$.
 
   Videli smo že, da sta zaradi predpostavke o regularnosti ploskev 
-  $\ddd{R}$ in $\ddd{S}$ funkciji $\ddd{N}_r(y)$ in $\ddd{N}_s(y)$ za vsak $y\in[0,1]$
+  $\ddd{R}$ in $\ddd{S}$ funkciji $\ddd{N}_R(y)$ in $\ddd{N}_S(y)$ za vsak $y\in[0,1]$
   različni od $0$.
-  Ker je $\ddd{N}_r(y)$ neničelna, mora biti vsaj ena izmed njenih koordinatnih funkcij  
+  Ker je $\ddd{N}_R(y)$ neničelna, mora biti vsaj ena izmed njenih koordinatnih funkcij  
   neničeln polinom. Brez škode za splošnost predpostavimo, da je neničelna $x$-koordinata, 
-  torej polinom $N_{rx}(y)$. 
-  %\nevem{za vsak v na [0,1] mora biti vsaj ena od treh 
-  %koordinatnih funkcij različna od 0. bšs je to N_rx}
-  Če enačbi iz \ref{eq10} in \ref{eq11} razpišemo po koordinatah, za $x$-koordinato dobimo 
-  $$N_{sx}(y)=\alpha_1(y)N_{rx}(y)$$
-  in $$W_x(y)=\beta_1(y)N_{rx}(y),$$
-  kjer je $N_{sx}$ $x$-koordinata funkcije $\ddd{N}_s$, $W_x$ pa $x$-koordinata 
+  torej polinom $N_{R,1}(y)$. 
+  Če enačbi iz \eqref{eq10} razpišemo po koordinatah, za $x$-koordinato dobimo
+  \begin{align*}
+  N_{S,1}(y)=\alpha_1(y)N_{R,1}(y),&&W_1(y)=\beta_1(y)N_{R,1}(y),
+  \end{align*}
+  kjer je $N_{S,1}$ $x$-koordinata funkcije $\ddd{N}_S$, $W_1$ pa $x$-koordinata 
   funkcije $\ddd{W}$.
 
-  Iz zgornjih enačb lahko vidimo, da so vse realne ničle polinoma $N_{rx}(y)$ na intervalu $[0,1]$ 
-  tudi ničle polinomov $N_{sx}(y)$ in $W_x(y)$, torej da polinom $U(y)$, ki je zgrajen 
-  kot produkt vseh linearnih faktorjev v polinomskem razcepu polinoma $N_{rx}(y)$, deli 
-  polinoma $N_{sx}(y)$ in $W_x(y)$. Da to res drži, lahko vidimo na naslednji način.
-  Zapišimo $N_{rx}(y) = U(y)D(y)$, kjer je $U(y)$ produkt vseh linearnih faktorjev, 
-  $D(y)$ pa produkt vseh nelinearnih faktorjev v polinomskem razcepu polinoma $N_{rx}(y)$. 
-  Predpostavimo, da $U(y)$ ne deli polinoma $N_{sx}(y)$. Ker je $N_{sx}(y)=\alpha_1(y)U(y)D(y)$, 
+  Iz zgornjih enačb lahko vidimo, da so vse realne ničle polinoma $N_{R,1}(y)$ na intervalu $[0,1]$ 
+  tudi ničle polinomov $N_{S,1}(y)$ in $W_1(y)$, torej da polinom $U(y)$, ki je zgrajen 
+  kot produkt vseh linearnih faktorjev v polinomskem razcepu polinoma $N_{R,1}(y)$, deli 
+  polinoma $N_{S,1}(y)$ in $W_1(y)$. Da to res drži, lahko vidimo na naslednji način.
+  Zapišimo $N_{R,1}(y) = U(y)D(y)$, kjer je $U(y)$ produkt vseh linearnih faktorjev, 
+  $D(y)$ pa produkt vseh nelinearnih faktorjev v polinomskem razcepu polinoma $N_{R,1}(y)$. 
+  Predpostavimo, da $U(y)$ ne deli polinoma $N_{S,1}(y)$. Ker je $N_{S,1}(y)=\alpha_1(y)U(y)D(y)$, 
   je to mogoče le, če je $\alpha_1(y)$ racionalna funkcija, katere imenovalec deli polinom $U(y)$. 
-  Funkcija $\alpha_1(y)$ ima torej na intervalu $[0,1]$ pol. Ker velja $\ddd{N}_s(y)=\alpha_1(y)\ddd{N}_r(y)$
-  in so vse koordinatne funkcije funkcij $\ddd{N}_s(y)$ in $\ddd{N}_r(y)$ polinomi, 
-  mora veljati, da imenovalec funkcije $\alpha_1(y)$ deli $N_{rx}(y)$, $N_{ry}(y)$ in 
-  $N_{rz}(y)$. Funkcija $\alpha_1(y)$ ima pol, označimo ga z $y_0$. Sledi, da je $y_0$ 
-  ničla polinomov $N_{rx}(y)$, $N_{ry}(y)$ in $N_{rz}(y)$, in zato je $\ddd{N}_r(y_0)=0$, 
+  Funkcija $\alpha_1(y)$ ima torej na intervalu $[0,1]$ pol. Ker velja $\ddd{N}_S(y)=\alpha_1(y)\ddd{N}_R(y)$
+  in so vse koordinatne funkcije funkcij $\ddd{N}_S(y)$ in $\ddd{N}_R(y)$ polinomi, 
+  mora veljati, da imenovalec funkcije $\alpha_1(y)$ deli $N_{R,1}(y)$, $N_{R,2}(y)$ in 
+  $N_{R,3}(y)$. Funkcija $\alpha_1(y)$ ima pol, označimo ga z $y_0$. Sledi, da je $y_0$ 
+  ničla polinomov $N_{R,1}(y)$, $N_{R,2}(y)$ in $N_{R,3}(y)$, in zato je $\ddd{N}_R(y_0)=0$, 
   kar pa je v nasprotju s predpostavko o regularnosti ploskve $\ddd{R}$. Torej mora polinom 
-  $U(y)$ deliti polinom $N_{sx}(y)$. Z enakimi sklepi trditev pokažemo še za polinom $W_x(y)$.
+  $U(y)$ deliti polinom $N_{S,1}(y)$. Z enakimi sklepi trditev pokažemo še za polinom $W_1(y)$.
 
 
-  \todo{vprašanje: ali U vsebuje vse linearne faktorje ali samo tiste, ki imajo zvezo 
-  z ničlami na [0,1]???}
+  %\todo{vprašanje: ali U vsebuje vse linearne faktorje ali samo tiste, ki imajo zvezo 
+  %z ničlami na [0,1]???}
 
 
   Polinom $N_{rx}$ sedaj znova zapišimo kot produkt $N_{rx}(y) = U(y)D(y)$, kjer sta 
@@ -997,7 +945,7 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
 
   Lotimo se še dokaza za $k>1$. Prepodstavimo, da izrek velja za vse $k\leq m$, kjer je $m\in \N$, $m<n$. 
   Torej obstajajo polinomi $D(y)$, $E_1(y), \ldots, E_m(y)$, $F_1(y), \ldots, F_m(y)$ 
-  z ustreznimi stopnjami, da velja enačba \ref{eq4} za $k=1,2,\ldots,m$.
+  z ustreznimi stopnjami, da velja enačba \eqref{eq4} za $k=1,2,\ldots,m$.
   
   Izhajamo iz predpostavke, da je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^n$-zvezen. 
   Iz izreka \ref{izrek1} sledi, da obstajajo funkcije 
@@ -1044,18 +992,18 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   D^{i-1}(y)E_{m_1}(y)\cdots E_{m_h}(y) \\ &\cdot F_{m_{h+1}}(y)\ldots F_{m_i}(y)
   \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}}
   \end{align*}
-  Če enačbo \ref{eq12} pomnožimo z $D^{2m}(y)$ in jo nekoliko preoblikujemo, dobimo:
+  Če enačbo \eqref{eq12} pomnožimo z $D^{2m}(y)$ in jo nekoliko preoblikujemo, dobimo:
   \begin{equation}\label{eq13} 
   \ddd{S}_{m+1}(y)=D^{2m}\alpha_{m+1}(y)\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} + 
   D^{2m}(y)\beta_{m+1}(y)\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}.
   \end{equation}
 
   Na dobljeni enačbi sedaj uporabimo podoben postopek, kot smo ga uporabili pri dokazu 
-  za $k=1$. Enačbo \ref{eq13} z leve vektorsko množimo z $\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}$ 
+  za $k=1$. Enačbo \eqref{eq13} z leve vektorsko množimo z $\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}$ 
   in dobimo 
   $$\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} \times \ddd{S}_{m+1} = 
   D^{2m}\beta_{m+1} \frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} \times \frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}.$$
-  Če pa enačbo \ref{eq13} z desne pomnožimo z $\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}$, 
+  Če pa enačbo \eqref{eq13} z desne pomnožimo z $\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}$, 
   dobimo 
   $$\ddd{S}_{m+1}\times\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} = 
   D^{2m}\alpha_{m+1} \frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} \times \frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}.$$
@@ -1152,7 +1100,7 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
   V zadnji neenakosti smo uporabili, da je $n_c\leq n_r$, torej je $n_c-n_r\leq 0$.
   S tem smo torej pokazali, da je $st(\ddd{S}_{m+1})\leq 2mn_r + (m+1)n_s+(m+1)n_c-2m$.
 
-  Iz enačbe \ref{eq31} in definicije polinoma $E_{m+1}(y)$ je razvidno naslednje:
+  Iz enačbe \eqref{eq31} in definicije polinoma $E_{m+1}(y)$ je razvidno naslednje:
   \begin{align*}
     &st(E_{m+1})\leq st(W_{1x})\leq st(\ddd{W}_1)\leq st(\ddd{S}_{m+1})+
     st(\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}) \leq \\
@@ -1160,7 +1108,7 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
     &=2mn_r + (m+1)n_s + (m+1)n_c -2m -1.
   \end{align*}
 
-  Podobno dobimo iz enačbe \ref{eq32} in definicije polinoma $F_{m+1}(y)$ oceno za 
+  Podobno dobimo iz enačbe \eqref{eq32} in definicije polinoma $F_{m+1}(y)$ oceno za 
   stopnjo polinoma $F_{m+1}(y)$:
   \begin{align*}
     &st(F_{m+1})\leq st(W_{2x})\leq st(\ddd{W}_2)\leq st(\ddd{S}_{m+1})+
@@ -1176,7 +1124,7 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek:
 
 %\subsection{Kompatibilnostni pogoji}
 %
-%enačba \ref{eq13}
+%enačba \eqref{eq13}
 %
 %vstavimo $\alpha_{m+1}(y)=\frac{E_{m+1}(y)}{D^{2m+1}(y)}$ in 
 %$\beta_{m+1}(y)=\frac{F_{m+1}(y)}{D^{2m+1}(y)}$
@@ -1319,7 +1267,7 @@ Zanimalo nas bo,
 kakšne zveze v teh primerih veljajo za notranje kontrolne točke, torej za 
 $\ddd{P}_{1,1}$, $\ddd{P}_{1,2}$, $\ddd{Q}_{1,1}$ in $\ddd{Q}_{1,2}$., 
 da bo stik ploskev $G^1$-zvezen. 
-\todo{razlaga s ploščinami trikotnikov?} 
+%\todo{razlaga s ploščinami trikotnikov?} 
 V nadaljevanju bomo uporabljali še naslednje oznake za kontrolne vektorje obeh 
 ploskev in robne krivulje:
 $\ddd{p}_{i,j}=\ddd{P}_{i+1,j}-\ddd{P}_{i,j}$, 
@@ -1346,7 +1294,7 @@ $G^1$-zveznost.
   poleg tega ujemati še odvoda obeh ploskev v $u$-smeri v robnih 
   točkah: 
   $\frac{\partial}{\partial u}\ddd{R}(u,v)|_{u=0}=\frac{\partial}{\partial u}\ddd{S}(u,v)|_{u=0}$.
-  Če razpišemo oba parcialna odvoda oziroma se sklicujemo na enakost \ref{eq29}, 
+  Če razpišemo oba parcialna odvoda oziroma se sklicujemo na enakost \eqref{eq29}, 
   dobimo naslednje pogoje za $C^1$-zveznost med ploskvama:
   $$-(\ddd{P}_{1,j}-\ddd{P}_{0,j})=\ddd{Q}_{1,j}-\ddd{Q}_{0,j}$$
   oziroma 
@@ -1387,7 +1335,7 @@ D(v)\frac{\partial \ddd{S}}{\partial u}|_{u=0} = E_1(v)\frac{\partial \ddd{R}}{\
 F_1(v)\frac{\partial \ddd{R}}{\partial v}|_{u=0}.
 \end{align}
 
-Razpišimo prve odvode parametrizacij ploskev $\ddd{R}$ in $\ddd{S}$: \todo{sklic na formulo?}
+Razpišimo prve odvode parametrizacij ploskev $\ddd{R}$ in $\ddd{S}$: %\todo{sklic na formulo?}
 $$\frac{\partial \ddd{S}}{\partial u}|_{u=0}=3\sum_{i=0}^2\sum_{j=0}^3
 (\ddd{P}_{i+1,j}-\ddd{P}_{i,j})B_i^2(u)B_j^3(v)|_{u=0}=
 3\sum_{j=0}^3(\ddd{P}_{1,j}-\ddd{P}_{0,j})B_j^3(v),$$
@@ -1399,7 +1347,7 @@ $$\frac{\partial \ddd{R}}{\partial v}|_{u=0}=3\sum_{i=0}^3\sum_{j=0}^2
 (\ddd{Q}_{i,j+1}-\ddd{Q}_{i,j})B_i^2(u)B_j^3(v)|_{u=0}=
 3\sum_{j=0}^2(\ddd{Q}_{0,j}-\ddd{Q}_{0,j+1})B_j^2(v).$$
 
-Dobljeno vstavimo v enačbo \ref{eq14}. Vidimo, da mora veljati:
+Dobljeno vstavimo v enačbo \eqref{eq14}. Vidimo, da mora veljati:
 \begin{equation}\label{eq15}
   \begin{split} 
 &D(v)\sum_{j=0}^3(\ddd{P}_{1,j}-\ddd{P}_{0,j})B_j^3(v) = \\
@@ -1409,7 +1357,7 @@ F_1(v)\sum_{j=0}^2(\ddd{Q}_{0,j}-\ddd{Q}_{0,j+1})B_j^2(v).
 \end{equation}
 
 Najprej si oglejmo, kakšni pogoji v primeru $G^1$ zveznosti veljajo za robne 
-kontrolne točke ploskev $\ddd{R}$ in $\ddd{S}$. V enačbo \ref{eq15} vstavimo 
+kontrolne točke ploskev $\ddd{R}$ in $\ddd{S}$. V enačbo \eqref{eq15} vstavimo 
 vrednosti $v=0$ in $v=1$.
 
 Pri vrednosti $v=0$ dobimo:
@@ -1454,7 +1402,7 @@ minimalne stopnje.
 
 \begin{primer}\label{primer2}
   Da zagotovimo $G^1$-zveznost na stiku ploskev $\ddd{R}$ in $\ddd{S}$, mora 
-  poleg pogoja, da se ploskvi stikata v robni krivulji, veljati enakost \ref{eq15}, 
+  poleg pogoja, da se ploskvi stikata v robni krivulji, veljati enakost \eqref{eq15}, 
   oziroma
   \begin{align}\label{eq16} 
     D(v)\sum_{j=0}^3 \ddd{q}_j B_j^3(v) = E_1(v) \sum_{j=0}^3 \ddd{p}_j B_j^3(v) + 
@@ -1473,7 +1421,7 @@ minimalne stopnje.
   velja $F_1(0)=f_0$ ter $F_1(1)=f_1$, mora za $F_1$ veljati
   $$F_1(v) = f_0(1-v) + f_1v.$$
 
-Vstavimo polinome $D$, $E_1$ in $F_1$ v enačbo \ref{eq16} in dobimo:
+Vstavimo polinome $D$, $E_1$ in $F_1$ v enačbo \eqref{eq16} in dobimo:
 \begin{align*}
   &\sum_{j=0}^3\ddd{q}_jB_j^3(v) = e_0\sum_{j=0}^3\ddd{p}_jB_j^3(v) + 
   (f_0(1-v)+f_1v)\sum_{j=0}^2\ddd{z}_jB_j^2(v)=\\
@@ -1504,8 +1452,8 @@ vektorjev $\ddd{q}_{1,2}$ in $\ddd{p}_{1,2}$, zahtevamo le še koplanarnost.
 Ena izmed omejitev, ki veljajo za parametre $e_0$, $f_0$ in $f_1$, je, da 
 mora biti $e_0<0$,
 saj bi imel v nasprotnem primeru stik ploskev obliko špice. 
-Parametri so določena z enačbama \ref{eq18} in \ref{eq19} na naslednji način. 
-Zapišimo enačbo \ref{eq18} kot 
+Parametri so določena z enačbama \eqref{eq18} in \eqref{eq19} na naslednji način. 
+Zapišimo enačbo \eqref{eq18} kot 
 \begin{align*}
 \ddd{q}_{0,0}=e_1\ddd{p}_{0,0}+f_1\ddd{z}_0+g\ddd{n},
 \end{align*}
@@ -1519,7 +1467,7 @@ mora biti $g=0$, vrednosti $e_0$ in $f_0$ pa izračunamo s pomočjo Cramerjevih 
 e_0=\frac{det[\ddd{q}_{0,0},\ddd{z}_0,\ddd{n}]}{det[\ddd{p}_{0,0},\ddd{z}_0,\ddd{n}]}&&
 f_0=\frac{det[\ddd{p}_{0,0},\ddd{q}_{0,0},\ddd{n}]}{det[\ddd{p}_{0,0},\ddd{z}_0,\ddd{n}]}
 \end{align*}
-Na enak način iz enačbe \ref{eq19} dobimo še parametra $e_1$ in $f_1$
+Na enak način iz enačbe \eqref{eq19} dobimo še parametra $e_1$ in $f_1$
 \begin{align*}
   e_1=\frac{det[\ddd{q}_{0,3},\ddd{z}_2,\ddd{n}]}{det[\ddd{p}_{0,3},\ddd{z}_2,\ddd{n}]}&&
   f_1=\frac{det[\ddd{p}_{0,3},\ddd{q}_{0,3},\ddd{n}]}{det[\ddd{p}_{0,3},\ddd{z}_2,\ddd{n}]}
@@ -1546,7 +1494,7 @@ prosti. Enako velja za vse ostale notranje kontrolne točke.
   Oglejmo si še nekoliko drugačen primer konstrukcije $G^1$-zveznih zlepkov dveh ploskev. 
   Stopnja polinoma $D(v)$ naj bo znova 0, stopnja $F_1(v)$ pa 1, med tem ko naj bo 
   polinom $E_1(v)$ 
-  stopnje 1. Da bomo v tem primeru na obeh straneh enačbe \ref{eq15} dobili 
+  stopnje 1. Da bomo v tem primeru na obeh straneh enačbe \eqref{eq15} dobili 
   Bézierjevo krivuljo stopnje 3, moramo znižati stopnjo krivulje 
   $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$. 
   Videli bomo, da v tem primeru sicer dobimo drugačne 
@@ -1568,7 +1516,7 @@ oziroma
 \frac{3}{2}\ddd{p}_{1,2}-\frac{1}{2}\ddd{p}_{1,3}.
 \end{align}
 
-Enačba \ref{eq15} se torej v tem primeru preoblikuje tako:
+Enačba \eqref{eq15} se torej v tem primeru preoblikuje tako:
 \begin{align}\label{eq16}
 D(v)\sum_{j=0}^3\ddd{q}_{1,j}B_j^3(v)=E_1(v)\sum_{j=0}^2\tilde{\ddd{p}}_jB_j^2(v)+
 F_1(v)\sum_{j=0}^2\ddd{s}_jB_j^2(v),
@@ -1581,7 +1529,7 @@ $E_1(1)=e_1$, $F_1(0)=f_0$, $F_1(1)=f_1$. Torej mora veljati:
 $$E_1(v)=e_0(1-v)+e_1v$$
 $$F_1(v)=f_0(1-v)+f_1v.$$
 
-Vstavimo polinoma v enačbo \ref{eq16} in na podoben način kot v primeru \ref{primer2} dobimo:
+Vstavimo polinoma v enačbo \eqref{eq16} in na podoben način kot v primeru \ref{primer2} dobimo:
 \begin{align*}
   &\sum_{j=0}^3\ddd{q}_{1,j}B_j^3(v)=(a_0(1-v)+a_1v)\sum_{j=0}^2\tilde{\ddd{p}}_jB_j^2(v)
   + (b_0(1-v)+b_1v)\sum_{j=0}^2\ddd{s}_jB_j^2(v) =\\
@@ -1605,9 +1553,8 @@ $$\ddd{q}_{1,2}=e_1\ddd{p}_{1,2}+\frac{1}{3}(e_0-e_1)\ddd{p}_{1,3}+\frac{2}{3}f_
 
 %Vidimo, da za razliko od primera \ref{primer2}, kjer smo imeli zgolj 3 parametre 
 %za določanje oblike in od teh le enega prostega, tu dobimo 4 parametre: $e_0$, $e_1$, $f_0$ in $f_1$. 
-%Dva izmed njih sta določena z enačbama \ref{eq18} in \ref{eq19}, druga dva pa sta prosta. 
+%Dva izmed njih sta določena z enačbama \eqref{eq18} in \eqref{eq19}, druga dva pa sta prosta. 
 %S tem dobimo nove možnosti za obliko dobljene ploskve.
-\todo{parametri e1, e2, f1, f2 določeni iz enačb za robne kontrolne točke?}
 
 Da se izognemo možnosti, kjer ima dobljeni zlepek obliko špice, mora veljati 
 omejitev $E_1(v)<0$ za $v\in [0,1]$, s čimer dobimo nekaj omejitev za izbiro 
@@ -1620,12 +1567,15 @@ Druga možnost je, da je $e_1-e_0>0$. V tem primeru je $E_1(v)$ naraščajoča f
 in ima maksimum v $v=1$. Torej bo v tem primeru $E_1(v)<0$, če bo $E_1(1)=e_1<0$. 
 Omejitev za parametra $e_0$ in $e_1$ je torej, da sta oba negativna. 
 
+Parametri $e_0$, $e_1$, $f_0$ in $f_1$ so tudi v tem primeru določeni iz enačb \eqref{eq18} 
+in \eqref{eq19} na enak način kot v primeru \ref{primer2}.
+
 V trenutnem primeru imamo nekoliko manj svobode, kar se tiče izbire kontrolnih točk, 
 kot v primerih \ref{primer1} in \ref{primer2}.  
 Kontrolni točki $\ddd{Q}_{1,1}$ in $\ddd{Q}_{1,2}$ sta kot v primeru \ref{primer2} 
 določeni s točkama $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ ter robnimi kontrolnimi 
 točkami, kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ pa nista več obe 
-prosti. Prosta je le še ena izmed njiju, druga pa je določena z enačbo \ref{eq17}.
+prosti. Prosta je le še ena izmed njiju, druga pa je določena z enačbo \eqref{eq17}.
 \todo{to pomeni, da v splošnem ne moremo konstruirati ploskve S poljubne stopnje, 
 če je R podana, saj dobimo pogoje za kontrolne točke R}
 \end{primer}
@@ -1635,18 +1585,18 @@ veliko več parametrov, ampak da so vse kontrolne točke odvisne od robnih,
 polinomi višje stopnje se v bistvu ne splačajo? uporabni so samo, kadar 
 imamo stik ploskev različnih stopenj}
 
-\todo{lahko narediš primer s stopnjami 3 in 2 in vidimo, da kontrolne točke 
-niso proste in je zato v splošnem nemogoče konstruirati bezierjevo ploskev 
-vnaprej določene stopnje, ki je g zvezna z neko vnaprej določeno bez ploskvijo, 
-ali kaj?}
+%\todo{lahko narediš primer s stopnjami 3 in 2 in vidimo, da kontrolne točke 
+%niso proste in je zato v splošnem nemogoče konstruirati bezierjevo ploskev 
+%vnaprej določene stopnje, ki je g zvezna z neko vnaprej določeno bez ploskvijo, 
+%ali kaj?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Konstrukcija $G^2$-zveznih Bézierovih ploskev iz tenzorskega produkta}
-\todo{tudi $C^2$?}
+\todo{naredim tudi $C^2$?}
 
 V tem podpoglavju si oglejmo še primer konstrukcije dveh ploskev, ki sta na 
-skupnem robu $G^2$-zvezni. \todo{še kaj?} 
+skupnem robu $G^2$-zvezni. %\todo{še kaj?} 
 
 Naj bosta $\ddd{R}$ in $\ddd{S}$ bikvintični Bézierovi ploskvi iz tenzorskega produkta: 
 
@@ -1677,7 +1627,7 @@ Po izreku \ref{izrek1} bosta ploskvi $\ddd{R}$ in $\ddd{S}$ $G^2$-zvezni na skup
 robu, natanko tedaj, ko bodo obstajale 
 $C^2$-funkcije $\alpha_1(v)$, $\beta_1(v)$, $\alpha_2(v)$ in $\beta_2(v)$, 
 kjer je $\alpha_1(v)\neq 0$ in ustreznega predznaka na intervalu $[0,1]$, da bo 
-veljala enakost \ref{eq33} ter 
+veljala enakost \eqref{eq33} ter 
 \begin{equation}\label{eq34}
   \begin{split}
 \frac{\partial^2\ddd{S}}{\partial u^2}|_{u=0}(v)=&\alpha_2(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0}(v)
@@ -1686,11 +1636,11 @@ veljala enakost \ref{eq33} ter
 \frac{\partial^2\ddd{R}}{\partial v^2}|_{u=0}(v).
   \end{split}
 \end{equation}
-Ker gre znova za Bézierove ploskve iz tenzorskega produkta, lahko uporabimo 
+Ker gre znova za Bézierjeve ploskve iz tenzorskega produkta, lahko uporabimo 
 izrek \ref{izrek2}, po katerem sta ploskvi $G^2$-zvezni na skupnem robu natanko tedaj, 
 ko obstajajo polinomi $D(v)$, $E_1(v)$, $F_1(v)$, $E_2(v)$ in $E_2(v)$, kjer je 
 $D(v)E_1(v)\neq 0$ in polinom $E_1(v)$ ustreznega predznaka na intervalu $[0,1]$, da 
-velja enakost \ref{eq14} ter 
+velja enakost \eqref{eq14} ter 
 \begin{equation}\label{eq35}
   \begin{split}
 D^3(v)\frac{\partial^2\ddd{S}}{\partial u^2}|_{u=0}(v)=&E_2(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0}(v)
@@ -1706,7 +1656,7 @@ Zaradi enostavnosti naj bo stopnja polinoma $D(v)$ enaka 0. Torej lahko brez šk
 splošnost predpostavimo, da je $D(v)\equiv 1$. Stopnje preostalih polinomov bomo 
 izbrali v nadaljevanju.
 
-Sklicujmo se na enakost \ref{eq28} in dobimo naslednje rezultate za parcialne odvode 
+Sklicujmo se na enakost \eqref{eq28} in dobimo naslednje rezultate za parcialne odvode 
 parametrizacij ploskev $\ddd{R}$ in $\ddd{S}$ v $u=0$: 
 
 \begin{align*}
@@ -1718,7 +1668,7 @@ parametrizacij ploskev $\ddd{R}$ in $\ddd{S}$ v $u=0$:
 \frac{\partial^2\ddd{R}}{\partial u \partial v}|_{u=0}=5\cdot 5\sum_{j=0}^4\ddd{v}_jB_j^4(v).
 \end{align*}
 
-Dobljene izraze za odvode vstavimo v enačbi \ref{eq14} in \ref{eq35}. Oglejmo si, kakšne 
+Dobljene izraze za odvode vstavimo v enačbi \eqref{eq14} in \eqref{eq35}. Oglejmo si, kakšne 
 pogoje nam ti dve enačbi data pri vrednostih $v=0$ in $v=1$, torej kakšni pogoji 
 morajo veljati na robovih obeh ploskev, da bo njun stik $G^2$-zvezen. 
 Pri vrednosti $v=0$ dobimo
@@ -1747,40 +1697,40 @@ od 0, da zagotovimo, da ploskvi ne bosta imeli stika v obliki špice, pa mora ve
 še $E_1(v)<0$ na intervalu $[0,1]$. Sledi, da mora veljati $e_{10}<0$ in $e_{11}<0$. 
 
 Ker smo predpostavili, da imamo vnaprej določene robove obeh ploskev, so vsi kontrolni 
-vektorji, ki nastopajo v zgornjih enačbah(\ref{eq36}-\ref{eq39}), razen vektorjev $\ddd{v}_0$ in $\ddd{v}_4$ 
-znani. Enačbi \ref{eq36} in \ref{eq38} enolično določata vrednosti parametrov 
-$e_{10}$, $f_{10}$, $e_{11}$ in $f_{11}$. \todo{glej primer g1} Proste parametre oziroma 
-kontrolne točke nam bosta prinesli le enačbi \ref{eq37} in \ref{eq39}. 
+vektorji, ki nastopajo v zgornjih enačbah(\eqref{eq36}-\eqref{eq39}), razen vektorjev $\ddd{v}_0$ in $\ddd{v}_4$ 
+znani. Enačbi \eqref{eq36} in \eqref{eq38} enolično določata vrednosti parametrov 
+$e_{10}$, $f_{10}$, $e_{11}$ in $f_{11}$, izračunamo jih s pomočjo 
+Cramerjevih formul, kot v primeru \ref{primer2}. Proste parametre oziroma 
+kontrolne točke nam bosta prinesli le enačbi \eqref{eq37} in \eqref{eq39}. 
 
-Najprej si oglejmo enačbo \ref{eq37} in obravnavajmo dva primera. V prvem primeru 
+Najprej si oglejmo enačbo \eqref{eq37} in obravnavajmo dva primera. V prvem primeru 
 naj bodo robovi krivulj izbrani na tak način, da 
 je koeficient pred vektorjem $\ddd{v}_0$ enak 0, torej da je $f_{10}=0$,
 v drugem primeru pa je različen od 0. 
 Z $\ddd{n}_1$ bomo označili enotsko normalo na ploskev v točki $\ddd{P}_{0,0}$. 
 Če je $f_{10}=0$, izgubimo člen, ki vsebuje $\ddd{v}_0$. To 
 pomeni, da so vsi vektorji, ki nastopajo v enačbi, že določeni. V enačbi se nam pojavita 
-le dva še neznana parametra $e_{20}$ in $f_{20}$, ki ju lahko določimo iz enačbe. 
-\todo{glej primer g1} \todo{skalarni produkt z normalo?} V tem primeru nam enačba 
-\ref{eq27} ne da nobenih prostih parametrov ali kontrolnih točk. Če pa je $f_{10}\neq 0$, 
+le dva še neznana parametra $e_{20}$ in $f_{20}$, ki ju lahko določimo iz enačbe. %\todo{skalarni produkt z normalo?} V tem primeru nam enačba 
+\eqref{eq27} ne da nobenih prostih parametrov ali kontrolnih točk. Če pa je $f_{10}\neq 0$, 
 imamo na voljo dva različna scenarija. Prva možnost je, da projekcijo vektorja 
 $\ddd{v}_0$ na normalo $\ddd{n}_1$ ter parametra $e_{20}$ in $f_{20}$ določimo iz 
-enačbe \ref{eq37}, projekcija vektorja $\ddd{v}_0$ na tangentno ravnino na ploskev v 
+enačbe \eqref{eq37}, projekcija vektorja $\ddd{v}_0$ na tangentno ravnino na ploskev v 
 točki $\ddd{P}_{0,0}$ pa je prosta. 
 Druga možnost pa je, da sta parametra $e_{20}$ in $f_{20}$ prosta, vektor $\ddd{v}_0$ 
-pa je določen z enačbo \ref{eq37}. 
+pa je določen z enačbo \eqref{eq37}. 
 
-Na enak način lahko analiziramo enačbo \ref{eq39}. V prvem primeru, kjer je $f_{11}=0$, 
+Na enak način lahko analiziramo enačbo \eqref{eq39}. V prvem primeru, kjer je $f_{11}=0$, 
 člen, ki vsebuje vektor $\ddd{v}_4$, izgine, parametra $e_{21}$ in $f_{21}$ pa sta 
-določena z enačbo \ref{eq39}. Če je $f_{11}\neq 0$ pa znova dobimo dve situaciji. Lahko 
+določena z enačbo \eqref{eq39}. Če je $f_{11}\neq 0$ pa znova dobimo dve situaciji. Lahko 
 določimo projekcijo vektorja $\ddd{v}_4$ na normalo $\ddd{n}_2$ na ploskev v točki 
-$\ddd{P}_{0,5}$ ter parametra $e_{21}$ in $f_{2,1}$ iz enačbe \ref{eq39}, projekcija 
+$\ddd{P}_{0,5}$ ter parametra $e_{21}$ in $f_{2,1}$ iz enačbe \eqref{eq39}, projekcija 
 vektorja $\ddd{v}_4$ na tangentno ravnino na ploskev v točki $\ddd{P}_{0,5}$ pa je 
 prosta, ali pa sta prosta parametra $e_{21}$ in $f_{21}$, vektor $\ddd{v}_4$ pa je 
-določen z enačbo \ref{eq39}. 
+določen z enačbo \eqref{eq39}. 
 
 Sedaj moramo izbrati polinome $E_1$, $E_2$, $F_1$ in $F_2$. Izbira njihovih stopenj je 
 v primeru $G^2$-zveznosti nekoliko težja kot v primeru $G^1$-zveznosti, saj so 
-odvisni od stopenj Bézierjevih krivulj tako v enačbi \ref{eq14} kot v enačbi \ref{eq35}. 
+odvisni od stopenj Bézierjevih krivulj tako v enačbi \eqref{eq14} kot v enačbi \eqref{eq35}. 
 Če bi želeli minimalne stopnje koeficientnih polinomov, bi lahko za $E_1(v)$ in 
 $E_2(v)$ izbrali konstanti, polinoma $F_1$ in $F_2$ pa bi izbrali linearna. V tem primeru 
 bi za prvih nekaj kontrolnih točk ploskve $\ddd{S}$ dobili enake pogoje, kot v 
@@ -1796,7 +1746,7 @@ $E_2(v)$ stopnje 2, polinoma $F_1(v)$ in $F_2(v)$ pa linearna. Naj torej velja:
 \end{align*}
 
 Da se bodo pri taki izbiri koeficientnih polinomov stopnje Bézierjevih krivulj v 
-enačbah \ref{eq14} in \ref{eq35} ujemale, moramo znižati stopnji parcialnih odvodov 
+enačbah \eqref{eq14} in \eqref{eq35} ujemale, moramo znižati stopnji parcialnih odvodov 
 $\frac{\partial \ddd{R}}{\partial u}$ in $\frac{\partial^2 \ddd{R}}{\partial u^2}$, 
 stopnja krivulje $\frac{\partial \ddd{R}}{\partial u}$ naj bo 3, stopnja krivulje 
 $\frac{\partial^2 \ddd{R}}{\partial u^2}$ pa naj bo 1. 
@@ -1811,7 +1761,7 @@ $\frac{\partial^2 \ddd{R}}{\partial u^2}$ pa naj bo 1.
 \end{align*}
 
 Kontrolne vektorje $\ddd{p}_{1,i}$, $i=0,\ldots,5$ lahko izrazimo z vektorji 
-$\ddd{\tilde{p}}_i$ s pomočjo enačb za višanje stopnje Bézierjeve krivulje \todo{sklic} 
+$\ddd{\tilde{p}}_i$ s pomočjo enačb za višanje stopnje Bézierjeve krivulje  
 na naslednji način:
 \begin{align}\label{eq40}
 &\ddd{p}_{1,1}=\frac{1}{5}(3\ddd{\tilde{p}}_1+2\ddd{p}_{1,0})&&
@@ -1822,14 +1772,14 @@ na naslednji način:
 \ddd{p}_{1,3}=\frac{1}{10}(3\ddd{\tilde{p}}_1+6\ddd{\tilde{p}}_2+\ddd{p}_{1,5})
 \end{align}
 Seveda velja $\ddd{\tilde{p}}_0=\ddd{p}_{1,0}$, $\ddd{\tilde{p}_3}=\ddd{p}_{1,5}$. 
-Iz enačb \ref{eq40} lahko izrazimo še vektorja $\ddd{\tilde{p}}_1$ in $\ddd{\tilde{p}}_2$ kot 
+Iz enačb \eqref{eq40} lahko izrazimo še vektorja $\ddd{\tilde{p}}_1$ in $\ddd{\tilde{p}}_2$ kot 
 $$\ddd{\tilde{p}}_1=\ddd{p}_{1,0}+\frac{5}{3}\ddd{v}_0$$
 in 
 $$\ddd{\tilde{p}}_2=\ddd{p}_{1,5}-\frac{5}{3}\ddd{v}_4.$$
 Tu smo uporabili dejstvo, da je $\ddd{v}_0=\ddd{p}_{1,1}-\ddd{p}_{10}$ in 
 $\ddd{v}_4=\ddd{p}_{1,5}-\ddd{p}_{1,4}$. 
 
-Enako lahko s pomočjo enačb za višanje stopnje \todo{sklic} izrazimo kontrolne vektorje 
+Enako lahko s pomočjo enačb za višanje stopnje izrazimo kontrolne vektorje 
 $\ddd{p}_{2,i}$, $i=0,\ldots,5$ izrazimo z vektorjema $\ddd{p}_{2,0}$ in $\ddd{p}_{2,5}$. 
 \begin{align}
 &\ddd{p}_{2,1}=\frac{1}{5}(4\ddd{p}_{2,0}+\ddd{p}_{2,5})&&
@@ -1843,8 +1793,8 @@ $\ddd{P}_{i,j}$, $i=0,1,2$, $j=0,\ldots,5$. Ostale notranje kontrolne točke so 
 saj zahtevamo le geometrijsko zveznost stopnje 2. 
 
 Za določitev pogojev, ki morajo veljati za kontrolne vektorje ploskve $\ddd{S}$ moramo 
-uporabiti enačbi \ref{eq14} in \ref{eq35}, ki predstavljata pogoja za $G^1$ in $G^2$-zveznost. 
-Ko v enačbo \ref{eq14} vstavimo polinoma $E_1(v)$ in $F_1(v)$, preoblikujemo dobljeno 
+uporabiti enačbi \eqref{eq14} in \eqref{eq35}, ki predstavljata pogoja za $G^1$ in $G^2$-zveznost. 
+Ko v enačbo \eqref{eq14} vstavimo polinoma $E_1(v)$ in $F_1(v)$, preoblikujemo dobljeno 
 enačbo, da na obeh straneh dobimo Bézierovo krivuljo stopnje 5 ter primerjamo koeficiente 
 pred baznimi polinomi, dobimo:
 
@@ -1859,7 +1809,7 @@ e_{10}\ddd{p}_{1,5}+6f_{11}\ddd{z}_2+4f_{10}\ddd{z}_3)\\
 4f_{11}\ddd{z}_3+f_{10}\ddd{z}_4).
 \end{align*}
 
-Ko enak postopek ponovimo še z enačbo \ref{eq35}, pa dobimo:
+Ko enak postopek ponovimo še z enačbo \eqref{eq35}, pa dobimo:
 
 \begin{align*}
 5\ddd{q}_{2,1}=&4e_{10}e_{1m}\ddd{p}_{2,0}+e_{10}^2\ddd{p}_{2,5}+e_{10}f_{10}(\ddd{\tilde{p}}_2-\ddd{\tilde{p}}_1)
@@ -1904,11 +1854,11 @@ oziroma kontrolne točke $\ddd{Q}_{i,j}$, $i=0,1,2$, $j=0,\ldots,5$.
 
 \section{Konsrtrukcija $G^1$-zveznih trikotnih Bézierjevih ploskev}
 
-\subsection{Trikotne Bézierove ploskve}\label{trikotne1}
+\subsection{Trikotne Bézierjeve ploskve}\label{trikotne1}
 
 \todo{povej, kje je možno najti dokaze trditev v tem podpoglavju}
 
-Trikotne Bézierove ploskve so tip Bézierovih ploskev s parametrizacijo, definirano 
+Trikotne Bézierjeve ploskve so tip Bézierovih ploskev s parametrizacijo, definirano 
 nad domeno, sestavljeno iz trikotnikov. Ko imamo opravka s trikotnimi domenami, uporaba običajnega 
 kartezičnega koordinatnega sistema ni najbolj praktična, zato bomo 
 točke znotraj takih domen raje zapisovali z baricentričnimi koordinatami.
@@ -1937,7 +1887,7 @@ de Casteljaujevega algoritma.
 
 \todo{decasteljaujev algoritem? ali samo sklic na vir?}
 
-V nadaljevanju si bomo ogledali še definicijo smernega odvoda trikotne Bézierove 
+V nadaljevanju si bomo ogledali še definicijo smernega odvoda trikotne Bézierjeve 
 ploskve in pogoje za $C^n$-zveznost med dvema trikotnima Bézierovima ploskvama, 
 v ta namen pa moramo najprej definirati pojem trikotniškega razcveta. 
 \begin{definicija}
@@ -1974,7 +1924,7 @@ Tu je $\mathbf{\alpha}=Bar(\ddd{p}_4;T_1)$, $\ddd{e}_1=(1,0,0)$ in $\ddd{e}_2=(0
 %Ta ugotovitev bo uporabna pri iskanju pogojev za $C^1$-zveznost na stiku dveh 
 %trikotnih ploskev. 
 
-Oglejmo si še formulo za smerni odvod parametrizacije trikotne Bézierove ploskve. 
+Oglejmo si še formulo za smerni odvod parametrizacije trikotne Bézierjeve ploskve. 
 Imejmo ploskev $\ddd{P}(\ddd{p})=\sum_{i+j+k}\ddd{b}_{i,j,k}B_{i,j,k}^n(\ddd{u})$ 
 nad trikotnikom $T$, kjer je $\ddd{u}=Bar(\ddd{p};T)$.  
 Recimo, da odvajamo v smeri vektorja $\ddd{d}\in \R^3$. Naj bo $\ddd{d} = \ddd{a}-\ddd{b}$ ter 
@@ -2035,18 +1985,18 @@ za $j+k=n-1$.
 Točki $\ddd{u}$ in $\ddd{v}$ se namreč na stiku obeh ploskev ujemata. Če izrazimo 
 baricentrične koordinate vektorjev s pomočjo baricentričnih koordinat točk, 
 torej če pišemo $\ddd{\mu}=(\alpha_1,\alpha_2-1,\alpha_3)$ in $\ddd{\eta}=(1,-1,0)$ 
-ter dobljeno vstavimo v enačbo \ref{eq20}, ob tem pa upoštevamo še, da se 
+ter dobljeno vstavimo v enačbo \eqref{eq20}, ob tem pa upoštevamo še, da se 
 kontrolne točke obeh ploskev na skupnem robu ujemajo, dobimo
 \begin{align}\label{eq21}
   \ddd{s}_{1,j,k} = \alpha_1\ddd{r}_{1,j,k}+\alpha_2\ddd{r}_{0,j+1,k}+\alpha_3\ddd{r}_{0,j,k+1}
 \end{align}
 za $j+k=n-1$. 
-Enačba \ref{eq21} predstavlja pogoj, ki mora veljati za kontrolne točke obeh 
+Enačba \eqref{eq21} predstavlja pogoj, ki mora veljati za kontrolne točke obeh 
 ploskev, da se stikata s $C^1$-zveznostjo. Do enakega rezultata bi na podoben 
 način prišli, če bi namesto vektorja $\ddd{d}$ uporabili vektor $\ddd{p}_4-\ddd{p}_3$ 
 katerikoli linearno kombinacijo obeh vektorjev.
 
-%Alternativni način za izpeljavo pogojev \ref{eq21}
+%Alternativni način za izpeljavo pogojev \eqref{eq21}
 Dobljeni rezultat sedaj uporabimo na primeru stika dveh ploskev stopnje 3.
 
 \begin{primer}\label{primerT1}
@@ -2062,7 +2012,7 @@ Ploskvi se kakor prej stikata v $u_1=v_1=0$, torej za kontrolne točke na skupne
 robu velja $\ddd{s}_{0,0,2}=\ddd{r}_{0,0,2}$, $\ddd{s}_{0,1,1}=\ddd{r}_{0,1,1}$ in 
 $\ddd{s}_{0,2,0}=\ddd{r}_{0,2,0}$. 
 
-Da bo stik obeh ploskev še $C^1$ zvezen mora po enačbi \ref{eq21} veljati:
+Da bo stik obeh ploskev še $C^1$ zvezen mora po enačbi \eqref{eq21} veljati:
 \begin{align*}
 &\ddd{s}_{1,0,2}= \alpha_1\ddd{r}_{1,0,2}+\alpha_2\ddd{r}_{0,1,2}+\alpha_3\ddd{r}_{0,0,3}\\
 &\ddd{s}_{1,1,1}= \alpha_1\ddd{r}_{1,1,1}+\alpha_2\ddd{r}_{0,2,1}+\alpha_3\ddd{r}_{0,1,2}\\
@@ -2105,7 +2055,7 @@ $<\ddd{s}_{0,3,0},\ddd{s}_{0,2,1},\ddd{s}_{1,2,0}>$
 nista afini sliki istega para domenskih trikotnikov. 
 \end{primer}
 
-V zgornjem primeru smo videli, da je pogoj $C^1$-zveznosti za trikotne Bézierove 
+V zgornjem primeru smo videli, da je pogoj $C^1$-zveznosti za trikotne Bézierjeve 
 ploskve dokaj strog in tesno povezan z izbiro domene. Geometrijska zveznost pa 
 nam da milejše pogoje, saj nimamo več odvisnosti od domene. Če bi v zgornjem 
 primeru zahtevali le $G^1$-zveznost, bi bilo mogoče določiti točki 
@@ -2134,7 +2084,7 @@ ploskvi vzdolž stične krivulje isto konstatno tangentno ravnino.
 Vendar pa stik teh dveh ploskev ni $C^1$-zvezen. 
 Naj bo $\ddd{\alpha}=Bar(\ddd{s}_{1,0,0};T_1)$. Torej je 
 $\ddd{\alpha}=(-1,2,0)$. Da bi bil stik ploskev $C^1$-zvezen, bi moralo biti 
-zadoščeno enačbi \ref{eq21}, torej bi moralo veljati 
+zadoščeno enačbi \eqref{eq21}, torej bi moralo veljati 
 $$\ddd{s}_{1,0,0}=-\ddd{r}_{1,0,0}+2\ddd{r}_{0,1,0},$$
 kar pa v našem primeru ne drži.
 \end{primer}
@@ -2207,8 +2157,8 @@ $\ddd{s}_{0,1,0}^{n-1}(v)=\ddd{r}_{0,1,0}^{n-1}(v)$.
 %Za boljšo preglednost vpeljimo oznake $\ddd{a}_i=\ddd{s}_{1,i,n-i-1}$, 
 %$\ddd{b}_i=\ddd{r}_{0,i,n-i}$ in $\ddd{c}_i=\ddd{r}_{1,i,n-i-1}$. 
 
-Najprej si oglejmo, kakšne pogoje nam da enačba \ref{eq22} za robne kontrolne točke. 
-Vstavimo v enačbo \ref{eq22} vrednosti $v=0$ in $v=1$. 
+Najprej si oglejmo, kakšne pogoje nam da enačba \eqref{eq22} za robne kontrolne točke. 
+Vstavimo v enačbo \eqref{eq22} vrednosti $v=0$ in $v=1$. 
 Pri vrednosti $v=0$ dobimo: 
 $$(1-\lambda_0)\ddd{s}_{1,0,n-1}+\lambda_0\ddd{r}_{1,0,n-1}=
 (1-\mu_0)\ddd{r}_{0,0,n}+\mu_0\ddd{r}_{0,1,n-1},$$
@@ -2242,7 +2192,7 @@ $1-\lambda(v)$ in $1-\mu(v)$.
 Na enak način dobimo 
 $$1-\mu(v)=(1-\mu_0)(1-v)+(1-\mu_1)v$$
 
-Polinoma vstavimo v enačbo \ref{eq22}. Najprej si oglejmo izraz \\
+Polinoma vstavimo v enačbo \eqref{eq22}. Najprej si oglejmo izraz \\
 $(1-\lambda(v))\sum_{i=0}^{n-1}\ddd{s}_{1,i,n-i-1}B_i^{n-1}$:
 \begin{align*}
   &(1-\lambda(v))\sum_{i=0}^{n-1}\ddd{s}_{1,i,n-i-1}B_i^{n-1}=\\
@@ -2270,7 +2220,7 @@ Na enak način dobimo še
 \mu_1\sum_{i=0}^{n-1}\ddd{r}_{0,i,n-i}\frac{i}{n}B_i^n(v).
 \end{align*}
 
-Dobljeno vstavimo v enačbo \ref{eq22} in primerjajmo člene ob baznih polinomih 
+Dobljeno vstavimo v enačbo \eqref{eq22} in primerjajmo člene ob baznih polinomih 
 $B_i^n(v)$ za vsak $i=0,\ldots,n$. 
 Dobimo, da mora za vsak $i=0,\ldots,n$ veljati enakost 
 \begin{equation}\label{eq23}
@@ -2286,7 +2236,7 @@ Dobimo, da mora za vsak $i=0,\ldots,n$ veljati enakost
   \end{split}
 \end{equation}
 
-Pogoji, ki jih dobimo z enačbo \ref{eq23} za kontrolne točke ploskev $\ddd{R}$ 
+Pogoji, ki jih dobimo z enačbo \eqref{eq23} za kontrolne točke ploskev $\ddd{R}$ 
 in $\ddd{S}$ zagotavljajo, da sta ploskvi na stiku $G^1$-zvezni. Seveda pa so to 
 le zadostni pogoji, ne pa nujno potrebni. Z drugačno izbiro funkcij $\lambda(v)$ 
 in $\mu(v)$ bi lahko prišli do drugačnih pogojev, ki bi imeli za rezultat 
@@ -2320,7 +2270,7 @@ primeru za ploskvi stopnje 3.
   \end{align}
 
   Zgornji enačbi določata razmerje med robnimi kontrolnimi točkami. Iz enačbe 
-  \ref{eq23} pa sledita še pogoja 
+  \eqref{eq23} pa sledita še pogoja 
 
   \begin{equation}\label{eq26}
     \begin{split}
@@ -2343,11 +2293,11 @@ primeru za ploskvi stopnje 3.
   \todo{primerjava prostih in določenih kontrolnih točk}
   %V primeru, da imamo vnaprej podane robne kontrolne točke ploskev $\ddd{R}$ 
   %in $\ddd{S}$, določiti pa moramo notranji kontrolni točki $\ddd{r}_{1,1,1}$ 
-  %in $\ddd{s}_{1,1,1}$, nam enačbi \ref{eq24} in \ref{eq25} določata dva izmed 
+  %in $\ddd{s}_{1,1,1}$, nam enačbi \eqref{eq24} in \eqref{eq25} določata dva izmed 
   %parametrov $\lambda_0$, $\lambda_1$, $\mu_0$ in $\mu_1$, druga dva pa sta prosta. 
   %Po izbiri prostih parametrov, sta v primeru, da je $\lambda_0\neq \lambda_1$, 
   %kontrolni točki $\ddd{s}_{1,1,1}$ in $\ddd{r}_{1,1,1}$ natančno določeni z 
-  %enačbama \ref{eq26} in \ref{eq27}. 
+  %enačbama \eqref{eq26} in \eqref{eq27}. 
   %\todo{bolj natančna razlaga z determinanto sistema?}
 %
   %Dobljeni rezultat primerjamo z rezultatom primera \ref{primerT2}. V primeru 

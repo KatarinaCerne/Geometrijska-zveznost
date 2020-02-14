@@ -918,11 +918,13 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek.
   %z ničlami na [0,1]???}
 
 
-  Polinom $N_{rx}$ sedaj znova zapišimo kot produkt $N_{rx}(y) = U(y)D(y)$, kjer sta 
-  polinoma $U(y)$ in $D(y)$ definirana kot zgoraj. Torej velja 
-  $$N_{sx}(y)=U(y)\alpha_1(y)D(y)$$ in $$W_x(y)=U(y)\beta_1(y)D(y).$$
+  Polinom $N_{R,1}$ sedaj znova zapišimo kot produkt $N_{R,1}(y) = U(y)D(y)$, kjer sta 
+  polinoma $U(y)$ in $D(y)$ definirana kot zgoraj. Torej velja
+  \begin{align*} 
+  N_{S,1}(y)=U(y)\alpha_1(y)D(y),&&W_1(y)=U(y)\beta_1(y)D(y).
+  \end{align*}
   Naj bo $E_1(y)=\alpha_1(y)D(y)$ in $F_1(y)=\beta_1(y)D(y)$. Pokazati moramo, da sta 
-  dobljeni funkciji $E_1$ in $F_1$ polinoma. Ker sta funkciji $N_{sx}(y)$ in $W_x(y)$ 
+  dobljeni funkciji $E_1$ in $F_1$ polinoma. Ker sta funkciji $N_{S,1}(y)$ in $W_1(y)$ 
   polinoma, morata imenovalca funkcij $\alpha_1$ in $\beta_1$ deliti ali polinom $U$ ali 
   polinom $D$. Videli smo že, da $\alpha_1$ in $\beta_1$ nimata polov na intervalu 
   $[0,1]$, torej njuna imenovalca ne delita polinoma $U$. Sledi, da morata njuna imenovalca 
@@ -937,10 +939,12 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek.
   nima ničel. 
 
   Oglejmo si še stopnje polinomov $D(y)$, $E_1(y)$ in $F_1(y)$. 
-  Očitno velja:
-  $$st(D(y))\leq st(N_{rx}(y))\leq st(\ddd{N}_r(v))\leq n_r+n_c-1$$
-  $$st(E_1(y))\leq st(N_{sx}(y))\leq st(\ddd{N}_s(v))\leq n_s+n_c-1$$
-  $$st(F_1(y))\leq st(W_x(y))\leq st(\ddd{W}(v))\leq n_r+n_s,$$
+  Očitno velja
+  \begin{align*}
+  &\mbox{deg}(D(y))\leq \mbox{deg}(N_{rx}(y))\leq \mbox{deg}(\ddd{N}_r(v))\leq n_r+n_c-1\\
+  &\mbox{deg}(E_1(y))\leq \mbox{deg}(N_{sx}(y))\leq \mbox{deg}(\ddd{N}_s(v))\leq n_s+n_c-1\\
+  &\mbox{deg}(F_1(y))\leq \mbox{deg}(W_x(y))\leq st(\ddd{W}(v))\leq n_r+n_s,\\
+  \end{align*}
   s čimer dokažemo izrek za $k=1$.
 
   Lotimo se še dokaza za $k>1$. Prepodstavimo, da izrek velja za vse $k\leq m$, kjer je $m\in \N$, $m<n$. 
@@ -951,17 +955,18 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek.
   Iz izreka \ref{izrek1} sledi, da obstajajo funkcije 
   $\alpha_1, \ldots, \alpha_{m+1}$ in $\beta_1 \ldots, \beta_{m+1}$, da velja
   \begin{align*}
-    \frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}\Bigr|_{\substack{\ddd{C}}}&= 
+    \frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}(0,v)&= 
     \sum_{i=1}^{m+1}\sum_{|\ddd{m}_i|=m+1}A_{m_i}^{m+1}
-    \sum_{h=0}^i {i \choose h}\alpha_{m_1}\cdots \alpha_{m_h}\beta_{m_{h+1}}\beta_{m_i} 
-    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\Bigr|_{\substack{C}}\\
-    & = \alpha_{m+1} \frac{\partial \ddd{R}}{\partial u}|_{\ddd{C}} + 
-    \beta_{m+1} \frac{\partial \ddd{R}}{\partial v}|_{\ddd{C}} + \\
-    & + \sum_{i=2}^{m+1} \sum_{|\ddd{m}_i|}A_{m_i}^{m+1} \sum_{h=0}^i {i \choose h}
-    \alpha_{m_1} \cdots \alpha_{m_h} \beta_{m_{h+1}} \cdots \beta_{m_i}
-    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\Bigr|_{\substack{C}}
+    \sum_{h=0}^i {i \choose h}\alpha_{m_1}(v)\cdots \alpha_{m_h}(v)\cdot\\
+    &\cdot\beta_{m_{h+1}}(v)\beta_{m_i}(v) 
+    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}(0,v)=\\
+    & = \alpha_{m+1}(v) \frac{\partial \ddd{R}}{\partial u}(0,v) + 
+    \beta_{m+1}(v) \frac{\partial \ddd{R}}{\partial v}(0,v)+\\
+    & + \sum_{i=2}^{m+1} \sum_{|\ddd{m}_i|=m+1}A_{m_i}^{m+1} \sum_{h=0}^i {i \choose h}
+    \alpha_{m_1}(v) \cdots \alpha_{m_h}(v)\cdot\\ 
+    &\cdot\beta_{m_{h+1}}(v) \cdots \beta_{m_i}(v)
+    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}(0,v).
   \end{align*}
-
   Po indukcijski predpostavki je $\alpha_i(y) = \frac{E_i(y)}{D^{2i-1}(y)}$ in 
   $\beta_i(y)=\frac{F_i(y)}{D^{2i-1}(y)}$ za $i=1, \ldots, m$. 
   Uporabimo to v zgornji 
@@ -984,80 +989,78 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek.
     \end{split}
   \end{equation}
   saj je $|\ddd{m}_i|=m_1+m_2+\cdots + m_i = m+1$ in zato je \\
-  $D^{-2m_1+1}(y) D^{-2m_2+1}(y) \cdots D^{-2m_i+1}(y)=D^{-2(m+1)}(y)D^i(y)$.
+  $$D^{-2m_1+1}(y) D^{-2m_2+1}(y) \cdots D^{-2m_i+1}(y)=D^{-2(m+1)}(y)D^i(y).$$
 
-  Sedaj definirajmo \todo{krivuljo? vektorsko polinomsko funkcijo?} $\ddd{S}_{m+1}$:
-  \begin{align*}\ddd{S}_{m+1}(y)=&D^{2m}(y)\frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}|_{\ddd{C}} - 
-  \sum_{i=2}^{m+1} \sum_{|\ddd{m}_1|=m+1} A_{m_i}^{m+1} \sum_{h=0}^i {i \choose h}
-  D^{i-1}(y)E_{m_1}(y)\cdots E_{m_h}(y) \\ &\cdot F_{m_{h+1}}(y)\ldots F_{m_i}(y)
-  \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}}
+  Sedaj definirajmo vektorsko polinomsko funkcijo $\ddd{S}_{m+1}$:
+  \begin{align*}\ddd{S}_{m+1}(y)=&D^{2m}(y)\frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}(0,y) - 
+  \sum_{i=2}^{m+1} \sum_{|\ddd{m}_i|=m+1} A_{m_i}^{m+1} \sum_{h=0}^i {i \choose h}
+  D^{i-1}(y)\cdot \\ &\cdot E_{m_1}(y)\cdots E_{m_h}(y) F_{m_{h+1}}(y)\ldots F_{m_i}(y)
+  \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}(0,y).
   \end{align*}
-  Če enačbo \eqref{eq12} pomnožimo z $D^{2m}(y)$ in jo nekoliko preoblikujemo, dobimo:
+  Če enačbo \eqref{eq12} pomnožimo z $D^{2m}(y)$ in jo nekoliko preoblikujemo, dobimo
   \begin{equation}\label{eq13} 
-  \ddd{S}_{m+1}(y)=D^{2m}\alpha_{m+1}(y)\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} + 
-  D^{2m}(y)\beta_{m+1}(y)\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}.
+  \ddd{S}_{m+1}(y)=D^{2m}(y)\alpha_{m+1}(y)\frac{\partial \ddd{R}}{\partial x}(0,y) + 
+  D^{2m}(y)\beta_{m+1}(y)\frac{\partial \ddd{R}}{\partial y}(0,y).
   \end{equation}
 
   Na dobljeni enačbi sedaj uporabimo podoben postopek, kot smo ga uporabili pri dokazu 
-  za $k=1$. Enačbo \eqref{eq13} z leve vektorsko množimo z $\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}$ 
+  za $k=1$. Enačbo \eqref{eq13} z leve vektorsko množimo z $\frac{\partial \ddd{R}}{\partial x}(0,y)$ 
   in dobimo 
-  $$\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} \times \ddd{S}_{m+1} = 
-  D^{2m}\beta_{m+1} \frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} \times \frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}.$$
-  Če pa enačbo \eqref{eq13} z desne pomnožimo z $\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}$, 
+  $$\frac{\partial \ddd{R}}{\partial x}(0,y) \times \ddd{S}_{m+1}(y) = 
+  D^{2m}(y)\beta_{m+1}(y) \frac{\partial \ddd{R}}{\partial x}(0,y) \times \frac{\partial \ddd{R}}{\partial y}(0,y).$$
+  Če pa enačbo \eqref{eq13} z desne pomnožimo z $\frac{\partial \ddd{R}}{\partial y}(0,y)$, 
   dobimo 
-  $$\ddd{S}_{m+1}\times\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} = 
-  D^{2m}\alpha_{m+1} \frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} \times \frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}.$$
+  $$\ddd{S}_{m+1}(y)\times\frac{\partial \ddd{R}}{\partial x}(0,y) = 
+  D^{2m}(y)\alpha_{m+1}(y)\frac{\partial \ddd{R}}{\partial x}(0,y) \times \frac{\partial \ddd{R}}{\partial y}(0,y).$$
   Označimo
   \begin{equation}\label{eq31} 
-  \ddd{W}_1 = \ddd{S}_{m+1}\times\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}} 
+  \ddd{\overline{W}}(y) = \ddd{S}_{m+1}(y)\times\frac{\partial \ddd{R}}{\partial y}(0,y) 
   \end{equation}
   in
   \begin{equation}\label{eq32} 
-  \ddd{W}_2 = \frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}\times \ddd{S}_{m+1}
+  \ddd{\overline{\overline{W}}}(y) = \frac{\partial \ddd{R}}{\partial x}(0,y)\times \ddd{S}_{m+1}(y)
   \end{equation}
   ter kakor prej 
-  $N_r = \frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}} \times \frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}$. 
-  Kot v primeru za $k=1$ spet lahko predpostavimo, da je polinom $N_{rx}(y)$ neničeln in 
-  ga zapišemo kot $N_{rx}(y)=U(y)D(y)$. Velja 
-  $W_{1x} = D^{2m+1}(y)U(y)\alpha_{m+1}(y)$ in $W_{2x} = D^{2m+1}(y)U(y)\beta_{m+1}(y)$ 
+  $N_R = \frac{\partial \ddd{R}}{\partial x}(0,y) \times \frac{\partial \ddd{R}}{\partial y}(0,y)$. 
+  Kot v primeru za $k=1$, spet lahko predpostavimo, da je polinom $N_{R,1}(y)$ neničeln in 
+  ga zapišemo kot $N_{R,1}(y)=U(y)D(y)$. Velja 
+  $\overline{W_{1}} = D^{2m+1}(y)U(y)\alpha_{m+1}(y)$ in $\overline{\overline{W_{1}}} = D^{2m+1}(y)U(y)\beta_{m+1}(y)$ 
   in enaki argumenti kot v primeru za $k=1$ nas pripeljejo do razulatata, da sta 
-  $E_{m+1}(y) = D^{2m+1}(y)\alpha_{m+1}(y)$ in \\$F_{m+1}(y) = D^{2m+1}(y)\beta_{m+1}(y)$ 
+  $$E_{m+1}(y) = D^{2m+1}(y)\alpha_{m+1}(y), \quad F_{m+1}(y) = D^{2m+1}(y)\beta_{m+1}(y)$$ 
   res polinoma. 
 
-  Pokazati moramo še, da je $st(E_{m+1})\leq 2mn_r + (m+1)n_s+(m+1)n_c-2m-1$ in 
-  $st(F_{m+1})\leq (2m+1)n_r + (m+1)n_s+mn_c-2m$. Tega se lotimo tako, da si najprej 
-  ogledamo stopnjo $\ddd{S}_{m+1}$. Spomnimo se:
-  \begin{align*}\ddd{S}_{m+1}=&D^{2m}(v)\frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}|_{\ddd{C}} - 
-    \sum_{i=2}^{m+1} \sum_{|\ddd{m}_1|=m+1} A_{m_i}^{m+1} \sum_{h=0}^i {i \choose h}
-    D^{i-1}(y)E_{m_1}(y)\cdots E_{m_h}(y) \\ &\cdot F_{m_{h+1}}(y)\ldots F_{m_i}(y)
-    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}}
-  \end{align*}
+  Pokazati moramo še, da je $\mbox{deg}(E_{m+1})\leq 2mn_r + (m+1)n_s+(m+1)n_c-2m-1$ in 
+  $\mbox{deg}(F_{m+1})\leq (2m+1)n_r + (m+1)n_s+mn_c-2m$. Tega se lotimo tako, da si najprej 
+  ogledamo stopnjo $\ddd{S}_{m+1}$.
+
   Očitno je
   \begin{align*} 
-    st(D^{2m}(y)\frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}})&\leq 
+    \mbox{deg}\left(D^{2m}(y)\frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}\bigg|_{\ddd{C}}\right)&\leq 
     2m(n_r+n_c-1)+n_s \\
     &\leq 2mn_r + (m+1)n_s + mn_c -2m, 
   \end{align*}
-  kjer v prvi neenakosti uporabimo dejstvo, da je $st(D(y))\leq n_r + n_c-1$ in 
-  $st(\frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}})\leq n_s$, v drugi neenakosti pa, 
+  kjer v prvi neenakosti uporabimo dejstvo, da je $\mbox{deg}(D(y))\leq n_r + n_c-1$ in \\
+  $\mbox{deg}(\frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}})\leq n_s$, v drugi neenakosti pa, 
   da je $n_c\leq n_s$.
 
-  Oglejmo si še, kakšna je \\
-  $st(D^{i-1}(y)E_{m_1}(y)\cdots E_{m_h}(y)F_{m_{h+1}}(y)\ldots F_{m_i}(y)
-  \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})$.
+  Oglejmo si še, kakšna je
+  $$\mbox{deg}\left(D^{i-1}E_{m_1}\cdots E_{m_h}F_{m_{h+1}}\ldots F_{m_i}
+  \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{\ddd{C}}\right).$$
   Najprej si jo oglejmo za $h=0$:
   \begin{align*}
-    &st(D^{i-2}(y)F_{m_1}(y)\cdots F_{m_i}(y)\frac{\partial^i \ddd{R}}{\partial y^i}|_{\ddd{C}})\leq\\
-    &\leq(i-2) st(D(y)) + \sum_{j=1}^i st(F_{m_j}(y)) + st(\frac{\partial^i \ddd{R}}{\partial y^i}|_{\ddd{C}}) 
+    &\mbox{deg}\left(D^{i-2}F_{m_1}\cdots F_{m_i}\frac{\partial^i \ddd{R}}{\partial y^i}\bigg|_{\ddd{C}}\right)\leq\\
+    &\leq(i-2) \mbox{deg}(D) + \sum_{j=1}^i \mbox{deg}(F_{m_j}) + \mbox{deg}\left(\frac{\partial^i \ddd{R}}{\partial y^i}\bigg|_{\ddd{C}}\right) 
   \end{align*}
-  Vemo, da je $st(D(y))\leq n_r+n_c-1$ in $st(\frac{\partial^i \ddd{R}}{\partial y^i}|_{\ddd{C}})\leq n_c-i$, 
-  po indukcijski predpostavki pa velja še 
-  $st(E_i(y)\leq (2i-2)n_r+in_s+in_c-2i+1)$ in $st(F_i(y)\leq (2i-1)n_r+in_s+(i-1)n_c-2i+2)$, 
-  kjer je $i=1, \ldots, m$. 
+  Vemo, da je $\mbox{deg}(D)\leq n_r+n_c-1$ in $\mbox{deg}(\frac{\partial^i \ddd{R}}{\partial y^i}|_{\ddd{C}})\leq n_c-i$, 
+  po indukcijski predpostavki pa velja še
+  \begin{align*} 
+  &\mbox{deg}(E_i)\leq (2i-2)n_r+in_s+in_c-2i+1),\\
+  &\mbox{deg}(F_i)\leq (2i-1)n_r+in_s+(i-1)n_c-2i+2),\quad i=1, \ldots, m.
+  \end{align*} 
   Torej je 
   \begin{align*}
-    &st(D^{i-2}(y)F_{m_1}(y)\cdots F_{m_i}(y)\frac{\partial^i \ddd{R}}{\partial y^i}|_{\ddd{C}})\leq\\
-    &(i-2)(n_r+n_c-1)+\\
+    &\mbox{deg}\left(D^{i-2}F_{m_1}\cdots F_{m_i}\frac{\partial^i \ddd{R}}{\partial y^i}\bigg|_{\ddd{C}}\right)\leq
+    (i-2)(n_r+n_c-1)+\\
     &+\sum_{j=1}^i((2m_j-1)n_r+m_jn_s+(m_j-1)n_c-2m_j+2) + (n_c -i)= \\
     &= (i-2)(n_r + n_c -1) + 2(m+1)n_r - in_r + (m+1)n_s + (m+1)n_c -in_c -\\
     &- 2(m+1) +2i + n_c -i = \\
@@ -1068,18 +1071,18 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek.
 
   Sedaj obravnavajmo še primer, ko je $h>1$.
   \begin{align*}
-    &st(D^{i-2}(y)E_{m_1}(y)\cdots E_{m_h}(y)F_{m_{h+1}}(y)\cdots F_{m_i}(y)
-    \frac{\partial^i\ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})\leq \\
-    &\leq (i-2)st(D(y)) + \sum_{j=1}^h st(E_{m_j}) + \sum_{j=h+1}^i st(F_{m_j}) + \\
-    &+ st(\frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})
+    &\mbox{deg}\left(D^{i-2}E_{m_1}\cdots E_{m_h}F_{m_{h+1}}\cdots F_{m_i}
+    \frac{\partial^i\ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{\ddd{C}}\right)\leq \\
+    &\leq (i-2)\mbox{deg}(D) + \sum_{j=1}^h \mbox{deg}(E_{m_j}) + \sum_{j=h+1}^i \mbox{deg}(F_{m_j}) + \\
+    &+ \mbox{deg}\left(\frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{\ddd{C}}\right).
   \end{align*}
-  Zopet uporabimo indukcijsko predpostavko za stopnje polinomov $E_i(y)$ in $F_i(y)$, 
+  Zopet uporabimo indukcijsko predpostavko za stopnje polinomov $E_i$ in $F_i$, 
   kjer je $i=1,\ldots, m$, ter dejstvo, da je 
-  $st(\frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})=n_r-i+h$, in 
+  $\mbox{deg}\left(\frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{\ddd{C}}\right)=n_r-i+h$, in 
   dobimo
   \begin{align*}
-    &st(D^{i-2}(y)E_{m_1}(y)\cdots E_{m_h}(y)F_{m_{h+1}}(y)\cdots F_{m_i}(y)
-    \frac{\partial^i\ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})\leq \\
+    &\mbox{deg}\left(D^{i-2}E_{m_1}\cdots E_{m_h}F_{m_{h+1}}\cdots F_{m_i}
+    \frac{\partial^i\ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{\ddd{C}}\right)\leq \\
     &\leq (i-2)(n_r+n_c-1)+2n_r\sum_{j=1}^h m_j - 2n_rh + n_s\sum_{j=1}^hm_j +
     + n_c\sum_{j=1}^hm_j-\\ &- 2\sum_{j=1}^hm_j + h + 2n_r\sum_{j=h+1}^im_j - (i-h)n_r
     + n_s\sum_{j=h+1}^im_j + n_c\sum_{j=h+1}^i - (i-h)n_c-\\ &
@@ -1089,8 +1092,8 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek.
   \end{align*}
   V zadnji enakosti smo uprabili, da je $\sum_{j=1}^im_j=m+1$. Nadaljujmo z računom:
   \begin{align*}
-    &st(D^{i-2}(y)E_{m_1}(y)\cdots E_{m_h}(y)F_{m_{h+1}}(y)\cdots F_{m_i}(y)
-    \frac{\partial^i\ddd{R}}{\partial x^h \partial y^{i-h}}|_{\ddd{C}})\leq \\
+    &\mbox{deg}\left(D^{i-2}E_{m_1}\cdots E_{m_h}F_{m_{h+1}}\cdots F_{m_i}
+    \frac{\partial^i\ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{\ddd{C}}\right)\leq \\
     &\leq(i-2)(n_r+n_c-1)+2n_r(m+1)+n_s(m+1)+n_c(m+1)-2(m+1)-\\
     &-2n_rh+h-(i-h)n_r-(i-h)n_c+2(i-h)+n_r-i-h \leq \\
     &\leq 2mn_r+(m+1)n_s+mn_c-2m-n_rh+n_ch-n_c+n_r = \\
@@ -1098,21 +1101,21 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek.
     &\leq 2mn_r + (m+1)n_s +mn_c-2m.
   \end{align*}
   V zadnji neenakosti smo uporabili, da je $n_c\leq n_r$, torej je $n_c-n_r\leq 0$.
-  S tem smo torej pokazali, da je $st(\ddd{S}_{m+1})\leq 2mn_r + (m+1)n_s+(m+1)n_c-2m$.
+  S tem smo torej pokazali, da je $$\mbox{deg}(\ddd{S}_{m+1})\leq 2mn_r + (m+1)n_s+(m+1)n_c-2m.$$
 
-  Iz enačbe \eqref{eq31} in definicije polinoma $E_{m+1}(y)$ je razvidno naslednje:
+  Iz enačbe \eqref{eq31} in definicije polinoma $E_{m+1}$ je razvidno naslednje:
   \begin{align*}
-    &st(E_{m+1})\leq st(W_{1x})\leq st(\ddd{W}_1)\leq st(\ddd{S}_{m+1})+
-    st(\frac{\partial \ddd{R}}{\partial y}|_{\ddd{C}}) \leq \\
+    &\mbox{deg}(E_{m+1})\leq \mbox{deg}(\overline{W_{1}})\leq \mbox{deg}(\overline{\ddd{W}})\leq \mbox{deg}(\ddd{S}_{m+1})+
+    \mbox{deg}\left(\frac{\partial \ddd{R}}{\partial y}\bigg|_{\ddd{C}}\right) \leq \\
     &\leq (2mn_r+(m+1)n_s+mn_c-2m)+(n_c-1)=\\
     &=2mn_r + (m+1)n_s + (m+1)n_c -2m -1.
   \end{align*}
 
-  Podobno dobimo iz enačbe \eqref{eq32} in definicije polinoma $F_{m+1}(y)$ oceno za 
-  stopnjo polinoma $F_{m+1}(y)$:
+  Podobno dobimo iz enačbe \eqref{eq32} in definicije polinoma $F_{m+1}$ oceno za 
+  stopnjo polinoma $F_{m+1}$:
   \begin{align*}
-    &st(F_{m+1})\leq st(W_{2x})\leq st(\ddd{W}_2)\leq st(\ddd{S}_{m+1})+
-    st(\frac{\partial \ddd{R}}{\partial x}|_{\ddd{C}}) \leq \\
+    &\mbox{deg}(F_{m+1})\leq \mbox{deg}(\overline{\overline{W_{1}}})\leq \mbox{deg}(\overline{\overline{\ddd{W}}})\leq \mbox{deg}(\ddd{S}_{m+1})+
+    \mbox{deg}\left(\frac{\partial \ddd{R}}{\partial x}\bigg|_{\ddd{C}}\right) \leq \\
     &\leq (2mn_r+(m+1)n_s+mn_c-2m)+n_r=\\
     &=(2m+1)n_r + (m+1)n_s + mn_c -2m.
   \end{align*}
@@ -1248,16 +1251,16 @@ O pogojih za geometrijsko zveznost teh dveh ploskev govori naslednji izrek.
 
 V tem podpoglavju si bomo ogledali, kako na različne načine konstruirati ploskvi, ki 
 sta na stiku $G^1$-zvezni, torej kakšne pogoje prinesejo različni načini konstrukcije 
-za njune kontrolne točke oziroma kontrolne vektorje. Pri tem bomo predpostavljali, 
+na njune kontrolne točke. Pri tem bomo predpostavljali, 
 da so robovi obeh ploskev vnaprej določeni. Pogoje, ki jih prinese zahteva $G^1$-zveznosti 
 bomo primerjali s $C^1$-zveznostjo. 
 
-Imejmo dve bikubični Bézierjevi ploskvi iz tenzorskega produkta:
+Imejmo dve bi-kubični Bézierjevi ploskvi iz tenzorskega produkta:
 $$\ddd{R}(u,v)=\sum_{i=0}^3 \sum_{j=0}^3 \mathbf{P}_{i,j}B_i^3(u) B_j^3(v)$$ in
 $$\ddd{S}(u,v)=\sum_{i=0}^3 \sum_{j=0}^3 \mathbf{Q}_{i,j}B_i^3(u) B_j^3(v),$$
 kjer velja $u,v\in[0,1]$.
 
-Ploskvi $\ddd{R}$ in $\ddd{S}$ se stikata v $\ddd{C}(v)=\ddd{R}(0,v)=\ddd{S}(0,v)$, torej naj velja
+Ploskvi $\ddd{R}$ in $\ddd{S}$ naj se stikata v $\ddd{C}(v)=\ddd{R}(0,v)=\ddd{S}(0,v)$, torej naj velja
 $$\ddd{C}(v)=\sum_{i=0}^{n_c} \ddd{Z}_i B_i^{n_c}(v),$$
 kjer so $\ddd{Z}_i = \ddd{P}_{0,i} = \ddd{Q}_{0,i}$ kontrolne točke krivulje $\ddd{C}$. 
 %Stopnja $n_c$ krivulje $\ddd{C}$ ni nujno enaka $3$, veljati pa mora $n_c\leq 3$.\todo{?}
@@ -1321,8 +1324,8 @@ Izrek \ref{izrek1} pravi, da je stik obeh ploskev $G^1$-zvezen, natanko tedaj ko
 obstajata $C^1$ funkciji 
 $\alpha_1(v)$ in $\beta_1(v)$, da velja 
 \begin{align}\label{eq33}
-\frac{\partial \ddd{S}}{\partial u}|_{u=0} = \alpha_1(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0} + 
-\beta_1(v)\frac{\partial \ddd{R}}{\partial v}|_{u=0},
+\frac{\partial \ddd{S}}{\partial u}(0,v) = \alpha_1(v)\frac{\partial \ddd{R}}{\partial u}(0,v) + 
+\beta_1(v)\frac{\partial \ddd{R}}{\partial v}(0,v),
 \end{align}
 kjer je $\alpha_1(v)\neq 0$ na intervalu $[0,1]$ in ima ustrezen predznak.
 V našem primeru gre za polinomske ploskve, zato lahko uporabimo izrek \ref{izrek2},
@@ -1331,22 +1334,21 @@ ko obstajajo polinomi $D(v)$, $E_1(v)$
 in $F_1(v)$, kjer sta polinoma $D$ in $E_1$ stopnje največ 5, polinom $F_1$ pa stopnje 
 največ 6, da velja $D(v)E_1(v)\neq 0$ na $[0,1]$ ter
 \begin{align}\label{eq14}
-D(v)\frac{\partial \ddd{S}}{\partial u}|_{u=0} = E_1(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0} + 
-F_1(v)\frac{\partial \ddd{R}}{\partial v}|_{u=0}.
+D(v)\frac{\partial \ddd{S}}{\partial u}(0,v) = E_1(v)\frac{\partial \ddd{R}}{\partial u}(0,v) + 
+F_1(v)\frac{\partial \ddd{R}}{\partial v}(0,v).
 \end{align}
 
 Razpišimo prve odvode parametrizacij ploskev $\ddd{R}$ in $\ddd{S}$: %\todo{sklic na formulo?}
-$$\frac{\partial \ddd{S}}{\partial u}|_{u=0}=3\sum_{i=0}^2\sum_{j=0}^3
-(\ddd{P}_{i+1,j}-\ddd{P}_{i,j})B_i^2(u)B_j^3(v)|_{u=0}=
+$$\frac{\partial \ddd{S}}{\partial u}(0,v)=3\sum_{i=0}^2\sum_{j=0}^3
+(\ddd{P}_{i+1,j}-\ddd{P}_{i,j})B_i^2(0)B_j^3(v)=
 3\sum_{j=0}^3(\ddd{P}_{1,j}-\ddd{P}_{0,j})B_j^3(v),$$
-$$\frac{\partial \ddd{R}}{\partial u}|_{u=0}=3\sum_{i=0}^2\sum_{j=0}^3
-(\ddd{Q}_{i+1,j}-\ddd{Q}_{i,j})B_i^2(u)B_j^3(v)|_{u=0}=
+$$\frac{\partial \ddd{R}}{\partial u}(0,v)=3\sum_{i=0}^2\sum_{j=0}^3
+(\ddd{Q}_{i+1,j}-\ddd{Q}_{i,j})B_i^2(0)B_j^3(v)=
 3\sum_{j=0}^3(\ddd{Q}_{1,j}-\ddd{Q}_{0,j})B_j^3(v),$$
 in 
-$$\frac{\partial \ddd{R}}{\partial v}|_{u=0}=3\sum_{i=0}^3\sum_{j=0}^2
-(\ddd{Q}_{i,j+1}-\ddd{Q}_{i,j})B_i^2(u)B_j^3(v)|_{u=0}=
+$$\frac{\partial \ddd{R}}{\partial v}(0,v)=3\sum_{i=0}^3\sum_{j=0}^2
+(\ddd{Q}_{i,j+1}-\ddd{Q}_{i,j})B_i^2(0)B_j^3(v)=
 3\sum_{j=0}^2(\ddd{Q}_{0,j}-\ddd{Q}_{0,j+1})B_j^2(v).$$
-
 Dobljeno vstavimo v enačbo \eqref{eq14}. Vidimo, da mora veljati:
 \begin{equation}\label{eq15}
   \begin{split} 
@@ -1359,18 +1361,17 @@ F_1(v)\sum_{j=0}^2(\ddd{Q}_{0,j}-\ddd{Q}_{0,j+1})B_j^2(v).
 Najprej si oglejmo, kakšni pogoji v primeru $G^1$ zveznosti veljajo za robne 
 kontrolne točke ploskev $\ddd{R}$ in $\ddd{S}$. V enačbo \eqref{eq15} vstavimo 
 vrednosti $v=0$ in $v=1$.
-
-Pri vrednosti $v=0$ dobimo:
+Pri vrednosti $v=0$ dobimo
 $$d_0(\ddd{Q}_{1,0}-\ddd{Q}_{0,0}) = e_0(\ddd{P}_{1,0}-\ddd{P}_{0,0})+f_0(\ddd{P}_{0,1}-\ddd{P}_{0,0}),$$
-oziroma:
+oziroma
 \begin{align}\label{eq18}
 d_0\ddd{q}_{0,0} = e_0 \ddd{p}_{0,0} + f_0 \ddd{z}_0.
 \end{align}  
 Tu smo z $d_0$ označili vrednost $D(0)$, z $e_0$ vrednost $E_1(0)$, z $f_0$ 
 pa vrednost $F_1(0)$.
-Pri vrednosti $v=1$ pa dobimo:
+Pri vrednosti $v=1$ pa dobimo
 $$d_1\ddd{Q}_{1,3}= e_1(\ddd{P}_{1,3}-\ddd{P}_{0,3})+f_1(\ddd{P}_{0,3}-\ddd{P}_{0,2}),$$
-oziroma:
+oziroma
 \begin{align}\label{eq19}
 d_1\ddd{q}_{0,3} = e_1 \ddd{p}_{0,3} + f_1 \ddd{z}_2.
 \end{align}
@@ -1434,25 +1435,28 @@ Vstavimo polinome $D$, $E_1$ in $F_1$ v enačbo \eqref{eq16} in dobimo:
   &=\sum_{j=0}^3e_0\ddd{p}_jB_j^3(v) + \sum_{j=0}^3f_0\ddd{z}_j\frac{3-j}{3}B_j^3(v) + 
   \sum_{j=0}^3f_1\ddd{z}_{j-1}\frac{j}{3}B_j^3(v)
 \end{align*}
-V tretji vrstici zgornjega računa smo uporabili dejstvo, da je v vsoti\\ 
-$\sum_{j=0}^3\ddd{z}_jf_0{2 \choose j}v^j(1-v)^{3-j}$ člen pri $j=3$ enak 0 
-in je zato \\$\sum_{j=0}^2\ddd{z}_jf_0{2 \choose j}v^j(1-v)^{3-j}=\sum_{j=0}^3\ddd{z}_jf_0{2 \choose j}v^j(1-v)^{3-j}$.
-Podobno smo v zadnji vrstici upoštevali, da je v vsoti $\sum_{j=0}^3b_1\ddd{z}_{j-1}\frac{j}{3}B_j^3(v)$ 
+V tretji vrstici zgornjega računa smo uporabili dejstvo, da je v vsoti 
+$$\sum_{j=0}^3\ddd{z}_jf_0{2 \choose j}v^j(1-v)^{3-j}$$ 
+člen pri $j=3$ enak 0 
+in je zato 
+$$\sum_{j=0}^2\ddd{z}_jf_0{2 \choose j}v^j(1-v)^{3-j}=\sum_{j=0}^3\ddd{z}_jf_0{2 \choose j}v^j(1-v)^{3-j}.$$
+Podobno smo v zadnji vrstici upoštevali, da je v vsoti 
+$$\sum_{j=0}^3b_1\ddd{z}_{j-1}\frac{j}{3}B_j^3(v)$$ 
 člen pri $j=0$ enak 0 in je zato 
-$\sum_{j=1}^3f_1\ddd{z}_{j-1}\frac{j}{3}{3 \choose j}v^3(1-v)^{3-j}=\sum_{j=0}^3b_1\ddd{z}_{j-1}\frac{j}{3}B_j^3(v)$.
+$$\sum_{j=1}^3f_1\ddd{z}_{j-1}\frac{j}{3}{3 \choose j}v^3(1-v)^{3-j}=\sum_{j=0}^3b_1\ddd{z}_{j-1}\frac{j}{3}B_j^3(v).$$
 
-Od tod dobimo pogoje za kontrolna vektorja $\ddd{q}_1$ in $\ddd{q}_2$:
-$$\ddd{q}_{1,1}=e_0\ddd{p}_{1,1}+\frac{1}{3}f_1\ddd{z}_0+\frac{2}{3}f_0\ddd{z}_1$$
-in
-$$\ddd{q}_{1,2}=e_0\ddd{p}_{1,2}+\frac{2}{3}f_1\ddd{z}_1+\frac{1}{3}f_0\ddd{z}_2.$$
-
+Od tod dobimo pogoje za kontrolna vektorja $\ddd{q}_{1,1}$ in $\ddd{q}_{1,2}$:
+\begin{align*}
+\ddd{q}_{1,1}=e_0\ddd{p}_{1,1}+\frac{1}{3}f_1\ddd{z}_0+\frac{2}{3}f_0\ddd{z}_1,&&
+\ddd{q}_{1,2}=e_0\ddd{p}_{1,2}+\frac{2}{3}f_1\ddd{z}_1+\frac{1}{3}f_0\ddd{z}_2.
+\end{align*}
 Najprej opazimo, da za razliko od primera \ref{primer1}, tu ni več potrebe po 
 kolinearnosti vektorjev $\ddd{q}_{1,1}$ in $\ddd{p}_{1,1}$ oziroma 
 vektorjev $\ddd{q}_{1,2}$ in $\ddd{p}_{1,2}$, zahtevamo le še koplanarnost. 
 Ena izmed omejitev, ki veljajo za parametre $e_0$, $f_0$ in $f_1$, je, da 
 mora biti $e_0<0$,
 saj bi imel v nasprotnem primeru stik ploskev obliko špice. 
-Parametri so določena z enačbama \eqref{eq18} in \eqref{eq19} na naslednji način. 
+Parametri so določeni z enačbama \eqref{eq18} in \eqref{eq19} na naslednji način. 
 Zapišimo enačbo \eqref{eq18} kot 
 \begin{align*}
 \ddd{q}_{0,0}=e_1\ddd{p}_{0,0}+f_1\ddd{z}_0+g\ddd{n},
@@ -1464,16 +1468,16 @@ na $\ddd{n}$, zato je mogoče na enoličen način izraziti neznanke $e_1$, $f_1$
 ker je vektor $\ddd{q}_{0,0}$ del iste ravnine kot $\ddd{p}_{0,0}$ in $\ddd{z}_0$, 
 mora biti $g=0$, vrednosti $e_0$ in $f_0$ pa izračunamo s pomočjo Cramerjevih formul: 
 \begin{align*}
-e_0=\frac{det[\ddd{q}_{0,0},\ddd{z}_0,\ddd{n}]}{det[\ddd{p}_{0,0},\ddd{z}_0,\ddd{n}]}&&
-f_0=\frac{det[\ddd{p}_{0,0},\ddd{q}_{0,0},\ddd{n}]}{det[\ddd{p}_{0,0},\ddd{z}_0,\ddd{n}]}
+e_0=\frac{\det[\ddd{q}_{0,0},\ddd{z}_0,\ddd{n}]}{\det[\ddd{p}_{0,0},\ddd{z}_0,\ddd{n}]},&&
+f_0=\frac{\det[\ddd{p}_{0,0},\ddd{q}_{0,0},\ddd{n}]}{\det[\ddd{p}_{0,0},\ddd{z}_0,\ddd{n}]}.
 \end{align*}
 Na enak način iz enačbe \eqref{eq19} dobimo še parametra $e_1$ in $f_1$
 \begin{align*}
-  e_1=\frac{det[\ddd{q}_{0,3},\ddd{z}_2,\ddd{n}]}{det[\ddd{p}_{0,3},\ddd{z}_2,\ddd{n}]}&&
-  f_1=\frac{det[\ddd{p}_{0,3},\ddd{q}_{0,3},\ddd{n}]}{det[\ddd{p}_{0,3},\ddd{z}_2,\ddd{n}]}
+  e_1=\frac{\det[\ddd{q}_{0,3},\ddd{z}_2,\ddd{n}]}{\det[\ddd{p}_{0,3},\ddd{z}_2,\ddd{n}]},&&
+  f_1=\frac{\det[\ddd{p}_{0,3},\ddd{q}_{0,3},\ddd{n}]}{\det[\ddd{p}_{0,3},\ddd{z}_2,\ddd{n}]}.
 \end{align*}
 
-Če bi imeli robove ploskev izbrane na tak način, da bi veljalo 
+Če bi imeli robne krivulje ploskev izbrane na tak način, da bi veljalo 
 $e_0=-1$, $f_0=0$ in $f_1=0$, bi dobili enak rezultat kot v primeru \ref{primer1}, 
 v katerem smo iskali pogoje za $C^1$-zveznost. Z drugačno izbiro robnih krivulj in 
 posledično drugačnimi vrednostmi parametrov pa 
@@ -1492,7 +1496,7 @@ prosti. Enako velja za vse ostale notranje kontrolne točke.
 
 \begin{primer}\label{primer3}
   Oglejmo si še nekoliko drugačen primer konstrukcije $G^1$-zveznih zlepkov dveh ploskev. 
-  Stopnja polinoma $D(v)$ naj bo znova 0, stopnja $F_1(v)$ pa 1, med tem ko naj bo 
+  Stopnja polinoma $D(v)$ naj bo znova 0, stopnja $F_1(v)$ pa 1, medtem ko naj bo 
   polinom $E_1(v)$ 
   stopnje 1. Da bomo v tem primeru na obeh straneh enačbe \eqref{eq15} dobili 
   Bézierjevo krivuljo stopnje 3, moramo znižati stopnjo krivulje 
@@ -1516,7 +1520,7 @@ oziroma
 \frac{3}{2}\ddd{p}_{1,2}-\frac{1}{2}\ddd{p}_{1,3}.
 \end{align}
 
-Enačba \eqref{eq15} se torej v tem primeru preoblikuje tako:
+Enačba \eqref{eq15} se torej v tem primeru preoblikuje v
 \begin{align}\label{eq16}
 D(v)\sum_{j=0}^3\ddd{q}_{1,j}B_j^3(v)=E_1(v)\sum_{j=0}^2\tilde{\ddd{p}}_jB_j^2(v)+
 F_1(v)\sum_{j=0}^2\ddd{s}_jB_j^2(v),
@@ -1525,7 +1529,7 @@ kjer smo označili $\tilde{\ddd{p}}_0=\ddd{p}_{1,0}$, $\tilde{\ddd{p}}_1=\ddd{p}
 
 Polinom $D(v)$ naj bo konstanten, znova lahko predpostavimo $D(v)\equiv 1$. Polinoma 
 $E_1(v)$ in $F_1(v)$ naj bosta linearna, zanju naj velja še $E_1(0)=e_0$, 
-$E_1(1)=e_1$, $F_1(0)=f_0$, $F_1(1)=f_1$. Torej mora veljati:
+$E_1(1)=e_1$, $F_1(0)=f_0$, $F_1(1)=f_1$. Torej mora veljati
 $$E_1(v)=e_0(1-v)+e_1v$$
 $$F_1(v)=f_0(1-v)+f_1v.$$
 
@@ -1538,13 +1542,11 @@ Vstavimo polinoma v enačbo \eqref{eq16} in na podoben način kot v primeru \ref
   &+b_0\sum_{j=0}^2\tilde{\ddd{z}}_j{2 \choose j}v^j(1-v)^{3-j} + 
   b_1\sum_{j=0}^2\tilde{\ddd{z}}_j{2 \choose j}v^{j+1}(1-v)^{2-j}=\\
   &=\sum_{j=0}^3(a_1\tilde{\ddd{p}}_{j-1}\frac{j}{3}+a_0\tilde{\ddd{p}}_j\frac{3-j}{3}+
-  b_1\ddd{z}_{j-1}\frac{j}{3}+b_0\ddd{z}_j\frac{3-j}{3})B_j^3(v)
+  b_1\ddd{z}_{j-1}\frac{j}{3}+b_0\ddd{z}_j\frac{3-j}{3})B_j^3(v).
 \end{align*}
-
 Od tod sledijo pogoji za vektorja $\ddd{q}_{1,1}$ in $\ddd{q}_{1,2}$. 
 $$\ddd{q}_{1,1}=\frac{1}{3}(e_1\ddd{p}_{1,0}+2e_0\ddd{p}_m+f_1\ddd{z}_0+2f_0\ddd{z}_1)$$
 $$\ddd{q}_{1,2}=\frac{1}{3}(e_0\ddd{p}_{1,3}+2e_1\ddd{p}_m+2f_1\ddd{z}_1+f_0\ddd{z}_2).$$
-
 Če še izrazimo vektor $\ddd{p}_m$ z vektorjema $\ddd{p}_{1,0}$ in $\ddd{p}_{1,1}$ 
 oziroma vektorjema $\ddd{p}_{1,2}$ in $\ddd{p}_{1,3}$, dobimo naslednji enačbi:
 
@@ -1598,7 +1600,7 @@ imamo stik ploskev različnih stopenj}
 V tem podpoglavju si oglejmo še primer konstrukcije dveh ploskev, ki sta na 
 skupnem robu $G^2$-zvezni. %\todo{še kaj?} 
 
-Naj bosta $\ddd{R}$ in $\ddd{S}$ bikvintični Bézierovi ploskvi iz tenzorskega produkta: 
+Naj bosta $\ddd{R}$ in $\ddd{S}$ Bézierovi ploskvi iz tenzorskega produkta stopnje $(5,5)$: 
 
 $$\ddd{R}(u,v)=\sum_{i=0}^5\sum_{j=0}^5\ddd{P}_{i,j}B_i^5(u)B_j^5(v)$$
 in 
@@ -1630,10 +1632,10 @@ kjer je $\alpha_1(v)\neq 0$ in ustreznega predznaka na intervalu $[0,1]$, da bo
 veljala enakost \eqref{eq33} ter 
 \begin{equation}\label{eq34}
   \begin{split}
-\frac{\partial^2\ddd{S}}{\partial u^2}|_{u=0}(v)=&\alpha_2(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0}(v)
-+\beta_2(v)\frac{\partial\ddd{R}}{\partial v}|_{u=0}(v)+\alpha_1^2(v)\frac{\partial^2\ddd{R}}{\partial u^2}|_{u=0}(v)+\\
-&+2\alpha_1(v)\beta_1(v)\frac{\partial^2\ddd{R}}{\partial u \partial v}|_{u=0}(v)+\beta_1^2(v)
-\frac{\partial^2\ddd{R}}{\partial v^2}|_{u=0}(v).
+\frac{\partial^2\ddd{S}}{\partial u^2}(0,v)=&\alpha_2(v)\frac{\partial \ddd{R}}{\partial u}(0,v)
++\beta_2(v)\frac{\partial\ddd{R}}{\partial v}(0,v)+\alpha_1^2(v)\frac{\partial^2\ddd{R}}{\partial u^2}(0,v)+\\
+&+2\alpha_1(v)\beta_1(v)\frac{\partial^2\ddd{R}}{\partial u \partial v}(0,v)+\beta_1^2(v)
+\frac{\partial^2\ddd{R}}{\partial v^2}(0,v).
   \end{split}
 \end{equation}
 Ker gre znova za Bézierjeve ploskve iz tenzorskega produkta, lahko uporabimo 
@@ -1643,10 +1645,10 @@ $D(v)E_1(v)\neq 0$ in polinom $E_1(v)$ ustreznega predznaka na intervalu $[0,1]$
 velja enakost \eqref{eq14} ter 
 \begin{equation}\label{eq35}
   \begin{split}
-D^3(v)\frac{\partial^2\ddd{S}}{\partial u^2}|_{u=0}(v)=&E_2(v)\frac{\partial \ddd{R}}{\partial u}|_{u=0}(v)
-+F_2(v)\frac{\partial\ddd{R}}{\partial v}|_{u=0}(v)+D(v)E_1^2(v)\frac{\partial^2\ddd{R}}{\partial u^2}|_{u=0}(v)+\\
-&+2D(v)E_1(v)F_1(v)\frac{\partial^2\ddd{R}}{\partial u \partial v}|_{u=0}(v)+D(v)F_1^2(v)
-\frac{\partial^2\ddd{R}}{\partial v^2}|_{u=0}(v).
+D^3(v)\frac{\partial^2\ddd{S}}{\partial u^2}(0,v)=&E_2(v)\frac{\partial \ddd{R}}{\partial u}(0,v)
++F_2(v)\frac{\partial\ddd{R}}{\partial v}(0,v)+D(v)E_1^2(v)\frac{\partial^2\ddd{R}}{\partial u^2}(0,v)+\\
+&+2D(v)E_1(v)F_1(v)\frac{\partial^2\ddd{R}}{\partial u \partial v}(0,v)+D(v)F_1^2(v)
+\frac{\partial^2\ddd{R}}{\partial v^2}(0,v).
   \end{split}
 \end{equation}
 Pri tem mora za stopnje polinomov veljati naslednje: $st(D)\leq 9$, $st(E_1)\leq 9$, 
@@ -1656,16 +1658,16 @@ Zaradi enostavnosti naj bo stopnja polinoma $D(v)$ enaka 0. Torej lahko brez šk
 splošnost predpostavimo, da je $D(v)\equiv 1$. Stopnje preostalih polinomov bomo 
 izbrali v nadaljevanju.
 
-Sklicujmo se na enakost \eqref{eq28} in dobimo naslednje rezultate za parcialne odvode 
+Po enakosti \eqref{eq28} dobimo naslednje rezultate za parcialne odvode 
 parametrizacij ploskev $\ddd{R}$ in $\ddd{S}$ v $u=0$: 
 
 \begin{align*}
-&\frac{\partial \ddd{R}}{\partial u}|_{u=0}=5\sum_{j=0}^5\ddd{p}_{1,j}B_j^5(v)&&
-\frac{\partial \ddd{R}}{\partial v}|_{u=0}=5\sum_{j=0}^4\ddd{z}_jB_j^4(v)\\
-&\frac{\partial^2\ddd{S}}{\partial u^2}|_{u=0}=5\cdot 4\sum_{j=0}^5\ddd{q}_{2,j}B_j^5(v)&&
-\frac{\partial^2\ddd{R}}{\partial u^2}|_{u=0}=5\cdot 4\sum_{j=0}^5\ddd{p}_{2,j}B_j^5(v)\\
-&\frac{\partial^2\ddd{R}}{\partial v^2}|_{u=0}=5\cdot 4\sum_{j=0}^3\ddd{s}_jB_j^3(v)&&
-\frac{\partial^2\ddd{R}}{\partial u \partial v}|_{u=0}=5\cdot 5\sum_{j=0}^4\ddd{v}_jB_j^4(v).
+&\frac{\partial \ddd{R}}{\partial u}(0,v)=5\sum_{j=0}^5\ddd{p}_{1,j}B_j^5(v)&&
+\frac{\partial \ddd{R}}{\partial v}(0,v)=5\sum_{j=0}^4\ddd{z}_jB_j^4(v)\\
+&\frac{\partial^2\ddd{S}}{\partial u^2}(0,v)=20\sum_{j=0}^5\ddd{q}_{2,j}B_j^5(v)&&
+\frac{\partial^2\ddd{R}}{\partial u^2}(0,v)=20\sum_{j=0}^5\ddd{p}_{2,j}B_j^5(v)\\
+&\frac{\partial^2\ddd{R}}{\partial v^2}(0,v)=20\sum_{j=0}^3\ddd{s}_jB_j^3(v)&&
+\frac{\partial^2\ddd{R}}{\partial u \partial v}(0,v)=25\sum_{j=0}^4\ddd{v}_jB_j^4(v).
 \end{align*}
 
 Dobljene izraze za odvode vstavimo v enačbi \eqref{eq14} in \eqref{eq35}. Oglejmo si, kakšne 
@@ -1710,7 +1712,8 @@ v drugem primeru pa je različen od 0.
 Z $\ddd{n}_1$ bomo označili enotsko normalo na ploskev v točki $\ddd{P}_{0,0}$. 
 Če je $f_{10}=0$, izgubimo člen, ki vsebuje $\ddd{v}_0$. To 
 pomeni, da so vsi vektorji, ki nastopajo v enačbi, že določeni. V enačbi se nam pojavita 
-le dva še neznana parametra $e_{20}$ in $f_{20}$, ki ju lahko določimo iz enačbe. %\todo{skalarni produkt z normalo?} V tem primeru nam enačba 
+le dva še neznana parametra $e_{20}$ in $f_{20}$, ki ju lahko določimo iz enačbe. %\todo{skalarni produkt z normalo?} 
+V tem primeru nam enačba 
 \eqref{eq27} ne da nobenih prostih parametrov ali kontrolnih točk. Če pa je $f_{10}\neq 0$, 
 imamo na voljo dva različna scenarija. Prva možnost je, da projekcijo vektorja 
 $\ddd{v}_0$ na normalo $\ddd{n}_1$ ter parametra $e_{20}$ in $f_{20}$ določimo iz 
@@ -1764,27 +1767,28 @@ Kontrolne vektorje $\ddd{p}_{1,i}$, $i=0,\ldots,5$ lahko izrazimo z vektorji
 $\ddd{\tilde{p}}_i$ s pomočjo enačb za višanje stopnje Bézierjeve krivulje  
 na naslednji način:
 \begin{align}\label{eq40}
-&\ddd{p}_{1,1}=\frac{1}{5}(3\ddd{\tilde{p}}_1+2\ddd{p}_{1,0})&&
-\ddd{p}_{1,4}=\frac{1}{5}(3\ddd{\tilde{p}}_2+2\ddd{p}_1,5)
+&\ddd{p}_{1,1}=\frac{1}{5}(3\ddd{\tilde{p}}_1+2\ddd{p}_{1,0}),&&
+\ddd{p}_{1,2}=\frac{1}{10}(6\ddd{\tilde{p}}_1+3\ddd{\tilde{p}}_2+\ddd{p}_{1,0}),
 \end{align}
 \begin{align}\label{eq41}
-&\ddd{p}_{1,2}=\frac{1}{10}(6\ddd{\tilde{p}}_1+3\ddd{\tilde{p}}_2+\ddd{p}_{1,0})&&
-\ddd{p}_{1,3}=\frac{1}{10}(3\ddd{\tilde{p}}_1+6\ddd{\tilde{p}}_2+\ddd{p}_{1,5})
+&\ddd{p}_{1,3}=\frac{1}{10}(3\ddd{\tilde{p}}_1+6\ddd{\tilde{p}}_2+\ddd{p}_{1,5}),&&
+\ddd{p}_{1,4}=\frac{1}{5}(3\ddd{\tilde{p}}_2+2\ddd{p}_1,5).
 \end{align}
 Seveda velja $\ddd{\tilde{p}}_0=\ddd{p}_{1,0}$, $\ddd{\tilde{p}_3}=\ddd{p}_{1,5}$. 
 Iz enačb \eqref{eq40} lahko izrazimo še vektorja $\ddd{\tilde{p}}_1$ in $\ddd{\tilde{p}}_2$ kot 
-$$\ddd{\tilde{p}}_1=\ddd{p}_{1,0}+\frac{5}{3}\ddd{v}_0$$
-in 
-$$\ddd{\tilde{p}}_2=\ddd{p}_{1,5}-\frac{5}{3}\ddd{v}_4.$$
+\begin{align*}
+\ddd{\tilde{p}}_1=\ddd{p}_{1,0}+\frac{5}{3}\ddd{v}_0,&&
+\ddd{\tilde{p}}_2=\ddd{p}_{1,5}-\frac{5}{3}\ddd{v}_4.
+\end{align*}
 Tu smo uporabili dejstvo, da je $\ddd{v}_0=\ddd{p}_{1,1}-\ddd{p}_{10}$ in 
 $\ddd{v}_4=\ddd{p}_{1,5}-\ddd{p}_{1,4}$. 
 
-Enako lahko s pomočjo enačb za višanje stopnje izrazimo kontrolne vektorje 
-$\ddd{p}_{2,i}$, $i=0,\ldots,5$ izrazimo z vektorjema $\ddd{p}_{2,0}$ in $\ddd{p}_{2,5}$. 
+Enako lahko s pomočjo enačb za višanje stopnje kontrolne vektorje 
+$\ddd{p}_{2,i}$, $i=0,\ldots,5$ izrazimo z vektorjema $\ddd{p}_{2,0}$ in $\ddd{p}_{2,5}$: 
 \begin{align}
-&\ddd{p}_{2,1}=\frac{1}{5}(4\ddd{p}_{2,0}+\ddd{p}_{2,5})&&
-\ddd{p}_{2,2}=\frac{1}{10}(6\ddd{p}_{2,0}+4\ddd{p}_{2,5})\\
-&\ddd{p}_{2,3}=\frac{1}{10}(4\ddd{p}_{2,0}+6\ddd{p}_{2,5})&&
+&\ddd{p}_{2,1}=\frac{1}{5}(4\ddd{p}_{2,0}+\ddd{p}_{2,5}),&&
+\ddd{p}_{2,2}=\frac{1}{10}(6\ddd{p}_{2,0}+4\ddd{p}_{2,5}),\\
+&\ddd{p}_{2,3}=\frac{1}{10}(4\ddd{p}_{2,0}+6\ddd{p}_{2,5}),&&
 \ddd{p}_{2,4}=\frac{1}{5}(\ddd{p}_{2,0}+4\ddd{p}_{2,5}).
 \end{align}
 S temi enačbami so torej natančno določeni kontrolni vektorji $\ddd{p}_{i,j}$, 
@@ -1795,27 +1799,26 @@ saj zahtevamo le geometrijsko zveznost stopnje 2.
 Za določitev pogojev, ki morajo veljati za kontrolne vektorje ploskve $\ddd{S}$ moramo 
 uporabiti enačbi \eqref{eq14} in \eqref{eq35}, ki predstavljata pogoja za $G^1$ in $G^2$-zveznost. 
 Ko v enačbo \eqref{eq14} vstavimo polinoma $E_1(v)$ in $F_1(v)$, preoblikujemo dobljeno 
-enačbo, da na obeh straneh dobimo Bézierovo krivuljo stopnje 5 ter primerjamo koeficiente 
+enačbo, da na obeh straneh dobimo Bézierjevo krivuljo stopnje 5 ter primerjamo koeficiente 
 pred baznimi polinomi, dobimo:
 
 \begin{align*}
 &\ddd{q}_{1,1}=\frac{1}{5}(3e_{10}\ddd{\tilde{p}}_1+2e_{1m}\ddd{p}_{1,0}+
-f_{11}\ddd{z}_0+4f_{10}\ddd{z}_1)\\
+f_{11}\ddd{z}_0+4f_{10}\ddd{z}_1),\\
 &\ddd{q}_{1,2}=\frac{1}{10}(6e_{1m}\ddd{\tilde{p}}_1+3e_{10}\ddd{\tilde{p}}_2+
-e_{11}\ddd{p}_{1,0}+4f_{11}\ddd{z}_1+6f_{10}\ddd{z}_2)\\
+e_{11}\ddd{p}_{1,0}+4f_{11}\ddd{z}_1+6f_{10}\ddd{z}_2),\\
 &\ddd{q}_{1,3}=\frac{1}{10}(3e_{11}\ddd{\tilde{p}}_1+6e_{1m}\ddd{\tilde{p}}_2+
-e_{10}\ddd{p}_{1,5}+6f_{11}\ddd{z}_2+4f_{10}\ddd{z}_3)\\
+e_{10}\ddd{p}_{1,5}+6f_{11}\ddd{z}_2+4f_{10}\ddd{z}_3),\\
 &\ddd{q}_{1,4}=\frac{1}{5}(3e_{11}\ddd{\tilde{p}}_2+2e_{1m}\ddd{p}_{1,5}+
 4f_{11}\ddd{z}_3+f_{10}\ddd{z}_4).
 \end{align*}
-
 Ko enak postopek ponovimo še z enačbo \eqref{eq35}, pa dobimo:
 
 \begin{align*}
 5\ddd{q}_{2,1}=&4e_{10}e_{1m}\ddd{p}_{2,0}+e_{10}^2\ddd{p}_{2,5}+e_{10}f_{10}(\ddd{\tilde{p}}_2-\ddd{\tilde{p}}_1)
 +(2e_{1m}f_{10}+e_{10}f_{11})\ddd{v}_0+3f_{10}^2\ddd{s}_1+\\
 &+2f_{10}f_{11}\ddd{s}_0+\frac{1}{4}(3e_{20}\ddd{\tilde{p}}_1+2e_{2m}\ddd{p}_{1,0}
-+f_{21}\ddd{z}_0+4f_{20}\ddd{z}_1)
++f_{21}\ddd{z}_0+4f_{20}\ddd{z}_1),
 \end{align*}
 
 \begin{align*}
@@ -1824,7 +1827,7 @@ Ko enak postopek ponovimo še z enačbo \eqref{eq35}, pa dobimo:
 &+(2e_{1m}f_{11}+e_{11}f_{10})\ddd{v}_0+e_{10}f_{10}\ddd{v}_4+3f_{10}^2\ddd{s}_2+
 6f_{10}f_{11}\ddd{s}_1+f_{11}^2\ddd{s}_0+\\
 &+\frac{1}{4}(6e_{2m}\ddd{\tilde{p}}_1+3e_{20}\ddd{\tilde{p}}_2+e_{21}\ddd{p}_{1,0}+
-4f_{21}\ddd{z}_1+6f_{20}\ddd{z}_2)
+4f_{21}\ddd{z}_1+6f_{20}\ddd{z}_2),
 \end{align*}
 
 \begin{align*}
@@ -1833,7 +1836,7 @@ Ko enak postopek ponovimo še z enačbo \eqref{eq35}, pa dobimo:
   &+(2p_{1m}q_{10}+p_{10}q_{11})\ddd{v}_4+p_{11}q_{11}\ddd{v}_0+3q_{11}^2\ddd{s}_1+
   6q_{10}q_{11}\ddd{s}_2+q_{10}^2\ddd{s}_3+\\
   &+\frac{1}{4}(6p_{2m}\ddd{\tilde{p}}_2+3p_{21}\ddd{\tilde{p}}_1+p_{20}\ddd{p}_{1,5}+
-  4q_{21}\ddd{z}_3+6q_{21}\ddd{z}_2)
+  4q_{21}\ddd{z}_3+6q_{21}\ddd{z}_2),
   \end{align*}
 
 \begin{align*}
@@ -1858,24 +1861,26 @@ oziroma kontrolne točke $\ddd{Q}_{i,j}$, $i=0,1,2$, $j=0,\ldots,5$.
 
 \todo{povej, kje je možno najti dokaze trditev v tem podpoglavju}
 
-Trikotne Bézierjeve ploskve so tip Bézierovih ploskev s parametrizacijo, definirano 
+Trikotne Bézierjeve ploskve so tip Bézierjevih ploskev s parametrizacijo, definirano 
 nad domeno, sestavljeno iz trikotnikov. Ko imamo opravka s trikotnimi domenami, uporaba običajnega 
 kartezičnega koordinatnega sistema ni najbolj praktična, zato bomo 
 točke znotraj takih domen raje zapisovali z baricentričnimi koordinatami.
 
+\begin{definicija}
 Naj bo $T$ trikotnik z oglišči $\ddd{p}_1=(x_1,y_1)$, $\ddd{p}_2=(x_2,y_2)$ 
-in $\ddd{p}_3=(x_3,y_3)$, oziroma $T=<\ddd{p}_1,\ddd{p}_2,\ddd{p}_3>$. Velja, 
+in $\ddd{p}_3=(x_3,y_3)$, oziroma $T=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$. Velja, 
 da je vsako točko $\ddd{p}=(x,y)$ mogoče enolično zapisati kot 
 $\ddd{p}=u\ddd{p}_1+v\ddd{p}_2+w\ddd{p}_3$, kjer je $u+v+w=1$. Trojico
 $\ddd{u}=(u,v,w)$ imenujemo \emph{baricentrične koordinate} točke $\ddd{p}$ glede 
-na trikotnik $T$. Krajše to zapišemo kot $\ddd{u}=Bar(\ddd{p},T)$.
+na trikotnik $T$. Krajše to zapišemo kot $\ddd{u}=\mbox{Bar}(\ddd{p},T)$.
+\end{definicija}
 
-Trikotne Bezierove ploskve definiramo na naslednji način. 
+Trikotne Bézierove ploskve definiramo na naslednji način. 
 \begin{definicija}
-  \emph{Trikotna Bézierova ploskev stopnje n} je podana s parametrizacijo
-  $$\ddd{R}_n(\ddd{p})=\sum_{i+j+k=n}\ddd{b}_{i,j,k}B_{i,j,k}^n(\ddd{u}),$$
-  kjer so $\ddd{b}_{i,j,k}$, $i+j+k=n$, kontrolne točke te ploskve in 
-  $\ddd{u}=Bar(\ddd{p};T)$. Trikotnik $T$ je domena te parametrizacije. Z 
+  \emph{Trikotna Bézierova ploskev stopnje n nad trikotnikom $T=\\\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$}\todo{lomljenje?} 
+  je podana s parametrizacijo
+  $$\ddd{R}_n(\ddd{p})=\sum_{i+j+k=n}\ddd{b}_{i,j,k}B_{i,j,k}^n(\ddd{u}),\quad \ddd{u}=\mbox{Bar}(\ddd{p},T)$$
+  kjer so $\ddd{b}_{i,j,k}$, $i+j+k=n$, kontrolne točke te ploskve. Trikotnik $T$ je domena te parametrizacije. Z 
   $B_{i,j,k}^n$ označujemo Bernsteinove bazne polinome v dveh spremenljivkah, 
   ki so definirani na naslednji način:
   $$B_{i,j,k}^n(\ddd{u})=\frac{n!}{i!j!k!}u^iv^jw^k,$$
@@ -1888,7 +1893,7 @@ de Casteljaujevega algoritma.
 \todo{decasteljaujev algoritem? ali samo sklic na vir?}
 
 V nadaljevanju si bomo ogledali še definicijo smernega odvoda trikotne Bézierjeve 
-ploskve in pogoje za $C^n$-zveznost med dvema trikotnima Bézierovima ploskvama, 
+ploskve in pogoje za $C^n$-zveznost med dvema trikotnima Bézierjevima ploskvama, 
 v ta namen pa moramo najprej definirati pojem trikotniškega razcveta. 
 \begin{definicija}
   izberemo točke $\ddd{p}_1, \ldots, \ddd{p}_n$ z baricentričnimi koordinatami 
@@ -1901,25 +1906,25 @@ v ta namen pa moramo najprej definirati pojem trikotniškega razcveta.
 
 Kontrolne točke neke ploskve nad trikotnikom $T$ lahko izrazimo s trikotniškim 
 razcvetom na naslednji način: 
-$\ddd{b}_{i,j,k}=\ddd{b}[\ddd{e}_1^{<i>},\ddd{e}_2^{<j>},\ddd{e}_3^{<k>}]$.
+$\ddd{b}_{i,j,k}=\ddd{b}[\ddd{e}_1^{\langle i\rangle},\ddd{e}_2^{\langle j\rangle},\ddd{e}_3^{\langle k\rangle}]$.
 
 S pomočjo trikotniškega razcveta lahko izrazimo kontrolne točke ploskve glede na 
-različne trikotnike v domeni. Imejmo trikotnika $T_1=<\ddd{p}_1,\ddd{p}_2,\ddd{p}_3>$ in 
+različne trikotnike v domeni. Imejmo trikotnika $T_1=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$ in 
 $T_2 = <\ddd{r}_1,\ddd{r}_2,\ddd{r}_3>$. 
 Naj bodo $\ddd{b}_{i,j,k}$, $i+j+k=n$ kontrolne točke ploskve $\ddd{P}$ glede 
 na trikotnik $T_1$ in naj bo $\ddd{s}_1=Bar(r_1;T_1)$, $\ddd{s}_2=Bar(r_2;T_1)$ ter 
 $\ddd{s}_3=Bar(r_3;T_1)$. Potem se kontrolne točke ploskve $\ddd{P}$ glede na 
 trikotnik $T_2$ izražajo na naslednji način: 
-$c_{i,j,k} = \ddd{b}[\ddd{s}_1^{<i>},\ddd{s}_2^{<j>},\ddd{s}_3^{<k>}]$, $i+j+k=n$. 
-Tu s $\ddd{s}_1^{<i>}$ označujemo $i$-kratno ponovitev $\ddd{s}_1$.
+$c_{i,j,k} = \ddd{b}[\ddd{s}_1^{\langle i\rangle},\ddd{s}_2^{\langle j\rangle},\ddd{s}_3^{\langle k\rangle}]$, $i+j+k=n$. 
+Tu s $\ddd{s}_1^{\langle i\rangle}$ označujemo $i$-kratno ponovitev $\ddd{s}_1$.
 
 Če imamo domeno, sestavljeno iz dveh trikotnikov, ki se na enem robu stikata, 
-torej če imamo trikotnika $T_1=<\ddd{p}_1,\ddd{p}_2,\ddd{p}_3>$ in 
-$T_2 = <\ddd{p}_2,\ddd{p}_3,\ddd{p}_4>$, ter ploskev, podano s kontrolnimi točkami 
+torej če imamo trikotnika $T_1=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$ in 
+$T_2 = \langle\ddd{p}_2,\ddd{p}_3,\ddd{p}_4\rangle$, ter ploskev, podano s kontrolnimi točkami 
 glede na trikotnik $T_1$: $b_{i,j,k},$ $i+j+k=n$,   
 lahko kontrolne točke ploskve  
 glede na trikotnik $T_2$ zapišemo tako: 
-$\ddd{c}_{i,j,k}=\ddd{b}[\ddd{e}_1^{<i>},\ddd{e}_2^{<j>},\mathbf{\alpha}^{<k>};T]$. 
+$\ddd{c}_{i,j,k}=\ddd{b}[\ddd{e}_1^{\langle i\rangle},\ddd{e}_2^{\langle j\rangle},\mathbf{\alpha}^{\langle k\rangle};T]$. 
 Tu je $\mathbf{\alpha}=Bar(\ddd{p}_4;T_1)$, $\ddd{e}_1=(1,0,0)$ in $\ddd{e}_2=(0,1,0)$. 
 %Ta ugotovitev bo uporabna pri iskanju pogojev za $C^1$-zveznost na stiku dveh 
 %trikotnih ploskev. 
@@ -1935,7 +1940,7 @@ Odvod parametrizacije $\ddd{P}$ v smeri vektorja $\ddd{p}$ izračunamo na nasled
 \begin{align*}
 D_{\ddd{p}}\ddd{P}(\ddd{p})&=n\sum_{i+j+k=n-1}(\mu_1\ddd{b}_{i+1,j,k}+
 \mu_2\ddd{b}_{i,j+1,k}+\mu_3\ddd{b}_{i,j,k+1})B_{i,j,k}^{n-1}(\ddd{u})\\
-&=n\ddd{b}[\mu,\ddd{u}^{<n-1>};T].
+&=n\ddd{b}[\mu,\ddd{u}^{\langle n-1\rangle};T].
 \end{align*}
 
 Pokazati je mogoče tudi, da za smerni odvod trikotne ploskve velja:
@@ -1951,13 +1956,13 @@ Ta ugotovitev bo pomembna pri konstrukciji $G^1$-zveznih trikotnih ploskev.
 \subsection{Konstrukcija $C^1$-zveznih trikotnih Bézierovih ploskev}
 
 Imejmo dve trikotni Bézierovi ploskvi $\ddd{R}$ in $\ddd{S}$ stopnje $n$ nad 
-trikotnima domenama $T_1=<\ddd{p_1},\ddd{p_2},\ddd{p}_3>$ in $T_2=<\ddd{p}_4,\ddd{p}_2,\ddd{p}_3>$:
-$$\ddd{R}(\ddd{p})=\sum_{i+j+k=n}\ddd{r}_{i,j,k}B_{i,j,k}^n(\ddd{u});
-\textrm{ }\ddd{u}=Bar(\ddd{p};T_1),$$
+trikotnima domenama $T_1=\langle\ddd{p_1},\ddd{p_2},\ddd{p}_3\rangle$ in $T_2=\langle\ddd{p}_4,\ddd{p}_2,\ddd{p}_3\rangle$:
+$$\ddd{R}(\ddd{p})=\sum_{i+j+k=n}\ddd{r}_{i,j,k}B_{i,j,k}^n(\ddd{u});\quad
+\ddd{u}=\mbox{Bar}(\ddd{p};T_1),$$
 $$\ddd{S}(\ddd{p})=\sum_{i+j+k=n}\ddd{s}_{i,j,k}B_{i,j,k}^n(\ddd{v});
-\textrm{ }\ddd{v}=Bar(\ddd{p};T_2).$$
+\quad\ddd{v}=\mbox{Bar}(\ddd{p};T_2).$$
 Zapišimo točki $\ddd{u}$ in $\ddd{v}$ kot $\ddd{u}=(u_1,u_2,u_3)$ in $\ddd{v}=(v_1,v_2,v_3)$. 
-Ploskvi se stikata na robu nad daljico $\bar{\ddd{p}_2\ddd{p}_3}$, oziroma na 
+Ploskvi se stikata na robu nad daljico $\overline{\ddd{p}_2\ddd{p}_3}$, oziroma na 
 robu, določenem z $u_1=v_1=0$.  
 Torej velja 
 $\ddd{r}_{0,j,k}=\ddd{s}_{0,j,k}$ za $j\geq 0$, $k\geq 0$, $j+k=0$. 
@@ -1965,17 +1970,17 @@ $\ddd{r}_{0,j,k}=\ddd{s}_{0,j,k}$ za $j\geq 0$, $k\geq 0$, $j+k=0$.
 Da bo stik ploskev $\ddd{R}$ in $\ddd{S}$ $C^1$-zvezen, se morata v $u_1=0$ 
 oziroma $v_1=0$ ujemati odvoda parametrizacij ploskev v katerikoli smeri. 
 Opazujmo odvoda ploskev v smeri $\ddd{d}=\ddd{p_4}-\ddd{p}_2$. 
-Naj bodo $\ddd{\mu}=(\mu_1,\mu_2,\mu_3)=Bar(\ddd{d};T_1)=\ddd{\alpha}-\ddd{e}_2$ baricentrične 
+Naj bodo $\ddd{\mu}=(\mu_1,\mu_2,\mu_3)=\mbox{Bar}(\ddd{d};T_1)=\ddd{\alpha}-\ddd{e}_2$ baricentrične 
 koordinate vektorja $\ddd{d}$ glede na trikotnik $T_1$, kjer je $\ddd{\alpha}=
-Bar(\ddd{p}_4;T_1)$, in 
-$\ddd{\eta}=(\eta_1,\eta_2,\eta_3)=Bar(\ddd{d};T_2)=\ddd{e}_1-\ddd{e}_2$ baricentrične 
+\mbox{Bar}(\ddd{p}_4;T_1)$, in 
+$\ddd{\eta}=(\eta_1,\eta_2,\eta_3)=\mbox{Bar}(\ddd{d};T_2)=\ddd{e}_1-\ddd{e}_2$ baricentrične 
 koordinate vektorja $\ddd{d}$ glede na trikotnik $T_2$. Veljati mora:
 \begin{align*}
 &\sum_{i+j+k=n-1}(\mu_1\ddd{r}_{i+1,j,k}+
 \mu_2\ddd{r}_{i,j+1,k}+\mu_3\ddd{r}_{i,j,k+1})B_{i,j,k}^{n-1}(\ddd{u})|_{u_1=0}=\\
 &\sum_{i+j+k=n-1}(\eta_1\ddd{s}_{i+1,j,k}+
 \eta_2\ddd{s}_{i,j+1,k}+\eta_3\ddd{s}_{i,j,k+1})B_{i,j,k}^{n-1}(\ddd{v})|_{v_1=0}
-\end{align*}
+\end{align*}\todo{ok |u1=0?}
 oziroma
 \begin{align}\label{eq20}
 \mu_1\ddd{r}_{1,j,k}+\mu_2\ddd{r}_{0,j+1,k}+\mu_3\ddd{r}_{0,j,k+1}=
@@ -2001,13 +2006,13 @@ Dobljeni rezultat sedaj uporabimo na primeru stika dveh ploskev stopnje 3.
 
 \begin{primer}\label{primerT1}
 Imejmo dve trikotni Bézierovi ploskvi $\ddd{R}$ in $\ddd{S}$ stopnje 3 nad 
-trikotnima domenama $T_1=<\ddd{p_1},\ddd{p_2},\ddd{p}_3>$ in $T_2=<\ddd{p}_4,\ddd{p}_2,\ddd{p}_3>$:
+trikotnima domenama $T_1=\langle\ddd{p_1},\ddd{p_2},\ddd{p}_3\rangle$ in $T_2=\langle\ddd{p}_4,\ddd{p}_2,\ddd{p}_3\rangle$:
 $$\ddd{R}(\ddd{p})=\sum_{i+j+k=3}\ddd{r}_{i,j,k}B_{i,j,k}^3(\ddd{u});
-\textrm{ }\ddd{u}=Bar(\ddd{p};T_1),$$
+\textrm{ }\ddd{u}=\mbox{Bar}(\ddd{p};T_1),$$
 $$\ddd{S}(\ddd{p})=\sum_{i+j+k=3}\ddd{s}_{i,j,k}B_{i,j,k}^3(\ddd{v});
-\textrm{ }\ddd{v}=Bar(\ddd{p};T_2).$$
+\textrm{ }\ddd{v}=\mbox{Bar}(\ddd{p};T_2).$$
 Naj bo $\ddd{u}=(u_1,u_2,u_3)$ in $\ddd{v}=(v_1,v_2,v_3)$ ter 
-$\ddd{\alpha}=(\alpha_1,\alpha_2,\alpha_3)=Bar(\ddd{p}_4;T_1)$.
+$\ddd{\alpha}=(\alpha_1,\alpha_2,\alpha_3)=\mbox{Bar}(\ddd{p}_4;T_1)$.
 Ploskvi se kakor prej stikata v $u_1=v_1=0$, torej za kontrolne točke na skupnem 
 robu velja $\ddd{s}_{0,0,2}=\ddd{r}_{0,0,2}$, $\ddd{s}_{0,1,1}=\ddd{r}_{0,1,1}$ in 
 $\ddd{s}_{0,2,0}=\ddd{r}_{0,2,0}$. 
@@ -2022,13 +2027,13 @@ Da bo stik obeh ploskev še $C^1$ zvezen mora po enačbi \eqref{eq21} veljati:
 
 Opazimo lahko, da morata biti točki $\ddd{s}_{1,j,k}$ in $\ddd{r}_{1,j,k}$, kjer 
 je $j+k=2$ in $j\geq 0$, $k\geq 0$, kolinearni. Še več, trikotnika 
-$<\ddd{r}_{1,0,2},\ddd{r}_{0,1,2},\ddd{r}_{0,0,3}>$ in 
-$\ddd{s}_{0,1,2},\ddd{s}_{0,0,3},\ddd{s}_{1,0,2}>$ morata biti afini sliki 
+$\langle\ddd{r}_{1,0,2},\ddd{r}_{0,1,2},\ddd{r}_{0,0,3}\rangle$ in 
+$\langle\ddd{s}_{0,1,2},\ddd{s}_{0,0,3},\ddd{s}_{1,0,2}\rangle$ morata biti afini sliki 
 domenskih trikotnikov $T_1$ in $T_2$. Enako mora veljati tudi za trikotnika 
-$<\ddd{r}_{1,1,1},\ddd{r}_{0,2,1},\ddd{r}_{0,1,2}>$ in 
-$<\ddd{s}_{0,2,1},\ddd{s}_{0,1,2},\ddd{s}_{1,1,1}>$ ter trikotnika 
-$<\ddd{r}_{1,2,0},\ddd{r}_{0,3,0},\ddd{r}_{0,2,1}>$ in 
-$<\ddd{s}_{0,3,0},\ddd{s}_{0,2,1},\ddd{s}_{1,2,0}>$. 
+$\langle\ddd{r}_{1,1,1},\ddd{r}_{0,2,1},\ddd{r}_{0,1,2}\rangle$ in 
+$\langle\ddd{s}_{0,2,1},\ddd{s}_{0,1,2},\ddd{s}_{1,1,1}\rangle$ ter trikotnika 
+$\langle\ddd{r}_{1,2,0},\ddd{r}_{0,3,0},\ddd{r}_{0,2,1}\rangle$ in 
+$\langle\ddd{s}_{0,3,0},\ddd{s}_{0,2,1},\ddd{s}_{1,2,0}\rangle$. 
 \end{primer}
 
 Izbira kontrolnih točk $C^1$-zveznih ploskev je torej v veliki meri odvisna od 
@@ -2037,7 +2042,7 @@ Oglejmo si primer, kjer imamo podane robne točke dveh ploskev, ni pa
 možno najti notranjih kontrolnih točk, da bi bil stik ploskev $C^1$-zvezen. 
 
 \begin{primer}\label{primerT2}
-Imejmo trikotni ploskvi $\ddd{R}$ in $\ddd{S}$ kot v primeru \ref{primerT2}. 
+Imejmo trikotni ploskvi $\ddd{R}$ in $\ddd{S}$ kot v primeru \ref{primerT1}. 
 Predpostavljajmo, da imamo že vnaprej določene njune robne 
 točke, tako da so robovi dobljenega zlepka 
 $C^1$-zvezni. \todo{dodaj: kaj mora veljati, da so robovi c1?}
@@ -2048,10 +2053,10 @@ $$\ddd{s}_{1,2,0}= \beta_1\ddd{r}_{0,1,2}+\beta_2\ddd{r}_{0,3,0}+\beta_3\ddd{r}_
 kjer je $(\alpha_1,\alpha_2,\alpha_3)\neq(\beta_1,\beta_2,\beta_3)$.  
 V tem primeru je nemogoče določiti točki $\ddd{r}_{1,1,1}$ in $\ddd{s}_{1,1,1}$, da bi 
 bil dobljeni zlepek $C^1$-zvezen, saj para trikotnikov 
-$<\ddd{r}_{1,0,2},\ddd{r}_{0,1,2},\ddd{r}_{0,0,3}>$ in 
-$\ddd{s}_{0,1,2},\ddd{s}_{0,0,3},\ddd{s}_{1,0,2}>$ ter 
-$<\ddd{r}_{1,2,0},\ddd{r}_{0,3,0},\ddd{r}_{0,2,1}>$ in 
-$<\ddd{s}_{0,3,0},\ddd{s}_{0,2,1},\ddd{s}_{1,2,0}>$ 
+$\langle\ddd{r}_{1,0,2},\ddd{r}_{0,1,2},\ddd{r}_{0,0,3}\rangle$ in 
+$\langle\ddd{s}_{0,1,2},\ddd{s}_{0,0,3},\ddd{s}_{1,0,2}\rangle$ ter 
+$\langle\ddd{r}_{1,2,0},\ddd{r}_{0,3,0},\ddd{r}_{0,2,1}\rangle$ in 
+$\langle\ddd{s}_{0,3,0},\ddd{s}_{0,2,1},\ddd{s}_{1,2,0}\rangle$ 
 nista afini sliki istega para domenskih trikotnikov. 
 \end{primer}
 
@@ -2065,25 +2070,25 @@ Oglejmo si še en zelo enostaven primer ploskev, ki na stiku zaradi izbire domen
 biti $C^1$-zvezni, lahko pa sta $G^1$-zvezni. 
 
 \begin{primer}\label{primerT3}
-Imejmo dve trikotni Bézierovi ploskvi prve stopnje
+Imejmo dve trikotni Bézierovi ploskvi stopnje 1:
 $$\ddd{R}(\ddd{p})=\ddd{r}_{1,0,0}u+\ddd{r}_{0,1,0}v+\ddd{r}_{0,0,1}w; 
-\textrm{ }(u,v,w)=Bar(\ddd{p};T_1)$$
+\quad(u,v,w)=\mbox{Bar}(\ddd{p};T_1)$$
 in
 $$\ddd{S}(\ddd{p})=\ddd{s}_{1,0,0}\tilde{u}+\ddd{s}_{0,1,0}\tilde{v}+
-\ddd{s}_{0,0,1}\tilde{w}; \textrm{ }(\tilde{u},\tilde{v},\tilde{w})=Bar(\ddd{p};T_2).$$
+\ddd{s}_{0,0,1}\tilde{w};
+\quad(\tilde{u},\tilde{v},\tilde{w})=\mbox{Bar}(\ddd{p};T_2).$$
 Naj velja $\ddd{r}_{1,0,0}=(0,1,0)$, $\ddd{r}_{0,1,0}=\ddd{s}_{0,1,0}=(0,0,0)$, 
 $\ddd{r}_{0,0,1}=\ddd{s}_{0,0,1}=(1,1,0)$ in $\ddd{s}_{0,0,1}=(1,0,0)$. Ploskvi 
 $\ddd{R}$ in $\ddd{S}$ sta torej dva pravokotna trikotnika v ravnini $z=0$, ki 
 skupaj tvorita kvadrat. 
-
-Trikotnika $T_1$ in $T_2$ definirajmo kot $T_1=<(0,1),(0,0),(1,0)>$ in 
-$T_2=<(0,1),(0,0),(1,0)>$. 
+Trikotnika $T_1$ in $T_2$ definirajmo kot $T_1=\langle(0,1),(0,0),(1,0)\rangle$ in 
+$T_2=\\\langle(0,1),(0,0),(1,0)\rangle$. \todo{prelom?}
 
 Očitno je, da je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^1$-zvezen, saj imata 
 ploskvi vzdolž stične krivulje isto konstatno tangentno ravnino. 
 Vendar pa stik teh dveh ploskev ni $C^1$-zvezen. 
-Naj bo $\ddd{\alpha}=Bar(\ddd{s}_{1,0,0};T_1)$. Torej je 
-$\ddd{\alpha}=(-1,2,0)$. Da bi bil stik ploskev $C^1$-zvezen, bi moralo biti 
+Naj bo $\mathbf{\alpha}=\mbox{Bar}(\ddd{s}_{1,0,0};T_1)$. Torej je 
+$\mathbf{\alpha}=(-1,2,0)$. Da bi bil stik ploskev $C^1$-zvezen, bi moralo biti 
 zadoščeno enačbi \eqref{eq21}, torej bi moralo veljati 
 $$\ddd{s}_{1,0,0}=-\ddd{r}_{1,0,0}+2\ddd{r}_{0,1,0},$$
 kar pa v našem primeru ne drži.
@@ -2101,13 +2106,13 @@ zvezni, vendar pa se tega ne bomo lotili prek osnovne definicije geometrijske
 zveznosti oziroma izreka \ref{izrek1}, temveč prek geometrijske definicije.
 
 Imejmo ploskvi $\ddd{R}$ in $\ddd{S}$ stopnje $n$ nad 
-trikotnima domenama $T_1=<\ddd{p_1},\ddd{p_2},\ddd{p}_3>$ in $T_2=<\ddd{p}_4,\ddd{p}_2,\ddd{p}_3>$:
+trikotnima domenama $T_1=\langle\ddd{p_1},\ddd{p_2},\ddd{p}_3\rangle$ in $T_2=\langle\ddd{p}_4,\ddd{p}_2,\ddd{p}_3\rangle$:
 $$\ddd{R}(\ddd{p})=\sum_{i+j+k=n}\ddd{r}_{i,j,k}B_{i,j,k}^n(\ddd{u});
-\textrm{ }\ddd{u}=Bar(\ddd{p};T_1),$$
+\quad\ddd{u}=\mbox{Bar}(\ddd{p};T_1),$$
 $$\ddd{S}(\ddd{p})=\sum_{i+j+k=n}\ddd{s}_{i,j,k}B_{i,j,k}^n(\ddd{\tilde{u}});
-\textrm{ }\ddd{\tilde{u}}=Bar(\ddd{p};T_2).$$
-Naj bo $\ddd{u}=(u,v,w)$ in $\ddd{\tilde{u}}=(\tilde{u},\tilde{v},\tilde{w})$. 
-Ploskvi se stikata na robu nad daljico $\bar{\ddd{p}_2\ddd{p}_3}$, oziroma na 
+\quad\ddd{\tilde{u}}=\mbox{Bar}(\ddd{p};T_2).$$
+Naj bo $\ddd{u}=(u,v,w)$ in $\ddd{\widetilde{u}}=(\tilde{u},\tilde{v},\tilde{w})$. 
+Ploskvi se stikata na robu nad daljico $\overline{\ddd{p}_2\ddd{p}_3}$, oziroma na 
 robu, določenem z $u=\tilde{u}=0$.  
 Torej velja 
 $\ddd{r}_{0,j,k}=\ddd{s}_{0,j,k}$ za $j\geq 0$, $k\geq 0$, $j+k=0$. 
@@ -2124,13 +2129,13 @@ Tangentno ravnino na ploskev $\ddd{S}$ v točki $\ddd{C}(v)$ pa razpenjajo točk
 $\ddd{s}_{1,0,0}^{n-1}(v)$, $\ddd{s}_{0,1,0}^{n-1}(v)$ in $\ddd{s}_{0,0,1}^{n-1}(v)$. 
 Da bo zlepek obeh ploskev $G^1$-zvezen, morata biti obe tangentni ravnini 
 del ene ravnine. To pomeni, da se morata premici 
-$\bar{\ddd{r}_{0,1,0}^{n-1}(v)\ddd{r}_{0,0,1}^{n-1}(v)}$ in 
-$\bar{\ddd{r}_{1,0,0}^{n-1}(v)\ddd{s}_{1,0,0}^{n-1}(v)}$ sekati za vsako 
+$\overline{\ddd{r}_{0,1,0}^{n-1}(v)\ddd{r}_{0,0,1}^{n-1}(v)}$ in 
+$\overline{\ddd{r}_{1,0,0}^{n-1}(v)\ddd{s}_{1,0,0}^{n-1}(v)}$ sekati za vsako 
 vrednost parametra $v\in[0,1]$. Torej morata obstajati funkciji 
 $\lambda(v)$ in $\mu(v)$, za kateri velja 
 \begin{align}\label{eq22}
   (1-\lambda(v))\ddd{s}_{1,0,0}^{n-1}(v)+\lambda(v)\ddd{r}_{1,0,0}^{n-1}=
-  (1-\mu(v))\ddd{r}_{0,0,1}^{n-1}+\mu(v)\ddd{r}_{0,1,0}^{n-1}
+  (1-\mu(v))\ddd{r}_{0,0,1}^{n-1}+\mu(v)\ddd{r}_{0,1,0}^{n-1}.
 \end{align}
 S tem smo med drugim zagotovili tudi, da se točki $\ddd{s}_{1,0,0}^{n-1}(v)$ 
 in $\ddd{r}_{1,0,0}^{n-1}(v)$ za vsako vrednost $v\in[0,1]$ nahajata na 
@@ -2145,9 +2150,9 @@ Zgornja enačba predstavlja pogoj, ki zagotavlja $G^1$-zveznost zlepka ploskev.
 Iz de Casteljaujevega algoritma sledi, da lahko točke, ki razpenjajo tangenti 
 ravnini zapišemo na naslednji način
 \begin{align*}
-&\ddd{r}_{1,0,0}^{n-1}(v)=\sum_{i=0}^{n-1}\ddd{r}_{1,i,n-i-1}B_i^{n-1}(v)\\
+&\ddd{r}_{1,0,0}^{n-1}(v)=\sum_{i=0}^{n-1}\ddd{r}_{1,i,n-i-1}B_i^{n-1}(v)&&
 &\ddd{r}_{0,1,0}^{n-1}(v)=\sum_{i=0}^{n-1}\ddd{r}_{0,i+1,n-i-1}B_i^{n-1}(v)\\
-&\ddd{r}_{0,0,1}^{n-1}(v)=\sum_{i=0}^{n-1}\ddd{r}_{0,i,n-i}B_i^{n-1}(v)\\
+&\ddd{r}_{0,0,1}^{n-1}(v)=\sum_{i=0}^{n-1}\ddd{r}_{0,i,n-i}B_i^{n-1}(v)&&
 &\ddd{s}_{1,0,0}^{n-1}(v)=\sum_{i=0}^{n-1}\ddd{s}_{1,i,n-i-1}B_i^{n-1}(v).
 \end{align*}
 Zaradi ujemanja kontrolnih točk na skupnem robu, je 
@@ -2178,9 +2183,10 @@ produkta, mogoča konstrukcija ploskev veliko več različnih oblik.
 Sedaj za funkciji $\lambda(v)$ in $\mu(v)$ izberimo polinoma prve stopnje
 %(možna bi bila tudi drugačna izbira funkcij, ki bi seveda privedla do 
 %drugačnih rezultatov)
-$$\lambda(v)=(1-v)\lambda_0+v\lambda_1$$
-in 
-$$\mu(v)=(1-v)\mu_0+v\mu_1.$$
+\begin{align*}
+\lambda(v)=(1-v)\lambda_0+v\lambda_1,&&
+\mu(v)=(1-v)\mu_0+v\mu_1.
+\end{align*}
 
 Da si olajšajmo nadaljnje delo, najprej nekoliko preoblikujmo izraza 
 $1-\lambda(v)$ in $1-\mu(v)$. 
@@ -2247,14 +2253,14 @@ primeru za ploskvi stopnje 3.
 
 \begin{primer}\label{primerT4}
   Imejmo ploskvi $\ddd{R}$ in $\ddd{S}$ stopnje 3 nad 
-  trikotnima domenama $T_1=<\ddd{p_1},\ddd{p_2},\ddd{p}_3>$ in $T_2=<\ddd{p}_4,\ddd{p}_2,\ddd{p}_3>$:
+  trikotnima domenama $T_1=\langle\ddd{p_1},\ddd{p_2},\ddd{p}_3\rangle$ in $T_2=\langle\ddd{p}_4,\ddd{p}_2,\ddd{p}_3\rangle$:
   $$\ddd{R}(\ddd{p})=\sum_{i+j+k=3}\ddd{r}_{i,j,k}B_{i,j,k}^n(\ddd{u});
-  \textrm{ }\ddd{u}=Bar(\ddd{p};T_1),$$
+  \quad\ddd{u}=\mbox{Bar}(\ddd{p};T_1),$$
   $$\ddd{S}(\ddd{p})=\sum_{i+j+k=3}\ddd{s}_{i,j,k}B_{i,j,k}^n(\ddd{\tilde{u}});
-  \textrm{ }\ddd{\tilde{u}}=Bar(\ddd{p};T_2),$$
-  kjer je $\ddd{u}=(u,v,w)$ in $\ddd{\tilde{u}}=(\tilde{u},\tilde{v},\tilde{w})$. 
-  Ploskvi se ponovno stikata na robu nad daljico $\bar{\ddd{p}_2\ddd{p}_3}$, oziroma na 
-  robu, določenem z $u=\tilde{u}=0$. 
+  \quad\ddd{\tilde{u}}=\mbox{Bar}(\ddd{p};T_2),$$
+  kjer je $\ddd{u}=(u,v,w)$ in $\ddd{\widetilde{u}}=(\tilde{u},\tilde{v},\tilde{w})$. 
+  Ploskvi se ponovno stikata na robu nad daljico $\overline{\ddd{p}_2\ddd{p}_3}$, oziroma na 
+  robu, določenem z $u=\widetilde{u}=0$. 
   
   Zlepek obeh ploskev bo $G^1$-zvezen, če bodo za njune kontrolne točke veljale 
   naslednje enačbe.

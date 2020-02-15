@@ -329,12 +329,78 @@ geometrijsko zvezne ploskve tudi c zvezne}
 
 \todo{s čim se to delo ukvarja in kaj bo v kakšnem poglavju}
 
+%It has been shown previously that parametric continuity is sufficient, but not necessary, for geometric smoothness
+%geometric continuity as a parametrization independent measure
+%Parametric splines a.re piecewise functions, so care must be taken to "stitch" the curve segments or surface patches together in a. "smooth" fashion
+%The usual measure of smoothness, known as parametric continuity, requires
+%the piecing together of curves a.nd surfaces so that a. given number of parametric
+%derivatives match a.t the boundaries between curve segments or surface patches.
+%The order of continuity (the number of derivatives that a.re required to match)
+%is determined by the particular application. Although this generally results in
+%splines that "look" smooth, it is shown in Chapter 2 that parametric continuity
+%ca.n be overly restrictive since it depends upon details of the pa.ra.metriza.tions that
+%a.re irrelevant for many CAGD applications.
+%To remedy this situation, we define a. measure of continuity, known as
+%geometric continuity, that is insensitive to changes in these irrelevant details. In
+%other words, geometric continuity is a. parametrization independent measure of
+%continuity.
+%The shape
+%parameters are degrees of freedom that are not available when using parametric
+%continuity. The shape parameters can be made available to a designer in a CAG D
+%environment. If the spline technique is based on the Beta constraints rather
+%than the parametric continuity constraints, the shape parameters can be used
+%to alter the shape of the curve or surface.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Geometrijska zveznost}\label{geom.zv.}
 
 \todo{nek uvodni tekst?}
+%obstaja več načinov za modeliranje krivulj in ploskev. eden izmed njih je 
+%parametrično podane krivulje in ploskve
+%ali: krivulje lahko podajamo na različne načine: eksplicitno, implicitno, parametrično. 
+%ogledamo si definicijo parametrične.
+
+%A univariate parametrization is said to be regular if the first derivative vector
+%does not vanish. It is well known from differential geometry ( cf. DoCarmo [26])
+%that regularity is, in general, essential for the smoothness of the resulting curve
+%(see Figure 2.6). We therefore restrict the discussion to parametrizations that
+%are regular.
+
+\subsection{Geometriska zveznost krivulj}
+\todo{tekst}
+\todo{splošna definicija?}
+
+\begin{definicija}
+Naj bosta $\ddd{p}:I_1\rightarrow\R^d$ \todo{2? ali d?} in $\ddd{q}\rightarrow\R^d$ 
+parametrično podani krivulji, kjer sta $I_1$ in $I_2$ intervala v $\R$. Krivulji 
+$\ddd{p}$ in $\ddd{q}$ naj se stikata v neki točki, torej naj obstajata parametra 
+$t_1\in I_1$ in $t_2\in I_2$, da je $\ddd{p}(t_1)=\ddd{q}(t_2)$. 
+Pravimo, da se krivulji v skupni točki stikata z \emph{geometrijsko zveznostjo reda n} 
+oziroma z \emph{$G^n$-zveznostjo}, če v okolici $I_0$ parametra $t_1$ obstaja regularna 
+reparametrizacijska funkcija $f:I_0\rightarrow I_2$, da velja $f(t_1)=t_2$, 
+$\frac{df}{dt}>0$ ter 
+\begin{align*}
+  \frac{d^k}{dt^k}\ddd{p}(t)\big|_{t=t_1}=\frac{d^k}{dt^k}(\ddd{q}\circ f)(t)\big|_{t=t_1},\quad k=0,1,\ldots,n.
+\end{align*}
+\end{definicija}
+\todo{slika}
+
+Da sta krivulji $\ddd{p}$ in $\ddd{q}$ $G^0$-zvezni, mora veljati le, da se ujemata 
+v skupni točki, oziroma da je $\ddd{p}(t_1)=\ddd{q}(t_2)$. 
+Za $G^1$ zveznost mora poleg pogoja za $G^0$-zveznost veljati še naslednje:
+\begin{align*}
+\frac{d}{dt}\ddd{p}(t_1)=\frac{d}{dt}(\ddd{q}\circ f)(t_1)=
+\frac{d}{dt}(\ddd{q}\circ f)(t_1)\frac{df}{dt}(t_1).
+\end{align*}
+Za $G^2$ pa mora poleg pogojev za $G^0$-zveznost in $G^1$-zveznost veljati še 
+\begin{align*}
+\frac{d^2}{dt^2}\ddd{p}(t_1)=\frac{d^2}{dt^2}(\ddd{q}\circ f)(t_1)
+\left(\frac{df}{dt}(t_1)\right)^2+\frac{d}{dt}(\ddd{q}\circ f)(t_1)\frac{d^2f}{dt^2}(t_1).
+\end{align*}
+
+\subsection{Geometrijska zveznost ploskev}
 
 Najprej si oglejmo povsem splošno definicijo geometrijske zveznosti neke ploskve.
 

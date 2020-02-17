@@ -373,7 +373,7 @@ geometrijsko zvezne ploskve tudi c zvezne}
 \todo{splošna definicija?}
 
 \begin{definicija}
-Naj bosta $\ddd{p}:I_1\rightarrow\R^d$ \todo{2? ali d?} in $\ddd{q}\rightarrow\R^d$ 
+Naj bosta $\ddd{p}:I_1\rightarrow\R^d$ \todo{2? ali d?} in $\ddd{q}:I_2\rightarrow\R^d$ 
 parametrično podani krivulji, kjer sta $I_1$ in $I_2$ intervala v $\R$. Krivulji 
 $\ddd{p}$ in $\ddd{q}$ naj se stikata v neki točki, torej naj obstajata parametra 
 $t_1\in I_1$ in $t_2\in I_2$, da je $\ddd{p}(t_1)=\ddd{q}(t_2)$. 
@@ -399,6 +399,10 @@ Za $G^2$ pa mora poleg pogojev za $G^0$-zveznost in $G^1$-zveznost veljati še
 \frac{d^2}{dt^2}\ddd{p}(t_1)=\frac{d^2}{dt^2}(\ddd{q}\circ f)(t_1)
 \left(\frac{df}{dt}(t_1)\right)^2+\frac{d}{dt}(\ddd{q}\circ f)(t_1)\frac{d^2f}{dt^2}(t_1).
 \end{align*}
+
+V splošnem pogoj za $G^n$-zveznost krivulj zapišemo kot:
+$$\frac{d^k}{dt^k}\ddd{p}=\sum_{i=1}^k\sum_{|m_i|=k}A_{m_i}^k\frac{d^{m_1}f}{dt^{m_1}}\cdots
+\frac{d^{m_i}f}{dt^{m_i}}\frac{d^i}{dt^i}\ddd{q}$$
 
 \subsection{Geometrijska zveznost ploskev}
 
@@ -659,13 +663,21 @@ iz tenzorskega produkta}
 
 \todo{povej, v katerem viru so dokazi itd.}
 
-Bézierjeve krivulje in ploskve podajamo s pomočjo Bernsteinovih baznih polinomov, $i$-ti 
-Bernseinov polinom je definiran kot  
+V tem podpoglavju bodo predstavljene Bézierjeve krivulje in Bézierjeve ploskve iz 
+tenzorskega produkta. Te podajamo s pomočjo Bernsteinovih baznih polinomov.
 
-$$B_i^n(t)={n \choose i}t^i (1-t)^{n-i}\textrm{, } t\in[0,1].$$
+\begin{definicija}
+Za $i=0,1,\ldots,n$ je $i$-ti \emph{Bérnsteinov bazni polinom} stopnje $n$ definiran 
+kot 
+$$B_i^n(t)={n \choose i}t^i (1-t)^{n-i},\quad t\in[0,1].$$
+\end{definicija}
 
+
+\begin{izrek}
 Bernsteinovi bazni polinomi sestavljajo bazo prostora polinomov
-$\mathbb{P}_n=\mbox{Lin}\{1,t,\\t^2,\ldots,t^n\}$. 
+$\mathbb{P}_n=\mbox{Lin}\{1,t,\\t^2,\ldots,t^n\}$.
+\end{izrek}
+
 Bazo prostora polinomov dveh spremenljivk 
 $\mathbb{P}_m \otimes \mathbb{P}_n = \mbox{Lin}\{u^iv^j,\\i=0,\ldots,m, j=0,\ldots,n\}$, 
 torej tenzorskega produkta prostorov $\mathbb{P}_m$ in $\mathbb{P}_n$, pa sestavljajo 

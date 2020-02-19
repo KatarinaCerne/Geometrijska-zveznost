@@ -136,31 +136,31 @@
 
 \begin{document}
 
-%\pagenumbering{roman} % začnemo z rimskimi številkami
-%\thispagestyle{empty} % ampak na prvi strani ni številke
+\pagenumbering{roman} % začnemo z rimskimi številkami
+\thispagestyle{empty} % ampak na prvi strani ni številke
 
-%\noindent{\large
-%UNIVERZA V LJUBLJANI\\[1mm]
-%FAKULTETA ZA MATEMATIKO IN FIZIKO\\[5mm]
-%\program\ -- 2.~stopnja}
+\noindent{\large
+UNIVERZA V LJUBLJANI\\[1mm]
+FAKULTETA ZA MATEMATIKO IN FIZIKO\\[5mm]
+\program\ -- 2.~stopnja}
 % ustrezno dopolni za IŠRM
-%\vfill
+\vfill
 
-%\begin{center}
-%  \large
-%  \imeavtorja\\[3mm]
-%  \Large
-%  \textbf{\MakeUppercase{\naslovdela}}\\[10mm]
-%  \large
-%  Magistrsko delo \\[1cm]
-%  Mentor: \imementorja \\[2mm] % ustrezno popravi spol
+\begin{center}
+  \large
+  \imeavtorja\\[3mm]
+  \Large
+  \textbf{\MakeUppercase{\naslovdela}}\\[10mm]
+  \large
+  Magistrsko delo \\[1cm]
+  Mentor: \imementorja \\[2mm] % ustrezno popravi spol
 %   Somentor: \imesomentorja   % dodaj, če potrebno
-%\end{center}
-%\vfill
+\end{center}
+\vfill
 
-%\noindent{\large Ljubljana, \letnica}
+\noindent{\large Ljubljana, \letnica}
 
-%\cleardoublepage
+\cleardoublepage
 
 %% IZJAVA O AVTORSTVU
 %\pdfbookmark[1]{Izjava o avtorstvu}{izjava} % bookmark v PDF, \pdfbookmark[nivo]{text}{label}
@@ -241,7 +241,7 @@
 %Zahvaljujem se \dots
 % end zahvala -- izbriši vse med zahvala in end zahvala, če je ne rabiš
 
-%\cleardoublepage
+\cleardoublepage
 
 \pdfbookmark[1]{\contentsname}{kazalo-vsebine}
 \tableofcontents
@@ -254,55 +254,49 @@
 
 \cleardoublepage
 
-%\section*{Program dela}
-%\addcontentsline{toc}{section}{Program dela} % dodajmo v kazalo
-%Mentor naj napiše program dela skupaj z osnovno literaturo. Na literaturo se
-%lahko sklicuje kot~\cite{lebedev2009introduction}, \cite{gurtin1982introduction},
-%\cite{zienkiewicz2000finite}, \cite{STtemplate}.
+\section*{Program dela}
+\addcontentsline{toc}{section}{Program dela} % dodajmo v kazalo
+Mentor naj napiše program dela skupaj z osnovno literaturo. Na literaturo se
+lahko sklicuje kot~.
 
-%\section*{Osnovna literatura}
-%Literatura mora biti tukaj posebej samostojno navedena (po pomembnosti) in ne
-%le citirana. V tem razdelku literature ne oštevilčimo po svoje, ampak uporabljamo
-%okolje itemize in ukaz plancite, saj je celotna literatura oštevilčena na koncu.
-%\begin{itemize}
-%  \plancite{lebedev2009introduction}
-%  \plancite{gurtin1982introduction}
-%  \plancite{zienkiewicz2000finite}
-%  \plancite{STtemplate}
-%\end{itemize}
+\section*{Osnovna literatura}
+Literatura mora biti tukaj posebej samostojno navedena (po pomembnosti) in ne
+le citirana. V tem razdelku literature ne oštevilčimo po svoje, ampak uporabljamo
+okolje itemize in ukaz plancite, saj je celotna literatura oštevilčena na koncu.
 
-%\vspace{2cm}
-%\hspace*{\fill} Podpis mentorja: \phantom{prostor za podpis}
+
+\vspace{2cm}
+\hspace*{\fill} Podpis mentorja: \phantom{prostor za podpis}
 
 % \vspace{2cm}
 % \hspace*{\fill} Podpis somentorja: \phantom{prostor za podpis}
 
-%\cleardoublepage
-%\pdfbookmark[1]{Povzetek}{abstract}
+\cleardoublepage
+\pdfbookmark[1]{Povzetek}{abstract}
 
-%\begin{center}
-%\textbf{\naslovdela} \\[3mm]
-%\textsc{Povzetek} \\[2mm]
-%\end{center}
-%Tukaj napišemo povzetek vsebine. Sem sodi razlaga vsebine in ne opis tega, kako je delo
-%organizirano.
+\begin{center}
+\textbf{\naslovdela} \\[3mm]
+\textsc{Povzetek} \\[2mm]
+\end{center}
+Tukaj napišemo povzetek vsebine. Sem sodi razlaga vsebine in ne opis tega, kako je delo
+organizirano.
 
-%\vfill
-%\begin{center}
-%\textbf{English translation of the title} \\[3mm] % prevod slovenskega naslova dela
-%\textsc{Abstract}\\[2mm]
-%\end{center}
+\vfill
+\begin{center}
+\textbf{English translation of the title} \\[3mm] % prevod slovenskega naslova dela
+\textsc{Abstract}\\[2mm]
+\end{center}
 
-%An abstract of the work is written here. This includes a short description of
-%the content and not the structure of your work.
+An abstract of the work is written here. This includes a short description of
+the content and not the structure of your work.
 
-%\vfill\noindent
-%\textbf{Math.~Subj.~Class.~(2010):} oznake kot 74B05, 65N99, na voljo so na naslovu
-%\url{http://www.ams.org/msc/msc2010.html?t=65Mxx} \\[1mm]
-%\textbf{Ključne besede:} \kljucnebesede \\[1mm]
-%\textbf{Keywords:} \keywords
+\vfill\noindent
+\textbf{Math.~Subj.~Class.~(2010):} oznake kot 74B05, 65N99, na voljo so na naslovu
+\url{http://www.ams.org/msc/msc2010.html?t=65Mxx} \\[1mm]
+\textbf{Ključne besede:} \kljucnebesede \\[1mm]
+\textbf{Keywords:} \keywords
 
-%\cleardoublepage
+\cleardoublepage
 
 \setcounter{page}{1}    % od sedaj naprej začni zopet z 1
 \pagenumbering{arabic}  % in z arabskimi številkami
@@ -369,10 +363,14 @@ geometrijsko zvezne ploskve tudi c zvezne}
 %are regular.
 
 \subsection{Geometriska zveznost krivulj}
-\todo{tekst}
+
+Preden se lotimo geometrijske zveznosti ploskev, si najprej oglejmo nekoliko 
+bolj intuitivno definicijo geometrijske zveznosti stika dveh krivulj. To bomo 
+v nadaljevanju posplošili na definicijo geometrijske zveznosti stika dveh ploskev.
+
 \todo{splošna definicija?}
 
-\begin{definicija}
+\begin{definicija}\label{defkrivulja}
 Naj bosta $\ddd{p}:I_1\rightarrow\R^d$ \todo{2? ali d?} in $\ddd{q}:I_2\rightarrow\R^d$ 
 parametrično podani krivulji, kjer sta $I_1$ in $I_2$ intervala v $\R$. Krivulji 
 $\ddd{p}$ in $\ddd{q}$ naj se stikata v neki točki, torej naj obstajata parametra 
@@ -380,7 +378,7 @@ $t_1\in I_1$ in $t_2\in I_2$, da je $\ddd{p}(t_1)=\ddd{q}(t_2)$.
 Pravimo, da se krivulji v skupni točki stikata z \emph{geometrijsko zveznostjo reda n} 
 oziroma z \emph{$G^n$-zveznostjo}, če v okolici $I_0$ parametra $t_1$ obstaja regularna 
 reparametrizacijska funkcija $f:I_0\rightarrow I_2$, da velja $f(t_1)=t_2$, 
-$\frac{df}{dt}>0$ ter 
+$\frac{df}{dt}(t_1)>0$ \todo{v točki t1 ali povsod?} ter 
 \begin{align*}
   \frac{d^k}{dt^k}\ddd{p}(t)\big|_{t=t_1}=\frac{d^k}{dt^k}(\ddd{q}\circ f)(t)\big|_{t=t_1},\quad k=0,1,\ldots,n.
 \end{align*}
@@ -390,19 +388,30 @@ $\frac{df}{dt}>0$ ter
 Da sta krivulji $\ddd{p}$ in $\ddd{q}$ $G^0$-zvezni, mora veljati le, da se ujemata 
 v skupni točki, oziroma da je $\ddd{p}(t_1)=\ddd{q}(t_2)$. 
 Za $G^1$ zveznost mora poleg pogoja za $G^0$-zveznost veljati še naslednje:
-\begin{align*}
+\begin{align}\label{eq43}
 \frac{d}{dt}\ddd{p}(t_1)=\frac{d}{dt}(\ddd{q}\circ f)(t_1)=
 \frac{d}{dt}(\ddd{q}\circ f)(t_1)\frac{df}{dt}(t_1).
-\end{align*}
+\end{align}
 Za $G^2$ pa mora poleg pogojev za $G^0$-zveznost in $G^1$-zveznost veljati še 
 \begin{align*}
 \frac{d^2}{dt^2}\ddd{p}(t_1)=\frac{d^2}{dt^2}(\ddd{q}\circ f)(t_1)
 \left(\frac{df}{dt}(t_1)\right)^2+\frac{d}{dt}(\ddd{q}\circ f)(t_1)\frac{d^2f}{dt^2}(t_1).
 \end{align*}
 
-V splošnem pogoj za $G^n$-zveznost krivulj zapišemo kot:
-$$\frac{d^k}{dt^k}\ddd{p}=\sum_{i=1}^k\sum_{|m_i|=k}A_{m_i}^k\frac{d^{m_1}f}{dt^{m_1}}\cdots
-\frac{d^{m_i}f}{dt^{m_i}}\frac{d^i}{dt^i}\ddd{q}$$
+V splošnem pogoj za $G^n$-zveznost krivulj zapišemo kot
+$$\frac{d^k}{dt^k}\ddd{p}(t_1)=\sum_{i=1}^k\sum_{|m_i|=k}A_{m_i}^k\frac{d^{m_1}f}{dt^{m_1}}(t_1)\cdots
+\frac{d^{m_i}f}{dt^{m_i}}(t_1)\frac{d^i}{dt^i}\ddd{q}(t_1)$$
+za $k=1,\ldots,n$, kjer je $A^k_{m_i}=\frac{k!}{i!m_1!\cdots m_i!}$. 
+
+Oglejmo si, kakšna je geometrijska interpretacija $G^1$-zveznosti. Iz enačbe 
+\eqref{eq43} je razvidno, da sta vektorja $\frac{d}{dt}\ddd{p}(t_1)$ in 
+$\frac{d}{dt}\ddd{q}(t_1)$, ki predstavljata odvoda obeh krivulj v stični točki, 
+vzporedna. Ker smo v definiciji \ref{defkrivulja} zahtevali, da je odvod reparametrizacijske 
+funkcije $f$ v stični točki strogo pozitiven, imata tangenti na krivulji isto 
+smer. Torej velja, da imata obe krivulji v skupni točki enako enotsko normalo: 
+$$\frac{\frac{d}{dt}\ddd{p}(t_1)}{||\frac{d}{dt}\ddd{p}(t_1)||}=
+\frac{\frac{d}{dt}\ddd{q}(t_1)}{||\frac{d}{dt}\ddd{q}(t_1)||}.$$
+Enotska normala se torej vzdolž \todo{zlepka?} obeh krivulj zvezno spreminja. 
 
 \subsection{Geometrijska zveznost ploskev}
 
@@ -583,6 +592,7 @@ Pri izbiri napačnega predznaka namreč lahko pride do stika v obliki "špice".}
 
 \todo{nekaj za zaključek poglavja in napeljavo na novo poglavje}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 
 \subsection{Geometrijska interpretacija $G^1$-zveznosti}
@@ -651,7 +661,7 @@ konstrukcijo geometrijsko zveznih ploskev.
 
 V nadaljevanju tega dela se bomo ukvarjali z vrsto parametričnih ploskev, 
 imenovano Bézierjeve ploskve, in s pogoji, ki morajo veljati zanje, da je stik 
-med njimi geometrijsko zvezen. 
+med njimi geometrijsko zvezen.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -661,22 +671,118 @@ iz tenzorskega produkta}
 
 \subsection{Bézierjeve ploskve iz tenzorskega produkta}
 
-\todo{povej, v katerem viru so dokazi itd.}
-
 V tem podpoglavju bodo predstavljene Bézierjeve krivulje in Bézierjeve ploskve iz 
-tenzorskega produkta. Te podajamo s pomočjo Bernsteinovih baznih polinomov.
+tenzorskega produkta. \todo{povej, v katerem viru so dokazi itd.}
+Bézierove krivulje in ploskev so polinomske, podajamo jih s pomočjo 
+Bernsteinovih baznih polinomov.
 
 \begin{definicija}
 Za $i=0,1,\ldots,n$ je $i$-ti \emph{Bérnsteinov bazni polinom} stopnje $n$ definiran 
 kot 
 $$B_i^n(t)={n \choose i}t^i (1-t)^{n-i},\quad t\in[0,1].$$
 \end{definicija}
-
-
+Za Bernsteinove bazne polinome velja, da je $B_i^n(0)=0$ za vse vrednosti 
+$i$ razen za $i=0$. Podobno je $B_i^n(1)=0$ za vse vrednosti $i$ razen za $i=n$. 
+Poleg tega velja še $B_i^n(t)\geq 0$ za $t\in[0,1]$. 
+Ena izmed lastnosti teh polinomov je še, da tvorijo particijo enote, torej da je $\sum_{i=0}^nB_i^n(t)=1$. 
+Še en pomemben izrek, ki velja zanje pa je naslednji.
 \begin{izrek}
-Bernsteinovi bazni polinomi sestavljajo bazo prostora polinomov
-$\mathbb{P}_n=\mbox{Lin}\{1,t,\\t^2,\ldots,t^n\}$.
+Bernsteinovi bazni polinomi sestavljajo bazo prostora polinomov stopnje 
+največ $n$ oziroma prostora 
+$\mathbb{P}_n=\mbox{Lin}\{1,t,t^2,\ldots,t^n\}$.
 \end{izrek}
+
+\begin{proof}
+Dokaza se lotimo z indukcijo po $n$. Za $n=0$ izrek očitno velja. Naj bo sedaj 
+$n=1$. Imamo dva Bernsteinova bazna polinoma stopnje 1, $B_0^1(t)=1-t$ in 
+$B_1^1(t)=t$. Pokazali bomo, da lahko bazo prostora $\mathbb{P}_1$, torej 
+polinoma $1$ in $t$ izrazimo kot linearno kombinacijo polinomov $B_0^1(t)$ in 
+$B_1^1(t)$. Velja $1 = B_0^1(t)+B_1^1(t)\textrm{ter}t=B_1^1(t),$
+kar pomeni, da lahko vsak element prostora $\mathbb{P}_1$ izrazimo z $B_0^1(t)$ 
+in $B_1^1(t)$, torej ta dva polinoma tvorita bazo prostora $\mathbb{P}_1$. 
+
+Sedaj predpostavimo, da izrek velja za stopnjo $n-1$. Pokazali bomo, da potem 
+velja tudi za stopnjo $n$. Najprej pokažimo, da so polinomi $B_i^n(t)$, kjer je 
+$i=0,1,\ldots,n$, linearno neodvisni. Naj bo
+\begin{align}\label{eq44} 
+\sum_{i=0}^n\alpha_iB_i^n(t)=0, 
+\end{align}
+kjer je $\alpha_i\in\R$, $i=0,1,\ldots,n$. Pokazali bomo, da je to velja natanko 
+tedaj, ko je $\alpha_i=0$ za $i=0,1,\ldots,n$. 
+Najprej v enačbo \eqref{eq44} vstavimo $t=0$ in dobimo $\alpha_0=0$. Če vstavimo 
+$t=1$ pa dobimo $\alpha_n=0$. 
+Če sedaj odvajamo izraz v \eqref{eq44}, dobimo $\sum_{i=0}^n\alpha_i\frac{d}{dt}B_i^n(t)=0$. 
+Najprej si posebej oglejmo, kako se izraža odvod Bernsteinovega polinoma. Velja 
+\begin{align*}
+\frac{d}{dt}B_i^n(t)&={n \choose i}t^{i-1}(1-t)^{n-i}-{n \choose i}t^i(n-i)(1-t)^{n-i-1}=\\
+&=n({n-1 \choose i-1}t^{i-1}(1-t)^{n-i}-{n-1 \choose i}t^i(1-t)^{n-i-1})=\\
+&=n(B_{i-1}^{n-1}(t)-B_i^{n-1}(t)).
+\end{align*}
+Torej velja
+\begin{equation}\label{eq45}
+  \begin{split}
+\sum_{i=0}^n\alpha_i\frac{d}{dt}B_i^n(t)&=n\sum_{i=0}^n\alpha_i(B_{i-1}^{n-1}(t)-B_i^{n-1}(t))=
+n\sum_{i=0}^n\alpha_iB_{i-1}^{n-1}(t)-n\sum_{i=0}^{n}B_i^{n-1}(t)=\\
+&=n\sum_{i=-1}^{n-1}B_i^{n-1}(t)\alpha_{i+1}-n\sum_{i=0}^{n-1}\alpha_iB_i^{n-1}(t)=\\
+&=n\sum_{i=0}^{n-1}(\alpha_{i+1}-\alpha_i)B_i^{n-1}(t)=0.
+  \end{split}
+\end{equation}
+Tu smo v drugi vrstici upoštevali, da je $B_n^{n-1}\equiv 0$ in 
+v tretji, da je $B_{-1}^{n-1}\equiv 0$, 
+ter izvedli premik indeksa. 
+
+Izpeljali smo, da je izraz, ki ga dobimo v \eqref{eq45} enak 0 natanko tedaj, ko 
+velja $\alpha_{i+1}-\alpha_i=0$, saj so po indukcijski predpostavki polinomi 
+$B_i^{n-1}(t)$, kjer je $i=0,1,\ldots,n-1$, linerano neodvisni. Ker velja 
+$\alpha_0=\alpha_n=0$, je tudi $\alpha_i=0$ za $i=1,\ldots,n-1$, s čimer 
+smo pokazali, da so Bernsteinovi bazni polinomi stopnje $n$ med sabo linearno neodvisni. 
+Ker imamo $n+1$ Bernsteinovih baznih polinomov stopnje $n$, zato tvorijo bazo 
+prostora $\mathbb{P}_n$. 
+\end{proof}
+
+V bazi iz Bernsteinovih baznih polinomov podajamo Bézierjeve krivulje, ki so 
+definirane na naslednji način.
+\begin{definicija}
+  Naj bodo dane točke $\ddd{b}_i\in \R^d, i=0,1,\ldots,n$. \emph{Bézierova krivulja} 
+  je parametrično podana krivulja 
+  $$\ddd{B}_n:[0,1] \rightarrow \R^d$$
+  s predpisom
+  $$\ddd{B}_n(t)=\sum_{i=0}^n \ddd{b}_i B_i^n(t).$$
+  Točke $\ddd{b}_i$ imenujemo \emph{kontrolne točke krivulje}, poligon, ki jih 
+  povezuje, pa \emph{kontrolni poligon}.
+  \end{definicija}
+Pomembna lastnost Bézierjevih krivulj, ki sledi iz lastnosti Bernsteinovih 
+baznih polinomov, je, da interpolirajo prvo in zadnjo kontrolno točko. Torej 
+velja $\ddd{B}_n(0)=\ddd{b}_0$ in $\ddd{B}_n(1)=\ddd{b}_n$. 
+
+V nekaterih primerih v nadaljevanju bo, da dosežemo ujemanje stopenj Bézierjevih 
+krivulj v enačbah, potrebno zvišati oziroma znižati stopnjo Bézierjeve krivulje, 
+torej opisati oziroma aproksimirati dano krivuljo s krivuljo višje oziroma nižje 
+stopnje. Naj bodo $\ddd{b}_0,\ddd{b}_1,\ldots,\ddd{b}_n$ kontrolne točke Bézierjeve 
+krivulje stopnje $n$. To krivuljo lahko opišemo s krivuljo stopnje $n+k$, kjer je 
+$k\in \N$, njene kontrolne točke pa se izražajo na naslednji način:
+\begin{align}\label{eq42}
+\ddd{b}_i^{(k)}=\sum_{j=0}^n\ddd{b}_j{n \choose j}\frac{{k \choose i-j}}{{n+k \choose i}}.
+\end{align}
+
+V nadaljevanju, ko bomo preučevali geometrijsko zveznost Bézierjevih ploskev, 
+bomo imeli opravka predvsem z odvodi Bézierjevih krivulj in ploskev. 
+Imejmo Bézierjevo krivuljo $\ddd{B}_n(t)=\sum_{i=0}^n\ddd{b}_iB_i^n(t)$ in naj 
+bo $r\in \N$, $r\leq n$. Potem se $n$-ti odvod te krivulje izračuna 
+kot 
+$$\frac{d^r}{dt^r}\ddd{B}_n(t)=\frac{n!}{(n-r)!}\sum_{i=0}^{n-r}\Delta^r\ddd{b}_iB_i^{n-r}(t).$$ 
+Z $\Delta$ označujemo operator, ki deluje na kontrolnih točkah in se izraža 
+rekurzivno: \\
+\begin{align*}
+&\Delta^0\ddd{b}_i=\ddd{b}_i,\\
+&\Delta^1\ddd{b}_i=\ddd{b}_{i+1}-\ddd{b}_i,\\
+&\Delta^k\ddd{b}_i=\Delta(\Delta^{k-1}\ddd{b}_i),\textrm{ kjer je }k\in\N,\textrm{ }k>1.
+\end{align*}
+
+Parametrizacije Bézierjevih krivulj so bile podane v bazi prostora $\mathbb{P}_n$, 
+sestavljeni iz Bernsteinovih baznih polinomov stopnje $n$. Parametrizacije 
+Bézierjevih ploskev pa podajamo v bazi prostora polinomov dveh spremenljivk. 
+Prostor polinomov dveh spremenljivk lahko izberemo na različne načine. 
 
 Bazo prostora polinomov dveh spremenljivk 
 $\mathbb{P}_m \otimes \mathbb{P}_n = \mbox{Lin}\{u^iv^j,\\i=0,\ldots,m, j=0,\ldots,n\}$, 
@@ -685,7 +791,7 @@ produkti po dveh Bernsteinovih polinomov, kjer prvi pripada $\mathbb{P}_m$ in
 drugi $\mathbb{P}_n$, oziroma tenzorski produkti dveh Bernsteinovih polinomov. 
 
 O ploskvah iz tenzorskega produkta govorimo, kadar je njihova parametrizacija 
-podana v bazi iz tenzorskih produktov. Bezierove ploskve iz tenzorskega 
+podana v bazi iz tenzorskih produktov. Bezierjeve ploskve iz tenzorskega 
 produkta so definirane na naslednji način.
 
 \begin{definicija}
@@ -705,44 +811,7 @@ $\mathbf{B_{m,n}}(0,0)=\mathbf{b}_{0,0}$, $\mathbf{B_{m,n}}(1,0)=\mathbf{b}_{m,0
 $\mathbf{B_{m,n}}(0,1)=\mathbf{b}_{0,n}$ in $\mathbf{B_{m,n}}(1,1)=\mathbf{b}_{m,n}$. 
 Parametrizacija torej interpolira vogalne kontrolne točke. 
 
-\todo{ali rabim decasteljaujev algoritem?}
 
-Prerez ploskve pri neki vrednosti $u=u_0$ ali $v=v_0$ je Bézierova krivulja. 
-Njihove parametrizacije so podane v bazi Bernsteinovih polinomov, definirane 
-pa so na naslednji način.
-
-\begin{definicija}
-Naj bodo dane točke $\ddd{b}_i\in \R^d, i=0,1,\ldots,n$. \emph{Bézierova krivulja} 
-je parametrično podana krivulja 
-$$\ddd{B}_n:[0,1] \rightarrow \R^d$$
-s predpisom
-$$\ddd{B}_n(t)=\sum_{i=0}^n \ddd{b}_i B_i^n(t).$$
-Točke $\ddd{b}_i$ imenujemo \emph{kontrolne točke krivulje}.
-\end{definicija}
-Tudi za Bézierjeve krivulje velja, da interpolirajo prvo in zadnjo kontrolno točko. 
-
-V nekaterih primerih v nadaljevanju bo, da dosežemo ujemanje stopenj Bézierjevih 
-krivulj v enačbah, potrebno zvišati oziroma znižati stopnjo Bézierjeve krivulje, 
-torej opisati oziroma aproksimirati dano krivuljo s krivuljo višje oziroma nižje 
-stopnje. Naj bodo $\ddd{b}_0,\ddd{b}_1,\ldots,\ddd{b}_n$ kontrolne točke Bézierjeve 
-krivulje stopnje $n$. To krivuljo lahko opišemo s krivuljo stopnje $n+k$, kjer je 
-$k\in \N$, njene kontrolne točke pa se izražajo na naslednji način:
-\begin{align}\label{eq42}
-\ddd{b}_i^{(k)}=\sum_{j=0}^n\ddd{b}_j{n \choose j}\frac{{k \choose i-j}}{{n+k \choose i}}.
-\end{align}
-
-V nadaljevanju, ko bomo preučevali geometrijsko zveznost Bézierovih ploskev 
-iz tenzorskega produkta, bomo imeli opravka predvsem z odvodi Bézierovih krivulj 
-in ploskev. 
-Imejmo Bézierovo krivuljo $\ddd{B}_n(t)=\sum_{i=0}^n\ddd{b}_iB_i^n(t)$ in naj 
-bo $r\in \N$, $r\leq n$. Potem se $n$-ti odvod te krivulje izračuna 
-kot 
-$$\frac{d^r}{dt^r}\ddd{B}_n(t)=\frac{n!}{(n-r)!}\sum_{i=0}^{n-r}\Delta^r\ddd{b}_iB_i^{n-r}(t).$$ 
-Z $\Delta$ označujemo operator, ki deluje na kontrolnih točkah in se izraža 
-rekurzivno: \\
-$\Delta^0\ddd{b}_i=\ddd{b}_i$,\\
-$\Delta^1\ddd{b}_i=\ddd{b}_{i+1}-\ddd{b}_i$,\\
-$\Delta^k\ddd{b}_i=\Delta(\Delta^{k-1}\ddd{b}_i)$, kjer je $k\in\N$, $k>1$.\\
 
 Odvod Bézierjeve ploskve iz tenzorskega produkta \\
 $\ddd{B}_{m,n}(u,v)=\sum_{i=0}^m\sum_{j=0}^n\ddd{b}_{i,j}B_i^m(u)B_j^n(v)$ se izraža na podoben način:\\
@@ -1930,9 +1999,6 @@ oziroma kontrolne točke $\ddd{Q}_{i,j}$, $i=0,1,2$, $j=0,\ldots,5$.
 
 \todo{drugi možen pristop? če nista prosta p1m in p2m ampak projekcija enega od vektorjev?}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{Konsrtrukcija $G^1$-zveznih trikotnih Bézierjevih ploskev}
 
 \subsection{Trikotne Bézierjeve ploskve}\label{trikotne1}
@@ -2422,9 +2488,13 @@ primeru s konsistentnostjo sistema?}
 %
 %iz izreka 1
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Tehnični napotki za pisanje}
 %
 %\subsection{Sklicevanje in citiranje}
@@ -2454,7 +2524,7 @@ primeru s konsistentnostjo sistema?}
 %zoomate v sliko, in še vedno ostane gladka. Več informacij je na voljo na
 %\url{https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}. Če so slike bitne, kot na
 %primer slika~\ref{fig:image}, poskrbite, da so v dovolj visoki resoluciji.
-
+%
 %\begin{figure}[h]
 %  \centering
 %  \includegraphics[width=0.6\textwidth]{images/sample.pdf}
@@ -2464,7 +2534,7 @@ primeru s konsistentnostjo sistema?}
 %     Inkscape iz pomožnega PDF.}
 %  \label{fig:sample}
 %\end{figure}
-
+%
 %\begin{figure}[h]
 %  \centering
 %  \includegraphics[width=0.8\textwidth]{images/image.png}
@@ -2472,7 +2542,7 @@ primeru s konsistentnostjo sistema?}
 %  dovolj visoki resoluciji in da ne vsebujejo prosojnih elementov (to zahteva PDF/A-1b format).}
 %  \label{fig:image}
 %\end{figure}
-
+%
 %\subsection{Kako narediti stvarno kazalo}
 %Dodate ukaze \verb|\index{polje}| na besede, kjer je pojavijo, kot tukaj\index{tukaj}.
 %Več o stvarnih kazalih je na voljo na \url{https://en.wikibooks.org/wiki/LaTeX/Indexing}.
@@ -2485,7 +2555,7 @@ primeru s konsistentnostjo sistema?}
 %Vnosi iz \verb|.bib| datoteke, ki niso citirani, se ne prikažejo v seznamu literature, zato jih
 %tukaj citiram.~\cite{vene2000categorical}, \cite{gregoric2017stopniceni}, \cite{slak2015induktivni},
 %\cite{nsphere}, \cite{kearsley1975linearly}, \cite{STtemplate}, \cite{NunbergerTand}.
-
+%
 % Literatura:
 % Primer navajanja na http://www.fmf.uni-lj.si/storage/24240/LiteraturaM.pdf,
 % ampak bi moral stil poskrbeti za vse. Reference se uredijo po abecedi.
@@ -2496,12 +2566,11 @@ primeru s konsistentnostjo sistema?}
 % okrajšati imena revij. Za pravilno sortiranje vnosov brez avtorja, uporabite
 % polje key={ }, kot v primeru.
 % V primeru napak ustvarite issue na GitHubu ali pišite na jure.slak@fmf.uni-lj.si.
-
 \cleardoublepage                           % na desni strani
 \phantomsection                            % da prav delujejo hiperlinki
-%\addcontentsline{toc}{section}{\bibname}   % dodajmo v kazalo
-%\bibliographystyle{fmf-sl}                 % uporabljen stil je v datoteki fmf-sl.bst, na voljo tudi angleška verzija
-%\bibliography{\literatura}                 % literatura je v datoteki, definirani na začetku
+\addcontentsline{toc}{section}{\bibname}   % dodajmo v kazalo
+\bibliographystyle{fmf-sl}                 % uporabljen stil je v datoteki fmf-sl.bst, na voljo tudi angleška verzija
+\bibliography{\literatura}                 % literatura je v datoteki, definirani na začetku
 
 % Za stvarno kazalo
 \cleardoublepage                           % na desni strani

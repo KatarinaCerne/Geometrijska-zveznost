@@ -933,7 +933,7 @@ pa bo govoril o pogojih za $G^n$-zveznost.
     \end{split}  
   \end{equation}
   kjer je $i=1, \ldots n$. 
-  Velja še $D(y)E_1(y)\neq 0$ za $y\in [0,1]$, za stopnje polinomov pa velja\\
+  Velja še $D(y)E_1(y)\neq 0$ za $y\in [0,1]$, za stopnje polinomov pa velja
   \begin{align*}
   \mbox{deg}(D)&\leq n_r + n_c -1,\\
   \mbox{deg}(E_1)&\leq n_s +n_c -1,\\
@@ -961,8 +961,119 @@ pri $n=1$. Iz izreka \ref{izrek1} torej sledi, da se ploskvi $\ddd{R}$ in $\ddd{
 skupnem robu stikata z $G^1$-zveznostjo. S tem smo pokazali zadostnost pogoja 
 \eqref{eq46} za $G^1$-zveznost. Pokažimo še, da je tudi potreben. 
 
+Naj se ploskvi 
+$\textbf{R}$ in $\textbf{S}$, definirani kot zgoraj, stikata v robni krivulji 
+$\textbf{C}$ z geometrijsko zveznostjo $G^1$. Pokazali bomo, da od tod sledi obstoj 
+polinomov $D$, $E_1$ in $F_1$ z lastnostmi kot v izreku.
 
+Ker je slik ploskev $\textbf{R}$ in $\textbf{S}$ $G^1$-zvezen, 
+po izreku \ref{izrek1} obstajata $C^1$ funkciji $\alpha_1(y)$ in $\beta_1(y)$, ki zadoščata 
+enačbi
+  \begin{equation}\label{eq7}
+  \frac{\partial \textbf{S}}{\partial u}(0,y) = 
+  \alpha_1(y)\frac{\partial \textbf{R}}{\partial x}(0,y) + 
+  \beta_1(y) \frac{\partial \textbf{R}}{\partial y}(0,y).
+  \end{equation}
+  Dobljeno enačbo z desne vektorsko pomnožimo z $\frac{\partial \textbf{R}}{\partial y}$. 
+  in dobimo:
+  \begin{equation}\label{eq8}
+  \frac{\partial \textbf{S}}{\partial u}(0,y) \times \frac{\partial \textbf{R}}{\partial y}(0,y) = 
+  \frac{\partial \textbf{S}}{\partial u}(0,y) \times \frac{\partial \textbf{S}}{\partial v}(0,y) = 
+  \alpha_1(y)\frac{\partial \textbf{R}}{\partial x}(0,y)\times \frac{\partial \textbf{R}}{\partial y}(0,y).
+  \end{equation}
+  V poglavju \ref{geom.zv.} smo namreč že videli, da je 
+  $\frac{\partial \textbf{R}}{\partial y}(0,y)=
+  \frac{\partial \textbf{S}}{\partial v}(0,y)=\textbf{C}^\prime(y)$.
+
+  Enačbo \eqref{eq7} sedaj z desne vektorsko množimo še z $\frac{\partial \ddd{R}}{\partial x}$ 
+  in dobimo
+  \begin{equation}\label{eq9}
+  \frac{\partial \ddd{S}}{\partial u}(0,y)\times 
+  \frac{\partial \ddd{R}}{\partial x}(0,y) = 
+  \beta_1(y)\frac{\partial \ddd{R}}{\partial y}(0,y)
+  \times \frac{\partial \ddd{R}}{\partial x}(0,y).
+  \end{equation}
+
+  Z $\ddd{W}(y)$ označimo vektorsko funkcijo
+  $\ddd{W}(y)=\frac{\partial \ddd{R}}{\partial x}(0,y)\times \frac{\partial \ddd{S}}{\partial u}(0,y)$, 
+  z $\ddd{N}_R$ in $\ddd{N}_S$ pa normalo na ploskev $\ddd{R}$ oziroma $\ddd{S}$ v neki točki 
+  na mejni krivulji $\ddd{C}$.
+  
+  Prej dobljeni enačbi \eqref{eq8} in \eqref{eq9} torej zapišemo na naslednji način:
+  \begin{align}\label{eq10} 
+  \ddd{N}_S(y)=\alpha_1(y)\ddd{N}_R(y),&&\ddd{W}(y)=\beta_1(y)\ddd{N}_R(y).
+  \end{align}
+
+  \todo{|C??}Stopnja $\frac{\partial\ddd{R}}{\partial y}|_{\ddd{C}}$ je največ $n_c-1$, 
+  saj je $\frac{\partial\ddd{R}}{\partial y}|_{\ddd{C}}=\ddd{C}'$. Enako velja za 
+  $\frac{\partial \ddd{S}}{\partial v}|_{\ddd{C}}$. Stopnja $\frac{\partial\ddd{R}}{\partial x}|_{\ddd{C}}$ 
+  je manjša ali enaka $n_r$, stopnja $\frac{\partial\ddd{S}}{\partial u}|_{\ddd{C}}$ 
+  pa manjša ali enaka $n_s$. 
+  Od tod in iz definicij funkcij $\ddd{N}_R$, $\ddd{N}_S$ in $\ddd{W}$ sledi
+  $\mbox{deg}(\ddd{N}_R)\leq n_r + n_s -1$, $\mbox{deg}(\ddd{N}_S)\leq n_s + n_c -1$ in 
+  $\mbox{deg}(\ddd{W})\leq n_r + n_s$.
+
+  Videli smo že, da sta zaradi predpostavke o regularnosti ploskev 
+  $\ddd{R}$ in $\ddd{S}$ funkciji $\ddd{N}_R(y)$ in $\ddd{N}_S(y)$ za vsak $y\in[0,1]$
+  različni od $0$.
+  Ker je $\ddd{N}_R(y)$ neničelna, mora biti vsaj ena izmed njenih koordinatnih funkcij  
+  neničeln polinom. Brez škode za splošnost predpostavimo, da je neničelna $x$-koordinata, 
+  torej polinom $N_{R,1}(y)$. 
+  Če enačbi iz \eqref{eq10} razpišemo po koordinatah, za $x$-koordinato dobimo
+  \begin{align*}
+  N_{S,1}(y)=\alpha_1(y)N_{R,1}(y),&&W_1(y)=\beta_1(y)N_{R,1}(y),
+  \end{align*}
+  kjer je $N_{S,1}$ $x$-koordinata funkcije $\ddd{N}_S$, $W_1$ pa $x$-koordinata 
+  funkcije $\ddd{W}$.
+
+  Iz zgornjih enačb lahko vidimo, da so vse realne ničle polinoma $N_{R,1}(y)$ na intervalu $[0,1]$ 
+  tudi ničle polinomov $N_{S,1}(y)$ in $W_1(y)$, torej da polinom $U(y)$, ki je zgrajen 
+  kot produkt vseh linearnih faktorjev v polinomskem razcepu polinoma $N_{R,1}(y)$, deli 
+  polinoma $N_{S,1}(y)$ in $W_1(y)$. Da to res drži, lahko vidimo na naslednji način.
+  Zapišimo $N_{R,1}(y) = U(y)D(y)$, kjer je $U(y)$ produkt vseh linearnih faktorjev, 
+  $D(y)$ pa produkt vseh nelinearnih faktorjev v polinomskem razcepu polinoma $N_{R,1}(y)$. 
+  Predpostavimo, da $U(y)$ ne deli polinoma $N_{S,1}(y)$. Ker je $N_{S,1}(y)=\alpha_1(y)U(y)D(y)$, 
+  je to mogoče le, če je $\alpha_1(y)$ racionalna funkcija, katere imenovalec deli polinom $U(y)$. 
+  Funkcija $\alpha_1(y)$ ima torej na intervalu $[0,1]$ pol. Ker velja $\ddd{N}_S(y)=\alpha_1(y)\ddd{N}_R(y)$
+  in so vse koordinatne funkcije funkcij $\ddd{N}_S(y)$ in $\ddd{N}_R(y)$ polinomi, 
+  mora veljati, da imenovalec funkcije $\alpha_1(y)$ deli $N_{R,1}(y)$, $N_{R,2}(y)$ in 
+  $N_{R,3}(y)$. Funkcija $\alpha_1(y)$ ima pol, označimo ga z $y_0$. Sledi, da je $y_0$ 
+  ničla polinomov $N_{R,1}(y)$, $N_{R,2}(y)$ in $N_{R,3}(y)$, in zato je $\ddd{N}_R(y_0)=0$, 
+  kar pa je v nasprotju s predpostavko o regularnosti ploskve $\ddd{R}$. Torej mora polinom 
+  $U(y)$ deliti polinom $N_{S,1}(y)$. Z enakimi sklepi trditev pokažemo še za polinom $W_1(y)$.
+
+  Polinom $N_{R,1}$ sedaj znova zapišimo kot produkt $N_{R,1}(y) = U(y)D(y)$, kjer sta 
+  polinoma $U(y)$ in $D(y)$ definirana kot zgoraj. Torej velja
+  \begin{align*} 
+  N_{S,1}(y)=U(y)\alpha_1(y)D(y),&&W_1(y)=U(y)\beta_1(y)D(y).
+  \end{align*}
+  Naj bo $E_1(y)=\alpha_1(y)D(y)$ in $F_1(y)=\beta_1(y)D(y)$. Pokazati moramo, da sta 
+  dobljeni funkciji $E_1$ in $F_1$ polinoma. Ker sta funkciji $N_{S,1}(y)$ in $W_1(y)$ 
+  polinoma, morata imenovalca funkcij $\alpha_1$ in $\beta_1$ deliti ali polinom $U$ ali 
+  polinom $D$. Videli smo že, da $\alpha_1$ in $\beta_1$ nimata polov na intervalu 
+  $[0,1]$, torej njuna imenovalca ne delita polinoma $U$. Sledi, da morata njuna imenovalca 
+  deliti polinom $D$, s čimer smo pokazali, da sta $E_1$ in $F_1$ res polinoma.
+
+  Videti želimo še, da je $D(y)E_1(y)\neq 0$ na intervalu $[0,1]$. Polinom $D(y)$ po definiciji 
+  vsebuje vse nelinearne faktorje v polinomskem razcepu polinoma $N_{rx}(y)$, torej 
+  na intervalu $[0,1]$ nima ničel. Polinom $E_1(y)$ je enak $E_1(y)=\alpha_1(y)D(y)$. 
+  Ker je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^n$-zvezen, funkcija $\alpha_1(y)$ 
+  po izreku \ref{izrek1} na 
+  intervalu $[0,1]$ ni enaka nič, zato tudi $E_1(y)$ na tem intervalu 
+  nima ničel. 
+
+  Oglejmo si še stopnje polinomov $D(y)$, $E_1(y)$ in $F_1(y)$. 
+  Očitno velja
+  \begin{align*}
+  &\mbox{deg}(D(y))\leq \mbox{deg}(N_{rx}(y))\leq \mbox{deg}(\ddd{N}_r(v))\leq n_r+n_c-1\\
+  &\mbox{deg}(E_1(y))\leq \mbox{deg}(N_{sx}(y))\leq \mbox{deg}(\ddd{N}_s(v))\leq n_s+n_c-1\\
+  &\mbox{deg}(F_1(y))\leq \mbox{deg}(W_x(y))\leq st(\ddd{W}(v))\leq n_r+n_s,\\
+  \end{align*}
+  s čimer dokažemo izrek.
 \end{proof}
+
+Sedaj si oglejmo še posplošitev izreka \ref{izrek3}, torej izrek ki govori o pogojih 
+za $G^n$-zveznost med ploskvama, kjer je $n\geq 2$. 
 
 \begin{izrek}\label{izrek2}
   Naj bosta $\textbf{R}$ in $\textbf{S}$ zgoraj definirani Bézierjevi 
@@ -979,7 +1090,7 @@ skupnem robu stikata z $G^1$-zveznostjo. S tem smo pokazali zadostnost pogoja
   \end{equation}
   kjer je $i=1, \ldots n$ in $k=1, \ldots n$. Z $A_{m_i}^k$ zopet označujemo 
   $A_{\mathbf{m_i}}^k = \frac{k!}{i!m_1!\cdots m_i!}$ in $|\mathbf{m_i}|=m_1+m_2+\cdots+m_i$.
-  Velja še $D(y)E_1(y)\neq 0$ za $y\in [0,1]$, za stopnje polinomov pa velja\\
+  Velja še $D(y)E_1(y)\neq 0$ za $y\in [0,1]$, za stopnje polinomov pa velja
   \begin{align*}
   \mbox{deg}(D)&\leq n_r + n_c -1,\\
   \mbox{deg}(E_i)&\leq (2i-2)n_r + in_s +in_c -2i +1,\\
@@ -1024,130 +1135,17 @@ skupnem robu stikata z $G^1$-zveznostjo. S tem smo pokazali zadostnost pogoja
   Potem enačba \eqref{eq6} dobi enako obliko kot  
   enačba \eqref{eq2} v izreku \ref{izrek1}. Iz izreka \ref{izrek1} torej sledi, da se 
   ploskvi $\textbf{R}$ in $\textbf{S}$ stikata z geometrijsko zveznostjo $G^n$. S tem smo 
-  dokazali, da je pogoj \eqref{eq4} zadosten za $G^n$-zveznost \todo{stika??zlepka} ploskev 
+  dokazali, da je pogoj \eqref{eq4} zadosten za $G^n$-zveznost na stiku ploskev 
   $\ddd{R}$ in $\ddd{S}$. 
 
   Sedaj dokažimo še, da je pogoj \eqref{eq4} tudi potreben. Predpostavimo, da se ploskvi 
   $\textbf{R}$ in $\textbf{S}$, definirani kot zgoraj, stikata v robni krivulji 
   $\textbf{C}$ z geometrijsko zveznostjo $G^n$. Pokazati hočemo, da od tod sledi obstoj 
   polinomov $D$, $E_i$ in $F_i$ z lastnostmi kot v izreku.
-  Dokaza se lotimo z indukcijo po $k$.
-
-  Naj bo najprej $k=1$. Ker je slik ploskev $\textbf{R}$ in $\textbf{S}$ $G^n$-zvezen, 
-  torej vsaj $G^1$-zvezen,
-  po izreku \ref{izrek1} obstajata $C^n$ funkciji $\alpha_1(y)$ in $\beta_1(y)$, ki zadoščata 
-  enačbi
-  \begin{equation}\label{eq7}
-  \frac{\partial \textbf{S}}{\partial u}(0,y) = 
-  \alpha_1(y)\frac{\partial \textbf{R}}{\partial x}(0,y) + 
-  \beta_1(y) \frac{\partial \textbf{R}}{\partial y}(0,y).
-  \end{equation}
-  Dobljeno enačbo z desne vektorsko pomnožimo z $\frac{\partial \textbf{R}}{\partial y}$. 
-  in dobimo:
-  \begin{equation}\label{eq8}
-  \frac{\partial \textbf{S}}{\partial u}(0,y) \times \frac{\partial \textbf{R}}{\partial y}(0,y) = 
-  \frac{\partial \textbf{S}}{\partial u}(0,y) \times \frac{\partial \textbf{S}}{\partial v}(0,y) = 
-  \alpha_1(y)\frac{\partial \textbf{R}}{\partial x}(0,y)\times \frac{\partial \textbf{R}}{\partial y}(0,y).
-  \end{equation}
-  V poglavju \ref{geom.zv.} smo namreč že videli, da je 
-  $\frac{\partial \textbf{R}}{\partial y}(0,y)=
-  \frac{\partial \textbf{S}}{\partial v}(0,y)=\textbf{C}^\prime(y)$.
-
-  Enačbo \eqref{eq7} sedaj z desne vektorsko množimo še z $\frac{\partial \ddd{R}}{\partial x}$ 
-  in dobimo
-  \begin{equation}\label{eq9}
-  \frac{\partial \ddd{S}}{\partial u}(0,y)\times 
-  \frac{\partial \ddd{R}}{\partial x}(0,y) = 
-  \beta_1(y)\frac{\partial \ddd{R}}{\partial y}(0,y)
-  \times \frac{\partial \ddd{R}}{\partial x}(0,y).
-  \end{equation}
-
-  Z $\ddd{W}(y)$ označimo vektorsko funkcijo
-  $\ddd{W}(y)=\frac{\partial \ddd{R}}{\partial x}(0,y)\times \frac{\partial \ddd{S}}{\partial u}(0,y)$, 
-  z $\ddd{N}_R$ in $\ddd{N}_S$ pa normalo na ploskev $\ddd{R}$ oziroma $\ddd{S}$ v neki točki 
-  na mejni krivulji $\ddd{C}$.
-  %, torej 
-  %$\ddd{N}_r = \big(\frac{\partial \ddd{R}}{\partial x} \times \frac{\partial \ddd{R}}{\partial y}\big)\big|_{\ddd{C}}$ 
-  %in $\ddd{N}_s = \big(\frac{\partial \ddd{S}}{\partial u} \times \frac{\partial \ddd{S}}{\partial v}\big)\big|_{\ddd{C}}$.
-
-  Prej dobljeni enačbi \eqref{eq8} in \eqref{eq9} torej zapišemo na naslednji način:
-  \begin{align}\label{eq10} 
-  \ddd{N}_S(y)=\alpha_1(y)\ddd{N}_R(y),&&\ddd{W}(y)=\beta_1(y)\ddd{N}_R(y).
-  \end{align}
-
-  \todo{|C??}Stopnja $\frac{\partial\ddd{R}}{\partial y}|_{\ddd{C}}$ je največ $n_c-1$, 
-  saj je $\frac{\partial\ddd{R}}{\partial y}|_{\ddd{C}}=\ddd{C}'$. Enako velja za 
-  $\frac{\partial \ddd{S}}{\partial v}|_{\ddd{C}}$. Stopnja $\frac{\partial\ddd{R}}{\partial x}|_{\ddd{C}}$ 
-  je manjša ali enaka $n_r$, stopnja $\frac{\partial\ddd{S}}{\partial u}|_{\ddd{C}}$ 
-  pa manjša ali enaka $n_s$. 
-  Od tod in iz definicij funkcij $\ddd{N}_R$, $\ddd{N}_S$ in $\ddd{W}$ sledi
-  $\mbox{deg}(\ddd{N}_R)\leq n_r + n_s -1$, $\mbox{deg}(\ddd{N}_S)\leq n_s + n_c -1$ in 
-  $\mbox{deg}(\ddd{W})\leq n_r + n_s$.
-
-  Videli smo že, da sta zaradi predpostavke o regularnosti ploskev 
-  $\ddd{R}$ in $\ddd{S}$ funkciji $\ddd{N}_R(y)$ in $\ddd{N}_S(y)$ za vsak $y\in[0,1]$
-  različni od $0$.
-  Ker je $\ddd{N}_R(y)$ neničelna, mora biti vsaj ena izmed njenih koordinatnih funkcij  
-  neničeln polinom. Brez škode za splošnost predpostavimo, da je neničelna $x$-koordinata, 
-  torej polinom $N_{R,1}(y)$. 
-  Če enačbi iz \eqref{eq10} razpišemo po koordinatah, za $x$-koordinato dobimo
-  \begin{align*}
-  N_{S,1}(y)=\alpha_1(y)N_{R,1}(y),&&W_1(y)=\beta_1(y)N_{R,1}(y),
-  \end{align*}
-  kjer je $N_{S,1}$ $x$-koordinata funkcije $\ddd{N}_S$, $W_1$ pa $x$-koordinata 
-  funkcije $\ddd{W}$.
-
-  Iz zgornjih enačb lahko vidimo, da so vse realne ničle polinoma $N_{R,1}(y)$ na intervalu $[0,1]$ 
-  tudi ničle polinomov $N_{S,1}(y)$ in $W_1(y)$, torej da polinom $U(y)$, ki je zgrajen 
-  kot produkt vseh linearnih faktorjev v polinomskem razcepu polinoma $N_{R,1}(y)$, deli 
-  polinoma $N_{S,1}(y)$ in $W_1(y)$. Da to res drži, lahko vidimo na naslednji način.
-  Zapišimo $N_{R,1}(y) = U(y)D(y)$, kjer je $U(y)$ produkt vseh linearnih faktorjev, 
-  $D(y)$ pa produkt vseh nelinearnih faktorjev v polinomskem razcepu polinoma $N_{R,1}(y)$. 
-  Predpostavimo, da $U(y)$ ne deli polinoma $N_{S,1}(y)$. Ker je $N_{S,1}(y)=\alpha_1(y)U(y)D(y)$, 
-  je to mogoče le, če je $\alpha_1(y)$ racionalna funkcija, katere imenovalec deli polinom $U(y)$. 
-  Funkcija $\alpha_1(y)$ ima torej na intervalu $[0,1]$ pol. Ker velja $\ddd{N}_S(y)=\alpha_1(y)\ddd{N}_R(y)$
-  in so vse koordinatne funkcije funkcij $\ddd{N}_S(y)$ in $\ddd{N}_R(y)$ polinomi, 
-  mora veljati, da imenovalec funkcije $\alpha_1(y)$ deli $N_{R,1}(y)$, $N_{R,2}(y)$ in 
-  $N_{R,3}(y)$. Funkcija $\alpha_1(y)$ ima pol, označimo ga z $y_0$. Sledi, da je $y_0$ 
-  ničla polinomov $N_{R,1}(y)$, $N_{R,2}(y)$ in $N_{R,3}(y)$, in zato je $\ddd{N}_R(y_0)=0$, 
-  kar pa je v nasprotju s predpostavko o regularnosti ploskve $\ddd{R}$. Torej mora polinom 
-  $U(y)$ deliti polinom $N_{S,1}(y)$. Z enakimi sklepi trditev pokažemo še za polinom $W_1(y)$.
-
-
-  %\todo{vprašanje: ali U vsebuje vse linearne faktorje ali samo tiste, ki imajo zvezo 
-  %z ničlami na [0,1]???}
-
-
-  Polinom $N_{R,1}$ sedaj znova zapišimo kot produkt $N_{R,1}(y) = U(y)D(y)$, kjer sta 
-  polinoma $U(y)$ in $D(y)$ definirana kot zgoraj. Torej velja
-  \begin{align*} 
-  N_{S,1}(y)=U(y)\alpha_1(y)D(y),&&W_1(y)=U(y)\beta_1(y)D(y).
-  \end{align*}
-  Naj bo $E_1(y)=\alpha_1(y)D(y)$ in $F_1(y)=\beta_1(y)D(y)$. Pokazati moramo, da sta 
-  dobljeni funkciji $E_1$ in $F_1$ polinoma. Ker sta funkciji $N_{S,1}(y)$ in $W_1(y)$ 
-  polinoma, morata imenovalca funkcij $\alpha_1$ in $\beta_1$ deliti ali polinom $U$ ali 
-  polinom $D$. Videli smo že, da $\alpha_1$ in $\beta_1$ nimata polov na intervalu 
-  $[0,1]$, torej njuna imenovalca ne delita polinoma $U$. Sledi, da morata njuna imenovalca 
-  deliti polinom $D$, s čimer smo pokazali, da sta $E_1$ in $F_1$ res polinoma.
-
-  Videti želimo še, da je $D(y)E_1(y)\neq 0$ na intervalu $[0,1]$. Polinom $D(y)$ po definiciji 
-  vsebuje vse nelinearne faktorje v polinomskem razcepu polinoma $N_{rx}(y)$, torej 
-  na intervalu $[0,1]$ nima ničel. Polinom $E_1(y)$ je enak $E_1(y)=\alpha_1(y)D(y)$. 
-  Ker je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^n$-zvezen, funkcija $\alpha_1(y)$ 
-  po izreku \ref{izrek1} na 
-  intervalu $[0,1]$ ni enaka nič, zato tudi $E_1(y)$ na tem intervalu 
-  nima ničel. 
-
-  Oglejmo si še stopnje polinomov $D(y)$, $E_1(y)$ in $F_1(y)$. 
-  Očitno velja
-  \begin{align*}
-  &\mbox{deg}(D(y))\leq \mbox{deg}(N_{rx}(y))\leq \mbox{deg}(\ddd{N}_r(v))\leq n_r+n_c-1\\
-  &\mbox{deg}(E_1(y))\leq \mbox{deg}(N_{sx}(y))\leq \mbox{deg}(\ddd{N}_s(v))\leq n_s+n_c-1\\
-  &\mbox{deg}(F_1(y))\leq \mbox{deg}(W_x(y))\leq st(\ddd{W}(v))\leq n_r+n_s,\\
-  \end{align*}
-  s čimer dokažemo izrek za $k=1$.
-
-  Lotimo se še dokaza za $k>1$. Prepodstavimo, da izrek velja za vse $k\leq m$, kjer je $m\in \N$, $m<n$. 
+  Dokaza se lotimo z indukcijo po $k$. Za $k=1$ smo izrek že dokazali v dokazu izreka 
+  \ref{izrek3}. Preostane nam se še dokaz za $k>1$. 
+  
+  Prepodstavimo, da izrek velja za vse $k\leq m$, kjer je $m\in \N$, $m<n$. 
   Torej obstajajo polinomi $D(y)$, $E_1(y), \ldots, E_m(y)$, $F_1(y), \ldots, F_m(y)$ 
   z ustreznimi stopnjami, da velja enačba \eqref{eq4} za $k=1,2,\ldots,m$.
   

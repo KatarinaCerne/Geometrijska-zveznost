@@ -348,7 +348,7 @@ geometrijsko zvezne ploskve tudi c zvezne}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Geometrijska zveznost}\label{geom.zv.}
+\section{Geometrijska zveznost parametrično podanih krivulj in ploskev}\label{geom.zv.}
 
 \todo{nek uvodni tekst?}
 %obstaja več načinov za modeliranje krivulj in ploskev. eden izmed njih je 
@@ -361,6 +361,39 @@ geometrijsko zvezne ploskve tudi c zvezne}
 %that regularity is, in general, essential for the smoothness of the resulting curve
 %(see Figure 2.6). We therefore restrict the discussion to parametrizations that
 %are regular.
+
+Preden se lotimo definicij geometrijske zveznosti krivulj in ploskev, najprej obnovimo 
+nekaj osnovnih pojmov v zvezi s podajanjem krivulj in ploskev. 
+
+Krivulje in ploskve lahko podajamo na različne načine: eksplicitno, implicitno 
+ali parametrično. Oglejmo si definicijo parametrično podane krivulje in regularne 
+parametrizacije krivulje. 
+
+\begin{definicija}
+Naj bo $I\subset \R$ interval in  
+$$\ddd{g}:I\rightarrow \R^3,$$
+$$\ddd{g}(t)=(g_1(t),g_2(t),g_3(t))$$
+injektivna preslikava razreda $C^1$. Tedaj je 
+$$\ddd{R}=\{\ddd{g}(t);t\in I\}$$
+\emph{parametrično podana krivulja v $\R^3$}. 
+Pravimo, da je $\ddd{g}$ 
+\emph{regularna parametrizacija krivulje $\ddd{R}$}, če velja
+$$g_1'(t)^2+g_2'(t)^2+g_3'(t)^2\neq 0 \textrm{ za }t\in I.$$ 
+\end{definicija}
+
+Podobno definiramo tudi parametrično podane ploskve in njihove regularne parametrizacije. 
+
+\begin{definicija}
+Naj bo $K\subset \R^2$ odprta množica in 
+$$\ddd{F}:K\rightarrow \R^3,$$
+$$\ddd{F}(u,v)=(F_1(u,v),F_2(u,v),F_3(u,v))$$
+injektivna preslikava razreda $C^1$. Potem je 
+$$\ddd{S}=\{\ddd{F}(u,v);(u,v)\in K\}$$
+\emph{parametrično podana ploskev v $\R^3$}. 
+Pravimo, da je $\ddd{F}$ 
+\emph{regularna parametrizacija ploskve $\ddd{S}$}, če velja 
+$$\mbox{rang}(DF)(u,v)=2 \textrm{ za }(u,v)\in K.$$
+\end{definicija}
 
 \subsection{Geometriska zveznost krivulj}
 
@@ -411,7 +444,7 @@ funkcije $f$ v stični točki strogo pozitiven, imata tangenti na krivulji isto
 smer. Torej velja, da imata obe krivulji v skupni točki enako enotsko normalo: 
 $$\frac{\frac{d}{dt}\ddd{p}(t_1)}{||\frac{d}{dt}\ddd{p}(t_1)||}=
 \frac{\frac{d}{dt}\ddd{q}(t_1)}{||\frac{d}{dt}\ddd{q}(t_1)||}.$$
-Enotska normala se torej vzdolž \todo{zlepka?} obeh krivulj zvezno spreminja. 
+Enotska normala se torej vzdolž obeh krivulj zvezno spreminja. 
 
 \subsection{Geometrijska zveznost ploskev}
 
@@ -440,9 +473,9 @@ geometrijsko zvezna.
   Pravimo, da se $\ddd{R}$ in $\ddd{S}$ \emph{stikata z $G^n$-zveznostjo vzdolž 
   krivulje $\ddd{C}$}, če za vsako točko $b_0=\ddd{C}(y_0)$ obstaja lokalna regularna $C^n$ reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, da je $f(x_0,y)=(u_0,y)$ za vsak $y \in I_0$ in da velja
   \begin{equation}\label{eq0}
-  \frac{\partial^{m+k}}{\partial x^m \partial y^k}\ddd{R}\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{m+k}}{\partial x^m \partial y^k}(\ddd{S}\circ f)\Bigr|_{\substack{(x_0,y)}}\quad \textrm{za } m+k=1,\ldots,n,
+  \frac{\partial^{m+k}}{\partial x^m \partial y^k}\ddd{R}(x_0,y)=\frac{\partial^{m+k}}{\partial x^m \partial y^k}(\ddd{S}\circ f)(x_0,y)\quad \textrm{za } m+k=1,\ldots,n,
   \end{equation}
-  kjer je $I_0$ neka okolica $y_0$. %bolj natančno, kaj je ta okolica
+  kjer je $I_0$ neka okolica $y_0$. 
 \end{definicija}
 
 \todo{razloži, kaj je regularna reparametrizacijska funkcija? ali je dovolj, da je 
@@ -461,40 +494,44 @@ ploskvama $G^2$ zvezen.
 \begin{primer}
 Naj bodo dane parametrizaciji ploskev $\ddd{R}$ in $\ddd{S}$, krivulja $\ddd{C}$ in 
 reparametrizacijska 
-funkcija $f$ kot v definiciji \ref{def2}.
-Da bo stik teh dveh ploskev $G^2$ zvezen, mora po definiciji \ref{def2} in ugotovitvi, 
+funkcija $f$ kot v definiciji \ref{def2}. Vpeljimo še oznako 
+$E=\{(x_0,y);y\in [0,1]\}$ za del domene, nad katerim je definirana krivulja $\ddd{C}$.  
+Da bo stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^2$-zvezen, mora po definiciji \ref{def2} in ugotovitvi, 
 da je dovolj obravnavati le odvode po spremenljivki $x$, veljati
-$$\frac{\partial^{k}}{\partial x^k}\ddd{R}\Bigr|_{\substack{(x_0,y)}}=\frac{\partial^{k}}{\partial x^k}(\ddd{S}\circ f)\Bigr|_{\substack{(x_0,y)}}\quad \textrm{za } k=0,1,2,$$
+$$\frac{\partial^{k}}{\partial x^k}(x_0,y)=\frac{\partial^{k}}{\partial x^k}(\ddd{S}\circ f)(x_0,y)\quad \textrm{za } k=0,1,2,$$
 za vsak $y$ v neki okolici točke $y_0$. 
 Da dosežemo zgolj geometrijsko zveznost razreda $G^0$, je dovolj, da med 
 ploskvama $\ddd{R}$ in $\ddd{S}$ velja pogoj 
 $$\ddd{R}(x_0,y)=(\ddd{S} \circ f)(x_0,y)\textrm{, oziroma }\ddd{R}(x_0,y)=\ddd{S}(u(x_0,y),v(x_0,y)).$$ 
 Da imamo na stiku geometrijsko zveznost stopnje $G^1$, mora poleg 
 pogoja za $G^0$ veljati še 
-$$\frac{\partial \ddd{R}}{\partial x}\Bigr|_{\substack{(x_0,y)}}=\frac{\partial}{\partial x}(\ddd{S}\circ f)\Bigr|_{\substack{(x_0,y)}}.$$
+$$\frac{\partial \ddd{R}}{\partial x}(x_0,y)=\frac{\partial}{\partial x}(\ddd{S}\circ f)(x_0,y)\quad y\in[0,1].$$
 Če ustrezno razpišemo parcialni odvod funkcije $\ddd{S} \circ f$, se ta pogoj prepiše v
-$$\frac{\partial \ddd{R}}{\partial x}\Bigr|_{\substack{(x_0,y)}}=
-\frac{\partial \ddd{S}}{\partial u}\frac{\partial u}{\partial x}\Bigr|_{\substack{(x_0,y)}}+
-\frac{\partial \ddd{S}}{\partial v}\frac{\partial v}{\partial x}\Bigr|_{\substack{(x_0,y)}}.$$
+\begin{align*}
+\frac{\partial \ddd{R}}{\partial x}(x_0,y)=
+\frac{\partial \ddd{S}}{\partial u}(u(x_0,y),v(x_0,y))\frac{\partial u}{\partial x}(x_0,y)+
+\frac{\partial \ddd{S}}{\partial v}(u(x_0,y),v(x_0,y))&\frac{\partial v}{\partial x}(x_0,y),\\
+&y\in[0,1].
+\end{align*}
 Za $G^2$ mora poleg pogojev za $G^0$ in $G^1$ veljati še
 \begin{align*} 
-\frac{\partial^2 \ddd{R}}{\partial x^2}\bigg|_{\substack{(x_0,y)}} &=
-\frac{\partial^2 \ddd{S}}{\partial u^2}\bigg(\frac{\partial u}{\partial x}\bigg)^2\bigg|_{\substack{(x_0,y)}} + 
-2\frac{\partial^2 \ddd{S}}{\partial u \partial v}\frac{\partial u}{\partial x}\frac{\partial v}{\partial x}\bigg|_{\substack{(x_0,y)}} + 
-\frac{\partial^2 \ddd{S}}{\partial v^2}\bigg(\frac{\partial v}{\partial x}\bigg)^2\bigg|_{\substack{(x_0,y)}} + \\
-&+\frac{\partial \ddd{S}}{\partial u}\frac{\partial^2 u}{\partial x^2}\bigg|_{\substack{(x_0,y)}} +
-\frac{\partial \ddd{S}}{\partial v}\frac{\partial^2 v}{\partial x^2}\bigg|_{\substack{(x_0,y)}}.
+\frac{\partial^2 \ddd{R}}{\partial x^2}\bigg|_E &=
+\frac{\partial^2 \ddd{S}}{\partial u^2}\left(\frac{\partial u}{\partial x}\right)^2\bigg|_E + 
+2\frac{\partial^2 \ddd{S}}{\partial u \partial v}\frac{\partial u}{\partial x}\frac{\partial v}{\partial x}\bigg|_E + 
+\frac{\partial^2 \ddd{S}}{\partial v^2}\left(\frac{\partial v}{\partial x}\right)^2\bigg|_E + \\
+&+\frac{\partial \ddd{S}}{\partial u}\frac{\partial^2 u}{\partial x^2}\bigg|_E +
+\frac{\partial \ddd{S}}{\partial v}\frac{\partial^2 v}{\partial x^2}\bigg|_E.
 \end{align*}
 \end{primer}
 
 V splošnem se pogoj za geometrijsko zveznost stopnje $n$, kjer je $n\in \N_0$, zapiše kot:
 \begin{equation}\label{eq1}
-\frac{\partial^k \ddd{R}}{\partial x^k}\bigg|_{\substack{C}}=
+\frac{\partial^k \ddd{R}}{\partial x^k}\bigg|_E=
 \sum_{i=1}^k \sum_{|m_i|=k}A_{m_i}^k
 \sum_{h=0}^i{i \choose h}\frac{\partial^{m_1}u}{\partial x^{m_1}}\cdots 
 \frac{\partial^{m_h}u}{\partial x^{m_h}}
 \frac{\partial^{m_{h+1}}v}{\partial x^{m_{h+1}}}\cdots \frac{\partial^{m_i}v}{\partial x^{m_i}}
-\frac{\partial^i \ddd{S}}{\partial u^h \partial v^{i-h}}\bigg|_{\substack{C}}
+\frac{\partial^i \ddd{S}}{\partial u^h \partial v^{i-h}}\bigg|_E
 \end{equation}
 za vsak $k=0,1,\ldots,n$. Tu z $A_{m_i}^k$ iznačujemo koeficient
 $$A_{m_i}^k = \frac{k!}{i!m_1!\cdots m_i!}.$$

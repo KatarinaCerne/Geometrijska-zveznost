@@ -2175,8 +2175,6 @@ lahko kontrolne točke ploskve
 glede na trikotnik $T_2$ zapišemo tako: 
 $\ddd{c}_{i,j,k}=\ddd{b}[\ddd{e}_1^{\langle i\rangle},\ddd{e}_2^{\langle j\rangle},\mathbf{\alpha}^{\langle k\rangle};T]$. 
 Tu je $\mathbf{\alpha}=Bar(\ddd{p}_4;T_1)$, $\ddd{e}_1=(1,0,0)$ in $\ddd{e}_2=(0,1,0)$. 
-%Ta ugotovitev bo uporabna pri iskanju pogojev za $C^1$-zveznost na stiku dveh 
-%trikotnih ploskev. 
 
 Oglejmo si še formulo za smerni odvod parametrizacije trikotne Bézierjeve ploskve. 
 Imejmo ploskev $\ddd{P}(\ddd{p})=\sum_{i+j+k}\ddd{b}_{i,j,k}B_{i,j,k}^n(\ddd{u})$ 
@@ -2193,8 +2191,10 @@ D_{\ddd{p}}\ddd{P}(\ddd{p})&=n\sum_{i+j+k=n-1}(\mu_1\ddd{b}_{i+1,j,k}+
 \end{align*}
 
 Pokazati je mogoče tudi, da za smerni odvod trikotne ploskve velja:
-$$D_{\ddd{p}}\ddd{P}(\ddd{p})=n(\mu_1\ddd{b}_{1,0,0}^{n-1}(\ddd{u})+
-\mu_2\ddd{b}_{0,1,0}^{n-1}(\ddd{u})+\mu_3\ddd{b}_{0,0,1}^{n-1}(\ddd{u})),$$
+\begin{align}\label{eq50}
+D_{\ddd{p}}\ddd{P}(\ddd{p})=n(\mu_1\ddd{b}_{1,0,0}^{n-1}(\ddd{u})+
+\mu_2\ddd{b}_{0,1,0}^{n-1}(\ddd{u})+\mu_3\ddd{b}_{0,0,1}^{n-1}(\ddd{u})),
+\end{align}
 kjer so $\ddd{b}_{1,0,0}^{n-1}(\ddd{u})$, $\ddd{b}_{0,1,0}^{n-1}(\ddd{u})$ in 
 $\ddd{b}_{0,0,1}^{n-1}(\ddd{u})$ točke, dobljene po $n-1$ korakih de Casteljaujevega 
 algoritma, ki razpenjajo tangentno ravnino na točko $\ddd{P}(\ddd{p})$. 
@@ -2391,10 +2391,7 @@ in $\ddd{r}_{1,0,0}^{n-1}(v)$ za vsako vrednost $v\in[0,1]$ nahajata na
 različnih straneh robne krivulje. Dobljeni zlepek tako ne bo imel oblike špice. 
 Veljati mora še, da sta funkciji $\lambda(v)$ in $\mu(v)$ na intervalu $[0,1]$ 
 različni od 0 in 1, da tangentne ravnine na $\ddd{C}(v)$ niso izrojene. 
-\todo{poveži s pogojem iz def, da mora biti funkcija različna od 0}
-
-Zgornja enačba predstavlja pogoj, ki zagotavlja $G^1$-zveznost zlepka ploskev. 
-\todo{ni pa to potreben pogoj?} 
+Enačba \eqref{eq22} predstavlja pogoj, ki zagotavlja $G^1$-zveznost zlepka ploskev. 
 
 Iz de Casteljaujevega algoritma sledi, da lahko točke, ki razpenjajo tangenti 
 ravnini zapišemo na naslednji način
@@ -2408,9 +2405,40 @@ Zaradi ujemanja kontrolnih točk na skupnem robu, je
 $\ddd{s}_{1,0,0}^{n-1}(v)=\ddd{r}_{1,0,0}^{n-1}(v)$ in \\
 $\ddd{s}_{0,1,0}^{n-1}(v)=\ddd{r}_{0,1,0}^{n-1}(v)$. 
 
-%Za boljšo preglednost vpeljimo oznake $\ddd{a}_i=\ddd{s}_{1,i,n-i-1}$, 
-%$\ddd{b}_i=\ddd{r}_{0,i,n-i}$ in $\ddd{c}_i=\ddd{r}_{1,i,n-i-1}$. 
+Preden nadaljujemo z izpeljavo, si samo oglejmo povezavo med dobljeno enačbo 
+\eqref{eq22} in enačbo, ki bi jo dobili, če bi pri izpeljavi izhalaji iz izreka \ref{izrek1}. 
+Po izreku \ref{izrek1} sta ploskvi $\ddd{R}$ in $\ddd{S}$ na stiku $G^1$-zvezni 
+natanko tedaj, ko obstajata $C^1$ funkciji $\alpha_1(v)$ in $\beta_1(v)$, da velja
+\begin{align}\label{eq48} 
+\frac{\partial \ddd{S}}{\partial \tilde{u}}(0,v)=\alpha_1(v)\frac{\partial \ddd{R}}{\partial u}(0,v)+
+\beta_1(v)\frac{\partial \ddd{R}}{\partial v}(0,v). 
+\end{align}
+Ker so Bézierjeve ploskve polinomske, morata biti funkciji $\alpha_1(v)$ in $\beta_1(v)$ 
+je pogoj v enačbi \eqref{eq48} enakovreden pogoju, da obstajajo polinomi 
+$D(v)$, $E(v)$ in $F(v)$, da velja
+\begin{align}\label{eq49} 
+  D(v)\frac{\partial \ddd{S}}{\partial \tilde{u}}(0,v)=E(v)\frac{\partial \ddd{R}}{\partial u}(0,v)+
+  F(v)\frac{\partial \ddd{R}}{\partial v}(0,v). 
+\end{align}
+Odvod ploskve $\ddd{S}$ po $\tilde{u}$ je enak odvodu v smeri vektorja z baricentričnimi 
+koordinatami $(1,0,-1)$, enako je odvod $\ddd{R}$ po $u$ enak odvodu v smeri vektorja 
+z baricentričnimi koordinatami $(1,0,-1)$, medtem ko je odvod $\ddd{R}$ po $v$ enak 
+odvodu v smeri vektorja z baricentričnimi koordinatami $(0,1,-1)$. Odvode izrazimo 
+s pomočjo enačbe \eqref{eq50}, dobljeno vstavimo v enačbo \eqref{eq49} in dobimo 
+\begin{align*}\label{eq51}
+D(y)(\ddd{s}^{n-1}_{1,0,0}(v)-\ddd{r}^{n-1}_{0,0,1}(v))=
+E(y)(\ddd{r}^{n-1}_{1,0,0}(v)-\ddd{r}^{n-1}_{0,0,1}(v))+
+F(y)(\ddd{r}^{n-1}_{0,1,0}(v)-\ddd{r}^{n-1}_{0,0,1}(v)).
+\end{align*}
+Vidimo lahko, da je dobljeni pogoj enakovreden pogoju v enačbi \eqref{eq22}, če 
+izberemo $D(v)=1-\lambda(v)$, $E(v)=-\lambda(v)$ in $F(v)=\mu(v)$. 
+Pogoj, da je $\lambda(v)$ različna od 0 in 1 na $[0,1]$ pa je ekvivalenten pogoju, da je 
+$\alpha_1(v)\neq 0$ oziroma $D(v)E(v)\neq 0$ na $[0,1]$. 
+Torej lahko vidimo, da nas bo izpeljava prek geometrijske definicije pripeljala do 
+enakega rezultata kot izpeljava z uporabo izreka \ref{izrek1} in dodatno omejitvijo, 
+da je $D(v)=E(v)+1$. 
 
+Nadaljujmo z obravnavo enačbe \eqref{eq22}. 
 Najprej si oglejmo, kakšne pogoje nam da enačba \eqref{eq22} za robne kontrolne točke. 
 Vstavimo v enačbo \eqref{eq22} vrednosti $v=0$ in $v=1$. 
 Pri vrednosti $v=0$ dobimo: 

@@ -351,61 +351,77 @@ geometrijsko zvezne ploskve tudi c zvezne}
 \section{Geometrijska zveznost parametrično podanih krivulj in ploskev}\label{geom.zv.}
 
 \todo{nek uvodni tekst?}
-%obstaja več načinov za modeliranje krivulj in ploskev. eden izmed njih je 
-%parametrično podane krivulje in ploskve
-%ali: krivulje lahko podajamo na različne načine: eksplicitno, implicitno, parametrično. 
-%ogledamo si definicijo parametrične.
-
-%A univariate parametrization is said to be regular if the first derivative vector
-%does not vanish. It is well known from differential geometry ( cf. DoCarmo [26])
-%that regularity is, in general, essential for the smoothness of the resulting curve
-%(see Figure 2.6). We therefore restrict the discussion to parametrizations that
-%are regular.
-
-Preden se lotimo definicij geometrijske zveznosti krivulj in ploskev, najprej obnovimo 
-nekaj osnovnih pojmov v zvezi s podajanjem krivulj in ploskev. 
 
 Krivulje in ploskve lahko podajamo na različne načine: eksplicitno, implicitno 
-ali parametrično. Oglejmo si definicijo parametrično podane krivulje in regularne 
+ali parametrično. V nadaljevanju se bomo ukvarjali s parametrično podanimi 
+krivuljami in ploskvami, omejili pa se bomo tudi na krivulje in ploskve, 
+ki so regularne. %saj te izgledajo gladko
+Oglejmo si definicijo parametrično podane krivulje in regularne 
 parametrizacije krivulje. 
 
-\begin{definicija}
+\begin{definicija}\label{defgeo1}
 Naj bo $I\subset \R$ interval in
 \begin{align*}  
-\ddd{g}:I\rightarrow \R^3,\\
-\ddd{g}(t)=(g_1(t),g_2(t),g_3(t))
+&\ddd{g}:I\rightarrow \R^3,\\
+&\ddd{g}(t)=(g_1(t),g_2(t),g_3(t))
 \end{align*}
 injektivna preslikava razreda $C^1$. Tedaj je 
-$$\ddd{R}=\{\ddd{g}(t);t\in I\}$$
+$\ddd{R}=\{\ddd{g}(t);t\in I\}$ 
 \emph{parametrično podana krivulja v $\R^3$}. 
-Pravimo, da je $\ddd{g}$ 
+Pravimo, da je v okolici točke $t_0\in I$ parametrizacija $\ddd{g}$ \emph{regularna}, 
+če velja 
+$$g_1'(t_0)^2+g_2'(t_0)^2+g_3'(t_0)^2\neq 0.$$
+Parametrizacija $\ddd{g}$ je
 \emph{regularna parametrizacija krivulje $\ddd{R}$}, če velja
 $$g_1'(t)^2+g_2'(t)^2+g_3'(t)^2\neq 0 \textrm{ za }t\in I.$$ 
 \end{definicija}
 
 Podobno definiramo tudi parametrično podane ploskve in njihove regularne parametrizacije. 
 
-\begin{definicija}
+\begin{definicija}\label{defgeo2}
 Naj bo $K\subset \R^2$ odprta množica in 
 \begin{align*}
-\ddd{F}:K\rightarrow \R^3,
-\ddd{F}(u,v)=(F_1(u,v),F_2(u,v),F_3(u,v))
+&\ddd{F}:K\rightarrow \R^3,\\
+&\ddd{F}(u,v)=(F_1(u,v),F_2(u,v),F_3(u,v))
 \end{align*}
 injektivna preslikava razreda $C^1$. Potem je 
-$$\ddd{S}=\{\ddd{F}(u,v);(u,v)\in K\}$$
+$\ddd{S}=\{\ddd{F}(u,v);(u,v)\in K\}$ 
 \emph{parametrično podana ploskev v $\R^3$}. 
-Pravimo, da je $\ddd{F}$ 
+Pravimo, da je v okolici točke $(u_0,v_0)\in K$ parametrizacija $\ddd{F}$ 
+\emph{regularna}, če je rang njene Jacobijeve matrike v tej točki maksimalen, 
+torej če velja 
+$$\mbox{rang}(D\ddd{F})(u_0,v_0)=\mbox{rang}
+\begin{bmatrix} \frac{\partial F_1}{\partial u}(u_0,v_0)&
+\frac{\partial F_1}{\partial v}(u_0,v_0)\\
+\frac{\partial F_2}{\partial u}(u_0,v_0)&
+\frac{\partial F_2}{\partial 2}(u_0,v_0)\\
+\frac{\partial F_3}{\partial u}(u_0,v_0)&
+\frac{\partial F_3}{\partial v}(u_0,v_0)
+ \end{bmatrix}=2.$$
+Parametrizacija $\ddd{F}$ je
 \emph{regularna parametrizacija ploskve $\ddd{S}$}, če velja 
-$$\mbox{rang}(DF)(u,v)=2 \textrm{ za }(u,v)\in K.$$
+$$\mbox{rang}(D\ddd{F})(u,v)=2 \textrm{ za }(u,v)\in K.$$
 \end{definicija}
+
+\begin{opomba}
+Pogoj v definiciji \ref{defgeo2}, da je za parametrizacijo ploskve $\ddd{F}$ 
+rang njene Jacobijeve matrike $\mbox{rang}(D\ddd{F})(u,v)=2$, je enakovreden 
+pogoju, da sta v vsaki točki ploskve tangentna vektorja 
+$$\begin{bmatrix}\frac{\partial F_1}{\partial u}(u,v)&
+\frac{\partial F_2}{\partial u}(u,v)&
+\frac{\partial F_3}{\partial u}(u,v)\end{bmatrix},\quad
+\begin{bmatrix}\frac{\partial F_1}{\partial v}(u,v)&
+  \frac{\partial F_2}{\partial v}(u,v)&
+  \frac{\partial F_3}{\partial v}(u,v)\end{bmatrix}$$
+  na ploskev linearno neodvisna oziroma če je v vsaki točki normala na ploskev 
+  neničelna. 
+\end{opomba}
 
 \subsection{Geometriska zveznost krivulj}
 
 Preden se lotimo geometrijske zveznosti ploskev, si najprej oglejmo nekoliko 
 bolj intuitivno definicijo geometrijske zveznosti stika dveh krivulj. To bomo 
 v nadaljevanju posplošili na definicijo geometrijske zveznosti stika dveh ploskev.
-
-\todo{splošna definicija?}
 
 \begin{definicija}\label{defkrivulja}
 Naj bosta $\ddd{p}:I_1\rightarrow\R^d$ \todo{2? ali d?} in $\ddd{q}:I_2\rightarrow\R^d$ 
@@ -415,7 +431,7 @@ $t_1\in I_1$ in $t_2\in I_2$, da je $\ddd{p}(t_1)=\ddd{q}(t_2)$.
 Pravimo, da se krivulji v skupni točki stikata z \emph{geometrijsko zveznostjo reda n} 
 oziroma z \emph{$G^n$-zveznostjo}, če v okolici $I_0$ parametra $t_1$ obstaja regularna 
 reparametrizacijska funkcija $f:I_0\rightarrow I_2$, da velja $f(t_1)=t_2$, 
-$\frac{df}{dt}(t_1)>0$ \todo{v točki t1 ali povsod?} ter 
+\todo{$\frac{df}{dt}(t_1)>0$??} ter 
 \begin{align*}
   \frac{d^k}{dt^k}\ddd{p}(t)\big|_{t=t_1}=\frac{d^k}{dt^k}(\ddd{q}\circ f)(t)\big|_{t=t_1},\quad k=0,1,\ldots,n.
 \end{align*}
@@ -458,14 +474,6 @@ Najprej si oglejmo povsem splošno definicijo geometrijske zveznosti neke ploskv
   Ploskev pripada razredu $G^n$ oziroma je \emph{geometrijsko zvezna z redom $n$}, če v okolici vsake njene točke obstaja lokalna regularna parametrizacija razreda $C^n$.
 \end{definicija}
 
-\todo{definicija regularne ploskve - lahko poveš definicijo}
-
-\todo{potem lahko poveš, da to v praksi pomeni, da je normala na ploskev v vsaki točki 
-neničelna (ali je to res?) ... ampak če hočeš to, moraš verjetno povedati, kako to sledi 
-iz definicije (kako?)}
-
-\todo{razloži lokalnost?}
-
 V nadaljevanju se bomo ukvarjali s ploskvami, ki so same po sebi že geometrijsko zvezne, 
 zanimalo nas bo le, kakšni pogoji morajo veljati, da je tudi stik dveh takih  
 ploskev geometrijsko zvezen, torej da je celotna ploskev, ki jo dobimo, ko zlepimo dve ploskvi, 
@@ -481,9 +489,6 @@ geometrijsko zvezna.
   \end{equation}
   kjer je $I_0$ neka okolica $y_0$. 
 \end{definicija}
-
-\todo{razloži, kaj je regularna reparametrizacijska funkcija? ali je dovolj, da je 
-bila prej razložena regularnost?}
 
 Zaradi stikanja ploskev v krivulji $\ddd{C}$ oziroma, ker vzdolž krivulje $\ddd{C}$ velja $y=v$, 
 so parcialni odvodi parametrizacij 
@@ -561,8 +566,20 @@ zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši nasle
   \end{equation} 
   za $k=1,\ldots,n$, 
   kjer je $A_{m_i}^k = \frac{k!}{i!m_1!\cdots m_i!}$.
-  Veljati mora tudi, da je $\alpha_1(y)\neq 0$ \todo{in predznak}
+  Veljati mora tudi, da je $\alpha_1(y)\neq 0$ za $y\in[0,1]$ in da ima na $[0,1]$ 
+  pozitiven predznak, če sta ploskvi enako parametrizirani, oziroma negativen 
+  predznak, če sta nasprotno parametrizirani.  
 \end{izrek}
+
+\begin{opomba}
+Ploskvi $\ddd{R}$ in $\ddd{S}$ sta enako parametrizirani, če velja 
+$\ddd{R}(1,y)=\ddd{S}(0,y)$ ali $\ddd{R}(0,y)=\ddd{S}(1,y)$. V tem primeru 
+mora biti predznak funkcije $\alpha_1(y)$ pozitiven. Nasprotno sta parametrizirani, 
+če velja $\ddd{R}(0,y)=\ddd{S}(0,y)$ ali $\ddd{R}(1,y)=\ddd{S}(1,y)$. V tem 
+primeru mora biti predznak funkcije $\alpha_1(y)$ negativen. 
+Če bi napačno izbrali predznak funkcije $\alpha_1(y)$, bi imeli ploskvi na stiku 
+obliko ''špice''.  
+\end{opomba}
 
 \begin{opomba}
   Funkcije $\alpha_1(y), \ldots, \alpha_n(y)$ in $\beta_1(y) \ldots, \beta_n(y)$ 
@@ -570,7 +587,6 @@ zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši nasle
 \end{opomba}
 
 \begin{proof}
-  \todo{kaj je z lokalnostjo in b0?}
   Najprej prodpostavimo, da obstajajo $C^n$ funkcije $\alpha_1(y), \ldots, \alpha_n(y)$ 
   in $\beta_1(y) \ldots, \beta_n(y)$, za katere velja enakost \eqref{eq2} v izreku, in 
   da je $\alpha_1(y)\neq 0$. 
@@ -628,16 +644,11 @@ zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši nasle
   Torej smo okazali še neničelnost funkcije $\alpha_1$, s čimer je dokaz končan. 
 \end{proof}
 
-\todo{Drugo, na kar moramo paziti pri izbiri funkcije $\alpha_1$ pa je njen predznak. 
-Pri izbiri napačnega predznaka namreč lahko pride do stika v obliki "špice".} 
-
 \todo{nekaj za zaključek poglavja in napeljavo na novo poglavje}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 
 \subsection{Geometrijska interpretacija $G^1$-zveznosti}
-\todo{ali naredim še za $G^2$ zveznost}
 
 V nadaljevanju se bomo nekoliko natančneje ukvarjali z $G^1$-zveznostjo med ploskvami. 
 V tem podpoglavju si oglejmo geometrijsko interpretacijo $G^1$-zveznosti, ki bo 
@@ -681,9 +692,11 @@ ploskev $\ddd{R}$ v točki $(x_0,y)$ na krivulji $\ddd{C}$,
 $\ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y)$ pa normalo na ploskev $\ddd{S}$ na 
 krivulji $\ddd{C}$. 
 Enačba \eqref{eq30} pove, da sta normali na ploskvi $\ddd{R}$ in $\ddd{S}$ na njunu skupni  
-krivulji $\ddd{C}$ vzporedni. Na skupnem robu imata torej obe ploskvi enaki 
+krivulji $\ddd{C}$ vzporedni in imata enako smer, kar nam zagotovi ustrezno izbran 
+predznak funkcije $\alpha_1(y)$. Na skupnem robu imata torej obe ploskvi enaki 
 enotski normali:
-$$\frac{\ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y)}{||\ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y)||}=\frac{\ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y)}{||\ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y)||}.$$
+$$\frac{\ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y)}{||\ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y)||}=
+\frac{\alpha_1(y)\ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y)}{||\alpha_1(y)\ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y)||}.$$
 Enotska normala se zato zvezno spreminja vzdolž zlepka obeh ploskev, od koder poimenovanje 
 \emph{zveznost enotskih normal}. 
 

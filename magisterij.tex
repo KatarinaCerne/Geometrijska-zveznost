@@ -2774,6 +2774,46 @@ $$
 
 $\beta_i(0)<0$ --- za lihe $N$ ni 0
 
+$$C = 
+\begin{bmatrix}
+1 & 0 & \cdots & & 0\\
+0 & 1 & 0 & \cdots & 0\\
+\vdots & & \ddots & & \vdots\\
+0 & \cdots  & 0 & 1 & 0\\
+\beta_N(0) & \beta_N(0)\beta_1(0) & \beta_N(0)\beta_1(0)\beta_2(0) & \cdots & 
+\beta_N(0)\beta_1(0)\cdots \beta_{N-1}(0)
+\end{bmatrix}
+$$
+
+
+$$CB
+\begin{bmatrix}
+\ddd{P}_1\\
+\ddd{P}_2\\
+\vdots\\
+\ddd{P}_N
+\end{bmatrix}=
+C
+\begin{bmatrix}
+\ddd{R}_1\\
+\ddd{R}_2\\
+\vdots\\
+\ddd{R}_N
+\end{bmatrix}
+$$
+
+Zadnja vrstica $CB$ je ničelna. --- sistem bo rešljiv, ko bo tudi zadnja vrstica 
+$$C
+\begin{bmatrix}
+\ddd{R}_1\\
+\ddd{R}_2\\
+\vdots\\
+\ddd{R}_N
+\end{bmatrix}
+$$ ničelna. 
+$\beta_N(0)\ddd{R}_1+\beta_N(0)\beta_1(0)\ddd{R}_2+\cdots + 
+\beta_N(0)\beta_1(0)\beta_2(0)\cdots\beta_{N-1}(0)\ddd{R}_N=0.$
+
 
 
 %-------------------------------------------------------------------------------

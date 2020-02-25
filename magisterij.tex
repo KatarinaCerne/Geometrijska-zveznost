@@ -2641,6 +2641,141 @@ primeru s konsistentnostjo sistema?}
 
 \todo{primer od prej, ki ni šel s c1 samo da ga zdaj rešimo z g1?}
 
+\section{Kompatibilnostni pogoji v skupnem vozlišču}
+\todo{ta naslov??}
+
+Do sedaj smo se ukvarjali zgolj z geometrijsko zveznostjo na stiku dveh ploskev. Dobljeno 
+znanje sedaj prenesimo na primer, ko sestavimo večjo skupno ploskev iz večih manjših, 
+natančneje, osredotočimo se na primer konstrukcije ploskve, sestavljene iz $N$ ploskev, 
+ki se vse stikajo v skupni točki. Očitno je, da je geometrijska zveznost v takem primeru 
+veliko uporabnejša od parametrične zveznosti. Če bi med ploskvami zahtevali parametrično 
+zveznost, bi bilo v primeru, da za konstrukcijo uporabljamo Bézierove ploslve iz 
+temzorskega produkta, mogoče stakniti skupaj le po 4 ploskve, kar nas zelo omejuje, kar se 
+tiče oblike objektov, ki jih lahko skonstruiramo na tak način. Če zahtevamo geometrijsko 
+zveznost pa lahko staknemo skupaj poljubno število ploskev. 
+
+V nadaljevanju si bomo ogledali pogoje, ki morajo veljati, da dosežemo $G^1$-zveznost 
+med ploskvami, ki se stikajo v skupni točki. 
+
+Imejmo ploskve $\ddd{X}_1(u_1,v_1),\ddd{X}_2(u_2,v_2), \ldots, \ddd{X}_N(u_N,v_N)$. Te 
+naj se stikajo v krivuljah 
+$$\ddd{K}_i(v_i)=\ddd{X}_i(0,v_i)=\ddd{X}_{i+1}(u_{i+1},0),$$ 
+kjer je $i=1,\ldots,N-1$, ter v 
+$$\ddd{K}_N(v_N)=\ddd{X}_N(0,v_N)=\ddd{X}_1(u_1,0).$$ 
+Na skupnih robovih torej velja $v_i=u_{i+1}$ za $i=1,\ldots,N-1$ in $v_N=u_1$. Vse ploskve 
+se torej stikajo v točki 
+$$\ddd{P}=\ddd{X}_1(0,0)=\ddd{X}_2(0,0)=\cdots=\ddd{X}_N(0,0).$$
+
+Videli bomo, da za $G^1$-zveznost niso dovolj le pogoji, izpeljani v prejšnjih 
+poglavjih. Da dosežemo $G^1$-zveznost med ploskvami, morajo biti odvodi 
+$\frac{\partial}{\partial u_i}\ddd{X}_i(0,0)$ in $\frac{\partial}{\partial v_i}\ddd{X}_i(0,0)$, kjer 
+je $i=1,\ldots,N$, vsi del iste tangentne ravnine. V točki $\ddd{P}$ morajo imeti vse 
+ploskve enako enotsko normalo. Torej ni dovolj obravnavati po dve in dve ploskvi, temveč 
+moramo obravnavati vse skupaj, kar nam prinese nekaj dodatnih pogojev zanje. Dodatne 
+pogoje pa dobimo še iz zahteve, da se v točki $\ddd{P}$ ujemajo tudi mešani odvodi 
+ploskev. V primeru $G^1$-zveznosti med dvema ploskvama je bila ta zahteva zaradi 
+ujemanja ploskev v skupni krivulji avtomatično izpolnjena, v primeru stika med 
+večimi ploskvami pa prinese dodatne pogoje, ki morajo veljati za ploskve ter 
+povezovalne \todo{junction?} funkcije. 
+
+Po izreku \ref{izrek1} sta ploskvi $\ddd{X}_i$ in $\ddd{X}_{i+1}$ na stiku $G^1$ zvezni, 
+če obstajata funkciji $\alpha_i(v_i)$ in $\beta_i(v_i),$ da velja 
+\begin{align}\label{eq52}
+\frac{\partial}{\partial u_i}\ddd{X}_i(0,v_i)=
+\alpha_i(v_i)\frac{\partial}{\partial u_{i+1}}\ddd{X}_{i+1}(u_{i+1},0)+
+\beta_i(v_i)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(u_{i+1},0)
+\end{align}
+za $i=1,\ldots, N-1$ ter 
+\begin{align}\label{eq53}
+  \frac{\partial}{\partial u_N}\ddd{X}_N(0,v_N)=
+  \alpha_i(v_N)\frac{\partial}{\partial u_1}\ddd{X}_1(u_1,0)+
+  \beta_i(v_N)\frac{\partial}{\partial v_1}\ddd{X}_1(u_1,0).
+\end{align}
+
+V točki $\ddd{P}$ mora torej veljati 
+\begin{align}\label{eq54}
+  \frac{\partial}{\partial u_i}\ddd{X}_i(0,0)=
+  \alpha_i(v_i)\frac{\partial}{\partial u_{i+1}}\ddd{X}_{i+1}(0,0)+
+  \beta_i(v_i)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(0,0)
+\end{align}
+za $i=1,\ldots, N-1$ ter 
+\begin{align}\label{eq55}
+  \frac{\partial}{\partial u_N}\ddd{X}_N(0,0)=
+  \alpha_i(v_N)\frac{\partial}{\partial u_1}\ddd{X}_1(0,0)+
+  \beta_i(v_N)\frac{\partial}{\partial v_1}\ddd{X}_1(0,0).
+\end{align}
+
+...
+
+Če enačbi \eqref{eq52} in \eqref{eq53} odvajamo še po $v_i=u_i+1$, in ju evalviramo v $v_i=u_i+1=0$, dobimo 
+\begin{equation}\label{eq56}
+\begin{split}
+\frac{\partial^2}{\partial u_i\partial v_i}\ddd{X}_i(0,0)=&
+\alpha_i(0)\frac{\partial^2}{\partial u_{i+1}^2}\ddd{X}_(0,0) + 
+\alpha_i'(0)\frac{\partial}{\partial u_{i+1}}\ddd{X}_{i+1}(0,0) +\\ 
+&+\beta_i(0)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(0,0) + 
+\beta_i'(0)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(0,0)
+\end{split}
+\end{equation}
+
+$$\ddd{P}_i = \frac{\partial^2}{\partial u_i \partial v_i}\ddd{X}_i(0,0)$$
+
+$$\ddd{R}_i=\alpha_i(0)\frac{\partial^2}{\partial u_{i+1}^2}+
+\alpha_i'(0)\frac{\partial}{\partial u_{i+1}}\ddd{X}_{i+1}(0,0)+
+\beta_i'(0)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(0,0)$$
+
+$$B = 
+\begin{bmatrix}
+1 & -\beta_1(0) & 0 & 0 & \cdots & 0\\
+0 & 1 & -\beta_2(0) & 0 & \cdots & 0\\
+\vdots & & \ddots & \ddots  &  & \vdots\\
+0 & \cdots & & 0 & 1 & -\beta_{N-1}(0)\\
+-\beta_N(0) & 0 & \cdots & 0 & 0 & 1
+\end{bmatrix}
+$$
+$$B
+\begin{bmatrix}
+\ddd{P}_1\\
+\ddd{P}_2\\
+\vdots\\
+\ddd{P}_N
+\end{bmatrix}=
+\begin{bmatrix}
+\ddd{R}_1\\
+\ddd{R}_2\\
+\vdots\\
+\ddd{R}_N
+\end{bmatrix}
+$$
+
+$$B_1 = 
+\begin{bmatrix}
+1 & -\beta_2(0) & 0 & 0 & \cdots & 0\\
+0 & 1 & -\beta_3(0) & 0 & \cdots & 0\\
+\vdots & & \ddots & \ddots  &  & \vdots\\
+0 & \cdots & & 0 & 1 & -\beta_{N-1}(0)\\
+0 &  & \cdots & 0 & 0 & 1
+\end{bmatrix}
+$$
+$$B_2 = 
+\begin{bmatrix}
+-\beta_1(0) &  & 0 & 0 & \cdots & 0\\
+1 & -\beta_2(0) &  & 0 & \cdots & 0\\
+& \ddots & \ddots  & \vdots & \cdots & \vdots\\
+0 & \cdots & & 0 & 1 & -\beta_{N-1}(0)\\
+\end{bmatrix} 
+$$
+
+\begin{align*}
+\det(B) &= \det(B_1) + (-1)^N(-\beta_N(0))\det(B_2) = 
+1 - (-1)^N(-\beta_N(0))\prod_{i=0}^{N-1}(-\beta_i(0)) = \\
+&=1 - \prod_{i=0}^N\beta_i(0)
+\end{align*}
+
+$\beta_i(0)<0$ --- za lihe $N$ ni 0
+
+
+
 %-------------------------------------------------------------------------------
 %
 %\section{4 ploskve}

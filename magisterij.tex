@@ -2682,27 +2682,29 @@ Po izreku \ref{izrek1} sta ploskvi $\ddd{X}_i$ in $\ddd{X}_{i+1}$ na stiku $G^1$
 če obstajata funkciji $\alpha_i(v_i)$ in $\beta_i(v_i),$ da velja 
 \begin{align}\label{eq52}
 \frac{\partial}{\partial u_i}\ddd{X}_i(0,v_i)=
-\alpha_i(v_i)\frac{\partial}{\partial u_{i+1}}\ddd{X}_{i+1}(u_{i+1},0)+
-\beta_i(v_i)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(u_{i+1},0)
+\alpha_i(v_i)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(u_{i+1},0)+
+\beta_i(v_i)\frac{\partial}{\partial u_{i+1}}\ddd{X}_{i+1}(u_{i+1},0)
 \end{align}
 za $i=1,\ldots, N-1$ ter 
 \begin{align}\label{eq53}
   \frac{\partial}{\partial u_N}\ddd{X}_N(0,v_N)=
-  \alpha_i(v_N)\frac{\partial}{\partial u_1}\ddd{X}_1(u_1,0)+
-  \beta_i(v_N)\frac{\partial}{\partial v_1}\ddd{X}_1(u_1,0).
+  \alpha_i(v_N)\frac{\partial}{\partial v_1}\ddd{X}_1(u_1,0)+
+  \beta_i(v_N)\frac{\partial}{\partial u_1}\ddd{X}_1(u_1,0).
 \end{align}
 V točki $\ddd{P}$ mora torej veljati 
 \begin{align}\label{eq54}
   \frac{\partial}{\partial u_i}\ddd{X}_i(0,0)=
-  \alpha_i(v_i)\frac{\partial}{\partial u_{i+1}}\ddd{X}_{i+1}(0,0)+
-  \beta_i(v_i)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(0,0)
+  \alpha_i(v_i)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(0,0)+
+  \beta_i(v_i)\frac{\partial}{\partial u_{i+1}}\ddd{X}_{i+1}(0,0)
 \end{align}
 za $i=1,\ldots, N-1$ ter 
 \begin{align}\label{eq55}
   \frac{\partial}{\partial u_N}\ddd{X}_N(0,0)=
-  \alpha_i(v_N)\frac{\partial}{\partial u_1}\ddd{X}_1(0,0)+
-  \beta_i(v_N)\frac{\partial}{\partial v_1}\ddd{X}_1(0,0).
+  \alpha_i(v_N)\frac{\partial}{\partial v_1}\ddd{X}_1(0,0)+
+  \beta_i(v_N)\frac{\partial}{\partial u_1}\ddd{X}_1(0,0).
 \end{align}
+Da stiki med ploskvami nimajo oblike "špice", mora veljati še $\alpha_i(v_i)<0$ za $v_i\in[0,1]$ 
+in $i=1,\ldots,N$. 
 
 Enačbi \eqref{eq54} in \eqref{eq55} nam data prvi sklop kompatibilnostnih pogojev, 
 ki morajo veljati 
@@ -2710,9 +2712,10 @@ za ploskve $\ddd{X}_i$ in njihove \todo{junction} funkcije v točki $\ddd{P}$.
 Te pogoje si oglejmo 
 na primeru Bézierjevih ploskev iz tenzorskega produkta. Naj bodo ploskve $\ddd{X}_i$ 
 stopnje $(n,n)$ in naj bodo definirane kot 
-
-$$\ddd{X}_i(u_i,v_i) = \sum_{j=0}^n\sum_{k=0}^n\ddd{x}_{j,k}^{(i)}B_j^n(u_i)B_k^n(v_i)
-\quad u_i,v_i\in [0,1]$$
+\begin{align}\label{eq58}
+\ddd{X}_i(u_i,v_i) = \sum_{j=0}^n\sum_{k=0}^n\ddd{x}_{j,k}^{(i)}B_j^n(u_i)B_k^n(v_i)
+\quad u_i,v_i\in [0,1]
+\end{align}
 za $i=1,\ldots,N$. 
 Velja, da je $\ddd{P}=\ddd{x}_{0,0}^{(i)},$ $i=1,\ldots,N$. 
 Zaradi stikanja v krivuljah $\ddd{K}_i$, $i=1,\ldots,N$, za njihove kontrolne točke 
@@ -2752,35 +2755,34 @@ Oglejmo si malo bolj konkretno, kako so videti pogoji \todo{sklic} v primeru, ko
 
 Sedaj si oglejmo še drugi sklop kompatibilnostnih pogojev v točki $\ddd{P}$. Ti nam bodo 
 določali pogoje za mešane odvode ploskev oziroma, v primeru Bézierovih ploskev iz tenzorskega 
-produkta, za točke \todo{točke}.  
+produkta, za kontrolne točke $\ddd{x}_{1,1}^{(i)}$, $i=1,\ldots,N$.  
 Če enačbi \eqref{eq52} in \eqref{eq53} odvajamo še po $v_i=u_i+1$, in ju evalviramo v $v_i=u_i+1=0$, dobimo 
 \begin{equation}\label{eq56}
 \begin{split}
 \frac{\partial^2}{\partial u_i\partial v_i}\ddd{X}_i(0,0)=&
-\alpha_i(0)\frac{\partial^2}{\partial u_{i+1}^2}\ddd{X}_(0,0) + 
-\alpha_i'(0)\frac{\partial}{\partial u_{i+1}}\ddd{X}_{i+1}(0,0) +\\ 
-&+\beta_i(0)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(0,0) + 
-\beta_i'(0)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(0,0).
+\alpha_i(0)\frac{\partial^2}{\partial u_{i+1} \partial v_{i+1}}\ddd{X}_(0,0) + 
+\alpha_i'(0)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(0,0) +\\ 
+&+\beta_i(0)\frac{\partial^2}{\partial u_{i+1}^2}\ddd{X}_{i+1}(0,0) + 
+\beta_i'(0)\frac{\partial}{\partial u_{i+1}}\ddd{X}_{i+1}(0,0).
 \end{split}
 \end{equation}
-
 Vpeljimo oznaki 
 $$\ddd{P}_i = \frac{\partial^2}{\partial u_i \partial v_i}\ddd{X}_i(0,0)$$
 in 
-$$\ddd{R}_i=\alpha_i(0)\frac{\partial^2}{\partial u_{i+1}^2}+
-\alpha_i'(0)\frac{\partial}{\partial u_{i+1}}\ddd{X}_{i+1}(0,0)+
-\beta_i'(0)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(0,0)$$
-ter zapišimo enačbo \eqref{eq56} v matrični obliki. Naj bo matrika $B$ definirana kot 
+$$\ddd{R}_i=\beta_i(0)\frac{\partial^2}{\partial u_{i+1}^2}+
+\alpha_i'(0)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(0,0)+
+\beta_i'(0)\frac{\partial}{\partial u_{i+1}}\ddd{X}_{i+1}(0,0)$$
+ter zapišimo sistem enačb \eqref{eq56} v matrični obliki. Naj bo matrika $B$ definirana kot 
 $$B = 
 \begin{bmatrix}
-1 & -\beta_1(0) & 0 & 0 & \cdots & 0\\
-0 & 1 & -\beta_2(0) & 0 & \cdots & 0\\
+1 & -\alpha_1(0) & 0 & 0 & \cdots & 0\\
+0 & 1 & -\alpha_2(0) & 0 & \cdots & 0\\
 \vdots & & \ddots & \ddots  &  & \vdots\\
-0 & \cdots & & 0 & 1 & -\beta_{N-1}(0)\\
--\beta_N(0) & 0 & \cdots & 0 & 0 & 1
+0 & \cdots & & 0 & 1 & -\alpha_{N-1}(0)\\
+-\alpha_N(0) & 0 & \cdots & 0 & 0 & 1
 \end{bmatrix}.
 $$
-Potem lahko enačbo \eqref{eq56} zapišemo kot
+Potem lahko sistem enačb \eqref{eq56} zapišemo kot
 \begin{equation}\label{eq57}
 B
 \begin{bmatrix}
@@ -2797,47 +2799,69 @@ B
 \end{bmatrix}.
 \end{equation}
 
+Če je sistem \eqref{eq57} rešljiv, nam podaja pogoje, ki morajo veljati za mešane odvode 
+$\ddd{P}_i$, $i=1,\ldots,N$. 
+Če so ploskve $\ddd{X}_i$ Bézierove ploskve iz tenzorskega produkta, definirane kot 
+v \eqref{eq58}, se mešani odvodi ploskev v točki $\ddd{P}$ izražajo kot 
+\begin{align*}
+\frac{\partial^2}{\partial u_i \partial v_i}\ddd{X}_i(0,0)=n^2(\ddd{x}_{1,1}^{(i)}-
+\ddd{x}_{0,1}^{(i)}-\ddd{x}_{1,0}^{(i)}+\ddd{P})\quad i=1,\ldots,N. 
+\end{align*}
+Kontrolne točke $\ddd{x}_{0,1}^{(i)}$ in $\ddd{x}_{1,0}^{(i)}$, $i=1,\ldots,N$, so že 
+določene s pogoji, izpeljanimi iz \eqref{eq54} in \eqref{eq55}, sistem \eqref{eq57} pa 
+nam v primeru, da je rešljiv, podaja pogoje za kontrolne točke $\ddd{x}_{1,1}^{(i)}$. 
 
-
+Ogljemo si še, kaj mora veljati, da je sistem \eqref{eq57} rešljiv. Enolično je rešiljiv, 
+če je determinanta matrike $B$ neničelna. Za izračun determinante matrike $B$ najprej vpeljimo 
+oznaki za podmatriki matrike $B$. 
+Naj bo 
 $$B_1 = 
 \begin{bmatrix}
-1 & -\beta_2(0) & 0 & 0 & \cdots & 0\\
-0 & 1 & -\beta_3(0) & 0 & \cdots & 0\\
+1 & -\alpha_2(0) & 0 & 0 & \cdots & 0\\
+0 & 1 & -\alpha_3(0) & 0 & \cdots & 0\\
 \vdots & & \ddots & \ddots  &  & \vdots\\
-0 & \cdots & & 0 & 1 & -\beta_{N-1}(0)\\
+0 & \cdots & & 0 & 1 & -\alpha_{N-1}(0)\\
 0 &  & \cdots & 0 & 0 & 1
 \end{bmatrix}
 $$
+matrika, ki jo dobimo, če izpustimo prvo vrstico in prvi stolpec matrike $B$, in naj bo 
 $$B_2 = 
 \begin{bmatrix}
--\beta_1(0) &  & 0 & 0 & \cdots & 0\\
+-\alpha_1(0) &  & 0 & 0 & \cdots & 0\\
 1 & -\beta_2(0) &  & 0 & \cdots & 0\\
 & \ddots & \ddots  & \vdots & \cdots & \vdots\\
-0 & \cdots & & 0 & 1 & -\beta_{N-1}(0)\\
+0 & \cdots & & 0 & 1 & -\alpha_{N-1}(0)\\
 \end{bmatrix} 
 $$
-
+matrika, ki jo dobimo, če izpustimo zadnjo vrstico in prvi stolpec matrike $B$. 
+Determinanto matrike $B$ izračunamo s pomočjo razvoja po prvem stolpcu:
 \begin{align*}
-\det(B) &= \det(B_1) + (-1)^N(-\beta_N(0))\det(B_2) = 
-1 - (-1)^N(-\beta_N(0))\prod_{i=0}^{N-1}(-\beta_i(0)) = \\
-&=1 - \prod_{i=0}^N\beta_i(0)
+\det(B) &= \det(B_1) + (-1)^N(-\alpha_N(0))\det(B_2) = 
+1 - (-1)^N(-\alpha_N(0))\prod_{i=0}^{N-1}(-\alpha_i(0)) = \\
+&=1 - \prod_{i=0}^N\alpha_i(0). 
 \end{align*}
+Vemo, da mora biti $\alpha_i(0)<0$ za $i=1,\ldots,N$. Če je $N$ liho število, je torej 
+produkt $\prod_{i=0}^N\alpha_i(0)$ negativno število, kar pomeni, da determinanta v tem 
+primeru ne more biti enaka 0. V primeru lihega števila ploskev je torej sistem \eqref{eq57} 
+enolično rešljiv, kar pomeni, da so mešani parcialni odvodi enolično določeni. 
+Če je $N$ sodo število, pa se lahko zgodi, da je $\det(B)=0$. V tem primeru sistem ali 
+nima rešitev ali pa ima neskončno rešitev. Slednje je možno le, če veljajo določeni 
+pogoji za vrednosti $\ddd{R}_1,\ddd{R}_2,\cdots,\ddd{R}_N$. 
 
-$\beta_i(0)<0$ --- za lihe $N$ ni 0
-
+Definirajmo matriko 
 $$C = 
 \begin{bmatrix}
-1 & 0 & \cdots & & 0\\
+1 & 0 & 0 & \cdots & 0\\
 0 & 1 & 0 & \cdots & 0\\
 \vdots & & \ddots & & \vdots\\
 0 & \cdots  & 0 & 1 & 0\\
-\beta_N(0) & \beta_N(0)\beta_1(0) & \beta_N(0)\beta_1(0)\beta_2(0) & \cdots & 
-\beta_N(0)\beta_1(0)\cdots \beta_{N-1}(0)
+\alpha_N(0) & \alpha_N(0)\alpha_1(0) & \alpha_N(0)\alpha_1(0)\alpha_2(0) & \cdots & 
+\alpha_N(0)\alpha_1(0)\cdots \alpha_{N-1}(0). 
 \end{bmatrix}
 $$
-
-
-$$CB
+Sistem enačb \eqref{eq57} je ekvivalenten sistemu 
+\begin{align}\label{eq59}
+CB
 \begin{bmatrix}
 \ddd{P}_1\\
 \ddd{P}_2\\
@@ -2850,46 +2874,24 @@ C
 \ddd{R}_2\\
 \vdots\\
 \ddd{R}_N
-\end{bmatrix}
-$$
+\end{bmatrix}.
+\end{align}
+Vidimo lahko, da je prvih $N-1$ vrstic enakih prvim $N-1$ vrsticam matrike $B$ in da so 
+med sabo likearno neodvisne. Zadnja vrstica matrike $CB$ pa je ničelna. Torej je 
+sistem \eqref{eq59} rešljiv in ima neskončno rešitev, če je tudi zadnja komponenta 
+vektorja $C \begin{bmatrix}\ddd{R}_1&\ddd{R}_2&\cdots&\ddd{R}_N\end{bmatrix}^T$ enaka 0. 
+To pa bo res, če bo veljala zveza 
+\begin{align}\label{eq60}
+\alpha_N(0)\ddd{R}_1+\alpha_N(0)\alpha_1(0)\ddd{R}_2+\cdots + 
+\alpha_N(0)\alpha_1(0)\alpha_2(0)\cdots\alpha_{N-1}(0)\ddd{R}_N=0.
+\end{align}
 
-Zadnja vrstica $CB$ je ničelna. --- sistem bo rešljiv, ko bo tudi zadnja vrstica 
-$$C
-\begin{bmatrix}
-\ddd{R}_1\\
-\ddd{R}_2\\
-\vdots\\
-\ddd{R}_N
-\end{bmatrix}
-$$ ničelna. 
-$\beta_N(0)\ddd{R}_1+\beta_N(0)\beta_1(0)\ddd{R}_2+\cdots + 
-\beta_N(0)\beta_1(0)\beta_2(0)\cdots\beta_{N-1}(0)\ddd{R}_N=0.$
-
-
-
-%-------------------------------------------------------------------------------
-%
-%\section{4 ploskve}
-%
-%ko imamo enkrat pogoje med dvema ploskvama, problem med večimi ploskvami okrog 
-%skupnega vozlišča, problem zapolnjevanja poligonskih lukenj
-%
-%problem okrog vozlišča je odvisen od števila ploskev, sodo/liho število ploskev 
-%(kaj je če je liho in kaj če sodo?) (dokaz tega?)
-%
-%4 ploskve, po 2 imata skupno robno krivuljo, dotikajo se v skupnem vozlišču V, 
-%dodatni kompatibilnostni pogoji v vozlišču V
-%
-%ploskve $\ddd{R}^{(1)}$, $\ddd{R}^{(2)}$, $\ddd{R}^{(3)}$, $\ddd{R}^{(4)}$, 
-%$\ddd{C}^{(1)}=\ddd{R}^{(1)}(1,v)=\ddd{R}^{(2)}(0,v)$, 
-%$\ddd{C}^{(2)}=\ddd{R}^{(2)}(u,1)=\ddd{R}^{(3)}(u,0)$
-%$\ddd{C}^{(3)}=\ddd{R}^{(3)}(1,v)=\ddd{R}^{(2)}(0,v)$
-%
-%iz izreka 1
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+V primeru, da je $\det(B)=0$ in velja zveza \eqref{eq60}, torej dobimo eno prostostno 
+stopnjo več kot v primeru, da je $\det(B)\neq 0$. Sistem \eqref{eq57} mešanih 
+parcialnih odvodov $\ddd{P}_i$, $i=1,\ldots,N$, ne določa enolično. Eden izmed mešanih 
+parcialnih odvodov je prost, ostali pa so določeni z njim. Ta dodatna prostostna stopnja 
+omogoča konstrukcijo $G^1$-zveznih ploskev posebnih oblik, kot je na primer 
+"opičje sedlo". \todo{? slika.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

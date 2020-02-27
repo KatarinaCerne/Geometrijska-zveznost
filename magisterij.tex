@@ -2691,7 +2691,6 @@ za $i=1,\ldots, N-1$ ter
   \alpha_i(v_N)\frac{\partial}{\partial u_1}\ddd{X}_1(u_1,0)+
   \beta_i(v_N)\frac{\partial}{\partial v_1}\ddd{X}_1(u_1,0).
 \end{align}
-
 V točki $\ddd{P}$ mora torej veljati 
 \begin{align}\label{eq54}
   \frac{\partial}{\partial u_i}\ddd{X}_i(0,0)=
@@ -2705,8 +2704,10 @@ za $i=1,\ldots, N-1$ ter
   \beta_i(v_N)\frac{\partial}{\partial v_1}\ddd{X}_1(0,0).
 \end{align}
 
-Enačbi \eqref{eq54} in \eqref{eq55} nam data prvi sklop pogojev, ki morajo veljati 
-za ploskve $\ddd{X}_i$ in njihove \todo{junction} funkcije. Te pogoje si oglejmo 
+Enačbi \eqref{eq54} in \eqref{eq55} nam data prvi sklop kompatibilnostnih pogojev, 
+ki morajo veljati 
+za ploskve $\ddd{X}_i$ in njihove \todo{junction} funkcije v točki $\ddd{P}$. 
+Te pogoje si oglejmo 
 na primeru Bézierjevih ploskev iz tenzorskega produkta. Naj bodo ploskve $\ddd{X}_i$ 
 stopnje $(n,n)$ in naj bodo definirane kot 
 
@@ -2724,10 +2725,34 @@ pa naj bodo linearni polinomi oblike
 $$\beta_i(v_i)=b_i(1-v_i)+c_iv_i.$$
 V poglavju \todo{sklic} smo izpeljali, da mora v tem primeru, da dosežemo 
 $G^1$-zveznost med ploskvama $\ddd{X}_i$ in $\ddd{X}_{i+1}$ 
-za kontrolne točke veljati zveza 
+za notranje kontrolne točke veljati zveza 
+\todo{zveza}, 
+na robovih pa velja 
+\todo{zveza}. 
+Izmed enačb \todo{sklic} nam tiste, v katerih se točka $\ddd{P}$ ne pojavi, ne 
+prinesejo nobenih dodatnih pogojev, obravnavamo jih enako kot v poglavju \todo{sklic}. 
+Pogoje, ki jih dobimo iz \todo{sklic}, 
+bomo v nadaljevanju izpeljali na nekoliko drugačen način. Sedaj najprej analizirajmo 
+enačbe \todo{sklic}. 
+\todo{??}Če predpostavljamo, da so konstante \todo{konstante} vnaprej določene, lahko prosto izberemo 
+točke $\ddd{P}$ in \todo{točke}, edini pogoj je, da morajo ležati v isti tangentni ravnini. 
+\todo{??} 
+Predpostavljajmo, da imamo vnaprej določene točke $\ddd{P}$ in \todo{točki za 1,2}. Enačbe 
+\todo{sklic} nam določajo preostale konstrolne točke \todo{točke}, vse kontrolne vektorje 
+\todo{vektor} lahko izrazimo kot linearno kombinacijo vektorjev \todo{vektor1} in 
+\todo{vektor2}. Ko s pomočjo enačb \todo{2 do N-1} izrazimo z vektorjema \todo{vektorja} 
+vse preostale vektorje \todo{vektorji} in vektor \todo{za N} vstavmi v enačbi \todo{za N in 1}, 
+dobimo pogoja oblike \todo{2 pogoja}, kjer so $F_1$, $F_2$, $G_1$ in $G_2$ multilinearne funkcije 
+konstant \todo{vse konstante}. Za $G^1$-zveznost v točki $\ddd{P}$ morajo zato za konstante 
+\todo{vse konstante} veljati pogoji \todo{pogoji za F,G=1}. 
+Oglejmo si malo bolj konkretno, kako so videti pogoji \todo{sklic} v primeru, ko je $N=3$. 
+\todo{primer}
 
 ...
 
+Sedaj si oglejmo še drugi sklop kompatibilnostnih pogojev v točki $\ddd{P}$. Ti nam bodo 
+določali pogoje za mešane odvode ploskev oziroma, v primeru Bézierovih ploskev iz tenzorskega 
+produkta, za točke \todo{točke}.  
 Če enačbi \eqref{eq52} in \eqref{eq53} odvajamo še po $v_i=u_i+1$, in ju evalviramo v $v_i=u_i+1=0$, dobimo 
 \begin{equation}\label{eq56}
 \begin{split}
@@ -2735,16 +2760,17 @@ za kontrolne točke veljati zveza
 \alpha_i(0)\frac{\partial^2}{\partial u_{i+1}^2}\ddd{X}_(0,0) + 
 \alpha_i'(0)\frac{\partial}{\partial u_{i+1}}\ddd{X}_{i+1}(0,0) +\\ 
 &+\beta_i(0)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(0,0) + 
-\beta_i'(0)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(0,0)
+\beta_i'(0)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(0,0).
 \end{split}
 \end{equation}
 
+Vpeljimo oznaki 
 $$\ddd{P}_i = \frac{\partial^2}{\partial u_i \partial v_i}\ddd{X}_i(0,0)$$
-
+in 
 $$\ddd{R}_i=\alpha_i(0)\frac{\partial^2}{\partial u_{i+1}^2}+
 \alpha_i'(0)\frac{\partial}{\partial u_{i+1}}\ddd{X}_{i+1}(0,0)+
 \beta_i'(0)\frac{\partial}{\partial v_{i+1}}\ddd{X}_{i+1}(0,0)$$
-
+ter zapišimo enačbo \eqref{eq56} v matrični obliki. Naj bo matrika $B$ definirana kot 
 $$B = 
 \begin{bmatrix}
 1 & -\beta_1(0) & 0 & 0 & \cdots & 0\\
@@ -2752,9 +2778,11 @@ $$B =
 \vdots & & \ddots & \ddots  &  & \vdots\\
 0 & \cdots & & 0 & 1 & -\beta_{N-1}(0)\\
 -\beta_N(0) & 0 & \cdots & 0 & 0 & 1
-\end{bmatrix}
+\end{bmatrix}.
 $$
-$$B
+Potem lahko enačbo \eqref{eq56} zapišemo kot
+\begin{equation}\label{eq57}
+B
 \begin{bmatrix}
 \ddd{P}_1\\
 \ddd{P}_2\\
@@ -2766,8 +2794,10 @@ $$B
 \ddd{R}_2\\
 \vdots\\
 \ddd{R}_N
-\end{bmatrix}
-$$
+\end{bmatrix}.
+\end{equation}
+
+
 
 $$B_1 = 
 \begin{bmatrix}

@@ -2144,7 +2144,7 @@ oziroma kontrolne točke $\ddd{Q}_{i,j}$, $i=0,1,2$, $j=0,\ldots,5$.
 
 \todo{drugi možen pristop? če nista prosta p1m in p2m ampak projekcija enega od vektorjev?}
 
-\section{Konsrtrukcija $G^1$-zveznih trikotnih Bézierjevih ploskev}
+\section{Konstrukcija $G^1$-zveznih trikotnih Bézierjevih ploskev}
 
 \subsection{Trikotne Bézierjeve ploskve}\label{trikotne1}
 
@@ -2725,30 +2725,76 @@ ter $\ddd{x}_{0,j}^{(N)}=\ddd{x}_{j,0}^{(1)}$ za $j=0,\ldots,n$.
 Naj bodo \todo{junction} funkcije $\alpha_i(v_i)$ konstantne, torej naj bo 
 $\alpha_i(v_i)\equiv a_i$, funkcije $\beta_i(v_i)$ 
 pa naj bodo linearni polinomi oblike 
-$$\beta_i(v_i)=b_i(1-v_i)+c_iv_i.$$
-V poglavju \todo{sklic} smo izpeljali, da mora v tem primeru, da dosežemo 
+$$\beta_i(v_i)=b_i(1-v_i)+c_iv_i.$$ 
+Vpeljimo oznake $\alpha_{i,0}=\alpha_i(0)$, $\alpha_{i,1}=\alpha_i(1)$, 
+$\beta_{i,0}=\beta_i(0)$ in $\beta_{i,1}=\beta_i(1)$. 
+V poglavju \ref{g1primeri} smo izpeljali, da mora v tem primeru, da dosežemo 
 $G^1$-zveznost med ploskvama $\ddd{X}_i$ in $\ddd{X}_{i+1}$ 
-za notranje kontrolne točke veljati zveza 
-\todo{zveza}, 
-na robovih pa velja 
-\todo{zveza}. 
-Izmed enačb \todo{sklic} nam tiste, v katerih se točka $\ddd{P}$ ne pojavi, ne 
-prinesejo nobenih dodatnih pogojev, obravnavamo jih enako kot v poglavju \todo{sklic}. 
-Pogoje, ki jih dobimo iz \todo{sklic}, 
+pri $v_i=u_{i+1}=0$ veljati 
+\begin{align}\label{eq61}
+\ddd{x}_{1,0}^{(i)}-\ddd{P}=\alpha_{i,0}(\ddd{x}_{0,1}^{(i+1)}-\ddd{P})+
+\beta_{i,0}(\ddd{x}_{1,0}^{(i+1)}-\ddd{P})
+\end{align}
+za $i=1,\ldots,N-1$ in 
+\begin{align}\label{eq62}
+  \ddd{x}_{1,0}^{(N)}-\ddd{P}=\alpha_{i,0}(\ddd{x}_{0,1}^{(1)}-\ddd{P})+
+  \beta_{i,0}(\ddd{x}_{1,0}^{(1)}-\ddd{P}),
+\end{align}
+pri $v_i=u_{i+1}=1$ mora biti 
+\begin{align}\label{eq63}
+  \ddd{x}_{1,n}^{(i)}-\ddd{x}_{0,n}^{(i)}=\alpha_{i,0}(\ddd{x}_{n,1}^{(i+1)}-\ddd{x}_{n,0}^{(i+1)})+
+  \beta_{i,0}(\ddd{x}_{n,0}^{(i+1)}-\ddd{x}_{n-1,0}^{(i+1)})
+\end{align}
+  za $i=1,\ldots,N-1$ in 
+\begin{align}\label{eq64}
+  \ddd{x}_{1,n}^{(N)}-\ddd{x}_{0,n}^{(N)}=\alpha_{i,0}(\ddd{x}_{n,1}^{(1)}-\ddd{x}_{n,0}^{(1)})+
+  \beta_{i,0}(\ddd{x}_{n,0}^{(1)}-\ddd{x}_{n-1,0}^{(1)}),
+\end{align}
+med preostalimi kontrolnimi točkami pa mora veljati zveza 
+\begin{align}\label{eq65}
+\todo{formula}
+\end{align}
+
+Izmed enačb \eqref{eq61}-\eqref{eq65} nam tiste, v katerih se točka $\ddd{P}$ ne pojavi, ne 
+prinesejo nobenih dodatnih pogojev, obravnavamo jih enako kot v poglavju \ref{g1primeri}. 
+Pogoje, ki jih dobimo iz enačb \eqref{eq65} pri \todo{vrednost}, 
 bomo v nadaljevanju izpeljali na nekoliko drugačen način. Sedaj najprej analizirajmo 
-enačbe \todo{sklic}. 
-\todo{??}Če predpostavljamo, da so konstante \todo{konstante} vnaprej določene, lahko prosto izberemo 
-točke $\ddd{P}$ in \todo{točke}, edini pogoj je, da morajo ležati v isti tangentni ravnini. 
-\todo{??} 
-Predpostavljajmo, da imamo vnaprej določene točke $\ddd{P}$ in \todo{točki za 1,2}. Enačbe 
-\todo{sklic} nam določajo preostale konstrolne točke \todo{točke}, vse kontrolne vektorje 
-\todo{vektor} lahko izrazimo kot linearno kombinacijo vektorjev \todo{vektor1} in 
-\todo{vektor2}. Ko s pomočjo enačb \todo{2 do N-1} izrazimo z vektorjema \todo{vektorja} 
-vse preostale vektorje \todo{vektorji} in vektor \todo{za N} vstavmi v enačbi \todo{za N in 1}, 
-dobimo pogoja oblike \todo{2 pogoja}, kjer so $F_1$, $F_2$, $G_1$ in $G_2$ multilinearne funkcije 
-konstant \todo{vse konstante}. Za $G^1$-zveznost v točki $\ddd{P}$ morajo zato za konstante 
-\todo{vse konstante} veljati pogoji \todo{pogoji za F,G=1}. 
-Oglejmo si malo bolj konkretno, kako so videti pogoji \todo{sklic} v primeru, ko je $N=3$. 
+sistem enačb v \eqref{eq61} in \eqref{eq62}. 
+%\todo{??}Če predpostavljamo, da so konstante \todo{konstante} vnaprej določene, lahko prosto izberemo 
+%točke $\ddd{P}$ in \todo{točke}, edini pogoj je, da morajo ležati v isti tangentni ravnini. 
+%\todo{??} 
+Predpostavljajmo, da imamo vnaprej določene točke $\ddd{P}$ in dve izmed točk 
+$\ddd{x}_{1,0}^{(i)}=\ddd{x}_{0,1}^{(i+1)}$, $i=1,\ldots,N$, na primer točki $\ddd{x}_{1,0}^{(1)}$ in 
+$\ddd{x}_{1,0}^{(2)}$. Enačbe v 
+\eqref{eq61} in \eqref{eq62} nam določajo preostale konstrolne točke 
+$\ddd{x}_{1,0}^{(i)}$, $i=3,\ldots,N$, vse kontrolne vektorje 
+$(\ddd{x}_{1,0}^{(i)}-\ddd{P})$, $i=3,\ldots,N$ lahko izrazimo kot linearno kombinacijo vektorjev 
+$(\ddd{x}_{1,0}^{(1)}-\ddd{P})$ in $(\ddd{x}_{1,0}^{(2)}-\ddd{P})$. 
+Ko s pomočjo enačb \eqref{eq61}, $i=2,\ldots,N-1$, izrazimo z vektorjema 
+$(\ddd{x}_{1,0}^{(1)}-\ddd{P})$ in $(\ddd{x}_{1,0}^{(2)}-\ddd{P})$  
+vse preostale vektorje $\ddd{x}_{1,0}^{(i)}$, $i=3,\ldots,N$, in vektor 
+$\ddd{x}_{1,0}^{(N)}$ vstavmo v enačbi \eqref{eq61} za $i=1$ in \eqref{eq62}, 
+dobimo pogoja oblike 
+\begin{align*}
+(\ddd{x}_{1,0}^{(1)}-\ddd{P})&=
+F_1(\alpha_{1,0},\beta_{1,0},\ldots,\alpha_{N,0},\beta_{N,0})(\ddd{x}_{1,0}^{(1)}-\ddd{P})+\\
+&+G_1(\alpha_{1,0},\beta_{1,0},\ldots,\alpha_{N,0},\beta_{N,0})(\ddd{x}_{1,0}^{(2)}-\ddd{P}),
+\end{align*}
+\begin{align*}
+(\ddd{x}_{1,0}^{(2)}-\ddd{P})&=
+F_2(\alpha_{1,0},\beta_{1,0},\ldots,\alpha_{N,0},\beta_{N,0})(\ddd{x}_{1,0}^{(1)}-\ddd{P})+\\
+&+G_2(\alpha_{1,0},\beta_{1,0},\ldots,\alpha_{N,0},\beta_{N,0})(\ddd{x}_{1,0}^{(2)}-\ddd{P}),
+\end{align*}
+kjer so $F_1$, $F_2$, $G_1$ in $G_2$ multilinearne funkcije 
+konstant $\alpha_{i,0}$ in $\beta_{i,0}$, $i=1,\ldots,N$. Za $G^1$-zveznost v točki $\ddd{P}$ 
+morajo zato za konstante veljati pogoji 
+\begin{align*}
+&F_1(\alpha_{1,0},\beta_{1,0},\ldots,\alpha_{N,0},\beta_{N,0})=1\\
+&G_1(\alpha_{1,0},\beta_{1,0},\ldots,\alpha_{N,0},\beta_{N,0})=0\\
+&F_2(\alpha_{1,0},\beta_{1,0},\ldots,\alpha_{N,0},\beta_{N,0})=0\\
+&G_2(\alpha_{1,0},\beta_{1,0},\ldots,\alpha_{N,0},\beta_{N,0})=1.
+\end{align*} 
+Oglejmo si malo bolj konkretno, kako so videti ti pogoji v primeru, ko je $N=3$. 
 \todo{primer}
 
 ...

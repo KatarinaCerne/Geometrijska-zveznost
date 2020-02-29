@@ -2768,9 +2768,14 @@ sistem enačb v \eqref{eq61} in \eqref{eq62}.
 %\todo{??} 
 Predpostavljajmo, da imamo vnaprej določeno točko $\ddd{P}$ in dve izmed točk 
 $\ddd{x}_{1,0}^{(i)}=\ddd{x}_{0,1}^{(i+1)}$, $i=1,\ldots,N$, na primer točki $\ddd{x}_{1,0}^{(1)}$ in 
-$\ddd{x}_{1,0}^{(2)}$. Enačbe v 
-\eqref{eq61} in \eqref{eq62} nam določajo preostale kontrolne točke 
-$\ddd{x}_{1,0}^{(i)}$, $i=3,\ldots,N$. Vse kontrolne vektorje 
+$\ddd{x}_{1,0}^{(2)}$. 
+Preostale kontrolne točke 
+$\ddd{x}_{1,0}^{(i)}$, $i=3,\ldots,N$ so določene z enačbami \eqref{eq61} in \eqref{eq62} 
+ter vrednostmi $\alpha_{i,0}$ in $\beta_{i,0}$, $i=1,\ldots,N$. Pri tem pa izbira 
+vrednosti $\alpha_{i,0}$ in $\beta_{i,0}$, $i=1,\ldots,N$, ni svobodna. Oglejmo si, 
+kakšni pogoji veljajo zanje. 
+
+Vse kontrolne vektorje 
 $(\ddd{x}_{1,0}^{(i)}-\ddd{P})$, $i=3,\ldots,N$ lahko izrazimo kot linearno kombinacijo vektorjev 
 $(\ddd{x}_{1,0}^{(1)}-\ddd{P})$ in $(\ddd{x}_{1,0}^{(2)}-\ddd{P})$ s pomočjo 
 enačb \eqref{eq61}, $i=1,\ldots,N-2$. Iz enačbe v \eqref{eq61} pri $i=1$ na primer 
@@ -2832,7 +2837,12 @@ Iz enačb \eqref{eq61} in \eqref{eq62} sledi, da za kontrolne točke ploskev vel
 \end{split}
 \end{equation}
 Upoštevajmo še, da zaradi stikanja ploskev velja $\ddd{x}_{0,1}^{(1)}=\ddd{x}_{1,0}^{(2)}$, 
-$\ddd{x}_{0,1}^{(2)}=\ddd{x}_{1,0}^{(3)}$ in $\ddd{x}_{0,1}^{(3)}=\ddd{x}_{1,0}^{(1)}$. 
+$\ddd{x}_{0,1}^{(2)}=\ddd{x}_{1,0}^{(3)}$ in $\ddd{x}_{0,1}^{(3)}=\ddd{x}_{1,0}^{(1)}$.
+
+Kot prej predpostavimo, da so točke $\ddd{P}$, $\ddd{x}_{1,0}^{(1)}$ in 
+$\ddd{x}_{1,0}^{(2)}$ v naprej predpisane, točka $\ddd{x}_{1,0}^{(3)}$ pa je določena 
+z njimi ter z vrednostmi $\alpha_{i,0}$ in $\beta_{i,0}$, $i=1,2,3$. Ogledali si bomo 
+kakšni pogoji morajo v tem primeru veljati za $\alpha_{i,0}$ in $\beta_{i,0}$, $i=1,2,3$.
 
 Iz prve enačbe v \eqref{eq66} izrazimo vektor 
 $(\ddd{x}_{0,1}^{(2)}-\ddd{P})=(\ddd{x}_{1,0}^{(3)}-\ddd{P})$:
@@ -2843,21 +2853,61 @@ $(\ddd{x}_{0,1}^{(2)}-\ddd{P})=(\ddd{x}_{1,0}^{(3)}-\ddd{P})$:
 Iz druge in tretje enačbe izrazimo vektorja 
 $\ddd{x}_{0,1}^{(3)}-\ddd{P}=\ddd{x}_{1,0}^{(1)}-\ddd{P}$ in 
 $\ddd{x}_{0,1}^{(1)}-\ddd{P}=\ddd{x}_{1,0}^{(2)}-\ddd{P}$: 
-\begin{align*}
+\begin{equation}\label{eq69}
+  \begin{split}
   \ddd{x}_{1,0}^{(1)}-\ddd{P}&=\frac{1}{\alpha_{2,0}}(\ddd{x}_{1,0}^{(2)}-\ddd{P})-
   \frac{\beta_{2,0}}{\alpha_{2,0}}(\ddd{x}_{1,0}^{(3)}-\ddd{P})=\\
   &=\frac{1}{\alpha_{2,0}}(\ddd{x}_{1,0}^{(2)}-\ddd{P})-
   \frac{\beta_{2,0}}{\alpha_{2,0}}(\frac{1}{\alpha_{1,0}}(\ddd{x}_{1,0}^{(1)}-\ddd{P})-
-  \frac{\beta_{1,0}}{\alpha_{1,0}}(\ddd{x}_{1,0}^{(2)}-\ddd{P}))
-\end{align*}
-\begin{align*}
+  \frac{\beta_{1,0}}{\alpha_{1,0}}(\ddd{x}_{1,0}^{(2)}-\ddd{P})),
+  \end{split}
+\end{equation}
+\begin{equation}\label{eq70}
+  \begin{split}
   \ddd{x}_{1,0}^{(2)}-\ddd{P}&=\frac{1}{\alpha_{3,0}}(\ddd{x}_{1,0}^{(3)}-\ddd{P})-
   \frac{\beta_{3,0}}{\alpha_{3,0}}(\ddd{x}_{1,0}^{(1)}-\ddd{P})=\\
   &=\frac{1}{\alpha_{3,0}}
   (\frac{1}{\alpha_{1,0}}(\ddd{x}_{1,0}^{(1)}-\ddd{P})-
   \frac{\beta_{1,0}}{\alpha_{1,0}}(\ddd{x}_{1,0}^{(2)}-\ddd{P}))-
-  \frac{\beta_{3,0}}{\alpha_{3,0}}(\ddd{x}_{1,0}^{(1)}-\ddd{P})
+  \frac{\beta_{3,0}}{\alpha_{3,0}}(\ddd{x}_{1,0}^{(1)}-\ddd{P}).
+  \end{split}
+\end{equation}
+
+Enačbi \eqref{eq69} in \eqref{eq70} sta oblike 
+\begin{align*}
+  (\ddd{x}_{1,0}^{(1)}-\ddd{P})&=
+  F_1(\alpha_{1,0},\beta_{1,0},\alpha_{2,0},\beta_{2,0},\alpha_{3,0},\beta_{3,0})
+  (\ddd{x}_{1,0}^{(1)}-\ddd{P})+\\
+  &+G_1(\alpha_{1,0},\beta_{1,0},\alpha_{2,0},\beta_{2,0},\alpha_{3,0},\beta_{3,0})
+  (\ddd{x}_{1,0}^{(2)}-\ddd{P}),
 \end{align*}
+\begin{align*}
+  (\ddd{x}_{1,0}^{(2)}-\ddd{P})&=
+  F_2(\alpha_{1,0},\beta_{1,0},\alpha_{2,0},\beta_{2,0},\alpha_{3,0},\beta_{3,0})
+  (\ddd{x}_{1,0}^{(1)}-\ddd{P})+\\
+  &+G_2(\alpha_{1,0},\beta_{1,0},\alpha_{2,0},\beta_{2,0},\alpha_{3,0},\beta_{3,0})
+  (\ddd{x}_{1,0}^{(2)}-\ddd{P}),
+\end{align*}
+kjer se funkcije $F_1$, $G_1$, $F_2$ in $G_2$ izražajo kot 
+\begin{align*}
+  &F_1(\alpha_{1,0},\beta_{1,0},\alpha_{2,0},\beta_{2,0},\alpha_{3,0},\beta_{3,0})=
+  -\frac{\beta_{2,0}}{\alpha_{2,0}\alpha_{1,0}}\\
+  &G_1(\alpha_{1,0},\beta_{1,0},\alpha_{2,0},\beta_{2,0},\alpha_{3,0},\beta_{3,0})=
+  \frac{1}{\alpha_{2,0}}+\frac{\beta_{2,0}\beta_{1,0}}{\alpha_{2,0}\alpha_{1,0}}\\
+  &F_2(\alpha_{1,0},\beta_{1,0},\alpha_{2,0},\beta_{2,0},\alpha_{3,0},\beta_{3,0})=
+  \frac{1}{\alpha_{3,0}\alpha_{1,0}}-\frac{\beta_{3,0}}{\alpha_{3,0}}\\
+  &G_2(\alpha_{1,0},\beta_{1,0},\alpha_{2,0},\beta_{2,0},\alpha_{3,0},\beta_{3,0})=
+  -\frac{\beta_{1,0}}{\alpha_{1,0}\alpha_{3,0}}.
+\end{align*}
+Od tod dobimo pogoje, ki morajo veljati za \todo{junction} funkcije $\alpha_i(v_i)$ 
+in $\beta_i(v_i)$, $i=1,2,3$:
+\begin{align*}
+-\frac{\beta_{2,0}}{\alpha_{2,0}\alpha_{1,0}}=1 && 
+\frac{1}{\alpha_{3,0}\alpha_{1,0}}-\frac{\beta_{3,0}}{\alpha_{3,0}}=0\\
+\frac{1}{\alpha_{2,0}}+\frac{\beta_{2,0}\beta_{1,0}}{\alpha_{2,0}\alpha_{1,0}}=0 &&
+-\frac{\beta_{1,0}}{\alpha_{1,0}\alpha_{3,0}}=1.
+\end{align*}
+
 \end{primer}
 
 Sedaj si oglejmo še drugi sklop kompatibilnostnih pogojev v točki $\ddd{P}$. Ti nam bodo 

@@ -2723,11 +2723,14 @@ velja $\ddd{x}_{0,j}^{(i)}=\ddd{x}_{j,0}^{(i+1)}$ za $j=0,\ldots,n$ in $i=1,\ldo
 ter $\ddd{x}_{0,j}^{(N)}=\ddd{x}_{j,0}^{(1)}$ za $j=0,\ldots,n$. 
 
 Naj bodo \todo{junction} funkcije $\alpha_i(v_i)$ konstantne, torej naj bo 
-$\alpha_i(v_i)\equiv a_i$, funkcije $\beta_i(v_i)$ 
-pa naj bodo linearni polinomi oblike 
-$$\beta_i(v_i)=b_i(1-v_i)+c_iv_i.$$ 
-Vpeljimo oznake $\alpha_{i,0}=\alpha_i(0)$, $\alpha_{i,1}=\alpha_i(1)$, 
-$\beta_{i,0}=\beta_i(0)$ in $\beta_{i,1}=\beta_i(1)$. 
+\begin{align}\label{eq67}
+\alpha_i(v_i)\equiv \alpha_{i,0}, 
+\end{align}
+funkcije $\beta_i(v_i)$ pa naj bodo linearni polinomi oblike 
+\begin{align}\label{eq68}
+\beta_i(v_i)=\beta_{i,0}(1-v_i)+\beta_{1,0}v_i.
+\end{align}
+
 V poglavju \ref{g1primeri} smo izpeljali, da mora v tem primeru, da dosežemo 
 $G^1$-zveznost med ploskvama $\ddd{X}_i$ in $\ddd{X}_{i+1}$ 
 pri $v_i=u_{i+1}=0$ veljati 
@@ -2743,12 +2746,12 @@ za $i=1,\ldots,N-1$ in
 pri $v_i=u_{i+1}=1$ mora biti 
 \begin{align}\label{eq63}
   \ddd{x}_{1,n}^{(i)}-\ddd{x}_{0,n}^{(i)}=\alpha_{i,0}(\ddd{x}_{n,1}^{(i+1)}-\ddd{x}_{n,0}^{(i+1)})+
-  \beta_{i,0}(\ddd{x}_{n,0}^{(i+1)}-\ddd{x}_{n-1,0}^{(i+1)})
+  \beta_{i,1}(\ddd{x}_{n,0}^{(i+1)}-\ddd{x}_{n-1,0}^{(i+1)})
 \end{align}
   za $i=1,\ldots,N-1$ in 
 \begin{align}\label{eq64}
   \ddd{x}_{1,n}^{(N)}-\ddd{x}_{0,n}^{(N)}=\alpha_{i,0}(\ddd{x}_{n,1}^{(1)}-\ddd{x}_{n,0}^{(1)})+
-  \beta_{i,0}(\ddd{x}_{n,0}^{(1)}-\ddd{x}_{n-1,0}^{(1)}),
+  \beta_{i,1}(\ddd{x}_{n,0}^{(1)}-\ddd{x}_{n-1,0}^{(1)}),
 \end{align}
 med preostalimi kontrolnimi točkami pa mora veljati zveza 
 \begin{align}\label{eq65}
@@ -2763,18 +2766,30 @@ sistem enačb v \eqref{eq61} in \eqref{eq62}.
 %\todo{??}Če predpostavljamo, da so konstante \todo{konstante} vnaprej določene, lahko prosto izberemo 
 %točke $\ddd{P}$ in \todo{točke}, edini pogoj je, da morajo ležati v isti tangentni ravnini. 
 %\todo{??} 
-Predpostavljajmo, da imamo vnaprej določene točke $\ddd{P}$ in dve izmed točk 
+Predpostavljajmo, da imamo vnaprej določeno točko $\ddd{P}$ in dve izmed točk 
 $\ddd{x}_{1,0}^{(i)}=\ddd{x}_{0,1}^{(i+1)}$, $i=1,\ldots,N$, na primer točki $\ddd{x}_{1,0}^{(1)}$ in 
 $\ddd{x}_{1,0}^{(2)}$. Enačbe v 
-\eqref{eq61} in \eqref{eq62} nam določajo preostale konstrolne točke 
-$\ddd{x}_{1,0}^{(i)}$, $i=3,\ldots,N$, vse kontrolne vektorje 
+\eqref{eq61} in \eqref{eq62} nam določajo preostale kontrolne točke 
+$\ddd{x}_{1,0}^{(i)}$, $i=3,\ldots,N$. Vse kontrolne vektorje 
 $(\ddd{x}_{1,0}^{(i)}-\ddd{P})$, $i=3,\ldots,N$ lahko izrazimo kot linearno kombinacijo vektorjev 
-$(\ddd{x}_{1,0}^{(1)}-\ddd{P})$ in $(\ddd{x}_{1,0}^{(2)}-\ddd{P})$. 
-Ko s pomočjo enačb \eqref{eq61}, $i=2,\ldots,N-1$, izrazimo z vektorjema 
-$(\ddd{x}_{1,0}^{(1)}-\ddd{P})$ in $(\ddd{x}_{1,0}^{(2)}-\ddd{P})$  
-vse preostale vektorje $\ddd{x}_{1,0}^{(i)}$, $i=3,\ldots,N$, in vektor 
-$\ddd{x}_{1,0}^{(N)}$ vstavmo v enačbi \eqref{eq61} za $i=1$ in \eqref{eq62}, 
-dobimo pogoja oblike 
+$(\ddd{x}_{1,0}^{(1)}-\ddd{P})$ in $(\ddd{x}_{1,0}^{(2)}-\ddd{P})$ s pomočjo 
+enačb \eqref{eq61}, $i=1,\ldots,N-2$. Iz enačbe v \eqref{eq61} pri $i=1$ na primer 
+izrazimo vektor $\ddd{x}_{1,0}^{(3)}-\ddd{P}$ kot 
+$$\ddd{x}_{1,0}^{(3)}-\ddd{P}=\frac{1}{\alpha_{1,0}}(\ddd{x}_{1,0}^{(1)}-\ddd{P})-
+\frac{\beta_{1,0}}{\alpha_{1,0}}(\ddd{x}_{1,0}^{(2)}-\ddd{P}).$$
+Iz enačbe pri $i=2$ nato izrazimo vektor $\ddd{x}_{1,0}^{(4)}-\ddd{P}$ kot
+\begin{align*} 
+\ddd{x}_{1,0}^{(4)}-\ddd{P}&=\frac{1}{\alpha_{2,0}}(\ddd{x}_{1,0}^{(2)}-\ddd{P})-
+\frac{\beta_{2,0}}{\alpha_{2,0}}(\ddd{x}_{1,0}^{(3)}-\ddd{P})=\\
+&=\frac{1}{\alpha_{2,0}}(\ddd{x}_{1,0}^{(2)}-\ddd{P})-
+\frac{\beta_{2,0}}{\alpha_{2,0}}((\frac{1}{\alpha_{1,0}}(\ddd{x}_{1,0}^{(1)}-\ddd{P})-
+\frac{\beta_{1,0}}{\alpha_{1,0}}(\ddd{x}_{1,0}^{(2)}-\ddd{P}))-\ddd{P}).
+\end{align*}
+Postopek nadaljujemo za preostale vektorje $\ddd{x}_{1,0}^{(i)}$, $i=5,\ldots,N$. 
+Iz enačbe v \eqref{eq61} pri $i=N-1$ nato na enak način izrazimo vektor 
+$\ddd{x}_{1,0}^{(1)}-\ddd{P}$ iz enačbe \eqref{eq62} pa vektor $\ddd{x}_{1,0}^{(2)}-\ddd{P}$ 
+kot linearno kombinacijo vektorjev $\ddd{x}_{1,0}^{(1)}-\ddd{P}$ in $\ddd{x}_{1,0}^{(2)}-\ddd{P}$. 
+Od tod dobimo pogoja oblike 
 \begin{align*}
 (\ddd{x}_{1,0}^{(1)}-\ddd{P})&=
 F_1(\alpha_{1,0},\beta_{1,0},\ldots,\alpha_{N,0},\beta_{N,0})(\ddd{x}_{1,0}^{(1)}-\ddd{P})+\\
@@ -2794,15 +2809,61 @@ morajo zato za konstante veljati pogoji
 &F_2(\alpha_{1,0},\beta_{1,0},\ldots,\alpha_{N,0},\beta_{N,0})=0\\
 &G_2(\alpha_{1,0},\beta_{1,0},\ldots,\alpha_{N,0},\beta_{N,0})=1.
 \end{align*} 
-Oglejmo si malo bolj konkretno, kako so videti ti pogoji v primeru, ko je $N=3$. 
-\todo{primer}
 
-...
+Oglejmo si malo bolj konkretno, kako so videti ti pogoji v primeru, ko je $N=3$. 
+\begin{primer}\label{konk}
+Imejmo ploskve $\ddd{X}_1$, $\ddd{X}_2$ in $\ddd{X}_3$, definirane kot v \eqref{eq58}, 
+ki se stikajo v krivuljah 
+$$\ddd{K}_i(v_i)=\ddd{X}_i(0,v_i)=\ddd{X}_{i+1}(u_{i+1},0),$$
+kjer je $i=1,2$, oziroma v 
+$$\ddd{K}_3(v_3)=\ddd{X}_3(0,v_3)=\ddd{X}_{1}(u_{1},0).$$
+
+Naj bodo \todo{junction} funkcije $\alpha_i(v_i)$ in $\beta_i(v_i)$, $i=1,2,3$, 
+definirane kot v \eqref{eq67} oziroma \eqref{eq68}. 
+Iz enačb \eqref{eq61} in \eqref{eq62} sledi, da za kontrolne točke ploskev velja
+\begin{equation}\label{eq66}
+\begin{split}
+  &\ddd{x}_{1,0}^{(1)}-\ddd{P}=\alpha_{1,0}(\ddd{x}_{0,1}^{(2)}-\ddd{P})+
+  \beta_{1,0}(\ddd{x}_{1,0}^{(2)}-\ddd{P})\\
+  &\ddd{x}_{1,0}^{(2)}-\ddd{P}=\alpha_{2,0}(\ddd{x}_{0,1}^{(3)}-\ddd{P})+
+  \beta_{2,0}(\ddd{x}_{1,0}^{(3)}-\ddd{P})\\
+  &\ddd{x}_{1,0}^{(3)}-\ddd{P}=\alpha_{3,0}(\ddd{x}_{0,1}^{(1)}-\ddd{P})+
+  \beta_{3,0}(\ddd{x}_{1,0}^{(1)}-\ddd{P})\\
+\end{split}
+\end{equation}
+Upoštevajmo še, da zaradi stikanja ploskev velja $\ddd{x}_{0,1}^{(1)}=\ddd{x}_{1,0}^{(2)}$, 
+$\ddd{x}_{0,1}^{(2)}=\ddd{x}_{1,0}^{(3)}$ in $\ddd{x}_{0,1}^{(3)}=\ddd{x}_{1,0}^{(1)}$. 
+
+Iz prve enačbe v \eqref{eq66} izrazimo vektor 
+$(\ddd{x}_{0,1}^{(2)}-\ddd{P})=(\ddd{x}_{1,0}^{(3)}-\ddd{P})$:
+\begin{align*}
+  \ddd{x}_{1,0}^{(3)}-\ddd{P}=\frac{1}{\alpha_{1,0}}(\ddd{x}_{1,0}^{(1)}-\ddd{P})-
+  \frac{\beta_{1,0}}{\alpha_{1,0}}(\ddd{x}_{1,0}^{(2)}-\ddd{P})
+\end{align*}
+Iz druge in tretje enačbe izrazimo vektorja 
+$\ddd{x}_{0,1}^{(3)}-\ddd{P}=\ddd{x}_{1,0}^{(1)}-\ddd{P}$ in 
+$\ddd{x}_{0,1}^{(1)}-\ddd{P}=\ddd{x}_{1,0}^{(2)}-\ddd{P}$: 
+\begin{align*}
+  \ddd{x}_{1,0}^{(1)}-\ddd{P}&=\frac{1}{\alpha_{2,0}}(\ddd{x}_{1,0}^{(2)}-\ddd{P})-
+  \frac{\beta_{2,0}}{\alpha_{2,0}}(\ddd{x}_{1,0}^{(3)}-\ddd{P})=\\
+  &=\frac{1}{\alpha_{2,0}}(\ddd{x}_{1,0}^{(2)}-\ddd{P})-
+  \frac{\beta_{2,0}}{\alpha_{2,0}}(\frac{1}{\alpha_{1,0}}(\ddd{x}_{1,0}^{(1)}-\ddd{P})-
+  \frac{\beta_{1,0}}{\alpha_{1,0}}(\ddd{x}_{1,0}^{(2)}-\ddd{P}))
+\end{align*}
+\begin{align*}
+  \ddd{x}_{1,0}^{(2)}-\ddd{P}&=\frac{1}{\alpha_{3,0}}(\ddd{x}_{1,0}^{(3)}-\ddd{P})-
+  \frac{\beta_{3,0}}{\alpha_{3,0}}(\ddd{x}_{1,0}^{(1)}-\ddd{P})=\\
+  &=\frac{1}{\alpha_{3,0}}
+  (\frac{1}{\alpha_{1,0}}(\ddd{x}_{1,0}^{(1)}-\ddd{P})-
+  \frac{\beta_{1,0}}{\alpha_{1,0}}(\ddd{x}_{1,0}^{(2)}-\ddd{P}))-
+  \frac{\beta_{3,0}}{\alpha_{3,0}}(\ddd{x}_{1,0}^{(1)}-\ddd{P})
+\end{align*}
+\end{primer}
 
 Sedaj si oglejmo še drugi sklop kompatibilnostnih pogojev v točki $\ddd{P}$. Ti nam bodo 
 določali pogoje za mešane odvode ploskev oziroma, v primeru Bézierovih ploskev iz tenzorskega 
 produkta, za kontrolne točke $\ddd{x}_{1,1}^{(i)}$, $i=1,\ldots,N$.  
-Če enačbi \eqref{eq52} in \eqref{eq53} odvajamo še po $v_i=u_i+1$, in ju evalviramo v $v_i=u_i+1=0$, dobimo 
+Če enačbi \eqref{eq52} in \eqref{eq53} odvajamo še po $v_i=u_{i+1}$, in ju evalviramo v $v_i=u_i+1=0$, dobimo 
 \begin{equation}\label{eq56}
 \begin{split}
 \frac{\partial^2}{\partial u_i\partial v_i}\ddd{X}_i(0,0)=&

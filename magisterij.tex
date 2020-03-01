@@ -1848,71 +1848,116 @@ imamo stik ploskev različnih stopenj}
 %niso proste in je zato v splošnem nemogoče konstruirati bezierjevo ploskev 
 %vnaprej določene stopnje, ki je g zvezna z neko vnaprej določeno bez ploskvijo, 
 %ali kaj?}
-==================================================
-\begin{align*}
-  \ddd{R}(u,v)\sum_{i=0}^{m_R}\sum_{j=0}^{n_R}\ddd{P}_{i,j}B_i^{m_R}(u)B_j^{n_R}(v)
-\end{align*}
-\begin{align*}
-  \ddd{S}(u,v)\sum_{i=0}^{m_S}\sum_{j=0}^{n_S}\ddd{Q}_{i,j}B_i^{m_S}(u)B_j^{n_S}(v)
-\end{align*}
 
-brez škode za splošnost $n_S\geq n_R$
+Za konec tega podpoglavja si oglejmo še posplošitev primera \ref{primer2}. Namesto 
+dveh plsokev stopnje $(3,3)$ obravnavajmo ploskvi poljubnih stopenj.
 
-$$\ddd{C}(v)=\ddd{R}(0,v)=\ddd{S}(1,v)$$
+\begin{primer}\label{primer4}
+Naj bosta $\ddd{R}$ in $\ddd{S}$ dve Bézierjevi ploskvi iz tenzorskega produkta. 
 \begin{align*}
-  \sum_{i=0}^{n_S}\ddd{Z}_i B_i^{n_S}
+  \ddd{R}(u,v)\sum_{i=0}^{m_R}\sum_{j=0}^{n_R}\ddd{P}_{i,j}B_i^{m_R}(u)B_j^{n_R}(v),
 \end{align*}
-če $n_S=n_R$
-$$\ddd{Z}_i=\ddd{Q}_{m_S,i}=\ddd{P}_{0,i}$$
-sicer uporabimo formule za višanje stopnje
+\begin{align*}
+  \ddd{S}(u,v)\sum_{i=0}^{m_S}\sum_{j=0}^{n_S}\ddd{Q}_{i,j}B_i^{m_S}(u)B_j^{n_S}(v),
+\end{align*}
+kjer velja $u,v\in[0,1]$. 
+
+Ploskvi $\ddd{R}$ in $\ddd{S}$ naj se stikata v krivulji 
+$C(v)=\ddd{R}(0,v)=\ddd{S}(0,v)$. Brez škode za splošnost predpostavimo, da za stopnji 
+ploskev velja $n_S \geq n_R$. Izpeljava v nasprotnem primeru je analogna. Ker 
+obravnavamo ploskvi, ki se stikata v $u=0$, razmerje med $m_R$ in $m_S$ ni 
+relevantno. 
+Krivuljo $\ddd{C}$ zapišimo kot 
+\begin{align*}
+\ddd{C}(v)=\sum_{i=0}^{n_S}\ddd{Z}_i B_i^{n_S}.
+\end{align*}
+V primeru, da je $n_S=n_R$, naj za kontrolne točke krivulje $\ddd{C}$ velja 
+$$\ddd{Z}_i=\ddd{Q}_{m_S,i}=\ddd{P}_{0,i}.$$
+V primeru, da je $n_S>n_R$, pa izrazimo kontrolne točke ploskve $\ddd{S}$ s kontrolnimi 
+točkami ploskve $\ddd{R}$ z uporaboo formul za višanje stopnje \eqref{eq42}:
 $$\ddd{Z}_i=\ddd{Q}_{m_S,i}=\sum_{j=0}^{n_R}\ddd{P}_{0,j}{n_R \choose j}
-\frac{{n_S-n_R \choose i-j}}{{n_S \choose i}}$$
+\frac{{n_S-n_R \choose i-j}}{{n_S \choose i}}.$$
 
-robne kontrolne točke že vnaprej določene,
-
-zanimajo nas notranje 
-
+Tako kot v primeru \ref{primer2} predpostavljajmo, da so robne kontrolne točke obeh 
+ploskev že vnaprej določene. Zanimale nas bodo zveze, ki veljajo med notranjimi kontrolnimi 
+točkami. V nadaljevanju bomo uporabljali še naslednje oznake za kontrolne vektorje:
 \begin{align*}
 &\ddd{p}_{1,j}=\ddd{P}_{1,j}-\ddd{P}_{0,j}\\
 &\ddd{q}_{1,j}=\ddd{Q}_{m_S,j}-\ddd{Q}_{m_S-1,j}\\
 &\ddd{z}_i = \ddd{Z}_{i+1}-\ddd{Z}_i\\
-&\ddd{r}_i = \ddd{P}_{0,i+1}-\ddd{P}_{0,i}
+&\ddd{r}_i = \ddd{P}_{0,i+1}-\ddd{P}_{0,i}.
 \end{align*}
 
-izrek \ref{izrek2},
-ki pove, da to velja natanko tedaj, 
+Sedaj si oglejmo pogoje za $G^1$-zveznost med ploskvama $\ddd{R}$ in $\ddd{S}$. 
+Po izreku \ref{izrek2} sta ploskvi na skupnem robu $G^1$-zvezni natanko tedaj, 
 ko obstajajo polinomi $D(v)$, $E_1(v)$ 
-in $F_1(v)$, kjer $$\mbox{deg}(D)\leq n_R+n_S-1$$ 
-$$\mbox{deg}(E_1)\leq 2n_S-1$$
-$$\mbox{deg}(F_1)\leq n_R+n_S$$
-da velja $D(v)E_1(v)> 0$ na $[0,1]$ ter \eqref{eq14}
+in $F_1(v)$, kjer je 
+\begin{align*}
+&\mbox{deg}(D)\leq n_R+n_S-1,\\
+&\mbox{deg}(E_1)\leq 2n_S-1,\\
+&\mbox{deg}(F_1)\leq n_R+n_S,
+\end{align*}
+da velja $D(v)E_1(v)> 0$ na $[0,1]$ ter enakost \eqref{eq14}. 
 
-$$\frac{\partial \ddd{S}}{\partial u}(1,v)=
-m_S\sum_{j=0}^{n_S}(\ddd{Q}_{m_S,j}-\ddd{Q}_{m_S-1,j})B_j^{n_S}(v),$$
-$$\frac{\partial \ddd{R}}{\partial u}(0,v)=
-m_R\sum_{j=0}^{n_R}(\ddd{P}_{1,j}-\ddd{P}_{0,j})B_j^{n_R}(v),$$
-in 
-$$\frac{\partial \ddd{R}}{\partial v}(0,v)=
-n_R\sum_{j=0}^{n_R-1}(\ddd{P}_{0,j+1}-\ddd{P}_{0,j})B_j^{n_R-1}(v).$$
+Razpišimo prve odvode parametrizacij ploskev $\ddd{R}$ in $\ddd{S}$:
+\begin{align*}
+&\frac{\partial \ddd{S}}{\partial u}(1,v)=
+m_S\sum_{j=0}^{n_S}(\ddd{Q}_{m_S,j}-\ddd{Q}_{m_S-1,j})B_j^{n_S}(v),\\
+&\frac{\partial \ddd{R}}{\partial u}(0,v)=
+m_R\sum_{j=0}^{n_R}(\ddd{P}_{1,j}-\ddd{P}_{0,j})B_j^{n_R}(v),\\
+&\frac{\partial \ddd{R}}{\partial v}(0,v)=
+n_R\sum_{j=0}^{n_R-1}(\ddd{P}_{0,j+1}-\ddd{P}_{0,j})B_j^{n_R-1}(v).
+\end{align*}
+Dobljeno vstavimo v enačbo \eqref{eq14} in kot v primeru \ref{primer2} vidimo, da 
+mora veljati:
+\begin{equation}\label{eq71}
+  \begin{split}
+&D(v)m_S\sum_{j=0}^{n_S}(\ddd{Q}_{1,j}-\ddd{Q}_{0,j})B_j^{n_S}(v)=\\
+&=E_1(v)m_R\sum_{j=0}^{n_R}(\ddd{P}_{1,j}-\ddd{P}_{0,j})B_j^{n_R}(v)+
+F_1(v)n_R\sum_{j=0}^{n_R-1}(\ddd{P}_{0,j+1}-\ddd{P}_{0,j})B_j^{n_R-1}(v).
+  \end{split}
+\end{equation}
 
-vrednosti na robu:
-$D(0)=d_0$, $D(1)=d_m$, $E_1(0)=e_0$, $E_1(1)=e_m$, $F_1(0)=f_0$, $F_1(1)=f_m$
-$$d_0m_S\ddd{q}_{1,0}=m_Re_0\ddd{p}_{1,0}+n_Rf_0\ddd{r}_0$$
-$$d_mm_S\ddd{q}_{1,n_S}=m_Re_m\ddd{p}_{1,n_R}+n_Rf_m\ddd{r}_{n_R-1}$$
+Iz enačbe \eqref{eq71} sedaj izpeljimo pogoje, ki morajo veljati za robne kontrolne 
+točke ploskev $\ddd{R}$ in $\ddd{S}$. Najprej vpeljimo oznake za vrednosti polinomov 
+$\ddd{D}(v)$, $\ddd{E}_1(v)$ in $\ddd{F_1}(v)$ pri vrednostih $v=0$ in $v=1$: 
+$d_0=D(0)$, $d_m=D(1)$, $e_0=E_1(0)$, $e_m=E_1(1)$, $f_0=F_1(0)$, $f_m=F_1(1)$. 
+Ko v enačbo \eqref{eq71} vstavimo vrednost $v=0$, torej dobimo
+\begin{align}\label{eq72}
+d_0m_S\ddd{q}_{1,0}=m_Re_0\ddd{p}_{1,0}+n_Rf_0\ddd{r}_0,
+\end{align}
+ko vstavimo $v=1$, pa dobimo
+\begin{align}\label{eq73}
+d_mm_S\ddd{q}_{1,n_S}=m_Re_m\ddd{p}_{1,n_R}+n_Rf_m\ddd{r}_{n_R-1}.
+\end{align}
 
-$\mbox{deg}(E_1)=n_S-n_R$, $\mbox{deg}(F_1)=n_S-n_R+1$
+Sedaj izberimo polinome $D(v)$, $E_1(v)$ in $F_1(v)$. Izbrati jih želimo na tak način, 
+da bodo njihove stopnje minimalne. V primeru, da je $n_S=n_R$, so stopnje enake kot 
+v primeru \ref{primer2}: polinoma $D(v)$ in $E_1(v)$ sta konstantna, $F_1(v)$ pa linearen. 
+Če je $n_S>n_R$ je lahko polinom $D(v)$ ponovno konstanten. Brez škode za splošnost 
+lahko izberemo, da je $D(v)\equiv 1$. Da se bodo stopnje krivulj v enačbi \eqref{eq71} 
+ujemale, mora za polinom $E_1(v)$ veljati 
+$$\mbox{deg}(E_1)=n_S-n_R,$$ 
+za $F_1(v)$ pa 
+$$\mbox{deg}(F_1)=n_S-n_R+1.$$ 
+Polinoma $E_1(v)$ in $F_1(v)$ zapišimo v bazi Bérnsteinovih baznih polinomov:
+$$E_1(v)=\sum_{k=0}^{n_S-n_R}e_k{n_S-n_R \choose k}v^{k}(1-v)^{n_S-n_R-k},$$
 
-$$E_1(v)=\sum_{k=0}^{n_S-n_R}e_k{n_S-n_R \choose k}v^{k}(1-v)^{n_S-n_R-k}$$
+$$F_1(v)=\sum_{k=0}^{n_S-n_R+1}f_k{n_S-n_R+1 \choose k}v^k(1-v)^{n_S-n_R+1-k},$$
+kjer naj velja $e_{n_S-n_R}=e_m$ in $f_{n_S-n_R+1}=f_m$. 
 
-$$F_1(v)=\sum_{k=0}^{n_S-n_R+1}f_k{n_S-n_R+1 \choose k}v^k(1-v)^{n_S-n_R+1-k}$$
-
-za $n_S=n_R$: $\mbox{deg}(E_1)=0$, $\mbox{deg}(F_1)=1$ podobno kot v primeru 
-\ref{primer2}, $E_1(v)=e_0$, $F_1(v)=f_0(1-v)+f_1v$
+Tako definirane polinome $D(v)$, $E_1(v)$ in $F_1(v)$ vstavimo v enačbo \eqref{eq71} in 
+jo preoblikujmo po enakem postopku kot v primeru \ref{primer2}. Če je $n_S=n_R$, dobimo 
+zelo podoben rezultat kot v primeru \ref{primer2}. Veljati mora
 \begin{align*}
 m_S\ddd{q}_{1,j}=m_Re_0\ddd{p}_{1,j}+n_R(f_0(1-\frac{j}{n_S})\ddd{r}_{j}+
 f_1\frac{j}{n_S}\ddd{r}_{j-1})
 \end{align*}
-
+za $j=1,2,\ldots,n_S-1$. 
+Pogoj za $G^1$-zveznost je torej v tem primeru kolinearnost med vektorji 
+$\ddd{q}_{1,j}$, $\ddd{p}_{1,j}$, $\ddd{r}_{j}$ in $\ddd{r}_{j-1}$. 
+Pogoji v primeru, da je $n_S>n_R$ pa so nekoliko bolj zapleteni. Večja kot je razlika 
+med stopnjama ploskev, več kontrolnih vektorjev je vpletenih v pogoj. Veljati mora
 \begin{align*}
 m_S\ddd{q}_{1,j}&=m_R(e_0(1-\frac{j}{n_S})(1-\frac{j}{n_S-1})\cdots 
 (1-\frac{j}{n_R+1})\ddd{p}_{1,j}+\\
@@ -1929,8 +1974,9 @@ m_S\ddd{q}_{1,j}&=m_R(e_0(1-\frac{j}{n_S})(1-\frac{j}{n_S-1})\cdots
 &+f_2(1-\frac{j}{n_S})(1-\frac{j}{n_S-1})\cdots(1-\frac{j}{n_R+2})\frac{j}{n_R+1}
 \frac{j-1}{n_R}\ddd{r}_{j-2}+\cdots + \\
 &+f_{n_S-n_R+1}\frac{j}{n_S}\frac{j-1}{n_S-1}\cdots
-\frac{j-(n_S-n_R)+1}{n_R}\ddd{r}_{j-(n_S-n_R)-1})
+\frac{j-(n_S-n_R)+1}{n_R}\ddd{r}_{j-(n_S-n_R)-1}).
 \end{align*}
+\end{primer}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

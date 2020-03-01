@@ -1602,13 +1602,13 @@ $$\frac{\partial \ddd{R}}{\partial u}(0,v)=3\sum_{i=0}^2\sum_{j=0}^3
 in 
 $$\frac{\partial \ddd{R}}{\partial v}(0,v)=3\sum_{i=0}^3\sum_{j=0}^2
 (\ddd{P}_{i,j+1}-\ddd{P}_{i,j})B_i^2(0)B_j^3(v)=
-3\sum_{j=0}^2(\ddd{P}_{0,j}-\ddd{P}_{0,j+1})B_j^2(v).$$
+3\sum_{j=0}^2(\ddd{P}_{0,j+1}-\ddd{P}_{0,j})B_j^2(v).$$
 Dobljeno vstavimo v enačbo \eqref{eq14}. Vidimo, da mora veljati:
 \begin{equation}\label{eq15}
   \begin{split} 
 &D(v)\sum_{j=0}^3(\ddd{Q}_{3,j}-\ddd{Q}_{2,j})B_j^3(v) = \\
 &=E_1(v)\sum_{j=0}^3(\ddd{P}_{1,j}-\ddd{P}_{0,j})B_j^3(v) + 
-F_1(v)\sum_{j=0}^2(\ddd{P}_{0,j}-\ddd{P}_{0,j+1})B_j^2(v).
+F_1(v)\sum_{j=0}^2(\ddd{P}_{0,j+1}-\ddd{P}_{0,j})B_j^2(v).
   \end{split}
 \end{equation}
 
@@ -1848,6 +1848,89 @@ imamo stik ploskev različnih stopenj}
 %niso proste in je zato v splošnem nemogoče konstruirati bezierjevo ploskev 
 %vnaprej določene stopnje, ki je g zvezna z neko vnaprej določeno bez ploskvijo, 
 %ali kaj?}
+==================================================
+\begin{align*}
+  \ddd{R}(u,v)\sum_{i=0}^{m_R}\sum_{j=0}^{n_R}\ddd{P}_{i,j}B_i^{m_R}(u)B_j^{n_R}(v)
+\end{align*}
+\begin{align*}
+  \ddd{S}(u,v)\sum_{i=0}^{m_S}\sum_{j=0}^{n_S}\ddd{Q}_{i,j}B_i^{m_S}(u)B_j^{n_S}(v)
+\end{align*}
+
+brez škode za splošnost $n_S\geq n_R$
+
+$$\ddd{C}(v)=\ddd{R}(0,v)=\ddd{S}(1,v)$$
+\begin{align*}
+  \sum_{i=0}^{n_S}\ddd{Z}_i B_i^{n_S}
+\end{align*}
+če $n_S=n_R$
+$$\ddd{Z}_i=\ddd{Q}_{m_S,i}=\ddd{P}_{0,i}$$
+sicer uporabimo formule za višanje stopnje
+$$\ddd{Z}_i=\ddd{Q}_{m_S,i}=\sum_{j=0}^{n_R}\ddd{P}_{0,j}{n_R \choose j}
+\frac{{n_S-n_R \choose i-j}}{{n_S \choose i}}$$
+
+robne kontrolne točke že vnaprej določene,
+
+zanimajo nas notranje 
+
+\begin{align*}
+&\ddd{p}_{1,j}=\ddd{P}_{1,j}-\ddd{P}_{0,j}\\
+&\ddd{q}_{1,j}=\ddd{Q}_{m_S,j}-\ddd{Q}_{m_S-1,j}\\
+&\ddd{z}_i = \ddd{Z}_{i+1}-\ddd{Z}_i\\
+&\ddd{r}_i = \ddd{P}_{0,i+1}-\ddd{P}_{0,i}
+\end{align*}
+
+izrek \ref{izrek2},
+ki pove, da to velja natanko tedaj, 
+ko obstajajo polinomi $D(v)$, $E_1(v)$ 
+in $F_1(v)$, kjer $$\mbox{deg}(D)\leq n_R+n_S-1$$ 
+$$\mbox{deg}(E_1)\leq 2n_S-1$$
+$$\mbox{deg}(F_1)\leq n_R+n_S$$
+da velja $D(v)E_1(v)> 0$ na $[0,1]$ ter \eqref{eq14}
+
+$$\frac{\partial \ddd{S}}{\partial u}(1,v)=
+m_S\sum_{j=0}^{n_S}(\ddd{Q}_{m_S,j}-\ddd{Q}_{m_S-1,j})B_j^{n_S}(v),$$
+$$\frac{\partial \ddd{R}}{\partial u}(0,v)=
+m_R\sum_{j=0}^{n_R}(\ddd{P}_{1,j}-\ddd{P}_{0,j})B_j^{n_R}(v),$$
+in 
+$$\frac{\partial \ddd{R}}{\partial v}(0,v)=
+n_R\sum_{j=0}^{n_R-1}(\ddd{P}_{0,j+1}-\ddd{P}_{0,j})B_j^{n_R-1}(v).$$
+
+vrednosti na robu:
+$D(0)=d_0$, $D(1)=d_m$, $E_1(0)=e_0$, $E_1(1)=e_m$, $F_1(0)=f_0$, $F_1(1)=f_m$
+$$d_0m_S\ddd{q}_{1,0}=m_Re_0\ddd{p}_{1,0}+n_Rf_0\ddd{r}_0$$
+$$d_mm_S\ddd{q}_{1,n_S}=m_Re_m\ddd{p}_{1,n_R}+n_Rf_m\ddd{r}_{n_R-1}$$
+
+$\mbox{deg}(E_1)=n_S-n_R$, $\mbox{deg}(F_1)=n_S-n_R+1$
+
+$$E_1(v)=\sum_{k=0}^{n_S-n_R}e_k{n_S-n_R \choose k}v^{k}(1-v)^{n_S-n_R-k}$$
+
+$$F_1(v)=\sum_{k=0}^{n_S-n_R+1}f_k{n_S-n_R+1 \choose k}v^k(1-v)^{n_S-n_R+1-k}$$
+
+za $n_S=n_R$: $\mbox{deg}(E_1)=0$, $\mbox{deg}(F_1)=1$ podobno kot v primeru 
+\ref{primer2}, $E_1(v)=e_0$, $F_1(v)=f_0(1-v)+f_1v$
+\begin{align*}
+m_S\ddd{q}_{1,j}=m_Re_0\ddd{p}_{1,j}+n_R(f_0(1-\frac{j}{n_S})\ddd{r}_{j}+
+f_1\frac{j}{n_S}\ddd{r}_{j-1})
+\end{align*}
+
+\begin{align*}
+m_S\ddd{q}_{1,j}&=m_R(e_0(1-\frac{j}{n_S})(1-\frac{j}{n_S-1})\cdots 
+(1-\frac{j}{n_R+1})\ddd{p}_{1,j}+\\
+&+e_1(1-\frac{j}{n_S})(1-\frac{j}{n_S-1})\cdots
+(1-\frac{j}{n_R+2})\frac{j}{n_R+1}\ddd{p}_{1,j-1}+\\
+&+e_2(1-\frac{j}{n_S})(1-\frac{j}{n_S-1})\cdots(1-\frac{j}{n_R+3})\frac{j}{n_R+2}
+\frac{j-1}{n_R+1}\ddd{p}_{1,j-2}+\cdots + \\
+&+e_{n_S-n_R}\frac{j}{n_S}\frac{j-1}{n_S-1}\cdots
+\frac{j-(n_S-n_R)+1}{n_R+1}\ddd{p}_{1,j-(n_S-n_R)})+\\
+&+n_R(f_0(1-\frac{j}{n_S})(1-\frac{j}{n_S-1})\cdots 
+(1-\frac{j}{n_R})\ddd{r}_{j}+\\
+&+f_1(1-\frac{j}{n_S})(1-\frac{j}{n_S-1})\cdots
+(1-\frac{j}{n_R+1})\frac{j}{n_R}\ddd{r}_{j-1}+\\
+&+f_2(1-\frac{j}{n_S})(1-\frac{j}{n_S-1})\cdots(1-\frac{j}{n_R+2})\frac{j}{n_R+1}
+\frac{j-1}{n_R}\ddd{r}_{j-2}+\cdots + \\
+&+f_{n_S-n_R+1}\frac{j}{n_S}\frac{j-1}{n_S-1}\cdots
+\frac{j-(n_S-n_R)+1}{n_R}\ddd{r}_{j-(n_S-n_R)-1})
+\end{align*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2761,7 +2844,9 @@ med preostalimi kontrolnimi točkami pa mora veljati zveza
 Izmed enačb \eqref{eq61}-\eqref{eq65} nam tiste, v katerih se točka $\ddd{P}$ ne pojavi, ne 
 prinesejo nobenih dodatnih pogojev, obravnavamo jih enako kot v poglavju \ref{g1primeri}. 
 Pogoje, ki jih dobimo iz enačb \eqref{eq65} pri \todo{vrednost}, 
-bomo v nadaljevanju izpeljali na nekoliko drugačen način. Sedaj najprej analizirajmo 
+bomo v nadaljevanju izpeljali na nekoliko drugačen način. 
+
+Sedaj najprej analizirajmo 
 sistem enačb v \eqref{eq61} in \eqref{eq62}. 
 %\todo{??}Če predpostavljamo, da so konstante \todo{konstante} vnaprej določene, lahko prosto izberemo 
 %točke $\ddd{P}$ in \todo{točke}, edini pogoj je, da morajo ležati v isti tangentni ravnini. 
@@ -2907,7 +2992,6 @@ in $\beta_i(v_i)$, $i=1,2,3$:
 \frac{1}{\alpha_{2,0}}+\frac{\beta_{2,0}\beta_{1,0}}{\alpha_{2,0}\alpha_{1,0}}=0 &&
 -\frac{\beta_{1,0}}{\alpha_{1,0}\alpha_{3,0}}=1.
 \end{align*}
-
 \end{primer}
 
 Sedaj si oglejmo še drugi sklop kompatibilnostnih pogojev v točki $\ddd{P}$. Ti nam bodo 

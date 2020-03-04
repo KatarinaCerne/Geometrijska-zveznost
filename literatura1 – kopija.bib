@@ -1,5 +1,8 @@
 % Encoding: UTF-8
 
+
+%https://en.wikipedia.org/wiki/Smoothness#Parametric_continuity
+
 @article{doi:10.2200/S00729ED1V01Y201608VCP025,
 author = {Kiciak, Przemysław},
 title = {Geometric Continuity of Curves and Surfaces},
@@ -68,6 +71,31 @@ author = "Tony D. DeRose",
 abstract = "Sets of conditions are derived that are necessary and sufficient for tangent plane continuity between two polynomial or rational Bézier surfaces. The patches may be given in either triangular or rectangular form, and no assumptions are made concerning the relative degrees of the patches; the only assumption is that the patches share common boundary control points (and weights in the case of rational surfaces). The conditions are shown to be minimal in the sense that they are, in general, independent."
 }
 
+@incollection{HANSFORD200275,
+title = "Chapter 4 - Bézier Techniques",
+editor = "Gerald Farin and Josef Hoschek and Myung-Soo Kim",
+booktitle = "Handbook of Computer Aided Geometric Design",
+publisher = "North-Holland",
+address = "Amsterdam",
+pages = "75 - 109",
+year = "2002",
+isbn = "978-0-444-51104-1",
+doi = "https://doi.org/10.1016/B978-044451104-1/50005-8",
+url = "http://www.sciencedirect.com/science/article/pii/B9780444511041500058",
+author = "Dianne Hansford"
+}
+
+@book{lai_schumaker_2007, 
+place={Cambridge}, 
+series={Encyclopedia of Mathematics and its Applications}, 
+title={Spline Functions on Triangulations}, 
+DOI={10.1017/CBO9780511721588}, 
+publisher={Cambridge University Press}, 
+author={Lai, Ming-Jun and Schumaker, Larry L.}, 
+year={2007}, 
+collection={Encyclopedia of Mathematics and its Applications}
+}
+
 %definicije za trikotne
 @article{farin1986triangular,
   title={Triangular bernstein-b{\'e}zier patches},
@@ -115,20 +143,23 @@ pages = {67–77},
 numpages = {11}
 }
 
-%mogoče primer
-@incollection{PETERS2002193,
-title = "Chapter 8 - Geometric Continuity",
-editor = "Gerald Farin and Josef Hoschek and Myung-Soo Kim",
-booktitle = "Handbook of Computer Aided Geometric Design",
-publisher = "North-Holland",
-address = "Amsterdam",
-pages = "193 - 227",
-year = "2002",
-isbn = "978-0-444-51104-1",
-doi = "https://doi.org/10.1016/B978-044451104-1/50009-5",
-url = "http://www.sciencedirect.com/science/article/pii/B9780444511041500095",
-author = "Jörg Peters"
+%dokaz z indukcijo
+@article{JIANMINZHENG1995111,
+title = "GCn continuity conditions for adjacent rational parametric surfaces",
+journal = "Computer Aided Geometric Design",
+volume = "12",
+number = "2",
+pages = "111 - 129",
+year = "1995",
+issn = "0167-8396",
+doi = "https://doi.org/10.1016/0167-8396(94)00005-D",
+url = "http://www.sciencedirect.com/science/article/pii/016783969400005D",
+author = " Jianmin Zheng and  Guozhao Wang and  Youdong Liang",
+keywords = "Rational surfaces, Bézier patches, Geometric continuity, Total differential vectors, Connecting functions, Parameter transformation",
+abstract = "In this paper, the constraints on the homogeneous surface belonging to a certain rational surface are derived which are both necessary and sufficient to ensure that the rational surface is nth-order geometric continuous. This gives up the strong restriction that requires the homogeneous surface to be as smooth as the rational surface. Further the conditions for the rectangular rational Bézier patches are developed, and some simple and practical sufficient conditions are presented which might give a valid means for the construction of GCn connecting surfaces."
 }
+
+
 
 %????
 
@@ -197,7 +228,20 @@ url={http://hdl.handle.net/10012/3681}
   publisher={Eurographics Association}
 }
 
-
+%mogoče primer
+@incollection{PETERS2002193,
+title = "Chapter 8 - Geometric Continuity",
+editor = "Gerald Farin and Josef Hoschek and Myung-Soo Kim",
+booktitle = "Handbook of Computer Aided Geometric Design",
+publisher = "North-Holland",
+address = "Amsterdam",
+pages = "193 - 227",
+year = "2002",
+isbn = "978-0-444-51104-1",
+doi = "https://doi.org/10.1016/B978-044451104-1/50009-5",
+url = "http://www.sciencedirect.com/science/article/pii/B9780444511041500095",
+author = "Jörg Peters"
+}
 
 @Comment{jabref-meta: databaseType:bibtex;}
 

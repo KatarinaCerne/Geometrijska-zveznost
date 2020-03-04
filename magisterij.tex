@@ -303,10 +303,47 @@ the content and not the structure of your work.
 
 \section{Uvod}
 
-\todo{začneš s tem, da bi radi različne oblike opisali s čim bolj enostavnimi elementi. 
-v ta namen uporabljamo enostavne parametrične ploskve (zelo pogosto polinomske npr. 
-bezierove), ki jih nato lepimo skupaj v kompleksnejše oblike. želimo, da bi bil stik 
-dveh takih ploskev videti gladek, ploskvi morata biti zato prek skupne meje zvezni. 
+Krivulje in ploskve v ravnini in prostoru lahko matematično opisujemo na različne 
+načine. Lahko jih na primer podajamo eksplicitno, kot grafe funkcij, vendar je slabost 
+takega pristopa, da na tak način ne moremo opisovati sklenjenih krivulj ali ploskev. 
+Drugi način je podajanje v implicitni obliki. Ta sicer omogoča opisovanje sklenjenih 
+krivulj in ploskev, ima pa to slabost, da je iskanje točk na tako podani 
+krivulji ali ploskvi lahko precej računsko zahtevno, saj zahteva reševanje 
+nelinearnih enačb. V računalniško podprtem geometrijskem oblikovanju se zato 
+pogosto uporablja tretji pristop, krivulje in ploskve se podaja parametrično.  
+
+Parametrični pristop pogosto zahteva, da nekoliko manj enostavne geometrijske objekte 
+opisujemo po delih, tako da jih sestavljamo iz manjših, enostavnejših ploskev 
+oziroma krivulj. Problem se pri tem pristopu pojavi, kadar zahtevamo, da so tako 
+predstavljeni objekti geometrijsko gladki. Gladkost krivulj in ploskev je ključnega 
+pomena v industrijskem oblikovanju, na primer v avtomobilski, letalski ali 
+ladijski industriji, kjer je nujna aerodinamičnost in hidrodimaničnost različnih 
+objektov, pa tudi v računalniških animacijah in robotiki, kjer je pomembna gladkost gibanja. 
+
+Da zagotovimo geometrijsko gladkost stika dveh krivulj ali ploskev, lahko zahtevamo 
+da sta na svojem stiku parametrično oziroma $C^n$-zvezni.
+\begin{definicija}
+Naj bosta $\ddd{p}:I_1\Rightarrow \R^d$ in $\ddd{q}:I_2\Rightarrow \R^d$, 
+$d=2,3$, $C^n$ parametrizaciji dveh krivulj, kjer sta $I_1$ in $I_2$ intervala v $\R$. 
+Krivulji $\ddd{p}$ in $\ddd{q}$ naj se stikata v neki točki, torej naj obstaja 
+parameter $t_0 \in I_1 \cap I_2$, da je $\ddd{p}(t_0)=\ddd{q}(t_0)$. Pravimo, da se 
+krivulji v skupni točki stikata s \emph{parametrično zveznostjo reda $n$} oziroma 
+s \emph{$C^n$-zveznostjo}, če velja 
+$$\frac{d^k}{dt^k}\ddd{p}(t)|_{t=t_0}=\frac{d^k}{dt}\ddd{q}|_{t=t_0}, \quad k=1,\ldots,n.$$
+\end{definicija}
+
+Podobna je definicija $C^n$-zveznosti za ploskve. 
+\begin{definicija}
+Naj bosta $\ddd{R}(x,y)$ in $\ddd{S}(u,v)$ $C^n$ parametrizaciji dveh ploskev, ki se 
+stikata v krivulji $\ddd{C}(y)=\ddd{R}(x_0,y)=\ddd{S}(x_0,y)$. Pravimo, da se ploskvi 
+v skupni krivulji stikata s \emph{parametrično zveznostjo reda $n$} oziroma s 
+\emph{$C^n$-zveznostjo}, če velja 
+$$\frac{\partial^{m+k}}{\partial x^m \partial y^k}\ddd{R}(x_0,y)=
+\frac{\partial^{m+k}}{\partial x^m \partial y^k}\ddd{S}(x_0,y) \quad m+k=1,\ldots,n.$$
+\end{definicija}
+
+
+\todo{ ploskvi morata biti zato prek skupne meje zvezni. 
 predstaviš običajno zveznost, poveš, zakaj ni ustrezna}
 
 \todo{lahko najprej poveš, kaj je c zveznost, potem pa navedeš primer, kjer c zveznost 
@@ -424,14 +461,13 @@ bolj intuitivno definicijo geometrijske zveznosti stika dveh krivulj. To bomo
 v nadaljevanju posplošili na definicijo geometrijske zveznosti stika dveh ploskev.
 
 \begin{definicija}\label{defkrivulja}
-Naj bosta $\ddd{p}:I_1\rightarrow\R^d$ \todo{2? ali d?} in $\ddd{q}:I_2\rightarrow\R^d$ 
-parametrično podani krivulji, kjer sta $I_1$ in $I_2$ intervala v $\R$. Krivulji 
+Naj bosta $\ddd{p}:I_1\rightarrow\R^d$ in $\ddd{q}:I_2\rightarrow\R^d$, $d=2,3$,
+regularni $C^n$ parametrizaciji dveh krivulj, kjer sta $I_1$ in $I_2$ intervala v $\R$. Krivulji 
 $\ddd{p}$ in $\ddd{q}$ naj se stikata v neki točki, torej naj obstajata parametra 
 $t_1\in I_1$ in $t_2\in I_2$, da je $\ddd{p}(t_1)=\ddd{q}(t_2)$. 
 Pravimo, da se krivulji v skupni točki stikata z \emph{geometrijsko zveznostjo reda n} 
 oziroma z \emph{$G^n$-zveznostjo}, če v okolici $I_0$ parametra $t_1$ obstaja regularna 
-reparametrizacijska funkcija $f:I_0\rightarrow I_2$, da velja $f(t_1)=t_2$, 
-\todo{$\frac{df}{dt}(t_1)>0$??} ter 
+reparametrizacijska funkcija $f:I_0\rightarrow I_2$, da velja $f(t_1)=t_2$ ter 
 \begin{align*}
   \frac{d^k}{dt^k}\ddd{p}(t)\big|_{t=t_1}=\frac{d^k}{dt^k}(\ddd{q}\circ f)(t)\big|_{t=t_1},\quad k=0,1,\ldots,n.
 \end{align*}
@@ -3254,6 +3290,7 @@ omogoča konstrukcijo $G^1$-zveznih ploskev posebnih oblik, kot je na primer
 % okrajšati imena revij. Za pravilno sortiranje vnosov brez avtorja, uporabite
 % polje key={ }, kot v primeru.
 % V primeru napak ustvarite issue na GitHubu ali pišite na jure.slak@fmf.uni-lj.si.
+\nocite{*}
 \cleardoublepage                           % na desni strani
 \phantomsection                            % da prav delujejo hiperlinki
 \addcontentsline{toc}{section}{\bibname}   % dodajmo v kazalo

@@ -342,27 +342,66 @@ $$\frac{\partial^{m+k}}{\partial x^m \partial y^k}\ddd{R}(x_0,y)=
 \frac{\partial^{m+k}}{\partial x^m \partial y^k}\ddd{S}(x_0,y) \quad m+k=1,\ldots,n.$$
 \end{definicija}
 
+Parametrična zveznost v primeru, da gre za regularne parametrizacije, sicer zagotavlja 
+gladkost stika dveh krivulj ali ploskev, vendar pa je v marsikaterem primeru preveč 
+restriktivna. Odvisna je na primer od parametrizacije krivulj in ploskev, kar nas lahko 
+zelo omejuje, kar se tiče oblik, ki jih lahko konstruiramo. 
+Izkaže se, da za konstrukcijo gladkih objektov tako strogi pogoji niso 
+nujno potrebni. 
+Poleg tega pri modeliranju marsikatere oblike $C^n$-zveznost v celoti odpove. 
+Primeri takih oblik so ploskve, zgrajene iz večih manjših ploskev, ki se stikajo 
+v skupni točki. Še en primer, kjer parametrična zveznost 
+ni preveč uporabna, je t.~i. vogal kovčka. 
 
-\todo{ ploskvi morata biti zato prek skupne meje zvezni. 
-predstaviš običajno zveznost, poveš, zakaj ni ustrezna}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.3\textwidth]{slike/zvezda6.pdf}
+  \caption[Šest ploskev, ki se stikajo v skupni točki.]
+  {Primer ploskve, sestavljene iz šestih 
+  manjših ploskev, ki se stikajo v skupni točki. Gladkosti take ploskve ne moremo zagotoviti 
+  s $C^n$-zveznostjo.}
+  \label{fig:zvezda6}
+\end{figure}
 
-\todo{lahko najprej poveš, kaj je c zveznost, potem pa navedeš primer, kjer c zveznost 
-ne pride v poštev}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.3\textwidth]{slike/suitcasecorner.pdf}
+  \caption[Ploskev v obliki vogala kovčka.]{Primer ploskve v obliki vogala kovčka.}
+  \label{fig:suitcasecorner}
+\end{figure}
 
-\todo{geometrijska zveznost je zelo uporabna v praksi, ker lahko modeliramo različne situacije, 
-kjer c zveznost odpove (npr. zvezda, suitcase corner, house corner)}
+V ta namen torej vpeljemo nekoliko manj restriktivno obliko zveznosti, ki pa še vedno omogoča, 
+da so krivulje in ploskve na stiku geometrijsko gladke. 
+imenujemo jo geometrijska zveznost oziroma $G^n$-zveznost. 
+Geometrijska zveznost je posplošitev parametrične zveznosti, 
+torej so vse krivulje in ploskve, ki so parametrično zvezne, tudi geometrijsko zvezne. 
+Kar se tiče konstrukcije krivulj in ploskev prinaša marsikatero olajšavo. 
+Geometrijska zveznost je invariantna za parametrične transformacije, torej 
+neodvisna od parametrizacije. Poleg tega pri konstrukciji prinese dodatne proste 
+parametre, s katerimi lahko vplivamo na obliko objektov. Z uporabo geometrijske 
+zveznosti je torej mogoče modelirati veliko več različnih oblik, med drugim tudi 
+ploskvi, prikazani na slikah \ref{fig:zvezda6} in \ref{fig:zvezda6}.  
 
-\todo{je invarianta za parametrične transformacije, tj neodvisna od parametrizacije}
-
-\todo{geometrijska zveznost je posplošitev c zveznosti. torej vse nedegenerirane 
-(kaj to pomeni?) ploskve, ki so c zvezne, so tudi geometrisko zvezne, niso pa vse 
-geometrijsko zvezne ploskve tudi c zvezne}
-
-\todo{s čim se to delo ukvarja in kaj bo v kakšnem poglavju}
+To magistrsko delo se osredotoča predvsem na konstrukcijo geometrijsko zveznih ploskev. 
+V poglavju \ref{geom.zv.} je najprej predstavljenih nekaj osnovnih pojmov v zvezi s 
+parametričnimi krivuljami in ploskvami, nato je definirana geometrijska zveznost na 
+stiku dveh krivulj. Sledi definicija geometrijske zveznosti med dvema ploskvama, ter 
+podrobnejša predstavitev nekaterih njenih lastnosti. Predstavljena je tudi 
+geometrijska interpretacija $G^1$-zveznosti. V poglavju \ref{pog.bez.ten.} so 
+predstavljene Bézierove krivulje in Bézierove ploskve iz tenzorskega produkta, to je 
+posebna vrsta parametrično podanih krivulj in ploskev. Opisani so pogoji, ki morajo 
+veljati za $C^n$ ter $G^n$-zveznost Bézierovih ploskev iz tenzorskega produkta. 
+Poglavje \ref{pog.ten.npr} vsebuje nekaj bolj konkretnih primerov konstrukcij $G^1$ in 
+$G^2$-zveznih Bézierovih ploskev iz tenzorskega produkta. V poglavju \ref{pog.bez.tr.} 
+so opisane še trikotne Bézierove ploskve in pogoji, ki morajo veljati za $C^1$ in 
+$G^1$-zveznost med dvema ploskvama. Opisan je tudi primer konstrukcije. V poglavju 
+\ref{pog.v.voz.} pa si ogledamo še pogoje, ki jih prinese $G^n$-zveznost za več ploskev, 
+ki se stikajo v skupni točki. 
 
 %It has been shown previously that parametric continuity is sufficient, but not necessary, for geometric smoothness
 %geometric continuity as a parametrization independent measure
-%Parametric splines a.re piecewise functions, so care must be taken to "stitch" the curve segments or surface patches together in a. "smooth" fashion
+%Parametric splines a.re piecewise functions, so care must be taken to "stitch" the curve segments or surface patches together in a. 
+%"smooth" fashion
 %The usual measure of smoothness, known as parametric continuity, requires
 %the piecing together of curves a.nd surfaces so that a. given number of parametric
 %derivatives match a.t the boundaries between curve segments or surface patches.
@@ -757,7 +796,7 @@ med njimi geometrijsko zvezen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Konstrukcija geometrijsko zveznih Bezierjevih ploskev 
-iz tenzorskega produkta}
+iz tenzorskega produkta}\label{pog.bez.ten.}
 
 \subsection{Bézierjeve ploskve iz tenzorskega produkta}
 
@@ -1531,6 +1570,7 @@ za $G^n$-zveznost med ploskvama, kjer je $n\geq 2$.
 %(M_f^2-M_d^2(M_d^1)^{-1}M_f^1)\overline{\ddd{B}} = 0$
 
 \section{Primeri konstrukcij geometrijsko zveznih ploskev iz tenzorskega produkta}
+\label{pog.ten.npr}
 
 \todo{nek uvod, navezava na prejšnje poglavje}
 
@@ -2309,7 +2349,7 @@ oziroma kontrolne točke $\ddd{Q}_{i,j}$, $i=0,1,2$, $j=0,\ldots,5$.
 
 \todo{drugi možen pristop? če nista prosta p1m in p2m ampak projekcija enega od vektorjev?}
 
-\section{Konstrukcija $G^1$-zveznih trikotnih Bézierjevih ploskev}
+\section{Konstrukcija $G^1$-zveznih trikotnih Bézierjevih ploskev}\label{pog.bez.tr.}
 
 \subsection{Trikotne Bézierjeve ploskve}\label{trikotne1}
 
@@ -2806,7 +2846,7 @@ primeru s konsistentnostjo sistema?}
 
 \todo{primer od prej, ki ni šel s c1 samo da ga zdaj rešimo z g1?}
 
-\section{Kompatibilnostni pogoji v skupnem vozlišču}
+\section{Kompatibilnostni pogoji v skupnem vozlišču}\label{pog.v.voz.}
 \todo{ta naslov??}
 
 Do sedaj smo se ukvarjali zgolj z geometrijsko zveznostjo na stiku dveh ploskev. Dobljeno 

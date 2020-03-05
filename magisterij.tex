@@ -588,7 +588,7 @@ so parcialni odvodi parametrizacij
 po spremenljivki $y$ vzdolž krivulje $\ddd{C}$ enaki, zato je dovolj, da pri obravnavi 
 geometrijske zveznosti dveh ploskev opazujemo le parcialne odvode po 
 spremenljivki $x$.
-Te parcialne odvode imenujemo \todo{crossboundary derivatives}.
+%Te parcialne odvode imenujemo \todo{crossboundary derivatives}.
 
 Oglejmo si, kakšni pogoji morajo veljati v primeru, ko želimo, da je stik med dvema 
 ploskvama $G^2$ zvezen.
@@ -638,8 +638,7 @@ za vsak $k=0,1,\ldots,n$. Tu z $A_{m_i}^k$ iznačujemo koeficient
 $$A_{m_i}^k = \frac{k!}{i!m_1!\cdots m_i!}.$$
 Z $u_x^{m_i}$ je označen $m_i$-ti delni odvod funkcije $u$ po $x$, z oznako $|m_i|$ pa 
 označimo vsoto $|m_i|=m_1+m_2+\cdots + m_i$, kjer velja $m_j>0$ za vsak $j=1,\ldots, i$.
-
-\todo{dokaz z indukcijo?}
+Dokaz enakosti \ref{eq1} je mogoče najti v \cite{JIANMINZHENG1995111}. 
 
 Taka definicija geometrijske zveznosti med dvema ploskvama sama po sebi pri konstrukciji geometrijsko 
 zveznih ploskev ni najbolj koristna. V nadaljevanju bo veliko uporabnejši naslednji izrek.
@@ -675,12 +674,12 @@ obliko ''špice''.
 
 \begin{opomba}
   Funkcije $\alpha_1(y), \ldots, \alpha_n(y)$ in $\beta_1(y) \ldots, \beta_n(y)$ 
-  imenujemo \emph{stične funkcije} \todo{junction/connection functions}
+  imenujemo \emph{povezovalne funkcije}
 \end{opomba}
 
 \begin{proof}
-  Najprej prodpostavimo, da obstajajo $C^n$ funkcije $\alpha_1(y), \ldots, \alpha_n(y)$ 
-  in $\beta_1(y) \ldots, \beta_n(y)$, za katere velja enakost \eqref{eq2} v izreku, in 
+  Najprej prodpostavimo, da obstajajo $C^n$ funkcije $\alpha_1(y),\alpha_2(y), \ldots, \alpha_n(y)$ 
+  in $\beta_1(y),\beta_2(y), \ldots, \beta_n(y)$, za katere velja enakost \eqref{eq2} v izreku, in 
   da je $\alpha_1(y)\neq 0$. 
   Dokazati želimo, da od tod 
   sledi $G^n$-zveznost stika ploskev $\ddd{R}(x,y)$ in $\ddd{S}(u,v)$. 
@@ -705,7 +704,7 @@ obliko ''špice''.
   $$\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) \neq 0.$$
 
   Razpišimo oba odvoda reparametrizacijske funkcije $f(x,y)=(u(x,y),v(x,y))$ vzdolž krivulje $\ddd{C}$ 
-  in ju skušajmo zapisati s pomočjo stičnih funkcij. Za odvod po spremenljivki $x$ velja
+  in ju skušajmo zapisati s pomočjo povezovalnih funkcij. Za odvod po spremenljivki $x$ velja
   $$\frac{\partial f}{\partial x}(x_0,y)=\left(\frac{\partial u}{\partial x}(x_0,y),\frac{\partial v}{\partial x}(x_0,y)\right)=(\alpha_1(y),\beta_1(y)).$$
   Če razpišemo odvod po spremenljivki $y$, pa dobimo
   $$\frac{\partial f}{\partial y}(x_0,y)=\left(\frac{\partial u}{\partial y}(x_0,y),\frac{\partial v}{\partial y}(x_0,y)\right)=(0,1).$$
@@ -736,8 +735,6 @@ obliko ''špice''.
   Torej smo okazali še neničelnost funkcije $\alpha_1$, s čimer je dokaz končan. 
 \end{proof}
 
-\todo{nekaj za zaključek poglavja in napeljavo na novo poglavje}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 
 \subsection{Geometrijska interpretacija $G^1$-zveznosti}
@@ -749,7 +746,9 @@ kasneje služila tudi v praktičnih primerih.
 Imejmo regularni $C^1$ parametrizaciji ploskev $\ddd{R}(x,y)$ in $\ddd{S}(u,v)$, ki 
 se v krivulji $\ddd{C}(y) = \ddd{R}(x_0,y) = \ddd{S}(u_0,y)$ 
 stikata z geometrijsko zveznostjo $G^1$.  
-Sledi, da je $\ddd{R}_y(x_0,y) = \ddd{S}_y(x_0,y) = \ddd{S}_v(x_0,y)$. Kot smo že videli v poglavju \ref{geom.zv.}, 
+Sledi, da je $$\frac{\partial}{\partial y}\ddd{R}(x_0,y) = 
+\frac{\partial}{\partial y}\ddd{S}(u_0,y) = \frac{\partial}{\partial v}\ddd{S}(u_0,v).$$
+Kot smo že videli v poglavju \ref{geom.zv.}, 
 nam je zato potrebno opazovati zgolj odvode v smeri $x$.
 
 Ker je stik obeh ploskev v $\ddd{C}$ $G^1$-zvezen, po izreku \ref{izrek1} obstajata 
@@ -757,49 +756,77 @@ funkciji $\alpha_1$ in $\beta_1$, kjer je $\alpha_1(y) \neq 0$ za vsak $y$
 in ima ustrezen predznak, da velja:
 
 \begin{equation}\label{eq3}
-\ddd{R}_x(x_0,y)=\alpha_1(y) \ddd{S}_u(u_0,y)+\beta_1(y)\ddd{S}_v(u_0,y).
+\frac{\partial}{\partial x}\ddd{R}(x_0,y)=
+\alpha_1(y)\frac{\partial}{\partial u}\ddd{S}(u_0,y)+\beta_1(y)\frac{\partial}{\partial y}\ddd{S}(u_0,y).
 \end{equation}
 
-Zgornja enačba nam pove, da parcialni odvodi $\ddd{R}_x(x_0,y)$, $\ddd{S}_u(u_0,y)$ in 
-$\ddd{S}_v(u_0,y)$ v vsaki točki $y$ ležijo 
+Enačba \ref{eq3} nam pove, da parcialni odvodi $\frac{\partial}{\partial x}\ddd{R}(x_0,y)$, 
+$\frac{\partial}{\partial u}\ddd{S}(u_0,y)$ in 
+$\frac{\partial}{\partial v}\ddd{S}(u_0,v)$ v vsaki točki $y$ ležijo 
 v isti tangentni ravnini na krivuljo $\ddd{C}$. Tangentna ravnina na ploskev $\ddd{R}$ 
 se na krivulji $\ddd{C}$ ujema s tangentno ravnino na ploskev $\ddd{S}$, kar pomeni, 
 da se tangentna ravnina zvezno spreminja vzdolž zlepka obeh ploskev. 
 Zato torej $G^1$-zveznost imenujemo tudi 
 \emph{zveznost tangentnih ravnin}.
 
-\todo{slika}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{slike/odvodi.pdf}
+  \caption[Odvodi ploskev na robni krivulji.]
+  {Odvoda ploskev $\ddd{R}$ oziroma $\ddd{S}$ v $y$ oziroma $v$-smeri sta
+   na robni krivulji enaka, 
+  odvoda v $x$ oziroma $u$-smeri pa zgolj koplanarna. Vsi odvodi so del iste tangentne 
+  ravnine na krivuljo $\ddd{C}$}
+  \label{fig:odvodi}
+\end{figure}
 
 Še eno ime za $G^1$-zveznost je \emph{zveznost enotskih normal}.
 Oglejmo si, od kod pride to poimenovanje. 
 Znova opazujemo enačbo \eqref{eq3}. 
-Enačbo sedaj z obeh strani vektorsko pomnožimo z $\ddd{R}_y(x_0,y)$:
-$$\ddd{R}_x(x_0,y)\times \ddd{R}_y(x_0,y)=\alpha_1(y) \ddd{S}_u(u_0,y)\times \ddd{R}_y(x_0,y)+\beta_1(y)\ddd{S}_v(u_0,y)\times \ddd{R}_y(x_0,y).$$
-Upoštevamo, da je $\ddd{R}_y(x_0,y)=\ddd{S}_v(u_0,y)$ in dobimo:
+Enačbo sedaj z obeh strani vektorsko pomnožimo z $\frac{\partial}{\partial y}\ddd{R}(x_0,y)$:
+\begin{align*}
+\frac{\partial}{\partial x}\ddd{R}(x_0,y)\times 
+\frac{\partial}{\partial y}\ddd{R}(x_0,y)&=
+\alpha_1(y) \frac{\partial}{\partial u}\ddd{S}(u_0,y)\times 
+\frac{\partial}{\partial y}\ddd{R}(x_0,y)+\\
+&+\beta_1(y)\frac{\partial}{\partial y}\ddd{S}_v(u_0,y)\times 
+\frac{\partial}{\partial x}\ddd{R}(x_0,y).
+\end{align*}
+Upoštevamo, da je $\frac{\partial}{\partial y}\ddd{R}(x_0,y)=\frac{\partial}{\partial y}\ddd{S}(u_0,y)$ 
+in dobimo:
 \begin{equation}\label{eq30}
-\ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y) = \alpha_1(y) \ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y).
+\frac{\partial}{\partial x}\ddd{R}(x_0,y) \times \frac{\partial}{\partial y}\ddd{R}(x_0,y) = 
+\alpha_1(y) \frac{\partial}{\partial u}\ddd{S}(u_0,y) \times \frac{\partial}{\partial y}\ddd{S}(u_0,y).
 \end{equation}
-Vektorski produkt $\ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y)$ predstavlja normalo na 
+Vektorski produkt $\frac{\partial}{\partial x}\ddd{R}(x_0,y) \times \\frac{\partial}{\partial y}ddd{R}(x_0,y)$ 
+predstavlja normalo na 
 ploskev $\ddd{R}$ v točki $(x_0,y)$ na krivulji $\ddd{C}$, 
-$\ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y)$ pa normalo na ploskev $\ddd{S}$ na 
+$\frac{\partial}{\partial u}\ddd{S}(u_0,y) \times \frac{\partial}{\partial y}\ddd{S}(u_0,y)$ 
+pa normalo na ploskev $\ddd{S}$ na 
 krivulji $\ddd{C}$. 
 Enačba \eqref{eq30} pove, da sta normali na ploskvi $\ddd{R}$ in $\ddd{S}$ na njunu skupni  
 krivulji $\ddd{C}$ vzporedni in imata enako smer, kar nam zagotovi ustrezno izbran 
 predznak funkcije $\alpha_1(y)$. Na skupnem robu imata torej obe ploskvi enaki 
 enotski normali:
-$$\frac{\ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y)}{||\ddd{R}_x(x_0,y) \times \ddd{R}_y(x_0,y)||}=
-\frac{\alpha_1(y)\ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y)}{||\alpha_1(y)\ddd{S}_u(u_0,y) \times \ddd{S}_v(u_0,y)||}.$$
+$$\frac{\frac{\partial\ddd{R}}{\partial x}(x_0,y) \times \frac{\partial\ddd{R}}{\partial y}(x_0,y)}
+{||\frac{\partial\ddd{R}}{\partial x}(x_0,y) \times \frac{\partial\ddd{R}}{\partial y}(x_0,y)||}=
+\frac{\alpha_1(y)\frac{\partial\ddd{S}}{\partial u}(u_0,y) \times \frac{\partial\ddd{S}}{\partial y}(u_0,y)}
+{||\alpha_1(y)\frac{\partial\ddd{S}}{\partial u}(u_0,y) \times \frac{\partial\ddd{S}}{\partial y}(u_0,y)||}.$$
 Enotska normala se zato zvezno spreminja vzdolž zlepka obeh ploskev, od koder poimenovanje 
 \emph{zveznost enotskih normal}. 
 
-Pogoj, da parcialni odvodi $\ddd{R}_x(x_0,y)$, $\ddd{S}_u(u_0,y)$ in $\ddd{S}_v(u_0,y)$ ležijo na isti 
+Pogoj, da parcialni odvodi $\frac{\partial}{\partial x}\ddd{R}(x_0,y)$, 
+$\frac{\partial}{\partial u}\ddd{S}(u_0,y)$ in $\frac{\partial}{\partial y}\ddd{S}(u_0,y)$ 
+ležijo na isti 
 tangentni ravnini, je možno izraziti tudi na naslednja dva načina. 
 Zgornji parcialni odvodi so del iste tangentne ravnine natanko tedaj ko velja
-$$\det(\ddd{R}_x(x_0,y), \ddd{S}_u(u_0,y), \ddd{S}_v(u_0,y))=0.$$
+$$\det(\frac{\partial}{\partial x}\ddd{R}(x_0,y), \frac{\partial}{\partial u}\ddd{S}(u_0,y), 
+\frac{\partial}{\partial y}\ddd{S}(u_0,y))=0.$$
 
 Ta pogoj pa je ekvivalenten pogoju, da obstajajo skalarne funkcije $\lambda$, 
 $\mu$ in $\gamma$, da velja
-$$\lambda(y)\ddd{R}_x(x_0,y)=\mu(y)\ddd{S}_u(u_0,y)+\gamma(y)\ddd{S}_v(u_0,y).$$
+$$\lambda(y)\frac{\partial}{\partial x}\ddd{R}(x_0,y)=
+\mu(y)\frac{\partial}{\partial u}\ddd{S}(u_0,y)+\gamma(y)\frac{\partial}{\partial y}\ddd{S}(u_0,y).$$
 
 Če predpostavimo, da sta ploskvi $\ddd{R}$ in $\ddd{S}$ polinomski, lahko tudi za $\lambda$, $\mu$ in $\gamma$ 
 izberemo polinome ali racionalne funkcije, kar nam zelo olajša 
@@ -817,13 +844,22 @@ iz tenzorskega produkta}\label{pog.bez.ten.}
 
 \subsection{Bézierjeve ploskve iz tenzorskega produkta}
 
-V tem podpoglavju bodo predstavljene Bézierjeve krivulje in Bézierjeve ploskve iz 
-tenzorskega produkta. \todo{povej, v katerem viru so dokazi itd.}
-Bézierove krivulje in ploskev so polinomske, podajamo jih s pomočjo 
-Bernsteinovih baznih polinomov.
+Kot osnova za implementacijo krivulj in ploskev se v računalniško podprtem 
+geometrijskem oblikovanju uporabljajo t.~i. Bézierjeve krivulje in ploskve, 
+polinomske parametrično podane ploskve, predstavljene v bazi Bernsteinovih 
+baznih polinomov. 
+V tem podpoglavju bo obnovljenih nekaj osnovnih lastnosti in pojmov v zvezi z 
+Bézierjevimi krivuljami in Bézierjevimi ploskvami iz 
+tenzorskega produkta. Poznamo tudi vrsto Bézierjevih ploskev, imenovano trikotne 
+Bézierjeve ploskve, ki bo podrobneje predstavljena v poglavju \ref{pog.bez.tr.}. 
+To podpoglavje se opira predvsem na \cite{Hoschek.1993}, \cite{10.5555/501891} in 
+\cite{HANSFORD200275}, kjer je mogoče najti tudi izpeljave enakosti, predstavljenih 
+v nadaljevanju tega podpoglavja. 
 
+Za začetek si oglejmo definicijo Bernsteinovih baznih polinomov ter nekaj njihovih 
+ključnih lastnosti.  
 \begin{definicija}
-Za $i=0,1,\ldots,n$ je $i$-ti \emph{Bérnsteinov bazni polinom} stopnje $n$ definiran 
+Za $i=0,1,\ldots,n$ je $i$-ti \emph{Bernsteinov bazni polinom} stopnje $n$ definiran 
 kot 
 $$B_i^n(t)={n \choose i}t^i (1-t)^{n-i},\quad t\in[0,1].$$
 \end{definicija}
@@ -942,9 +978,9 @@ množica $\{B_i^m(u)B_j^n(v);i=0\ldots,m;j=0,\ldots,n\}$ baza prostora $\mathbb{
 
 Alternativna izbira za prostor polinomov dveh spremenljivk je prostor 
 $\mathbb{P}_n^2=\mbox{Lin}\{u^iv^j;0 \leq i+j \leq n\}$. Njegovo bazo tvorijo 
-Bernsteinovi polinomi dveh spremenljivk, ki bodo definirani v poglavju \todo{ref}. 
+Bernsteinovi polinomi dveh spremenljivk, ki bodo definirani v poglavju \ref{pog.bez.tr.}. 
 Bézierjeve ploskve, podane v bazi prostora $\mathbb{P}_n^2$, imenujemo 
-\emph{trikotne Bézierjeve ploskve}. Podrobneje bodo predstavljene v poglavju \todo{ref} 
+\emph{trikotne Bézierjeve ploskve}. 
 Bézierjeve ploskve, ki jih podajamo 
 v bazi iz tenzorskih produktov, pa pravimo \emph{Bézierjeve ploskve iz tenzorskega 
 produkta}. Definirane so na naslednji način.
@@ -1035,7 +1071,7 @@ V tem podpoglavju si bomo ogledali, kako se splošni pogoji za geometrijsko
 zveznost med dvema ploskvama, ki smo jih izpeljali v poglavju \ref{geom.zv.}, 
 odražajo na Bézierjevih ploskvah iz tenzorskega produkta. 
 
-Ker so Bézierjeve ploskve polinomske, se lahko pri izbiri stičnih funkcij 
+Ker so Bézierjeve ploskve polinomske, se lahko pri izbiri povezovalnih funkcij 
 omejimo na racionalne funkcije, kar močno olajša konstrukcijo v praktičnih primerih. 
 O tem bo govoril izrek, predstavljen v tem podpoglavju.
 
@@ -2611,7 +2647,7 @@ kar pa v našem primeru ne drži.
 
 Tako kot v primeru Bézierovih ploskev iz tenzorskega produkta, obstaja več 
 načinov konstrukcije $G^1$-zveznih trikotnih Bézierovih ploskev, odvisno 
-od izbire stičnih funkcij. V tem podpoglavju si bomo ogledali enega izmed 
+od izbire povezovalnih funkcij. V tem podpoglavju si bomo ogledali enega izmed 
 načinov konstrukcije dveh trikotnih Bézierovih ploskev, ki sta na skupnem robu 
 zvezni, vendar pa se tega ne bomo lotili prek osnovne definicije geometrijske 
 zveznosti oziroma izreka \ref{izrek1}, temveč prek geometrijske definicije.
@@ -2898,7 +2934,7 @@ pogoje pa dobimo še iz zahteve, da se v točki $\ddd{P}$ ujemajo tudi mešani o
 ploskev. V primeru $G^1$-zveznosti med dvema ploskvama je bila ta zahteva zaradi 
 ujemanja ploskev v skupni krivulji avtomatično izpolnjena, v primeru stika med 
 večimi ploskvami pa prinese dodatne pogoje, ki morajo veljati za ploskve ter 
-povezovalne \todo{junction?} funkcije. 
+povezovalne funkcije. 
 
 Po izreku \ref{izrek1} sta ploskvi $\ddd{X}_i$ in $\ddd{X}_{i+1}$ na stiku $G^1$ zvezni, 
 če obstajata funkciji $\alpha_i(v_i)$ in $\beta_i(v_i),$ da velja 
@@ -2930,7 +2966,7 @@ in $i=1,\ldots,N$.
 
 Enačbi \eqref{eq54} in \eqref{eq55} nam data prvi sklop kompatibilnostnih pogojev, 
 ki morajo veljati 
-za ploskve $\ddd{X}_i$ in njihove \todo{junction} funkcije v točki $\ddd{P}$. 
+za ploskve $\ddd{X}_i$ in njihove povezovalne funkcije v točki $\ddd{P}$. 
 Te pogoje si oglejmo 
 na primeru Bézierjevih ploskev iz tenzorskega produkta. Naj bodo ploskve $\ddd{X}_i$ 
 stopnje $(n,n)$ in naj bodo definirane kot 
@@ -2944,7 +2980,7 @@ Zaradi stikanja v krivuljah $\ddd{K}_i$, $i=1,\ldots,N$, za njihove kontrolne to
 velja $\ddd{x}_{0,j}^{(i)}=\ddd{x}_{j,0}^{(i+1)}$ za $j=0,\ldots,n$ in $i=1,\ldots,N-1$ 
 ter $\ddd{x}_{0,j}^{(N)}=\ddd{x}_{j,0}^{(1)}$ za $j=0,\ldots,n$. 
 
-Naj bodo \todo{junction} funkcije $\alpha_i(v_i)$ konstantne, torej naj bo 
+Naj bodo povezovalne funkcije $\alpha_i(v_i)$ konstantne, torej naj bo 
 \begin{align}\label{eq67}
 \alpha_i(v_i)\equiv \alpha_{i,0}, 
 \end{align}
@@ -3047,7 +3083,7 @@ $$\ddd{K}_i(v_i)=\ddd{X}_i(0,v_i)=\ddd{X}_{i+1}(u_{i+1},0),$$
 kjer je $i=1,2$, oziroma v 
 $$\ddd{K}_3(v_3)=\ddd{X}_3(0,v_3)=\ddd{X}_{1}(u_{1},0).$$
 
-Naj bodo \todo{junction} funkcije $\alpha_i(v_i)$ in $\beta_i(v_i)$, $i=1,2,3$, 
+Naj bodo povezovalne funkcije $\alpha_i(v_i)$ in $\beta_i(v_i)$, $i=1,2,3$, 
 definirane kot v \eqref{eq67} oziroma \eqref{eq68}. 
 Iz enačb \eqref{eq61} in \eqref{eq62} sledi, da za kontrolne točke ploskev velja
 \begin{equation}\label{eq66}
@@ -3123,7 +3159,7 @@ kjer se funkcije $F_1$, $G_1$, $F_2$ in $G_2$ izražajo kot
   &G_2(\alpha_{1,0},\beta_{1,0},\alpha_{2,0},\beta_{2,0},\alpha_{3,0},\beta_{3,0})=
   -\frac{\beta_{1,0}}{\alpha_{1,0}\alpha_{3,0}}.
 \end{align*}
-Od tod dobimo pogoje, ki morajo veljati za \todo{junction} funkcije $\alpha_i(v_i)$ 
+Od tod dobimo pogoje, ki morajo veljati za povezovalne funkcije $\alpha_i(v_i)$ 
 in $\beta_i(v_i)$, $i=1,2,3$:
 \begin{align*}
 -\frac{\beta_{2,0}}{\alpha_{2,0}\alpha_{1,0}}=1 && 

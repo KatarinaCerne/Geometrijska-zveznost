@@ -329,7 +329,7 @@ Krivulji $\ddd{p}$ in $\ddd{q}$ naj se stikata v neki točki, torej naj obstaja
 parameter $t_0 \in I_1 \cap I_2$, da je $\ddd{p}(t_0)=\ddd{q}(t_0)$. Pravimo, da se 
 krivulji v skupni točki stikata s \emph{parametrično zveznostjo reda $n$} oziroma 
 s \emph{$C^n$-zveznostjo}, če velja 
-$$\frac{d^k}{dt^k}\ddd{p}(t)|_{t=t_0}=\frac{d^k}{dt}\ddd{q}|_{t=t_0}, \quad k=1,\ldots,n.$$
+$$\frac{d^k}{dt^k}\ddd{p}(t_0)=\frac{d^k}{dt}\ddd{q}(t_0), \quad k=1,\ldots,n.$$
 \end{definicija}
 
 Podobna je definicija $C^n$-zveznosti za ploskve. 
@@ -382,7 +382,8 @@ parametre, s katerimi lahko vplivamo na obliko objektov. Z uporabo geometrijske
 zveznosti je torej mogoče modelirati veliko več različnih oblik, med drugim tudi 
 ploskvi, prikazani na slikah \ref{fig:zvezda6} in \ref{fig:zvezda6}.  
 
-To magistrsko delo se osredotoča predvsem na konstrukcijo geometrijsko zveznih ploskev. 
+To magistrsko delo se osredotoča predvsem na konstrukcijo geometrijsko zveznih 
+parametrično podanih ploskev. 
 V poglavju \ref{geom.zv.} je najprej predstavljenih nekaj osnovnih pojmov v zvezi s 
 parametričnimi krivuljami in ploskvami, nato je definirana geometrijska zveznost na 
 stiku dveh krivulj. Sledi definicija geometrijske zveznosti med dvema ploskvama, ter 
@@ -426,12 +427,16 @@ ki se stikajo v skupni točki.
 
 \section{Geometrijska zveznost parametrično podanih krivulj in ploskev}\label{geom.zv.}
 
-\todo{nek uvodni tekst?}
+V uvodu je bilo omenjeno, da se bomo v nadaljevanju ukvarjali s krivuljami in ploskvami, 
+ki so podane parametrično, ter pogoji, ki morajo veljati za njihovo gladkost. 
+Izkaže se, da sam pogoj geometrijske ali pa parametrične zveznosti na stiku dveh poljubnih 
+krivulj ali ploskev ni niti zadosten niti potreben. Obstajajo t.~i. neregularne 
+krivulje in ploskve, 
+ki zadoščajo pogojem zveznosti, vendar na stiku niso videti gladke, ali pa pogojem zveznosti 
+ne zadoščajo, pa so vseeno videti gladke. Nekaj primerov takih krivulj in ploskev je 
+mogoče najti v \cite{PETERS2002193}. Da se izognemo takim primerom, se bomo v nadaljevanju omejili 
+le na regularne parametrične krivulje in ploskve. 
 
-Krivulje in ploskve lahko podajamo na različne načine: eksplicitno, implicitno 
-ali parametrično. V nadaljevanju se bomo ukvarjali s parametrično podanimi 
-krivuljami in ploskvami, omejili pa se bomo tudi na krivulje in ploskve, 
-ki so regularne. %saj te izgledajo gladko
 Oglejmo si definicijo parametrično podane krivulje in regularne 
 parametrizacije krivulje. 
 
@@ -506,12 +511,12 @@ $\ddd{p}$ in $\ddd{q}$ naj se stikata v neki točki, torej naj obstajata paramet
 $t_1\in I_1$ in $t_2\in I_2$, da je $\ddd{p}(t_1)=\ddd{q}(t_2)$. 
 Pravimo, da se krivulji v skupni točki stikata z \emph{geometrijsko zveznostjo reda n} 
 oziroma z \emph{$G^n$-zveznostjo}, če v okolici $I_0$ parametra $t_1$ obstaja regularna 
-reparametrizacijska funkcija $f:I_0\rightarrow I_2$, da velja $f(t_1)=t_2$ ter 
+$C^n$ reparametrizacijska funkcija $f:I_0\rightarrow I_2$, da velja $f(t_1)=t_2$, 
+$\frac{df}{dt}(t_1)>0$ ter 
 \begin{align*}
-  \frac{d^k}{dt^k}\ddd{p}(t)\big|_{t=t_1}=\frac{d^k}{dt^k}(\ddd{q}\circ f)(t)\big|_{t=t_1},\quad k=0,1,\ldots,n.
+  \frac{d^k}{dt^k}\ddd{p}(t_1)=\frac{d^k}{dt^k}(\ddd{q}\circ f)(t_1),\quad k=0,1,\ldots,n.
 \end{align*}
 \end{definicija}
-\todo{slika}
 
 Da sta krivulji $\ddd{p}$ in $\ddd{q}$ $G^0$-zvezni, mora veljati le, da se ujemata 
 v skupni točki, oziroma da je $\ddd{p}(t_1)=\ddd{q}(t_2)$. 
@@ -558,19 +563,31 @@ geometrijsko zvezna.
   Naj bosta $\ddd{R}(x,y)$ in $\ddd{S}(u,v)$ regularni $C^n$ parametrizaciji dveh 
   ploskev, ki se stikata v krivulji $\ddd{C}(y)=\ddd{R}(x_0,y)=\ddd{S}(u_0,y)$. 
   Pravimo, da se $\ddd{R}$ in $\ddd{S}$ \emph{stikata z $G^n$-zveznostjo vzdolž 
-  krivulje $\ddd{C}$}, če za vsako točko $b_0=\ddd{C}(y_0)$ obstaja lokalna regularna $C^n$ reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, da je $f(x_0,y)=(u_0,y)$ za vsak $y \in I_0$ in da velja
+  krivulje $\ddd{C}$}, če za vsako točko $b_0=\ddd{C}(y_0)$ obstaja lokalna regularna $C^n$ 
+  reparametrizacijska funkcija $\ddd{f}(x,y)=(u(x,y),v(x,y))$, da je $\ddd{f}(x_0,y)=(u_0,y)$ 
+  za vsak $y \in I_0$ in da velja
   \begin{equation}\label{eq0}
-  \frac{\partial^{m+k}}{\partial x^m \partial y^k}\ddd{R}(x_0,y)=\frac{\partial^{m+k}}{\partial x^m \partial y^k}(\ddd{S}\circ f)(x_0,y)\quad \textrm{za } m+k=1,\ldots,n,
+  \frac{\partial^{m+k}}{\partial x^m \partial y^k}\ddd{R}(x_0,y)=
+  \frac{\partial^{m+k}}{\partial x^m \partial y^k}(\ddd{S}\circ \ddd{f})(x_0,y)\quad \textrm{za } m+k=1,\ldots,n,
   \end{equation}
   kjer je $I_0$ neka okolica $y_0$. 
 \end{definicija}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{slike/slikanje.pdf}
+  \caption[Grafična ponazoritev reparametrizacije ploskev.]
+  {Grafična ponazoritev reparametrizacije ploskev. Da sta ploskvi na skupnem robu 
+  $G^n$-zvezni, se morajo na robu ujemati odvodi parametrizacij $\ddd{R}$ in $\ddd{S}\circ\ddd{f}$ 
+  do odvoda stopnje $n$.}
+  \label{fig:slikanje}
+\end{figure}
 
 Zaradi stikanja ploskev v krivulji $\ddd{C}$ oziroma, ker vzdolž krivulje $\ddd{C}$ velja $y=v$, 
 so parcialni odvodi parametrizacij 
 po spremenljivki $y$ vzdolž krivulje $\ddd{C}$ enaki, zato je dovolj, da pri obravnavi 
 geometrijske zveznosti dveh ploskev opazujemo le parcialne odvode po 
 spremenljivki $x$.
-\todo{dodati sliko?}
 Te parcialne odvode imenujemo \todo{crossboundary derivatives}.
 
 Oglejmo si, kakšni pogoji morajo veljati v primeru, ko želimo, da je stik med dvema 

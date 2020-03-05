@@ -1,0 +1,57 @@
+\documentclass[12pt,a4paper,twoside]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage{filecontents}  % za pisanje datoteke s PDF metapodatki
+\usepackage{silence}
+\usepackage[a-1b]{pdfx}  % zgenerira PDF v tem PDF/A-1b formatu, kot zahteva knjižnica
+\hypersetup{bookmarksopen, bookmarksdepth=3, colorlinks=true,
+  linkcolor=black, anchorcolor=black, citecolor=black, filecolor=black,
+  menucolor=black, runcolor=black, urlcolor=black, pdfencoding=auto,
+  breaklinks=true, psdextra}
+  \usepackage[slovene]{babel}  % slovenščina
+\usepackage[T1]{fontenc}     % naprednejše kodiranje fonta
+\usepackage{amsmath,amssymb,amsfonts,amsthm} % matematični paketi
+%\usepackage[dvipsnames,usenames]{color} % barve
+\usepackage{graphicx}     % za slike
+\usepackage{emptypage}    % prazne strani so neoštevilčene, ampak so štete
+\usepackage{units}  
+\usepackage[
+  top=3cm,
+  bottom=3cm,
+  inner=3.5cm,      % margini za dvostransko tiskanje
+  outer=2.5cm,
+  footskip=40pt     % pozicija številke strani
+]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{eurosym}
+\usepackage{hyperref}
+\usepackage{subfigure}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\renewcommand{\C}{\mathbb C}
+\newcommand{\Q}{\mathbb Q}
+
+\newcommand{\todo}[1]{{\color{red}{#1}}}
+\newcommand{\nevem}[1]{{\color{blue}{#1}}}
+
+\newcommand{\ddd}[1]{\mathbf{#1}}
+
+\begin{document}
+$\ddd{R}$\quad
+$\ddd{S}$\quad
+$\ddd{f}$\quad
+$x$\quad
+$y$\quad
+$u$\quad
+$v$\quad
+$\ddd{S}\circ \ddd{f}$\quad
+$x_0$\quad
+$u_0$\quad
+$I_0$\quad
+$\ddd{f}(I_0)$
+\end{document}

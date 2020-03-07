@@ -85,6 +85,7 @@
 \usepackage{xcolor}
 \usepackage{tcolorbox}
 \usepackage{enumitem}
+\usepackage[ruled,lined]{algorithm2e}
 
 \setlength{\overfullrule}{50pt} % označi predlogo vrstico
 \pagestyle{plain}               % samo številka strani na dnu, nobene glave / noge
@@ -2406,7 +2407,10 @@ oziroma kontrolne točke $\ddd{Q}_{i,j}$, $i=0,1,2$, $j=0,\ldots,5$.
 
 \subsection{Trikotne Bézierjeve ploskve}\label{trikotne1}
 
-\todo{povej, kje je možno najti dokaze trditev v tem podpoglavju}
+V tem podpoglavju bodo predstavljeni nekateri osnovni pojmi in lastnosti trikotnih 
+Bézierjevih ploskev. Pri tem se opiramo na \cite{lai_schumaker_2007}, pa tudi 
+\cite{Hoschek.1993} in \cite{farin1986triangular}, kjer je mogoče najti manjkajoče 
+dokaze in izpeljave. 
 
 Trikotne Bézierjeve ploskve so tip Bézierjevih ploskev s parametrizacijo, definirano 
 nad domeno, sestavljeno iz trikotnikov. Ko imamo opravka s trikotnimi domenami, uporaba običajnega 
@@ -2422,57 +2426,96 @@ $\ddd{u}=(u,v,w)$ imenujemo \emph{baricentrične koordinate} točke $\ddd{p}$ gl
 na trikotnik $T$. Krajše to zapišemo kot $\ddd{u}=\mbox{Bar}(\ddd{p},T)$.
 \end{definicija}
 
-Trikotne Bézierove ploskve definiramo na naslednji način. 
+Parametrizacije Bézierjevih ploskev podajamo v bazi prostora polinomov dveh spremenljivk. 
+V primeru trikotnih Bézierovih ploskev izberemo prostor polinomov 
+$\mathbb{P}_n^2=\mbox{Lin}\{u^iv^j;0\leq i+j \leq n\}$. 
+Bazo tega prostora tvorijo Bernsteinovi bazni polinomi dveh spremenljivk, 
+kar je dokazano v \cite{lai_schumaker_2007}.
+Bernsteinovi polinomi dveh spremenljivk so definirani na naslednji način.
 \begin{definicija}
-  \emph{Trikotna Bézierova ploskev stopnje n nad trikotnikom $T=\\\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$}\todo{lomljenje?} 
+Naj bo $T=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$ domenski trikotnih in 
+$i$, $j$ ter $k$ cela števila, za katera velja $i\geq0$, $j\geq0$, $k\geq0$ in 
+$i+j+k=n$. Bernsteinov bazni polinom stopnje $n$ dveh spremenljivk je definiran kot 
+$$B_{i,j,k}^n(\ddd{u})=\frac{n!}{i!j!k!}u^iv^jw^k,$$
+kjer z $\ddd{u}=(u,v,w)$ označujemo baricentrične koordinate neke točke v ravnini glede 
+na trikotnik $T$. 
+\end{definicija}
+
+Oglejmo si še definicijo trikotnih Bézierjevih ploskev.  
+\begin{definicija}
+  \emph{Trikotna Bézierjeva ploskev stopnje n nad domenskim trikotnikom $T=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$} 
   je podana s parametrizacijo
   $$\ddd{R}_n(\ddd{p})=\sum_{i+j+k=n}\ddd{b}_{i,j,k}B_{i,j,k}^n(\ddd{u}),\quad \ddd{u}=\mbox{Bar}(\ddd{p},T)$$
-  kjer so $\ddd{b}_{i,j,k}$, $i+j+k=n$, kontrolne točke te ploskve. Trikotnik $T$ je domena te parametrizacije. Z 
-  $B_{i,j,k}^n$ označujemo Bernsteinove bazne polinome v dveh spremenljivkah, 
-  ki so definirani na naslednji način:
-  $$B_{i,j,k}^n(\ddd{u})=\frac{n!}{i!j!k!}u^iv^jw^k,$$
-  kjer velja $i+j+k=n$ ter $i\geq0$, $j\geq0$ in $k\geq0$.
+  kjer so $\ddd{b}_{i,j,k}$, $i+j+k=n$, kontrolne točke te ploskve. Trikotnik $T$ je 
+  domena te parametrizacije. 
+  %Z 
+  %$B_{i,j,k}^n$ označujemo Bernsteinove bazne polinome v dveh spremenljivkah, 
+  %ki so definirani na naslednji način:
+  %$$B_{i,j,k}^n(\ddd{u})=\frac{n!}{i!j!k!}u^iv^jw^k,$$
+  %kjer velja $i+j+k=n$ ter $i\geq0$, $j\geq0$ in $k\geq0$.
 \end{definicija}
+
 
 Koordinate poljubne točke na trikotni Bézierovi ploskvi lahko izračunamo s pomočjo 
 de Casteljaujevega algoritma.
+\begin{algorithm}[h]
+  \KwData{Kontrolna mreža $\ddd{b}_{i,j,k}$,$i+j+k=n$, točka $\ddd{p}$ v domeni, 
+  trikotnik $T=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$}
+  \KwResult{$\ddd{b}_{0,0,0}^n(\ddd{u})=\ddd{R}_n(\ddd{p})$}
+  Izračunaj $\ddd{u}=(u,v,w)=\mbox{Bar}(\ddd{p};T)$\;
+  \For{$i=1,\ldots,n$}{
+    \For{$j=1,\ldots,n-i$}{
+      $k=n-i-j$\;
+      $\ddd{b}_{i,j,k}^0(\ddd{u})=\ddd{b}_{i,j,k}$\;
+    }
+  }
+  \For{$r=1,2,\ldots,n$}{
+    \For{$i=1,\ldots,n-r$}{
+      \For{$j=1,\ldots,n-r-i$}{
+        $k=n-r-i-j$\;
+        $\ddd{b}_{i,j,k}^r(\ddd{u})=u\ddd{b}_{i+1,j,k}^{r-1}(\ddd{u})
+   +v\ddd{b}_{i,j+1,k}^{r-1}(\ddd{u})+w\ddd{b}_{i,j,k+1}^{r-1}(\ddd{u})$
+      }
+    }
+    }
+  \caption{De Casteljaujev algoritem za trikotne Bézierove krpe}
 
-\todo{decasteljaujev algoritem? ali samo sklic na vir?}
+ \end{algorithm}
 
-V nadaljevanju si bomo ogledali še definicijo smernega odvoda trikotne Bézierjeve 
-ploskve in pogoje za $C^n$-zveznost med dvema trikotnima Bézierjevima ploskvama, 
-v ta namen pa moramo najprej definirati pojem trikotniškega razcveta. 
-\begin{definicija}
-  izberemo točke $\ddd{p}_1, \ldots, \ddd{p}_n$ z baricentričnimi koordinatami 
-  $\ddd{u}_i=Bar(\ddd{p}_i;T)$, $i=1,\ldots,n$. Če v de Casteljaujevem algoritmu 
-  na $i$-tem koraku namesto z baricentričnimi koordinatami $\ddd{u}$ računamo 
-  z $\ddd{u}_i$, kot rezultat algoritma dobimo polinom več spremenljivk, ki ga 
-  imenujemo \emph{trikotniški razcvet} in ga označujemo z 
-  $\ddd{b}[\ddd{u}_1,\ldots,\ddd{u}_n;T]$ oziroma $\ddd{b}[\ddd{p}_1,\ldots,\ddd{p}_n]$. 
-\end{definicija}
-
-Kontrolne točke neke ploskve nad trikotnikom $T$ lahko izrazimo s trikotniškim 
-razcvetom na naslednji način: 
-$\ddd{b}_{i,j,k}=\ddd{b}[\ddd{e}_1^{\langle i\rangle},\ddd{e}_2^{\langle j\rangle},\ddd{e}_3^{\langle k\rangle}]$.
-
-S pomočjo trikotniškega razcveta lahko izrazimo kontrolne točke ploskve glede na 
-različne trikotnike v domeni. Imejmo trikotnika $T_1=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$ in 
-$T_2 = <\ddd{r}_1,\ddd{r}_2,\ddd{r}_3>$. 
-Naj bodo $\ddd{b}_{i,j,k}$, $i+j+k=n$ kontrolne točke ploskve $\ddd{P}$ glede 
-na trikotnik $T_1$ in naj bo $\ddd{s}_1=Bar(r_1;T_1)$, $\ddd{s}_2=Bar(r_2;T_1)$ ter 
-$\ddd{s}_3=Bar(r_3;T_1)$. Potem se kontrolne točke ploskve $\ddd{P}$ glede na 
-trikotnik $T_2$ izražajo na naslednji način: 
-$c_{i,j,k} = \ddd{b}[\ddd{s}_1^{\langle i\rangle},\ddd{s}_2^{\langle j\rangle},\ddd{s}_3^{\langle k\rangle}]$, $i+j+k=n$. 
-Tu s $\ddd{s}_1^{\langle i\rangle}$ označujemo $i$-kratno ponovitev $\ddd{s}_1$.
-
-Če imamo domeno, sestavljeno iz dveh trikotnikov, ki se na enem robu stikata, 
-torej če imamo trikotnika $T_1=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$ in 
-$T_2 = \langle\ddd{p}_2,\ddd{p}_3,\ddd{p}_4\rangle$, ter ploskev, podano s kontrolnimi točkami 
-glede na trikotnik $T_1$: $b_{i,j,k},$ $i+j+k=n$,   
-lahko kontrolne točke ploskve  
-glede na trikotnik $T_2$ zapišemo tako: 
-$\ddd{c}_{i,j,k}=\ddd{b}[\ddd{e}_1^{\langle i\rangle},\ddd{e}_2^{\langle j\rangle},\mathbf{\alpha}^{\langle k\rangle};T]$. 
-Tu je $\mathbf{\alpha}=Bar(\ddd{p}_4;T_1)$, $\ddd{e}_1=(1,0,0)$ in $\ddd{e}_2=(0,1,0)$. 
+%V nadaljevanju si bomo ogledali še definicijo smernega odvoda trikotne Bézierjeve 
+%ploskve in pogoje za $C^n$-zveznost med dvema trikotnima Bézierjevima ploskvama, 
+%v ta namen pa moramo najprej definirati pojem trikotniškega razcveta. 
+%\begin{definicija}
+%  izberemo točke $\ddd{p}_1, \ldots, \ddd{p}_n$ z baricentričnimi koordinatami 
+%  $\ddd{u}_i=Bar(\ddd{p}_i;T)$, $i=1,\ldots,n$. Če v de Casteljaujevem algoritmu 
+%  na $i$-tem koraku namesto z baricentričnimi koordinatami $\ddd{u}$ računamo 
+%  z $\ddd{u}_i$, kot rezultat algoritma dobimo polinom več spremenljivk, ki ga 
+%  imenujemo \emph{trikotniški razcvet} in ga označujemo z 
+%  $\ddd{b}[\ddd{u}_1,\ldots,\ddd{u}_n;T]$ oziroma $\ddd{b}[\ddd{p}_1,\ldots,\ddd{p}_n]$. 
+%\end{definicija}
+%
+%Kontrolne točke neke ploskve nad trikotnikom $T$ lahko izrazimo s trikotniškim 
+%razcvetom na naslednji način: 
+%$\ddd{b}_{i,j,k}=\ddd{b}[\ddd{e}_1^{\langle i\rangle},\ddd{e}_2^{\langle j\rangle},\ddd{e}_3^{\langle k\rangle}]$.
+%
+%S pomočjo trikotniškega razcveta lahko izrazimo kontrolne točke ploskve glede na 
+%različne trikotnike v domeni. Imejmo trikotnika $T_1=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$ in 
+%$T_2 = <\ddd{r}_1,\ddd{r}_2,\ddd{r}_3>$. 
+%Naj bodo $\ddd{b}_{i,j,k}$, $i+j+k=n$ kontrolne točke ploskve $\ddd{P}$ glede 
+%na trikotnik $T_1$ in naj bo $\ddd{s}_1=Bar(r_1;T_1)$, $\ddd{s}_2=Bar(r_2;T_1)$ ter 
+%$\ddd{s}_3=Bar(r_3;T_1)$. Potem se kontrolne točke ploskve $\ddd{P}$ glede na 
+%trikotnik $T_2$ izražajo na naslednji način: 
+%$c_{i,j,k} = \ddd{b}[\ddd{s}_1^{\langle i\rangle},\ddd{s}_2^{\langle j\rangle},\ddd{s}_3^{\langle k\rangle}]$, $i+j+k=n$. 
+%Tu s $\ddd{s}_1^{\langle i\rangle}$ označujemo $i$-kratno ponovitev $\ddd{s}_1$.
+%
+%Če imamo domeno, sestavljeno iz dveh trikotnikov, ki se na enem robu stikata, 
+%torej če imamo trikotnika $T_1=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$ in 
+%$T_2 = \langle\ddd{p}_2,\ddd{p}_3,\ddd{p}_4\rangle$, ter ploskev, podano s kontrolnimi točkami 
+%glede na trikotnik $T_1$: $b_{i,j,k},$ $i+j+k=n$,   
+%lahko kontrolne točke ploskve  
+%glede na trikotnik $T_2$ zapišemo tako: 
+%$\ddd{c}_{i,j,k}=\ddd{b}[\ddd{e}_1^{\langle i\rangle},\ddd{e}_2^{\langle j\rangle},\mathbf{\alpha}^{\langle k\rangle};T]$. 
+%Tu je $\mathbf{\alpha}=Bar(\ddd{p}_4;T_1)$, $\ddd{e}_1=(1,0,0)$ in $\ddd{e}_2=(0,1,0)$. 
 
 Oglejmo si še formulo za smerni odvod parametrizacije trikotne Bézierjeve ploskve. 
 Imejmo ploskev $\ddd{P}(\ddd{p})=\sum_{i+j+k}\ddd{b}_{i,j,k}B_{i,j,k}^n(\ddd{u})$ 
@@ -2485,7 +2528,7 @@ Odvod parametrizacije $\ddd{P}$ v smeri vektorja $\ddd{p}$ izračunamo na nasled
 \begin{align*}
 D_{\ddd{p}}\ddd{P}(\ddd{p})&=n\sum_{i+j+k=n-1}(\mu_1\ddd{b}_{i+1,j,k}+
 \mu_2\ddd{b}_{i,j+1,k}+\mu_3\ddd{b}_{i,j,k+1})B_{i,j,k}^{n-1}(\ddd{u})\\
-&=n\ddd{b}[\mu,\ddd{u}^{\langle n-1\rangle};T].
+%&=n\ddd{b}[\mu,\ddd{u}^{\langle n-1\rangle};T].
 \end{align*}
 
 Pokazati je mogoče tudi, da za smerni odvod trikotne ploskve velja:

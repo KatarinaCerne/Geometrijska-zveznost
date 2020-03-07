@@ -2079,10 +2079,10 @@ kjer naj velja $e_{n_S-n_R}=e_m$ in $f_{n_S-n_R+1}=f_m$.
 Tako definirane polinome $D(v)$, $E_1(v)$ in $F_1(v)$ vstavimo v enačbo \eqref{eq71} in 
 jo preoblikujmo po enakem postopku kot v primeru \ref{primer2}. Če je $n_S=n_R$, dobimo 
 zelo podoben rezultat kot v primeru \ref{primer2}. Veljati mora
-\begin{align*}
+\begin{align}\label{eq75}
 m_S\ddd{q}_{1,j}=m_Re_0\ddd{p}_{1,j}+n_R(f_0(1-\frac{j}{n_S})\ddd{r}_{j}+
 f_1\frac{j}{n_S}\ddd{r}_{j-1})
-\end{align*}
+\end{align}
 za $j=1,2,\ldots,n_S-1$. 
 Pogoj za $G^1$-zveznost je torej v tem primeru kolinearnost med vektorji 
 $\ddd{q}_{1,j}$, $\ddd{p}_{1,j}$, $\ddd{r}_{j}$ in $\ddd{r}_{j-1}$. 
@@ -2303,7 +2303,7 @@ enačbah \eqref{eq14} in \eqref{eq35} ujemale, moramo znižati stopnji parcialni
 $\frac{\partial \ddd{R}}{\partial u}$ in $\frac{\partial^2 \ddd{R}}{\partial u^2}$. 
 Krivuljo $\frac{\partial \ddd{R}}{\partial u}$ aproksimirajmo s krivuljo stopnje 3, 
 krivuljo $\frac{\partial^2 \ddd{R}}{\partial u^2}$ pa s krivuljo stopnje 1. 
-\todo{ali so ti zapisi ok?}
+Naj velja
 \begin{align*}
   \frac{1}{5}\frac{\partial \ddd{R}}{\partial u}|_{u=0}=\sum_{i=0}^5\ddd{p}_{1,i}B_i^5(v)=
   \sum_{i=0}^3\ddd{\tilde{p}}_iB_i^3(v),
@@ -2481,6 +2481,8 @@ de Casteljaujevega algoritma.
   \caption{De Casteljaujev algoritem za trikotne Bézierove krpe}
 
  \end{algorithm}
+ De Casteljaujev algoritem bo pomemben v nadaljevanju za izražavo točk, ki razpenjajo 
+ tangentno ravnino na ploskev v neki točki. 
 
 %V nadaljevanju si bomo ogledali še definicijo smernega odvoda trikotne Bézierjeve 
 %ploskve in pogoje za $C^n$-zveznost med dvema trikotnima Bézierjevima ploskvama, 
@@ -2567,9 +2569,9 @@ $\ddd{\eta}=(\eta_1,\eta_2,\eta_3)=\mbox{Bar}(\ddd{d};T_2)=\ddd{e}_1-\ddd{e}_2$ 
 koordinate vektorja $\ddd{d}$ glede na trikotnik $T_2$. Veljati mora:
 \begin{align*}
 &\sum_{i+j+k=n-1}(\mu_1\ddd{r}_{i+1,j,k}+
-\mu_2\ddd{r}_{i,j+1,k}+\mu_3\ddd{r}_{i,j,k+1})B_{i,j,k}^{n-1}(\ddd{u})|_{u_1=0}=\\
+\mu_2\ddd{r}_{i,j+1,k}+\mu_3\ddd{r}_{i,j,k+1})B_{i,j,k}^{n-1}(\ddd{u})\big|_{u_1=0}=\\
 &\sum_{i+j+k=n-1}(\eta_1\ddd{s}_{i+1,j,k}+
-\eta_2\ddd{s}_{i,j+1,k}+\eta_3\ddd{s}_{i,j,k+1})B_{i,j,k}^{n-1}(\ddd{v})|_{v_1=0}
+\eta_2\ddd{s}_{i,j+1,k}+\eta_3\ddd{s}_{i,j,k+1})B_{i,j,k}^{n-1}(\ddd{v})\big|_{v_1=0}
 \end{align*}\todo{ok |u1=0?}
 oziroma
 \begin{align}\label{eq20}
@@ -2839,7 +2841,6 @@ $(1-\lambda(v))\sum_{i=0}^{n-1}\ddd{s}_{1,i,n-i-1}B_i^{n-1}$:
   &=(1-\lambda_0)\sum_{i=0}^{n}\ddd{s}_{1,i,n-i-1}\frac{n-i}{n}B_i^n(v)+
   (1-\lambda_1)\sum_{i=0}^{n-1}\ddd{s}_{1,i-1,n-i}\frac{i}{n}B_i^n(v).
 \end{align*}
-\todo{ali naj raje to nekje izpeljem posebej in se potem samo sklicujem?}
 
 Na enak način dobimo še 
 \begin{align*}
@@ -2981,7 +2982,10 @@ $$\ddd{P}=\ddd{X}_1(0,0)=\ddd{X}_2(0,0)=\cdots=\ddd{X}_N(0,0).$$
   \centering
   \includegraphics[width=0.9\textwidth]{slike/v-vozliscu.pdf}
 % \caption[caption za v kazalo]{Dolg caption pod sliko}
-  \caption[V vozlišču]{$G^1$-zvetnost v vozlišču}
+  \caption[Parametrizacija $N$ ploskev s skupno točko.]
+  {Parametrizacija $N$ ploskev, ki se stikajo v skupni točki $\ddd{P}$. 
+  Parametriziramo jih na tak način, da se stikajo v točki 
+  $\ddd{X}_1(0,0)=\cdots=\ddd{X}_N(0,0)$.}
   \label{fig:vvozliscu}
 \end{figure}
 
@@ -3072,14 +3076,30 @@ pri $v_i=u_{i+1}=1$ mora biti
   \ddd{x}_{1,n}^{(N)}-\ddd{x}_{0,n}^{(N)}=\alpha_{i,0}(\ddd{x}_{n,1}^{(1)}-\ddd{x}_{n,0}^{(1)})+
   \beta_{i,1}(\ddd{x}_{n,0}^{(1)}-\ddd{x}_{n-1,0}^{(1)}),
 \end{align}
-med preostalimi kontrolnimi točkami pa mora veljati zveza 
-\begin{align}\label{eq65}
-\todo{formula}
-\end{align}
-
-Izmed enačb \eqref{eq61}-\eqref{eq65} nam tiste, v katerih se točka $\ddd{P}$ ne pojavi, ne 
+med preostalimi kontrolnimi točkami pa mora po enačbi \eqref{eq75} veljati zveza 
+\begin{equation}\label{eq65}
+  \begin{split}
+\ddd{x}^{(i)}_{1,j}-\ddd{x}^{(i)}_{0,j}&=
+\alpha_{i,0}(\ddd{x}^{(i+1)}_{1,j}-\ddd{x}^{(i+1)}_{0,j})+
+\beta_{i,0}\left(1-\frac{j}{n}\right)(\ddd{x}^{(i+1)}_{0,j+1}-\ddd{x}^{(i+1)}_{0,j})+\\
+&+\beta_{i,1}\frac{j}{n}(\ddd{x}^{(i+1)}_{0,j}-\ddd{x}^{(i+1)}_{0,j-1}),
+\quad j=1,\ldots,n-1
+  \end{split}
+\end{equation}
+za $i=1,\ldots,N-1$ oziroma 
+\begin{equation}\label{eq74}
+  \begin{split}
+  \ddd{x}^{(N)}_{1,j}-\ddd{x}^{(N)}_{0,j}&=
+  \alpha_{N,0}(\ddd{x}^{(1)}_{1,j}-\ddd{x}^{(1)}_{0,j})+
+  \beta_{N,0}\left(1-\frac{j}{n}\right)(\ddd{x}^{(1)}_{0,j+1}-\ddd{x}^{(1)}_{0,j})+\\
+  &+\beta_{N,1}\frac{j}{n}(\ddd{x}^{(1)}_{0,j}-\ddd{x}^{(1)}_{0,j-1}),
+  \quad j=1,\ldots,n-1. 
+  \end{split}
+  \end{equation}
+  
+Izmed enačb \eqref{eq61}-\eqref{eq74} nam tiste, v katerih se točka $\ddd{P}$ ne pojavi, ne 
 prinesejo nobenih dodatnih pogojev, obravnavamo jih enako kot v poglavju \ref{g1primeri}. 
-Pogoje, ki jih dobimo iz enačb \eqref{eq65} pri \todo{vrednost}, 
+Pogoje, ki jih dobimo iz enačb \eqref{eq65} in \eqref{eq74} pri $j=1$, 
 bomo v nadaljevanju izpeljali na nekoliko drugačen način. 
 
 Sedaj najprej analizirajmo 

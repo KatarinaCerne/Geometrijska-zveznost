@@ -845,7 +845,7 @@ iz tenzorskega produkta}\label{pog.bez.ten.}
 
 \subsection{Bézierjeve ploskve iz tenzorskega produkta}
 
-Kot osnova za implementacijo krivulj in ploskev se v računalniško podprtem 
+Kot osnovno orodje za implementacijo krivulj in ploskev se v računalniško podprtem 
 geometrijskem oblikovanju uporabljajo t.~i. Bézierjeve krivulje in ploskve, 
 polinomske parametrično podane ploskve, predstavljene v bazi Bernsteinovih 
 baznih polinomov. 
@@ -938,6 +938,16 @@ Pomembna lastnost Bézierjevih krivulj, ki sledi iz lastnosti Bernsteinovih
 baznih polinomov, je, da interpolirajo prvo in zadnjo kontrolno točko. Torej 
 velja $\ddd{B}_n(0)=\ddd{b}_0$ in $\ddd{B}_n(1)=\ddd{b}_n$. 
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{slike/krivulja5-3.pdf}
+% \caption[caption za v kazalo]{Dolg caption pod sliko}
+  \caption[Primer Bézierjeve krivulje stopnje 5.]
+  {Primer Bézierjeve krivulje stopnje 5 s kontrolnim poligonom in 
+  kontrolnimi točkami.}
+  \label{fig:krivulja5}
+\end{figure}
+
 V nekaterih primerih v nadaljevanju bo, da dosežemo ujemanje stopenj Bézierjevih 
 krivulj v enačbah, potrebno zvišati oziroma znižati stopnjo Bézierjeve krivulje, 
 torej opisati oziroma aproksimirati dano krivuljo s krivuljo višje oziroma nižje 
@@ -996,11 +1006,21 @@ produkta}. Definirane so na naslednji način.
   pa \emph{kontrolna mreža} ploskve $\ddd{B}_{m,n}$. 
 \end{definicija}
 
-\todo{slika}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{slike/ploskev3x4-5.pdf}
+% \caption[caption za v kazalo]{Dolg caption pod sliko}
+  \caption[Primer Bézierjeve ploskve iz tenzorskega produkta.]
+  {Primer Bézierjeve ploskve iz tenzorskega produkta stopnje (3,2) s 
+  kontrolnim poligonom.}
+  \label{fig:ploskev3x4}
+\end{figure}
 
 Opazimo lahko, da za Bézierjevo ploskev iz tenzorskega produkta velja naslednje: 
-$\mathbf{B_{m,n}}(0,0)=\mathbf{b}_{0,0}$, $\mathbf{B_{m,n}}(1,0)=\mathbf{b}_{m,0}$, 
-$\mathbf{B_{m,n}}(0,1)=\mathbf{b}_{0,n}$ in $\mathbf{B_{m,n}}(1,1)=\mathbf{b}_{m,n}$. 
+\begin{align*}
+&\mathbf{B_{m,n}}(0,0)=\mathbf{b}_{0,0}, &&\mathbf{B_{m,n}}(1,0)=\mathbf{b}_{m,0},\\ 
+&\mathbf{B_{m,n}}(0,1)=\mathbf{b}_{0,n},  &&\mathbf{B_{m,n}}(1,1)=\mathbf{b}_{m,n}.
+\end{align*} 
 Parametrizacija torej interpolira vogalne kontrolne točke. 
 
 Odvod Bézierjeve ploskve iz tenzorskega produkta 
@@ -1699,6 +1719,16 @@ $G^1$-zveznost.
   $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ prosti. Ker zahtevamo zgolj zveznost stopnje 
   1, so proste tudi kontrolne točke $\ddd{Q}_{1,1}$, $\ddd{Q}_{1,2}$, 
   $\ddd{P}_{2,1}$ in $\ddd{P}_{2,2}$.
+
+  \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{slike/c1-1.pdf}
+  % \caption[caption za v kazalo]{Dolg caption pod sliko}
+    \caption[Primer $C^1$-zveznih Bézierjevih ploskev iz tenzorskega produkta.]
+    {Primer bikubičnih Bézierjevih ploskev iz tenzorskega produkta, ki sta na skupnem robu 
+    $C^1$-zvezni. Kontrolni vektorji prek roba morajo biti kolinearni.}
+    \label{fig:c1}
+  \end{figure}
 \end{primer}
 
 Sedaj si oglejmo nekaj primerov konstrukcij $G^1$-zveznih ploskev in jih primerjajmo 
@@ -2455,6 +2485,15 @@ Oglejmo si še definicijo trikotnih Bézierjevih ploskev.
   %kjer velja $i+j+k=n$ ter $i\geq0$, $j\geq0$ in $k\geq0$.
 \end{definicija}
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{slike/trikotna3-2.pdf}
+% \caption[caption za v kazalo]{Dolg caption pod sliko}
+  \caption[Primer trikotne Bézierjeve ploskve stopnje 3.]
+  {Primer trikotne Bézierjeve ploskve stopnje 3 s kontrolnim poligonom.}
+  \label{fig:trikotna3}
+\end{figure}
+
 
 Koordinate poljubne točke na trikotni Bézierovi ploskvi lahko izračunamo s pomočjo 
 de Casteljaujevega algoritma.
@@ -2606,8 +2645,9 @@ $$\ddd{S}(\ddd{p})=\sum_{i+j+k=3}\ddd{s}_{i,j,k}B_{i,j,k}^3(\ddd{v});
 Naj bo $\ddd{u}=(u_1,u_2,u_3)$ in $\ddd{v}=(v_1,v_2,v_3)$ ter 
 $\ddd{\alpha}=(\alpha_1,\alpha_2,\alpha_3)=\mbox{Bar}(\ddd{p}_4;T_1)$.
 Ploskvi se kakor prej stikata v $u_1=v_1=0$, torej za kontrolne točke na skupnem 
-robu velja $\ddd{s}_{0,0,2}=\ddd{r}_{0,0,2}$, $\ddd{s}_{0,1,1}=\ddd{r}_{0,1,1}$ in 
-$\ddd{s}_{0,2,0}=\ddd{r}_{0,2,0}$. 
+robu velja $\ddd{s}_{0,0,3}=\ddd{r}_{0,0,3}$, $\ddd{s}_{0,1,2}=\ddd{r}_{0,1,2}$, 
+$\ddd{s}_{0,2,1}=\ddd{r}_{0,2,1}$ in 
+$\ddd{s}_{0,3,0}=\ddd{r}_{0,3,0}$. 
 
 Da bo stik obeh ploskev še $C^1$ zvezen mora po enačbi \eqref{eq21} veljati:
 \begin{align*}
@@ -2615,7 +2655,6 @@ Da bo stik obeh ploskev še $C^1$ zvezen mora po enačbi \eqref{eq21} veljati:
 &\ddd{s}_{1,1,1}= \alpha_1\ddd{r}_{1,1,1}+\alpha_2\ddd{r}_{0,2,1}+\alpha_3\ddd{r}_{0,1,2}\\
 &\ddd{s}_{1,2,0}= \alpha_1\ddd{r}_{0,1,2}+\alpha_2\ddd{r}_{0,3,0}+\alpha_3\ddd{r}_{0,2,1}
 \end{align*}
-\todo{primerjava kontrolnih točk, katere so določene s katerimi?}
 
 Opazimo lahko, da morata biti točki $\ddd{s}_{1,j,k}$ in $\ddd{r}_{1,j,k}$, kjer 
 je $j+k=2$ in $j\geq 0$, $k\geq 0$, kolinearni. Še več, trikotnika 
@@ -2626,6 +2665,16 @@ $\langle\ddd{r}_{1,1,1},\ddd{r}_{0,2,1},\ddd{r}_{0,1,2}\rangle$ in
 $\langle\ddd{s}_{0,2,1},\ddd{s}_{0,1,2},\ddd{s}_{1,1,1}\rangle$ ter trikotnika 
 $\langle\ddd{r}_{1,2,0},\ddd{r}_{0,3,0},\ddd{r}_{0,2,1}\rangle$ in 
 $\langle\ddd{s}_{0,3,0},\ddd{s}_{0,2,1},\ddd{s}_{1,2,0}\rangle$. 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{slike/tbb.pdf}
+% \caption[caption za v kazalo]{Dolg caption pod sliko}
+  \caption[$C^1$-zveznost trikotnih Bézierjevih ploskev]{Da sta ploskvi na stiku 
+  $C^1$-zvezni, morajo biti osenčeni trikotniki koplanarni in afine slike domenskih 
+  trikotnikov $T_1$ in $T_2$.}
+  \label{fig:tbb}
+\end{figure}
 \end{primer}
 
 Izbira kontrolnih točk $C^1$-zveznih ploskev je torej v veliki meri odvisna od 
@@ -2637,7 +2686,7 @@ možno najti notranjih kontrolnih točk, da bi bil stik ploskev $C^1$-zvezen.
 Imejmo trikotni ploskvi $\ddd{R}$ in $\ddd{S}$ kot v primeru \ref{primerT1}. 
 Predpostavljajmo, da imamo že vnaprej določene njune robne 
 točke, tako da so robovi dobljenega zlepka 
-$C^1$-zvezni. \todo{dodaj: kaj mora veljati, da so robovi c1?}
+$C^1$-zvezni. 
 Naj velja
 $$\ddd{s}_{1,0,2}= \alpha_1\ddd{r}_{1,0,2}+\alpha_2\ddd{r}_{0,1,2}+\alpha_3\ddd{r}_{0,0,3}$$
 in
@@ -2650,7 +2699,6 @@ $\langle\ddd{s}_{0,1,2},\ddd{s}_{0,0,3},\ddd{s}_{1,0,2}\rangle$ ter
 $\langle\ddd{r}_{1,2,0},\ddd{r}_{0,3,0},\ddd{r}_{0,2,1}\rangle$ in 
 $\langle\ddd{s}_{0,3,0},\ddd{s}_{0,2,1},\ddd{s}_{1,2,0}\rangle$ 
 nista afini sliki istega para domenskih trikotnikov. 
-\end{primer}
 
 \begin{figure}[h]
   \centering
@@ -2661,6 +2709,7 @@ nista afini sliki istega para domenskih trikotnikov.
   notranjih kontrolnih točk, da bi bil stik ploskev $C^1$-zvezen.}
   \label{fig:farintrikotne}
 \end{figure}
+\end{primer}
 
 V zgornjem primeru smo videli, da je pogoj $C^1$-zveznosti za trikotne Bézierjeve 
 ploskve dokaj strog in tesno povezan z izbiro domene. Geometrijska zveznost pa 

@@ -2497,7 +2497,7 @@ Oglejmo si še definicijo trikotnih Bézierjevih ploskev.
 
 Koordinate poljubne točke na trikotni Bézierovi ploskvi lahko izračunamo s pomočjo 
 de Casteljaujevega algoritma.
-\begin{algorithm}[h]
+\begin{algorithm}[h!]
   \KwData{Kontrolna mreža $\ddd{b}_{i,j,k}$,$i+j+k=n$, točka $\ddd{p}$ v domeni, 
   trikotnik $T=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$}
   \KwResult{$\ddd{b}_{0,0,0}^n(\ddd{u})=\ddd{R}_n(\ddd{p})$}
@@ -2587,7 +2587,7 @@ Ta ugotovitev bo pomembna pri konstrukciji $G^1$-zveznih trikotnih ploskev.
 \subsection{Konstrukcija $C^1$-zveznih trikotnih Bézierovih ploskev}
 
 Imejmo dve trikotni Bézierovi ploskvi $\ddd{R}$ in $\ddd{S}$ stopnje $n$ nad 
-trikotnima domenama $T_1=\langle\ddd{p_1},\ddd{p_2},\ddd{p}_3\rangle$ in $T_2=\langle\ddd{p}_4,\ddd{p}_2,\ddd{p}_3\rangle$:
+trikotnima domenama $T_1=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$ in $T_2=\langle\ddd{p}_4,\ddd{p}_2,\ddd{p}_3\rangle$:
 $$\ddd{R}(\ddd{p})=\sum_{i+j+k=n}\ddd{r}_{i,j,k}B_{i,j,k}^n(\ddd{u});\quad
 \ddd{u}=\mbox{Bar}(\ddd{p};T_1),$$
 $$\ddd{S}(\ddd{p})=\sum_{i+j+k=n}\ddd{s}_{i,j,k}B_{i,j,k}^n(\ddd{v});
@@ -2600,7 +2600,7 @@ $\ddd{r}_{0,j,k}=\ddd{s}_{0,j,k}$ za $j\geq 0$, $k\geq 0$, $j+k=0$.
 
 Da bo stik ploskev $\ddd{R}$ in $\ddd{S}$ $C^1$-zvezen, se morata v $u_1=0$ 
 oziroma $v_1=0$ ujemati odvoda parametrizacij ploskev v katerikoli smeri. 
-Opazujmo odvoda ploskev v smeri $\ddd{d}=\ddd{p_4}-\ddd{p}_2$. 
+Najprej opazujmo odvoda ploskev v smeri $\ddd{d}=\ddd{p_4}-\ddd{p}_2$. 
 Naj bodo $\ddd{\mu}=(\mu_1,\mu_2,\mu_3)=\mbox{Bar}(\ddd{d};T_1)=\ddd{\alpha}-\ddd{e}_2$ baricentrične 
 koordinate vektorja $\ddd{d}$ glede na trikotnik $T_1$, kjer je $\ddd{\alpha}=
 \mbox{Bar}(\ddd{p}_4;T_1)$, in 
@@ -2611,7 +2611,7 @@ koordinate vektorja $\ddd{d}$ glede na trikotnik $T_2$. Veljati mora:
 \mu_2\ddd{r}_{i,j+1,k}+\mu_3\ddd{r}_{i,j,k+1})B_{i,j,k}^{n-1}(\ddd{u})\big|_{u_1=0}=\\
 &\sum_{i+j+k=n-1}(\eta_1\ddd{s}_{i+1,j,k}+
 \eta_2\ddd{s}_{i,j+1,k}+\eta_3\ddd{s}_{i,j,k+1})B_{i,j,k}^{n-1}(\ddd{v})\big|_{v_1=0}
-\end{align*}\todo{ok |u1=0?}
+\end{align*}
 oziroma
 \begin{align}\label{eq20}
 \mu_1\ddd{r}_{1,j,k}+\mu_2\ddd{r}_{0,j+1,k}+\mu_3\ddd{r}_{0,j,k+1}=
@@ -2632,8 +2632,23 @@ ploskev, da se stikata s $C^1$-zveznostjo. Do enakega rezultata bi na podoben
 način prišli, če bi namesto vektorja $\ddd{d}$ uporabili vektor $\ddd{p}_4-\ddd{p}_3$ 
 katerikoli linearno kombinacijo obeh vektorjev.
 
-%Alternativni način za izpeljavo pogojev \eqref{eq21}
-Dobljeni rezultat sedaj uporabimo na primeru stika dveh ploskev stopnje 3.
+Oglejmo si še, kako je z odvodi v smeri $\ddd{p}_3-\ddd{p}_2$ v $u_1=0$ oziroma 
+$v_1=0$. 
+%Zaradi ujemanja ploskev na robu, določenem z $u_1=v_1=0$, se odvodi obeh ploskev 
+%v tej smeri ujemajo. 
+Baricentrične koordinate vektorja $\ddd{p}_3-\ddd{p}_2$ glede 
+na $T_2$ so enake baricentričnim koordinatam glede na $T_1$, 
+saj sta $\ddd{p}_2$ in $\ddd{p}_3$ oglišči obeh trikotnikov. Naj bodo 
+$\mu=(\mu_1,\mu_2,\mu_3)=\mbox{Bar}(\ddd{p}_3-\ddd{p}_2;T_1)=\mbox{Bar}(\ddd{p}_3-\ddd{p}_2;T_1)$ 
+baricentrične koordinate vektorja $\ddd{p}_3-\ddd{p}_2$. Potem velja 
+$\mu=\ddd{e}_3-\ddd{e}_2(0,-1,1)$. Odvod ploskve $\ddd{R}$ v smeri $\ddd{p}_3-\ddd{p}_2$ v $u_1=0$ je enak 
+$$n(\ddd{r}_{0,j+1,k}-\ddd{r}_{0,j,k+1}),\quad j+k=n-1,$$
+odvod ploskve $\ddd{S}$ v smeri $\ddd{p}_3-\ddd{p}_2$ v $v_1=0$ pa 
+$$n(\ddd{s}_{0,j+1,k}-\ddd{s}_{0,j,k+1}),\quad j+k=n-1.$$ 
+Zaradi ujemanja kontrolnih točk na skupnem robu sledi, da sta odvoda v vsakem primeru 
+enaka. 
+
+Dobljene rezultate sedaj uporabimo na primeru stika dveh ploskev stopnje 3.
 
 \begin{primer}\label{primerT1}
 Imejmo dve trikotni Bézierovi ploskvi $\ddd{R}$ in $\ddd{S}$ stopnje 3 nad 
@@ -2700,6 +2715,45 @@ $\langle\ddd{r}_{1,2,0},\ddd{r}_{0,3,0},\ddd{r}_{0,2,1}\rangle$ in
 $\langle\ddd{s}_{0,3,0},\ddd{s}_{0,2,1},\ddd{s}_{1,2,0}\rangle$ 
 nista afini sliki istega para domenskih trikotnikov. 
 
+Naj bosta $T_1=\langle\ddd{p_1},\ddd{p}_2,\ddd{p}_3\rangle$ in 
+$T_2=\langle\ddd{p_4},\ddd{p}_2,\ddd{p}_3\rangle$ domenska trikotnika, nad katerima 
+sta definirani ploskvi $\ddd{R}$ in $\ddd{S}$. Naj bo 
+$(\alpha_1,\alpha_2,\alpha_3)=\mbox{Bar}(\ddd{p}_4;T_1)$. 
+Po definiciji baricentričnih koordinat med vozlišči domenskih trikotnikov velja zveza
+\begin{align}\label{eq76} 
+\ddd{p}_4=\alpha_1\ddd{p}_1+\alpha_2\ddd{p}_2+\alpha_3\ddd{p}_3.
+\end{align}
+Naj bo $\Phi$ afina preslikava, ki domenska trikotnika $T_1$ in $T_2$ preslika v 
+trikotnika $\langle\ddd{r}_{1,0,2},\ddd{r}_{0,0,3},\ddd{r}_{0,1,2}\rangle$ in 
+$\langle\ddd{s}_{1,0,2},\ddd{s}_{0,0,3},\ddd{s}_{0,1,2}\rangle$. Zanjo velja, da 
+oglišča trikotnikov $T_1$ in $T_2$ preslika v oglišča trikotnikov 
+$\langle\ddd{r}_{1,0,2},\ddd{r}_{0,0,3},\ddd{r}_{0,1,2}\rangle$ in 
+$\langle\ddd{s}_{1,0,2},\ddd{s}_{0,0,3},\ddd{s}_{0,1,2}\rangle$, 
+torej velja
+$\Phi(\ddd{p}_1)=\ddd{r}_{1,0,2}$, $\Phi(\ddd{p}_2)=\ddd{s}_{0,0,3}$,
+$\Phi(\ddd{p}_3)=\ddd{s}_{0,1,2}$ in $\Phi(\ddd{p}_4)=\ddd{s}_{1,0,2}$. 
+Ker afine preslikave ohranjajo baricentrične koordinate, iz enakosti \eqref{eq76} sledi 
+\begin{align*}
+\Phi(\ddd{p}_4)=\alpha_1\Phi(\ddd{p}_1)+\alpha_2\Phi(\ddd{p}_2)+\alpha_3\Phi(\ddd{p}_3)=
+\alpha_1\ddd{r}_{1,0,2}+\alpha_2\ddd{r}_{0,0,3}+\alpha_3\ddd{r}_{0,1,2}=\ddd{s}_{1,0,2}.
+\end{align*}
+Naj bo sedaj $\Psi$ afina preslikava, ki preslika domenska trikotnika $T_1$ in $T_2$ v 
+trikotnika $\langle\ddd{r}_{1,2,0},\ddd{r}_{0,3,0},\ddd{r}_{0,2,1}\rangle$ in 
+$\langle\ddd{s}_{1,2,0},\ddd{s}_{0,3,0},\ddd{s}_{0,2,1}\rangle$, torej zanjo 
+velja $\Psi(\ddd{p}_1)=\ddd{r}_{1,2,0}$, $\Psi(\ddd{p}_2)=\ddd{s}_{0,3,0}$,
+$\Psi(\ddd{p}_3)=\ddd{s}_{0,2,1}$ in $\Psi(\ddd{p}_4)=\ddd{s}_{1,2,0}$.
+Iz enakosti \eqref{eq76} znova sledi 
+\begin{align*}
+\Psi(\ddd{p}_4)=\alpha_1\Psi(\ddd{p}_1)+\alpha_2\Psi(\ddd{p}_2)+\alpha_3\Psi(\ddd{p}_3)=
+\alpha_1\ddd{r}_{1,2,0}+\alpha_2\ddd{r}_{0,3,0}+\alpha_3\ddd{s}_{0,2,1}\neq \ddd{s}_{1,2,0},
+\end{align*}
+saj $(\alpha_1,\alpha_2,\alpha_3)\neq (\beta_1,\beta_2,\beta_3)$. Trikotnik 
+$\langle\ddd{s}_{1,0,2},\ddd{s}_{0,0,3},\ddd{s}_{0,1,2}\rangle$ torej ne more biti afina 
+slika trikotnika $T_2$, temveč nekega drugega trikotnika $T_3=\langle\ddd{p}_5,\ddd{p}_2,\ddd{p}_3\rangle$, 
+kjer je $(\beta_1,\beta_2,\beta_3)=\mbox{Bar}(\ddd{p}_5;T_1)$. Ker smo videli, da 
+morajo biti za $C^1$-zveznost ploskev vsi trikotniki ob robu afine slike istih dveh 
+domenskih trikotnikov, ploskvi $\ddd{R}$ in $\ddd{S}$ torej ne moreta biti $C^1$-zvezni 
+na skupnem robu neglede na izbiro notranjih kontrolnih točk. 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{slike/Farintrikotne.pdf}
@@ -2733,7 +2787,7 @@ $\ddd{r}_{0,0,1}=\ddd{s}_{0,0,1}=(1,1,0)$ in $\ddd{s}_{0,0,1}=(1,0,0)$. Ploskvi
 $\ddd{R}$ in $\ddd{S}$ sta torej dva pravokotna trikotnika v ravnini $z=0$, ki 
 skupaj tvorita kvadrat. 
 Trikotnika $T_1$ in $T_2$ definirajmo kot $T_1=\langle(0,1),(0,0),(1,0)\rangle$ in 
-$T_2=\\\langle(0,1),(0,0),(1,0)\rangle$. \todo{prelom?}
+$T_2=\langle(0,1),(0,0),(1,0)\rangle$.
 
 Očitno je, da je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^1$-zvezen, saj imata 
 ploskvi vzdolž stične krivulje isto konstatno tangentno ravnino. 

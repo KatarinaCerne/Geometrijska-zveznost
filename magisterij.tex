@@ -1061,19 +1061,21 @@ u\in[u_1,u_2]\textrm{, }v\in[v_0,v_1].$$
 Ploskvi naj se stikata v krivulji  $\ddd{C}(v)=\ddd{R}(u_1,v)=\ddd{S}(u_1,v)$, 
 torej naj velja $\ddd{r}_{0,j}=\ddd{s}_{0,j}$ za 
 $j=0,\ldots,n$. S tem dosežemo $C^0$-zveznost. Da se bosta ploskvi stikali s 
-$C^r$-zveznostjo, se morajo ujemati njuni odvodi pri $u=u_1$. \todo{!?!?} 
+$C^r$-zveznostjo, se morajo ujemati njuni odvodi v $u=u_1$  
 do odvoda stopnje $r$. Zaradi stikanja v krivulji $\ddd{C}$ je dovolj obravnavati le 
 odvode po spremenljivki $u$. Veljati mora
-$$\frac{\partial^k}{\partial u^k}\ddd{R}(u,v)|_{u=u_0}=\frac{\partial^k}{\partial u^k}\ddd{S}(u,v)|_{u=u_0},
+$$\frac{\partial^k}{\partial u^k}\ddd{R}(u_1,v)=\frac{\partial^k}{\partial u^k}\ddd{S}(u_1,v),
 \textrm{ }k=1,\ldots,r.$$
+Vpeljimo še oznako $E=\{(u_1,v);v\in[v_0,v_1]\}$ za del domene, nad katerim se 
+ploskvi stikata.  
 Uporabimo formulo \eqref{eq28} za odvod Bézierjeve ploskve iz tenzorskega produkta: 
 \begin{align*}
 \frac{n!}{(n-k)!}&\frac{1}{(u_0-u_1)^k}\sum_{i=0}^{m-k}\sum_{j=0}^n\Delta^{k,0}
-\ddd{r}_{i,j}B_i^{m-k}\left(\frac{u-u_1}{u_0-u_1}\right)B_i^n\left(\frac{v-v_0}{v_1-v_0}\right)|_{u=u_1}=\\
+\ddd{r}_{i,j}B_i^{m-k}\left(\frac{u-u_1}{u_0-u_1}\right)B_i^n\left(\frac{v-v_0}{v_1-v_0}\right)\bigg|_E=\\
 &=\frac{n!}{(n-k)!}\frac{1}{(u_2-u_1)^k}\sum_{i=0}^{m-k}\sum_{j=0}^n\Delta^{k,0}
-\ddd{s}_{i,j}B_i^{m-k}\left(\frac{u-u_1}{u_2-u_1}\right)B_i^n\left(\frac{v-v_0}{v_1-v_0}\right)|_{u=u_1},\\
+\ddd{s}_{i,j}B_i^{m-k}\left(\frac{u-u_1}{u_2-u_1}\right)B_i^n\left(\frac{v-v_0}{v_1-v_0}\right)\bigg|_E,\\
 k=1,&\ldots,r.
-\end{align*}\todo{zamiki}
+\end{align*}
 Sledi
 \begin{align*}
 &\frac{1}{(u_0-u_1)^k}\sum_{j=0}^n\Delta^{k,0}
@@ -1086,7 +1088,7 @@ Za vsak $j=1,\ldots,n$ primerjajmo koeficiente pred baznim polinomom $B_j^n(\fra
 in dobimo pogoje, ki morajo veljati med kontrolnimi točkami dveh ploskev, da sta na 
 stiku $C^r$-zvezni:
 \begin{align}\label{eq29}
-  \frac{1}{(u_0-u_1)^k}\Delta^{k,0}\ddd{r}_{0,j}=\frac{1}{(u_2-u_1)^k}\sum_{j=0}^n\Delta^{k,0}
+  \frac{1}{(u_0-u_1)^k}\Delta^{k,0}\ddd{r}_{0,j}=\frac{1}{(u_2-u_1)^k}j\Delta^{k,0}
   \ddd{s}_{0,j},\textrm{ }k=1,\ldots,r.
 \end{align}
 
@@ -1112,22 +1114,21 @@ $\textbf{R}$ in $\textbf{S}$, $x, y, u$ in $v$ pa parametri z vrednostmi
 na intervalu $[0,1]$.
 
 Ploskvi $\textbf{R}$ in $\textbf{S}$ naj se stikata v skupni robni krivulji
-$\textbf{C}(v)=\textbf{R}(0,v)=\textbf{S}(0,v)$
-\todo{pojasni, zakaj lahko to predpostavimo. ker lahko parametriziramo? poglej.} 
-\todo{pojasni še, kako je s tem, da sta ploskvi prav obrnjeni, da ni špice} 
+$\textbf{C}(y)=\textbf{R}(0,y)=\textbf{S}(0,y)$.  
 Robno krivuljo $\textbf{C}$ zapišemo kot Bézierjevo krivuljo na naslednji način:
-$$\textbf{C}=\sum_{i=0}^{n_c}\textbf{z}_i B_i^{n_c},$$
+$$\textbf{C}(y)=\sum_{i=0}^{n_c}\textbf{z}_i B_i^{n_c}(y),$$
 kjer so $\{\textbf{z}_i, i=1,\ldots n_c\}$ njene kontrolne točke. Stopnja $n_c$ krivulje 
 $\textbf{C}$ ni nujno enaka stopnjama $n_r$ ali $n_s$, velja pa, da je $n_c \leq \min(n_r,n_s)$. 
+Znova vpeljimo še oznako $E=\{(0,y);v\in[0,1]\}$. 
 
 Naj bosta ploskvi $\textbf{R}$ in $\textbf{S}$ regularni vzdolž krivulje $\textbf{C}$, 
 torej naj bodo normale na ploskvi vzdolž krivulje $\textbf{C}$ neničelne:
-$$N_R=\bigg(\frac{\partial \textbf{R}}{\partial x}\times \frac{\partial \textbf{R}}{\partial y}\bigg)\bigg|_{\textbf{C}}\neq 0$$
-$$N_S=\bigg(\frac{\partial \textbf{S}}{\partial u}\times \frac{\partial \textbf{S}}{\partial v}\bigg)\bigg|_{\textbf{C}}\neq 0$$
+$$N_R=\bigg(\frac{\partial \textbf{R}}{\partial x}\times \frac{\partial \textbf{R}}{\partial y}\bigg)\bigg|_{E}\neq 0,$$
+$$N_S=\bigg(\frac{\partial \textbf{S}}{\partial u}\times \frac{\partial \textbf{S}}{\partial v}\bigg)\bigg|_{E}\neq 0.$$
 
 Oglejmo si dva izreka, ki govorita o pogojih za geometrijsko zveznost teh dveh 
 ploskev. Prvi se bo omejil na pogoje za $G^1$-zveznost med ploskvama, drugi 
-pa bo govoril o pogojih za $G^n$-zveznost.
+pa bo govoril o pogojih za $G^n$-zveznost, kjer je $n\geq 2$.
 
 \begin{izrek}\label{izrek3}
   Naj bosta $\textbf{R}$ in $\textbf{S}$ zgoraj definirani Bézierjevi 
@@ -1213,10 +1214,10 @@ enačbi
   \ddd{N}_S(y)=\alpha_1(y)\ddd{N}_R(y),&&\ddd{W}(y)=\beta_1(y)\ddd{N}_R(y).
   \end{align}
 
-  \todo{|C??}Stopnja $\frac{\partial\ddd{R}}{\partial y}|_{\ddd{C}}$ je največ $n_c-1$, 
-  saj je $\frac{\partial\ddd{R}}{\partial y}|_{\ddd{C}}=\ddd{C}'$. Enako velja za 
-  $\frac{\partial \ddd{S}}{\partial v}|_{\ddd{C}}$. Stopnja $\frac{\partial\ddd{R}}{\partial x}|_{\ddd{C}}$ 
-  je manjša ali enaka $n_r$, stopnja $\frac{\partial\ddd{S}}{\partial u}|_{\ddd{C}}$ 
+  Stopnja $\frac{\partial\ddd{R}}{\partial y}|_{E}$ je največ $n_c-1$, 
+  saj je $\frac{\partial\ddd{R}}{\partial y}|_{E}=\ddd{C}'$. Enako velja za 
+  $\frac{\partial \ddd{S}}{\partial v}|_{E}$. Stopnja $\frac{\partial\ddd{R}}{\partial x}|_{E}$ 
+  je manjša ali enaka $n_r$, stopnja $\frac{\partial\ddd{S}}{\partial u}|_{E}$ 
   pa manjša ali enaka $n_s$. 
   Od tod in iz definicij funkcij $\ddd{N}_R$, $\ddd{N}_S$ in $\ddd{W}$ sledi
   $\mbox{deg}(\ddd{N}_R)\leq n_r + n_s -1$, $\mbox{deg}(\ddd{N}_S)\leq n_s + n_c -1$ in 

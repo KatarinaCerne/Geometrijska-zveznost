@@ -7,9 +7,9 @@
 % NASLEDNJE UKAZE USTREZNO POPRAVI
 \newcommand{\program}{Matematika} % ime studijskega programa
 \newcommand{\imeavtorja}{Katarina Černe} % ime avtorja
-\newcommand{\imementorja}{prof.~dr.~} % akademski naziv in ime mentorja, uporabi poln naziv, prof.~dr.~, doc.~dr., ali izr.~prof.~dr.
+\newcommand{\imementorja}{izr.~prof.~dr.~Marjetka Knez} % akademski naziv in ime mentorja, uporabi poln naziv, prof.~dr.~, doc.~dr., ali izr.~prof.~dr.
 \newcommand{\imesomentorja}{} % akademski naziv in ime somentorja, če ga imate
-\newcommand{\naslovdela}{Naslov vašega dela}
+\newcommand{\naslovdela}{Konstrukcija geometrijsko zveznih parametričnih ploskev}
 \newcommand{\letnica}{2020} % letnica magistriranja
 \newcommand{\opis}{}  % Opis dela v eni povedi. Ne sme vsebovati matematičnih simbolov v $ $.
 \newcommand{\kljucnebesede}{\sep } % ključne besede, ločene z \sep, da se PDF metapodatki prav procesirajo
@@ -86,6 +86,7 @@
 \usepackage{tcolorbox}
 \usepackage{enumitem}
 \usepackage[ruled,lined]{algorithm2e}
+\SetAlgorithmName{Algoritem}{Algoritem}{Kazalo algoritmov}
 
 \setlength{\overfullrule}{50pt} % označi predlogo vrstico
 \pagestyle{plain}               % samo številka strani na dnu, nobene glave / noge
@@ -248,22 +249,22 @@ FAKULTETA ZA MATEMATIKO IN FIZIKO\\[5mm]
 \tableofcontents
 
 % list of figures
-% \cleardoublepage
-% \pdfbookmark[1]{\listfigurename}{kazalo-slik}
-% \listoffigures
+ \cleardoublepage
+ \pdfbookmark[1]{\listfigurename}{kazalo-slik}
+ \listoffigures
 % end list of figures
 
 \cleardoublepage
 
 \section*{Program dela}
 \addcontentsline{toc}{section}{Program dela} % dodajmo v kazalo
-Mentor naj napiše program dela skupaj z osnovno literaturo. Na literaturo se
-lahko sklicuje kot~.
+%Mentor naj napiše program dela skupaj z osnovno literaturo. Na literaturo se
+%lahko sklicuje kot~.
 
 \section*{Osnovna literatura}
-Literatura mora biti tukaj posebej samostojno navedena (po pomembnosti) in ne
-le citirana. V tem razdelku literature ne oštevilčimo po svoje, ampak uporabljamo
-okolje itemize in ukaz plancite, saj je celotna literatura oštevilčena na koncu.
+%Literatura mora biti tukaj posebej samostojno navedena (po pomembnosti) in ne
+%le citirana. V tem razdelku literature ne oštevilčimo po svoje, ampak uporabljamo
+%okolje itemize in ukaz plancite, saj je celotna literatura oštevilčena na koncu.
 
 
 \vspace{2cm}
@@ -279,21 +280,22 @@ okolje itemize in ukaz plancite, saj je celotna literatura oštevilčena na konc
 \textbf{\naslovdela} \\[3mm]
 \textsc{Povzetek} \\[2mm]
 \end{center}
-Tukaj napišemo povzetek vsebine. Sem sodi razlaga vsebine in ne opis tega, kako je delo
-organizirano.
+%Tukaj napišemo povzetek vsebine. Sem sodi razlaga vsebine in ne opis tega, kako je delo
+%organizirano.
 
 \vfill
 \begin{center}
-\textbf{English translation of the title} \\[3mm] % prevod slovenskega naslova dela
+\textbf{Construction of geometrically continuous parametric surfaces} \\[3mm] % prevod slovenskega naslova dela
 \textsc{Abstract}\\[2mm]
 \end{center}
 
-An abstract of the work is written here. This includes a short description of
-the content and not the structure of your work.
+%An abstract of the work is written here. This includes a short description of
+%the content and not the structure of your work.
 
 \vfill\noindent
-\textbf{Math.~Subj.~Class.~(2010):} oznake kot 74B05, 65N99, na voljo so na naslovu
-\url{http://www.ams.org/msc/msc2010.html?t=65Mxx} \\[1mm]
+\textbf{Math.~Subj.~Class.~(2010):} 
+%oznake kot 74B05, 65N99, na voljo so na naslovu
+%\url{http://www.ams.org/msc/msc2010.html?t=65Mxx} \\[1mm]
 \textbf{Ključne besede:} \kljucnebesede \\[1mm]
 \textbf{Keywords:} \keywords
 
@@ -308,7 +310,7 @@ Krivulje in ploskve v ravnini in prostoru lahko matematično opisujemo na razli�
 načine. Lahko jih na primer podajamo eksplicitno, kot grafe funkcij, vendar je slabost 
 takega pristopa, da na tak način ne moremo opisovati sklenjenih krivulj ali ploskev. 
 Drugi način je podajanje v implicitni obliki. Ta sicer omogoča opisovanje sklenjenih 
-krivulj in ploskev, ima pa to slabost, da je iskanje točk na tako podani 
+krivulj in ploskev, ima pa to pomanjkljivost, da je iskanje točk na tako podani 
 krivulji ali ploskvi lahko precej računsko zahtevno, saj zahteva reševanje 
 nelinearnih enačb. V računalniško podprtem geometrijskem oblikovanju se zato 
 pogosto uporablja tretji pristop, krivulje in ploskve se podaja parametrično.  
@@ -324,9 +326,9 @@ objektov, pa tudi v računalniških animacijah in robotiki, kjer je pomembna gla
 Da zagotovimo geometrijsko gladkost stika dveh krivulj ali ploskev, lahko zahtevamo 
 da sta na svojem stiku parametrično oziroma $C^n$-zvezni.
 \begin{definicija}
-Naj bosta $\ddd{p}:I_1\Rightarrow \R^d$ in $\ddd{q}:I_2\Rightarrow \R^d$, 
+Naj bosta $\ddd{p}:I_1\rightarrow \R^d$ in $\ddd{q}:I_2\rightarrow \R^d$, 
 $d=2,3$, $C^n$ parametrizaciji dveh krivulj, kjer sta $I_1$ in $I_2$ intervala v $\R$. 
-Krivulji $\ddd{p}$ in $\ddd{q}$ naj se stikata v neki točki, torej naj obstaja 
+Krivulji $\ddd{p}(t)$ in $\ddd{q}(t)$ naj se stikata v neki točki, torej naj obstaja 
 parameter $t_0 \in I_1 \cap I_2$, da je $\ddd{p}(t_0)=\ddd{q}(t_0)$. Pravimo, da se 
 krivulji v skupni točki stikata s \emph{parametrično zveznostjo reda $n$} oziroma 
 s \emph{$C^n$-zveznostjo}, če velja 
@@ -351,8 +353,8 @@ Izkaže se, da za konstrukcijo gladkih objektov tako strogi pogoji niso
 nujno potrebni. 
 Poleg tega pri modeliranju marsikatere oblike $C^n$-zveznost v celoti odpove. 
 Primeri takih oblik so ploskve, zgrajene iz večih manjših ploskev, ki se stikajo 
-v skupni točki. Še en primer, kjer parametrična zveznost 
-ni preveč uporabna, je t.~i. vogal kovčka. 
+v skupni točki, kot na primer ploskev na sliki \ref{fig:zvezda6}. Še en primer, kjer parametrična zveznost 
+ni preveč uporabna, je t.~i. vogal kovčka, prikazan na sliki \ref{fig:suitcasecorner}. 
 
 \begin{figure}[h]
   \centering
@@ -373,7 +375,7 @@ ni preveč uporabna, je t.~i. vogal kovčka.
 
 V ta namen torej vpeljemo nekoliko manj restriktivno obliko zveznosti, ki pa še vedno omogoča, 
 da so krivulje in ploskve na stiku geometrijsko gladke. 
-imenujemo jo geometrijska zveznost oziroma $G^n$-zveznost. 
+Imenujemo jo geometrijska zveznost oziroma $G^n$-zveznost. 
 Geometrijska zveznost je posplošitev parametrične zveznosti, 
 torej so vse krivulje in ploskve, ki so parametrično zvezne, tudi geometrijsko zvezne. 
 Kar se tiče konstrukcije krivulj in ploskev prinaša marsikatero olajšavo. 
@@ -381,9 +383,9 @@ Geometrijska zveznost je invariantna za parametrične transformacije, torej
 neodvisna od parametrizacije. Poleg tega pri konstrukciji prinese dodatne proste 
 parametre, s katerimi lahko vplivamo na obliko objektov. Z uporabo geometrijske 
 zveznosti je torej mogoče modelirati veliko več različnih oblik, med drugim tudi 
-ploskvi, prikazani na slikah \ref{fig:zvezda6} in \ref{fig:zvezda6}.  
+ploskvi, prikazani na slikah \ref{fig:zvezda6} in \ref{fig:suitcasecorner}.  
 
-To magistrsko delo se osredotoča predvsem na konstrukcijo geometrijsko zveznih 
+To magistrsko delo se osredotoča na konstrukcijo geometrijsko zveznih 
 parametrično podanih ploskev. 
 V poglavju \ref{geom.zv.} je najprej predstavljenih nekaj osnovnih pojmov v zvezi s 
 parametričnimi krivuljami in ploskvami, nato je definirana geometrijska zveznost na 
@@ -512,10 +514,10 @@ $\ddd{p}$ in $\ddd{q}$ naj se stikata v neki točki, torej naj obstajata paramet
 $t_1\in I_1$ in $t_2\in I_2$, da je $\ddd{p}(t_1)=\ddd{q}(t_2)$. 
 Pravimo, da se krivulji v skupni točki stikata z \emph{geometrijsko zveznostjo reda n} 
 oziroma z \emph{$G^n$-zveznostjo}, če v okolici $I_0$ parametra $t_1$ obstaja regularna 
-$C^n$ reparametrizacijska funkcija $f:I_0\rightarrow I_2$, da velja $f(t_1)=t_2$, 
+$C^n$ reparametrizacijska funkcija $f:I_1\rightarrow I_2$, da velja $f(t_1)=t_2$, 
 $\frac{df}{dt}(t_1)>0$ ter 
 \begin{align*}
-  \frac{d^k}{dt^k}\ddd{p}(t_1)=\frac{d^k}{dt^k}(\ddd{q}\circ f)(t_1),\quad k=0,1,\ldots,n.
+  \frac{d^k}{dt^k}\ddd{p}(t_1)=\frac{d^k}{dt^k}(\ddd{q}\circ f)(t_1),\quad k=1,\ldots,n.
 \end{align*}
 \end{definicija}
 
@@ -535,7 +537,13 @@ Za $G^2$ pa mora poleg pogojev za $G^0$-zveznost in $G^1$-zveznost veljati še
 V splošnem pogoj za $G^n$-zveznost krivulj zapišemo kot
 $$\frac{d^k}{dt^k}\ddd{p}(t_1)=\sum_{i=1}^k\sum_{|m_i|=k}A_{m_i}^k\frac{d^{m_1}f}{dt^{m_1}}(t_1)\cdots
 \frac{d^{m_i}f}{dt^{m_i}}(t_1)\frac{d^i}{dt^i}\ddd{q}(t_1)$$
-za $k=1,\ldots,n$, kjer je $A^k_{m_i}=\frac{k!}{i!m_1!\cdots m_i!}$. 
+za $k=1,\ldots,n$.  
+Tu z $A_{m_i}^k$ iznačujemo koeficient
+\begin{align}\label{eq77}
+A_{m_i}^k = \frac{k!}{i!m_1!\cdots m_i!},
+\end{align}
+z $|m_i|$ pa označimo vsoto $|m_i|=m_1+m_2+\cdots + m_i$, 
+kjer velja $m_j>0$ za vsak $j=1,\ldots, i$.
 
 Oglejmo si, kakšna je geometrijska interpretacija $G^1$-zveznosti. Iz enačbe 
 \eqref{eq43} je razvidno, da sta vektorja $\frac{d}{dt}\ddd{p}(t_1)$ in 
@@ -596,18 +604,18 @@ ploskvama $G^2$ zvezen.
 \begin{primer}
 Naj bodo dane parametrizaciji ploskev $\ddd{R}$ in $\ddd{S}$, krivulja $\ddd{C}$ in 
 reparametrizacijska 
-funkcija $f$ kot v definiciji \ref{def2}. Vpeljimo še oznako 
+funkcija $\ddd{f}$ kot v definiciji \ref{def2}. Vpeljimo še oznako 
 $E=\{(x_0,y);y\in [0,1]\}$ za del domene, nad katerim je definirana krivulja $\ddd{C}$.  
 Da bo stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^2$-zvezen, mora po definiciji \ref{def2} in ugotovitvi, 
 da je dovolj obravnavati le odvode po spremenljivki $x$, veljati
-$$\frac{\partial^{k}}{\partial x^k}(x_0,y)=\frac{\partial^{k}}{\partial x^k}(\ddd{S}\circ f)(x_0,y)\quad \textrm{za } k=0,1,2,$$
+$$\frac{\partial^{k}}{\partial x^k}\ddd{R}(x_0,y)=\frac{\partial^{k}}{\partial x^k}(\ddd{S}\circ f)(x_0,y)\quad \textrm{za } k=0,1,2,$$
 za vsak $y$ v neki okolici točke $y_0$. 
 Da dosežemo zgolj geometrijsko zveznost razreda $G^0$, je dovolj, da med 
 ploskvama $\ddd{R}$ in $\ddd{S}$ velja pogoj 
 $$\ddd{R}(x_0,y)=(\ddd{S} \circ f)(x_0,y)\textrm{, oziroma }\ddd{R}(x_0,y)=\ddd{S}(u(x_0,y),v(x_0,y)).$$ 
 Da imamo na stiku geometrijsko zveznost stopnje $G^1$, mora poleg 
 pogoja za $G^0$ veljati še 
-$$\frac{\partial \ddd{R}}{\partial x}(x_0,y)=\frac{\partial}{\partial x}(\ddd{S}\circ f)(x_0,y)\quad y\in[0,1].$$
+$$\frac{\partial}{\partial x}\ddd{R}(x_0,y)=\frac{\partial}{\partial x}(\ddd{S}\circ f)(x_0,y)\quad y\in[0,1].$$
 Če ustrezno razpišemo parcialni odvod funkcije $\ddd{S} \circ f$, se ta pogoj prepiše v
 \begin{align*}
 \frac{\partial \ddd{R}}{\partial x}(x_0,y)=
@@ -626,7 +634,7 @@ Za $G^2$ mora poleg pogojev za $G^0$ in $G^1$ veljati še
 \end{align*}
 \end{primer}
 
-V splošnem se pogoj za geometrijsko zveznost stopnje $n$, kjer je $n\in \N_0$, zapiše kot:
+V splošnem se pogoj za geometrijsko zveznost stopnje $n$, kjer je $n\in \N_0$, zapiše kot
 \begin{equation}\label{eq1}
 \frac{\partial^k \ddd{R}}{\partial x^k}\bigg|_E=
 \sum_{i=1}^k \sum_{|m_i|=k}A_{m_i}^k
@@ -635,10 +643,8 @@ V splošnem se pogoj za geometrijsko zveznost stopnje $n$, kjer je $n\in \N_0$, 
 \frac{\partial^{m_{h+1}}v}{\partial x^{m_{h+1}}}\cdots \frac{\partial^{m_i}v}{\partial x^{m_i}}
 \frac{\partial^i \ddd{S}}{\partial u^h \partial v^{i-h}}\bigg|_E
 \end{equation}
-za vsak $k=0,1,\ldots,n$. Tu z $A_{m_i}^k$ iznačujemo koeficient
-$$A_{m_i}^k = \frac{k!}{i!m_1!\cdots m_i!}.$$
-Z $u_x^{m_i}$ je označen $m_i$-ti delni odvod funkcije $u$ po $x$, z oznako $|m_i|$ pa 
-označimo vsoto $|m_i|=m_1+m_2+\cdots + m_i$, kjer velja $m_j>0$ za vsak $j=1,\ldots, i$.
+za vsak $k=0,1,\ldots,n$. Koeficienti $A_{m_i}^k$ so definirani enako kot 
+v \eqref{eq77}. 
 Dokaz enakosti \ref{eq1} je mogoče najti v \cite{JIANMINZHENG1995111}. 
 
 Taka definicija geometrijske zveznosti med dvema ploskvama sama po sebi pri konstrukciji geometrijsko 
@@ -685,12 +691,12 @@ obliko ''špice''.
   Dokazati želimo, da od tod 
   sledi $G^n$-zveznost stika ploskev $\ddd{R}(x,y)$ in $\ddd{S}(u,v)$. 
 
-  Definirajmo reparametrizacijsko funkcijo $f(x,y)=(u(x,y),v(x,y))$ na naslednji način: 
+  Definirajmo reparametrizacijsko funkcijo $\ddd{f}(x,y)=(u(x,y),v(x,y))$ na naslednji način: 
   $$u(x,y) =  u_0 + \sum_{i=0}^n \frac{1}{i!}\alpha_i(y)(x-x_0)^i,$$
   $$v(x,y) = y + \sum_{i=0}^n \frac{1}{i!}\beta_i(y)(x-x_0)^i.$$
   
   Ker so po predpostavki funkcije $\alpha_i$ in $\beta_i$, $i=1,\ldots,n$ razreda $C^n$, 
-  tudi funkcija $f$ pripada temu razredu. 
+  tudi funkcija $\ddd{f}$ pripada temu razredu. 
   Opazimo še, da za $i=1, \ldots, k$ velja
   \begin{align*}
   \frac{\partial^i u}{\partial x^i}(x_0,y)=\alpha_i(y),&&
@@ -698,42 +704,42 @@ obliko ''špice''.
   \end{align*}
   Če dobljeno vstavimo v enačbo \eqref{eq2}, dobimo ravno enačbo \eqref{eq1}, od koder zaradi 
   ujemanja ploskev $\ddd{R}$ in $\ddd{S}$ v krivulji $\ddd{C}$ sledi tudi enakost \eqref{eq0}. Pokazati moramo 
-  le še, da je $f$ lokalno regularna.
+  le še, da je $\ddd{f}$ lokalno regularna.
   
   Vemo, da je reparametrizacijska funkcija $f$ regularna vzdolž $\ddd{C}$, če sta oba njena parcialna odvoda prvega 
   reda linearno neodvisna, torej če velja 
-  $$\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) \neq 0.$$
+  $$\frac{\partial \ddd{f}}{\partial x}(x_0,y)\times \frac{\partial \ddd{f}}{\partial y}(x_0,y) \neq 0.$$
 
-  Razpišimo oba odvoda reparametrizacijske funkcije $f(x,y)=(u(x,y),v(x,y))$ vzdolž krivulje $\ddd{C}$ 
+  Razpišimo oba odvoda reparametrizacijske funkcije $\ddd{f}(x,y)=(u(x,y),v(x,y))$ vzdolž krivulje $\ddd{C}$ 
   in ju skušajmo zapisati s pomočjo povezovalnih funkcij. Za odvod po spremenljivki $x$ velja
-  $$\frac{\partial f}{\partial x}(x_0,y)=\left(\frac{\partial u}{\partial x}(x_0,y),\frac{\partial v}{\partial x}(x_0,y)\right)=(\alpha_1(y),\beta_1(y)).$$
+  $$\frac{\partial \ddd{f}}{\partial x}(x_0,y)=\left(\frac{\partial u}{\partial x}(x_0,y),\frac{\partial v}{\partial x}(x_0,y)\right)=(\alpha_1(y),\beta_1(y)).$$
   Če razpišemo odvod po spremenljivki $y$, pa dobimo
-  $$\frac{\partial f}{\partial y}(x_0,y)=\left(\frac{\partial u}{\partial y}(x_0,y),\frac{\partial v}{\partial y}(x_0,y)\right)=(0,1).$$
+  $$\frac{\partial \ddd{f}}{\partial y}(x_0,y)=\left(\frac{\partial u}{\partial y}(x_0,y),\frac{\partial v}{\partial y}(x_0,y)\right)=(0,1).$$
 
-  Vektorski produkt $\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y)$
+  Vektorski produkt $\frac{\partial \ddd{f}}{\partial x}(x_0,y)\times \frac{\partial \ddd{f}}{\partial y}(x_0,y)$
   je torej enak 
-  $$\frac{\partial f}{\partial x}(x_0,y)\times \frac{\partial f}{\partial y}(x_0,y) = 
+  $$\frac{\partial \ddd{f}}{\partial x}(x_0,y)\times \frac{\partial \ddd{f}}{\partial y}(x_0,y) = 
   (\alpha_1(y),\beta_1(y))\times (0,1) = \alpha_1(y).$$
   Vektorski produkt obeh parcialnih odvodov prvega reda je torej različen od $0$ 
   natanko tedaj, ko je $\alpha_1(y)\neq 0$, kar pa velja po začetni predpostavki.
-  Sledi, da je reparametrizacijska funkcija $f$  regularna. 
+  Sledi, da je reparametrizacijska funkcija $\ddd{f}$ regularna. 
 
-  Pokazali smo torej, da obstaja lokalno regularna reparametrizacijska funkcija $f$, ki 
+  Pokazali smo torej, da obstaja lokalno regularna reparametrizacijska funkcija $\ddd{f}$, ki 
   ustreza pogojem iz definicije \ref{def2}, od koder sledi, da se ploskvi $\ddd{R}$ in $\ddd{S}$ stikata 
   z $G^n$-zveznostjo.
 
   Dokažimo izrek še v drugo smer. 
-  Če predpostavimo, da sta ploskvi $R$ in $S$ na stiku $G^n$-zvezni, 
-  obstoj funkcij $\alpha_1(y), \ldots, \alpha_n(y)$ in $\beta_1(y) \ldots, \beta_n(y)$
+  Če predpostavimo, da sta ploskvi $\ddd{R}$ in $\ddd{S}$ na stiku $G^n$-zvezni,
+  po definiciji \ref{def2} obstaja 
+  lokalno regularna reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, ki ustreza 
+  pogojem iz definicije \ref{def2}. 
+  Obstoj funkcij $\alpha_1(y), \ldots, \alpha_n(y)$ in $\beta_1(y) \ldots, \beta_n(y)$
   in enačba \eqref{eq2} sledjo neposredno iz definicije \ref{def2} in enačbe \eqref{eq1}, 
   če definiramo $\alpha_i(y)=\frac{\partial^iu}{\partial{x^i}}(x_0,y)$ in 
-  $\beta_i(y)=\frac{\partial^iv}{\partial {x^i}}(x_0,y)$ za $i=1,\ldots,n$. 
+  $\beta_i(y)=\frac{\partial^iv}{\partial {x^i}}(x_0,y)$ za $i=1,\ldots,n$.
   
-  Ker je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^n$-zvezen, po definiciji \ref{def2} obstaja 
-  lokalno regularna reparametrizacijska funkcija $f(x,y)=(u(x,y),v(x,y))$, ki ustreza 
-  pogojem iz definicije \ref{def2}. Videli smo že, da je funkcija $f$ regularna 
+  Dokažimo še neničelnost funkcije $\alpha_1$. Videli smo že, da je funkcija $f$ regularna 
   natanko tedaj, ko je $\frac{\partial u}{\partial x}(x_0,y)=\alpha_1(y)\neq 0$. 
-  Torej smo okazali še neničelnost funkcije $\alpha_1$, s čimer je dokaz končan. 
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
@@ -750,11 +756,11 @@ stikata z geometrijsko zveznostjo $G^1$.
 Sledi, da je $$\frac{\partial}{\partial y}\ddd{R}(x_0,y) = 
 \frac{\partial}{\partial y}\ddd{S}(u_0,y) = \frac{\partial}{\partial v}\ddd{S}(u_0,v).$$
 Kot smo že videli v poglavju \ref{geom.zv.}, 
-nam je zato potrebno opazovati zgolj odvode v smeri $x$.
+je zato dovolj obravnavati zgolj odvode v smeri $x$.
 
 Ker je stik obeh ploskev v $\ddd{C}$ $G^1$-zvezen, po izreku \ref{izrek1} obstajata 
 funkciji $\alpha_1$ in $\beta_1$, kjer je $\alpha_1(y) \neq 0$ za vsak $y$ 
-in ima ustrezen predznak, da velja:
+in ima ustrezen predznak, da velja
 
 \begin{equation}\label{eq3}
 \frac{\partial}{\partial x}\ddd{R}(x_0,y)=
@@ -766,7 +772,7 @@ $\frac{\partial}{\partial u}\ddd{S}(u_0,y)$ in
 $\frac{\partial}{\partial v}\ddd{S}(u_0,v)$ v vsaki točki $y$ ležijo 
 v isti tangentni ravnini na krivuljo $\ddd{C}$. Tangentna ravnina na ploskev $\ddd{R}$ 
 se na krivulji $\ddd{C}$ ujema s tangentno ravnino na ploskev $\ddd{S}$, kar pomeni, 
-da se tangentna ravnina zvezno spreminja vzdolž zlepka obeh ploskev. 
+da se tangentna ravnina zvezno spreminja vzdolž stičišča obeh ploskev. 
 Zato torej $G^1$-zveznost imenujemo tudi 
 \emph{zveznost tangentnih ravnin}.
 
@@ -794,12 +800,12 @@ Enačbo sedaj z obeh strani vektorsko pomnožimo z $\frac{\partial}{\partial y}\
 \frac{\partial}{\partial x}\ddd{R}(x_0,y).
 \end{align*}
 Upoštevamo, da je $\frac{\partial}{\partial y}\ddd{R}(x_0,y)=\frac{\partial}{\partial y}\ddd{S}(u_0,y)$ 
-in dobimo:
+in dobimo
 \begin{equation}\label{eq30}
 \frac{\partial}{\partial x}\ddd{R}(x_0,y) \times \frac{\partial}{\partial y}\ddd{R}(x_0,y) = 
 \alpha_1(y) \frac{\partial}{\partial u}\ddd{S}(u_0,y) \times \frac{\partial}{\partial y}\ddd{S}(u_0,y).
 \end{equation}
-Vektorski produkt $\frac{\partial}{\partial x}\ddd{R}(x_0,y) \times \\frac{\partial}{\partial y}ddd{R}(x_0,y)$ 
+Vektorski produkt $\frac{\partial}{\partial x}\ddd{R}(x_0,y) \times \frac{\partial}{\partial y}\ddd{R}(x_0,y)$ 
 predstavlja normalo na 
 ploskev $\ddd{R}$ v točki $(x_0,y)$ na krivulji $\ddd{C}$, 
 $\frac{\partial}{\partial u}\ddd{S}(u_0,y) \times \frac{\partial}{\partial y}\ddd{S}(u_0,y)$ 
@@ -813,7 +819,7 @@ $$\frac{\frac{\partial\ddd{R}}{\partial x}(x_0,y) \times \frac{\partial\ddd{R}}{
 {||\frac{\partial\ddd{R}}{\partial x}(x_0,y) \times \frac{\partial\ddd{R}}{\partial y}(x_0,y)||}=
 \frac{\alpha_1(y)\frac{\partial\ddd{S}}{\partial u}(u_0,y) \times \frac{\partial\ddd{S}}{\partial y}(u_0,y)}
 {||\alpha_1(y)\frac{\partial\ddd{S}}{\partial u}(u_0,y) \times \frac{\partial\ddd{S}}{\partial y}(u_0,y)||}.$$
-Enotska normala se zato zvezno spreminja vzdolž zlepka obeh ploskev, od koder poimenovanje 
+Enotska normala se zato zvezno spreminja vzdolž stičišča obeh ploskev, od koder poimenovanje 
 \emph{zveznost enotskih normal}. 
 
 Pogoj, da parcialni odvodi $\frac{\partial}{\partial x}\ddd{R}(x_0,y)$, 
@@ -821,8 +827,8 @@ $\frac{\partial}{\partial u}\ddd{S}(u_0,y)$ in $\frac{\partial}{\partial y}\ddd{
 ležijo na isti 
 tangentni ravnini, je možno izraziti tudi na naslednja dva načina. 
 Zgornji parcialni odvodi so del iste tangentne ravnine natanko tedaj ko velja
-$$\det(\frac{\partial}{\partial x}\ddd{R}(x_0,y), \frac{\partial}{\partial u}\ddd{S}(u_0,y), 
-\frac{\partial}{\partial y}\ddd{S}(u_0,y))=0.$$
+$$\det\left(\frac{\partial}{\partial x}\ddd{R}(x_0,y), \frac{\partial}{\partial u}\ddd{S}(u_0,y), 
+\frac{\partial}{\partial y}\ddd{S}(u_0,y)\right)=0.$$
 
 Ta pogoj pa je ekvivalenten pogoju, da obstajajo skalarne funkcije $\lambda$, 
 $\mu$ in $\gamma$, da velja
@@ -833,7 +839,7 @@ $$\lambda(y)\frac{\partial}{\partial x}\ddd{R}(x_0,y)=
 izberemo polinome ali racionalne funkcije, kar nam zelo olajša 
 konstrukcijo geometrijsko zveznih ploskev.
 
-V nadaljevanju tega dela se bomo ukvarjali z vrsto parametričnih ploskev, 
+V nadaljevanju tega dela se bomo ukvarjali z vrsto polinomskih parametričnih ploskev, 
 imenovano Bézierjeve ploskve, in s pogoji, ki morajo veljati zanje, da je stik 
 med njimi geometrijsko zvezen.
 
@@ -880,7 +886,7 @@ Dokaza se lotimo z indukcijo po $n$. Za $n=0$ izrek očitno velja. Naj bo sedaj
 $n=1$. Imamo dva Bernsteinova bazna polinoma stopnje 1, $B_0^1(t)=1-t$ in 
 $B_1^1(t)=t$. Pokazali bomo, da lahko bazo prostora $\mathbb{P}_1$, torej 
 polinoma $1$ in $t$ izrazimo kot linearno kombinacijo polinomov $B_0^1(t)$ in 
-$B_1^1(t)$. Velja $1 = B_0^1(t)+B_1^1(t)\textrm{ter}t=B_1^1(t),$
+$B_1^1(t)$. Velja $1 = B_0^1(t)+B_1^1(t)$ ter $t=B_1^1(t),$
 kar pomeni, da lahko vsak element prostora $\mathbb{P}_1$ izrazimo z $B_0^1(t)$ 
 in $B_1^1(t)$, torej ta dva polinoma tvorita bazo prostora $\mathbb{P}_1$. 
 
@@ -898,7 +904,7 @@ $t=1$ pa dobimo $\alpha_n=0$.
 Najprej si posebej oglejmo, kako se izraža odvod Bernsteinovega polinoma. Velja 
 \begin{align*}
 \frac{d}{dt}B_i^n(t)&={n \choose i}t^{i-1}(1-t)^{n-i}-{n \choose i}t^i(n-i)(1-t)^{n-i-1}=\\
-&=n({n-1 \choose i-1}t^{i-1}(1-t)^{n-i}-{n-1 \choose i}t^i(1-t)^{n-i-1})=\\
+&=n\left({n-1 \choose i-1}t^{i-1}(1-t)^{n-i}-{n-1 \choose i}t^i(1-t)^{n-i-1}\right)=\\
 &=n(B_{i-1}^{n-1}(t)-B_i^{n-1}(t)).
 \end{align*}
 Torej velja
@@ -910,8 +916,8 @@ n\sum_{i=0}^n\alpha_iB_{i-1}^{n-1}(t)-n\sum_{i=0}^{n}B_i^{n-1}(t)=\\
 &=n\sum_{i=0}^{n-1}(\alpha_{i+1}-\alpha_i)B_i^{n-1}(t)=0.
   \end{split}
 \end{equation}
-Tu smo v drugi vrstici upoštevali, da je $B_n^{n-1}\equiv 0$ in 
-v tretji, da je $B_{-1}^{n-1}\equiv 0$, 
+Tu smo v drugi vrstici upoštevali, da je $B_n^{n-1}(t)\equiv 0$ in 
+v tretji, da je $B_{-1}^{n-1}(t)\equiv 0$, 
 ter izvedli premik indeksa. 
 
 Izpeljali smo, da je izraz, ki ga dobimo v \eqref{eq45} enak 0 natanko tedaj, ko 
@@ -926,7 +932,7 @@ prostora $\mathbb{P}_n$.
 V bazi iz Bernsteinovih baznih polinomov podajamo Bézierjeve krivulje, ki so 
 definirane na naslednji način.
 \begin{definicija}
-  Naj bodo dane točke $\ddd{b}_i\in \R^d, i=0,1,\ldots,n$. \emph{Bézierova krivulja} 
+  Naj bodo dane točke $\ddd{b}_i\in \R^d,$kjer je $d=1,2$ in $i=0,1,\ldots,n$. \emph{Bézierova krivulja} 
   je parametrično podana krivulja 
   $$\ddd{B}_n:[0,1] \rightarrow \R^d$$
   s predpisom
@@ -982,7 +988,7 @@ $\mathbb{P}_n=\mbox{Lin}\{v^j;j=0,\ldots,n\}$ zapišemo kot
 $\mathbb{P}_m \otimes \mathbb{P}_n = \mathbb{P}_{m,n} = \mbox{Lin}
 \{u^iv^j;i=0,\ldots,m;j=0,\ldots,n\}$. Vsebuje torej vse polinome, katerih stopnja 
 je v prvi spremenljivki enaka največ $m$, v drugi spremenljivki pa največ $n$. 
-Bazo tega prostora lahko skonsktruiramo kot tenzorski produkt baz prostorov 
+Bazo tega prostora lahko konsktruiramo kot tenzorski produkt baz prostorov 
 $\mathbb{P}_m$ in $\mathbb{P}_n$. Če sta $\{B_i^m(u);i=0,\ldots,m\}$ in 
 $\{B_j^n(v);j=0,\ldots,n\}$ bazi prostorov $\mathbb{P}_m$ in $\mathbb{P}_n$, je torej 
 množica $\{B_i^m(u)B_j^n(v);i=0\ldots,m;j=0,\ldots,n\}$ baza prostora $\mathbb{P}_{m,n}$. 
@@ -992,14 +998,14 @@ $\mathbb{P}_n^2=\mbox{Lin}\{u^iv^j;0 \leq i+j \leq n\}$. Njegovo bazo tvorijo
 Bernsteinovi polinomi dveh spremenljivk, ki bodo definirani v poglavju \ref{pog.bez.tr.}. 
 Bézierjeve ploskve, podane v bazi prostora $\mathbb{P}_n^2$, imenujemo 
 \emph{trikotne Bézierjeve ploskve}. 
-Bézierjeve ploskve, ki jih podajamo 
+Bézierjevim ploskvam, ki jih podajamo 
 v bazi iz tenzorskih produktov, pa pravimo \emph{Bézierjeve ploskve iz tenzorskega 
 produkta}. Definirane so na naslednji način.
 
 \begin{definicija}
-  Naj bodo dane točke $\mathbf{b}_{i,j}\in \R^d$, $i=0,1,\ldots,m$, $j=0,1,\ldots,n$. 
+  Naj bodo dane točke $\mathbf{b}_{i,j}\in \R^3$, $i=0,1,\ldots,m$, $j=0,1,\ldots,n$. 
   \emph{Bézierjeva ploskev iz tenzorskega produkta} je parametrično podana ploskev
-  $$\mathbf{B}_{m,n} : [0,1]\times[0,1] \rightarrow \R^d$$
+  $$\mathbf{B}_{m,n} : [0,1]\times[0,1] \rightarrow \R^3$$
   s predpisom
   $$\mathbf{B}_{m,n}(u,v)=\sum_{i=0}^m \sum_{j=0}^n \mathbf{b_{i,j}} B_i^m(u) B_j^n(v).$$
   Točke $\mathbf{b}_{i,j}$ imenujemo \emph{kontrolne točke}, mrežo, ki jih povezuje, 
@@ -1026,7 +1032,7 @@ Parametrizacija torej interpolira vogalne kontrolne točke.
 Odvod Bézierjeve ploskve iz tenzorskega produkta 
 se izraža kot:
 \begin{align}\label{eq28}
-\frac{\partial^{r+s}}{\partial u^r \partial v^s}\mathbf{B}_{m,n}(u,v)=\frac{m!}{(m-r)!}\frac{n!}{(n-s)!}\sum_{i=0}^{m-r} \sum_{j=0}^{n-s} \Delta^{r,s}\mathbf{b}_{i,j}B_i^{m-r}(u)B_j^{n-s}(v),
+\frac{\partial^{r+s}}{\partial u^r \partial v^s}\mathbf{B}_{m,n}(u,v)=\frac{m!}{(m-r)!}\frac{n!}{(n-s)!}\sum_{i=0}^{m-r} \sum_{j=0}^{n-s} \Delta^{r,s}\mathbf{b}_{i,j}B_i^{m-r}(u)B_j^{n-s}(v).
 \end{align}
 Tu z $\Delta$ ponovno označujemo rekurzivno definirani operator na kontrolnih točkah:
 \begin{align*}
@@ -1999,15 +2005,14 @@ prosti. Prosta je le še ena izmed njiju, druga pa je določena z enačbo \eqref
 če je R podana, saj dobimo pogoje za kontrolne točke R}
 \end{primer}
 
-\todo{primer s stopnjo 3 in 2? ali pa samo omeni, da je v tem primeru 
-veliko več parametrov, ampak da so vse kontrolne točke odvisne od robnih,
-polinomi višje stopnje se v bistvu ne splačajo? uporabni so samo, kadar 
-imamo stik ploskev različnih stopenj}
+Če bi v zgornjih primerih za povezovalne funkcije vzeli polinome višjih stopenj, bi dobili sicer 
+več prostih parametrov za določanje oblike ploskev, vendar bi bili v tem primeru 
+kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ obe določeni. Primer 
+take konstrukcije, kjer so uporabljeni polinomi stopnje 2 in 3, je mogoče najti 
+v \cite{YE1996521}. To pomeni, da v splošnem ne moremo rešiti problema, kjer 
+imamo podano celotno ploskev $\ddd{R}$ in iščemo pogoje, ki morajo veljati za ploskev 
+$\ddd{S}$, da bosta na skupnem robu $G^1$-zvezni. 
 
-%\todo{lahko narediš primer s stopnjami 3 in 2 in vidimo, da kontrolne točke 
-%niso proste in je zato v splošnem nemogoče konstruirati bezierjevo ploskev 
-%vnaprej določene stopnje, ki je g zvezna z neko vnaprej določeno bez ploskvijo, 
-%ali kaj?}
 
 Za konec tega podpoglavja si oglejmo še posplošitev primera \ref{primer2}. Namesto 
 dveh plsokev stopnje $(3,3)$ obravnavajmo ploskvi poljubnih stopenj.
@@ -2497,6 +2502,7 @@ Oglejmo si še definicijo trikotnih Bézierjevih ploskev.
 
 Koordinate poljubne točke na trikotni Bézierovi ploskvi lahko izračunamo s pomočjo 
 de Casteljaujevega algoritma.
+
 \begin{algorithm}[h!]
   \KwData{Kontrolna mreža $\ddd{b}_{i,j,k}$,$i+j+k=n$, točka $\ddd{p}$ v domeni, 
   trikotnik $T=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$}
@@ -2518,8 +2524,8 @@ de Casteljaujevega algoritma.
     }
     }
   \caption{De Casteljaujev algoritem za trikotne Bézierove krpe}
+\end{algorithm}
 
- \end{algorithm}
  De Casteljaujev algoritem bo pomemben v nadaljevanju za izražavo točk, ki razpenjajo 
  tangentno ravnino na ploskev v neki točki. 
 
@@ -2730,8 +2736,8 @@ oglišča trikotnikov $T_1$ in $T_2$ preslika v oglišča trikotnikov
 $\langle\ddd{r}_{1,0,2},\ddd{r}_{0,0,3},\ddd{r}_{0,1,2}\rangle$ in 
 $\langle\ddd{s}_{1,0,2},\ddd{s}_{0,0,3},\ddd{s}_{0,1,2}\rangle$, 
 torej velja
-$\Phi(\ddd{p}_1)=\ddd{r}_{1,0,2}$, $\Phi(\ddd{p}_2)=\ddd{s}_{0,0,3}$,
-$\Phi(\ddd{p}_3)=\ddd{s}_{0,1,2}$ in $\Phi(\ddd{p}_4)=\ddd{s}_{1,0,2}$. 
+$\Phi(\ddd{p}_1)=\ddd{r}_{1,0,2}$, $\Phi(\ddd{p}_2)=\ddd{r}_{0,0,3}$,
+$\Phi(\ddd{p}_3)=\ddd{r}_{0,1,2}$ in $\Phi(\ddd{p}_4)=\ddd{s}_{1,0,2}$. 
 Ker afine preslikave ohranjajo baricentrične koordinate, iz enakosti \eqref{eq76} sledi 
 \begin{align*}
 \Phi(\ddd{p}_4)=\alpha_1\Phi(\ddd{p}_1)+\alpha_2\Phi(\ddd{p}_2)+\alpha_3\Phi(\ddd{p}_3)=

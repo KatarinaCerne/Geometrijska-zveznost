@@ -1265,9 +1265,9 @@ enačbi
   deliti polinom $D$, s čimer smo pokazali, da sta $E_1$ in $F_1$ res polinoma.
 
   Videti želimo še, da je $D(y)E_1(y)\neq 0$ na intervalu $[0,1]$. Polinom $D(y)$ po definiciji 
-  vsebuje vse nelinearne faktorje v polinomskem razcepu polinoma $N_{rx}(y)$, torej 
+  vsebuje vse nelinearne faktorje v polinomskem razcepu polinoma $N_{R,1}(y)$, torej 
   na intervalu $[0,1]$ nima ničel. Polinom $E_1(y)$ je enak $E_1(y)=\alpha_1(y)D(y)$. 
-  Ker je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^n$-zvezen, funkcija $\alpha_1(y)$ 
+  Ker je stik ploskev $\ddd{R}$ in $\ddd{S}$ $G^1$-zvezen, funkcija $\alpha_1(y)$ 
   po izreku \ref{izrek1} na 
   intervalu $[0,1]$ ni enaka nič, zato tudi $E_1(y)$ na tem intervalu 
   nima ničel. 
@@ -1363,37 +1363,41 @@ za $G^n$-zveznost med ploskvama, kjer je $n\geq 2$.
   Iz izreka \ref{izrek1} sledi, da obstajajo funkcije 
   $\alpha_1, \ldots, \alpha_{m+1}$ in $\beta_1 \ldots, \beta_{m+1}$, da velja
   \begin{align*}
-    \frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}(0,v)&= 
+    \frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}(0,y)&= 
     \sum_{i=1}^{m+1}\sum_{|\ddd{m}_i|=m+1}A_{m_i}^{m+1}
-    \sum_{h=0}^i {i \choose h}\alpha_{m_1}(v)\cdots \alpha_{m_h}(v)\cdot\\
-    &\cdot\beta_{m_{h+1}}(v)\beta_{m_i}(v) 
-    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}(0,v)=\\
-    & = \alpha_{m+1}(v) \frac{\partial \ddd{R}}{\partial u}(0,v) + 
-    \beta_{m+1}(v) \frac{\partial \ddd{R}}{\partial v}(0,v)+\\
+    \sum_{h=0}^i {i \choose h}\alpha_{m_1}(y)\cdots \alpha_{m_h}(y)\cdot\\
+    &\cdot\beta_{m_{h+1}}(v)\beta_{m_i}(y) 
+    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}(0,y)=\\
+    & = \alpha_{m+1}(y) \frac{\partial \ddd{R}}{\partial u}(0,y) + 
+    \beta_{m+1}(y) \frac{\partial \ddd{R}}{\partial v}(0,y)+\\
     & + \sum_{i=2}^{m+1} \sum_{|\ddd{m}_i|=m+1}A_{m_i}^{m+1} \sum_{h=0}^i {i \choose h}
-    \alpha_{m_1}(v) \cdots \alpha_{m_h}(v)\cdot\\ 
-    &\cdot\beta_{m_{h+1}}(v) \cdots \beta_{m_i}(v)
-    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}(0,v).
+    \alpha_{m_1}(y) \cdots \alpha_{m_h}(y)\cdot\\ 
+    &\cdot\beta_{m_{h+1}}(y) \cdots \beta_{m_i}(y)
+    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}(0,y).
   \end{align*}
-  Po indukcijski predpostavki je $\alpha_i(y) = \frac{E_i(y)}{D^{2i-1}(y)}$ in 
-  $\beta_i(y)=\frac{F_i(y)}{D^{2i-1}(y)}$ za $i=1, \ldots, m$. 
+  Po indukcijski predpostavki je
+  \begin{align*} 
+  \alpha_i(y) = \frac{E_i(y)}{D^{2i-1}(y)},&& 
+  \beta_i(y)=\frac{F_i(y)}{D^{2i-1}(y)} 
+  \end{align*}
+  za $i=1, \ldots, m$.  
   Uporabimo to v zgornji 
   enačbi in dobimo:
   \begin{equation}\label{eq12}
     \begin{split}
-    \frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}\Bigr|_{\substack{\ddd{C}}}&= 
-    \alpha_{m+1} \frac{\partial \ddd{R}}{\partial u}|_{\ddd{C}} + 
-    \beta_{m+1} \frac{\partial \ddd{R}}{\partial v}|_{\ddd{C}} + \\
+    \frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}(0,y)&= 
+    \alpha_{m+1} \frac{\partial \ddd{R}}{\partial u}(0,y) + 
+    \beta_{m+1} \frac{\partial \ddd{R}}{\partial v}(0,y) + \\
     &+ \sum_{i=2}^{m+1} \sum_{|\ddd{m}_i|}A_{m_i}^{m+1} \sum_{h=0}^i {i \choose h}
     \frac{E_{m_1}(y)}{D^{2m_1-1}(y)} \cdots \frac{E_{m_h}(y)}{D^{2m_h-1}(y)}\\ 
     &\cdot \frac{F_{m_{h+1}}(y)}{D^{2m_{h+1}-1}(y)} \cdots \frac{F_{m_i}(y)}{D^{2m_i-1}(y)}
-    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\Bigr|_{\substack{C}} = \\
-    &= \alpha_{m+1} \frac{\partial \ddd{R}}{\partial u}|_{\ddd{C}} + 
-    \beta_{m+1} \frac{\partial \ddd{R}}{\partial v}|_{\ddd{C}} + \\
+    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}(0,y) = \\
+    &= \alpha_{m+1} \frac{\partial \ddd{R}}{\partial u}(0,y) + 
+    \beta_{m+1} \frac{\partial \ddd{R}}{\partial v}(0,y) + \\
     &+ \sum_{i=2}^{m+1} \sum_{|\ddd{m}_i|}A_{m_i}^{m+1} \sum_{h=0}^i {i \choose h}
     D^{i-2}(y)D^{-2m}E_{m_1}(y) \cdots E_{m_h}(y) \\
     & \cdot F_{m_{h+1}}(y) \cdots F_{m_i}(y)
-    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\Bigr|_{\substack{C}},
+    \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}(0,y),
     \end{split}
   \end{equation}
   saj je $|\ddd{m}_i|=m_1+m_2+\cdots + m_i = m+1$ in zato je \\
@@ -1443,7 +1447,7 @@ za $G^n$-zveznost med ploskvama, kjer je $n\geq 2$.
 
   Očitno je
   \begin{align*} 
-    \mbox{deg}\left(D^{2m}(y)\frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}\bigg|_{\ddd{C}}\right)&\leq 
+    \mbox{deg}\left(D^{2m}(y)\frac{\partial^{m+1} \ddd{S}}{\partial u^{m+1}}\bigg|_{E}\right)&\leq 
     2m(n_r+n_c-1)+n_s \\
     &\leq 2mn_r + (m+1)n_s + mn_c -2m, 
   \end{align*}
@@ -1453,13 +1457,13 @@ za $G^n$-zveznost med ploskvama, kjer je $n\geq 2$.
 
   Oglejmo si še, kakšna je
   $$\mbox{deg}\left(D^{i-1}E_{m_1}\cdots E_{m_h}F_{m_{h+1}}\ldots F_{m_i}
-  \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{\ddd{C}}\right).$$
+  \frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{E}\right).$$
   Najprej si jo oglejmo za $h=0$:
   \begin{align*}
-    &\mbox{deg}\left(D^{i-2}F_{m_1}\cdots F_{m_i}\frac{\partial^i \ddd{R}}{\partial y^i}\bigg|_{\ddd{C}}\right)\leq\\
-    &\leq(i-2) \mbox{deg}(D) + \sum_{j=1}^i \mbox{deg}(F_{m_j}) + \mbox{deg}\left(\frac{\partial^i \ddd{R}}{\partial y^i}\bigg|_{\ddd{C}}\right) 
+    &\mbox{deg}\left(D^{i-2}F_{m_1}\cdots F_{m_i}\frac{\partial^i \ddd{R}}{\partial y^i}\bigg|_{E}\right)\leq\\
+    &\leq(i-2) \mbox{deg}(D) + \sum_{j=1}^i \mbox{deg}(F_{m_j}) + \mbox{deg}\left(\frac{\partial^i \ddd{R}}{\partial y^i}\bigg|_{E}\right) 
   \end{align*}
-  Vemo, da je $\mbox{deg}(D)\leq n_r+n_c-1$ in $\mbox{deg}(\frac{\partial^i \ddd{R}}{\partial y^i}|_{\ddd{C}})\leq n_c-i$, 
+  Vemo, da je $\mbox{deg}(D)\leq n_r+n_c-1$ in $\mbox{deg}(\frac{\partial^i \ddd{R}}{\partial y^i}|_{E})\leq n_c-i$, 
   po indukcijski predpostavki pa velja še
   \begin{align*} 
   &\mbox{deg}(E_i)\leq (2i-2)n_r+in_s+in_c-2i+1),\\
@@ -1467,7 +1471,7 @@ za $G^n$-zveznost med ploskvama, kjer je $n\geq 2$.
   \end{align*} 
   Torej je 
   \begin{align*}
-    &\mbox{deg}\left(D^{i-2}F_{m_1}\cdots F_{m_i}\frac{\partial^i \ddd{R}}{\partial y^i}\bigg|_{\ddd{C}}\right)\leq
+    &\mbox{deg}\left(D^{i-2}F_{m_1}\cdots F_{m_i}\frac{\partial^i \ddd{R}}{\partial y^i}\bigg|_{E}\right)\leq
     (i-2)(n_r+n_c-1)+\\
     &+\sum_{j=1}^i((2m_j-1)n_r+m_jn_s+(m_j-1)n_c-2m_j+2) + (n_c -i)= \\
     &= (i-2)(n_r + n_c -1) + 2(m+1)n_r - in_r + (m+1)n_s + (m+1)n_c -in_c -\\
@@ -1480,17 +1484,17 @@ za $G^n$-zveznost med ploskvama, kjer je $n\geq 2$.
   Sedaj obravnavajmo še primer, ko je $h>1$.
   \begin{align*}
     &\mbox{deg}\left(D^{i-2}E_{m_1}\cdots E_{m_h}F_{m_{h+1}}\cdots F_{m_i}
-    \frac{\partial^i\ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{\ddd{C}}\right)\leq \\
+    \frac{\partial^i\ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{E}\right)\leq \\
     &\leq (i-2)\mbox{deg}(D) + \sum_{j=1}^h \mbox{deg}(E_{m_j}) + \sum_{j=h+1}^i \mbox{deg}(F_{m_j}) + \\
-    &+ \mbox{deg}\left(\frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{\ddd{C}}\right).
+    &+ \mbox{deg}\left(\frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{E}\right).
   \end{align*}
   Zopet uporabimo indukcijsko predpostavko za stopnje polinomov $E_i$ in $F_i$, 
   kjer je $i=1,\ldots, m$, ter dejstvo, da je 
-  $\mbox{deg}\left(\frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{\ddd{C}}\right)=n_r-i+h$, in 
+  $\mbox{deg}\left(\frac{\partial^i \ddd{R}}{\partial x^h \partial y^{i-h}}|_{E}\right)=n_r-i+h$, in 
   dobimo
   \begin{align*}
     &\mbox{deg}\left(D^{i-2}E_{m_1}\cdots E_{m_h}F_{m_{h+1}}\cdots F_{m_i}
-    \frac{\partial^i\ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{\ddd{C}}\right)\leq \\
+    \frac{\partial^i\ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{E}\right)\leq \\
     &\leq (i-2)(n_r+n_c-1)+2n_r\sum_{j=1}^h m_j - 2n_rh + n_s\sum_{j=1}^hm_j +
     + n_c\sum_{j=1}^hm_j-\\ &- 2\sum_{j=1}^hm_j + h + 2n_r\sum_{j=h+1}^im_j - (i-h)n_r
     + n_s\sum_{j=h+1}^im_j + n_c\sum_{j=h+1}^i - (i-h)n_c-\\ &
@@ -1501,7 +1505,7 @@ za $G^n$-zveznost med ploskvama, kjer je $n\geq 2$.
   V zadnji enakosti smo uprabili, da je $\sum_{j=1}^im_j=m+1$. Nadaljujmo z računom:
   \begin{align*}
     &\mbox{deg}\left(D^{i-2}E_{m_1}\cdots E_{m_h}F_{m_{h+1}}\cdots F_{m_i}
-    \frac{\partial^i\ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{\ddd{C}}\right)\leq \\
+    \frac{\partial^i\ddd{R}}{\partial x^h \partial y^{i-h}}\bigg|_{E}\right)\leq \\
     &\leq(i-2)(n_r+n_c-1)+2n_r(m+1)+n_s(m+1)+n_c(m+1)-2(m+1)-\\
     &-2n_rh+h-(i-h)n_r-(i-h)n_c+2(i-h)+n_r-i-h \leq \\
     &\leq 2mn_r+(m+1)n_s+mn_c-2m-n_rh+n_ch-n_c+n_r = \\
@@ -1514,7 +1518,7 @@ za $G^n$-zveznost med ploskvama, kjer je $n\geq 2$.
   Iz enačbe \eqref{eq31} in definicije polinoma $E_{m+1}$ je razvidno naslednje:
   \begin{align*}
     &\mbox{deg}(E_{m+1})\leq \mbox{deg}(\overline{W_{1}})\leq \mbox{deg}(\overline{\ddd{W}})\leq \mbox{deg}(\ddd{S}_{m+1})+
-    \mbox{deg}\left(\frac{\partial \ddd{R}}{\partial y}\bigg|_{\ddd{C}}\right) \leq \\
+    \mbox{deg}\left(\frac{\partial \ddd{R}}{\partial y}\bigg|_{E}\right) \leq \\
     &\leq (2mn_r+(m+1)n_s+mn_c-2m)+(n_c-1)=\\
     &=2mn_r + (m+1)n_s + (m+1)n_c -2m -1.
   \end{align*}
@@ -1523,7 +1527,7 @@ za $G^n$-zveznost med ploskvama, kjer je $n\geq 2$.
   stopnjo polinoma $F_{m+1}$:
   \begin{align*}
     &\mbox{deg}(F_{m+1})\leq \mbox{deg}(\overline{\overline{W_{1}}})\leq \mbox{deg}(\overline{\overline{\ddd{W}}})\leq \mbox{deg}(\ddd{S}_{m+1})+
-    \mbox{deg}\left(\frac{\partial \ddd{R}}{\partial x}\bigg|_{\ddd{C}}\right) \leq \\
+    \mbox{deg}\left(\frac{\partial \ddd{R}}{\partial x}\bigg|_{E}\right) \leq \\
     &\leq (2mn_r+(m+1)n_s+mn_c-2m)+n_r=\\
     &=(2m+1)n_r + (m+1)n_s + mn_c -2m.
   \end{align*}
@@ -1653,7 +1657,12 @@ za $G^n$-zveznost med ploskvama, kjer je $n\geq 2$.
 \section{Primeri konstrukcij geometrijsko zveznih ploskev iz tenzorskega produkta}
 \label{pog.ten.npr}
 
-\todo{nek uvod, navezava na prejšnje poglavje}
+Teorijo, izpeljano v prejšnjih poglavjih, bomo v tem poglavju uporabili na 
+bolj konkretnih primerih konstrukcije geometrijsko zveznih Bézierovih 
+ploskev iz tenzorskega produkta. Ogledali si bomo nekaj pogojev, ki morajo veljati 
+za $G^1$-zveznost med bi-kubičnima ploskvama ter med ploskvama poljubnih 
+stopenj in pogoje za $G^2$-zveznost med ploskvama stopnje $(5,5)$. Povezovalne 
+funkcije bodo polinomi nizkih stopenj.
 
 \subsection{Konstrukcija $G^1$-zveznih Bézierjevih ploskev iz tenzorskega produkta}
 \label{g1primeri}
@@ -1676,7 +1685,7 @@ kjer so $\ddd{Z}_i = \ddd{P}_{0,i} = \ddd{Q}_{3,i}$ kontrolne točke krivulje $\
 
 Predpostavili bomo, da so robne krivulje ploskev $\ddd{R}$ in $\ddd{S}$ 
 že določene na tak način, da bomo imeli na robu zahtevano zveznost. 
-Robne kontrolne točke naj bodo torej že vnaprej določene. 
+Kontrolne točke vseh robnih krivulj obeh ploskev naj bodo torej že vnaprej določene. 
 Zanimalo nas bo,  
 kakšne zveze v teh primerih veljajo za notranje kontrolne točke, torej za 
 $\ddd{P}_{1,1}$, $\ddd{P}_{1,2}$, $\ddd{Q}_{2,1}$ in $\ddd{Q}_{2,2}$., 
@@ -1708,7 +1717,7 @@ $G^1$-zveznost.
   točkah: 
   $\frac{\partial}{\partial u}\ddd{R}(0,v)=\frac{\partial}{\partial u}\ddd{S}(1,v)$.
 
-  Če razpišemo oba parcialna odvoda oziroma se sklicujemo na enakost \eqref{eq29}, 
+  Če razpišemo oba parcialna odvoda oziroma uporabimo enakost \eqref{eq29}, 
   dobimo naslednje pogoje za $C^1$-zveznost med ploskvama:
   $$(\ddd{P}_{1,j}-\ddd{P}_{0,j})=\ddd{Q}_{3,j}-\ddd{Q}_{2,j}$$
   oziroma 
@@ -1732,7 +1741,7 @@ $G^1$-zveznost.
     \includegraphics[width=0.6\textwidth]{slike/c1-1.pdf}
   % \caption[caption za v kazalo]{Dolg caption pod sliko}
     \caption[Primer $C^1$-zveznih Bézierjevih ploskev iz tenzorskega produkta.]
-    {Primer bikubičnih Bézierjevih ploskev iz tenzorskega produkta, ki sta na skupnem robu 
+    {Primer bi-kubičnih Bézierjevih ploskev iz tenzorskega produkta, ki sta na skupnem robu 
     $C^1$-zvezni. Kontrolni vektorji prek roba morajo biti kolinearni.}
     \label{fig:c1}
   \end{figure}
@@ -1800,7 +1809,7 @@ d_1\ddd{q}_{1,3} = e_1 \ddd{p}_{1,3} + f_1 \ddd{z}_2.
 Pogoji, ki veljajo za robne kontrolne točke, so enaki neglede na način konstrukcije 
 $G^1$-zveznega zlepka ploskev. Pogoji, ki veljajo za notranje kontrolne točke, 
 število svobodnih parametrov, ki določajo obliko dobljene ploskve, in število 
-prostih kontrolnih točk, pa so odvisni od izbire načina konstrukcije, natančneje, 
+prostih kontrolnih točk pa so odvisni od izbire načina konstrukcije, natančneje, 
 od izbire stopnje koeficientnih polinomskih funkcij in stopnje odvodov parametrizacij 
 ploskev $\ddd{R}$ in $\ddd{S}$.
 
@@ -1884,7 +1893,7 @@ kjer $\ddd{n}$ označuje normalo na ravnino, ki jo določajo vektorji $\ddd{q}_{
 $\ddd{p}_{1,0}$ in $\ddd{z}_0$, v točki $\ddd{P}_{0,0}$. Matrika $[\ddd{p}_{1,0},\ddd{z}_0,\ddd{n}]$ 
 je nesingularna, saj sta vektorja $\ddd{p}_{1,0}$ in $\ddd{z}_0$ nekolinearna in pravokotna 
 na $\ddd{n}$, zato je mogoče na enoličen način izraziti neznanke $e_1$, $f_1$ in $g$. 
-ker je vektor $\ddd{q}_{0,0}$ del iste ravnine kot $\ddd{p}_{1,0}$ in $\ddd{z}_0$, 
+Ker je vektor $\ddd{q}_{0,0}$ del iste ravnine kot $\ddd{p}_{1,0}$ in $\ddd{z}_0$, 
 mora biti $g=0$, vrednosti $e_0$ in $f_0$ pa izračunamo s pomočjo Cramerjevih formul: 
 \begin{align*}
 e_0=\frac{\det[\ddd{q}_{1,0},\ddd{z}_0,\ddd{n}]}{\det[\ddd{p}_{1,0},\ddd{z}_0,\ddd{n}]},&&
@@ -1900,7 +1909,7 @@ Na enak način iz enačbe \eqref{eq19} dobimo še parametra $e_1$ in $f_1$
 $e_0=1$, $f_0=0$ in $f_1=0$, bi dobili enak rezultat kot v primeru \ref{primer1}, 
 v katerem smo iskali pogoje za $C^1$-zveznost. Z drugačno izbiro robnih krivulj in 
 posledično drugačnimi vrednostmi parametrov pa 
-lahko dosežemo poljuben kot med vektorjema $q_{1,1}$ in $p_{1,1}$, biti morata samo 
+lahko dosežemo poljuben kot med vektorjema $\ddd{q}_{1,1}$ in $\ddd{p}_{1,1}$, biti morata samo 
 del iste ravnine.  
 Vidimo torej, da je zahteva $G^1$-zveznosti kar se tiče oblike dobljenega zlepka 
 ploskev prinese veliko več možnosti kot zahteva $C^1$-zveznosti.
@@ -1925,12 +1934,12 @@ prosti. Enako velja za vse ostale notranje kontrolne točke.
   vendar se pri tem pojavi dodatna omejitev za notranje kontrolne točke.
 
   Stopnjo krivulje $\frac{\partial \ddd{R}}{\partial u}(0,v)$ bomo znižali 
-  za 1, torej jo bomo aproksimirali \todo{?} s krivuljo stopnje 2, določeno 
-  s kontrolnimi vektorji $\ddd{p}_{1,0}$, $\ddd{p}_m$ in $\ddd{p}_{1,3}$.   
+  za 1, torej jo bomo aproksimirali s krivuljo stopnje 2, določeno 
+  s kontrolnimi vektorji $\ddd{p}_{1,0}$, $\ddd{p}_m$ in $\ddd{p}_{1,3}$:     
 %Naj krivuljo $\frac{\partial \ddd{R}}{\partial u}|_{u=0}$ 
 %določajo kontrolni vektorji $\ddd{p}_0$, $\ddd{p}_m$ in $\ddd{p}_3$:
-%$$\frac{1}{3}\frac{\partial \ddd{R}}{\partial u}|_{u=0} = 
-%\sum_{i=0}^3\ddd{p}_{1,i}B_i^3(v)=(1-v)^2\ddd{p}_{1,0} + 2(1-v)v\ddd{p}_m + v^2\ddd{p}_{1,3}$$
+$$\frac{1}{3}\frac{\partial \ddd{R}}{\partial u}|_{u=0} = 
+\sum_{i=0}^3\ddd{p}_{1,i}B_i^3(v)=(1-v)^2\ddd{p}_{1,0} + 2(1-v)v\ddd{p}_m + v^2\ddd{p}_{1,3}.$$
 Izrazimo vektor $\ddd{p}_m$ z vektorji $\ddd{p}_{1,i}$, $i=0,\ldots,3$. 
 Po formulah za višanje stopnje krivulje velja
 \begin{align*}
@@ -1944,10 +1953,10 @@ oziroma
 \end{align}
 
 Če vpeljemo oznake 
-$\tilde{\ddd{p}}_0=\ddd{p}_{1,0}$, $\tilde{\ddd{p}}_1=\ddd{p}_m$ in $\tilde{\ddd{p}}_2=\ddd{p}_{1,3}$, 
+$\widetilde{\ddd{p}}_0=\ddd{p}_{1,0}$, $\widetilde{\ddd{p}}_1=\ddd{p}_m$ in $\widetilde{\ddd{p}}_2=\ddd{p}_{1,3}$, 
 se enačba \eqref{eq15} v tem primeru preoblikuje v
 \begin{align}\label{eq16}
-D(v)\sum_{j=0}^3\ddd{q}_{1,j}B_j^3(v)=E_1(v)\sum_{j=0}^2\tilde{\ddd{p}}_jB_j^2(v)+
+D(v)\sum_{j=0}^3\ddd{q}_{1,j}B_j^3(v)=E_1(v)\sum_{j=0}^2\widetilde{\ddd{p}}_jB_j^2(v)+
 F_1(v)\sum_{j=0}^2\ddd{s}_jB_j^2(v).
 \end{align}
 
@@ -1974,7 +1983,7 @@ $$\ddd{q}_{1,2}=\frac{1}{3}(e_0\ddd{p}_{1,3}+2e_1\ddd{p}_m+2f_1\ddd{z}_1+f_0\ddd
 Če še izrazimo vektor $\ddd{p}_m$ z vektorjema $\ddd{p}_{1,0}$ in $\ddd{p}_{1,1}$ 
 oziroma vektorjema $\ddd{p}_{1,2}$ in $\ddd{p}_{1,3}$, dobimo naslednji enačbi:
 
-$$\ddd{q}_{1,1}=e_0\ddd{p}_{1,1}+\frac{1}{3}(e_1-e_0)\ddd{p}_{1,0}+\frac{1}{3}f_1\ddd{z}_0+\frac{2}{3}f_0\ddd{z}_1$$
+$$\ddd{q}_{1,1}=e_0\ddd{p}_{1,1}+\frac{1}{3}(e_1-e_0)\ddd{p}_{1,0}+\frac{1}{3}f_1\ddd{z}_0+\frac{2}{3}f_0\ddd{z}_1,$$
 $$\ddd{q}_{1,2}=e_1\ddd{p}_{1,2}+\frac{1}{3}(e_0-e_1)\ddd{p}_{1,3}+\frac{2}{3}f_1\ddd{z}_1+\frac{1}{3}f_0\ddd{z}_2.$$
 
 %Vidimo, da za razliko od primera \ref{primer2}, kjer smo imeli zgolj 3 parametre 
@@ -2002,8 +2011,8 @@ Kontrolni točki $\ddd{Q}_{2,1}$ in $\ddd{Q}_{2,2}$ sta kot v primeru \ref{prime
 določeni s točkama $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ ter robnimi kontrolnimi 
 točkami, kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ pa nista več obe 
 prosti. Prosta je le še ena izmed njiju, druga pa je določena z enačbo \eqref{eq17}.
-\todo{to pomeni, da v splošnem ne moremo konstruirati ploskve S poljubne stopnje, 
-če je R podana, saj dobimo pogoje za kontrolne točke R}
+%\todo{to pomeni, da v splošnem ne moremo konstruirati ploskve S poljubne stopnje, 
+%če je R podana, saj dobimo pogoje za kontrolne točke R}
 \end{primer}
 
 Če bi v zgornjih primerih za povezovalne funkcije vzeli polinome višjih stopenj, bi dobili sicer 
@@ -2021,10 +2030,10 @@ dveh plsokev stopnje $(3,3)$ obravnavajmo ploskvi poljubnih stopenj.
 \begin{primer}\label{primer4}
 Naj bosta $\ddd{R}$ in $\ddd{S}$ dve Bézierjevi ploskvi iz tenzorskega produkta. 
 \begin{align*}
-  \ddd{R}(u,v)\sum_{i=0}^{m_R}\sum_{j=0}^{n_R}\ddd{P}_{i,j}B_i^{m_R}(u)B_j^{n_R}(v),
+  \ddd{R}(u,v)=\sum_{i=0}^{m_R}\sum_{j=0}^{n_R}\ddd{P}_{i,j}B_i^{m_R}(u)B_j^{n_R}(v),
 \end{align*}
 \begin{align*}
-  \ddd{S}(u,v)\sum_{i=0}^{m_S}\sum_{j=0}^{n_S}\ddd{Q}_{i,j}B_i^{m_S}(u)B_j^{n_S}(v),
+  \ddd{S}(u,v)=\sum_{i=0}^{m_S}\sum_{j=0}^{n_S}\ddd{Q}_{i,j}B_i^{m_S}(u)B_j^{n_S}(v),
 \end{align*}
 kjer velja $u,v\in[0,1]$. 
 

@@ -1963,7 +1963,7 @@ F_1(v)\sum_{j=0}^2\ddd{s}_jB_j^2(v).
 Polinom $D(v)$ naj bo konstanten, znova lahko predpostavimo $D(v)\equiv 1$. Polinoma 
 $E_1(v)$ in $F_1(v)$ naj bosta linearna, zanju naj velja še $E_1(0)=e_0$, 
 $E_1(1)=e_1$, $F_1(0)=f_0$, $F_1(1)=f_1$. Torej mora veljati
-$$E_1(v)=e_0(1-v)+e_1v$$
+$$E_1(v)=e_0(1-v)+e_1v,$$
 $$F_1(v)=f_0(1-v)+f_1v.$$
 
 Vstavimo polinoma v enačbo \eqref{eq16} in na podoben način kot v primeru \ref{primer2} dobimo:
@@ -2023,10 +2023,9 @@ v \cite{YE1996521}. To pomeni, da v splošnem ne moremo rešiti problema, kjer
 imamo podano celotno ploskev $\ddd{R}$ in iščemo pogoje, ki morajo veljati za ploskev 
 $\ddd{S}$, da bosta na skupnem robu $G^1$-zvezni. 
 
-
-Za konec tega podpoglavja si oglejmo še posplošitev primera \ref{primer2}. Namesto 
-dveh plsokev stopnje $(3,3)$ obravnavajmo ploskvi poljubnih stopenj.
-
+Za konec tega podpoglavja si oglejmo še posplošitev primera \ref{primer2}. Namesto   
+dveh plsokev stopnje $(3,3)$ bomo obravnavali ploskvi poljubnih stopenj.
+Najprej posplošimo primer \ref{primer2}. 
 \begin{primer}\label{primer4}
 Naj bosta $\ddd{R}$ in $\ddd{S}$ dve Bézierjevi ploskvi iz tenzorskega produkta. 
 \begin{align*}
@@ -2152,6 +2151,54 @@ m_S\ddd{q}_{1,j}&=m_R(e_0(1-\frac{j}{n_S})(1-\frac{j}{n_S-1})\cdots
 \frac{j-(n_S-n_R)+1}{n_R}\ddd{r}_{j-(n_S-n_R)-1}).
 \end{align*}
 \end{primer}
+
+%Oglejmo si še posplošitev primera \ref{primer3}. 
+%\begin{primer}\label{primer5}
+%  Naj bosta $\ddd{R}$ in $\ddd{S}$ dve Bézierjevi ploskvi iz tenzorskega produkta. 
+%  \begin{align*}
+%    \ddd{R}(u,v)=\sum_{i=0}^{m_R}\sum_{j=0}^{n_R}\ddd{P}_{i,j}B_i^{m_R}(u)B_j^{n_R}(v),
+%  \end{align*}
+%  \begin{align*}
+%    \ddd{S}(u,v)=\sum_{i=0}^{m_S}\sum_{j=0}^{n_S}\ddd{Q}_{i,j}B_i^{m_S}(u)B_j^{n_S}(v),
+%  \end{align*}
+%  kjer velja $u,v\in[0,1]$. 
+%
+%Ploskvi $\ddd{R}$ in $\ddd{S}$ naj se stikata v krivulji 
+%$C(v)=\ddd{R}(0,v)=\ddd{S}(1,v)$. Za razliko od primera 
+%\ref{primer4} obravnavajmo samo ploskve, za katere 
+%velja $n_R=n_S=n$. 
+%Krivuljo $\ddd{C}$ zapišimo kot 
+%\begin{align*}
+%\ddd{C}(v)=\sum_{i=0}^{n}\ddd{Z}_i B_i^{n}(v), 
+%\end{align*}
+%kjer za kontrolne točke velja 
+%$$\ddd{Z}_i=\ddd{Q}_{m_S,i}=\ddd{P}_{0,i}.$$
+%
+%Spet predpostavljamo, da so vse robne kontrolne točke vnaprej 
+%določene, zanimajo pa nas zveze, ki morajo veljati med notranjimi 
+%kontrolnimi točkami. 
+%
+%V primeru \ref{primer4} smo že videli, da mora za $G^1$-zveznost 
+%med ploskvami veljati pogoj \eqref{eq71}, od koder dobimo 
+%pogoje, ki morajo veljati za robne kontrolne točke. 
+%Naj bo  
+%$d_0=D(0)$, $d_1=D(1)$, $e_0=E_1(0)$, $e_1=E_1(1)$, $f_0=F_1(0)$, $f_1=F_1(1)$.
+%Ko v enačbo \eqref{eq71} vstavimo vrednost $v=0$, dobimo
+%\begin{align}\label{eq78}
+%d_0m_S\ddd{q}_{1,0}=m_Re_0\ddd{p}_{1,0}+n_Rf_0\ddd{r}_0,
+%\end{align}
+%ko vstavimo $v=1$, pa dobimo
+%\begin{align}\label{eq79}
+%d_1m_S\ddd{q}_{1,n}=m_Re_1\ddd{p}_{1,n}+n_Rf_1\ddd{r}_{n-1}.
+%\end{align}
+%
+%Sedaj izberimo polinome $D(v)$, $E_1(v)$ in $F_1(v)$ enako 
+%kot v primeru \ref{primer3}. Polinom $D(v)$ naj bo konstanten, 
+%brez škode za splošnost naj bo $D(v)\equiv 0$, polinoma 
+%$E_1(v)$ in $F_1(v)$ pa naj bosta linearna:
+%$$E_1(v)=e_0(1-v)+e_1v,$$
+%$$F_1(v)=f_0(1-v)+f_1v.$$
+%\end{primer}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

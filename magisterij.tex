@@ -2862,12 +2862,13 @@ $\lambda(v)$ in $\mu(v)$, za kateri velja
 \begin{align}\label{eq22}
   (1-\lambda(v))\ddd{s}_{1,0,0}^{n-1}(v)+\lambda(v)\ddd{r}_{1,0,0}^{n-1}=
   (1-\mu(v))\ddd{r}_{0,0,1}^{n-1}+\mu(v)\ddd{r}_{0,1,0}^{n-1}.
-\end{align}
-S tem smo med drugim zagotovili tudi, da se točki $\ddd{s}_{1,0,0}^{n-1}(v)$ 
+\end{align}. 
+Veljati mora še, $0<\lambda(v)<1$ in $0<\mu(v)<1$ na intervalu $[0,1]$. S to zahtevo 
+zagotovimo, da tangentne ravnine na $\ddd{C}(v)$ niso izrojene in da se 
+točki $\ddd{s}_{1,0,0}^{n-1}(v)$ 
 in $\ddd{r}_{1,0,0}^{n-1}(v)$ za vsako vrednost $v\in[0,1]$ nahajata na 
-različnih straneh robne krivulje. Dobljeni zlepek tako ne bo imel oblike špice. 
-Veljati mora še, da sta funkciji $\lambda(v)$ in $\mu(v)$ na intervalu $[0,1]$ 
-različni od 0 in 1, da tangentne ravnine na $\ddd{C}(v)$ niso izrojene. 
+različnih straneh robne krivulje. 
+
 Enačba \eqref{eq22} predstavlja pogoj, ki zagotavlja $G^1$-zveznost zlepka ploskev. 
 
 Iz de Casteljaujevega algoritma sledi, da lahko točke, ki razpenjajo tangenti 
@@ -2879,7 +2880,7 @@ ravnini zapišemo na naslednji način
 &\ddd{s}_{1,0,0}^{n-1}(v)=\sum_{i=0}^{n-1}\ddd{s}_{1,i,n-i-1}B_i^{n-1}(v).
 \end{align*}
 Zaradi ujemanja kontrolnih točk na skupnem robu, je 
-$\ddd{s}_{1,0,0}^{n-1}(v)=\ddd{r}_{1,0,0}^{n-1}(v)$ in \\
+$\ddd{s}_{0,0,1}^{n-1}(v)=\ddd{r}_{0,0,1}^{n-1}(v)$ in \\
 $\ddd{s}_{0,1,0}^{n-1}(v)=\ddd{r}_{0,1,0}^{n-1}(v)$. 
 
 Preden nadaljujemo z izpeljavo, si samo oglejmo povezavo med dobljeno enačbo 
@@ -2890,7 +2891,7 @@ natanko tedaj, ko obstajata $C^1$ funkciji $\alpha_1(v)$ in $\beta_1(v)$, da vel
 \frac{\partial \ddd{S}}{\partial \tilde{u}}(0,v)=\alpha_1(v)\frac{\partial \ddd{R}}{\partial u}(0,v)+
 \beta_1(v)\frac{\partial \ddd{R}}{\partial v}(0,v). 
 \end{align}
-Ker so Bézierjeve ploskve polinomske, morata biti funkciji $\alpha_1(v)$ in $\beta_1(v)$ 
+Ker so Bézierjeve ploskve polinomske,  
 je pogoj v enačbi \eqref{eq48} enakovreden pogoju, da obstajajo polinomi 
 $D(v)$, $E(v)$ in $F(v)$, da velja
 \begin{align}\label{eq49} 
@@ -2910,22 +2911,23 @@ F(y)(\ddd{r}^{n-1}_{0,1,0}(v)-\ddd{r}^{n-1}_{0,0,1}(v)).
 Vidimo lahko, da je dobljeni pogoj enakovreden pogoju v enačbi \eqref{eq22}, če 
 izberemo $D(v)=1-\lambda(v)$, $E(v)=-\lambda(v)$ in $F(v)=\mu(v)$. 
 Pogoj, da je $\lambda(v)$ različna od 0 in 1 na $[0,1]$ pa je ekvivalenten pogoju, da je 
-$\alpha_1(v)\neq 0$ oziroma $D(v)E(v)\neq 0$ na $[0,1]$. 
+$\alpha_1(v)\neq 0$ oziroma $D(v)E(v)\neq 0$ na $[0,1]$. Pogoj, da je $1>\lambda(v)>0$ 
+na $[0,1]$, pa je ekvivalenten pogoju, da je $\frac{E(v)}{D(v)}<0$, ki zagotovi, da 
+ne dobimo zlepka v obliki špice. 
 Torej lahko vidimo, da nas bo izpeljava prek geometrijske definicije pripeljala do 
 enakega rezultata kot izpeljava z uporabo izreka \ref{izrek1} in dodatno omejitvijo, 
 da je $D(v)=E(v)+1$. 
 
 Nadaljujmo z obravnavo enačbe \eqref{eq22}. 
 Najprej si oglejmo, kakšne pogoje nam da enačba \eqref{eq22} za robne kontrolne točke. 
+Vpeljimo oznake $\lambda_0=\lambda(0)$, $\mu_0=\mu(0)$, $\lambda_1=\lambda(1)$ in $\mu_1=\mu(1)$. 
 Vstavimo v enačbo \eqref{eq22} vrednosti $v=0$ in $v=1$. 
 Pri vrednosti $v=0$ dobimo: 
 $$(1-\lambda_0)\ddd{s}_{1,0,n-1}+\lambda_0\ddd{r}_{1,0,n-1}=
-(1-\mu_0)\ddd{r}_{0,0,n}+\mu_0\ddd{r}_{0,1,n-1},$$
-kjer smo vpeljali oznaki $\lambda_0=\lambda(0)$ in $\mu_0=\mu(0)$. 
+(1-\mu_0)\ddd{r}_{0,0,n}+\mu_0\ddd{r}_{0,1,n-1}.$$ 
 Pri vprednosti $v=1$ pa dobimo:
 $$(1-\lambda_1)\ddd{s}_{1,n-1,0}+\lambda_1\ddd{r}_{1,n-1,0}=
-(1-\mu_1)\ddd{r}_{0,n-1,1}+\mu_1\ddd{r}_{0,n,0},$$
-kjer smo vpeljali še oznaki $\lambda_1=\lambda(1)$ in $\mu_1=\mu(1)$. 
+(1-\mu_1)\ddd{r}_{0,n-1,1}+\mu_1\ddd{r}_{0,n,0}.$$ 
 Vrednosti $\lambda_0$ in $\mu_0$ opisujeta obliko prvega para trikotnikov 
 v kontrolni mreži ob skupnem robu, vrednosti $\lambda_1$ in $\mu_1$ pa zadnji 
 par trikotnikov. Vidimo, da oblika obeh parov ni več nujno enaka, torej para 
@@ -2942,7 +2944,7 @@ Sedaj za funkciji $\lambda(v)$ in $\mu(v)$ izberimo polinoma prve stopnje
 \mu(v)=(1-v)\mu_0+v\mu_1.
 \end{align*}
 
-Da si olajšajmo nadaljnje delo, najprej nekoliko preoblikujmo izraza 
+Da si olajšajmo delo, najprej nekoliko preoblikujmo izraza 
 $1-\lambda(v)$ in $1-\mu(v)$. 
 
 \begin{align*}
@@ -3049,16 +3051,13 @@ primeru za ploskvi stopnje 3.
     \end{split}
   \end{equation}
 
-  \todo{primerjava prostih in določenih kontrolnih točk}
-  %V primeru, da imamo vnaprej podane robne kontrolne točke ploskev $\ddd{R}$ 
-  %in $\ddd{S}$, določiti pa moramo notranji kontrolni točki $\ddd{r}_{1,1,1}$ 
-  %in $\ddd{s}_{1,1,1}$, nam enačbi \eqref{eq24} in \eqref{eq25} določata dva izmed 
-  %parametrov $\lambda_0$, $\lambda_1$, $\mu_0$ in $\mu_1$, druga dva pa sta prosta. 
-  %Po izbiri prostih parametrov, sta v primeru, da je $\lambda_0\neq \lambda_1$, 
-  %kontrolni točki $\ddd{s}_{1,1,1}$ in $\ddd{r}_{1,1,1}$ natančno določeni z 
-  %enačbama \eqref{eq26} in \eqref{eq27}. 
-  %\todo{bolj natančna razlaga z determinanto sistema?}
-%
+  V primeru, da imamo vnaprej podane robne kontrolne točke ploskev $\ddd{R}$ 
+  in $\ddd{S}$, določiti pa moramo notranji kontrolni točki $\ddd{r}_{1,1,1}$ 
+  in $\ddd{s}_{1,1,1}$, nam enačbi \eqref{eq24} in \eqref{eq25} določata 
+  parametre $\lambda_0$, $\lambda_1$, $\mu_0$ in $\mu_1$. 
+  V primeru, da je $\lambda_0\neq \lambda_1$, sta 
+  kontrolni točki $\ddd{s}_{1,1,1}$ in $\ddd{r}_{1,1,1}$ natančno določeni z 
+  enačbama \eqref{eq26} in \eqref{eq27}. 
   %Dobljeni rezultat primerjamo z rezultatom primera \ref{primerT2}. V primeru 
   %$C^1$-zveznosti je ena izmed točk $\ddd{r}_{1,1,1}$ in $\ddd{s}_{1,1,1}$ 
   %sicer prosta, druga pa določena z njo, vendar nimamo nobenih prostih parametrov, 
@@ -3071,11 +3070,7 @@ primeru za ploskvi stopnje 3.
   %Ker zahtevamo zgolj zveznost stopnje 1, so točke $\ddd{s}_{2,1,0}$, $\ddd{s}_{2,0,1}$ 
   %in $\ddd{s}_{3,0,0}$ proste. 
 
-\todo{dodati še primer, ko je r določena, s pa ne? kako je v tem 
-primeru s konsistentnostjo sistema?}
 \end{primer}
-
-\todo{primer od prej, ki ni šel s c1 samo da ga zdaj rešimo z g1?}
 
 \section{Kompatibilnostni pogoji v skupnem vozlišču}\label{pog.v.voz.}
 \todo{ta naslov??}

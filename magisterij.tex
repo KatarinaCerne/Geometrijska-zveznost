@@ -2038,13 +2038,13 @@ Naj bosta $\ddd{R}$ in $\ddd{S}$ dve Bézierjevi ploskvi iz tenzorskega produkta
 kjer velja $u,v\in[0,1]$. 
 
 Ploskvi $\ddd{R}$ in $\ddd{S}$ naj se stikata v krivulji 
-$C(v)=\ddd{R}(0,v)=\ddd{S}(0,v)$. Brez škode za splošnost predpostavimo, da za stopnji 
+$C(v)=\ddd{R}(0,v)=\ddd{S}(1,v)$. Brez škode za splošnost predpostavimo, da za stopnji 
 ploskev velja $n_S \geq n_R$. Izpeljava v nasprotnem primeru je analogna. Ker 
 obravnavamo ploskvi, ki se stikata v $u=0$, razmerje med $m_R$ in $m_S$ ni 
 relevantno. 
 Krivuljo $\ddd{C}$ zapišimo kot 
 \begin{align*}
-\ddd{C}(v)=\sum_{i=0}^{n_S}\ddd{Z}_i B_i^{n_S}.
+\ddd{C}(v)=\sum_{i=0}^{n_S}\ddd{Z}_i B_i^{n_S}(v).
 \end{align*}
 V primeru, da je $n_S=n_R$, naj za kontrolne točke krivulje $\ddd{C}$ velja 
 $$\ddd{Z}_i=\ddd{Q}_{m_S,i}=\ddd{P}_{0,i}.$$
@@ -2170,8 +2170,8 @@ kjer je $u,v\in[0,1]$. Stikata naj se v krivulji $\ddd{C}(v)=\ddd{R}(0,v)=
 $\ddd{Z}_i=\ddd{P}_{0,i}=\ddd{Q}_{5,i}$. Tako kot v podpoglavju \ref{g1primeri} predpostavljajmo, da imamo 
 že vnaprej določene robne krivulje obeh ploskev, znova nas zanima, kakšne pogoje 
 prinese zahteva $G^2$-zveznosti za notranje kontrolne točke. Ker gre sedaj za zveznost 
-stopnje 2, bomo poleg kontrolnih točk $\ddd{P}_{1,i}$ in $\ddd{Q}_{2,i}$, $i=1,2$, 
-opazovali tudi kontrolne točke $\ddd{P}_{2,i}$ in $\ddd{Q}_{i,i}$, $i=1,2$. 
+stopnje 2, bomo poleg kontrolnih točk $\ddd{P}_{1,i}$ in $\ddd{Q}_{4,i}$, $i=1,\ldots,4$, 
+opazovali tudi kontrolne točke $\ddd{P}_{2,i}$ in $\ddd{Q}_{3,i}$, $i=1,\ldots,4$. 
 Poleg 
 oznak za kontrolne vektorje $\ddd{p}_{1,j}$, $\ddd{q}_{1,j}$ in $\ddd{z}_{i}$, 
 kjer je $j=0,\ldots,5$ in $i=0,\ldots,4$, že predstavljenih v podpoglavju \ref{g1primeri}, 
@@ -2268,7 +2268,10 @@ parametrizacij ploskev $\ddd{R}$ in $\ddd{S}$ v $u=0$:
 Dobljene izraze za odvode vstavimo v enačbi \eqref{eq14} in \eqref{eq35}. Oglejmo si, kakšne 
 pogoje nam ti dve enačbi data pri vrednostih $v=0$ in $v=1$, torej kakšni pogoji 
 morajo veljati na robovih obeh ploskev, da bo njun stik $G^2$-zvezen. 
-Pri vrednosti $v=0$ dobimo
+Najprej vpeljimo oznake 
+$e_{10}=E_1(0)$, $f_{10}=F_1(0)$, $e_{20}=E_2(0)$ in $f_{20}=F_2(0)$ ter 
+$e_{11}=E_1(1)$, $f_{11}=F_1(1)$, $e_{21}=E_2(1)$ in $f_{21}=F_2(1)$.
+Če v enačbi \eqref{eq14} in \eqref{eq35} vstavimo $v=0$, dobimo
 \begin{align}\label{eq36} 
 \ddd{q}_{1,0}=e_{10}\ddd{p}_{1,0}+f_{10}\ddd{z}_0
 \end{align}
@@ -2276,8 +2279,7 @@ in
 \begin{align}\label{eq37}
 \ddd{q}_{2,0}=\frac{1}{4}e_{20}\ddd{p}_{1,0}+\frac{1}{4}f_{20}\ddd{z}_0+e_{10}^2
 \ddd{p}_{2,0}+\frac{5}{2}e_{10}f_{10}\ddd{v}_0+f_{10}^2\ddd{s}_0.
-\end{align}
-Tu smo vpeljali oznake $e_{10}=E_1(0)$, $f_{10}=F_1(0)$, $e_{20}=E_2(0)$ in $f_{20}=F_2(0)$. 
+\end{align} 
 Pri vrednosti $v=1$ pa dobimo 
 \begin{align}\label{eq38} 
   \ddd{q}_{1,5}=e_{11}\ddd{p}_{1,5}+f_{11}\ddd{z}_4
@@ -2285,16 +2287,15 @@ Pri vrednosti $v=1$ pa dobimo
 in 
 \begin{align}\label{eq39}
   \ddd{q}_{2,5}=\frac{1}{4}e_{21}\ddd{p}_{1,5}+\frac{1}{4}f_{21}\ddd{z}_4+e_{11}^2
-  \ddd{p}_{2,5}+\frac{5}{2}e_{11}f_{11}\ddd{v}_4+f_{11}^2\ddd{s}_3,
-\end{align}
-kjer smo vpeljali oznake $e_{11}=E_1(1)$, $f_{11}=F_1(1)$, $e_{21}=E_2(1)$ in $f_{21}=F_2(1)$. 
+  \ddd{p}_{2,5}+\frac{5}{2}e_{11}f_{11}\ddd{v}_4+f_{11}^2\ddd{s}_3.
+\end{align} 
 
 Po izreku \ref{izrek2} mora za polinom $E_1(v)$ veljati, da je za $v\in [0,1]$ različen 
-od 0, da zagotovimo, da ploskvi ne bosta imeli stika v obliki špice, pa mora veljati 
-še $E_1(v)<0$ na intervalu $[0,1]$. Sledi, da mora veljati $e_{10}<0$ in $e_{11}<0$. 
+od 0. Da zagotovimo, da ploskvi ne bosta imeli stika v obliki špice, pa mora veljati 
+še $E_1(v)>0$ na intervalu $[0,1]$. Sledi, da mora veljati $e_{10}>0$ in $e_{11}>0$. 
 
 Ker smo predpostavili, da imamo vnaprej določene robove obeh ploskev, so vsi kontrolni 
-vektorji, ki nastopajo v zgornjih enačbah(\eqref{eq36}-\eqref{eq39}), razen vektorjev $\ddd{v}_0$ in $\ddd{v}_4$ 
+vektorji, ki nastopajo v enačbah \eqref{eq36}-\eqref{eq39} razen vektorjev $\ddd{v}_0$ in $\ddd{v}_4$ 
 znani. Enačbi \eqref{eq36} in \eqref{eq38} enolično določata vrednosti parametrov 
 $e_{10}$, $f_{10}$, $e_{11}$ in $f_{11}$, izračunamo jih s pomočjo 
 Cramerjevih formul, kot v primeru \ref{primer2}. Proste parametre oziroma 
@@ -2388,10 +2389,10 @@ $\ddd{p}_{2,i}$, $i=0,\ldots,5$ izrazimo z vektorjema $\ddd{p}_{2,0}$ in $\ddd{p
 \end{align}
 S temi enačbami so torej natančno določeni kontrolni vektorji $\ddd{p}_{i,j}$, 
 $i=1,2$, $j=0,\ldots,5$ ploskve $\ddd{R}$, torej tudi njene kontrolne točke 
-$\ddd{P}_{i,j}$, $i=0,1,2$, $j=0,\ldots,5$. Ostale notranje kontrolne točke so proste 
-saj zahtevamo le geometrijsko zveznost stopnje 2. 
+$\ddd{P}_{i,j}$, $i=0,1,2$, $j=0,\ldots,5$. Ostale notranje kontrolne točke ploskve $\ddd{R}$ 
+so proste, saj zahtevamo le geometrijsko zveznost stopnje 2. 
 
-Za določitev pogojev, ki morajo veljati za kontrolne vektorje ploskve $\ddd{S}$ moramo 
+Za določitev pogojev, ki morajo veljati za kontrolne vektorje ploskve $\ddd{S}$, moramo 
 uporabiti enačbi \eqref{eq14} in \eqref{eq35}, ki predstavljata pogoja za $G^1$ in $G^2$-zveznost. 
 Ko v enačbo \eqref{eq14} vstavimo polinoma $E_1(v)$ in $F_1(v)$, preoblikujemo dobljeno 
 enačbo, da na obeh straneh dobimo Bézierjevo krivuljo stopnje 5 ter primerjamo koeficiente 
@@ -2446,8 +2447,6 @@ kontrolni vektorji $\ddd{q}_{i,j}$, $i=1,2$, $j=0,\ldots,5$ ploskve $\ddd{S}$,
 oziroma kontrolne točke $\ddd{Q}_{i,j}$, $i=0,1,2$, $j=0,\ldots,5$. 
 \end{primer}
 
-\todo{drugi možen pristop? če nista prosta p1m in p2m ampak projekcija enega od vektorjev?}
-
 \section{Konstrukcija $G^1$-zveznih trikotnih Bézierjevih ploskev}\label{pog.bez.tr.}
 
 \subsection{Trikotne Bézierjeve ploskve}\label{trikotne1}
@@ -2464,9 +2463,9 @@ točke znotraj takih domen raje zapisovali z baricentričnimi koordinatami.
 
 \begin{definicija}
 Naj bo $T$ trikotnik z oglišči $\ddd{p}_1=(x_1,y_1)$, $\ddd{p}_2=(x_2,y_2)$ 
-in $\ddd{p}_3=(x_3,y_3)$, oziroma $T=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$. Velja, 
+in $\ddd{p}_3=(x_3,y_3)$ oziroma $T=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$. Velja, 
 da je vsako točko $\ddd{p}=(x,y)$ mogoče enolično zapisati kot 
-$\ddd{p}=u\ddd{p}_1+v\ddd{p}_2+w\ddd{p}_3$, kjer je $u+v+w=1$. Trojico
+$\ddd{p}=u\ddd{p}_1+v\ddd{p}_2+w\ddd{p}_3$, kjer je $u,v,w\in\R$, $u+v+w=1$. Trojico
 $\ddd{u}=(u,v,w)$ imenujemo \emph{baricentrične koordinate} točke $\ddd{p}$ glede 
 na trikotnik $T$. Krajše to zapišemo kot $\ddd{u}=\mbox{Bar}(\ddd{p},T)$.
 \end{definicija}
@@ -2511,9 +2510,9 @@ Oglejmo si še definicijo trikotnih Bézierjevih ploskev.
 
 
 Koordinate poljubne točke na trikotni Bézierovi ploskvi lahko izračunamo s pomočjo 
-de Casteljaujevega algoritma.
+de Casteljaujevega algoritma, opisanega v algoritmu \ref{decasteljau}.
 
-\begin{algorithm}[h!]
+\begin{algorithm}[h!]\label{decasteljau}
   \KwData{Kontrolna mreža $\ddd{b}_{i,j,k}$,$i+j+k=n$, točka $\ddd{p}$ v domeni, 
   trikotnik $T=\langle\ddd{p}_1,\ddd{p}_2,\ddd{p}_3\rangle$}
   \KwResult{$\ddd{b}_{0,0,0}^n(\ddd{u})=\ddd{R}_n(\ddd{p})$}
@@ -2533,7 +2532,7 @@ de Casteljaujevega algoritma.
       }
     }
     }
-  \caption{De Casteljaujev algoritem za trikotne Bézierove krpe}
+  \caption{De Casteljaujev algoritem za trikotne Bézierjeve krpe}
 \end{algorithm}
 
  De Casteljaujev algoritem bo pomemben v nadaljevanju za izražavo točk, ki razpenjajo 
@@ -2581,9 +2580,9 @@ Recimo, da odvajamo v smeri vektorja $\ddd{d}\in \R^3$. Naj bo $\ddd{d} = \ddd{a
 $\ddd{\alpha}=Bar(\ddd{a};T)$ in $\ddd{\beta}=Bar(\ddd{b};T)$. Potem so 
 baricentrične koordinate vektorja $\ddd{d}$ enake 
 $\ddd{\mu}=(\mu_1,\mu_2,\mu_3)=\ddd{\beta}-\ddd{\alpha}$. Velja $\mu_1+\mu_2+\mu_3=0$. 
-Odvod parametrizacije $\ddd{P}$ v smeri vektorja $\ddd{p}$ izračunamo na naslednji način:
+Odvod parametrizacije $\ddd{P}$ v smeri vektorja $\ddd{d}$ izračunamo na naslednji način:
 \begin{align*}
-D_{\ddd{p}}\ddd{P}(\ddd{p})&=n\sum_{i+j+k=n-1}(\mu_1\ddd{b}_{i+1,j,k}+
+D_{\ddd{d}}\ddd{P}(\ddd{p})&=n\sum_{i+j+k=n-1}(\mu_1\ddd{b}_{i+1,j,k}+
 \mu_2\ddd{b}_{i,j+1,k}+\mu_3\ddd{b}_{i,j,k+1})B_{i,j,k}^{n-1}(\ddd{u})\\
 %&=n\ddd{b}[\mu,\ddd{u}^{\langle n-1\rangle};T].
 \end{align*}
@@ -2646,7 +2645,7 @@ za $j+k=n-1$.
 Enačba \eqref{eq21} predstavlja pogoj, ki mora veljati za kontrolne točke obeh 
 ploskev, da se stikata s $C^1$-zveznostjo. Do enakega rezultata bi na podoben 
 način prišli, če bi namesto vektorja $\ddd{d}$ uporabili vektor $\ddd{p}_4-\ddd{p}_3$ 
-katerikoli linearno kombinacijo obeh vektorjev.
+ali katerikoli linearno kombinacijo obeh vektorjev.
 
 Oglejmo si še, kako je z odvodi v smeri $\ddd{p}_3-\ddd{p}_2$ v $u_1=0$ oziroma 
 $v_1=0$. 
@@ -2657,10 +2656,16 @@ na $T_2$ so enake baricentričnim koordinatam glede na $T_1$,
 saj sta $\ddd{p}_2$ in $\ddd{p}_3$ oglišči obeh trikotnikov. Naj bodo 
 $\mu=(\mu_1,\mu_2,\mu_3)=\mbox{Bar}(\ddd{p}_3-\ddd{p}_2;T_1)=\mbox{Bar}(\ddd{p}_3-\ddd{p}_2;T_1)$ 
 baricentrične koordinate vektorja $\ddd{p}_3-\ddd{p}_2$. Potem velja 
-$\mu=\ddd{e}_3-\ddd{e}_2(0,-1,1)$. Odvod ploskve $\ddd{R}$ v smeri $\ddd{p}_3-\ddd{p}_2$ v $u_1=0$ je enak 
-$$n(\ddd{r}_{0,j+1,k}-\ddd{r}_{0,j,k+1}),\quad j+k=n-1,$$
+$\mu=\ddd{e}_3-\ddd{e}_2=(0,-1,1)$. Odvod ploskve $\ddd{R}$ v smeri $\ddd{p}_3-\ddd{p}_2$ v $u_1=0$ je enak 
+\begin{align*}
+&n\sum_{j+k=n-1}(-\ddd{r}_{0,j+1,k}+\ddd{r}_{0,j,k+1})\frac{(n-1)!}{j!k!}u_2^j(1-u_2)^k=\\
+&=n\sum_{j=0}^{n-1}(-\ddd{r}_{0,j+1,n-j-2}+\ddd{r}_{0,j,n-j})B_j^{n-1}(u_2),
+\end{align*}
 odvod ploskve $\ddd{S}$ v smeri $\ddd{p}_3-\ddd{p}_2$ v $v_1=0$ pa 
-$$n(\ddd{s}_{0,j+1,k}-\ddd{s}_{0,j,k+1}),\quad j+k=n-1.$$ 
+\begin{align*}
+  &n\sum_{j+k=n-1}(-\ddd{s}_{0,j+1,k}+\ddd{s}_{0,j,k+1})\frac{(n-1)!}{j!k!}v_2^j(1-v_2)^k=\\
+  &=n\sum_{j=0}^{n-1}(-\ddd{s}_{0,j+1,n-j-2}+\ddd{s}_{0,j,n-j})B_j^{n-1}(v_2),
+  \end{align*} 
 Zaradi ujemanja kontrolnih točk na skupnem robu sledi, da sta odvoda v vsakem primeru 
 enaka. 
 

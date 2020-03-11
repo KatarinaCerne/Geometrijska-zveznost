@@ -3073,7 +3073,6 @@ primeru za ploskvi stopnje 3.
 \end{primer}
 
 \section{Kompatibilnostni pogoji v skupnem vozlišču}\label{pog.v.voz.}
-\todo{ta naslov??}
 
 Do sedaj smo se ukvarjali zgolj z geometrijsko zveznostjo na stiku dveh ploskev. Dobljeno 
 znanje sedaj prenesimo na primer, ko sestavimo večjo skupno ploskev iz večih manjših, 
@@ -3087,6 +3086,8 @@ zveznost pa lahko staknemo skupaj poljubno število ploskev.
 
 V nadaljevanju si bomo ogledali pogoje, ki morajo veljati, da dosežemo $G^1$-zveznost 
 med ploskvami, ki se stikajo v skupni točki. 
+V tem poglavju se opiramo na vire \cite{DU1990556}, \cite{10.1109/38.50675} in 
+\cite{Hoschek.1993}.
 
 Imejmo ploskve $\ddd{X}_1(u_1,v_1),\ddd{X}_2(u_2,v_2), \ldots, \ddd{X}_N(u_N,v_N)$. Te 
 naj se stikajo v krivuljah 
@@ -3174,7 +3175,7 @@ funkcije $\beta_i(v_i)$ pa naj bodo linearni polinomi oblike
 \end{align}
 
 V poglavju \ref{g1primeri} smo izpeljali, da mora v tem primeru, da dosežemo 
-$G^1$-zveznost med ploskvama $\ddd{X}_i$ in $\ddd{X}_{i+1}$ 
+$G^1$-zveznost med ploskvama $\ddd{X}_i$ in $\ddd{X}_{i+1}$, 
 pri $v_i=u_{i+1}=0$ veljati 
 \begin{align}\label{eq61}
 \ddd{x}_{1,0}^{(i)}-\ddd{P}=\alpha_{i,0}(\ddd{x}_{0,1}^{(i+1)}-\ddd{P})+
@@ -3372,7 +3373,8 @@ in $\beta_i(v_i)$, $i=1,2,3$:
 Sedaj si oglejmo še drugi sklop kompatibilnostnih pogojev v točki $\ddd{P}$. Ti nam bodo 
 določali pogoje za mešane odvode ploskev oziroma, v primeru Bézierovih ploskev iz tenzorskega 
 produkta, za kontrolne točke $\ddd{x}_{1,1}^{(i)}$, $i=1,\ldots,N$.  
-Če enačbi \eqref{eq52} in \eqref{eq53} odvajamo še po $v_i=u_{i+1}$, in ju evalviramo v $v_i=u_i+1=0$, dobimo 
+Če enačbi \eqref{eq52} in \eqref{eq53} odvajamo še po $v_i=u_{i+1}$, in ju evalviramo 
+v $v_i=u_{i+1}=0$, dobimo 
 \begin{equation}\label{eq56}
 \begin{split}
 \frac{\partial^2}{\partial u_i\partial v_i}\ddd{X}_i(0,0)=&
@@ -3493,7 +3495,7 @@ C
 \end{bmatrix}.
 \end{align}
 Vidimo lahko, da je prvih $N-1$ vrstic enakih prvim $N-1$ vrsticam matrike $B$ in da so 
-med sabo likearno neodvisne. Zadnja vrstica matrike $CB$ pa je ničelna. Torej je 
+med sabo linearno neodvisne. Zadnja vrstica matrike $CB$ pa je ničelna. Torej je 
 sistem \eqref{eq59} rešljiv in ima neskončno rešitev, če je tudi zadnja komponenta 
 vektorja $C \begin{bmatrix}\ddd{R}_1&\ddd{R}_2&\cdots&\ddd{R}_N\end{bmatrix}^T$ enaka 0. 
 To pa bo res, če bo veljala zveza 

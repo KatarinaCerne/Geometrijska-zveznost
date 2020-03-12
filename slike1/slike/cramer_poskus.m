@@ -1,11 +1,11 @@
 e0=1;
 e1=1;
-f0=3;
-f1=-2;
+f0=0;
+f1=0;
 
 n=3;
 mr=3;
-ms=2;
+ms=3;
 
 % Rx = [0,3,5,6;1,4,5,7;0,3,5,6;1,4,5,7];%P00,P10,P20,P30;P01,...
 % Ry = [-1,-2,-1,-2;1,2,1,2;5,5,6,5;6,7,6,7];
@@ -61,41 +61,41 @@ Sx(n+1,ms)=Sx(n+1,ms+1)-e1*px(n+1)*(mr/ms)-f1*zx(n)*(n/ms);
 Sy(n+1,ms)=Sy(n+1,ms+1)-e1*py(n+1)*(mr/ms)-f1*zy(n)*(n/ms);
 Sz(n+1,ms)=Sz(n+1,ms+1)-e1*pz(n+1)*(mr/ms)-f1*zz(n)*(n/ms);
 
-%notranje kontrolne toèke
-for i=2:n
-Sx(i,ms)=Sx(i,ms+1)-e0*px(i)*(mr/ms)-(n/ms)*(f0*zx(i)*(1-((i-1)/n))+f1*zx(i-1)*((i-1)/n));
-Sy(i,ms)=Sy(i,ms+1)-e0*py(i)*(mr/ms)-(n/ms)*(f0*zy(i)*(1-((i-1)/n))+f1*zy(i-1)*((i-1)/n));
-Sz(i,ms)=Sz(i,ms+1)-e0*pz(i)*(mr/ms)-(n/ms)*(f0*zz(i)*(1-((i-1)/n))+f1*zz(i-1)*((i-1)/n));
-end
-%cramer
-p10=[px(1);py(1);pz(1)];
-q10=[Sx(1,ms+1)-Sx(1,ms);Sy(1,ms+1)-Sy(1,ms);Sz(1,ms+1)-Sz(1,ms)];
-z0=[zx(1);zy(1);zz(1)];
-n1=cross(p10,z0);
+% %notranje kontrolne toèke
+% for i=2:n
+% Sx(i,ms)=Sx(i,ms+1)-e0*px(i)*(mr/ms)-(n/ms)*(f0*zx(i)*(1-((i-1)/n))+f1*zx(i-1)*((i-1)/n));
+% Sy(i,ms)=Sy(i,ms+1)-e0*py(i)*(mr/ms)-(n/ms)*(f0*zy(i)*(1-((i-1)/n))+f1*zy(i-1)*((i-1)/n));
+% Sz(i,ms)=Sz(i,ms+1)-e0*pz(i)*(mr/ms)-(n/ms)*(f0*zz(i)*(1-((i-1)/n))+f1*zz(i-1)*((i-1)/n));
+% end
+% %cramer
+% p10=[px(1);py(1);pz(1)];
+% q10=[Sx(1,ms+1)-Sx(1,ms);Sy(1,ms+1)-Sy(1,ms);Sz(1,ms+1)-Sz(1,ms)];
+% z0=[zx(1);zy(1);zz(1)];
+% n1=cross(p10,z0);
+% 
+% e0C=det([ms*q10,n*z0,n1])/det([mr*p10,n*z0,n1]);
+% f0C=det([mr*p10,ms*q10,n1])/det([mr*p10,n*z0,n1]);
+% 
+% p1n=[px(n+1);py(n+1);pz(n+1)];
+% q1n=[Sx(n+1,ms+1)-Sx(n+1,ms);Sy(n+1,ms+1)-Sy(n+1,ms);Sz(n+1,ms+1)-Sz(n+1,ms)];
+% zn=[zx(n);zy(n);zz(n)];
+% n2=cross(p1n,zn);
+% 
+% e1C=det([ms*q1n,n*zn,n2])/det([mr*p1n,n*zn,n2]);
+% f1C=det([mr*p1n,ms*q1n,n2])/det([mr*p1n,n*zn,n2]);
 
-e0C=det([ms*q10,n*z0,n1])/det([mr*p10,n*z0,n1]);
-f0C=det([mr*p10,ms*q10,n1])/det([mr*p10,n*z0,n1]);
 
-p1n=[px(n+1);py(n+1);pz(n+1)];
-q1n=[Sx(n+1,ms+1)-Sx(n+1,ms);Sy(n+1,ms+1)-Sy(n+1,ms);Sz(n+1,ms+1)-Sz(n+1,ms)];
-zn=[zx(n);zy(n);zz(n)];
-n2=cross(p1n,zn);
-
-e1C=det([ms*q1n,n*zn,n2])/det([mr*p1n,n*zn,n2]);
-f1C=det([mr*p1n,ms*q1n,n2])/det([mr*p1n,n*zn,n2]);
-
-
-u=linspace(0,1,50);
-v=linspace(0,1,50);
-
-[rx,ry,rz]=bezier2(Rx,Ry,Rz,u,v);
-[sx,sy,sz]=bezier2(Sx,Sy,Sz,u,v);
-
-hold on
-%set(gca,'visible','off')
-surf(rx,ry,rz,'Facecolor','white','EdgeColor','blue')
-mesh(Rx,Ry,Rz,'Facecolor','none','EdgeColor','black')
-surf(sx,sy,sz,'Facecolor','white','EdgeColor','red')
-mesh(Sx,Sy,Sz,'Facecolor','none','EdgeColor','black')
-%scatter3(meja(1,:),meja(2,:),meja(3,:))
-hold off
+% u=linspace(0,1,50);
+% v=linspace(0,1,50);
+% 
+% [rx,ry,rz]=bezier2(Rx,Ry,Rz,u,v);
+% [sx,sy,sz]=bezier2(Sx,Sy,Sz,u,v);
+% 
+% hold on
+% %set(gca,'visible','off')
+% surf(rx,ry,rz,'Facecolor','white','EdgeColor','blue')
+% mesh(Rx,Ry,Rz,'Facecolor','none','EdgeColor','black')
+% surf(sx,sy,sz,'Facecolor','white','EdgeColor','red')
+% mesh(Sx,Sy,Sz,'Facecolor','none','EdgeColor','black')
+% %scatter3(meja(1,:),meja(2,:),meja(3,:))
+% hold off

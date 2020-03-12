@@ -1889,20 +1889,22 @@ Zapišimo enačbo \eqref{eq18} kot
 \begin{align*}
 \ddd{q}_{1,0}=e_1\ddd{p}_{1,0}+f_1\ddd{z}_0+g\ddd{n},
 \end{align*}
-kjer $\ddd{n}$ označuje normalo na ravnino, ki jo določajo vektorji $\ddd{q}_{1,0}$, 
+kjer $\ddd{n}_1$ označuje normalo na ravnino, ki jo določajo vektorji $\ddd{q}_{1,0}$, 
 $\ddd{p}_{1,0}$ in $\ddd{z}_0$, v točki $\ddd{P}_{0,0}$. Matrika $[\ddd{p}_{1,0},\ddd{z}_0,\ddd{n}]$ 
 je nesingularna, saj sta vektorja $\ddd{p}_{1,0}$ in $\ddd{z}_0$ nekolinearna in pravokotna 
-na $\ddd{n}$, zato je mogoče na enoličen način izraziti neznanke $e_1$, $f_1$ in $g$. 
+na $\ddd{n}_1$, zato je mogoče na enoličen način izraziti neznanke $e_1$, $f_1$ in $g$. 
 Ker je vektor $\ddd{q}_{0,0}$ del iste ravnine kot $\ddd{p}_{1,0}$ in $\ddd{z}_0$, 
 mora biti $g=0$, vrednosti $e_0$ in $f_0$ pa izračunamo s pomočjo Cramerjevih formul: 
 \begin{align*}
 e_0=\frac{\det[\ddd{q}_{1,0},\ddd{z}_0,\ddd{n}]}{\det[\ddd{p}_{1,0},\ddd{z}_0,\ddd{n}]},&&
-f_0=\frac{\det[\ddd{p}_{1,0},\ddd{q}_{3,0},\ddd{n}]}{\det[\ddd{p}_{1,0},\ddd{z}_0,\ddd{n}]}.
+f_0=\frac{\det[\ddd{p}_{1,0},\ddd{q}_{1,0},\ddd{n}]}{\det[\ddd{p}_{1,0},\ddd{z}_0,\ddd{n}]}.
 \end{align*}
-Na enak način iz enačbe \eqref{eq19} dobimo še parametra $e_1$ in $f_1$
+Naj bo $\ddd{n}_2$ normala na ravnino, ki jo določajo vektorji 
+$\ddd{p}_{1,3}$, $\ddd{q}_{1,3}$ in $\ddd{z}_2$, v točki $\ddd{P}_{0,3}$. 
+Na enak način kot prej iz enačbe \eqref{eq19} dobimo še parametra $e_1$ in $f_1$
 \begin{align*}
   e_1=\frac{\det[\ddd{q}_{1,3},\ddd{z}_2,\ddd{n}]}{\det[\ddd{p}_{1,3},\ddd{z}_2,\ddd{n}]},&&
-  f_1=\frac{\det[\ddd{p}_{1,3},\ddd{q}_{2,3},\ddd{n}]}{\det[\ddd{p}_{1,3},\ddd{z}_2,\ddd{n}]}.
+  f_1=\frac{\det[\ddd{p}_{1,3},\ddd{q}_{1,3},\ddd{n}]}{\det[\ddd{p}_{1,3},\ddd{z}_2,\ddd{n}]}.
 \end{align*}
 
 Če bi imeli robne krivulje ploskev izbrane na tak način, da bi veljalo 

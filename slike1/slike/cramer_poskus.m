@@ -1,0 +1,84 @@
+e0=1;
+e1=1;
+f0=0;
+f1=0;
+
+n=3;
+m=3;
+
+% Rx = [0,3,5,6;1,4,5,7;0,3,5,6;1,4,5,7];%P00,P10,P20,P30;P01,...
+% Ry = [-1,-2,-1,-2;1,2,1,2;5,5,6,5;6,7,6,7];
+% Rz = [-3,-2,0,-5;3,6,3,2;-1,4,-2,8;0,5,-1,8];
+
+Rx=[0,2,4,6;0,2,4,6;0,2,4,6;0,2,4,6];
+Ry=[0,0,0,0;2,2,2,2;4,4,4,4;6,6,6,6];
+Rz=[0,4,4,0;0,6,6,2;2,6,6,2;0,4,0,0];
+
+Sx = zeros(n+1,m+1);%Q00,Q10,Q20,Q30;Q01,Q11,Q21,Q31;Q02,Q12,Q22,Q32;Q03,Q13,Q23,Q33
+Sy = zeros(n+1,m+1);
+Sz = zeros(n+1,m+1);
+
+for i=1:m-1
+   Sx(:,i)=-1*Rx(:,m-i+2);
+   Sy(:,i)=Ry(:,m-i+2);
+   Sz(:,i)=Rz(:,m-i+2);
+end
+
+meja=[Rx(:,1)';Ry(:,1)';Rz(:,1)'];%P00,P01,P02,P03
+%v prvi vrstici so x-koordinate toèk na skupnem robu
+%v drugi vrstici y-koordinate, v tretji z-koordinate
+
+Sx(:,m+1)=meja(1,:);
+Sy(:,m+1)=meja(2,:);
+Sz(:,m+1)=meja(3,:);
+
+zx=zeros(1,n); %x-koordinate vektorjev z
+zy=zeros(1,n); %y-koordinate vektorjev z
+zz=zeros(1,n); %z-koordinate vektorjev z
+for i=1:n
+    zx(1,i)=meja(1,i+1)-meja(1,i);
+    zy(1,i)=meja(2,i+1)-meja(2,i);
+    zz(1,i)=meja(3,i+1)-meja(3,i);
+end
+
+px=zeros(1,m+1); %x-koordinate vektorjev p1j=P1j-P0j
+py=zeros(1,m+1); %y-koordinate vektorjev p1j
+pz=zeros(1,m+1); %z-koordinate vektorjev p1j
+for i=1:m+1
+    px(1,i)=Rx(i,2)-Rx(i,1);
+    py(1,i)=Ry(i,2)-Ry(i,1);
+    pz(1,i)=Rz(i,2)-Rz(i,1);
+end
+
+%zaèetne enaèbe
+Sx(1,m)=Sx(1,m+1)-e0*px(1)-f0*zx(1);
+Sy(1,m)=Sy(1,m+1)-e0*py(1)-f0*zy(1);
+Sz(1,m)=Sz(1,m+1)-e0*pz(1)-f0*zz(1);
+
+%konène enaèbe
+Sx(n+1,m)=Sx(n+1,m+1)-e1*px(m+1)-f1*zx(n);
+Sy(n+1,m)=Sy(n+1,m+1)-e1*py(m+1)-f1*zy(n);
+Sz(n+1,m)=Sz(n+1,m+1)-e1*pz(m+1)-f1*zy(n);
+
+%notranje kontrolne toèke
+
+
+
+%cramer
+
+
+
+u=linspace(0,1,50);
+v=linspace(0,1,50);
+
+[rx,ry,rz]=bezier2(Rx,Ry,Rz,u,v);
+[sx,sy,sz]=bezier2(Sx,Sy,Sz,u,v);
+
+hold on
+%set(gca,'visible','off')
+surf(rx,ry,rz,'Facecolor','white','EdgeColor','blue')
+mesh(Rx,Ry,Rz,'Facecolor','none','EdgeColor','black')
+surf(sx,sy,sz,'Facecolor','white','EdgeColor','red')
+mesh(Sx,Sy,Sz,'Facecolor','none','EdgeColor','black')
+%scatter3(meja(1,:),meja(2,:),meja(3,:))
+hold off

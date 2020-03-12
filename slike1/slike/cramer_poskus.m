@@ -1,10 +1,11 @@
 e0=1;
 e1=1;
-f0=0;
-f1=0;
+f0=3;
+f1=-2;
 
 n=3;
-m=3;
+mr=3;
+ms=2;
 
 % Rx = [0,3,5,6;1,4,5,7;0,3,5,6;1,4,5,7];%P00,P10,P20,P30;P01,...
 % Ry = [-1,-2,-1,-2;1,2,1,2;5,5,6,5;6,7,6,7];
@@ -14,23 +15,23 @@ Rx=[0,2,4,6;0,2,4,6;0,2,4,6;0,2,4,6];
 Ry=[0,0,0,0;2,2,2,2;4,4,4,4;6,6,6,6];
 Rz=[0,4,4,0;0,6,6,2;2,6,6,2;0,4,0,0];
 
-Sx = zeros(n+1,m+1);%Q00,Q10,Q20,Q30;Q01,Q11,Q21,Q31;Q02,Q12,Q22,Q32;Q03,Q13,Q23,Q33
-Sy = zeros(n+1,m+1);
-Sz = zeros(n+1,m+1);
+Sx = zeros(n+1,ms+1);%Q00,Q10,Q20,Q30;Q01,Q11,Q21,Q31;Q02,Q12,Q22,Q32;Q03,Q13,Q23,Q33
+Sy = zeros(n+1,ms+1);
+Sz = zeros(n+1,ms+1);
 
-for i=1:m-1
-   Sx(:,i)=-1*Rx(:,m-i+2);
-   Sy(:,i)=Ry(:,m-i+2);
-   Sz(:,i)=Rz(:,m-i+2);
+for i=1:ms-1
+   Sx(:,i)=-1*Rx(:,ms-i+2);
+   Sy(:,i)=Ry(:,ms-i+2);
+   Sz(:,i)=Rz(:,ms-i+2);
 end
 
 meja=[Rx(:,1)';Ry(:,1)';Rz(:,1)'];%P00,P01,P02,P03
 %v prvi vrstici so x-koordinate toèk na skupnem robu
 %v drugi vrstici y-koordinate, v tretji z-koordinate
 
-Sx(:,m+1)=meja(1,:);
-Sy(:,m+1)=meja(2,:);
-Sz(:,m+1)=meja(3,:);
+Sx(:,ms+1)=meja(1,:);
+Sy(:,ms+1)=meja(2,:);
+Sz(:,ms+1)=meja(3,:);
 
 zx=zeros(1,n); %x-koordinate vektorjev z
 zy=zeros(1,n); %y-koordinate vektorjev z
@@ -41,31 +42,47 @@ for i=1:n
     zz(1,i)=meja(3,i+1)-meja(3,i);
 end
 
-px=zeros(1,m+1); %x-koordinate vektorjev p1j=P1j-P0j
-py=zeros(1,m+1); %y-koordinate vektorjev p1j
-pz=zeros(1,m+1); %z-koordinate vektorjev p1j
-for i=1:m+1
+px=zeros(1,n+1); %x-koordinate vektorjev p1j=P1j-P0j
+py=zeros(1,n+1); %y-koordinate vektorjev p1j
+pz=zeros(1,n+1); %z-koordinate vektorjev p1j
+for i=1:n+1
     px(1,i)=Rx(i,2)-Rx(i,1);
     py(1,i)=Ry(i,2)-Ry(i,1);
     pz(1,i)=Rz(i,2)-Rz(i,1);
 end
 
 %zaèetne enaèbe
-Sx(1,m)=Sx(1,m+1)-e0*px(1)-f0*zx(1);
-Sy(1,m)=Sy(1,m+1)-e0*py(1)-f0*zy(1);
-Sz(1,m)=Sz(1,m+1)-e0*pz(1)-f0*zz(1);
+Sx(1,ms)=Sx(1,ms+1)-e0*px(1)*(mr/ms)-f0*zx(1)*(n/ms);
+Sy(1,ms)=Sy(1,ms+1)-e0*py(1)*(mr/ms)-f0*zy(1)*(n/ms);
+Sz(1,ms)=Sz(1,ms+1)-e0*pz(1)*(mr/ms)-f0*zz(1)*(n/ms);
 
 %konène enaèbe
-Sx(n+1,m)=Sx(n+1,m+1)-e1*px(m+1)-f1*zx(n);
-Sy(n+1,m)=Sy(n+1,m+1)-e1*py(m+1)-f1*zy(n);
-Sz(n+1,m)=Sz(n+1,m+1)-e1*pz(m+1)-f1*zy(n);
+Sx(n+1,ms)=Sx(n+1,ms+1)-e1*px(n+1)*(mr/ms)-f1*zx(n)*(n/ms);
+Sy(n+1,ms)=Sy(n+1,ms+1)-e1*py(n+1)*(mr/ms)-f1*zy(n)*(n/ms);
+Sz(n+1,ms)=Sz(n+1,ms+1)-e1*pz(n+1)*(mr/ms)-f1*zz(n)*(n/ms);
 
 %notranje kontrolne toèke
-
-
-
+for i=2:n
+Sx(i,ms)=Sx(i,ms+1)-e0*px(i)*(mr/ms)-(n/ms)*(f0*zx(i)*(1-((i-1)/n))+f1*zx(i-1)*((i-1)/n));
+Sy(i,ms)=Sy(i,ms+1)-e0*py(i)*(mr/ms)-(n/ms)*(f0*zy(i)*(1-((i-1)/n))+f1*zy(i-1)*((i-1)/n));
+Sz(i,ms)=Sz(i,ms+1)-e0*pz(i)*(mr/ms)-(n/ms)*(f0*zz(i)*(1-((i-1)/n))+f1*zz(i-1)*((i-1)/n));
+end
 %cramer
+p10=[px(1);py(1);pz(1)];
+q10=[Sx(1,ms+1)-Sx(1,ms);Sy(1,ms+1)-Sy(1,ms);Sz(1,ms+1)-Sz(1,ms)];
+z0=[zx(1);zy(1);zz(1)];
+n1=cross(p10,z0);
 
+e0C=det([ms*q10,n*z0,n1])/det([mr*p10,n*z0,n1]);
+f0C=det([mr*p10,ms*q10,n1])/det([mr*p10,n*z0,n1]);
+
+p1n=[px(n+1);py(n+1);pz(n+1)];
+q1n=[Sx(n+1,ms+1)-Sx(n+1,ms);Sy(n+1,ms+1)-Sy(n+1,ms);Sz(n+1,ms+1)-Sz(n+1,ms)];
+zn=[zx(n);zy(n);zz(n)];
+n2=cross(p1n,zn);
+
+e1C=det([ms*q1n,n*zn,n2])/det([mr*p1n,n*zn,n2]);
+f1C=det([mr*p1n,ms*q1n,n2])/det([mr*p1n,n*zn,n2]);
 
 
 u=linspace(0,1,50);

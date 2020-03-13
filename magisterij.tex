@@ -2027,7 +2027,6 @@ $\ddd{S}$, da bosta na skupnem robu $G^1$-zvezni.
 
 Za konec tega podpoglavja si oglejmo še posplošitev primera \ref{primer2}. Namesto   
 dveh plsokev stopnje $(3,3)$ bomo obravnavali ploskvi poljubnih stopenj.
-Najprej posplošimo primer \ref{primer2}. 
 \begin{primer}\label{primer4}
 Naj bosta $\ddd{R}$ in $\ddd{S}$ dve Bézierjevi ploskvi iz tenzorskega produkta. 
 \begin{align*}
@@ -2236,7 +2235,7 @@ Naj bo
 
 Najprej si oglejmo, kakšne pogoje dobimo v primeru, da zahtevamo $C^2$-zveznost med 
 ploskvama. 
-\begin{primer}
+\begin{primer}\label{primer6}
 Tako kot v primeru \ref{primer1}, v katerem smo obravnavali $C^1$-zveznost ploskev, 
 moramo tudi v tem primeru reparametrizirati ploskev $\ddd{R}$, da bo definirana nad 
 domeno $[1,2]\times [0,1]$: 
@@ -2268,7 +2267,7 @@ so proste. Proste so tudi vse preostale notranje kontrolne točke.
 \end{primer}
 
 Sedaj pa si oglejmo še, kakšne pogoje dobimo v primeru $G^2$-zveznosti.
-\begin{primer}
+\begin{primer}\label{primer7}
 Po izreku \ref{izrek1} bosta ploskvi $\ddd{R}$ in $\ddd{S}$ $G^2$-zvezni na skupnem 
 robu, natanko tedaj, ko bodo obstajale 
 $C^2$-funkcije $\alpha_1(v)$, $\beta_1(v)$, $\alpha_2(v)$ in $\beta_2(v)$, 
@@ -2537,6 +2536,88 @@ $j=1,\ldots,4$, proste.
 %kontrolni vektorji $\ddd{q}_{i,j}$, $i=1,2$, $j=0,\ldots,5$ ploskve $\ddd{S}$, 
 %oziroma kontrolne točke $\ddd{Q}_{i,j}$, $i=0,1,2$, $j=0,\ldots,5$. 
 \end{primer}
+
+Tudi primer \ref{primer7} lahko posplošimo za ploskve 
+poljubnih stopenj. 
+
+\begin{primer}\label{primer8}
+  Naj bosta $\ddd{R}$ in $\ddd{S}$ dve Bézierjevi ploskvi iz tenzorskega produkta. 
+\begin{align*}
+  \ddd{R}(u,v)=\sum_{i=0}^{m_R}\sum_{j=0}^{n_R}\ddd{P}_{i,j}B_i^{m_R}(u)B_j^{n_R}(v),
+\end{align*}
+\begin{align*}
+  \ddd{S}(u,v)=\sum_{i=0}^{m_S}\sum_{j=0}^{n_S}\ddd{Q}_{i,j}B_i^{m_S}(u)B_j^{n_S}(v),
+\end{align*}
+kjer velja $u,v\in[0,1]$. 
+\end{primer}
+
+Stikata v krivulji $C(v)=\ddd{R}(0,v)=\ddd{S}(1,v)$.
+Obravnavajmo zgolj primer, kjer je $n_R=n_S=n$. 
+Spet naj bodo vse robne kontrolne točke obeh ploskev vnaprej 
+določene. Postopek izpeljave je povsem analogen izpeljavi v primeru 
+\ref{primer6}. Naj bodo enake tudi vse oznake za kontrolne vektorje in vrednosti 
+povezovalnih funkcij pri $v=0$ in $v=1$.  
+
+Da sta ploskvi $G^2$-zvezni, morata veljati enakosti 
+\eqref{eq14} in \eqref{eq35}. Povezovalne funkcije bomo izbrali 
+enako kot v primeru \ref{primer7}. Polinom $D$ naj bo konstanten in enak 
+1, za ostale polinome pa naj velja 
+\begin{align*}
+  &E_1(v)=e_{10}=e_{11}\\
+  &F_1(v)=f_{10}(1-v)+f_{11}v\\
+  &E_2(v)=e_{20}=e_{21}\\
+  &F_2(v)=f_{20}(1-v)+f_{21}v.\\
+\end{align*}
+
+Znova razpišimo parcialne odvode parametrizacij ploskev pri $u=0$: 
+\begin{align*}
+  &\frac{\partial \ddd{R}}{\partial u}(0,v)=m_r\sum_{j=0}^n\ddd{p}_{1,j}B_j^n(v)&&
+  \frac{\partial \ddd{R}}{\partial v}(0,v)=n\sum_{j=0}^{n-1}\ddd{z}_jB_j^{n-1}(v)\\
+  &\frac{\partial^2\ddd{S}}{\partial u^2}(0,v)=m_S(m_S-1)\sum_{j=0}^n\ddd{q}_{2,j}B_j^n(v)&&
+  \frac{\partial^2\ddd{R}}{\partial u^2}(0,v)=m_R(m_R-1)\sum_{j=0}^n\ddd{p}_{2,j}B_j^n(v)\\
+  &\frac{\partial^2\ddd{R}}{\partial v^2}(0,v)=n(n-1)\sum_{j=0}^{n-2}\ddd{s}_jB_j^{n-2}(v)&&
+  \frac{\partial^2\ddd{R}}{\partial u \partial v}(0,v)=m_r\cdot n\sum_{j=0}^{n-1}\ddd{v}_jB_j^{n-1}(v).
+\end{align*}
+Dobljeno vstavimo v enačbi \eqref{eq14} in \eqref{eq35} in si ogledamo, kakšne 
+pogoje dobimo pri $v=0$ in $v=1$. Pri $v=0$ dobimo 
+\begin{align*}
+  m_S\ddd{q}_{1,0}=m_Re_{10}\ddd{p}_{1,0}+nf_{10}\ddd{z}_0,
+\end{align*}
+in
+\begin{align*}
+m_S(m_S-1)\ddd{q}_{2,0}&=m_Re_{20}\ddd{p}_{10}+nf_{20}\ddd{z}_0
++e_{10}^2m_R(m_R-1)\ddd{p}_{2,0}+\\
+&+2m_R\cdot n\cdot e_{10}f_{10}\ddd{v}_0+n(n-1)f_{10}^2\ddd{s}_0.
+\end{align*}
+ Pri $v=1$, pa dobimo
+  \begin{align*}
+  m_S\ddd{q}_{1,n}=m_Re_{11}\ddd{p}_{1,n}+nf_{11}\ddd{z}_{n-1}.
+\end{align*}
+in
+  \begin{align*}
+    m_S(m_S-1)\ddd{q}_{2,n}&=m_Re_{21}\ddd{p}_{1n}+nf_{21}\ddd{z}_{n-1}
+    +m_R(m_R-1)e_{11}^2\ddd{p}_{2,n}+\\
+    &+2m_R\cdot n\cdot e_{11}f_{11}\ddd{v}_{n-1}+n(n-1)f_{11}^2\ddd{s}_{n-2}.
+  \end{align*}
+
+Kot v primeru \ref{primer7} sedaj vstavimo povezovalne funkcije v enačbi \eqref{eq14} in \eqref{eq35}, 
+ju preoblikujemo po enakem postopku kot v primeru \ref{primer2} in dobimo pogoje 
+za kontrolne vektorje ploskve $\ddd{S}$:
+\begin{align*}
+  m_S\ddd{q}_{1,j}=m_Re_{10}\ddd{p}_{1,j}+n(f_{10}(1-\frac{j}{n})\ddd{z}_{j}+
+  f_{11}\frac{j}{n}\ddd{z}_{j-1})
+\end{align*}
+za $j=1,\ldots,n-1$ in 
+\begin{align*}
+  m_S(m_S-1)\ddd{q}_{2,i}&=m_Re_{20}\ddd{p}_{1,i}+(n-i)f_{10}\ddd{z}_i+if_{11}\ddd{z}_{i-1}+
+  m_R(m_R-1)e_{20}^2\ddd{p}_{2,i}+\\
+  &+2m_R\cdot ie_{20}f_{20}\ddd{v}_{i-1}
+  +(n-i)(n-1-i)f_{20}^2\ddd{s}_i
+  +2(n-i)i\ddd{s}_{i-1}+\\
+  &+i(i-1)f_{21}^2\ddd{s}_{i-2}
+  \end{align*}
+  za $i=1,\ldots,n-1$. 
+
 
 \section{Konstrukcija $G^1$-zveznih trikotnih Bézierjevih ploskev}\label{pog.bez.tr.}
 

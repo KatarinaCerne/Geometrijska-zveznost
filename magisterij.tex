@@ -2227,7 +2227,7 @@ vpeljimo še oznake za kontrolne vektorje, ki nastopajo v drugih odvodih obeh pl
 Naj bo 
 \begin{align*}
 &\ddd{p}_{2,j}=\ddd{P}_{2,j}-2\ddd{P}_{1,j}+\ddd{P}_{0,j},\\
-&\ddd{q}_{2,j}=\ddd{Q}_{3,j}-2\ddd{Q}_{2,j}+\ddd{Q}_{1,j}\textrm{ za }j=0,\ldots,5,\\
+&\ddd{q}_{2,j}=\ddd{Q}_{5,j}-2\ddd{Q}_{4,j}+\ddd{Q}_{3,j}\textrm{ za }j=0,\ldots,5,\\
 &\ddd{s}_k=\ddd{Z}_{k+2}-2\ddd{Z}_{k+1}+\ddd{Z}_{k}\textrm{ za }k=0,\ldots,3\\
 &\textrm{ter}\\
 &\ddd{v}_j=\ddd{P}_{1,j+1}-\ddd{P}_{0,j+1}-\ddd{P}_{1,j}+\ddd{P}_{0,j}\textrm{ za }j=0,\ldots,4.
@@ -2486,8 +2486,10 @@ za $i=1,\ldots,4$. Ko enak postopek ponovimo še z enačbo \eqref{eq35}, pa dobi
 za $i=1,\ldots,4$. 
 
 Kontrolne točke $\ddd{Q}_{4,j}$ in $\ddd{Q}_{3,j}$, $j=1,\ldots,4$, so s tem točno 
-določene, medtem ko so kontrolne točke $\ddd{P}_{1,j}$ in $\ddd{P}_{2,j}$, 
-$j=1,\ldots,4$, proste. 
+določene, medtem ko so kontrolne točke $\ddd{P}_{2,j}$, 
+$j=1,\ldots,4$, proste. Kontrolne točke $\ddd{P}_{1,j}$, $j=2,3$, so proste, 
+kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,4}$ pa sta določeni z enačbama 
+\ref{eq37} in \ref{eq39}.
 %\begin{align*}
 %20\ddd{q}_{2,1}=5e_{20}\ddd{p}_{1,1}+4f_{10}\ddd{z}_1+f_{11}\ddd{z}_0+20e_{20}\ddd{p}_{2,1}+
 %10e_{20}f_{20}\ddd{v}_0+12f_{20}^2\ddd{s}_1+8f_{20}f_{21}\ddd{s}_0,
@@ -3680,9 +3682,7 @@ V primeru, da je $\det(B)=0$ in velja zveza \eqref{eq60}, torej dobimo eno prost
 stopnjo več kot v primeru, da je $\det(B)\neq 0$. Sistem \eqref{eq57} mešanih 
 parcialnih odvodov $\ddd{P}_i$, $i=1,\ldots,N$, ne določa enolično. Eden izmed mešanih 
 parcialnih odvodov je prost, ostali pa so določeni z njim. Ta dodatna prostostna stopnja 
-omogoča konstrukcijo $G^1$-zveznih ploskev posebnih oblik, kot je na primer 
-"opičje sedlo". \todo{? slika.}
-
+omogoča konstrukcijo $G^1$-zveznih ploskev posebnih oblik.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

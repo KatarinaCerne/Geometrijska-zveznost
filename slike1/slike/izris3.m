@@ -1,3 +1,10 @@
+%R stopnje (3,3)
+%S stopnje (3,3)
+%robovi so doloèeni tako, da so parametri 
+%e0=e1=1, f0=3, f1=-2
+%zahtevamo G^1 zveznost
+%uporabimo metodo, kjer sta E_1 in F_1 linearna polinoma
+
 zRx = [0,2,4,6;0,2,4,6;0,2,4,6;0,2,4,6];
 zRy = [0,0,0,0;2,2,2,2;4,4,4,4;6,6,6,6];
 zRz = [0,4,4,0;0,6,6,2;2,6,6,2;0,4,0,0];

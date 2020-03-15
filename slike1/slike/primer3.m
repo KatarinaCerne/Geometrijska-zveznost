@@ -3,7 +3,7 @@ function [Rx,Ry,Rz,Sx,Sy,Sz]=primer3(zRx,zRy,zRz,zSx,zSy,zSz,e20,e21,f20,f21)
 %skupnem robu G^2-zvezni, v primeru da so povezovalne funkcije minimalnih
 %stopenj in da sta ploskvi stopnje (5,5). 
 %zaèetnega problema se lotimo tako, da v naprej izberemo koeficienta e20 in
-%f20
+%f20 in doloèimo robove tako, da f10 ni enak 0.
 
 %Vhod:
 %-matrike zRx,zRy,zRz vsebujejo x, y in z-koordinate vnaprej izbranih kontrolnih

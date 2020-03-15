@@ -1,10 +1,18 @@
-Bx = [3,3,3,3;2,2,2,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
-By = [-1.5,-0.5,0.5,1.5;-1,0,1,NaN;-0.5,0.5,NaN,NaN;0,NaN,NaN,NaN];
-Bz = [1.5,1.5,1.5,1.5;1.5,1.5,1.5,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
+% Bx = [3,3,3,3;2,2,2,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
+% By = [-1.5,-0.5,0.5,1.5;-1,0,1,NaN;-0.5,0.5,NaN,NaN;0,NaN,NaN,NaN];
+% Bz = [1.5,1.5,1.5,1.5;1.5,1.5,1.5,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
+% 
+% Bx2 = [3,3,3,3;4,4,4,NaN;5,5,NaN,NaN;6,NaN,NaN,NaN];
+% By2 = [-1.5,-0.5,0.5,1.5;-1,0,1,NaN;-0.5,0.5,NaN,NaN;0,NaN,NaN,NaN];
+% Bz2 = [1.5,1.5,1.5,1.5;1.5,1.5,1.5,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
 
-Bx2 = [3,3,3,3;4,4,4,NaN;5,5,NaN,NaN;6,NaN,NaN,NaN];
-By2 = [-1.5,-0.5,0.5,1.5;-1,0,1,NaN;-0.5,0.5,NaN,NaN;0,NaN,NaN,NaN];
-Bz2 = [1.5,1.5,1.5,1.5;1.5,1.5,1.5,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
+Bx = [0,2,6,8;1,3,7,NaN;2,5,NaN,NaN;4,NaN,NaN,NaN];
+By = [0,1,0,-1;2,2,3,NaN;4,3,NaN,NaN;5,NaN,NaN,NaN];
+Bz = [-2,1,-2,0;-4,2,-3,NaN;0,-5,NaN,NaN;-3,NaN,NaN,NaN];
+
+Bx2 = [0,2,6,8;1,3,7,NaN;2,5,NaN,NaN;4,NaN,NaN,NaN];
+By2 = [0,1,0,-1;-2,-2,-3,NaN;-4,-3,NaN,NaN;-5,NaN,NaN,NaN];
+Bz2 = [-2,1,-2,0;4,-2,3,NaN;0,5,NaN,NaN;3,NaN,NaN,NaN];
 
 d = 50;
 u = linspace(0,1,d); %imeli bomo pravokoten trikotnik, kateti razdelimo na 50 delov
@@ -63,7 +71,8 @@ bb3 = bezier3(Bx2,By2,Bz2,U4);
 TRI2 = delaunay(U3(:,1),U3(:,2)); %triangulacija za risanje kontrolne mreže
 %set(gca,'visible','off')
 hold on
-%trisurf(TRI,b(:,1),b(:,2),b(:,3))
-trimesh(TRI4,Bx1,By1,Bz1,'Facecolor','none', 'EdgeColor','blue');
-trimesh(TRI4,Bx3,By3,Bz3,'Facecolor','none', 'EdgeColor','red');
+trisurf(TRI,b(:,1),b(:,2),b(:,3))
+trisurf(TRI,bb(:,1),bb(:,2),bb(:,3))
+%trimesh(TRI4,Bx1,By1,Bz1,'Facecolor','none', 'EdgeColor','blue');
+%trimesh(TRI4,Bx3,By3,Bz3,'Facecolor','none', 'EdgeColor','red');
 hold off

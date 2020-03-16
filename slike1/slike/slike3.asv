@@ -17,8 +17,8 @@ ykoord = [By2(2,2);By2(5,2);By1(2,5);By1(3,5);By1(4,5);By1(5,5);By1(2,4);By1(3,4
 zkoord = [Bz2(2,2);Bz2(5,2);Bz1(2,5);Bz1(3,5);Bz1(4,5);Bz1(5,5);Bz1(2,4);Bz1(3,4);Bz1(4,4);Bz1(5,4)];
 
 xk1=[Bx2(3,2);Bx2(4,2);Bx2(2:5,3);Bx2(2:5,4);Bx2(2:5,5);Bx1(2:5,3);Bx1(2:5,2)];
-yk1=[By2(3,2);By2(4,2);By2(2:5,3);By2(2:5,4);By2(2:5,5);By1(2:5,3);By1(2:5,2)];
-zk1=[Bz2(3,2);Bz2(4,2);Bz2(2:5,3);Bz2(2:5,4);Bz2(2:5,5);Bz1(2:5,3);Bz1(2:5,2)];
+yk1=[By2(3,2);By2(4,2);Bx2(2:5,3);Bx2(2:5,4);Bx2(2:5,5);Bx1(2:5,3);Bx1(2:5,2)];
+zk1=[By2(3,2);Bx2(4,2);Bx2(2:5,3);Bx2(2:5,4);Bx2(2:5,5);Bx1(2:5,3);Bx1(2:5,2)];
 
 
 hold on
@@ -28,5 +28,4 @@ mesh(Bx1,By1,Bz1,'Facecolor','none','EdgeColor','black')
 %surf(bx2,by2,bz2,'Facecolor','white','EdgeColor','red')
 mesh(Bx2,By2,Bz2,'Facecolor','none','EdgeColor','black')
 scatter3(xkoord,ykoord,zkoord,'red','filled')
-scatter3(xk1,yk1,zk1,'blue')
 hold off

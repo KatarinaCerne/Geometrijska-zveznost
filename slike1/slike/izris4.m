@@ -28,8 +28,8 @@ v=linspace(0,1,50);
 
 hold on
 set(gca,'visible','off')
-surf(rx,ry,rz,'Facecolor','white','EdgeColor','blue')
+surf(rx,ry,rz,'EdgeColor','blue')
 mesh(Rx,Ry,Rz,'Facecolor','none','EdgeColor','black')
-surf(sx,sy,sz,'Facecolor','white','EdgeColor','red')
+surf(sx,sy,sz,'EdgeColor','red')
 mesh(Sx,Sy,Sz,'Facecolor','none','EdgeColor','black')
 hold off

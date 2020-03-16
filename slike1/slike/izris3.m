@@ -22,10 +22,10 @@ v=linspace(0,1,50);
 [sx,sy,sz]=bezier2(Sx,Sy,Sz,u,v);
 
 hold on
-%set(gca,'visible','off')
-surf(rx,ry,rz,'Facecolor','white','EdgeColor','blue')
+set(gca,'visible','off')
+surf(rx,ry,rz,'EdgeColor','blue')
 mesh(Rx,Ry,Rz,'Facecolor','none','EdgeColor','black')
-surf(sx,sy,sz,'Facecolor','white','EdgeColor','red')
+surf(sx,sy,sz,'EdgeColor','red')
 mesh(Sx,Sy,Sz,'Facecolor','none','EdgeColor','black')
 %scatter3(meja(1,:),meja(2,:),meja(3,:))
 hold off

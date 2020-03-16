@@ -6,14 +6,30 @@
 % Sy = [0,1,0,-1;-1,0,-1,NaN;-2,-3,NaN,NaN;-3,NaN,NaN,NaN];
 % Sz = [-2,1,-2,0;1.5,1.5,1.5,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
 
-Rx = [3,3,3,3;2,2,2,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
-Ry = [-1.5,-0.5,0.5,1.5;-1,0,1,NaN;-0.5,0.5,NaN,NaN;0,NaN,NaN,NaN];
-Rz = [1.5,1.5,1.5,1.5;1.5,1.5,1.5,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
+% Rx = [3,3,3,3;2,2,2,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
+% Ry = [-1.5,-0.5,0.5,1.5;-1,0,1,NaN;-0.5,0.5,NaN,NaN;0,NaN,NaN,NaN];
+% Rz = [1.5,1.5,1.5,1.5;1.5,1.5,1.5,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
+% 
+% Sx = [3,3,3,3;4,4,4,NaN;5,5,NaN,NaN;6,NaN,NaN,NaN];
+% Sy = [-1.5,-0.5,0.5,1.5;-1,0,1,NaN;-0.5,0.5,NaN,NaN;0,NaN,NaN,NaN];
+% Sz = [1.5,1.5,1.5,1.5;1.5,1.5,1.5,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
 
-Sx = [3,3,3,3;4,4,4,NaN;5,5,NaN,NaN;6,NaN,NaN,NaN];
-Sy = [-1.5,-0.5,0.5,1.5;-1,0,1,NaN;-0.5,0.5,NaN,NaN;0,NaN,NaN,NaN];
-Sz = [1.5,1.5,1.5,1.5;1.5,1.5,1.5,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
 
+% Rx = [0,2,6,8;1,-0.4688,7,NaN;2,5,NaN,NaN;4,NaN,NaN,NaN];
+% Ry = [0,1,0,-1;2,5.4149,3,NaN;4,3,NaN,NaN;5,NaN,NaN,NaN];
+% Rz = [-2,1,-2,0;4,16.3559,3,NaN;0,5,NaN,NaN;3,NaN,NaN,NaN];
+% 
+% Sx = [0,2,6,8;0.25,5.1563,7,NaN;2,5,NaN,NaN;4,NaN,NaN,NaN];
+% Sy = [0,1,0,-1;-0.625,-1.2309,-1.6667,NaN;-4,-3,NaN,NaN;-5,NaN,NaN,NaN];
+% Sz = [-2,1,-2,0;-3.875,-6.7483,-2.3333,NaN;0,-5,NaN,NaN;-3,NaN,NaN,NaN];
+
+Rx = [0,2,6,8;1,Inf,7,NaN;2,5,NaN,NaN;4,NaN,NaN,NaN];
+Ry = [0,1,0,-1;2,Inf,3,NaN;4,3,NaN,NaN;5,NaN,NaN,NaN];
+Rz = [-2,1,-2,0;4,Inf,3,NaN;0,5,NaN,NaN;3,NaN,NaN,NaN];
+
+Sx = [0,2,6,8;0.25,Inf,7,NaN;2,5,NaN,NaN;4,NaN,NaN,NaN];
+Sy = [0,1,0,-1;-0.625,Inf,-1.6667,NaN;-4,-3,NaN,NaN;-5,NaN,NaN,NaN];
+Sz = [-2,1,-2,0;-3.875,Inf,-2.3333,NaN;0,-5,NaN,NaN;-3,NaN,NaN,NaN];
 
 d = 50;
 u = linspace(0,1,d); %imeli bomo pravokoten trikotnik, kateti razdelimo na 50 delov
@@ -99,10 +115,10 @@ end
 b3 = bezier3(Rx,Ry,Rz,U4);
 %trisurf(TRI3,b3(:,1),b3(:,2),b3(:,3));
 TRI2 = delaunay(U3(:,1),U3(:,2)); %triangulacija za risanje kontrolne mreže
-%set(gca,'visible','off')
+set(gca,'visible','off')
 hold on
-trisurf(TRI,b(:,1),b(:,2),b(:,3))
-trisurf(TRI,b1(:,1),b1(:,2),b1(:,3))
+%trisurf(TRI,b(:,1),b(:,2),b(:,3))
+%trisurf(TRI,b1(:,1),b1(:,2),b1(:,3))
 trimesh(TRI4,Rx1,Ry1,Rz1,'Facecolor','none', 'EdgeColor','black');
-trimesh(TRI4,Sx1,Sy1,Sz1,'Facecolor','none', 'EdgeColor','red');
+trimesh(TRI4,Sx1,Sy1,Sz1,'Facecolor','none', 'EdgeColor','black');
 hold off

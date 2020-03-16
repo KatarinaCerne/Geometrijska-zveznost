@@ -55,8 +55,8 @@ end
 b3 = bezier3(Bx,By,Bz,U4);
 %trisurf(TRI3,b3(:,1),b3(:,2),b3(:,3));
 TRI2 = delaunay(U3(:,1),U3(:,2)); %triangulacija za risanje kontrolne mreže
-%set(gca,'visible','off')
+set(gca,'visible','off')
 hold on
-%trisurf(TRI,b(:,1),b(:,2),b(:,3))
+trisurf(TRI,b(:,1),b(:,2),b(:,3))
 trimesh(TRI4,Bx1,By1,Bz1,'Facecolor','none', 'EdgeColor','black');
 hold off

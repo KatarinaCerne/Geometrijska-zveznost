@@ -82,11 +82,13 @@
 \usepackage{eurosym}
 \usepackage{hyperref}
 \usepackage{subfigure}
+%\usepackage{subcaption}
 \usepackage{xcolor}
 \usepackage{tcolorbox}
 \usepackage{enumitem}
 \usepackage[ruled,lined]{algorithm2e}
 \SetAlgorithmName{Algoritem}{Algoritem}{Kazalo algoritmov}
+
 
 \setlength{\overfullrule}{50pt} % označi predlogo vrstico
 \pagestyle{plain}               % samo številka strani na dnu, nobene glave / noge
@@ -1014,7 +1016,7 @@ produkta}. Definirane so na naslednji način.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.6\textwidth]{slike/ploskev3x4-5.pdf}
+  \includegraphics[width=0.6\textwidth]{slike/tenzorski1.png}
 % \caption[caption za v kazalo]{Dolg caption pod sliko}
   \caption[Primer Bézierjeve ploskve iz tenzorskega produkta.]
   {Primer Bézierjeve ploskve iz tenzorskega produkta stopnje (3,2) s 
@@ -1738,7 +1740,7 @@ $G^1$-zveznost.
 
   \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{slike/c1-1.pdf}
+    \includegraphics[width=0.8\textwidth]{slike/c11.png}
   % \caption[caption za v kazalo]{Dolg caption pod sliko}
     \caption[Primer $C^1$-zveznih Bézierjevih ploskev iz tenzorskega produkta.]
     {Primer bi-kubičnih Bézierjevih ploskev iz tenzorskega produkta, ki sta na skupnem robu 
@@ -1922,6 +1924,39 @@ $\ddd{Q}_{2,1}$ in $\ddd{Q}_{2,2}$ sta točno določeni z izbiro točk $\ddd{P}_
 in $\ddd{P}_{1,2}$, z robnimi kontrolnimi točkami ter izbiro parametrov $e_0$, 
 $f_0$ in $f_1$, kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ pa sta 
 prosti. Enako velja za vse ostale notranje kontrolne točke. 
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}
+\centering
+\includegraphics[width=0.4\textwidth]{slike/c14.png}
+%\caption{$C^1$-zvezni ploskvi}
+\end{subfigure}%
+\begin{subfigure}
+\centering
+\includegraphics[width=0.4\textwidth]{slike/g11.png}
+%\caption{$G^1$-zvezni ploskvi}
+\end{subfigure}
+\caption[Primerjava $C^1$-zveznih in $G^1$-zveznih ploskev]
+{Primerjava $C^1$-zveznih (levo) in $G^1$-zveznih (desno) ploskev. 
+Robne kontrolne točke $G^1$-zveznih ploskev so izbrane tako, da velja 
+$e_0=e_1=1$, $f_0=3$ in $f_1=-2$, ploskev je konstruirana, kot je opisano 
+v primeru \ref{primer2}. Proste kontrolne točke so pri obeh ploskvah izbrane 
+enako. Opazimo lahko razliko v obliki kontrolne mreže. Kontrolni vektorji prek 
+roba morajo biti v primeru $C^1$-zveznosti vzporedni, v primeru $G^1$-zveznosti pa 
+to ni več nujno.}
+  \label{fig:c1vsg1}
+\end{figure}
+%\begin{figure}[h]
+%  \centering
+%  \includegraphics[width=0.8\textwidth]{slike/c14.png}
+%% \caption[caption za v kazalo]{Dolg caption pod sliko}
+%  \caption[Primer $C^1$-zveznih Bézierjevih ploskev iz tenzorskega produkta.]
+%  {Primer bi-kubičnih Bézierjevih ploskev iz tenzorskega produkta, ki sta na skupnem robu 
+%  $C^1$-zvezni. Kontrolni vektorji prek roba morajo biti kolinearni.}
+%  \label{fig:c1}
+%\end{figure}
+
 \end{primer}
 
 \begin{primer}\label{primer3}
@@ -2015,6 +2050,27 @@ točkami, kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ pa nista več obe
 prosti. Prosta je le še ena izmed njiju, druga pa je določena z enačbo \eqref{eq17}.
 %\todo{to pomeni, da v splošnem ne moremo konstruirati ploskve S poljubne stopnje, 
 %če je R podana, saj dobimo pogoje za kontrolne točke R}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{slike/g11.png}
+  %\caption{$C^1$-zvezni ploskvi}
+  \end{subfigure}%
+  \begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{slike/g1sp1.png}
+  %\caption{$G^1$-zvezni ploskvi}
+  \end{subfigure}
+  \caption[Primerjava dveh različnih konstrukcij $G^1$-zveznih ploskev]
+  {Primerjava $G^1$-zveznih ploskev, konstruiranih po metodi, opisani v primeru 
+  \ref{primer2} (levo), in metodi, opisani v primeru \ref{primer3} (desno). 
+  Robne kontrolne točke ploskev so izbrane tako, da velja 
+  $e_0=e_1=1$, $f_0=3$ in $f_1=-2$. Proste kontrolne točke so pri obeh ploskvah izbrane 
+  enako. Opazimo lahko razliko v obliki kontrolne mreže in posledično v obliki 
+  dobljenih ploskev.}
+    \label{fig:g1vsg1}
+  \end{figure}
 \end{primer}
 
 Če bi v zgornjih primerih za povezovalne funkcije vzeli polinome višjih stopenj, bi dobili sicer 
@@ -2537,6 +2593,26 @@ kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,4}$ pa sta določeni z enačbama
 %Parametra $p_{1m}$ in $p_{2m}$ sta prosta. Po izbiri parametrov so točno določeni še 
 %kontrolni vektorji $\ddd{q}_{i,j}$, $i=1,2$, $j=0,\ldots,5$ ploskve $\ddd{S}$, 
 %oziroma kontrolne točke $\ddd{Q}_{i,j}$, $i=0,1,2$, $j=0,\ldots,5$. 
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{slike/g21.png}
+  %\caption{$C^1$-zvezni ploskvi}
+  \end{subfigure}%
+  \begin{subfigure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{slike/g22.png}
+  %\caption{$G^1$-zvezni ploskvi}
+  \end{subfigure}
+  \caption[Primer $G^2$-zveznih ploskev]
+  {Primer ploskev stopnje (5,5), ki sta na skupnem robu $G^2$-zvezni, 
+  prikazanih s kontrolno mrežo (levo) in brez (desno). Robne kontrolne točke so 
+  izbrane tako, da je $e_{10}=e_{11}=1$, $f_{10}=3$ in $f_{11}=-2$. Izbira preostalih 
+  parametrov: $e_{20}=2_{21}=\frac{1}{2}$, $f_{20}=-1$ in $f_{21}=1$.}
+    \label{fig:g2}
+  \end{figure}
+
 \end{primer}
 
 Tudi primer \ref{primer7} lahko posplošimo za ploskve 
@@ -2675,7 +2751,7 @@ Oglejmo si še definicijo trikotnih Bézierjevih ploskev.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.6\textwidth]{slike/trikotna3-2.pdf}
+  \includegraphics[width=0.6\textwidth]{slike/trikotna4.png}
 % \caption[caption za v kazalo]{Dolg caption pod sliko}
   \caption[Primer trikotne Bézierjeve ploskve stopnje 3.]
   {Primer trikotne Bézierjeve ploskve stopnje 3 s kontrolnim poligonom.}
@@ -2878,7 +2954,7 @@ $\langle\ddd{s}_{0,3,0},\ddd{s}_{0,2,1},\ddd{s}_{1,2,0}\rangle$.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.9\textwidth]{slike/tbb.pdf}
+  \includegraphics[width=0.9\textwidth]{slike/tbbkopija.pdf}
 % \caption[caption za v kazalo]{Dolg caption pod sliko}
   \caption[$C^1$-zveznost trikotnih Bézierjevih ploskev]{Da sta ploskvi na stiku 
   $C^1$-zvezni, morajo biti osenčeni trikotniki koplanarni in afine slike domenskih 
@@ -2951,7 +3027,7 @@ domenskih trikotnikov, ploskvi $\ddd{R}$ in $\ddd{S}$ torej ne moreta biti $C^1$
 na skupnem robu neglede na izbiro notranjih kontrolnih točk. 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{slike/Farintrikotne.pdf}
+  \includegraphics[width=0.8\textwidth]{slike/Farintrikotnenova.pdf}
 % \caption[caption za v kazalo]{Dolg caption pod sliko}
   \caption[Nemogoče je doseči $C^1$ zveznost.]{Osenčena para trikotnikov na sliki 
   sta afini sliki dveh različnih domenskih trikotnikov, zato ni mogoče najti 
@@ -3243,6 +3319,27 @@ primeru za ploskvi stopnje 3.
   %zaradi stikanja ploskev točno določene s kontrolnimi točkami ploskve $\ddd{R}$. 
   %Ker zahtevamo zgolj zveznost stopnje 1, so točke $\ddd{s}_{2,1,0}$, $\ddd{s}_{2,0,1}$ 
   %in $\ddd{s}_{3,0,0}$ proste. 
+
+  \begin{figure}[h]
+    \centering
+    \begin{subfigure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{slike/trikotna2.png}
+    %\caption{$C^1$-zvezni ploskvi}
+    \end{subfigure}%
+    \begin{subfigure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{slike/trikotna1.png}
+    %\caption{$G^1$-zvezni ploskvi}
+    \end{subfigure}
+    \caption[Primer $G^2$-zveznih ploskev]
+    {Primer trikotnih Bézierovih ploskev stopnje 3, ki sta na skupnem robu 
+    $G^1$-zvezni, 
+    prikazanih s kontrolno mrežo (levo) in brez (desno). Robne kontrolne točke so 
+    izbrane tako, da je $\lambda_{0}=\frac{1}{3}$, $\lambda_{1}=\frac{1}{4}$, 
+    $\mu_{0}=\frac{1}{4}$ in $\mu_1=\frac{1}{2}$.}
+      \label{fig:trikotne}
+    \end{figure}
 
 \end{primer}
 

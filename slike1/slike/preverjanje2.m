@@ -63,7 +63,7 @@ n2=cross(p1n,zn);
 e1=det([q1n,zn,n2])/det([p1n,zn,n2]);
 f1=det([p1n,q1n,n2])/det([p1n,zn,n2]);
 
-lambda0=1/(e0-1);
-mi0=(e0-2)/(e0-1)*f0;
-lambda1=1/(e1-1);
-mi1=(e1-2)/(e1-1)*f1;
+lambda0=e0/(e0-1);
+mi0=(1-lambda0)*f0;
+lambda1=e1/(e1-1);
+mi1=(1-lambda1)*f1;

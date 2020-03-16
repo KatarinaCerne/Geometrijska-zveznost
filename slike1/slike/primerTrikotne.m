@@ -19,7 +19,6 @@ Sx(2,n)=(1/(1-lambda1))*(-lambda1*Rx(2,n)+(1-mi1)*Rx(1,n)+mi1*Rx(1,n+1));
 Sy(2,n)=(1/(1-lambda1))*(-lambda1*Ry(2,n)+(1-mi1)*Ry(1,n)+mi1*Ry(1,n+1));
 Sz(2,n)=(1/(1-lambda1))*(-lambda1*Rz(2,n)+(1-mi1)*Rz(1,n)+mi1*Rz(1,n+1));
 
-%notranje kontrolne toèke
 
 
 end

@@ -2543,9 +2543,21 @@ za $i=1,\ldots,4$.
 
 Kontrolne točke $\ddd{Q}_{4,j}$ in $\ddd{Q}_{3,j}$, $j=1,\ldots,4$, so s tem točno 
 določene, medtem ko so kontrolne točke $\ddd{P}_{2,j}$, 
-$j=1,\ldots,4$, proste. Kontrolne točke $\ddd{P}_{1,j}$, $j=2,3$, so proste, 
-kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,4}$ pa sta določeni z enačbama 
-\ref{eq37} in \ref{eq39}. Proste in določene kontrolne točke so 
+$j=1,\ldots,4$, proste. Kontrolne točke $\ddd{P}_{1,j}$, $j=2,3$, so proste. 
+%Kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,4}$ sta določeni z enačbama 
+%\ref{eq37} in \ref{eq39} v primeru, da je $f_{10},f_{11}\neq 0$ in da smo začetni 
+%problem zastavili tako, da so parametri $e_{20},e_{21},f_{20}$ in $f_{21}$ prosti. 
+%Če je $f_{10},f_{11}\neq 0$ in parametri $e_{2i},f_{2i},i=1,2$ niso prosti, sta 
+%točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,4}$ le delno določeni, če je 
+Kontrolna točka $\ddd{P}_{1,1}$ je določena z enačbo \ref{eq37} v primeru, da je 
+$f_{10}\neq 0$ in da smo problem zastavili tako, da sta parametra $e_{20}$ in 
+$f_{20}$ prosta. V primeru, da je $f_{10}\neq 0$ in parametra $e_{20}$ in 
+$f_{20}$ nista prosta, je točka $\ddd{P}_{1,1}$ delno določena, v primeru, da je 
+$f_{10}=0$, pa je prosta. Analogni sklepi sledijo iz enačbe \ref{eq39} za 
+točko $\ddd{P}_{1,4}$.
+
+Proste in določene kontrolne točke v primeru, da je $f_{10},f_{11}\neq 0$ in 
+da so parametri $e_{20}$, $e_{21}$, $f_{20}$ in $f_{21}$ prosti, so 
 prikazane na sliki \ref{fig:g2proste}. 
 
 \begin{figure}[h]
@@ -2553,8 +2565,9 @@ prikazane na sliki \ref{fig:g2proste}.
   \includegraphics[width=0.6\textwidth]{slike/proste.pdf}
 % \caption[caption za v kazalo]{Dolg caption pod sliko}
   \caption[Proste in določene kontrolne točke.]{Z rdečo so označene kontrolne 
-  točke, ki so določene z izpeljanimi pogoji za $G^2$-zveznost, modre kontrolne 
-  točke pa so proste.}
+  točke, ki so določene z izpeljanimi pogoji za $G^2$-zveznost v primeru, 
+  da je $f_{10}, f_{11}\neq 0$ in da so parametri $e_{20}$, $e_{21}$, $f_{20}$ 
+  in $f_{21}$ prosti. Modre kontrolne točke pa so proste.}
   \label{fig:g2proste}
 \end{figure}
 
@@ -2618,7 +2631,7 @@ prikazane na sliki \ref{fig:g2proste}.
   \caption[Primer $G^2$-zveznih ploskev]
   {Primer ploskev stopnje (5,5), ki sta na skupnem robu $G^2$-zvezni. Robne kontrolne točke so 
   izbrane tako, da je $e_{10}=e_{11}=1$, $f_{10}=3$ in $f_{11}=-2$. Izbira preostalih 
-  parametrov: $e_{20}=2_{21}=\frac{1}{2}$, $f_{20}=-1$ in $f_{21}=1$.}
+  prostih parametrov: $e_{20}=2_{21}=\frac{1}{2}$, $f_{20}=-1$ in $f_{21}=1$.}
   %{Primer ploskev stopnje (5,5), ki sta na skupnem robu $G^2$-zvezni, 
   %prikazanih s kontrolno mrežo (levo) in brez (desno). Robne kontrolne točke so 
   %izbrane tako, da je $e_{10}=e_{11}=1$, $f_{10}=3$ in $f_{11}=-2$. Izbira preostalih 
@@ -3042,7 +3055,9 @@ na skupnem robu neglede na izbiro notranjih kontrolnih točk.
   \centering
   \includegraphics[width=0.8\textwidth]{slike/Farintrikotnenova.pdf}
 % \caption[caption za v kazalo]{Dolg caption pod sliko}
-  \caption[Nemogoče je doseči $C^1$ zveznost.]{Osenčena para trikotnikov na sliki 
+  \caption[Nemogoče je doseči $C^1$ zveznost, če pari trikotnikov ob skupnem robu 
+  niso afine slike istega para domenskih trikotnikov.]
+  {Osenčena para trikotnikov na sliki 
   sta afini sliki dveh različnih domenskih trikotnikov, zato ni mogoče najti 
   notranjih kontrolnih točk, da bi bil stik ploskev $C^1$-zvezen.}
   \label{fig:farintrikotne}

@@ -1,10 +1,18 @@
-% Rx = [0,2,6,8;1,3,7,NaN;2,5,NaN,NaN;4,NaN,NaN,NaN];
-% Ry = [0,1,0,-1;2,2,3,NaN;4,3,NaN,NaN;5,NaN,NaN,NaN];
-% Rz = [-2,1,-2,0;4,-2,3,NaN;0,5,NaN,NaN;3,NaN,NaN,NaN];
-% 
-% Sx = [0,2,6,8;1,4,7,NaN;3,5,NaN,NaN;3,NaN,NaN,NaN];
-% Sy = [0,1,0,-1;-1,0,-1,NaN;-2,-3,NaN,NaN;-3,NaN,NaN,NaN];
-% Sz = [-2,1,-2,0;1.5,1.5,1.5,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
+zRx = [0,2,6,8;1,3,7,NaN;2,5,NaN,NaN;4,NaN,NaN,NaN];
+zRy = [0,1,0,-1;2,2,3,NaN;4,3,NaN,NaN;5,NaN,NaN,NaN];
+zRz = [-2,1,-2,0;4,-2,3,NaN;0,5,NaN,NaN;3,NaN,NaN,NaN];
+
+zSx = [0,2,6,8;1,4,7,NaN;3,5,NaN,NaN;3,NaN,NaN,NaN];
+zSy = [0,1,0,-1;-1,0,-1,NaN;-2,-3,NaN,NaN;-3,NaN,NaN,NaN];
+zSz = [-2,1,-2,0;1.5,1.5,1.5,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
+
+lambda0=1/3;
+lambda1=1/4;
+mi0=1/4;
+mi1=1/2;
+
+[Rx,Ry,Rz,Sx,Sy,Sz]=primerTrikotne(zRx,zRy,zRz,zSx,zSy,zSz,lambda0,mi0,lambda1,mi1);
+
 
 % Rx = [3,3,3,3;2,2,2,NaN;1,1,NaN,NaN;0,NaN,NaN,NaN];
 % Ry = [-1.5,-0.5,0.5,1.5;-1,0,1,NaN;-0.5,0.5,NaN,NaN;0,NaN,NaN,NaN];
@@ -23,13 +31,13 @@
 % Sy = [0,1,0,-1;-0.625,-1.2309,-1.6667,NaN;-4,-3,NaN,NaN;-5,NaN,NaN,NaN];
 % Sz = [-2,1,-2,0;-3.875,-6.7483,-2.3333,NaN;0,-5,NaN,NaN;-3,NaN,NaN,NaN];
 
-Rx = [0,2,6,8;1,Inf,7,NaN;2,5,NaN,NaN;4,NaN,NaN,NaN];
-Ry = [0,1,0,-1;2,Inf,3,NaN;4,3,NaN,NaN;5,NaN,NaN,NaN];
-Rz = [-2,1,-2,0;4,Inf,3,NaN;0,5,NaN,NaN;3,NaN,NaN,NaN];
-
-Sx = [0,2,6,8;0.25,Inf,7,NaN;2,5,NaN,NaN;4,NaN,NaN,NaN];
-Sy = [0,1,0,-1;-0.625,Inf,-1.6667,NaN;-4,-3,NaN,NaN;-5,NaN,NaN,NaN];
-Sz = [-2,1,-2,0;-3.875,Inf,-2.3333,NaN;0,-5,NaN,NaN;-3,NaN,NaN,NaN];
+% Rx = [0,2,6,8;1,Inf,7,NaN;2,5,NaN,NaN;4,NaN,NaN,NaN];
+% Ry = [0,1,0,-1;2,Inf,3,NaN;4,3,NaN,NaN;5,NaN,NaN,NaN];
+% Rz = [-2,1,-2,0;4,Inf,3,NaN;0,5,NaN,NaN;3,NaN,NaN,NaN];
+% 
+% Sx = [0,2,6,8;0.25,Inf,7,NaN;2,5,NaN,NaN;4,NaN,NaN,NaN];
+% Sy = [0,1,0,-1;-0.625,Inf,-1.6667,NaN;-4,-3,NaN,NaN;-5,NaN,NaN,NaN];
+% Sz = [-2,1,-2,0;-3.875,Inf,-2.3333,NaN;0,-5,NaN,NaN;-3,NaN,NaN,NaN];
 
 d = 50;
 u = linspace(0,1,d); %imeli bomo pravokoten trikotnik, kateti razdelimo na 50 delov
@@ -117,8 +125,9 @@ b3 = bezier3(Rx,Ry,Rz,U4);
 TRI2 = delaunay(U3(:,1),U3(:,2)); %triangulacija za risanje kontrolne mreže
 set(gca,'visible','off')
 hold on
-%trisurf(TRI,b(:,1),b(:,2),b(:,3))
-%trisurf(TRI,b1(:,1),b1(:,2),b1(:,3))
+trisurf(TRI,b(:,1),b(:,2),b(:,3))
+trisurf(TRI,b1(:,1),b1(:,2),b1(:,3))
 trimesh(TRI4,Rx1,Ry1,Rz1,'Facecolor','none', 'EdgeColor','black');
 trimesh(TRI4,Sx1,Sy1,Sz1,'Facecolor','none', 'EdgeColor','black');
 hold off
+pbaspect([1,1,1])

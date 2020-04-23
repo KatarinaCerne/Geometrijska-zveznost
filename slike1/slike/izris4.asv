@@ -28,8 +28,7 @@ v=linspace(0,1,50);
 
 hold on
 set(gca,'visible','off')
-set(gca,'Position',[0.1,0,0.9,1])
-axis tight
+set(gca,'Position',[0
 surf(rx,ry,rz,'EdgeColor','blue')
 mesh(Rx,Ry,Rz,'Facecolor','none','EdgeColor','black')
 surf(sx,sy,sz,'EdgeColor','red')

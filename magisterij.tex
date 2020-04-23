@@ -1761,7 +1761,7 @@ $G^1$-zveznost.
 
   \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{slike/c11.png}
+    \includegraphics[width=0.8\textwidth]{slike/c1.eps}
   % \caption[caption za v kazalo]{Dolg caption pod sliko}
     \caption[Primer $C^1$-zveznih Bézierjevih ploskev iz tenzorskega produkta.]
     {Primer bi-kubičnih Bézierjevih ploskev iz tenzorskega produkta, ki sta na skupnem robu 
@@ -1896,27 +1896,30 @@ $$\sum_{j=0}^3b_1\ddd{z}_{j-1}\frac{j}{3}B_j^3(v)$$
 člen pri $j=0$ enak 0 in je zato 
 $$\sum_{j=1}^3f_1\ddd{z}_{j-1}\frac{j}{3}{3 \choose j}v^3(1-v)^{3-j}=\sum_{j=0}^3b_1\ddd{z}_{j-1}\frac{j}{3}B_j^3(v).$$
 Od tod dobimo pogoje za kontrolna vektorja $\ddd{q}_{2,1}$ in $\ddd{q}_{2,2}$:
-\begin{align*}
+\begin{align}\label{eq82}
 \ddd{q}_{1,1}=e_0\ddd{p}_{1,1}+\frac{1}{3}f_1\ddd{z}_0+\frac{2}{3}f_0\ddd{z}_1,&&
 \ddd{q}_{1,2}=e_0\ddd{p}_{1,2}+\frac{2}{3}f_1\ddd{z}_1+\frac{1}{3}f_0\ddd{z}_2.
-\end{align*}
+\end{align}
 Najprej opazimo, da za razliko od primera \ref{primer1}, tu ni več potrebe po 
 kolinearnosti vektorjev $\ddd{q}_{1,1}$ in $\ddd{p}_{1,1}$ oziroma 
 vektorjev $\ddd{q}_{1,2}$ in $\ddd{p}_{1,2}$, zahtevamo le še koplanarnost. 
 Ena izmed omejitev, ki veljajo za parametre $e_0$, $f_0$ in $f_1$, je, da 
 mora biti $e_0>0$,
-saj bi imel v nasprotnem primeru stik ploskev obliko špice. 
-Parametri so določeni z enačbama \eqref{eq18} in \eqref{eq19} na naslednji način. 
-Zapišimo enačbo \eqref{eq18} kot 
+saj bi imel v nasprotnem primeru stik ploskev obliko ''špice''. 
+Parametri so določeni z enačbama \eqref{eq18} in \eqref{eq19}. Najprej si oglejmo 
+enačbo \eqref{eq18}. Gre za sistem treh enačb z dvema neznankama. Njegova rešitev 
+je enaka rešitvi sistema treh enačb s tremi neznankami: 
 \begin{align*}
-\ddd{q}_{1,0}=e_1\ddd{p}_{1,0}+f_1\ddd{z}_0+g\ddd{n}_1,
+\ddd{q}_{1,0}=e_0\ddd{p}_{1,0}+f_0\ddd{z}_0+g\ddd{n}_1,
 \end{align*}
 kjer $\ddd{n}_1$ označuje normalo na ravnino, ki jo določajo vektorji $\ddd{q}_{1,0}$, 
-$\ddd{p}_{1,0}$ in $\ddd{z}_0$, v točki $\ddd{P}_{0,0}$. Matrika $[\ddd{p}_{1,0},\ddd{z}_0,\ddd{n}_1]$ 
+$\ddd{p}_{1,0}$ in $\ddd{z}_0$, v točki $\ddd{P}_{0,0}$, $e_0$, $f_0$ in $g$ pa so neznanke. 
+Matrika $[\ddd{p}_{1,0},\ddd{z}_0,\ddd{n}_1]$ 
 je nesingularna, saj sta vektorja $\ddd{p}_{1,0}$ in $\ddd{z}_0$ nekolinearna in pravokotna 
-na $\ddd{n}_1$, zato je mogoče na enoličen način izraziti neznanke $e_1$, $f_1$ in $g$. 
+na $\ddd{n}_1$, zato je mogoče $e_1$, $f_1$ in $g$ izraziti na enoličen način. 
 Ker je vektor $\ddd{q}_{1,0}$ del iste ravnine kot $\ddd{p}_{1,0}$ in $\ddd{z}_0$, 
-mora biti $g=0$, vrednosti $e_0$ in $f_0$ pa izračunamo s pomočjo Cramerjevih formul: 
+mora biti $g=0$, zato je rešitev tega sistema enaka rešitvi sistema \eqref{eq18}.
+Vrednosti $e_0$ in $f_0$ izračunamo s pomočjo Cramerjevih formul: 
 \begin{align*}
 e_0=\frac{\det[\ddd{q}_{1,0},\ddd{z}_0,\ddd{n}_1]}{\det[\ddd{p}_{1,0},\ddd{z}_0,\ddd{n}_1]},&&
 f_0=\frac{\det[\ddd{p}_{1,0},\ddd{q}_{1,0},\ddd{n}_1]}{\det[\ddd{p}_{1,0},\ddd{z}_0,\ddd{n}_1]}.
@@ -1928,9 +1931,13 @@ Na enak način kot prej iz enačbe \eqref{eq19} dobimo še parametra $e_1$ in $f
   e_1=\frac{\det[\ddd{q}_{1,3},\ddd{z}_2,\ddd{n}_2]}{\det[\ddd{p}_{1,3},\ddd{z}_2,\ddd{n}_2]},&&
   f_1=\frac{\det[\ddd{p}_{1,3},\ddd{q}_{1,3},\ddd{n}_2]}{\det[\ddd{p}_{1,3},\ddd{z}_2,\ddd{n}_2]}.
 \end{align*}
+Vidimo, da iz pogoja $e_0=e_1$, dobimo še dodaten pogoj 
+$$\frac{\det[\ddd{q}_{1,0},\ddd{z}_0,\ddd{n}_1]}{\det[\ddd{p}_{1,0},\ddd{z}_0,\ddd{n}_1]}=
+\frac{\det[\ddd{q}_{1,3},\ddd{z}_2,\ddd{n}_2]}{\det[\ddd{p}_{1,3},\ddd{z}_2,\ddd{n}_2]},$$
+ki mu morajo ustrezati robne kontrolne točke. 
 
 Če bi imeli robne krivulje ploskev izbrane na tak način, da bi veljalo 
-$e_0=1$, $f_0=0$ in $f_1=0$, bi dobili enak rezultat kot v primeru \ref{primer1}, 
+$e_0=e_1=1$, $f_0=0$ in $f_1=0$, bi dobili enak rezultat kot v primeru \ref{primer1}, 
 v katerem smo iskali pogoje za $C^1$-zveznost. Z drugačno izbiro robnih krivulj in 
 posledično drugačnimi vrednostmi parametrov pa 
 lahko dosežemo poljuben kot med vektorjema $\ddd{q}_{1,1}$ in $\ddd{p}_{1,1}$, biti morata samo 
@@ -1939,32 +1946,45 @@ Vidimo torej, da zahteva $G^1$-zveznosti kar se tiče oblike dobljenega zlepka
 ploskev prinese veliko več možnosti kot zahteva $C^1$-zveznosti.
 
 V danem primeru, kjer so stopnje koeficientnih polinomov minimalne, je tudi število 
-prostih kontrolnih točk enako kakor v primeru $C^1$-zveznosti. Kontrolni točki 
-$\ddd{Q}_{2,1}$ in $\ddd{Q}_{2,2}$ sta točno določeni z izbiro točk $\ddd{P}_{1,1}$ 
-in $\ddd{P}_{1,2}$, z robnimi kontrolnimi točkami ter parametri $e_0$, 
-$f_0$ in $f_1$, kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ pa sta 
+prostih kontrolnih točk enako kakor v primeru $C^1$-zveznosti. Iz enačb \eqref{eq82} 
+sledi, da sta kontrolni točki 
+$\ddd{Q}_{2,1}=\ddd{Q}_{3,1}-\ddd{q}_{1,1}$ in $\ddd{Q}_{2,2}=\ddd{Q}_{3,2}-\ddd{q}_{1,2}$ 
+točno določeni z izbiro točk $\ddd{P}_{1,1}=\ddd{P}_{0,1}+\ddd{p}_{1,1}$ 
+in $\ddd{P}_{1,2}=\ddd{P}_{0,2}+\ddd{p}_{1,2}$ in z robnimi kontrolnimi točkami, kontrolni točki 
+$\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ pa sta 
 prosti. Enako velja za vse ostale notranje kontrolne točke. 
+
+Slika \ref{fig:c1vsg1} prikazuje primer $C^1$-zvezne ploskve in 
+$G^1$-zvezne ploskve, konstruirane po metodi, opisani v tem primeru. Polinoma 
+$D$ in $E_1$ sta konstantna, polinom $F_1$ pa linearen. Proste notranje kontrolne točke 
+obeh ploskev so izbrane enako. Enaka je tudi večina robnih kontrolnih točk, razlika 
+je le v izbiri kontrolnih točk $\ddd{Q}_{2,0}=\ddd{Q}_{3,0}-\ddd{q}_{1,0}$ in 
+$\ddd{Q}_{2,3}=\ddd{Q}_{3,3}-\ddd{q}_{1,3}$. V primeru 
+$C^1$-zvezne ploskve sta ti dve točki izbrani tako, da robovi ustrezajo zahtevam 
+$C^1$-zveznosti, opisanim v primeru \ref{primer1}, v primeru $G^1$-zvezne ploskve 
+pa ju izberemo tako, da velja $e_0=e_1=1$, $f_0=3$ in $f_1=-2$. Opazimo lahko razliko 
+v obliki dobljenih ploskev, predvsem je očitna razlika v obliki kontrolne mreže. 
+Kontrolni vektorji prek roba morajo biti v primeru $C^1$-zveznosti kolinearni, 
+v primeru $G^1$-zveznosti pa to ni več nujno. 
 
 \begin{figure}[h]
 \centering
-\begin{subfigure}
-\centering
-\includegraphics[width=0.4\textwidth]{slike/c14.png}
-%\caption{$C^1$-zvezni ploskvi}
-\end{subfigure}%
-\begin{subfigure}
-\centering
-\includegraphics[width=0.4\textwidth]{slike/g11.png}
-%\caption{$G^1$-zvezni ploskvi}
-\end{subfigure}
+%\begin{subfigure}
+%\centering
+%\includegraphics[width=0.4\textwidth]{slike/c14.png}
+%%\caption{$C^1$-zvezni ploskvi}
+%\end{subfigure}%
+%\begin{subfigure}
+%\centering
+%\includegraphics[width=0.4\textwidth]{slike/g11.png}
+%%\caption{$G^1$-zvezni ploskvi}
+%\end{subfigure}
+\includegraphics[width=0.8\textwidth]{slike/c1vsg1-2.eps}
 \caption[Primerjava $C^1$-zveznih in $G^1$-zveznih ploskev]
 {Primerjava $C^1$-zveznih (levo) in $G^1$-zveznih (desno) ploskev. 
 Robne kontrolne točke $G^1$-zveznih ploskev so izbrane tako, da velja 
 $e_0=e_1=1$, $f_0=3$ in $f_1=-2$, ploskev je konstruirana, kot je opisano 
-v primeru \ref{primer2}. Proste kontrolne točke so pri obeh ploskvah izbrane 
-enako. Opazimo lahko razliko v obliki kontrolne mreže. Kontrolni vektorji prek 
-roba morajo biti v primeru $C^1$-zveznosti vzporedni, v primeru $G^1$-zveznosti pa 
-to ni več nujno.}
+v primeru \ref{primer2}.}
   \label{fig:c1vsg1}
 \end{figure}
 %\begin{figure}[h]
@@ -2070,25 +2090,40 @@ točkami, kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ pa nista več obe
 prosti. Prosta je le še ena izmed njiju, druga pa je določena z enačbo \eqref{eq17}.
 %\todo{to pomeni, da v splošnem ne moremo konstruirati ploskve S poljubne stopnje, 
 %če je R podana, saj dobimo pogoje za kontrolne točke R}
+
+Slika \ref{fig:g1vsg1} prikazuje primer dveh $G^1$-zveznih ploskev, konstruiranih 
+po metodah, opisanih v primerih \ref{primer2} in \ref{primer3}. Proste notranje kontrolne 
+točke so pri obeh ploskvah izbrane enako. Točka $\ddd{P}_{1,1}$, ki je 
+v primeru \ref{primer2} prosta, v primeru \ref{primer3} pa ne, je pri ploskvi, 
+konstrirani po metodi iz primera \ref{primer2} izbrana tako, da je pri obeh ploskvah 
+enaka. Robne kontrolne točke 
+ploskve, konstruirane po metodi iz primera \ref{primer2}, so izbrane tako, da je 
+$e_0=e_1=1$, $f_0=3$ in $f_1=-2$, robne kontrolne točke ploskve, konstruirane po metodi 
+iz primera \ref{primer3} pa tako, da je $e_0=1$, $e_1=5$, $f_0=3$ in $f_1=-2$. Razlika 
+je torej le v izbiri kontrolne točke $\ddd{Q}_{2,3}=\ddd{Q}_{3,3}-\ddd{q}_{1,3}$, saj 
+se v obeh primerih razlikuje le parameter $e_1$.  
+Opazimo lahko razliko v obliki 
+kontrolne mreže in posledično v obliki dobljenih ploskev.
+
 \begin{figure}[h]
   \centering
-  \begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{slike/g11.png}
-  %\caption{$C^1$-zvezni ploskvi}
-  \end{subfigure}%
-  \begin{subfigure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{slike/g1sp1.png}
-  %\caption{$G^1$-zvezni ploskvi}
-  \end{subfigure}
+  \includegraphics[width=0.8\textwidth]{slike/g1vsg1-3.eps}
+%  \begin{subfigure}
+%  \centering
+%  \includegraphics[width=0.4\textwidth]{slike/g11.png}
+%  %\caption{$C^1$-zvezni ploskvi}
+%  \end{subfigure}%
+%  \begin{subfigure}
+%  \centering
+%  \includegraphics[width=0.4\textwidth]{slike/g1sp1.png}
+%  %\caption{$G^1$-zvezni ploskvi}
+%  \end{subfigure}
   \caption[Primerjava dveh različnih konstrukcij $G^1$-zveznih ploskev]
   {Primerjava $G^1$-zveznih ploskev, konstruiranih po metodi, opisani v primeru 
   \ref{primer2} (levo), in metodi, opisani v primeru \ref{primer3} (desno). 
-  Robne kontrolne točke ploskev so izbrane tako, da velja 
-  $e_0=e_1=1$, $f_0=3$ in $f_1=-2$. Proste kontrolne točke so pri obeh ploskvah izbrane 
-  enako. Opazimo lahko razliko v obliki kontrolne mreže in posledično v obliki 
-  dobljenih ploskev.}
+  Robne kontrolne točke leve ploskve so izbrane tako, da velja 
+  $e_0=e_1=1$, $f_0=3$ in $f_1=-2$, robne kontrolne točke desne ploskve pa tako, da je 
+  $e_0=1$, $e_1=5$, $f_0=3$ in $f_1=-2$.}
     \label{fig:g1vsg1}
   \end{figure}
 \end{primer}
@@ -2645,7 +2680,7 @@ prikazane na sliki \ref{fig:g2proste}.
   \centering
   %\begin{subfigure}
   %\centering
-  \includegraphics[width=0.8\textwidth]{slike/g21.png}
+  \includegraphics[width=0.8\textwidth]{slike/g2-2.eps}
   %\end{subfigure}%
   %\begin{subfigure}
   %\centering
@@ -2799,7 +2834,7 @@ Oglejmo si še definicijo trikotnih Bézierjevih ploskev.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.6\textwidth]{slike/trikotna4.png}
+  \includegraphics[width=0.6\textwidth]{slike/trik3.eps}
 % \caption[caption za v kazalo]{Dolg caption pod sliko}
   \caption[Primer trikotne Bézierjeve ploskve stopnje 3.]
   {Primer trikotne Bézierjeve ploskve stopnje 3 s kontrolno mrežo.}
@@ -3373,7 +3408,7 @@ primeru za ploskvi stopnje 3.
     \centering
     %\begin{subfigure}
     %\centering
-    \includegraphics[width=0.8\textwidth]{slike/trikotna2.png}
+    \includegraphics[width=0.8\textwidth]{slike/tritri.eps}
     %\caption{$C^1$-zvezni ploskvi}
     %\end{subfigure}%
     %\begin{subfigure}

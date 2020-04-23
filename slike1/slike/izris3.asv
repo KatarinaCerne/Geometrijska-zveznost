@@ -3,7 +3,7 @@
 %robovi so doloèeni tako, da so parametri 
 %e0=e1=1, f0=3, f1=-2
 %zahtevamo G^1 zveznost
-%uporabimo metodo, kjer je E_1(y) konstanten in F_1(y) linearen
+%uporabimo metodo, kjer sta E_1 in F_1 linearna polinoma
 
 zRx = [0,2,4,6;0,2,4,6;0,2,4,6;0,2,4,6];
 zRy = [0,0,0,0;2,2,2,2;4,4,4,4;6,6,6,6];
@@ -13,7 +13,12 @@ zSx = [-6,-4,-2,0;-6,-4,0,0;-6,-4,0,0;-6,-4,-2,0];
 zSy = [0,0,-6,0;2,2,0,2;4,4,0,4;6,6,10,6];
 zSz = [0,4,-4,0;2,6,0,0;2,6,0,2;0,0,-8,0];
 
-[Rx,Ry,Rz,Sx,Sy,Sz]=primer1(zRx,zRy,zRz,zSx,zSy,zSz);
+%èe je e1=2
+zSx = [-6,-4,-2,0;-6,-4,0,0;-6,-4,0,0;-6,-4,-4,0];
+zSy = [0,0,-6,0;2,2,0,2;4,4,0,4;6,6,10,6];
+zSz = [0,4,-4,0;2,6,0,0;2,6,0,2;0,0,-12,0];
+
+[Rx,Ry,Rz,Sx,Sy,Sz]=primer2(zRx,zRy,zRz,zSx,zSy,zSz);
 
 u=linspace(0,1,50);
 v=linspace(0,1,50);

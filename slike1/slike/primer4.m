@@ -160,9 +160,10 @@ b3 = bezier3(Rx,Ry,Rz,U4);
 %trisurf(TRI3,b3(:,1),b3(:,2),b3(:,3));
 TRI2 = delaunay(U3(:,1),U3(:,2)); %triangulacija za risanje kontrolne mreže
 set(gca,'visible','off')
+set(gca,'Position',[0,0,1,1])
 hold on
-%trisurf(TRI,b(:,1),b(:,2),b(:,3),'EdgeColor','blue')
-%trisurf(TRI,b1(:,1),b1(:,2),b1(:,3),'EdgeColor','red')
+trisurf(TRI,b(:,1),b(:,2),b(:,3),'EdgeColor','blue')
+trisurf(TRI,b1(:,1),b1(:,2),b1(:,3),'EdgeColor','red')
 trimesh(TRI4,Rx1,Ry1,Rz1,'Facecolor','none', 'EdgeColor','black');
-trimesh(TRI4,Sx1,Sy1,Sz1,'Facecolor','none', 'EdgeColor','red');
+trimesh(TRI4,Sx1,Sy1,Sz1,'Facecolor','none', 'EdgeColor','black');
 hold off

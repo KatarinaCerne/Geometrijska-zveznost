@@ -11,9 +11,10 @@
 \newcommand{\imesomentorja}{} % akademski naziv in ime somentorja, če ga imate
 \newcommand{\naslovdela}{Konstrukcija geometrijsko zveznih parametričnih ploskev}
 \newcommand{\letnica}{2020} % letnica magistriranja
-\newcommand{\opis}{}  % Opis dela v eni povedi. Ne sme vsebovati matematičnih simbolov v $ $.
-\newcommand{\kljucnebesede}{\sep } % ključne besede, ločene z \sep, da se PDF metapodatki prav procesirajo
-\newcommand{\keywords}{\sep } % ključne besede v angleščini
+\newcommand{\opis}{Delo obravnava lastnosti in možne konstrukcije parametrično podanih ploskev, 
+ki so na skupnem robu geometrijsko zvezne.}  % Opis dela v eni povedi. Ne sme vsebovati matematičnih simbolov v $ $.
+\newcommand{\kljucnebesede}{geometrijska zveznost\sep pogoji za $G^n$-zveznost \sep Bézierjeve ploskve\sep CAGD} % ključne besede, ločene z \sep, da se PDF metapodatki prav procesirajo
+\newcommand{\keywords}{geometric continuity\sep $G^n$-continuity conditions \sep Bézier patches \sep CAGD} % ključne besede v angleščini
 \newcommand{\organization}{Univerza v Ljubljani, Fakulteta za matematiko in fiziko} % fakulteta
 \newcommand{\literatura}{literatura}  % pot do datoteke z literaturo (brez .bib končnice)
 \newcommand{\sep}{, }  % separator med ključnimi besedami v besedilu
@@ -267,7 +268,12 @@ FAKULTETA ZA MATEMATIKO IN FIZIKO\\[5mm]
 %Literatura mora biti tukaj posebej samostojno navedena (po pomembnosti) in ne
 %le citirana. V tem razdelku literature ne oštevilčimo po svoje, ampak uporabljamo
 %okolje itemize in ukaz plancite, saj je celotna literatura oštevilčena na koncu.
-
+\setlength{\emergencystretch}{4em}
+\begin{itemize}
+\plancite{YE1996521}
+\plancite{doi:10.2200/S00729ED1V01Y201608VCP025}
+\plancite{10.5555/501891}
+\end{itemize}
 
 \vspace{2cm}
 \hspace*{\fill} Podpis mentorja: \phantom{prostor za podpis}
@@ -284,11 +290,28 @@ FAKULTETA ZA MATEMATIKO IN FIZIKO\\[5mm]
 \end{center}
 %Tukaj napišemo povzetek vsebine. Sem sodi razlaga vsebine in ne opis tega, kako je delo
 %organizirano.
+V tem delu je predstavljen pojem $G^n$-zveznosti na stiku med parametrično 
+podanimi ploskvami. Opisani so potrebni in zadostni pogoji za $G^n$-zveznost 
+na stiku dveh ploskev ter geometrijska interpretacija $G^1$-zveznosti. V nadaljevanju 
+so predstavljene trikotne Bézierjeve ploskve in Bézierjeve ploskve iz tenzorskega 
+produkta. Izpeljani so potrebni in zadostni pogoji za $G^n$-zveznost med dvema 
+Bézierjevima ploskvama iz tenzorskega produkta. Izpeljani pogoji se nato uporabijo 
+na nekaj primerih   
+konstrukcije $G^1$ in $G^2$-zveznih Bézierjevih ploskev. Opisani so tudi pogoji 
+za $G^n$-zveznost med $N$ ploskvami, ki se stikajo v skupni točki. 
 
 \vfill
 \begin{center}
 \textbf{Construction of geometrically continuous parametric surfaces} \\[3mm] % prevod slovenskega naslova dela
 \textsc{Abstract}\\[2mm]
+In this paper, the notion of $G^n$-continuity between adjacent parametric surfaces is 
+presented. Necessary and sufficient conditions for two adjacent surfaces joining 
+$G^n$-continuously and geometric interpretation of $G^1$-continuity are described. 
+Triangular and tensor product Bézier patches are presented. Necessary and sufficient 
+conditions for two adjacent tensor product Bézier patches are obtained. Those 
+conditions are then used in 
+examples of construction of $G^1$ and $G^2$-continuous Bézier patches. Conditions 
+for $N$ surfaces joining $G^1$-continuously at a vertex are obtained. 
 \end{center}
 
 %An abstract of the work is written here. This includes a short description of
@@ -296,8 +319,10 @@ FAKULTETA ZA MATEMATIKO IN FIZIKO\\[5mm]
 
 \vfill\noindent
 \textbf{Math.~Subj.~Class.~(2010):} 
+65D17, 68U07
 %oznake kot 74B05, 65N99, na voljo so na naslovu
-%\url{http://www.ams.org/msc/msc2010.html?t=65Mxx} \\[1mm]
+%\url{http://www.ams.org/msc/msc2010.html?t=65Mxx} 
+\\[1mm]
 \textbf{Ključne besede:} \kljucnebesede \\[1mm]
 \textbf{Keywords:} \keywords
 
@@ -2084,8 +2109,10 @@ in \eqref{eq19} na enak način kot v primeru \ref{primer2}.
 
 V trenutnem primeru imamo nekoliko manj svobode, kar se tiče izbire kontrolnih točk, 
 kot v primerih \ref{primer1} in \ref{primer2}.  
-Kontrolni točki $\ddd{Q}_{2,1}$ in $\ddd{Q}_{2,2}$ sta kot v primeru \ref{primer2} 
-določeni s točkama $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ ter robnimi kontrolnimi 
+Kontrolni točki $\ddd{Q}_{2,1}=\ddd{Q}_{3,1}-\ddd{q}_{1,1}$ in 
+$\ddd{Q}_{2,2}=\ddd{Q}_{3,2}-\ddd{q}_{1,2}$ sta kot v primeru \ref{primer2} 
+določeni s točkama $\ddd{P}_{1,1}=\ddd{P}_{0,1}+\ddd{p}_{1,1}$ in 
+$\ddd{P}_{1,2}=\ddd{P}_{0,2}+\ddd{p}_{1,2}$ ter robnimi kontrolnimi 
 točkami, kontrolni točki $\ddd{P}_{1,1}$ in $\ddd{P}_{1,2}$ pa nista več obe 
 prosti. Prosta je le še ena izmed njiju, druga pa je določena z enačbo \eqref{eq17}.
 %\todo{to pomeni, da v splošnem ne moremo konstruirati ploskve S poljubne stopnje, 
@@ -3881,6 +3908,48 @@ stopnjo več kot v primeru, da je $\det(B)\neq 0$. Sistem \eqref{eq57} mešanih
 parcialnih odvodov $\ddd{P}_i$, $i=1,\ldots,N$, ne določa enolično. Eden izmed mešanih 
 parcialnih odvodov je prost, ostali pa so določeni z njim. Ta dodatna prostostna stopnja 
 omogoča konstrukcijo $G^1$-zveznih ploskev posebnih oblik.
+
+\section{Zaključek}
+
+V delu je bil predstavljen pojem geometrijske zveznosti za parametrično podane 
+krivulje in ploskve. Pokazano je bilo, zakaj in na kakšnih primerih je 
+zahteva geometrijske zveznosti med ploskvama primernejša kot zahteva parametrične 
+zveznosti. Podana je bila definicija $G^n$-zveznosti na stiku dveh ploskev, 
+izpeljani so bili tudi zadostni in potrebni pogoji za $G^n$-zveznost. 
+Izpeljani pogoji so bili nato uporabljeni na Bézierjevih ploskvah iz 
+tenzorskega produkta in trikotnih Bézierjevih ploskvah. Pokazali smo, da se 
+tu pri izbiri povezovalnih funkcij lahko omejimo na racionalne funkcije 
+in polinome, katerih stopnja je odvisna od stopenj ploskev in stopnje zahtevane 
+zveznosti. 
+
+V nadaljevanju je bilo izpeljanih nekaj shem za izračun kontrolnih točk dveh 
+Bézierjevih ploskev, ki sta na skupnem robu geometrijsko zvezni. Omejili smo se 
+na geometrijsko zveznost stopnje 1 in 2, seveda pa bi bilo zanimivo obravnavati 
+tudi zveznost višje stopnje. Rezultati, dobljeni ob zahtevi $G^1$ in $G^2$-zveznosti 
+so bili primerjani s $C^1$ in $C^2$-zveznostjo. Ugotovljeno je bilo, da 
+je število prostih točk pri konstrukciji geometrijsko zveznih ploskev v primeru 
+izbire minimalnih stopenj povezovalnih funkcij enako kot pri parametrično zveznih 
+ploskvah, pri izbiri povezovalnih funkcij višjih stopenj pa kvečjemu manjše. 
+Vendar pa lahko ob ustrezni izbiri robnih kontrolnih točk in morebitnih 
+prostih parametrov konstruiramo geometrijsko zvezne ploskve, kakršnih ne bi 
+mogli dobiti, če bi na skupnem robu zahtevali parametrično zveznost. 
+
+Nazadnje je bil predstavljen še problem geometrijske zveznosti med poljubnim številom 
+ploskev, ki se stikajo v skupni točki. Takega problema v splošnem ni mogoče rešiti, 
+če med ploskvami zahtevamo parametrično zveznost, če zahtevamo le geometrijsko 
+zveznost, pa je reševanje mogoče, vendar morajo ploskve izpolnjevati 
+nekatere dodatne pogoje. 
+
+Obravnavane teme predstavljajo le uvod v reševanje problema konstrukcije 
+geometrijsko zveznih ploskev. Veliko podrobneje bi bilo mogoče obravnavati 
+geometrijsko zveznost med  
+ploskvami, ki se stikajo v skupnem vozlišču. Obdelali bi lahko še problem 
+zapolnjevanja lukenj med ploskvami. Problemi, ki se pri konstrukciji geometrijsko 
+zveznih ploskev pojavljajo v praksi, so veliko zahtevnejši kot le obravnava 
+zveznosti na stiku dveh ploskev. 
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -13,8 +13,8 @@
 \newcommand{\letnica}{2020} % letnica magistriranja
 \newcommand{\opis}{Delo obravnava lastnosti in možne konstrukcije parametrično podanih ploskev, 
 ki so na skupnem robu geometrijsko zvezne.}  % Opis dela v eni povedi. Ne sme vsebovati matematičnih simbolov v $ $.
-\newcommand{\kljucnebesede}{geometrijska zveznost\sep pogoji za $G^n$-zveznost \sep Bézierjeve ploskve\sep CAGD} % ključne besede, ločene z \sep, da se PDF metapodatki prav procesirajo
-\newcommand{\keywords}{geometric continuity\sep $G^n$-continuity conditions \sep Bézier patches \sep CAGD} % ključne besede v angleščini
+\newcommand{\kljucnebesede}{geometrijska zveznost\sep pogoji za $G^n$-zveznost\sep Bézierjeve ploskve\sep CAGD} % ključne besede, ločene z \sep, da se PDF metapodatki prav procesirajo
+\newcommand{\keywords}{geometric continuity\sep $G^n$-continuity conditions\sep Bézier patches\sep CAGD} % ključne besede v angleščini
 \newcommand{\organization}{Univerza v Ljubljani, Fakulteta za matematiko in fiziko} % fakulteta
 \newcommand{\literatura}{literatura}  % pot do datoteke z literaturo (brez .bib končnice)
 \newcommand{\sep}{, }  % separator med ključnimi besedami v besedilu
@@ -86,7 +86,8 @@ ki so na skupnem robu geometrijsko zvezne.}  % Opis dela v eni povedi. Ne sme vs
 %\usepackage{subcaption}
 \usepackage{xcolor}
 \usepackage{tcolorbox}
-\usepackage{enumitem}
+%\usepackage{enumitem}
+\usepackage{enumerate}
 \usepackage[ruled,lined]{algorithm2e}
 \SetAlgorithmName{Algoritem}{Algoritem}{Kazalo algoritmov}
 
@@ -187,7 +188,7 @@ FAKULTETA ZA MATEMATIKO IN FIZIKO\\[5mm]
 %  \setlength\topsep{0pt}
 %  \setlength\parskip{0pt}
 %  \begin{flushleft}
-%    Spodaj podpisani študent \imeavtorja{} avtor magistrskega dela (v nadaljevanju: pisnega
+%    Spodaj podpisana študentka \imeavtorja{} avtorica magistrskega dela (v nadaljevanju: pisnega
 %    zaključnega dela študija) z naslovom:
 %  \end{flushleft}
 %
@@ -203,19 +204,19 @@ FAKULTETA ZA MATEMATIKO IN FIZIKO\\[5mm]
 %\begin{enumerate}[1. ]
 %  \item \emph{Obkrožite eno od variant a) ali b)}
 %  \begin{enumerate}[a)]
-%    \item da sem pisno zaključno delo študija izdelal samostojno;
+%    \item da sem pisno zaključno delo študija izdelala samostojno;
 %    \item da je pisno zaključno delo študija rezultat lastnega dela več kandidatov in izpolnjuje
 %      pogoje, ki jih Statut UL določa za skupna zaključna dela študija ter je v zahtevanem deležu
 %      rezultat mojega samostojnega dela;
 %  \end{enumerate}
-%  pod mentorstvom IZPOLNI. % dopiši \imementorja v rodilniku
+%  pod mentorstvom izr.~prof.~dr.~Marjetke Knez
 %%   \\ in somentorstvom IZPOLNI. % dopiši \imesomentorja v rodilniku
 %  \item da je tiskana oblika pisnega zaključnega dela študija istovetna elektronski obliki
 %    pisnega zaključnega dela študija;
-%  \item da sem pridobil vsa potrebna dovoljenja za uporabo podatkov in avtorskih del v pisnem
-%    zaključnem delu študija in jih v pisnem zaključnem delu študija jasno označil;
-%  \item da sem pri pripravi pisnega zaključnega dela študija ravnal v skladu z etičnimi načeli in,
-%    kjer je to potrebno, za raziskavo pridobil soglasje etične komisije;
+%  \item da sem pridobila vsa potrebna dovoljenja za uporabo podatkov in avtorskih del v pisnem
+%    zaključnem delu študija in jih v pisnem zaključnem delu študija jasno označila;
+%  \item da sem pri pripravi pisnega zaključnega dela študija ravnala v skladu z etičnimi načeli in,
+%    kjer je to potrebno, za raziskavo pridobila soglasje etične komisije;
 %  \item da soglašam, da se elektronska oblika pisnega zaključnega dela študija uporabi za preverjanje
 %    podobnosti vsebine z drugimi deli s programsko  opremo za preverjanje podobnosti
 %    vsebine, ki je povezana s študijskim informacijskim sistemom fakultete;
@@ -268,7 +269,7 @@ FAKULTETA ZA MATEMATIKO IN FIZIKO\\[5mm]
 %Literatura mora biti tukaj posebej samostojno navedena (po pomembnosti) in ne
 %le citirana. V tem razdelku literature ne oštevilčimo po svoje, ampak uporabljamo
 %okolje itemize in ukaz plancite, saj je celotna literatura oštevilčena na koncu.
-\setlength{\emergencystretch}{4em}
+%\setlength{\emergencystretch}{4em}
 \begin{itemize}
 \plancite{YE1996521}
 \plancite{doi:10.2200/S00729ED1V01Y201608VCP025}
@@ -290,29 +291,38 @@ FAKULTETA ZA MATEMATIKO IN FIZIKO\\[5mm]
 \end{center}
 %Tukaj napišemo povzetek vsebine. Sem sodi razlaga vsebine in ne opis tega, kako je delo
 %organizirano.
-V tem delu je predstavljen pojem $G^n$-zveznosti na stiku med parametrično 
-podanimi ploskvami. Opisani so potrebni in zadostni pogoji za $G^n$-zveznost 
-na stiku dveh ploskev ter geometrijska interpretacija $G^1$-zveznosti. V nadaljevanju 
-so predstavljene trikotne Bézierjeve ploskve in Bézierjeve ploskve iz tenzorskega 
-produkta. Izpeljani so potrebni in zadostni pogoji za $G^n$-zveznost med dvema 
-Bézierjevima ploskvama iz tenzorskega produkta. Izpeljani pogoji se nato uporabijo 
+V magistrskem delu je predstavljen pojem geometrijske zveznosti parametrično 
+podanih ploskev. Opisani so potrebni in zadostni pogoji za $G^n$-zveznost 
+dveh ploskev vzdolž skupne krivulje 
+ter geometrijska interpretacija $G^1$-zveznosti. V nadaljevanju 
+so predstavljene polinomske Bézierjeve ploskve iz tenzorskega produkta 
+in trikotne Bézierjeve krpe ter njihove lastnosti. 
+Pomemben rezultat tega dela je 
+izpeljava potrebnih in zadostnih pogojev za $G^n$-zveznost med dvema 
+Bézierjevima ploskvama. Dobljeni pogoji so nato uporabljeni 
 na nekaj primerih   
-konstrukcije $G^1$ in $G^2$-zveznih Bézierjevih ploskev. Opisani so tudi pogoji 
-za $G^n$-zveznost med $N$ ploskvami, ki se stikajo v skupni točki. 
+konstrukcije $G^1$ in $G^2$-zveznih Bézierjevih ploskev nizkih stopenj, 
+dodana pa je tudi primerjava s pogoji za $C^1$ in $C^2$-zveznost. 
+Izpeljani so tudi kompatibilnostni pogoji 
+za $G^1$-zveznost med $N$ ploskvami, ki se stikajo v skupni točki. 
 
 \vfill
 \begin{center}
 \textbf{Construction of geometrically continuous parametric surfaces} \\[3mm] % prevod slovenskega naslova dela
 \textsc{Abstract}\\[2mm]
-This paper presents the notion of $G^n$-continuity between adjacent parametric surfaces. 
+\end{center}
+This thesis presents the notion of geometric continuity between adjacent parametric surfaces. 
 It describes the necessary and sufficient conditions for two adjacent surfaces joining 
 $G^n$-continuously and geometric interpretation of $G^1$-continuity. 
-Triangular and tensor product Bézier patches are presented. Necessary and sufficient 
-conditions for two adjacent tensor product Bézier patches are obtained. Those 
-conditions are then used in 
-examples of construction of $G^1$ and $G^2$-continuous Bézier patches. Conditions 
-for $N$ surfaces joining $G^1$-continuously at a vertex are obtained. 
-\end{center}
+Triangular and tensor product polynomial Bézier patches are introduced and their properties 
+are given. An important result of this work is a derivation of 
+necessary and sufficient 
+conditions for $G^n$-continuity between two adjacent tensor product Bézier surfaces. 
+Those conditions, expressed with control points, are then used in 
+examples of $G^1$ and $G^2$-continuous Bézier surfaces. 
+The comparison with $C^1$ and $C^2$-continuity conditions is given too. 
+The obtained results are applied to derive the compatibility 
+conditions for $N$ surfaces joining $G^1$-continuously at the common vertex. 
 
 %An abstract of the work is written here. This includes a short description of
 %the content and not the structure of your work.
@@ -534,6 +544,11 @@ Preden se lotimo geometrijske zveznosti ploskev, si najprej oglejmo nekoliko
 bolj intuitivno definicijo geometrijske zveznosti stika dveh krivulj. To bomo 
 v nadaljevanju posplošili na definicijo geometrijske zveznosti stika dveh ploskev.
 
+\begin{opomba}
+Odvode funkcij po parametru $t$ bomo označevali s $'$, torej odvod $f$ po $t$ 
+označimo z $f'(t)$. 
+\end{opomba}
+
 \begin{definicija}\label{defkrivulja}
 Naj bosta $\ddd{p}:I_1\rightarrow\R^d$ in $\ddd{q}:I_2\rightarrow\R^d$, $d=2,3$,
 regularni $C^n$ parametrizaciji dveh krivulj, kjer sta $I_1$ in $I_2$ intervala v $\R$. Krivulji 
@@ -541,10 +556,10 @@ $\ddd{p}$ in $\ddd{q}$ naj se stikata v neki točki, torej naj obstajata paramet
 $t_1\in I_1$ in $t_2\in I_2$, da je $\ddd{p}(t_1)=\ddd{q}(t_2)$. 
 Pravimo, da se krivulji v skupni točki stikata z \emph{geometrijsko zveznostjo reda n} 
 oziroma z \emph{$G^n$-zveznostjo}, če v okolici $I_0$ parametra $t_1$ obstaja regularna 
-$C^n$ reparametrizacijska funkcija $f:I_1\rightarrow I_2$, da velja $f(t_1)=t_2$, 
+$C^n$ reparametrizacijska funkcija $f:I_0\rightarrow I_2$, da velja $f(t_1)=t_2$, 
 $f'(t_1)>0$ ter 
 \begin{align*}
-  \frac{d^k}{dt^k}\ddd{p}(t_1)=\frac{d^k}{dt^k}(\ddd{q}\circ f)\bigg|_{t=t_1},\quad k=1,\ldots,n.
+  \frac{d^k}{dt^k}\ddd{p}(t_1)=\frac{d^k}{dt^k}(\ddd{q}\circ f)(t)\bigg|_{t=t_1},\quad k=1,\ldots,n.
 \end{align*}
 \end{definicija}
 
@@ -552,13 +567,13 @@ Da sta krivulji $\ddd{p}$ in $\ddd{q}$ $G^0$-zvezni, mora veljati le, da se ujem
 v skupni točki, oziroma da je $\ddd{p}(t_1)=\ddd{q}(t_2)$. 
 Za $G^1$ zveznost mora poleg pogoja za $G^0$-zveznost veljati še naslednje:
 \begin{align}\label{eq43}
-\frac{d}{dt}\ddd{p}(t_1)=\frac{d}{dt}(\ddd{q}\circ f)\bigg|_{t=t_1}=
+\frac{d}{dt}\ddd{p}(t_1)=\frac{d}{dt}(\ddd{q}\circ f)(t)\bigg|_{t=t_1}=
 \ddd{q}'(t_2)f'(t_1).
 \end{align}
 Za $G^2$ pa mora poleg pogojev za $G^0$-zveznost in $G^1$-zveznost veljati še 
 \begin{align*}
-\frac{d^2}{dt^2}\ddd{p}(t_1)=\frac{d^2}{dt^2}(\ddd{q}\circ f)\bigg|_{t=t_1}=
-\ddd{q}''(t_2)\left(f'(t_1)\right)^2+\ddd{q}'(t_2)f'(t_1).
+\frac{d^2}{dt^2}\ddd{p}(t_1)=\frac{d^2}{dt^2}(\ddd{q}\circ f)(t)\bigg|_{t=t_1}=
+\ddd{q}''(t_2)\left(f'(t_1)\right)^2+\ddd{q}'(t_2)f''(t_1).
 \end{align*}
 
 V splošnem pogoj za $G^n$-zveznost krivulj zapišemo kot
@@ -569,7 +584,7 @@ V splošnem pogoj za $G^n$-zveznost krivulj zapišemo kot
 za $k=1,\ldots,n$.  
 Tu z $A_{\ddd{m}_i}^k$ iznačujemo koeficient
 \begin{align}\label{eq77}
-A_{m_i}^k = \frac{k!}{i!m_1!\cdots m_i!},
+A_{\ddd{m}_i}^k = \frac{k!}{i!m_1!\cdots m_i!},
 \end{align}
 notranja vsota pa teče po vseh mutiindeksih $\ddd{m}_i=(m_1,m_2,\ldots,m_i)$ z
 $|\ddd{m}_i|=m_1+m_2+\cdots + m_i=k$, kjer je $m_j>0$ za vsak $j=1,\ldots, i$. 
@@ -826,7 +841,7 @@ Zato $G^1$-zveznost imenujemo tudi
   {Odvoda ploskev $\ddd{R}$ oziroma $\ddd{S}$ v $y$ oziroma $v$-smeri sta
    na robni krivulji enaka, 
   odvoda v $x$ oziroma $u$-smeri pa zgolj koplanarna. Vsi odvodi so del iste tangentne 
-  ravnine na krivuljo $\ddd{C}$}.
+  ravnine na krivuljo $\ddd{C}$.}
   \label{fig:odvodi}
 \end{figure}
 
@@ -2134,7 +2149,7 @@ kontrolne mreže in posledično v obliki dobljenih ploskev.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{slike/g1vsg1-3.eps}
+  \includegraphics[width=0.8\textwidth]{slike/g1vsg1-nova.eps}
 %  \begin{subfigure}
 %  \centering
 %  \includegraphics[width=0.4\textwidth]{slike/g11.png}
@@ -3925,7 +3940,7 @@ zveznosti.
 V nadaljevanju je bilo izpeljanih nekaj shem za izračun kontrolnih točk dveh 
 Bézierjevih ploskev, ki sta na skupnem robu geometrijsko zvezni. Omejili smo se 
 na geometrijsko zveznost stopnje 1 in 2, seveda pa bi bilo zanimivo obravnavati 
-tudi zveznost višje stopnje. Rezultati, dobljeni ob zahtevi $G^1$ in $G^2$-zveznosti 
+tudi zveznost višje stopnje. Rezultati, dobljeni ob zahtevi $G^1$ in $G^2$-zveznosti, 
 so bili primerjani s $C^1$ in $C^2$-zveznostjo. Ugotovljeno je bilo, da 
 je število prostih točk pri konstrukciji geometrijsko zveznih ploskev v primeru 
 izbire minimalnih stopenj povezovalnih funkcij enako kot pri parametrično zveznih 
